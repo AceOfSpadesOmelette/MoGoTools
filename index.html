@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sticker Tracker - Monopoly Go!</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Sticker Tracker for Monopoly Go!">
+	<link rel="icon" type="image/png" href="assets/stickers/StickerBoom_IconOnTop.png">
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+
+<body>
+	<div id="main">
+		<div id="main-wrapper">
+			<div id="loading-overlay">
+				<img src="assets/spinner.webp" alt="Loading...">
+			</div>
+			<div id="left-side">
+				<div id="sort-menu">
+					<button id="SortOrderBtn" class="btn" type="button">
+						Sort Order:&nbsp;&nbsp;&nbsp;<span id="SortOrderBtnText">Descending ⬇</span>
+					</button>
+					<div id="sort-btn-group-container" class="BtnGroup3">
+						<button data-sort-type="GlobalID" class="btn sort-btn" type="button">
+						  <span class="sort-btn-name">Dex</span>
+						</button>
+						<button data-sort-type="StickerName" class="btn sort-btn" type="button">
+						  <span class="sort-btn-name">Name</span>
+						</button>
+						<button data-sort-type="SetID" class="btn sort-btn" type="button">
+						  <span class="sort-btn-name">Set</span>
+						</button>
+						<button data-sort-type="StickerRarity" class="btn sort-btn" type="button">
+						  <span class="sort-btn-name">Rarity</span>
+						</button>
+						<button data-sort-type="Golden" class="btn sort-btn" type="button">
+						  <span class="sort-btn-name">Golden</span>
+						</button>
+						<button data-sort-type="Name" data-sort-onsite="selected" class="btn sort-btn" type="button">
+						  <span class="sort-btn-name">Possession</span>
+						</button>
+					  </div>
+				</div>
+				<div id="filter-menu">
+					<div id="filter-btn-group-container">
+						<div id="search-bar-container">
+							<input type="text" id="filtermenu-searchbar" data-filtervalue="1>StickerName>" placeholder="Search...">
+							<button id="ClearFilterMenuSearchBar" class="btn" type="button">×</button>
+						</div>
+						<div id="filter-settings-container">
+							<button id="AndOrFilterModeBtn" class="btn filter-settings-btn" type="button">
+								<span id="ClearFiltersBtnText">Filter Mode: AND</span>
+							</button>
+							<button id="ClearFiltersBtn" class="btn filter-settings-btn" type="button">
+								<span>× Clear Filters (<span id="filterLength">0</span>)</span>
+							</button>
+							<button id="RefreshFiltersBtn" class="btn">⟳</button>
+						</div>
+						
+						
+						<div id="rarity-filter">
+							<div class="btn-grp-title">
+								Rarity
+								<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
+							</div>
+							<div class="btn-subgroup BtnGroup5">
+								<button data-filtervalue="1>StickerRarity>1" class="filter-btn btn" type="button">
+									<img class="filter-btn-icon" src="assets/stickers/star1.png">
+								</button>
+								<button data-filtervalue="1>StickerRarity>2" class="filter-btn btn" type="button">
+									<img class="filter-btn-icon" src="assets/stickers/star2.png">
+								</button>
+								<button data-filtervalue="1>StickerRarity>3" class="filter-btn btn" type="button">
+									<img class="filter-btn-icon" src="assets/stickers/star3.png">
+								</button>
+								<button data-filtervalue="1>StickerRarity>4" class="filter-btn btn" type="button">
+									<img class="filter-btn-icon" src="assets/stickers/star4.png">
+								</button>
+								<button data-filtervalue="1>StickerRarity>5" class="filter-btn btn" type="button">
+									<img class="filter-btn-icon" src="assets/stickers/star5.png">
+								</button>
+							</div>
+						</div>
+						
+						<div id="stickertype-filter">
+							<div class="btn-grp-title">
+								Sticker Type
+								<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
+							</div>
+							<div class="btn-subgroup BtnGroup2">
+								<button data-filtervalue="1>Golden>1" class="filter-btn btn" type="button">
+									<img class="filter-btn-icon" src="assets/stickers/GoldenBlitz_AlbumSet_Icon.png"> &nbsp; Golden
+								</button>
+								<button data-filtervalue="1>Prestige>1" class="filter-btn btn" type="button">
+									<img class="filter-btn-icon" src="assets/stickers/Icon_Star_Rainbow.png"> &nbsp; Prestige
+								</button>
+								<button data-filtervalue="0>selected>1" class="filter-btn btn" type="button">
+									Obtained
+								</button>
+								<button data-filtervalue="0>havespare>1" class="filter-btn btn" type="button">
+									Spare
+								</button>
+							</div>
+						</div>
+
+						<div id="spares-filter">
+							<div class="btn-grp-title">
+								Spares
+								<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
+							</div>
+							<div class="btn-subgroup">
+								<label for="SpareFilterMin" class="spare-filter-header">From:</label><input type="number" id="spare-filter-min" class="spare-filter-text spare-filter-min" name="SpareFilterMin" min="0" max="100" value="0" size="4">
+								<label for="SpareFilterMax" class="spare-filter-header">To:</label><input type="number" id="spare-filter-max" class="spare-filter-text spare-filter-max" name="SpareFilterMax" min="0" max="100" value="100" size="4">
+								<button id="spare-filter-btn" data-filtervalue="0>spare>spare-filter-min|spare-filter-max" class="filter-btn btn" type="button">
+									Filter
+								</button>
+							</div>
+						</div>
+						<div id="stickerset-filter">
+							<div class="btn-grp-title">
+								Set
+								<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
+							</div>
+							<div class="btn-subgroup BtnGroup3"></div>
+						</div>
+						<div>
+							<div class="btn-grp-title">
+								Backup
+								<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
+							</div>
+							<div class="btn-subgroup BtnGroup2">
+								<button id="import-btn" class="btn filter-settings-btn" type="button">
+									Import / Load
+								</button>
+								<button id="export-btn" class="btn filter-settings-btn" type="button">
+									Export / Save
+								</button>
+								<button id="import-from-file-btn" class="btn filter-settings-btn" type="button">
+									Load from File
+								</button>
+								<button id="export-from-file-btn" class="btn filter-settings-btn" type="button">
+									Save as File
+								</button>
+							</div>
+							<div class="btn-subgroup">
+								<textarea class="backup-area" placeholder="Click the Export / Save button to generate a text file here to be copied for backup. Click the Import / Load to restore your backup. Do not edit the contents of the save file to avoid causing any errors."></textarea>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div id="middle-side">
+				<div id="sticker-board">
+					<div id="current-sticker-board"></div>
+				</div>
+			</div>	
+			<div id="right-side">
+				<div id="album-progress-container">
+					<div id="album-logo-container">
+					</div>
+					<div class="album-time-info">
+						<div class="time-container">
+							<span class="time-name">Start:</span><span class="time-value" id="start-time"></span><br>
+							<span class="time-name">End:</span><span class="time-value" id="end-time"></span>
+						</div>
+					</div>
+					<div id="progress-and-valve">
+						<div class="progress-container" id="album-progress-tracker">
+							<div class="progress-bar"></div>
+							<div class="progress-text"><span id="user-stickers-quantity">0</span> / <span id="total-stickers-quantity">0</span></div>
+						</div>
+						<div class="valve-container">
+							<div class="valve-subcontainer">
+								<img class="valve-star" src="assets/stickers/Icon_Star.png">
+								<span id="total-valve-quantity">0</span>
+							</div>
+						</div>
+					</div>
+					<div id="set-progress-tracker">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="mobileDetection"></div>
+</body>
+
+<script type="module" src="JS/script.js"></script>
+
+</html>
