@@ -922,7 +922,9 @@ function countValveStickers() {
       if (stickerData) {
         const spareQuantity = parseInt(userData[key].spare);
         const stickerRarity = parseInt(stickerData.StickerRarity);
-        valveQuantity += spareQuantity * stickerRarity;
+        const isPrestige = parseInt(stickerData.Golden);
+        if(isPrestige === 1){valveQuantity += spareQuantity * stickerRarity * 2}
+        else {valveQuantity += spareQuantity * stickerRarity;}
       }
     }
   }
