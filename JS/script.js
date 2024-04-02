@@ -153,25 +153,24 @@ function PerformSort(event) {
 
   const containers = Array.from(document.querySelectorAll('#current-sticker-board .sticker-card-container'));
   containers.sort((a, b) => {
-    const aValue = STICKER_DATA.find(item => item['GlobalID'] === a.dataset.global)[toSortKey];
-    const bValue = STICKER_DATA.find(item => item['GlobalID'] === b.dataset.global)[toSortKey];
+    const aData = findStickerData(a.dataset.global);
+    const bData = findStickerData(b.dataset.global);
+
+    const aValue = aData[toSortKey];
+    const bValue = bData[toSortKey];
 
     if (!isNaN(aValue) && !isNaN(bValue)) {
       const aNumericValue = parseFloat(aValue);
       const bNumericValue = parseFloat(bValue);
       if (aNumericValue === bNumericValue) {
-        const aName = STICKER_DATA.find(item => item['GlobalID'] === a.dataset.global)['GlobalID'];
-        const bName = STICKER_DATA.find(item => item['GlobalID'] === b.dataset.global)['GlobalID'];
-        return aName.localeCompare(bName);
+        return compareStickerNames(aData, bData);
       } else {
         return aNumericValue - bNumericValue;
       }
     }
 
     if (aValue === bValue) {
-      const aName = STICKER_DATA.find(item => item['GlobalID'] === a.dataset.global)['GlobalID'];
-      const bName = STICKER_DATA.find(item => item['GlobalID'] === b.dataset.global)['GlobalID'];
-      return aName.localeCompare(bName);
+      return compareStickerNames(aData, bData);
     } else {
       return aValue.localeCompare(bValue);
     }
@@ -193,9 +192,18 @@ function PerformSort(event) {
   clickedButton.classList.add('btnBlue');
 }
 
+function findStickerData(globalId) {
+  return STICKER_DATA.find(item => item['GlobalID'] === globalId);
+}
+
+function compareStickerNames(aData, bData) {
+  const aName = aData['GlobalID'];
+  const bName = bData['GlobalID'];
+  return aName.localeCompare(bName);
+}
+
 function PerformSortOnsite(clickedSortBtn) {
   const containerSelector = '#current-sticker-board .sticker-card-container';
-
   const containers = document.querySelectorAll(containerSelector);
   const prioritizeClassToSort = clickedSortBtn.dataset.sortOnsite;
 
@@ -204,7 +212,7 @@ function PerformSortOnsite(clickedSortBtn) {
       container.classList.contains('selected')
     );
     const notSelectedContainers = Array.from(containers).filter(container =>
-      container.classList.contains('not-selected')
+      !container.classList.contains('selected')
     );
 
     const parentElement = containers[0].parentElement;
