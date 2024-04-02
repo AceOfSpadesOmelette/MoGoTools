@@ -994,4 +994,19 @@ function calculateBrightness(color) {
   return brightness;
 }
 
+// document.getElementById("dl-png").onclick = function () {
+//   const screenshotTarget = document.getElementById('middle-side');
+//   window.devicePixelRatio = 2;
+//   html2canvas(screenshotTarget, { scale: 2 });
+//   html2canvas(screenshotTarget).then((canvas) => {
+//       window.scrollTo(-window.scrollX,-window.scrollY);
+//       const base64image = canvas.toDataURL("image/png");
+//       var anchor = document.createElement('a');
+//       anchor.setAttribute("href", base64image);
+//       anchor.setAttribute("download", "my-image.png");
+//       anchor.click();
+//       anchor.remove();
+//   });
+// };
+
 window.onload = init;
