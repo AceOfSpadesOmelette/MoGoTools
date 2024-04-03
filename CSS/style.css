@@ -625,7 +625,7 @@ input.spare-text{
 	background-color: #34c7fb;
 	border-radius: 5px;
 	height: inherit;
-	width: 0;
+	max-width: 100%;
 }
   
 .progress-text {
