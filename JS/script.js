@@ -881,30 +881,33 @@ function UpdateTotalStickerQuantity() {
 function countSelectedStickers() {
   const userStickersQuantity = document.querySelector('#user-stickers-quantity');
 
-  const setDuplicates = {}; 
+  const setDuplicates = new Map();
+  const setSpans = Array.from(document.querySelectorAll('[data-setid]'));
+
+  // Reset each data-setid value to zero
+  setSpans.forEach(setSpan => {
+    setSpan.textContent = "0";
+  });
 
   for (const key in userData) {
     if (userData.hasOwnProperty(key) && userData[key].selected === "1") {
       const setId = Math.floor(userData[key].id / 100);
 
-      if (setDuplicates.hasOwnProperty(setId)) {
-        setDuplicates[setId]++;
+      if (setDuplicates.has(setId)) {
+        setDuplicates.set(setId, setDuplicates.get(setId) + 1);
       } else {
-        setDuplicates[setId] = 1;
+        setDuplicates.set(setId, 1);
       }
     }
   }
 
   let count = 0;
-  for (const setId in setDuplicates) {
-    if (setDuplicates.hasOwnProperty(setId)) {
-      const setCount = setDuplicates[setId];
-      const setSpan = document.querySelector(`[data-setid="${setId}"]`);
-      if (setSpan) {
-        setSpan.textContent = setCount.toString();
-      }
-      count += setCount;
+  for (const [setId, setCount] of setDuplicates) {
+    const setSpan = setSpans.find(span => span.getAttribute('data-setid') === setId.toString());
+    if (setSpan) {
+      setSpan.textContent = (parseInt(setSpan.textContent, 10) + setCount).toString();
     }
+    count += setCount;
   }
 
   userStickersQuantity.textContent = count.toString();
