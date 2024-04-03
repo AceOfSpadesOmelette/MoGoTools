@@ -753,7 +753,7 @@ function GenerateFilterSetButtons() {
       filterBtnSubgroup.innerHTML += ButtonElement;
 
       let SetNameClass = 'set-name';
-      if (SetName.length > 18) {SetNameClass = 'set-name-long-min18';}
+      if (SetName.length > 18) {SetNameClass = 'set-name-long-min15';}
       if (isBrighterThan(SetColour, '#CCCCCC')) {SetNameClass += '-dark';}
       const SetCardContainerElement = `
         <div class="set-card-container"><img class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src='logo/Icon_Placeholder.png';"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
