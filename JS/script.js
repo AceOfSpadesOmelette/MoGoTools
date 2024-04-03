@@ -460,7 +460,7 @@ function FilterByButtons(GlobalID){
             }
         }
     }
-    if(IncludeStateFilters.length === 0 & ExcludeStateFilters.length === 0){
+    if(IncludeStateFilters.length === 0 && ExcludeStateFilters.length === 0){
       userData[GlobalID].show = "1"; return;
     }
     
@@ -496,34 +496,36 @@ function FilterByButtons(GlobalID){
     // OR Mode
     else if (AndZeroOrOne === 1){
       // Include Filter (OR)
-      for (const filter of IncludeStateFilters) {
-        var filterKeytemp = filter.FilterKey;
-        if(filter.inDatabase === '0'){
-          if(userData[GlobalID][filterKeytemp] === filter.FilterValue){
-            userData[GlobalID].show = "1";
-            return;
-          } else{userData[GlobalID].show = "0";}
-        } else if(filter.inDatabase === '1'){
-          if(sticker[filterKeytemp] === filter.FilterValue){
-            userData[GlobalID].show = "1";
-            return;
-          } else{userData[GlobalID].show = "0";}
+      if(IncludeStateFilters.length > 0){      
+        for (const filter of IncludeStateFilters) {
+          var filterKeytemp = filter.FilterKey;
+          if(filter.inDatabase === '0'){
+            if(userData[GlobalID][filterKeytemp] === filter.FilterValue){
+              userData[GlobalID].show = "1";
+              return;
+            } else{userData[GlobalID].show = "0";}
+          } else if(filter.inDatabase === '1'){
+            if(sticker[filterKeytemp] === filter.FilterValue){
+              userData[GlobalID].show = "1";
+              return;
+            } else{userData[GlobalID].show = "0";}
+          }
         }
       }
       // Exclude Filter (OR)
-      if(userData[GlobalID].show === "0"){
+      if(userData[GlobalID].show === "0" || ExcludeStateFilters.length > 0){
         for (const filter of ExcludeStateFilters) {
           var filterKeytemp = filter.FilterKey;
           if(filter.inDatabase === '0'){
             if(userData[GlobalID][filterKeytemp] !== filter.FilterValue){
               userData[GlobalID].show = "1";
               return;
-            }
+            } else {userData[GlobalID].show = "0"; return;}
           } else if(filter.inDatabase === '1'){
             if(sticker[filterKeytemp] !== filter.FilterValue){
               userData[GlobalID].show = "1";
               return;
-            }
+            } else {userData[GlobalID].show = "0"; return;}
           }
         }
       }
@@ -753,7 +755,7 @@ function GenerateFilterSetButtons() {
       filterBtnSubgroup.innerHTML += ButtonElement;
 
       let SetNameClass = 'set-name';
-      if (SetName.length > 18) {SetNameClass = 'set-name-long-min15';}
+      if (SetName.length > 15) {SetNameClass = 'set-name-long-min15';}
       if (isBrighterThan(SetColour, '#CCCCCC')) {SetNameClass += '-dark';}
       const SetCardContainerElement = `
         <div class="set-card-container"><img class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src='logo/Icon_Placeholder.png';"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
