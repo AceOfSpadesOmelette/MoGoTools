@@ -201,7 +201,7 @@ body {
 	align-items: center;
 }
 
-.set-name-long-min18 {
+.set-name-long-min15 {
 	width: 100%;
 	min-height: 2rem;
 	max-height: 2rem;
@@ -588,35 +588,38 @@ input.spare-text{
 	background-color: black;
 	border-radius: 5px;
 	width: 100%;
-	height: 15px;
+	height: 18px;
 }
 
-.valve-container{
+.valve-container {
 	width: 30%;
-	max-height: 15px;
+	max-height: 18px;
 	align-items: center;
 	display: flex;
-}
-
-.valve-star{
+  }
+  
+  .valve-star {
 	height: 15px;
-	margin-left: 15px;
-	bottom: -1px;
-  	position: relative;
-}
-
-.valve-subcontainer{
-	background-color: lightblue;
+	margin: 0 auto;
+	display: block;
+  }
+  
+  .valve-subcontainer {
+	background-color: var(--darkbrown);
 	border-radius: 5px;
-	width: 50%;
-	margin-left: 50%;
-}
-
-#total-valve-quantity{
+	width: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 40%;
+	height: 18px;
+  }
+  
+  #total-valve-quantity {
 	font-size: 12px;
-	position: relative;
-	bottom: 2px;
-}
+	width: 50%;
+	text-align: center;
+  }
   
 .progress-bar {
 	background-color: #34c7fb;
@@ -629,7 +632,7 @@ input.spare-text{
 	color: white;
 	font-size: 12px;
 	text-align: center;
-	margin-top: -15px;
+	margin-top: -17px;
 }
 
 .BtnGroup1{
@@ -643,14 +646,27 @@ input.spare-text{
 	min-height: 8rem;
 }
 
-.time-container{
-	color: #4a432d;
+.time-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+.time-row {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: center;
+}
+  
+.time-name {
+	/* width: 50px; */
+	text-align: right;
 }
 
-.time-name{
-	width: 40%;
-	display: inline-block;
-	text-align: center;
+.time-value{
+	/* width: 200px; */
+  	margin-left: 10px;
 }
 
 #SortOrderBtn{
