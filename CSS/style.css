@@ -345,6 +345,7 @@ body {
 	width: 100%;
 	font-size: 0;
 	cursor: pointer;
+	z-index: 1
 }
   
 .sticker-card:hover {
@@ -473,6 +474,7 @@ input[type=text] {
 	gap: 2px;
 	margin-bottom: -10px;
 	position: relative;
+	z-index: 3;
 }
 
 .star-img{
@@ -574,6 +576,7 @@ input.spare-text{
 	margin-top: -200%;
 	width: 100%;
 	pointer-events: none;
+	z-index: 2;
 }
 
 #progress-and-valve{
@@ -700,4 +703,8 @@ input.spare-text{
 .spare-text-screenshot{
 	color: white;
   	font-size: 12px;
+}
+
+.sticker-photo-container{
+	position: relative;
 }
