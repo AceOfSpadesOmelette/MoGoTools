@@ -687,3 +687,17 @@ input.spare-text{
   	align-items: center;
 	justify-content: center;
 }
+
+.sticker-card-container-screenshot {
+	margin: 8px;
+	flex-basis: calc(10% - 10px);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	font-size: 0;
+}
+
+.spare-text-screenshot{
+	color: white;
+  	font-size: 12px;
+}
