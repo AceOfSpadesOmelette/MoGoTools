@@ -508,7 +508,7 @@ input[type=text] {
 }
 
 .album-logo{
-	width: 300px;
+	width: 100%;
 }
 
 .sticker-star-container{
@@ -517,6 +517,7 @@ input[type=text] {
 	margin-bottom: -10px;
 	position: relative;
 	z-index: 3;
+	justify-content: center;
 }
 
 .star-img{
@@ -684,7 +685,7 @@ input.spare-text{
 	width: 100%;
 }
 
-.backup-area{
+.backup-area, .trade-post-area{
 	margin-top: 10px;
 	resize: vertical;
 	width: 100%;
@@ -704,7 +705,7 @@ input.spare-text{
 	justify-content: center;
 }
   
-.time-name {
+.time-header {
 	/* width: 50px; */
 	text-align: right;
 }
@@ -714,7 +715,7 @@ input.spare-text{
   	margin-left: 10px;
 }
 
-#SortOrderBtn{
+#SortOrderBtn, #IgnorePrestigeBtn{
 	width: 98%;
 }
 
@@ -755,4 +756,61 @@ input.spare-text{
 	display: flex;
 	justify-content: center;
 	width: 100%;
+}
+
+#filter-sort-menu-header, #progress-menu-header{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	background-color: var(--darkbrown);
+	border-color: var(--darkerbrown);
+	border-width: 3px 3px 0 3px;
+	border-style: solid;
+	height: 30px;
+}
+
+#filter-sort-menu-footer, #progress-menu-footer{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: red;
+	color: white;
+	border-radius: 0 0 10px 10px;
+	border-color: var(--darkerbrown);
+	border-width: 0 3px 3px 3px;
+	border-style: solid;
+	height: 30px;
+}
+
+#filter-sort-menu-body, #progress-menu-body{
+	border-color: var(--darkerbrown);
+	border-width: 0 3px 3px 3px;
+	border-style: solid;
+	padding: 3px;
+}
+
+.player-info-header{
+	width: 90px;
+  	display: inline-flex;
+}
+
+.player-info-field{
+	padding: 0px 15px 0px 15px;
+  	border-radius: 5px;
+	font-family: "Kabel" !important;
+}
+
+input[class="player-info-field"]{
+	width: 64%;
+}
+
+.player-info-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
