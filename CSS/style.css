@@ -81,6 +81,48 @@ body {
 	justify-content: center;
 }
 
+.lf-btn{
+	border: 2px solid var(--darkerbrown);
+	background: linear-gradient(var(--lightbrown), var(--lightbrown));
+	color: var(--darkerbrown);
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	box-shadow: 1px 1px 3px var(--mediumbrown);
+	transition-duration: 50ms;
+	font-family: "Quicksand-Bold";
+	font-size: 12px;
+	height: 20px;
+	text-align: center;
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-flex;
+	justify-content: center;
+}
+
+.ft-btn{
+	border: 2px solid var(--darkerbrown);
+	background: linear-gradient(var(--lightbrown), var(--lightbrown));
+	color: var(--darkerbrown);
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	box-shadow: 1px 1px 3px var(--mediumbrown);
+	transition-duration: 50ms;
+	font-family: "Quicksand-Bold";
+	font-size: 12px;
+	height: 20px;
+	text-align: center;
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-flex;
+	justify-content: center;
+}
+
+.lfft-btn.scale-down {
+	transform: scale(0.95);
+}
+
 .btn.scale-down {
 	transform: scale(0.95);
 }
@@ -707,4 +749,10 @@ input.spare-text{
 
 .sticker-photo-container{
 	position: relative;
+}
+
+.trade-button-container{
+	display: flex;
+	justify-content: center;
+	width: 100%;
 }
