@@ -6,6 +6,15 @@ let userData = {};
 const FilterList = {};
 let AndZeroOrOne = 0;
 let DescendZeroAscendOne = 0;
+const defaultValues = {
+  id: "0",
+  selected: "0",
+  spare: "0",
+  show: "1",
+  havespare: "0",
+  lookingfor: "0",
+  fortrade: "0",
+};
 
 // Sets up the website
 function init() {
@@ -22,6 +31,15 @@ function init() {
   UpdateAlbumStartEndTime();
 }
 
+
+// Runs when loading the entire site for the first time
+window.addEventListener('DOMContentLoaded', () => {
+  const loadingOverlay = document.getElementById('loading-overlay');
+
+  loadingOverlay.style.display = 'block';
+
+  setTimeout(() => {loadingOverlay.style.display = 'none';}, 2000);
+});
 
 function SetDefaultFilterStates(){
   var FilterOptions = document.querySelectorAll('[data-filtervalue]');
@@ -93,8 +111,10 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
 
   if(isTracking){
     appendSpareSpinner(container);
+    appendTradeButtons(container);
     RestoreSelected(userData, container);
     RestoreStickerSpares(userData, container);
+    RestoreTradeStates(userData, container);
   }
   return container;
 }
@@ -111,14 +131,72 @@ function appendSpareSpinner(stickerElement) {
   stickerElement.appendChild(spareSpinnerContainer);
 }
 
-// Runs when loading the entire site for the first time
-window.addEventListener('DOMContentLoaded', () => {
-  const loadingOverlay = document.getElementById('loading-overlay');
+function appendTradeButtons(stickerElement) {
+  const TradeButtonContainer = document.createElement('div');
+  TradeButtonContainer.classList.add('trade-button-container');
+  TradeButtonContainer.innerHTML = `
+    <button class="btn lfft-btn" type="button" data-property="lookingfor">LF</button><button class="btn lfft-btn" type="button" data-property="fortrade">FT</button>
+  `;
+  stickerElement.appendChild(TradeButtonContainer);
 
-  loadingOverlay.style.display = 'block';
+  const buttons = TradeButtonContainer.querySelectorAll('.lfft-btn'); // Target buttons within TradeButtonContainer
 
-  setTimeout(() => {loadingOverlay.style.display = 'none';}, 2000);
+  buttons.forEach((button) => {
+    button.addEventListener('mousedown', () => {
+      button.classList.add('scale-down');
+    });
+    button.addEventListener('mouseup', () => {
+      button.classList.remove('scale-down');
+    });
+    button.addEventListener('mouseleave', () => {
+      button.classList.remove('scale-down');
+    });
+    button.addEventListener('touchstart', () => {
+      button.classList.add('scale-down');
+    });
+    button.addEventListener('touchend', () => {
+      button.classList.remove('scale-down');
+    });
+    
+    button.addEventListener('click', (event) => {
+      const button = event.target.closest('.lfft-btn');
+      var globalID = button.closest(".sticker-card-container").getAttribute("data-global");
+      var property = button.getAttribute("data-property");
+      if (button) {
+        updateLFOrFTValue(globalID, property);
+      }
+    });
+  });
+}
+
+function updateLFOrFTValue(globalID, property) {
+
+  // Get the LF or FT button element based on the property value
+  var button = document.querySelector(`[data-global="${globalID}"] .trade-button-container .btn[data-property="${property}"]`);
+
+  if (button) {
+    // Update the userData property value
+    userData[globalID][property] = ((userData[globalID][property] + 1) % 2).toString();
+
+    // Add or remove the .btnGreen class based on the updated value
+    if (userData[globalID][property] === '1') {
+      button.classList.add("btnGreen");
+    } else {
+      button.classList.remove("btnGreen");
+    }
+  }
+}
+
+// Add event listeners to LF and FT buttons
+document.querySelectorAll(".trade-button-container .btn").forEach(function(button) {
+  button.addEventListener("click", function() {
+    var globalID = button.closest(".sticker-card-container").getAttribute("data-global");
+    var property = button.getAttribute("data-property");
+
+    updateLFOrFTValue(globalID, property);
+  });
 });
+
 
 // Effects for ALL .btn buttons in the website
 const buttons = document.querySelectorAll('.btn');
@@ -666,16 +744,13 @@ function UpdateCurrentAlbumStickerStates(StickerGlobalID) {
   };
 }
 
-function CreateNewUserData(dataset){
-  dataset.filter(item => item['AlbumNo'] === CurrentAlbumNumber).forEach(item => {
-    userData[item['GlobalID']] = {
-      id: item['GlobalID'],
-      selected: "0",
-      spare: "0",
-      show: "1",
-      havespare: "0",
-    };
-  })
+function CreateNewUserData(dataset) {
+  dataset
+    .filter(item => item['AlbumNo'] === CurrentAlbumNumber)
+    .forEach(item => {
+      const userDataItem = { ...defaultValues, id: item['GlobalID'] };
+      userData[item['GlobalID']] = userDataItem;
+    });
 }
 
 
@@ -719,6 +794,19 @@ function RestoreSelected(userData, StickerContainer) {
 
   StickerContainer.classList.toggle('selected', selectedValue === '1');
   StickerContainer.classList.toggle('not-selected', selectedValue === '0');
+}
+
+function RestoreTradeStates(userData, StickerContainer) {
+  const dataGlobalValue = StickerContainer.getAttribute('data-global');
+  const stickerData = userData[dataGlobalValue];
+  //const LFValue = stickerData.lookingfor;
+  //const FTValue = stickerData.fortrade;
+  if (stickerData.lookingfor === '1') {
+    StickerContainer.querySelector(`.trade-button-container .btn[data-property="lookingfor"]`).classList.add("btnGreen");
+  }
+  if (stickerData.fortrade === '1') {
+    StickerContainer.querySelector(`.trade-button-container .btn[data-property="lookingfor"]`).classList.add("btnGreen");
+  }
 }
 
 function updateProgressBar() {
@@ -799,6 +887,19 @@ const exportBtn = document.querySelector('#export-btn');
 const exportFromFileBtn = document.querySelector('#export-from-file-btn');
 const textArea = document.querySelector('.backup-area');
 
+
+
+function exportUserData() {
+  // Check for missing keys and add default values
+  Object.keys(userData).forEach(key => {
+    userData[key] = { ...defaultValues, ...userData[key] };
+  });
+
+  // Convert userData to string
+  const userDataString = JSON.stringify(userData, null, 2);
+  textArea.value = userDataString;
+}
+
 function importUserData(userDataString) {
   if (userDataString === '') {
     console.error('Textarea value is empty.');
@@ -808,12 +909,12 @@ function importUserData(userDataString) {
   let parsedData;
   try {
     parsedData = JSON.parse(userDataString);
-  } catch (error) {
-    console.error('Invalid JSON format:', error);
-    return;
-  }
 
-  if (typeof parsedData === 'object' && !Array.isArray(parsedData)) {
+    // Check for missing keys and add default values
+    Object.keys(parsedData).forEach(key => {
+      parsedData[key] = { ...defaultValues, ...parsedData[key] };
+    });
+
     userData = parsedData;
     console.log('Successfully imported userData:', userData);
     clearFilters();
@@ -821,10 +922,18 @@ function importUserData(userDataString) {
     containers.forEach(container => {  
       RestoreSelected(userData, container);
       RestoreStickerSpares(userData, container);
+      RestoreTradeStates(userData, container);
       ToggleSpareClass(userData, container);
       countSelectedStickers();
       countValveStickers();
     });
+  } catch (error) {
+    console.error('Invalid JSON format:', error);
+    return;
+  }
+
+  if (typeof userData === 'object' && !Array.isArray(userData)) {
+    console.log('Successfully imported userData:', userData);
   } else {
     console.error('Invalid userData format. Expected an object.');
   }
@@ -852,10 +961,7 @@ importFromFileBtn.addEventListener('click', () => {
   fileInput.click();
 });
 
-function exportUserData() {
-  const userDataString = JSON.stringify(userData, null, 2);
-  textArea.value = userDataString;
-}
+
 
 exportBtn.addEventListener('click', exportUserData);
 
@@ -1014,36 +1120,18 @@ function copyToCollectionScreenshot() {
   var collectionScreenshot = document.getElementById("collection-screenshot");
 
   if (middleSide && collectionScreenshot) {
-    // Clear the existing contents of collectionScreenshot
     collectionScreenshot.innerHTML = "";
-
-    // Clone the contents inside middleSide
     var clonedContents = middleSide.innerHTML;
-
-    // Set the width of collectionScreenshot to 6000px
     collectionScreenshot.style.width = "6000px";
-
-    // Apply the CSS styles of middleSide to collectionScreenshot
     collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
-
-    // Replace .sticker-card-container classes with .sticker-card-container-screenshot
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
-
-    // Set the modified contents as innerHTML of collectionScreenshot
     collectionScreenshot.innerHTML = clonedContents;
-
-    // Get the .sticker-card-container-screenshot elements
     var screenshotContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
-
-    // Replace .spare-text elements with the specified <span> element
     screenshotContainers.forEach(function(container) {
       var globalID = container.getAttribute("data-global");
-
-      // Replace .spare-text with <span> element containing the userData[GlobalID].spare value
       var spanElement = document.createElement("span");
       spanElement.className = "spare-text-screenshot";
       spanElement.textContent = userData[globalID].spare;
-
       var spareTextElement = container.querySelector(".spare-text");
       if (spareTextElement) {
         spareTextElement.parentNode.replaceChild(spanElement, spareTextElement);
@@ -1054,7 +1142,24 @@ function copyToCollectionScreenshot() {
   }
 }
 
-// Add click event listener to #dl-png element
+function captureScreenshot() {
+  var collectionScreenshot = document.getElementById("collection-screenshot");
+
+  if (collectionScreenshot) {
+    window.devicePixelRatio = 2;
+    html2canvas(collectionScreenshot, { scale: 2 });
+    html2canvas(collectionScreenshot).then(function(canvas) {
+      var dataURL = canvas.toDataURL("image/png");
+      var link = document.createElement("a");
+      link.href = dataURL;
+      link.download = "collection-screenshot.png";
+      link.click();
+    });
+  } else {
+    console.log("collection-screenshot element is not found.");
+  }
+}
+
 var dlPngButton = document.getElementById("dl-png");
 if (dlPngButton) {
   dlPngButton.addEventListener("click", function() {
@@ -1062,30 +1167,6 @@ if (dlPngButton) {
     captureScreenshot();
     document.getElementById("collection-screenshot").innerHTML = "";
   });
-}
-
-function captureScreenshot() {
-  var collectionScreenshot = document.getElementById("collection-screenshot");
-
-  if (collectionScreenshot) {
-    // Use html2canvas to capture the screenshot
-    window.devicePixelRatio = 2;
-    html2canvas(collectionScreenshot, { scale: 2 });
-    html2canvas(collectionScreenshot).then(function(canvas) {
-      // Convert the canvas to a data URL
-      var dataURL = canvas.toDataURL("image/png");
-
-      // Create a temporary link element to trigger the download
-      var link = document.createElement("a");
-      link.href = dataURL;
-      link.download = "collection-screenshot.png";
-
-      // Simulate a click on the link to start the download
-      link.click();
-    });
-  } else {
-    console.log("collection-screenshot element is not found.");
-  }
 }
 
 window.onload = init;
