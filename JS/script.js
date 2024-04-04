@@ -1009,19 +1009,81 @@ function calculateBrightness(color) {
   return brightness;
 }
 
-// document.getElementById("dl-png").onclick = function () {
-//   const screenshotTarget = document.getElementById('middle-side');
-//   window.devicePixelRatio = 2;
-//   html2canvas(screenshotTarget, { scale: 2 });
-//   html2canvas(screenshotTarget).then((canvas) => {
-//       window.scrollTo(-window.scrollX,-window.scrollY);
-//       const base64image = canvas.toDataURL("image/png");
-//       var anchor = document.createElement('a');
-//       anchor.setAttribute("href", base64image);
-//       anchor.setAttribute("download", "my-image.png");
-//       anchor.click();
-//       anchor.remove();
-//   });
-// };
+function copyToCollectionScreenshot() {
+  var middleSide = document.getElementById("middle-side");
+  var collectionScreenshot = document.getElementById("collection-screenshot");
+
+  if (middleSide && collectionScreenshot) {
+    // Clear the existing contents of collectionScreenshot
+    collectionScreenshot.innerHTML = "";
+
+    // Clone the contents inside middleSide
+    var clonedContents = middleSide.innerHTML;
+
+    // Set the width of collectionScreenshot to 6000px
+    collectionScreenshot.style.width = "6000px";
+
+    // Apply the CSS styles of middleSide to collectionScreenshot
+    collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
+
+    // Replace .sticker-card-container classes with .sticker-card-container-screenshot
+    clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
+
+    // Set the modified contents as innerHTML of collectionScreenshot
+    collectionScreenshot.innerHTML = clonedContents;
+
+    // Get the .sticker-card-container-screenshot elements
+    var screenshotContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
+
+    // Replace .spare-text elements with the specified <span> element
+    screenshotContainers.forEach(function(container) {
+      var globalID = container.getAttribute("data-global");
+
+      // Replace .spare-text with <span> element containing the userData[GlobalID].spare value
+      var spanElement = document.createElement("span");
+      spanElement.className = "spare-text-screenshot";
+      spanElement.textContent = userData[globalID].spare;
+
+      var spareTextElement = container.querySelector(".spare-text");
+      if (spareTextElement) {
+        spareTextElement.parentNode.replaceChild(spanElement, spareTextElement);
+      }
+    });
+  } else {
+    console.log("Either middle-side or collection-screenshot element is not found.");
+  }
+}
+
+// Add click event listener to #dl-png element
+var dlPngButton = document.getElementById("dl-png");
+if (dlPngButton) {
+  dlPngButton.addEventListener("click", function() {
+    copyToCollectionScreenshot();
+    captureScreenshot();
+    document.getElementById("collection-screenshot").innerHTML = "";
+  });
+}
+
+function captureScreenshot() {
+  var collectionScreenshot = document.getElementById("collection-screenshot");
+
+  if (collectionScreenshot) {
+    // Use html2canvas to capture the screenshot
+    html2canvas(collectionScreenshot).then(function(canvas) {
+      // Convert the canvas to a data URL
+      var dataURL = canvas.toDataURL("image/png");
+
+      // Create a temporary link element to trigger the download
+      var link = document.createElement("a");
+      link.href = dataURL;
+      link.download = "collection-screenshot.png";
+
+      // Simulate a click on the link to start the download
+      link.click();
+    });
+  } else {
+    console.log("collection-screenshot element is not found.");
+  }
+}
 
 window.onload = init;
