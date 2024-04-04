@@ -16,7 +16,6 @@ const defaultValues = {
   fortrade: 0,
 };
 
-// Sets up the website
 function init() {
   console.log('Hello world!');
   GenerateFilterSetButtons();   
@@ -31,8 +30,6 @@ function init() {
   UpdateAlbumStartEndTime();
 }
 
-
-// Runs when loading the entire site for the first time
 window.addEventListener('DOMContentLoaded', () => {
   const loadingOverlay = document.getElementById('loading-overlay');
 
@@ -140,7 +137,7 @@ function appendTradeButtons(stickerElement) {
   `;
   stickerElement.appendChild(TradeButtonContainer);
 
-  const buttons = TradeButtonContainer.querySelectorAll('.lfft-btn'); // Target buttons within TradeButtonContainer
+  const buttons = TradeButtonContainer.querySelectorAll('.lfft-btn');
 
   buttons.forEach((button) => {
     button.addEventListener('mousedown', () => {
@@ -172,14 +169,10 @@ function appendTradeButtons(stickerElement) {
 
 function updateLFOrFTValue(globalID, property) {
 
-  // Get the LF or FT button element based on the property value
   var button = document.querySelector(`[data-global="${globalID}"] .trade-button-container .lfft-btn[data-property="${property}"]`);
 
   if (button) {
-    // Update the userData property value
     userData[globalID][property] = (userData[globalID][property] + 1) % 2;
-
-    // Add or remove the .btnGreen class based on the updated value
     if (userData[globalID][property] === 1) {
       button.classList.add("btnGreen");
     } else {
@@ -188,7 +181,6 @@ function updateLFOrFTValue(globalID, property) {
   }
 }
 
-// Add event listeners to LF and FT buttons
 document.querySelectorAll(".trade-button-container .btn").forEach(function(button) {
   button.addEventListener("click", function() {
     var globalID = button.closest(".sticker-card-container").getAttribute("data-global");
@@ -197,8 +189,6 @@ document.querySelectorAll(".trade-button-container .btn").forEach(function(butto
   });
 });
 
-
-// Effects for ALL .btn buttons in the website
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
   button.addEventListener('mousedown', () => {
@@ -890,12 +880,9 @@ const textArea = document.querySelector('.backup-area');
 
 
 function exportUserData() {
-  // Check for missing keys and add default values
   Object.keys(userData).forEach(key => {
     userData[key] = { ...defaultValues, ...userData[key] };
   });
-
-  // Convert userData to string
   const userDataString = JSON.stringify(userData, null, 2);
   textArea.value = userDataString;
 }
@@ -909,8 +896,6 @@ function importUserData(userDataString) {
   let parsedData;
   try {
     parsedData = JSON.parse(userDataString);
-
-    // Check for missing keys and add default values
     Object.keys(parsedData).forEach(key => {
       parsedData[key] = { ...defaultValues, ...parsedData[key] };
     });
@@ -989,8 +974,6 @@ function countSelectedStickers() {
 
   const setDuplicates = new Map();
   const setSpans = Array.from(document.querySelectorAll('[data-setid]'));
-
-  // Reset each data-setid value to zero
   setSpans.forEach(setSpan => {
     setSpan.textContent = "0";
   });
