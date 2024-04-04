@@ -1069,6 +1069,8 @@ function captureScreenshot() {
 
   if (collectionScreenshot) {
     // Use html2canvas to capture the screenshot
+    window.devicePixelRatio = 2;
+    html2canvas(collectionScreenshot, { scale: 2 });
     html2canvas(collectionScreenshot).then(function(canvas) {
       // Convert the canvas to a data URL
       var dataURL = canvas.toDataURL("image/png");
