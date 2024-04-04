@@ -12,8 +12,8 @@ const defaultValues = {
   spare: "0",
   show: "1",
   havespare: "0",
-  lookingfor: "0",
-  fortrade: "0",
+  lookingfor: 0,
+  fortrade: 0,
 };
 
 // Sets up the website
@@ -134,8 +134,9 @@ function appendSpareSpinner(stickerElement) {
 function appendTradeButtons(stickerElement) {
   const TradeButtonContainer = document.createElement('div');
   TradeButtonContainer.classList.add('trade-button-container');
+  TradeButtonContainer.classList.add('BtnGroup2');
   TradeButtonContainer.innerHTML = `
-    <button class="btn lfft-btn" type="button" data-property="lookingfor">LF</button><button class="btn lfft-btn" type="button" data-property="fortrade">FT</button>
+    <button class="lfft-btn lf-btn" type="button" data-property="lookingfor">LF</button><button class="lfft-btn ft-btn" type="button" data-property="fortrade">FT</button>
   `;
   stickerElement.appendChild(TradeButtonContainer);
 
@@ -172,13 +173,11 @@ function appendTradeButtons(stickerElement) {
 function updateLFOrFTValue(globalID, property) {
 
   // Get the LF or FT button element based on the property value
-  var button = document.querySelector(`[data-global="${globalID}"] .trade-button-container .btn[data-property="${property}"]`);
+  var button = document.querySelector(`[data-global="${globalID}"] .trade-button-container .lfft-btn[data-property="${property}"]`);
 
   if (button) {
     // Update the userData property value
     userData[globalID][property] = (userData[globalID][property] + 1) % 2;
-    console.log(property);
-    console.log(userData[globalID][property]);
 
     // Add or remove the .btnGreen class based on the updated value
     if (userData[globalID][property] === 1) {
@@ -800,13 +799,13 @@ function RestoreSelected(userData, StickerContainer) {
 function RestoreTradeStates(userData, StickerContainer) {
   const dataGlobalValue = StickerContainer.getAttribute('data-global');
   const stickerData = userData[dataGlobalValue];
-  //const LFValue = stickerData.lookingfor;
-  //const FTValue = stickerData.fortrade;
+  StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.remove("btnGreen");
+  StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="fortrade"]`).classList.remove("btnGreen");
   if (stickerData.lookingfor === '1') {
-    StickerContainer.querySelector(`.trade-button-container .btn[data-property="lookingfor"]`).classList.add("btnGreen");
+    StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.add("btnGreen");
   }
   if (stickerData.fortrade === '1') {
-    StickerContainer.querySelector(`.trade-button-container .btn[data-property="lookingfor"]`).classList.add("btnGreen");
+    StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="fortrade"]`).classList.add("btnGreen");
   }
 }
 
