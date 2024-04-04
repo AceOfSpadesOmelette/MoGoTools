@@ -6,6 +6,7 @@ let userData = {};
 const FilterList = {};
 let AndZeroOrOne = 0;
 let DescendZeroAscendOne = 0;
+let IgnorePrestige = 0;
 const defaultValues = {
   id: "0",
   selected: "0",
@@ -16,6 +17,7 @@ const defaultValues = {
   fortrade: 0,
 };
 
+// Sets up the website
 function init() {
   console.log('Hello world!');
   GenerateFilterSetButtons();   
@@ -30,6 +32,8 @@ function init() {
   UpdateAlbumStartEndTime();
 }
 
+
+// Runs when loading the entire site for the first time
 window.addEventListener('DOMContentLoaded', () => {
   const loadingOverlay = document.getElementById('loading-overlay');
 
@@ -137,7 +141,7 @@ function appendTradeButtons(stickerElement) {
   `;
   stickerElement.appendChild(TradeButtonContainer);
 
-  const buttons = TradeButtonContainer.querySelectorAll('.lfft-btn');
+  const buttons = TradeButtonContainer.querySelectorAll('.lfft-btn'); // Target buttons within TradeButtonContainer
 
   buttons.forEach((button) => {
     button.addEventListener('mousedown', () => {
@@ -169,18 +173,32 @@ function appendTradeButtons(stickerElement) {
 
 function updateLFOrFTValue(globalID, property) {
 
+  // Get the LF or FT button element based on the property value
   var button = document.querySelector(`[data-global="${globalID}"] .trade-button-container .lfft-btn[data-property="${property}"]`);
 
   if (button) {
+    // Update the userData property value
     userData[globalID][property] = (userData[globalID][property] + 1) % 2;
-    if (userData[globalID][property] === 1) {
-      button.classList.add("btnGreen");
+
+    // Add or remove the .btnGreen class based on the updated value
+    if (userData[globalID][property] === 1) {      
+      if(property === "lookingfor"){button.classList.add("btnRed");}
+      if(property === "fortrade"){button.classList.add("btnGreen");}
     } else {
-      button.classList.remove("btnGreen");
+      if(property === "lookingfor"){button.classList.remove("btnRed");}
+      if(property === "fortrade"){button.classList.remove("btnGreen");}
     }
   }
 }
 
+// var IgnorePrestigeBtn = document.getElementById('IgnorePrestigeBtn');
+// IgnorePrestigeBtn.addEventListener("click", function() {
+//   IgnorePrestige = (IgnorePrestige + 1) % 2;
+//   if(IgnorePrestige === 1){IgnorePrestigeBtn.classList.add("btnGreen");}
+//     else{IgnorePrestigeBtn.classList.remove("btnGreen");}
+// });
+
+// Add event listeners to LF and FT buttons
 document.querySelectorAll(".trade-button-container .btn").forEach(function(button) {
   button.addEventListener("click", function() {
     var globalID = button.closest(".sticker-card-container").getAttribute("data-global");
@@ -189,6 +207,8 @@ document.querySelectorAll(".trade-button-container .btn").forEach(function(butto
   });
 });
 
+
+// Effects for ALL .btn buttons in the website
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
   button.addEventListener('mousedown', () => {
@@ -789,12 +809,12 @@ function RestoreSelected(userData, StickerContainer) {
 function RestoreTradeStates(userData, StickerContainer) {
   const dataGlobalValue = StickerContainer.getAttribute('data-global');
   const stickerData = userData[dataGlobalValue];
-  StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.remove("btnGreen");
+  StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.remove("btnRed");
   StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="fortrade"]`).classList.remove("btnGreen");
-  if (stickerData.lookingfor === '1') {
-    StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.add("btnGreen");
+  if (stickerData.lookingfor === 1) {
+    StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.add("btnRed");
   }
-  if (stickerData.fortrade === '1') {
+  if (stickerData.fortrade === 1) {
     StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="fortrade"]`).classList.add("btnGreen");
   }
 }
@@ -880,11 +900,27 @@ const textArea = document.querySelector('.backup-area');
 
 
 function exportUserData() {
-  Object.keys(userData).forEach(key => {
+  // Check for missing keys and add default values
+  Object.keys(userData).forEach((key) => {
     userData[key] = { ...defaultValues, ...userData[key] };
   });
+
+  // Get player-ign and player-link values
+  const playerIGN = document.getElementById("player-ign").value;
+  const playerLink = document.getElementById("player-link").value;
+
+  // Create additional lines
+  const additionalLines = [
+    `player-ign: ${playerIGN}`,
+    `player-link: ${playerLink}`,
+  ];
+
+  // Convert userData to string
   const userDataString = JSON.stringify(userData, null, 2);
-  textArea.value = userDataString;
+
+  // Add additional lines before userDataString
+  const updatedUserDataString = additionalLines.join("\n") + "\n" + userDataString;
+  textArea.value = updatedUserDataString;
 }
 
 function importUserData(userDataString) {
@@ -895,16 +931,38 @@ function importUserData(userDataString) {
 
   let parsedData;
   try {
-    parsedData = JSON.parse(userDataString);
-    Object.keys(parsedData).forEach(key => {
+    // Extract player-ign and player-link values
+    let playerIGN = '';
+    let playerLink = '';
+    const lines = userDataString.split('\n');
+    lines.forEach(line => {
+      if (line.startsWith('player-ign: ')) {
+        playerIGN = line.substring('player-ign: '.length);
+      } else if (line.startsWith('player-link: ')) {
+        playerLink = line.substring('player-link: '.length);
+      }
+    });
+
+    // Remove player-ign and player-link lines from userDataString
+    const filteredLines = lines.filter(line => !line.startsWith('player-ign: ') && !line.startsWith('player-link: '));
+    const filteredUserDataString = filteredLines.join('\n');
+
+    parsedData = JSON.parse(filteredUserDataString);
+
+    // Check for missing keys and add default values
+    Object.keys(parsedData).forEach((key) => {
       parsedData[key] = { ...defaultValues, ...parsedData[key] };
     });
+
+    // Store player-ign and player-link values
+    document.getElementById('player-ign').value = playerIGN;
+    document.getElementById('player-link').value = playerLink;
 
     userData = parsedData;
     console.log('Successfully imported userData:', userData);
     clearFilters();
     const containers = document.querySelectorAll('.sticker-card-container');
-    containers.forEach(container => {  
+    containers.forEach((container) => {
       RestoreSelected(userData, container);
       RestoreStickerSpares(userData, container);
       RestoreTradeStates(userData, container);
@@ -974,6 +1032,8 @@ function countSelectedStickers() {
 
   const setDuplicates = new Map();
   const setSpans = Array.from(document.querySelectorAll('[data-setid]'));
+
+  // Reset each data-setid value to zero
   setSpans.forEach(setSpan => {
     setSpan.textContent = "0";
   });
@@ -1106,6 +1166,7 @@ function copyToCollectionScreenshot() {
     collectionScreenshot.innerHTML = "";
     var clonedContents = middleSide.innerHTML;
     collectionScreenshot.style.width = "6000px";
+    collectionScreenshot.style.backgroundColor = "rgba(248,244,228)";
     collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
     collectionScreenshot.innerHTML = clonedContents;
