@@ -176,10 +176,12 @@ function updateLFOrFTValue(globalID, property) {
 
   if (button) {
     // Update the userData property value
-    userData[globalID][property] = ((userData[globalID][property] + 1) % 2).toString();
+    userData[globalID][property] = (userData[globalID][property] + 1) % 2;
+    console.log(property);
+    console.log(userData[globalID][property]);
 
     // Add or remove the .btnGreen class based on the updated value
-    if (userData[globalID][property] === '1') {
+    if (userData[globalID][property] === 1) {
       button.classList.add("btnGreen");
     } else {
       button.classList.remove("btnGreen");
@@ -192,7 +194,6 @@ document.querySelectorAll(".trade-button-container .btn").forEach(function(butto
   button.addEventListener("click", function() {
     var globalID = button.closest(".sticker-card-container").getAttribute("data-global");
     var property = button.getAttribute("data-property");
-
     updateLFOrFTValue(globalID, property);
   });
 });
