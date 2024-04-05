@@ -1261,10 +1261,10 @@ function handleViewportBtnClick(isClicked) {
   const ViewportBtnText = document.getElementById('ViewportBtnText');
 
   if (WebZeroMobileOne === 0) {
-    document.getElementById('stylesheet').href = '/CSS/style.css';
+    document.getElementById('stylesheet').href = 'CSS/style.css';
     ViewportBtnText.textContent = 'Mobile Layout';
   } else if (WebZeroMobileOne === 1) {
-    document.getElementById('stylesheet').href = '/CSS/mobile.css';
+    document.getElementById('stylesheet').href = 'CSS/mobile.css';
     ViewportBtnText.textContent = 'Web Layout';
   }
 }
