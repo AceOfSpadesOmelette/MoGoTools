@@ -217,11 +217,11 @@ body {
 }
 
 .sticker-card-container{
-	margin: 8px;
-  	flex-basis: calc(30% - 10px);
+	margin: 8px;	
+	width: 25%;
+  	/* flex-basis: calc(30% - 10px); */
 	/* margin: 5px; */
 	/* flex-basis: calc(25% - 10px);
-	width: 90%;
 	height: 100%; */
 	display: flex;
 	align-items: center;
@@ -813,4 +813,50 @@ input[class="player-info-field"]{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+#mobileMenu{
+	display: flex;
+	width: 1200px;
+	padding: 10px;
+	position: fixed;
+	bottom: 0;
+	z-index: 9999;
+	justify-content: space-evenly;
+	background-color: transparent;
+}
+
+#mobileMenu .btn {
+	width: 50%;
+	margin: 0 2px;
+	outline: none;
+	border: 2px solid var(--darkerbrown);
+	background: var(--darkbrown);
+	color: var(--darkerbrown);
+	border-top-left-radius: 6px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 2px;
+	box-shadow: 1px 1px 3px var(--darkerbrown);
+	transition-duration: 50ms;
+	font-family: "Quicksand-Bold";
+	font-size: 12px;
+	text-align: center;
+}
+
+#mobileMenu .btn:hover {
+	cursor: pointer;
+}
+
+#mobileMenu .btn:active {
+	transform: scale(0.95);
+	transition-duration: 50ms;
+}
+
+.mobileMenu_selected {
+	background: linear-gradient(#D1EC96, #B8F33B) !important;
+}
+
+#collection-screenshot{
+	background-color: var(--beige);
 }
