@@ -32,13 +32,10 @@ function init() {
   UpdateAlbumStartEndTime();
 }
 
-
 // Runs when loading the entire site for the first time
 window.addEventListener('DOMContentLoaded', () => {
   const loadingOverlay = document.getElementById('loading-overlay');
-
   loadingOverlay.style.display = 'block';
-
   setTimeout(() => {loadingOverlay.style.display = 'none';}, 2000);
 });
 
@@ -59,7 +56,24 @@ function SetDefaultFilterStates(){
   })
 }
 
+function CreateNewUserData(dataset) {
+  dataset
+    .filter(item => item['AlbumNo'] === CurrentAlbumNumber)
+    .forEach(item => {
+      const userDataItem = { ...defaultValues, id: item['GlobalID'] };
+      userData[item['GlobalID']] = userDataItem;
+    });
+}
+
+function NotSelectedByDefault() {
+  const containers = document.querySelectorAll('.sticker-card-container');
+  containers.forEach(container => {
+      container.classList.add('not-selected');
+    });
+}
+
 function generateCurrentStickerBoard(dataset, userData, targetParentElementID) {
+
   const stickerContainerSelector = `.sticker-card-container[data-global]`;
   const board = document.getElementById(targetParentElementID);
 
@@ -67,23 +81,33 @@ function generateCurrentStickerBoard(dataset, userData, targetParentElementID) {
 
   for (const item of dataset.filter(item => item['GlobalID'] in userData)) {
     const userDataItem = userData[item['GlobalID']];
+    const globalId = userDataItem.id;
+
     const stickerCardContainer = document.querySelector(`${stickerContainerSelector}[data-global="${userDataItem.id}"]`);
 
-    if (userDataItem.show === '0' && stickerCardContainer) {
-      stickerCardContainer.remove();
-    } else if (userDataItem.show === '1' && !stickerCardContainer) {
-      const stickerElement = CreateStickerElement(item, 'sticker-card-container', 'sticker-card', true);
-      
-      fragment.appendChild(stickerElement);
+    const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
+    if(IgnorePrestige === 1 && stickerData.Prestige === '1'){
+      if(stickerCardContainer){stickerCardContainer.remove();}
+      continue;
+    }
+
+    else{
+      if ((userDataItem.show === '0' && stickerCardContainer)) {
+        stickerCardContainer.remove();
+      } else if (userDataItem.show === '1' && !stickerCardContainer) {
+        const stickerElement = CreateStickerElement(item, 'sticker-card-container', 'sticker-card', true);
+        
+        fragment.appendChild(stickerElement);
+      }
+      board.appendChild(fragment);
     }
   }
-
-  board.appendChild(fragment);
 }
+
 
 function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   const { StickerName, SetID, AlbumNo, GlobalID, AlbumName, Prestige, Golden, StickerRarity, ImageSource, Colour } = item;
-
+  
   const StickerSet = SetID - AlbumNo * 100;
   const StickerSetPath = AlbumName;
   const StickerSetNo = GlobalID - SetID * 100
@@ -107,7 +131,7 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   container.classList.add(ContainerClass);
 
   container.innerHTML = `
-    <div class="sticker-star-container">${starsHtml}</div><div class="sticker-photo-container"><img class="sticker-card" src="stickers/${StickerSetPath}/${ImageSource}">${isGold}</div><div class="${StickerNameClass}" style="background-color: ${Colour};">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</div>
+    <div class="sticker-star-container">${starsHtml}</div><div class="sticker-photo-container"><img class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${isGold}</div><div class="${StickerNameClass}" style="background-color: ${Colour};">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</div>
   `;
 
   if(isTracking){
@@ -191,12 +215,24 @@ function updateLFOrFTValue(globalID, property) {
   }
 }
 
-// var IgnorePrestigeBtn = document.getElementById('IgnorePrestigeBtn');
-// IgnorePrestigeBtn.addEventListener("click", function() {
-//   IgnorePrestige = (IgnorePrestige + 1) % 2;
-//   if(IgnorePrestige === 1){IgnorePrestigeBtn.classList.add("btnGreen");}
-//     else{IgnorePrestigeBtn.classList.remove("btnGreen");}
-// });
+var IgnorePrestigeBtn = document.getElementById('IgnorePrestigeBtn');
+IgnorePrestigeBtn.addEventListener("click", function() {
+  IgnorePrestige = (IgnorePrestige + 1) % 2;
+  if(IgnorePrestige === 1){IgnorePrestigeBtn.classList.add("btnGreen");}
+  else{IgnorePrestigeBtn.classList.remove("btnGreen");}
+  clearFilters();
+  GenerateFilterSetButtons();  
+  UpdateTotalStickerQuantity(); 
+  const containers = document.querySelectorAll('.sticker-card-container');
+  containers.forEach((container) => {
+    RestoreSelected(userData, container);
+    RestoreStickerSpares(userData, container);
+    RestoreTradeStates(userData, container);
+    ToggleSpareClass(userData, container);
+    countSelectedStickers();
+    countValveStickers();
+  });    
+});
 
 // Add event listeners to LF and FT buttons
 document.querySelectorAll(".trade-button-container .btn").forEach(function(button) {
@@ -654,12 +690,6 @@ document.addEventListener('click', event => {
   }
 });
 
-function NotSelectedByDefault() {
-  const containers = document.querySelectorAll('.sticker-card-container');
-  containers.forEach(container => {
-      container.classList.add('not-selected');
-    });
-}
 
 const btnGroupTitles = document.querySelectorAll('.btn-grp-title');
 
@@ -754,14 +784,6 @@ function UpdateCurrentAlbumStickerStates(StickerGlobalID) {
   };
 }
 
-function CreateNewUserData(dataset) {
-  dataset
-    .filter(item => item['AlbumNo'] === CurrentAlbumNumber)
-    .forEach(item => {
-      const userDataItem = { ...defaultValues, id: item['GlobalID'] };
-      userData[item['GlobalID']] = userDataItem;
-    });
-}
 
 
 function FilterBySpareRange(FilterList, GlobalID) {
@@ -827,16 +849,20 @@ function updateProgressBar() {
     var progressValue = parseInt(progressText.split(" / ")[0]);
     var totalValue = parseInt(progressText.split(" / ")[1]);
 
-    var progressPercentage = (progressValue / totalValue) * 100;
+    if(progressValue === '0'){progressBar.style.width = 0;}
+    else{
+      var progressPercentage = (progressValue / totalValue) * 100;
 
-    var progressBar = container.querySelector(".progress-bar");
-    progressBar.style.width = progressPercentage + "%";
+      var progressBar = container.querySelector(".progress-bar");
+      progressBar.style.width = progressPercentage + "%";
+    }
   });
 }
 
 function GenerateFilterSetButtons() {
   const filterBtnSubgroup = document.querySelector('#stickerset-filter .btn-subgroup');
   const setProgressTracker = document.querySelector('#set-progress-tracker');
+  filterBtnSubgroup.innerHTML = setProgressTracker.innerHTML = '';
 
   SET_DATA.forEach((set) => {
     if (set.AlbumNo === CurrentAlbumNumber) {
@@ -846,20 +872,25 @@ function GenerateFilterSetButtons() {
       const SetName = set.SetName;
       const SetImgSrc =  `Icon_${SetID}.png`;
       const SetTotalStickers = STICKER_DATA.filter(sticker => sticker.SetID === SetID).length;
+      const SetIsPrestige = set.Prestige;
       
-      let ButtonElement = `
-        <button data-filtervalue="1>SetID>${SetID}" class="filter-btn btn" type="button">Set ${SetNo}</button>
-      `;
-      filterBtnSubgroup.innerHTML += ButtonElement;
+      if(IgnorePrestige === 1 && SetIsPrestige === '1'){return;}
+      else{
+        
+        let ButtonElement = `
+          <button data-filtervalue="1>SetID>${SetID}" class="filter-btn btn" type="button">Set ${SetNo}</button>
+        `;
+        filterBtnSubgroup.innerHTML += ButtonElement;
 
-      let SetNameClass = 'set-name';
-      if (SetName.length > 15) {SetNameClass = 'set-name-long-min15';}
-      if (isBrighterThan(SetColour, '#CCCCCC')) {SetNameClass += '-dark';}
-      const SetCardContainerElement = `
-        <div class="set-card-container"><img class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src='logo/Icon_Placeholder.png';"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
-      `;
+        let SetNameClass = 'set-name';
+        if (SetName.length > 15) {SetNameClass = 'set-name-long-min15';}
+        if (isBrighterThan(SetColour, '#CCCCCC')) {SetNameClass += '-dark';}
+        const SetCardContainerElement = `
+          <div class="set-card-container"><img class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src='logo/Icon_Placeholder.png';"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
+        `;
 
-      setProgressTracker.innerHTML += SetCardContainerElement;
+        setProgressTracker.innerHTML += SetCardContainerElement;
+      }
     }
   });
   const buttons = filterBtnSubgroup.querySelectorAll('.filter-btn');
@@ -1022,6 +1053,7 @@ function UpdateTotalStickerQuantity() {
   const totalStickersQuantity = document.querySelector('#total-stickers-quantity');
   let count = 0;
   STICKER_DATA.forEach((sticker) => {
+    if (IgnorePrestige === 1 && sticker.Prestige === '1'){return;}
     if (sticker.AlbumNo === CurrentAlbumNumber) {count++;}
   })
   totalStickersQuantity.textContent = count.toString();
@@ -1039,15 +1071,24 @@ function countSelectedStickers() {
   });
 
   for (const key in userData) {
-    if (userData.hasOwnProperty(key) && userData[key].selected === "1") {
-      const setId = Math.floor(userData[key].id / 100);
 
-      if (setDuplicates.has(setId)) {
-        setDuplicates.set(setId, setDuplicates.get(setId) + 1);
-      } else {
-        setDuplicates.set(setId, 1);
+    const globalId = userData[key].id;
+    const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
+    if(IgnorePrestige === 1 && stickerData.Prestige === '1'){continue;}
+
+    else{
+      if (userData.hasOwnProperty(key) && userData[key].selected === "1") {
+        const setId = Math.floor(userData[key].id / 100);
+  
+        if (setDuplicates.has(setId)) {
+          setDuplicates.set(setId, setDuplicates.get(setId) + 1);
+        } else {
+          setDuplicates.set(setId, 1);
+        }
       }
     }
+    
+
   }
 
   let count = 0;
@@ -1069,6 +1110,11 @@ function countValveStickers() {
   let valveQuantity = 0;
 
   for (const key in userData) {
+
+    const globalId = userData[key].id;
+    const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
+    if(IgnorePrestige === 1 && stickerData.Prestige === '1'){continue;}
+
     if (userData.hasOwnProperty(key) && parseInt(userData[key].spare) > 0) {
       const globalId = userData[key].id;
       const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
