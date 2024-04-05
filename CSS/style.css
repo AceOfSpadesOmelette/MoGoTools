@@ -174,11 +174,13 @@ body {
 
 /* LEFT SUBCATEGORY */
 
-#sort-menu{
+#sort-menu, #viewport-menu{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 
 .sort-btn{
@@ -214,6 +216,7 @@ body {
 	align-items: center;
 	flex-wrap: wrap;
 	padding: 2%;
+	background-color: rgb(219 197 133 / 40%);
 }
 
 .sticker-card-container{
@@ -715,7 +718,7 @@ input.spare-text{
   	margin-left: 10px;
 }
 
-#SortOrderBtn, #IgnorePrestigeBtn{
+#SortOrderBtn, #IgnorePrestigeBtn, #ViewportBtn{
 	width: 98%;
 }
 
@@ -759,38 +762,14 @@ input.spare-text{
 }
 
 #filter-sort-menu-header, #progress-menu-header{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	border-radius: 10px 10px 0 0;
-	background-color: var(--darkbrown);
-	border-color: var(--darkerbrown);
-	border-width: 3px 3px 0 3px;
-	border-style: solid;
-	height: 30px;
+	display: none;
 }
 
 #filter-sort-menu-footer, #progress-menu-footer{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	background-color: red;
-	color: white;
-	border-radius: 0 0 10px 10px;
-	border-color: var(--darkerbrown);
-	border-width: 0 3px 3px 3px;
-	border-style: solid;
-	height: 30px;
+	display: none;
 }
 
 #filter-sort-menu-body, #progress-menu-body{
-	border-color: var(--darkerbrown);
-	border-width: 0 3px 3px 3px;
-	border-style: solid;
 	padding: 3px;
 }
 
@@ -816,45 +795,7 @@ input[class="player-info-field"]{
 }
 
 #mobileMenu{
-	display: flex;
-	width: 1200px;
-	padding: 10px;
-	position: fixed;
-	bottom: 0;
-	z-index: 9999;
-	justify-content: space-evenly;
-	background-color: transparent;
-}
-
-#mobileMenu .btn {
-	width: 50%;
-	margin: 0 2px;
-	outline: none;
-	border: 2px solid var(--darkerbrown);
-	background: var(--darkbrown);
-	color: var(--darkerbrown);
-	border-top-left-radius: 6px;
-	border-top-right-radius: 2px;
-	border-bottom-right-radius: 6px;
-	border-bottom-left-radius: 2px;
-	box-shadow: 1px 1px 3px var(--darkerbrown);
-	transition-duration: 50ms;
-	font-family: "Quicksand-Bold";
-	font-size: 12px;
-	text-align: center;
-}
-
-#mobileMenu .btn:hover {
-	cursor: pointer;
-}
-
-#mobileMenu .btn:active {
-	transform: scale(0.95);
-	transition-duration: 50ms;
-}
-
-.mobileMenu_selected {
-	background: linear-gradient(#D1EC96, #B8F33B) !important;
+	display: none;
 }
 
 #collection-screenshot{
