@@ -7,6 +7,7 @@ const FilterList = {};
 let AndZeroOrOne = 0;
 let DescendZeroAscendOne = 0;
 let IgnorePrestige = 0;
+let WebZeroMobileOne = 0;
 const defaultValues = {
   id: "0",
   selected: "0",
@@ -30,6 +31,7 @@ function init() {
   countSelectedStickers();
   countValveStickers();
   UpdateAlbumStartEndTime();
+  compareViewport();
 }
 
 // Runs when loading the entire site for the first time
@@ -306,24 +308,9 @@ function PerformSort(event) {
   if (clickedButton.dataset.sortOnsite === 'selected') {
     PerformSortOnsite(clickedButton);
   }
-
-  if (document.getElementById('SortOrderBtn').getAttribute('data-sort-direction') === 'descending') {
-    handleSortOrderBtnClick();
-  }
-
   const sortButtons = Array.from(document.querySelectorAll('.sort-btn'));
   sortButtons.forEach(button => button.classList.remove('btnBlue'));
   clickedButton.classList.add('btnBlue');
-}
-
-function findStickerData(globalId) {
-  return STICKER_DATA.find(item => item['GlobalID'] === globalId);
-}
-
-function compareStickerNames(aData, bData) {
-  const aName = aData['GlobalID'];
-  const bName = bData['GlobalID'];
-  return aName.localeCompare(bName);
 }
 
 function PerformSortOnsite(clickedSortBtn) {
@@ -345,6 +332,19 @@ function PerformSortOnsite(clickedSortBtn) {
   }
 }
 
+const sortButtons = Array.from(document.querySelectorAll('.sort-btn'));
+sortButtons.forEach(button => button.addEventListener('click', PerformSort));
+
+function findStickerData(globalId) {
+  return STICKER_DATA.find(item => item['GlobalID'] === globalId);
+}
+
+function compareStickerNames(aData, bData) {
+  const aName = aData['GlobalID'];
+  const bName = bData['GlobalID'];
+  return aName.localeCompare(bName);
+}
+
 function handleSortOrderBtnClick() {
   DescendZeroAscendOne = (DescendZeroAscendOne + 1) % 2;
   const containerSelector = '#sticker-board #current-sticker-board';
@@ -356,9 +356,6 @@ function handleSortOrderBtnClick() {
 
   Array.from(container.children).reverse().forEach(child => {container.appendChild(child);});
 }
-
-const sortButtons = Array.from(document.querySelectorAll('.sort-btn'));
-sortButtons.forEach(button => button.addEventListener('click', PerformSort));
 
 document.getElementById('SortOrderBtn').addEventListener('click', handleSortOrderBtnClick);
 
@@ -1258,5 +1255,71 @@ if (dlPngButton) {
     document.getElementById("collection-screenshot").innerHTML = "";
   });
 }
+
+function handleViewportBtnClick(isClicked) {
+  if(isClicked === true){WebZeroMobileOne = (WebZeroMobileOne + 1) % 2;}
+  const ViewportBtnText = document.getElementById('ViewportBtnText');
+
+  if (WebZeroMobileOne === 0) {
+    document.getElementById('stylesheet').href = 'CSS/style.css';
+    ViewportBtnText.textContent = 'Mobile Layout';
+  } else if (WebZeroMobileOne === 1) {
+    document.getElementById('stylesheet').href = 'CSS/mobile.css';
+    ViewportBtnText.textContent = 'Web Layout';
+  }
+}
+document.getElementById('ViewportBtn').addEventListener('click', function() {
+  handleViewportBtnClick(true);
+});
+
+function compareViewport() {
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+
+  if (viewportWidth > viewportHeight) {
+    WebZeroMobileOne = 0;
+    // Apply styles from style.css
+    document.getElementById('stylesheet').href = 'CSS/style.css';
+  } else {
+    WebZeroMobileOne = 1;
+    // Apply styles from mobile.css
+    document.getElementById('stylesheet').href = 'CSS/mobile.css';
+  }
+  handleViewportBtnClick(false);
+}
+
+
+var FilterSortModal = document.getElementById("filter-sort-modal");
+var FilterSortMenuMobileOpenBtn = document.getElementById("mobileMenuFilters");
+var FilterSortMenuMobileCloseBtn = document.getElementById("filter-sort-menu-footer");
+var ProgressMenuModal = document.getElementById("progress-menu-modal");
+var ProgressMenuMobileOpenBtn = document.getElementById("mobileMenuOptions");
+var ProgressMenuMobileCloseBtn = document.getElementById("progress-menu-footer");
+
+FilterSortMenuMobileOpenBtn.onclick = function() {
+  FilterSortModal.style.display = "block";
+};
+
+FilterSortMenuMobileCloseBtn.onclick = function() {
+  FilterSortModal.style.display = "none";
+};
+
+ProgressMenuMobileOpenBtn.onclick = function() {
+  ProgressMenuModal.style.display = "block";
+};
+
+ProgressMenuMobileCloseBtn.onclick = function() {
+  ProgressMenuModal.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target === FilterSortModal) {
+    FilterSortModal.style.display = "none";
+  }
+
+  if (event.target === ProgressMenuModal) {
+    ProgressMenuModal.style.display = "none";
+  }
+};
 
 window.onload = init;
