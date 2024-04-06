@@ -1261,12 +1261,12 @@ function handleViewportBtnClick(isClicked) {
   const ViewportBtnText = document.getElementById('ViewportBtnText');
 
   if (WebZeroMobileOne === 0) {
-    document.getElementById("DefaultCSS").disabled = false;
-    document.getElementById("MobileCSS").disabled = true;
+    document.getElementById("DefaultCSS").removeAttribute('disabled');
+    document.getElementById("MobileCSS").setAttribute('disabled', true);
     ViewportBtnText.textContent = 'Mobile Layout';
   } else if (WebZeroMobileOne === 1) {
-    document.getElementById("DefaultCSS").disabled = true;
-    document.getElementById("MobileCSS").disabled = false;
+    document.getElementById("DefaultCSS").setAttribute('disabled', true);
+    document.getElementById("MobileCSS").removeAttribute('disabled');
   }
 }
 document.getElementById('ViewportBtn').addEventListener('click', function() {
