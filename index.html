@@ -69,6 +69,26 @@
 									</button>
 									<button id="RefreshFiltersBtn" class="btn">⟳</button>
 								</div>
+								<div id="quick-toggle-menu">
+									<div class="btn-grp-title">
+										Quick Board Toggle
+										<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
+									</div>
+									<div class="btn-subgroup BtnGroup2">
+										<button id="ToggleSelectedBtn" class="btn" type="button">
+											Toggle Selected
+										</button>
+										<button id="ResetSparesBtn" class="btn" type="button">
+											Reset Spares
+										</button>
+										<button id="ToggleLFBtn" class="btn" type="button">
+											Toggle LF
+										</button>
+										<button id="ToggleFTBtn" class="btn" type="button">
+											Toggle FT
+										</button>
+									</div>
+								</div>
 								<div id="rarity-filter">
 									<div class="btn-grp-title">
 										Rarity
@@ -174,26 +194,38 @@
 											Save as .TXT
 										</button>
 									</div>
+									<div class="btn-subgroup"><button class="btn" id="dl-png">Download as PNG</button></div>
 									<div class="btn-subgroup">
 										<textarea class="backup-area"
-											placeholder="Click the Export button to generate a text file here to be copied for backup. Click the Import to restore your backup. Do not edit the contents of the save file to avoid causing any errors."></textarea>
-										<button class="btn" id="dl-png">Download as PNG</button>
+											placeholder="Click the Export button to generate a text file here to be copied for backup. Click the Import to restore your backup. Do not edit the contents of the save file to avoid causing any errors."></textarea>	
 									</div>
 								</div>
 								<div>
-									<!-- <div class="btn-grp-title">
-										Trade Post Clipboard
-										<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
-									</div>
-									<div class="btn-subgroup">
-										<button id="generate-trade-post-btn" class="btn filter-settings-btn" type="button">
-											Generate
-										</button>
-									</div>
-									<div class="btn-subgroup">
-										<textarea class="trade-post-area"
-											placeholder="Click the Generate button to generate a trade post!"></textarea>
-									</div> -->
+								<div class="btn-grp-title">
+									Trade Post Clipboard
+									<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
+								</div>
+								<div class="btn-subgroup BtnGroup2">
+									<button id="IncludeIGNBtn" class="btn" type="button">
+										Include IGN
+									</button>
+									<button id="IncludePlayerLinkBtn" class="btn" type="button">
+										Include Link
+									</button>
+								</div>
+								<div class="btn-subgroup">
+									<button id="generate-trade-post-btn" class="btn" type="button">
+										Generate
+									</button>
+								</div>
+								<div class="btn-subgroup">
+									<textarea class="trade-post-area" placeholder="Click the Generate button to generate a trade post!"></textarea>
+								</div>
+								<div class="btn-subgroup">
+									<button id="copy-trade-post-area" class="btn" type="button">
+										Copy
+									</button>
+								</div>
 								</div>
 							</div>
 						</div>
@@ -250,6 +282,30 @@
 									</div>
 								</div>
 								<div id="set-progress-tracker"></div>
+							</div>
+						</div>
+						<div id="progress-by-rarity">
+							<div id="progress-by-rarity-table">
+								<img class="progress-by-rarity-stars" src="assets/stickers/star1.png">
+								<div class="progress-by-rarity-text"><span id="rarity1-quantity">0</span> / <span
+									id="total-rarity1-quantity">0</span></div>
+								<div class="progress-by-rarity-percentage"><span id="rarity1-percentage">0.0%</span></div>
+								<img class="progress-by-rarity-stars" src="assets/stickers/star2.png">
+								<div class="progress-by-rarity-text"><span id="rarity2-quantity">0</span> / <span
+									id="total-rarity2-quantity">0</span></div>
+								<div class="progress-by-rarity-percentage"><span id="rarity2-percentage">0.0%</span></div>
+								<img class="progress-by-rarity-stars" src="assets/stickers/star3.png">
+								<div class="progress-by-rarity-text"><span id="rarity3-quantity">0</span> / <span
+									id="total-rarity3-quantity">0</span></div>
+								<div class="progress-by-rarity-percentage"><span id="rarity3-percentage">0.0%</span></div>
+								<img class="progress-by-rarity-stars" src="assets/stickers/star4.png">
+								<div class="progress-by-rarity-text"><span id="rarity4-quantity">0</span> / <span
+									id="total-rarity4-quantity">0</span></div>
+								<div class="progress-by-rarity-percentage"><span id="rarity4-percentage">0.0%</span></div>
+								<img class="progress-by-rarity-stars" src="assets/stickers/star5.png">
+								<div class="progress-by-rarity-text"><span id="rarity5-quantity">0</span> / <span
+									id="total-rarity5-quantity">0</span></div>
+								<div class="progress-by-rarity-percentage"><span id="rarity5-percentage">0.0%</span></div>								
 							</div>
 						</div>
 					</div>
