@@ -701,6 +701,7 @@ input.spare-text{
 
 #SortOrderBtn, #IgnorePrestigeBtn, #ViewportBtn{
 	width: 98%;
+	margin-top: 3px;
 }
 
 #sort-btn-group-container{
@@ -887,6 +888,43 @@ input[class="player-info-field"]{
 }
 
 #collection-screenshot{
-	background-color: var(--beige);
 	width: 1200px;
+	background-color: var(--beige);
+}
+
+#generate-trade-post-btn, #dl-png, #copy-trade-post-area{
+	margin-top: 3px;
+	width: 97%;
+}
+
+#progress-by-rarity {
+	display: flex;
+  	flex-direction: row;
+  	align-items: center;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+#progress-by-rarity-table {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-template-rows: repeat(5, 1fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px; 
+	background-color: var(--darkbrown);
+	border-radius: 10px;
+	padding: 10px;
+  	align-items: center;
+}
+
+.progress-by-rarity-stars{
+	height: 18px;
+}
+
+.progress-by-rarity-text{
+	text-align: center;
+}
+
+.progress-by-rarity-percentage{
+	font-size: 0.9rem;
 }
