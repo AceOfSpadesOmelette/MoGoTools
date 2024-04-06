@@ -1208,7 +1208,7 @@ function copyToCollectionScreenshot() {
   if (middleSide && collectionScreenshot) {
     collectionScreenshot.innerHTML = "";
     var clonedContents = middleSide.innerHTML;
-    collectionScreenshot.style.width = "6000px";
+    collectionScreenshot.style.width = "1200px";
     collectionScreenshot.style.backgroundColor = "rgba(248,244,228)";
     collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
@@ -1234,7 +1234,7 @@ function captureScreenshot() {
 
   if (collectionScreenshot) {
     window.devicePixelRatio = 2;
-    html2canvas(collectionScreenshot, { scale: 2 });
+    html2canvas(collectionScreenshot, { scale: 2});
     html2canvas(collectionScreenshot).then(function(canvas) {
       var dataURL = canvas.toDataURL("image/png");
       var link = document.createElement("a");
