@@ -1208,7 +1208,7 @@ function copyToCollectionScreenshot() {
   if (middleSide && collectionScreenshot) {
     collectionScreenshot.innerHTML = "";
     var clonedContents = middleSide.innerHTML;
-    collectionScreenshot.style.width = "1200px";
+    // collectionScreenshot.style.width = "1200px";
     collectionScreenshot.style.backgroundColor = "rgba(248,244,228)";
     collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
