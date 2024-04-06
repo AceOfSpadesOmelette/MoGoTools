@@ -220,7 +220,7 @@ body {
 	background-color: rgba(0, 0, 0, .80);
 	border-radius: 5px;
 	color: white;
-	font-size: 0.5rem;
+	font-size: 0.55rem;
 	font-family: "Quicksand-Bold";
 	text-align: center;
 	display: grid;
@@ -234,7 +234,7 @@ body {
 	background-color: rgba(0, 0, 0, .80);
 	border-radius: 5px;
 	color: white;
-	font-size: 10px;
+	font-size: 0.5rem;
 	font-family: "Quicksand-Bold";
 	text-align: center;
 	display: grid;
