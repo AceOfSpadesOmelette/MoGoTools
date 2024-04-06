@@ -14,8 +14,8 @@ const defaultValues = {
   spare: "0",
   show: "1",
   havespare: "0",
-  lookingfor: 0,
-  fortrade: 0,
+  lookingfor: "0",
+  fortrade: "0",
 };
 
 // Sets up the website
@@ -28,6 +28,7 @@ function init() {
   PerformSort({ currentTarget: document.querySelector('button[data-sort-type="GlobalID"]') });  
   NotSelectedByDefault();  
   UpdateTotalStickerQuantity();
+  UpdateTotalStickerByRarityQuantity();
   countSelectedStickers();
   countValveStickers();
   UpdateAlbumStartEndTime();
@@ -112,7 +113,7 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   
   const StickerSet = SetID - AlbumNo * 100;
   const StickerSetPath = AlbumName;
-  const StickerSetNo = GlobalID - SetID * 100
+  const StickerSetNo = GlobalID - SetID * 100;
 
   let StickerNameClass = 'sticker-name';
   if (StickerName.length > 14) {StickerNameClass = 'sticker-name-long-min14';}
@@ -204,10 +205,11 @@ function updateLFOrFTValue(globalID, property) {
 
   if (button) {
     // Update the userData property value
-    userData[globalID][property] = (userData[globalID][property] + 1) % 2;
+    userData[globalID][property] = ((parseInt(userData[globalID][property]) + 1) % 2).toString();
+    console.log(userData[globalID][property]);
 
     // Add or remove the .btnGreen class based on the updated value
-    if (userData[globalID][property] === 1) {      
+    if (userData[globalID][property] === '1') {      
       if(property === "lookingfor"){button.classList.add("btnRed");}
       if(property === "fortrade"){button.classList.add("btnGreen");}
     } else {
@@ -224,16 +226,17 @@ IgnorePrestigeBtn.addEventListener("click", function() {
   else{IgnorePrestigeBtn.classList.remove("btnGreen");}
   clearFilters();
   GenerateFilterSetButtons();  
-  UpdateTotalStickerQuantity(); 
+  UpdateTotalStickerQuantity();
+  UpdateTotalStickerByRarityQuantity(); 
   const containers = document.querySelectorAll('.sticker-card-container');
   containers.forEach((container) => {
     RestoreSelected(userData, container);
     RestoreStickerSpares(userData, container);
     RestoreTradeStates(userData, container);
-    ToggleSpareClass(userData, container);
-    countSelectedStickers();
-    countValveStickers();
-  });    
+    ChangeUserDataHaveSpareValue(userData, container);
+  });  
+  countSelectedStickers();
+  countValveStickers(); 
 });
 
 // Add event listeners to LF and FT buttons
@@ -335,9 +338,7 @@ function PerformSortOnsite(clickedSortBtn) {
 const sortButtons = Array.from(document.querySelectorAll('.sort-btn'));
 sortButtons.forEach(button => button.addEventListener('click', PerformSort));
 
-function findStickerData(globalId) {
-  return STICKER_DATA.find(item => item['GlobalID'] === globalId);
-}
+function findStickerData(globalId) {return STICKER_DATA.find(item => item['GlobalID'] === globalId);}
 
 function compareStickerNames(aData, bData) {
   const aName = aData['GlobalID'];
@@ -682,7 +683,7 @@ document.addEventListener('click', event => {
     parentContainer.classList.toggle('selected');
     parentContainer.classList.toggle('not-selected');
     UpdateCurrentAlbumStickerStates(parentContainer.getAttribute('data-global'));
-    ToggleSpareClass(userData, parentContainer);
+    ChangeUserDataHaveSpareValue(userData, parentContainer);
     countSelectedStickers();
   }
 });
@@ -726,7 +727,7 @@ stickerContainer.addEventListener('input', function(event) {
     }
     
     UpdateCurrentAlbumStickerStates(dataGlobal);
-    ToggleSpareClass(userData, clickedStickerContainer);
+    ChangeUserDataHaveSpareValue(userData, clickedStickerContainer);
     countValveStickers();
   }
 });
@@ -830,10 +831,10 @@ function RestoreTradeStates(userData, StickerContainer) {
   const stickerData = userData[dataGlobalValue];
   StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.remove("btnRed");
   StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="fortrade"]`).classList.remove("btnGreen");
-  if (stickerData.lookingfor === 1) {
+  if (stickerData.lookingfor === '1') {
     StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.add("btnRed");
   }
-  if (stickerData.fortrade === 1) {
+  if (stickerData.fortrade === '1') {
     StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="fortrade"]`).classList.add("btnGreen");
   }
 }
@@ -994,7 +995,7 @@ function importUserData(userDataString) {
       RestoreSelected(userData, container);
       RestoreStickerSpares(userData, container);
       RestoreTradeStates(userData, container);
-      ToggleSpareClass(userData, container);
+      ChangeUserDataHaveSpareValue(userData, container);
       countSelectedStickers();
       countValveStickers();
     });
@@ -1056,19 +1057,29 @@ function UpdateTotalStickerQuantity() {
   totalStickersQuantity.textContent = count.toString();
 }
 
+function UpdateTotalStickerByRarityQuantity() {
+  for (let RarityNumber = 1; RarityNumber <= 5; RarityNumber++) {
+    const RarityQuantity = document.getElementById(`total-rarity${RarityNumber}-quantity`);
+    let count = 0;
+
+    STICKER_DATA.forEach((sticker) => {
+      if (IgnorePrestige === 1 && sticker.Prestige === '1') {return;}
+      if (parseInt(sticker.StickerRarity) === RarityNumber && sticker.AlbumNo === CurrentAlbumNumber) {count++;}
+    });
+
+    RarityQuantity.textContent = count.toString();
+  }
+}
+
 function countSelectedStickers() {
   const userStickersQuantity = document.querySelector('#user-stickers-quantity');
-
   const setDuplicates = new Map();
   const setSpans = Array.from(document.querySelectorAll('[data-setid]'));
 
   // Reset each data-setid value to zero
-  setSpans.forEach(setSpan => {
-    setSpan.textContent = "0";
-  });
+  setSpans.forEach(setSpan => {setSpan.textContent = "0";});
 
   for (const key in userData) {
-
     const globalId = userData[key].id;
     const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
     if(IgnorePrestige === 1 && stickerData.Prestige === '1'){continue;}
@@ -1084,8 +1095,6 @@ function countSelectedStickers() {
         }
       }
     }
-    
-
   }
 
   let count = 0;
@@ -1098,7 +1107,35 @@ function countSelectedStickers() {
   }
 
   userStickersQuantity.textContent = count.toString();
+  countSelectedStickerByRarity();
   updateProgressBar();
+}
+
+function countSelectedStickerByRarity() {
+  for (let RarityNumber = 1; RarityNumber <= 5; RarityNumber++) {
+    document.getElementById(`rarity${RarityNumber}-quantity`).textContent = 0;
+    document.getElementById(`rarity${RarityNumber}-percentage`).textContent = 0;
+  }
+
+  for (const key in userData) {
+    const globalId = userData[key].id;
+    const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
+    if(IgnorePrestige === 1 && stickerData.Prestige === '1'){continue;}
+
+    else{
+      if (userData.hasOwnProperty(key) && userData[key].selected === "1") {
+        const StickerRarityNumber = stickerData.StickerRarity;
+        document.getElementById(`rarity${StickerRarityNumber}-quantity`).textContent++
+      }
+    }
+  }
+
+  for (let RarityNumber = 1; RarityNumber <= 5; RarityNumber++) {
+    const StickerQuantity = parseInt(document.getElementById(`rarity${RarityNumber}-quantity`).textContent);
+    const TotalStickerQuantity = parseInt(document.getElementById(`total-rarity${RarityNumber}-quantity`).textContent);
+    const percentage = (StickerQuantity / TotalStickerQuantity * 100).toFixed(1);
+    document.getElementById(`rarity${RarityNumber}-percentage`).textContent = `${percentage}%`;
+  }
 }
 
 function countValveStickers() {
@@ -1130,7 +1167,7 @@ function countValveStickers() {
 }
 
 
-function ToggleSpareClass(userData, StickerContainer){
+function ChangeUserDataHaveSpareValue(userData, StickerContainer){
   const dataGlobalValue = StickerContainer.getAttribute('data-global');
   if(parseInt(userData[dataGlobalValue].selected) === 1 && parseInt(userData[dataGlobalValue].spare) > 0){
     userData[dataGlobalValue].havespare = '1';
@@ -1208,7 +1245,7 @@ function copyToCollectionScreenshot() {
   if (middleSide && collectionScreenshot) {
     collectionScreenshot.innerHTML = "";
     var clonedContents = middleSide.innerHTML;
-    // collectionScreenshot.style.width = "1200px";
+    //collectionScreenshot.style.width = "1200px";
     collectionScreenshot.style.backgroundColor = "rgba(248,244,228)";
     collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
@@ -1250,9 +1287,16 @@ function captureScreenshot() {
 var dlPngButton = document.getElementById("dl-png");
 if (dlPngButton) {
   dlPngButton.addEventListener("click", function() {
+    dlPngButton.textContent = "Downloading...";
     copyToCollectionScreenshot();
     captureScreenshot();
     document.getElementById("collection-screenshot").innerHTML = "";
+    setTimeout(function() {
+      dlPngButton.textContent = "Download successful!";
+      setTimeout(function() {
+        dlPngButton.textContent = "Download as PNG";
+      }, 3000);
+    }, 3000);
   });
 }
 
@@ -1318,5 +1362,125 @@ window.onclick = function(event) {
     ProgressMenuModal.style.display = "none";
   }
 };
+
+let includeIGN = 0;
+let includePlayerLink = 0;
+var IncludeIGNBtn = document.getElementById('IncludeIGNBtn');
+var IncludePlayerLinkBtn = document.getElementById('IncludePlayerLinkBtn');
+IncludeIGNBtn.addEventListener("click", function() {
+  includeIGN = (includeIGN + 1) % 2;
+  if(includeIGN === 1){IncludeIGNBtn.classList.add("btnGreen");}
+  else{IncludeIGNBtn.classList.remove("btnGreen");}
+});
+IncludePlayerLinkBtn.addEventListener("click", function() {
+  includePlayerLink = (includePlayerLink + 1) % 2;
+  if(includePlayerLink === 1){IncludePlayerLinkBtn.classList.add("btnGreen");}
+  else{IncludePlayerLinkBtn.classList.remove("btnGreen");}
+});
+
+document.getElementById('generate-trade-post-btn').addEventListener('click', function() {
+  GenerateTradePostClipboard();
+});
+
+function GenerateTradePostClipboard() {
+  const tradePostArea = document.querySelector('.trade-post-area');
+  tradePostArea.value = ''; // Clear the trade post area
+
+  let tradePostLinesLF = '';
+  let tradePostLinesFT = '';
+
+  for (const key in userData) {
+    if (userData[key].lookingfor === "1") {
+      const globalId = userData[key].id;
+      const sticker = STICKER_DATA.find(item => item['GlobalID'] === globalId);
+
+      if (sticker) {
+        const { StickerName, SetID, AlbumNo, GlobalID, StickerRarity } = sticker;
+        const SetNo = SetID - AlbumNo * 100;
+        const SetStickerNo = GlobalID - SetID * 100;
+        const tradePostLine = `- ${StickerName}, Set ${SetNo} #${SetStickerNo}, ${StickerRarity}★\n`;
+        tradePostLinesLF += tradePostLine;
+      }
+    }
+
+    if (userData[key].fortrade === "1") {
+      const globalId = userData[key].id;
+      const sticker = STICKER_DATA.find(item => item['GlobalID'] === globalId);
+
+      if (sticker) {
+        const { StickerName, SetID, AlbumNo, GlobalID, StickerRarity } = sticker;
+        const SetNo = SetID - AlbumNo * 100;
+        const SetStickerNo = GlobalID - SetID * 100;
+        const tradePostLine = `- ${StickerName}, Set ${SetNo} #${SetStickerNo}, ${StickerRarity}★\n`;
+        tradePostLinesFT += tradePostLine;
+      }
+    }
+  }
+
+  const tradePostText = `LF:\n${tradePostLinesLF}\nFT:\n${tradePostLinesFT}\n\nSend me offers to help complete the album!`;
+  tradePostArea.value = tradePostText;
+}
+
+function copyTradePostAreaToClipboard() {
+  const tradePostArea = document.querySelector('.trade-post-area');
+  const tradePostText = tradePostArea.value;
+
+  navigator.clipboard.writeText(tradePostText)
+    .then(() => {
+      const copyButton = document.querySelector('#copy-trade-post-area');
+      const originalButtonText = copyButton.textContent;
+
+      copyButton.textContent = 'Copied!';
+      setTimeout(() => {
+        copyButton.textContent = originalButtonText;
+      }, 3000);
+
+      console.log('Text copied to clipboard');
+    })
+    .catch((err) => {
+      console.error('Failed to copy text: ', err);
+    });
+}
+const copyButton = document.querySelector('#copy-trade-post-area');
+copyButton.addEventListener('click', copyTradePostAreaToClipboard);
+
+document.getElementById('ToggleSelectedBtn').onclick = function() {
+  const containers = document.querySelectorAll('.sticker-card-container');
+  containers.forEach((container) => {
+    const CurrentStickerGlobalID = container.getAttribute('data-global');
+    userData[CurrentStickerGlobalID].selected = ((parseInt(userData[CurrentStickerGlobalID].selected) + 1) % 2).toString();
+    RestoreSelected(userData, container);
+  });
+  countSelectedStickers();
+}
+
+document.getElementById('ResetSparesBtn').onclick = function() {
+  const containers = document.querySelectorAll('.sticker-card-container');
+  containers.forEach((container) => {
+    const CurrentStickerGlobalID = container.getAttribute('data-global');
+    userData[CurrentStickerGlobalID].spare = parseInt('0');
+    RestoreStickerSpares(userData, container);
+    ChangeUserDataHaveSpareValue(userData, container);
+  });
+  countValveStickers();
+}
+
+document.getElementById('ToggleLFBtn').onclick = function() {
+  const containers = document.querySelectorAll('.sticker-card-container');
+  containers.forEach((container) => {
+    const CurrentStickerGlobalID = container.getAttribute('data-global');
+    userData[CurrentStickerGlobalID].lookingfor = ((parseInt(userData[CurrentStickerGlobalID].lookingfor) + 1) % 2).toString();
+    RestoreTradeStates(userData, container);
+  });
+}
+
+document.getElementById('ToggleFTBtn').onclick = function() {
+  const containers = document.querySelectorAll('.sticker-card-container');
+  containers.forEach((container) => {
+    const CurrentStickerGlobalID = container.getAttribute('data-global');
+    userData[CurrentStickerGlobalID].fortrade = ((parseInt(userData[CurrentStickerGlobalID].fortrade) + 1) % 2).toString();
+    RestoreTradeStates(userData, container);
+  });
+}
 
 window.onload = init;
