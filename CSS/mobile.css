@@ -888,4 +888,5 @@ input[class="player-info-field"]{
 
 #collection-screenshot{
 	background-color: var(--beige);
+	width: 1200px;
 }
