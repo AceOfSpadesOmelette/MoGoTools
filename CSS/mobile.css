@@ -276,7 +276,7 @@ body {
 	background-color: rgba(0, 0, 0, .80);
 	border-radius: 5px 5px 0 0;
 	color: white;
-	font-size: 11px;
+	font-size: 0.7rem;
 	font-family: "Quicksand-Bold";
 	text-align: center;
 	display: grid;
@@ -288,7 +288,7 @@ body {
 	background-color: rgba(0, 0, 0, .80);
 	border-radius: 5px 5px 0 0;
 	color: white;
-	font-size: 10px;
+	font-size: 0.6rem;
 	font-family: "Quicksand-Bold";
 	text-align: center;
 	min-height: 2rem;
@@ -302,7 +302,7 @@ body {
 	background-color: rgba(0, 0, 0, .80);
 	border-radius: 5px 5px 0 0;
 	color: white;
-	font-size: 9px;
+	font-size: 0.5rem;
 	font-family: "Quicksand-Bold";
 	text-align: center;
 	min-height: 2rem;
@@ -789,7 +789,7 @@ to {top:0; opacity:1}
 	overflow-x: hidden;
 	overflow-y: overlay;
 	background-color: var(--beige);
-	height: calc(90vh - 30px);
+	height: calc(85vh - 30px)
 }
 
 #filter-sort-menu-footer, #progress-menu-footer{
