@@ -1279,12 +1279,8 @@ function compareViewport() {
 
   if (viewportWidth > viewportHeight) {
     WebZeroMobileOne = 0;
-    // Apply styles from style.css
-    document.getElementById('stylesheet').href = 'CSS/style.css';
   } else {
     WebZeroMobileOne = 1;
-    // Apply styles from mobile.css
-    document.getElementById('stylesheet').href = 'CSS/mobile.css';
   }
   handleViewportBtnClick(false);
 }
