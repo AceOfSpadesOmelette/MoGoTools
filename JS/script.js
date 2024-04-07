@@ -281,6 +281,8 @@ function PerformSort(event) {
   const toSortKey = clickedButton.dataset.sortType;
 
   const containers = Array.from(document.querySelectorAll('#current-sticker-board .sticker-card-container'));
+  if(containers.length === 0){return;}
+
   containers.sort((a, b) => {
     const aData = findStickerData(a.dataset.global);
     const bData = findStickerData(b.dataset.global);
@@ -1308,6 +1310,7 @@ function handleViewportBtnClick(isClicked) {
     document.getElementById("DefaultCSS").removeAttribute('disabled');
     document.getElementById("MobileCSS").setAttribute('disabled', true);
     ViewportBtnText.textContent = 'Mobile Layout';
+    document.getElementById("progress-menu-modal").style.display = "initial";
   } else if (WebZeroMobileOne === 1) {
     document.getElementById("DefaultCSS").setAttribute('disabled', true);
     document.getElementById("MobileCSS").removeAttribute('disabled');
