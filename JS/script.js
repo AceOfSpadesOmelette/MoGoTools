@@ -1311,6 +1311,7 @@ function handleViewportBtnClick(isClicked) {
   } else if (WebZeroMobileOne === 1) {
     document.getElementById("DefaultCSS").setAttribute('disabled', true);
     document.getElementById("MobileCSS").removeAttribute('disabled');
+    ViewportBtnText.textContent = 'Web Layout';
   }
 }
 document.getElementById('ViewportBtn').addEventListener('click', function() {
