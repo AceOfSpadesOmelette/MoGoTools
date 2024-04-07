@@ -840,4 +840,7 @@ input[class="player-info-field"]{
 .progress-by-rarity-percentage{
 	font-size: 0.9rem;
 }
-	
+
+#progress-menu-modal{
+	display: initial;
+}
