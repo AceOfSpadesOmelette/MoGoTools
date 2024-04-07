@@ -579,6 +579,8 @@ input.spare-text{
 
 .spare-filter-header{
 	color: black;
+	width: 10%;
+  	text-align: right;
 }
 
 .spare-filter-text{
@@ -594,6 +596,10 @@ input.spare-text{
 
 input.spare-text{
 	text-align: center;
+}
+
+#spare-filter-btn{
+	margin-left: 10%;
 }
 
 .btn-subgroup{
