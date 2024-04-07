@@ -213,6 +213,12 @@ body {
 	font-size: 0;
 }
 
+@media screen and (max-width: 400px) {
+	.sticker-card-container{
+	  width: 80px;
+	}
+}
+
 .set-name {
 	width: 100%;
 	min-height: 2rem;
@@ -560,6 +566,8 @@ input.spare-text{
 
 .spare-filter-header{
 	color: black;
+	width: 10%;
+  	text-align: right;
 }
 
 .spare-filter-text{
@@ -575,6 +583,10 @@ input.spare-text{
 
 input.spare-text{
 	text-align: center;
+}
+
+#spare-filter-btn{
+	margin-left: 10%;
 }
 
 .btn-subgroup{
@@ -769,22 +781,22 @@ input.spare-text{
 	-webkit-animation-duration: 0.4s;
 	animation-name: animatetop;
 	animation-duration: 0.4s;
-  }
+}
   
-  @media screen and (min-width: 900px) {
+@media screen and (min-width: 800px) {
 	#filter-sort-menu-body, #progress-menu-body {
 	  width: 30%;
 	}
-  }
+}
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
-from {top:-300px; opacity:0} 
+from {top:300px; opacity:0} 
 to {top:0; opacity:1}
 }
 
 @keyframes animatetop {
-from {top:-300px; opacity:0}
+from {top:300px; opacity:0}
 to {top:0; opacity:1}
 }
 
@@ -813,6 +825,12 @@ to {top:0; opacity:1}
 	border-style: solid;
 	height: 30px;
 	cursor: pointer;
+}
+
+#filter-sort-menu-footer:active, #progress-menu-footer:active {
+	background-color: rgba(186, 0, 0, 1);
+	transition-duration: 100ms;
+	transition-timing-function: ease-in;
 }
 
 #filter-sort-modal, #progress-menu-modal{
