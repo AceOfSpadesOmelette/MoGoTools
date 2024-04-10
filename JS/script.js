@@ -1250,20 +1250,20 @@ function calculateBrightness(color) {
 }
 
 
-let includeIGN = 0;
-let includePlayerLink = 0;
-var IncludeIGNBtn = document.getElementById('IncludeIGNBtn');
-var IncludePlayerLinkBtn = document.getElementById('IncludePlayerLinkBtn');
-IncludeIGNBtn.addEventListener("click", function() {
-   includeIGN = (includeIGN + 1) % 2;
-   if(includeIGN === 1){IncludeIGNBtn.classList.add("btnGreen");}
-   else{IncludeIGNBtn.classList.remove("btnGreen");}
-});
-IncludePlayerLinkBtn.addEventListener("click", function() {
-   includePlayerLink = (includePlayerLink + 1) % 2;
-   if(includePlayerLink === 1){IncludePlayerLinkBtn.classList.add("btnGreen");}
-   else{IncludePlayerLinkBtn.classList.remove("btnGreen");}
-});
+// let includeIGN = 0;
+// let includePlayerLink = 0;
+// var IncludeIGNBtn = document.getElementById('IncludeIGNBtn');
+// var IncludePlayerLinkBtn = document.getElementById('IncludePlayerLinkBtn');
+// IncludeIGNBtn.addEventListener("click", function() {
+//    includeIGN = (includeIGN + 1) % 2;
+//    if(includeIGN === 1){IncludeIGNBtn.classList.add("btnGreen");}
+//    else{IncludeIGNBtn.classList.remove("btnGreen");}
+// });
+// IncludePlayerLinkBtn.addEventListener("click", function() {
+//    includePlayerLink = (includePlayerLink + 1) % 2;
+//    if(includePlayerLink === 1){IncludePlayerLinkBtn.classList.add("btnGreen");}
+//    else{IncludePlayerLinkBtn.classList.remove("btnGreen");}
+// });
 
 function copyToCollectionScreenshot() {
   var middleSide = document.getElementById("middle-side");
