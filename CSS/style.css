@@ -637,7 +637,7 @@ input.spare-text{
 }
 
 #album-progress-tracker{
-	width: 70%;
+	width: 65%;
 }
 
 .progress-container {
@@ -648,7 +648,7 @@ input.spare-text{
 }
 
 .valve-container {
-	width: 30%;
+	width: 35%;
 	/* max-height: 18px; */
 	align-items: center;
 	/* display: flex; */
@@ -656,9 +656,9 @@ input.spare-text{
   
 .valve-star {
 	height: 15px;
-	margin: 0 auto;
+	margin: 0 auto 0 10px;
 	display: block;
-}
+  }
   
 .valve-subcontainer {
 	background-color: var(--darkbrown);
@@ -669,23 +669,21 @@ input.spare-text{
 	justify-content: center;
 	margin-left: 20%;
 	height: 18px;
-}
-
+  }
   
-.valve-prestige-text{
-	font-size: 13px;
+.valve-prestige-text {
+	font-size: 12px;
 	font-family: "Quicksand-Bold";
 	color: #2a7251;
 	background-color: #c1f496;
 	border-radius: 5px;
-	border: none;
 	border-color: transparent;
 	text-align: center;
 	max-height: 18px;
 	width: 55px;
 }
 
-.leftover-valve-subcontainer{
+.leftover-valve-subcontainer {
 	background-color: #c1f496;
 	border-radius: 5px;
 	width: 80%;
@@ -694,18 +692,12 @@ input.spare-text{
 	justify-content: center;
 	margin-left: 20%;
 	height: 18px;
-}
+  }
   
 #total-valve-quantity {
 	font-size: 12px;
-	width: 55px;
+	width: 70%;
 	text-align: center;
-}
-
-  
-.leftover-valve-subcontainer{
-	display: flex;
-	height: 18px;
 }
   
 .progress-bar {
