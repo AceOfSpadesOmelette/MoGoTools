@@ -16,7 +16,7 @@
 	<div id="main">
 		<div id="main-wrapper">
 			<div id="loading-overlay">
-				<img src="assets/spinner.webp" alt="Loading...">
+				<img id="loading-overlay-spinner" src="assets/spinner.webp" alt="Loading...">
 			</div>
 			<div id="left-side">
 				<div id="filter-sort-modal"><div id="filter-sort-menu-body">
@@ -29,7 +29,7 @@
 						</div>
 						<div id="sort-menu">
 							<button id="SortOrderBtn" class="btn" type="button">
-								Sort Order:&nbsp;&nbsp;&nbsp;<span id="SortOrderBtnText">Descending ⬇</span>
+								Sort Order:&nbsp;&nbsp;&nbsp;<span id="SortOrderBtnText">Ascending ⬆</span>
 							</button>
 							<div id="sort-btn-group-container" class="BtnGroup3">
 								<button data-sort-type="GlobalID" class="btn sort-btn" type="button">
@@ -193,6 +193,8 @@
 										<button id="export-from-file-btn" class="btn filter-settings-btn" type="button">
 											Save as .TXT
 										</button>
+										<button id="IncludeIGNBtn" class="btn" type="button">Include IGN</button>
+										<button id="IncludePlayerLinkBtn" class="btn" type="button">Include Link</button>
 									</div>
 									<div class="btn-subgroup"><button class="btn" id="dl-png">Download as PNG</button></div>
 									<div class="btn-subgroup">
@@ -205,14 +207,6 @@
 									Trade Post Clipboard
 									<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
 								</div>
-								<!-- <div class="btn-subgroup BtnGroup2">
-									<button id="IncludeIGNBtn" class="btn" type="button">
-										Include IGN
-									</button>
-									<button id="IncludePlayerLinkBtn" class="btn" type="button">
-										Include Link
-									</button>
-								</div> -->
 								<div class="btn-subgroup">
 									<button id="generate-trade-post-btn" class="btn" type="button">
 										Generate
@@ -279,6 +273,11 @@
 											<img class="valve-star" src="assets/stickers/Icon_Star.png">
 											<span id="total-valve-quantity">0</span>
 										</div>
+										<div class="leftover-valve-subcontainer">
+											<img class="valve-star" src="assets/stickers/Icon_Star_Rainbow.png">
+											<input
+											type="number" id="leftover-total-valve-quantity" class="valve-prestige-text"
+											name="LeftoverTotalValveQuantity" min="0" max="9999" value="0" size="5"></div>
 									</div>
 								</div>
 								<div id="set-progress-tracker"></div>
@@ -313,12 +312,15 @@
 				</div></div>	
 			</div>
 		<div id="mobileMenu">
-			<button type="button" class="btn" id="mobileMenuFilters">Settings</button>
+			<button type="button" class="btn" id="mobileMenuFilters">Settings</button>			
+			<!-- <button type="button" class="btn" id="mobileBasicMenu">Menu</button> -->
 			<button type="button" class="btn" id="mobileMenuOptions">Your Profile</button>
 		</div>
 		</div>
+		
 		<div id="snapshot-area">
-			<div id="collection-screenshot"></div>
+			<div id="collection-screenshot">
+			</div>
 		</div>
 </body>
 
