@@ -652,9 +652,8 @@ input.spare-text{
   
 .valve-star {
 	height: 15px;
-	left: 72%;
+	margin: 0 auto 0 5px;
 	display: block;
-	position: absolute;
 }
   
 .valve-subcontainer {
@@ -679,7 +678,6 @@ input.spare-text{
 	text-align: center;
 	max-height: 18px;
 	width: 55px;
-	margin-left: 27px;
 }
 
 .leftover-valve-subcontainer{
@@ -695,8 +693,7 @@ input.spare-text{
   
 #total-valve-quantity {
 	font-size: 12px;
-	/* width: 60%; */
-	margin-left: 10px;
+	width: 65%;
 	text-align: center;
 }
 
