@@ -5,7 +5,7 @@ const CurrentAlbumNumber = '7';
 let userData = {};
 const FilterList = {};
 let AndZeroOrOne = 0;
-let DescendZeroAscendOne = 0;
+let AscendZeroDescendOne = 0;
 let IgnorePrestige = 0;
 let WebZeroMobileOne = 0;
 const defaultValues = {
@@ -349,15 +349,15 @@ function compareStickerNames(aData, bData) {
 }
 
 function handleSortOrderBtnClick() {
-  DescendZeroAscendOne = (DescendZeroAscendOne + 1) % 2;
+  AscendZeroDescendOne = (AscendZeroDescendOne + 1) % 2;
   const containerSelector = '#sticker-board #current-sticker-board';
   const container = document.querySelector(containerSelector);
   const sortOrderBtnText = document.getElementById('SortOrderBtnText');
 
-  if (DescendZeroAscendOne === 0) {sortOrderBtnText.textContent = 'Descending ⬇';} 
-  else if (DescendZeroAscendOne === 1) {sortOrderBtnText.textContent = 'Ascending ⬆';}
-
   Array.from(container.children).reverse().forEach(child => {container.appendChild(child);});
+  
+  if (AscendZeroDescendOne === 0) {sortOrderBtnText.textContent = 'Ascending ⬆';} 
+  else if (AscendZeroDescendOne === 1) {sortOrderBtnText.textContent = 'Descending ⬇';}
 }
 
 document.getElementById('SortOrderBtn').addEventListener('click', handleSortOrderBtnClick);
@@ -939,11 +939,13 @@ function exportUserData() {
   // Get player-ign and player-link values
   const playerIGN = document.getElementById("player-ign").value;
   const playerLink = document.getElementById("player-link").value;
+  const LeftoverValveStars = document.getElementById("leftover-total-valve-quantity").value;
 
   // Create additional lines
   const additionalLines = [
     `player-ign: ${playerIGN}`,
     `player-link: ${playerLink}`,
+    `leftover-valve-stars: ${LeftoverValveStars}`,
   ];
 
   // Convert userData to string
@@ -965,6 +967,7 @@ function importUserData(userDataString) {
     // Extract player-ign and player-link values
     let playerIGN = '';
     let playerLink = '';
+    let LeftoverValveStars = '';
     const lines = userDataString.split('\n');
     lines.forEach(line => {
       if (line.startsWith('player-ign: ')) {
@@ -972,10 +975,14 @@ function importUserData(userDataString) {
       } else if (line.startsWith('player-link: ')) {
         playerLink = line.substring('player-link: '.length);
       }
+      else if(line.startsWith('leftover-valve-stars: ')){
+        LeftoverValveStars = line.substring('leftover-valve-stars: '.length);
+      }
     });
+    if (LeftoverValveStars === '') {LeftoverValveStars = '0';}
 
     // Remove player-ign and player-link lines from userDataString
-    const filteredLines = lines.filter(line => !line.startsWith('player-ign: ') && !line.startsWith('player-link: '));
+    const filteredLines = lines.filter(line => !line.startsWith('player-ign: ') && !line.startsWith('player-link: ') && !line.startsWith('leftover-valve-stars: '));
     const filteredUserDataString = filteredLines.join('\n');
 
     parsedData = JSON.parse(filteredUserDataString);
@@ -988,6 +995,7 @@ function importUserData(userDataString) {
     // Store player-ign and player-link values
     document.getElementById('player-ign').value = playerIGN;
     document.getElementById('player-link').value = playerLink;
+    document.getElementById("leftover-total-valve-quantity").value = LeftoverValveStars
 
     userData = parsedData;
     console.log('Successfully imported userData:', userData);
@@ -1164,8 +1172,9 @@ function countValveStickers() {
       }
     }
   }
-
-  totalValveQuantity.textContent = valveQuantity.toString();
+  const PrestigeLeftoverQuantity = document.getElementById('leftover-total-valve-quantity').value;
+  const ValveSum = valveQuantity + parseInt(PrestigeLeftoverQuantity);
+  totalValveQuantity.textContent = ValveSum.toString();
 }
 
 
@@ -1240,18 +1249,41 @@ function calculateBrightness(color) {
   return brightness;
 }
 
+
+let includeIGN = 0;
+let includePlayerLink = 0;
+var IncludeIGNBtn = document.getElementById('IncludeIGNBtn');
+var IncludePlayerLinkBtn = document.getElementById('IncludePlayerLinkBtn');
+IncludeIGNBtn.addEventListener("click", function() {
+   includeIGN = (includeIGN + 1) % 2;
+   if(includeIGN === 1){IncludeIGNBtn.classList.add("btnGreen");}
+   else{IncludeIGNBtn.classList.remove("btnGreen");}
+});
+IncludePlayerLinkBtn.addEventListener("click", function() {
+   includePlayerLink = (includePlayerLink + 1) % 2;
+   if(includePlayerLink === 1){IncludePlayerLinkBtn.classList.add("btnGreen");}
+   else{IncludePlayerLinkBtn.classList.remove("btnGreen");}
+});
+
 function copyToCollectionScreenshot() {
   var middleSide = document.getElementById("middle-side");
   var collectionScreenshot = document.getElementById("collection-screenshot");
 
   if (middleSide && collectionScreenshot) {
     collectionScreenshot.innerHTML = "";
+    let playerIGN = document.getElementById("player-ign").value;
+    let playerLink = document.getElementById("player-link").value;
+    // Create the new element
+    var newElement = `<div id="collection-screenshot-player-info"><div id="collection-screenshot-player-name">Player IGN:&nbsp;&nbsp;&nbsp;${playerIGN}</div><div id="collection-screenshot-player-link">Invite Link:&nbsp;&nbsp;&nbsp;${playerLink}</div></div>`;
+    
+    // Add the new element at the beginning of collectionScreenshot
+    collectionScreenshot.innerHTML = newElement + collectionScreenshot.innerHTML;
+
     var clonedContents = middleSide.innerHTML;
-    //collectionScreenshot.style.width = "1200px";
     collectionScreenshot.style.backgroundColor = "rgba(248,244,228)";
     collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
-    collectionScreenshot.innerHTML = clonedContents;
+    collectionScreenshot.innerHTML += clonedContents;
     var screenshotContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
     screenshotContainers.forEach(function(container) {
       var globalID = container.getAttribute("data-global");
@@ -1315,6 +1347,8 @@ function handleViewportBtnClick(isClicked) {
     document.getElementById("DefaultCSS").setAttribute('disabled', true);
     document.getElementById("MobileCSS").removeAttribute('disabled');
     ViewportBtnText.textContent = 'Web Layout';
+    document.getElementById('filter-sort-modal').style.display = "none";
+    document.getElementById('progress-menu-modal').style.display = "none";
   }
 }
 document.getElementById('ViewportBtn').addEventListener('click', function() {
@@ -1337,9 +1371,14 @@ function compareViewport() {
 var FilterSortModal = document.getElementById("filter-sort-modal");
 var FilterSortMenuMobileOpenBtn = document.getElementById("mobileMenuFilters");
 var FilterSortMenuMobileCloseBtn = document.getElementById("filter-sort-menu-footer");
+
 var ProgressMenuModal = document.getElementById("progress-menu-modal");
 var ProgressMenuMobileOpenBtn = document.getElementById("mobileMenuOptions");
 var ProgressMenuMobileCloseBtn = document.getElementById("progress-menu-footer");
+
+// var BasicMenuModal = document.getElementById("basic-menu-modal");
+// var BasicMenuMobileOpenBtn = document.getElementById("mobileBasicMenu");
+// var BasicMenuMobileCloseBtn = document.getElementById("basic-menu-footer");
 
 FilterSortMenuMobileOpenBtn.onclick = function() {
   FilterSortModal.style.display = "block";
@@ -1357,6 +1396,15 @@ ProgressMenuMobileCloseBtn.onclick = function() {
   ProgressMenuModal.style.display = "none";
 };
 
+// BasicMenuMobileOpenBtn.onclick = function() {
+//   BasicMenuModal.style.display = "block";
+// };
+
+// BasicMenuMobileCloseBtn.onclick = function() {
+//   BasicMenuModal.style.display = "none";
+// };
+
+
 window.onclick = function(event) {
   if (event.target === FilterSortModal) {
     FilterSortModal.style.display = "none";
@@ -1365,22 +1413,11 @@ window.onclick = function(event) {
   if (event.target === ProgressMenuModal) {
     ProgressMenuModal.style.display = "none";
   }
-};
 
-// let includeIGN = 0;
-// let includePlayerLink = 0;
-// var IncludeIGNBtn = document.getElementById('IncludeIGNBtn');
-// var IncludePlayerLinkBtn = document.getElementById('IncludePlayerLinkBtn');
-// IncludeIGNBtn.addEventListener("click", function() {
-//   includeIGN = (includeIGN + 1) % 2;
-//   if(includeIGN === 1){IncludeIGNBtn.classList.add("btnGreen");}
-//   else{IncludeIGNBtn.classList.remove("btnGreen");}
-// });
-// IncludePlayerLinkBtn.addEventListener("click", function() {
-//   includePlayerLink = (includePlayerLink + 1) % 2;
-//   if(includePlayerLink === 1){IncludePlayerLinkBtn.classList.add("btnGreen");}
-//   else{IncludePlayerLinkBtn.classList.remove("btnGreen");}
-// });
+  // if (event.target === BasicMenuModal) {
+  //   BasicMenuModal.style.display = "none";
+  // }
+};
 
 document.getElementById('generate-trade-post-btn').addEventListener('click', function() {
   GenerateTradePostClipboard();
@@ -1485,6 +1522,25 @@ document.getElementById('ToggleFTBtn').onclick = function() {
     userData[CurrentStickerGlobalID].fortrade = ((parseInt(userData[CurrentStickerGlobalID].fortrade) + 1) % 2).toString();
     RestoreTradeStates(userData, container);
   });
+}
+
+document.getElementById('leftover-total-valve-quantity').addEventListener('input', handleVaultPrestigeInput);
+
+function handleVaultPrestigeInput(event) {
+  const target = event.target;
+  if (target.classList.contains('valve-prestige-text')) {
+    target.value = target.value.replace(/^0+(?=\d)/, '');
+    if (target.value > 9999) {
+      if (target.value.slice(0, -1) === '9999') {
+        target.value = '9999';
+      } else {
+        target.value = target.value.slice(0, 4);
+      }
+    } else if (target.value < 0 || target.value === '') {
+      target.value = 0;
+    }
+  }
+  countValveStickers();
 }
 
 window.onload = init;
