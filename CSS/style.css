@@ -55,7 +55,7 @@ body {
 }
 
 /* BUTTON COMPONENT */
-.btn{
+.btn {
 	border: 2px solid var(--darkerbrown);
 	background: linear-gradient(var(--lightbrown), var(--lightbrown));
 	background-color: rgba(0, 0, 0, 0);
@@ -79,6 +79,7 @@ body {
 	overflow: hidden;
 	display: inline-flex;
 	justify-content: center;
+	cursor: pointer;
 }
 
 .lf-btn{
@@ -215,7 +216,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	padding: 2%;
+	border-radius: 30px;
+	padding: 1% 2% 2% 2%;
 	background-color: rgb(219 197 133 / 40%);
 }
 
@@ -436,11 +438,11 @@ body {
 	z-index: 9999;
 }
   
-  #loading-overlay img {
+#loading-overlay img {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 5%;
+	width: 75px;
 	transform: translate(-50%, -50%);
 }
 
@@ -499,7 +501,7 @@ input[type=text] {
 
 
 #album-logo-container{
-	background-color: white;
+	/* background-color: white; */
 	display: flex;
     align-items: center;
 	color: rgba(0, 77, 147);
@@ -579,7 +581,6 @@ input.spare-text{
 
 .spare-filter-header{
 	color: black;
-	width: 10%;
   	text-align: right;
 }
 
@@ -599,7 +600,7 @@ input.spare-text{
 }
 
 #spare-filter-btn{
-	margin-left: 10%;
+	margin-left: 7%;
 }
 
 .btn-subgroup{
@@ -648,33 +649,64 @@ input.spare-text{
 
 .valve-container {
 	width: 30%;
-	max-height: 18px;
+	/* max-height: 18px; */
 	align-items: center;
-	display: flex;
-  }
+	/* display: flex; */
+}
   
-  .valve-star {
+.valve-star {
 	height: 15px;
 	margin: 0 auto;
 	display: block;
-  }
+}
   
-  .valve-subcontainer {
+.valve-subcontainer {
 	background-color: var(--darkbrown);
 	border-radius: 5px;
-	width: 60%;
+	width: 80%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-left: 40%;
+	margin-left: 20%;
 	height: 18px;
-  }
+}
+
   
-  #total-valve-quantity {
-	font-size: 12px;
-	width: 50%;
+.valve-prestige-text{
+	font-size: 13px;
+	font-family: "Quicksand-Bold";
+	color: #2a7251;
+	background-color: #c1f496;
+	border-radius: 5px;
+	border: none;
+	border-color: transparent;
 	text-align: center;
-  }
+	max-height: 18px;
+	width: 55px;
+}
+
+.leftover-valve-subcontainer{
+	background-color: #c1f496;
+	border-radius: 5px;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 20%;
+	height: 18px;
+}
+  
+#total-valve-quantity {
+	font-size: 12px;
+	width: 55px;
+	text-align: center;
+}
+
+  
+.leftover-valve-subcontainer{
+	display: flex;
+	height: 18px;
+}
   
 .progress-bar {
 	background-color: #34c7fb;
@@ -847,6 +879,22 @@ input[class="player-info-field"]{
 	font-size: 0.9rem;
 }
 
-#progress-menu-modal{
-	display: initial;
+#basic-menu-side{
+	display: none;
+}
+
+#collection-screenshot-player-info{
+	display: flex;
+	/* width: 90%; */
+	margin: 10px auto 10px auto;
+	background: var(--darkerbrown);
+	text-align: center;
+  	justify-content: center;
+	color: var(--beige);
+	border-radius: 0 0 50px 50px;
+	padding: 5px 0 5px 0;
+}
+
+#collection-screenshot-player-name, #collection-screenshot-player-link{
+	width: 50%;
 }
