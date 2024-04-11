@@ -1105,7 +1105,8 @@ input[class="player-info-field"]{
 }
 
 #collection-screenshot-player-name, #collection-screenshot-player-link{
-	font-size: 12px;
+	font-size: 14px;
+	line-height: 1.5rem;
 }
 
 .valve-tier{
