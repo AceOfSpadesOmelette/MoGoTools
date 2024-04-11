@@ -834,7 +834,7 @@ input[class="player-info-field"]{
 	background-color: var(--beige);
 }
 
-#generate-trade-post-btn, #dl-png, #copy-trade-post-area{
+#dl-png{
 	margin-top: 3px;
 	width: 97%;
 }
