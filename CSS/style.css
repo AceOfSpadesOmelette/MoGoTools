@@ -887,6 +887,21 @@ input[class="player-info-field"]{
 	padding: 5px 0 5px 0;
 }
 
+#collection-screenshot-player-name, #collection-screenshot-player-link, #collection-screenshot-my-album{
+	width: 33%;
+}
+
+#collection-screenshot-my-album{
+	font-size: 20px;
+}
+
 #collection-screenshot-player-name, #collection-screenshot-player-link{
-	width: 50%;
+	font-size: 14px;
+	line-height: 1.5rem;
+}
+
+.valve-tier{
+	height: 15px;
+	margin-left: 5%;
+	margin-right: -15%;
 }
