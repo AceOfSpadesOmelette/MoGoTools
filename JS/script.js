@@ -1175,6 +1175,12 @@ function countValveStickers() {
   const PrestigeLeftoverQuantity = document.getElementById('leftover-total-valve-quantity').value;
   const ValveSum = valveQuantity + parseInt(PrestigeLeftoverQuantity);
   totalValveQuantity.textContent = ValveSum.toString();
+
+  const valveTierImage = document.querySelector('.valve-tier');
+  if(ValveSum < 250){valveTierImage.src = '';}
+  else if (250 <= ValveSum && ValveSum < 499) {valveTierImage.src = 'assets/stickers/StickerValveTier1.png';}
+  else if (500 <= ValveSum && ValveSum < 799) {valveTierImage.src = 'assets/stickers/StickerValveTier2.png';}
+  else if (ValveSum >= 800) {valveTierImage.src = 'assets/stickers/StickerValveTier3.png';}
 }
 
 
@@ -1250,20 +1256,20 @@ function calculateBrightness(color) {
 }
 
 
-// let includeIGN = 0;
-// let includePlayerLink = 0;
-// var IncludeIGNBtn = document.getElementById('IncludeIGNBtn');
-// var IncludePlayerLinkBtn = document.getElementById('IncludePlayerLinkBtn');
-// IncludeIGNBtn.addEventListener("click", function() {
-//    includeIGN = (includeIGN + 1) % 2;
-//    if(includeIGN === 1){IncludeIGNBtn.classList.add("btnGreen");}
-//    else{IncludeIGNBtn.classList.remove("btnGreen");}
-// });
-// IncludePlayerLinkBtn.addEventListener("click", function() {
-//    includePlayerLink = (includePlayerLink + 1) % 2;
-//    if(includePlayerLink === 1){IncludePlayerLinkBtn.classList.add("btnGreen");}
-//    else{IncludePlayerLinkBtn.classList.remove("btnGreen");}
-// });
+let includeIGN = 0;
+let includePlayerLink = 0;
+var IncludeIGNBtn = document.getElementById('IncludeIGNBtn');
+ var IncludePlayerLinkBtn = document.getElementById('IncludePlayerLinkBtn');
+IncludeIGNBtn.addEventListener("click", function() {
+   includeIGN = (includeIGN + 1) % 2;
+   if(includeIGN === 1){IncludeIGNBtn.classList.add("btnGreen");}
+   else{IncludeIGNBtn.classList.remove("btnGreen");}
+});
+IncludePlayerLinkBtn.addEventListener("click", function() {
+   includePlayerLink = (includePlayerLink + 1) % 2;
+   if(includePlayerLink === 1){IncludePlayerLinkBtn.classList.add("btnGreen");}
+   else{IncludePlayerLinkBtn.classList.remove("btnGreen");}
+});
 
 function copyToCollectionScreenshot() {
   var middleSide = document.getElementById("middle-side");
@@ -1271,10 +1277,12 @@ function copyToCollectionScreenshot() {
 
   if (middleSide && collectionScreenshot) {
     collectionScreenshot.innerHTML = "";
-    let playerIGN = document.getElementById("player-ign").value;
-    let playerLink = document.getElementById("player-link").value;
+    let playerIGN = '';
+    let playerLink = '';
+    if(includeIGN === 1){playerIGN = document.getElementById("player-ign").value;}
+    if(includePlayerLink === 1){playerLink = document.getElementById("player-link").value;}
     // Create the new element
-    var newElement = `<div id="collection-screenshot-player-info"><div id="collection-screenshot-player-name">Player IGN:&nbsp;&nbsp;&nbsp;${playerIGN}</div><div id="collection-screenshot-player-link">Invite Link:&nbsp;&nbsp;&nbsp;${playerLink}</div></div>`;
+    var newElement = `<div id="collection-screenshot-player-info"><div id="collection-screenshot-player-name">${playerIGN}</div><div id="collection-screenshot-my-album">My Album</div><div id="collection-screenshot-player-link">${playerLink}</div></div>`;
     
     // Add the new element at the beginning of collectionScreenshot
     collectionScreenshot.innerHTML = newElement + collectionScreenshot.innerHTML;
