@@ -123,16 +123,16 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   let starIcon = 'Icon_Star.png';
   if (Prestige === '1') {starIcon = 'Icon_Star_Rainbow.png';}
 
-  let isGold = '';
-  if (Golden === '1') {isGold = '<img class="gold-frame" src="assets/stickers/BG_StickerSpecial.png">';}
-  else{isGold = '<img class="gold-frame" src="assets/stickers/BG_StickerBasic.png">';}
+  let FrameHTML = '';
+  if (Golden === '1') {FrameHTML = '<img class="gold-frame" src="assets/stickers/BG_StickerSpecial.png">';}
+  else{FrameHTML = '<img class="normal-frame" src="assets/stickers/BG_StickerBasic.png">';}
 
   const container = document.createElement('div');
   container.dataset.global = GlobalID;
   container.classList.add(ContainerClass);
 
   container.innerHTML = `
-    <div class="sticker-star-container"><img class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${isGold}</div><div class="sticker-ribbon" style="background-color: ${Colour}; border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</span></div></div>
+    <div class="sticker-star-container"><img class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background-color: ${Colour}; border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</span></div></div>
   `;
 
   if(isTracking){
