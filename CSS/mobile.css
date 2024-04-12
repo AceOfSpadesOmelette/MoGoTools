@@ -518,17 +518,18 @@ input[type=text] {
 .sticker-star-container{
 	display: flex;
 	gap: 2px;
-	margin-bottom: -10px;
+	margin-bottom: -15px;
 	position: relative;
 	z-index: 3;
 	justify-content: center;
+	width: 97%;
 }
 
 .star-img{
-	/* width: 15px; */
-	height: 35px;
+	width: inherit;
+	/* height: 35px; */
   	z-index: 999;
-  	margin-bottom: -8px;
+  	/* margin-bottom: -8px; */
 }
 
 #set-progress-tracker{
@@ -569,12 +570,12 @@ input[type=text] {
 }
 
 .spare-header{
-	font-size: 0.7rem;
+	font-size: 0.6rem;
 	color: white;
 }
 
 .spare-text{
-	font-size: 11px;
+	font-size: 0.6rem;
 	font-family: "Quicksand-Bold";
 	color: white;
 	background-color: transparent;
