@@ -1329,8 +1329,8 @@ if (dlPngButton) {
   dlPngButton.addEventListener("click", function() {
     dlPngButton.textContent = "Downloading...";
     copyToCollectionScreenshot();
-    //captureScreenshot();
-    //document.getElementById("collection-screenshot").innerHTML = "";
+    captureScreenshot();
+    document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function() {
       dlPngButton.textContent = "Download successful!";
       setTimeout(function() {
