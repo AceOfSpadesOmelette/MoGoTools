@@ -290,13 +290,33 @@ body {
 	align-items: center;
 }
 
+.sticker-ribbon {
+	width: 107%;
+	background-color: rgba(0, 0, 0, .80);
+	border-radius: 50% / 10%;
+	color: white;
+	font-size: 11px;
+	font-family: "Quicksand-Bold";
+	text-align: center;
+	display: grid;
+	align-items: center;
+	transform: perspective(200px) rotateX(10deg);
+	border-bottom-left-radius: 6%20px;
+	border-top-left-radius: 3%3px;
+	border-bottom-right-radius: 6%20px;
+	border-top-right-radius: 3%3px;
+	border: 2px solid black;
+	margin-top: -41px;
+  	z-index: 3;
+	pointer-events: none;
+}
+
 .sticker-name {
 	width: 100%;
 	min-height: 2rem;
 	max-height: 2rem;
-	background-color: rgba(0, 0, 0, .80);
 	/* border-radius: 5px 5px 0 0; */
-	border-radius: 50% / 10%;
+	/* border-radius: 50% / 10%; */
 	color: white;
 	font-size: 11px;
 	font-family: "Quicksand-Bold";
@@ -305,20 +325,10 @@ body {
 	align-items: center;
 }
 
-.sticker-name:before {
-	content: '';
-	top: 10%;
-	bottom: 10%;
-	right: -5%;
-	left:  -5%;
-	background: inherit;
-	border-radius: 5% / 50%;
-  }
 
 .sticker-name-long-min14{
 	width: 100%;
-	background-color: rgba(0, 0, 0, .80);
-	border-radius: 5px 5px 0 0;
+	/* border-radius: 5px 5px 0 0; */
 	color: white;
 	font-size: 10px;
 	font-family: "Quicksand-Bold";
@@ -331,8 +341,7 @@ body {
 
 .sticker-name-long-min18{
 	width: 100%;
-	background-color: rgba(0, 0, 0, .80);
-	border-radius: 5px 5px 0 0;
+	/* border-radius: 5px 5px 0 0; */
 	color: white;
 	font-size: 9px;
 	font-family: "Quicksand-Bold";
@@ -347,8 +356,7 @@ body {
 	width: 100%;
 	min-height: 2rem;
 	max-height: 2rem;
-	background-color: rgba(255, 255, 255, .80);
-	border-radius: 5px 5px 0 0;
+	/* border-radius: 5px 5px 0 0; */
 	color: #423b4b;
 	font-size: 11px;
 	font-family: "Quicksand-Bold";
@@ -359,8 +367,7 @@ body {
 
 .sticker-name-long-min14-dark{
 	width: 100%;
-	background-color: rgba(255, 255, 255, .80);
-	border-radius: 5px 5px 0 0;
+	/* border-radius: 5px 5px 0 0; */
 	color: #423b4b;
 	font-size: 10px;
 	font-family: "Quicksand-Bold";
@@ -373,8 +380,7 @@ body {
 
 .sticker-name-long-min18-dark{
 	width: 100%;
-	background-color: rgba(255, 255, 255, .80);
-	border-radius: 5px 5px 0 0;
+	/* border-radius: 5px 5px 0 0; */
 	color: #423b4b;
 	font-size: 9px;
 	font-family: "Quicksand-Bold";
@@ -408,6 +414,7 @@ body {
   
 .sticker-card:hover {
 	animation: glow-animation 0.8s ease-in-out infinite;
+	border-radius: 15px;
 	transform: scale(0.97);
 	transition: 0.1s;
 }
@@ -562,9 +569,10 @@ input[type=text] {
 
 .spare-spinner-container{
 	background-color: black;
-	border-radius: 0 0 5px 5px;
+	border-radius: 5px;
 	width: 100%;
 	color: white;
+	margin-top: 5px;
 }
 
 .spare-field{
@@ -582,7 +590,7 @@ input[type=text] {
 	font-size: 11px;
 	font-family: "Quicksand-Bold";
 	color: white;
-	background-color: black;
+	background-color: transparent;
 	border-radius: 0 0 5px 5px;
 	border: none;
 	border-color: transparent;
@@ -917,4 +925,28 @@ input[class="player-info-field"]{
 	height: 15px;
 	margin-left: 5%;
 	margin-right: -15%;
+}
+
+.spare-container-no-spinner{
+	width: 100%;
+	font-size: 10px;
+	z-index: 5;
+	margin-top: -60px;
+	display: inherit;
+	position: relative;
+}
+
+.spare-img{
+	width: 30%;
+}
+
+.spare-snapshot-text{
+	color: #787155;
+	font-size: 12px;
+	margin-left: -31px;
+	z-index: 5;
+	position: relative;
+	width: 32px;
+	margin-top: 4px;
+	text-align: center;
 }
