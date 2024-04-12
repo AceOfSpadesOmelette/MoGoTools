@@ -537,7 +537,7 @@ input[type=text] {
 .sticker-star-container{
 	display: flex;
 	gap: 2px;
-	margin-bottom: -10px;
+	margin-bottom: -15px;
 	position: relative;
 	z-index: 3;
 	justify-content: center;
@@ -547,7 +547,6 @@ input[type=text] {
 	/* width: 15px; */
 	height: 35px;
   	z-index: 999;
-  	margin-bottom: -8px;
 }
 
 #set-progress-tracker{
@@ -645,7 +644,7 @@ input.spare-text{
 	flex: 0 0 48%;
 }
 
-.gold-frame{
+.gold-frame, .normal-frame{
 	position: relative;
 	margin-top: -200%;
 	width: 100%;
