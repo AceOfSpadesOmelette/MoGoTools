@@ -506,12 +506,14 @@ document.getElementById('RefreshFiltersBtn').addEventListener('click', PerformFi
 
 const AndOrFilterModeBtn = document.getElementById('AndOrFilterModeBtn');
 AndOrFilterModeBtn.addEventListener('click', function () {
-  const buttonText = document.getElementById('ClearFiltersBtnText');
+  const buttonText = document.getElementById('AndOrFilterModeBtnText');
   AndZeroOrOne = (AndZeroOrOne + 1) % 2;
   if (AndZeroOrOne === 1) {
     buttonText.textContent = 'Filter Mode: OR';
+    document.getElementById('AndOrFilterModeBtnTooltip').textContent = 'OR Mode: Stickers that match at least ONE of the filter conditions will be displayed.';
   } else {
     buttonText.textContent = 'Filter Mode: AND';
+    document.getElementById('AndOrFilterModeBtnTooltip').textContent = 'AND Mode: Only stickers that match ALL filter conditions will be displayed.';
   }
   PerformFilters();
 });
