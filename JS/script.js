@@ -107,13 +107,13 @@ function generateCurrentStickerBoard(dataset, userData, targetParentElementID) {
   }
 }
 
-
 function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   const { StickerName, SetID, AlbumNo, GlobalID, AlbumName, Prestige, Golden, StickerRarity, ImageSource, Colour } = item;
   
   const StickerSet = SetID - AlbumNo * 100;
   const StickerSetPath = AlbumName;
   const StickerSetNo = GlobalID - SetID * 100;
+  const DarkenedColour = DarkenColour(Colour, 25);
 
   let StickerNameClass = 'sticker-name';
   if (StickerName.length > 14) {StickerNameClass = 'sticker-name-long-min14';}
@@ -132,7 +132,7 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   container.classList.add(ContainerClass);
 
   container.innerHTML = `
-    <div class="sticker-star-container"><img class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${isGold}</div><div class="${StickerNameClass}" style="background-color: ${Colour};">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</div></div>
+    <div class="sticker-star-container"><img class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${isGold}</div><div class="sticker-ribbon" style="background-color: ${Colour}; border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</span></div></div>
   `;
 
   if(isTracking){
@@ -1253,6 +1253,38 @@ function calculateBrightness(color) {
   return brightness;
 }
 
+function DarkenColour(colour, percentagevalue) {
+  // Convert the hex color to RGB
+  const hexToRgb = (hex) => {
+    const bigint = parseInt(hex.substring(1), 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+    return [r, g, b];
+  };
+  // Darken the RGB color by the specified value
+  const darkenRgb = (rgb, factor) => {
+    const [r, g, b] = rgb;
+    const newR = Math.floor(r * factor);
+    const newG = Math.floor(g * factor);
+    const newB = Math.floor(b * factor);
+    return [newR, newG, newB];
+  };
+  // Convert the RGB color back to hex
+  const rgbToHex = (rgb) => {
+    const [r, g, b] = rgb;
+    const toHex = (c) => {
+      const hex = c.toString(16);
+      return hex.length === 1 ? "0" + hex : hex;
+    };
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+  };
+  const rgbColour = hexToRgb(colour);
+  const darkenFactor = 1 - (percentagevalue / 100); // Convert value to a factor between 0 and 1
+  const darkenedRgb = darkenRgb(rgbColour, darkenFactor);
+  const darkenedHexColour = rgbToHex(darkenedRgb);
+  return darkenedHexColour;
+}
 
 let includeIGN = 0;
 let includePlayerLink = 0;
@@ -1277,11 +1309,15 @@ function copyToCollectionScreenshot() {
     collectionScreenshot.innerHTML = "";
     let playerIGN = '';
     let playerLink = '';
-    if(includeIGN === 1){playerIGN = document.getElementById("player-ign").value;}
-    if(includePlayerLink === 1){playerLink = document.getElementById("player-link").value;}
+    if (includeIGN === 1) {
+      playerIGN = document.getElementById("player-ign").value;
+    }
+    if (includePlayerLink === 1) {
+      playerLink = document.getElementById("player-link").value;
+    }
     // Create the new element
     var newElement = `<div id="collection-screenshot-player-info"><div id="collection-screenshot-player-name">${playerIGN}</div><div id="collection-screenshot-my-album">My Album</div><div id="collection-screenshot-player-link">${playerLink}</div></div>`;
-    
+
     // Add the new element at the beginning of collectionScreenshot
     collectionScreenshot.innerHTML = newElement + collectionScreenshot.innerHTML;
 
@@ -1289,9 +1325,10 @@ function copyToCollectionScreenshot() {
     collectionScreenshot.style.backgroundColor = "rgba(248,244,228)";
     collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
+    clonedContents = clonedContents.replace(/trade-button-container/g, "trade-button-container-screenshot");
     collectionScreenshot.innerHTML += clonedContents;
     var screenshotContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
-    screenshotContainers.forEach(function(container) {
+    screenshotContainers.forEach(function (container) {
       var globalID = container.getAttribute("data-global");
       var spanElement = document.createElement("span");
       spanElement.className = "spare-text-screenshot";
@@ -1300,6 +1337,23 @@ function copyToCollectionScreenshot() {
       if (spareTextElement) {
         spareTextElement.parentNode.replaceChild(spanElement, spareTextElement);
       }
+
+      var spareSpinnerContainer = container.querySelector(".spare-spinner-container");
+      if (spareSpinnerContainer) {
+        spareSpinnerContainer.parentNode.removeChild(spareSpinnerContainer);
+      }
+
+      if (userData[globalID].spare > 0) {
+        var spareContainer = document.createElement("div");
+        spareContainer.className = "spare-container-no-spinner";
+        spareContainer.innerHTML = `<img class="spare-img" src="assets/stickers/Collections_TradingGroup_NumberBG_Small.png"><span class="spare-snapshot-text">+${userData[globalID].spare}</span>`;
+        container.insertBefore(spareContainer, container.querySelector(".sticker-ribbon"));
+
+        container.querySelector(".sticker-ribbon").style.marginTop = "-4.5px";
+      }
+      container.querySelector(".trade-button-container-screenshot").style.marginTop = "5px";
+      container.querySelector(".trade-button-container-screenshot").style.width = "100%";
+      container.querySelector(".trade-button-container-screenshot").style.display = "flex";
     });
   } else {
     console.log("Either middle-side or collection-screenshot element is not found.");
@@ -1311,7 +1365,7 @@ function captureScreenshot() {
 
   if (collectionScreenshot) {
     window.devicePixelRatio = 2;
-    html2canvas(collectionScreenshot, { scale: 2});
+    html2canvas(collectionScreenshot, {scale: 2});
     html2canvas(collectionScreenshot).then(function(canvas) {
       var dataURL = canvas.toDataURL("image/png");
       var link = document.createElement("a");
@@ -1330,7 +1384,7 @@ if (dlPngButton) {
     dlPngButton.textContent = "Downloading...";
     copyToCollectionScreenshot();
     captureScreenshot();
-    document.getElementById("collection-screenshot").innerHTML = "";
+    //document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function() {
       dlPngButton.textContent = "Download successful!";
       setTimeout(function() {
