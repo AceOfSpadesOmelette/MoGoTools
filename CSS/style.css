@@ -295,7 +295,8 @@ body {
 	min-height: 2rem;
 	max-height: 2rem;
 	background-color: rgba(0, 0, 0, .80);
-	border-radius: 5px 5px 0 0;
+	/* border-radius: 5px 5px 0 0; */
+	border-radius: 50% / 10%;
 	color: white;
 	font-size: 11px;
 	font-family: "Quicksand-Bold";
@@ -303,6 +304,16 @@ body {
 	display: grid;
 	align-items: center;
 }
+
+.sticker-name:before {
+	content: '';
+	top: 10%;
+	bottom: 10%;
+	right: -5%;
+	left:  -5%;
+	background: inherit;
+	border-radius: 5% / 50%;
+  }
 
 .sticker-name-long-min14{
 	width: 100%;
@@ -526,8 +537,10 @@ input[type=text] {
 }
 
 .star-img{
-	width: 15px;
-	z-index: 999;
+	/* width: 15px; */
+	height: 35px;
+  	z-index: 999;
+  	margin-bottom: -8px;
 }
 
 #set-progress-tracker{
@@ -658,7 +671,7 @@ input.spare-text{
 	height: 15px;
 	margin: 0 auto 0 10px;
 	display: block;
-  }
+}
   
 .valve-subcontainer {
 	background-color: var(--darkbrown);
