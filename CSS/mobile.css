@@ -635,7 +635,7 @@ input.spare-text{
 	flex: 0 0 48%;
 }
 
-.gold-frame{
+.gold-frame, .normal-frame{
 	position: relative;
 	margin-top: -200%;
 	width: 100%;
