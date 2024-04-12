@@ -125,16 +125,14 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
 
   let isGold = '';
   if (Golden === '1') {isGold = '<img class="gold-frame" src="assets/stickers/BG_StickerSpecial.png">';}
-
-  let starsHtml = '';
-  for (let i = 0; i < StickerRarity; i++) {starsHtml += `<img class="star-img" src="assets/stickers/${starIcon}">`;}
+  else{isGold = '<img class="gold-frame" src="assets/stickers/BG_StickerBasic.png">';}
 
   const container = document.createElement('div');
   container.dataset.global = GlobalID;
   container.classList.add(ContainerClass);
 
   container.innerHTML = `
-    <div class="sticker-star-container">${starsHtml}</div><div class="sticker-photo-container"><img class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${isGold}</div><div class="${StickerNameClass}" style="background-color: ${Colour};">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</div>
+    <div class="sticker-star-container"><img class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${isGold}</div><div class="${StickerNameClass}" style="background-color: ${Colour};">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</div></div>
   `;
 
   if(isTracking){
@@ -1331,8 +1329,8 @@ if (dlPngButton) {
   dlPngButton.addEventListener("click", function() {
     dlPngButton.textContent = "Downloading...";
     copyToCollectionScreenshot();
-    captureScreenshot();
-    document.getElementById("collection-screenshot").innerHTML = "";
+    //captureScreenshot();
+    //document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function() {
       dlPngButton.textContent = "Download successful!";
       setTimeout(function() {
