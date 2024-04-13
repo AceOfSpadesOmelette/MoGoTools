@@ -124,15 +124,15 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   if (Prestige === '1') {starIcon = 'Icon_Star_Rainbow.png';}
 
   let FrameHTML = '';
-  if (Golden === '1') {FrameHTML = '<img class="gold-frame" src="assets/stickers/BG_StickerSpecial.png">';}
-  else{FrameHTML = '<img class="normal-frame" src="assets/stickers/BG_StickerBasic.png">';}
+  if (Golden === '1') {FrameHTML = '<img draggable="false" class="gold-frame" src="assets/stickers/BG_StickerSpecial.png">';}
+  else{FrameHTML = '<img draggable="false" class="normal-frame" src="assets/stickers/BG_StickerBasic.png">';}
 
   const container = document.createElement('div');
   container.dataset.global = GlobalID;
   container.classList.add(ContainerClass);
 
   container.innerHTML = `
-    <div class="sticker-star-container"><img class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background-color: ${Colour}; border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</span></div></div>
+    <div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img draggable="false" class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background-color: ${Colour}; border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</span></div></div>
   `;
 
   if(isTracking){
@@ -886,7 +886,7 @@ function GenerateFilterSetButtons() {
         if (SetName.length > 15) {SetNameClass = 'set-name-long-min15';}
         if (isBrighterThan(SetColour, '#CCCCCC')) {SetNameClass += '-dark';}
         const SetCardContainerElement = `
-          <div class="set-card-container"><img class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src='logo/Icon_Placeholder.png';"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
+          <div class="set-card-container"><img draggable="false" class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src='logo/Icon_Placeholder.png';"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
         `;
 
         setProgressTracker.innerHTML += SetCardContainerElement;
@@ -1193,7 +1193,7 @@ function ChangeUserDataHaveSpareValue(userData, StickerContainer){
 
 function UpdateAlbumStartEndTime() {
   const AlbumIconElement = document.getElementById('album-logo-container');
-  AlbumIconElement.innerHTML = `<img class="album-logo" src="logo/album_${CurrentAlbumNumber}.png">`;
+  AlbumIconElement.innerHTML = `<img draggable="false" class="album-logo" src="logo/album_${CurrentAlbumNumber}.png">`;
   
   const startTimeSpan = document.querySelector('#start-time');
   const endTimeSpan = document.querySelector('#end-time');
@@ -1326,6 +1326,7 @@ function copyToCollectionScreenshot() {
     var clonedContents = middleSide.innerHTML;
     collectionScreenshot.style.backgroundColor = "rgba(248,244,228)";
     collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
+    collectionScreenshot.style.background = `url("../assets/stickers/Collections_Album_BG.png")`;
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
     clonedContents = clonedContents.replace(/trade-button-container/g, "trade-button-container-screenshot");
     collectionScreenshot.innerHTML += clonedContents;
@@ -1348,7 +1349,7 @@ function copyToCollectionScreenshot() {
       if (userData[globalID].spare > 0) {
         var spareContainer = document.createElement("div");
         spareContainer.className = "spare-container-no-spinner";
-        spareContainer.innerHTML = `<img class="spare-img" src="assets/stickers/Collections_TradingGroup_NumberBG_Small.png"><span class="spare-snapshot-text">+${userData[globalID].spare}</span>`;
+        spareContainer.innerHTML = `<img draggable="false" class="spare-img" src="assets/stickers/Collections_TradingGroup_NumberBG_Small.png"><span class="spare-snapshot-text">+${userData[globalID].spare}</span>`;
         container.insertBefore(spareContainer, container.querySelector(".sticker-ribbon"));
 
         container.querySelector(".sticker-ribbon").style.marginTop = "-4.5px";
