@@ -718,6 +718,8 @@ input.spare-text{
 	justify-content: center;
 	margin-left: 15%;
 	height: 18px;
+	/* set parent container position relative for tooltiptext-bottom */
+	position: relative;
 }
   
 #total-valve-quantity {
@@ -1227,3 +1229,5 @@ input[class="player-info-field"]{
 .btn:hover .tooltiptext-top { visibility: visible; }
 .btn:has(.tooltiptext-bottom) { overflow:visible !important; }
 .btn:hover .tooltiptext-bottom { visibility: visible; }
+.leftover-valve-subcontainer:has(.tooltiptext-bottom) { overflow:visible !important; }
+.leftover-valve-subcontainer:hover .tooltiptext-bottom { visibility: visible; }
