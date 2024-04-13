@@ -159,7 +159,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	overflow-y: overlay;
-	background: url("/assets/stickers/Collections_Album_BG.png");
+	background: url("../assets/stickers/Collections_Album_BG.png");
 }
 
 /* LEFT SUBCATEGORY */

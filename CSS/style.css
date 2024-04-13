@@ -171,7 +171,7 @@ body {
 	margin-right: auto;
 	overflow-y: overlay;
 	height: 100vh;
-	background: url("/assets/stickers/Collections_Album_BG.png");
+	background: url("../assets/stickers/Collections_Album_BG.png");
 }
 
 #right-side{
