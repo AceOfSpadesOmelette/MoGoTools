@@ -85,11 +85,11 @@
 										</button>
 										<button id="ToggleLFBtn" class="btn" type="button">
 											Invert LF
-											<span class="tooltiptext-top">Toggles Looking For (LF) label of each sticker in the current selection</span>
+											<span class="tooltiptext-top">Inverts Looking For (LF) label of each sticker in the current selection</span>
 										</button>
 										<button id="ToggleFTBtn" class="btn" type="button">
 											Invert FT
-											<span class="tooltiptext-top">Toggles For Trade (FT) label of each sticker in the current selection</span>
+											<span class="tooltiptext-top">Inverts For Trade (FT) label of each sticker in the current selection</span>
 										</button>
 									</div>
 								</div>
@@ -262,7 +262,7 @@
 							</div>
 						</div>
 						<button id="IgnorePrestigeBtn" class="btn" type="button">Ignore Prestige
-							<span class="tooltiptext-bottom">Turn on this button if you haven't completed prestige album!</span>
+							<span class="tooltiptext-bottom">Toggle this button if you haven't reached prestige album!</span>
 						</button>
 						<div id="album-progress-container">
 							<div id="album-logo-container">
@@ -281,8 +281,7 @@
 								<div id="progress-and-valve">
 									<div class="progress-container" id="album-progress-tracker">
 										<div class="progress-bar"></div>
-										<div class="progress-text"><span id="user-stickers-quantity">0</span> / <span
-												id="total-stickers-quantity">0</span></div>
+										<div class="progress-text"><span id="user-stickers-quantity">0</span> / <span id="total-stickers-quantity">0</span></div>
 									</div>
 									<div class="valve-container">
 										<div class="valve-subcontainer">
@@ -292,6 +291,7 @@
 										</div>
 										<div class="leftover-valve-subcontainer">
 											<img class="valve-star" src="assets/stickers/Icon_Star_Rainbow.png">
+											<span class="tooltiptext-bottom">Enter your leftover stars here! (Applicable to players who have reached prestige album.)</span>
 											<input
 											type="number" id="leftover-total-valve-quantity" class="valve-prestige-text"
 											name="LeftoverTotalValveQuantity" min="0" max="9999" value="0" size="5"></div>
