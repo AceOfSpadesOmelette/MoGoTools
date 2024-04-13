@@ -23,14 +23,26 @@ function init() {
   console.log('Hello world!');
   GenerateFilterSetButtons();   
   SetDefaultFilterStates();
-  CreateNewUserData(STICKER_DATA);
-  generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');  
-  PerformSort({ currentTarget: document.querySelector('button[data-sort-type="GlobalID"]') });  
-  NotSelectedByDefault();  
+
+  // Check if userData exists in localStorage
+  const LocaluserData = localStorage.getItem("userData");
+  if (LocaluserData) {
+    importUserData(LocaluserData);
+    textArea.value = LocaluserData;
+  } else {
+    CreateNewUserData(STICKER_DATA);
+
+    generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');  
+    PerformSort({ currentTarget: document.querySelector('button[data-sort-type="GlobalID"]') });  
+    NotSelectedByDefault();  
+    countSelectedStickers();
+    countValveStickers();
+  }
+
   UpdateTotalStickerQuantity();
   UpdateTotalStickerByRarityQuantity();
-  countSelectedStickers();
-  countValveStickers();
+  updateProgressBar();
+
   UpdateAlbumStartEndTime();
   compareViewport();
 }
@@ -550,7 +562,12 @@ function PerformFilters() {
   if(document.getElementById('filtermenu-searchbar').value === ''){FilterList[document.getElementById('filtermenu-searchbar').getAttribute('data-filtervalue')].FilterState = 0;}
   updateClearFiltersButton();
   generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');
-  PerformSort({ currentTarget: document.querySelector('.sort-btn.btnBlue') });
+  const currentTarget = document.querySelector('.sort-btn.btnBlue');
+  if (currentTarget) {
+    PerformSort({ currentTarget });
+  } else {
+    PerformSort({ currentTarget: document.querySelector('button[data-sort-type="GlobalID"]') });
+  }
 }
 
 const DefaultStateFilters = [];
@@ -931,29 +948,26 @@ const textArea = document.querySelector('.backup-area');
 
 
 function exportUserData() {
-  // Check for missing keys and add default values
   Object.keys(userData).forEach((key) => {
     userData[key] = { ...defaultValues, ...userData[key] };
   });
 
-  // Get player-ign and player-link values
   const playerIGN = document.getElementById("player-ign").value;
   const playerLink = document.getElementById("player-link").value;
   const LeftoverValveStars = document.getElementById("leftover-total-valve-quantity").value;
 
-  // Create additional lines
   const additionalLines = [
     `player-ign: ${playerIGN}`,
     `player-link: ${playerLink}`,
     `leftover-valve-stars: ${LeftoverValveStars}`,
   ];
 
-  // Convert userData to string
   const userDataString = JSON.stringify(userData, null, 2);
-
-  // Add additional lines before userDataString
   const updatedUserDataString = additionalLines.join("\n") + "\n" + userDataString;
   textArea.value = updatedUserDataString;
+
+  // Save updatedUserDataString in localStorage
+  localStorage.setItem("userData", updatedUserDataString);
 }
 
 function importUserData(userDataString) {
@@ -1585,6 +1599,20 @@ document.getElementById('ToggleFTBtn').onclick = function() {
     userData[CurrentStickerGlobalID].fortrade = ((parseInt(userData[CurrentStickerGlobalID].fortrade) + 1) % 2).toString();
     RestoreTradeStates(userData, container);
   });
+}
+
+document.getElementById('ResetAllStickersBtn').onclick = function() {
+  CreateNewUserData(STICKER_DATA);
+  clearFilters();
+  const containers = document.querySelectorAll('.sticker-card-container');
+  containers.forEach((container) => {
+    RestoreSelected(userData, container);
+    RestoreStickerSpares(userData, container);
+    RestoreTradeStates(userData, container);
+  })
+  countSelectedStickers();
+  countValveStickers();
+  generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');
 }
 
 document.getElementById('leftover-total-valve-quantity').addEventListener('input', handleVaultPrestigeInput);
