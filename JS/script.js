@@ -1326,7 +1326,7 @@ function copyToCollectionScreenshot() {
     var clonedContents = middleSide.innerHTML;
     collectionScreenshot.style.backgroundColor = "rgba(248,244,228)";
     collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
-    collectionScreenshot.style.cssText += 'background-image: url("../assets/stickers/Collections_Album_BG.png");';
+    collectionScreenshot.style.background = `url("../assets/stickers/Collections_Album_BG.png")`;
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
     clonedContents = clonedContents.replace(/trade-button-container/g, "trade-button-container-screenshot");
     collectionScreenshot.innerHTML += clonedContents;
