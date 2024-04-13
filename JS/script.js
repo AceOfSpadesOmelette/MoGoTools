@@ -46,14 +46,6 @@ function init() {
   compareViewport();
 }
 
-  UpdateTotalStickerQuantity();
-  UpdateTotalStickerByRarityQuantity();
-  updateProgressBar();
-
-  UpdateAlbumStartEndTime();
-  compareViewport();
-}
-
 // Runs when loading the entire site for the first time
 window.addEventListener('DOMContentLoaded', () => {
   const loadingOverlay = document.getElementById('loading-overlay');
