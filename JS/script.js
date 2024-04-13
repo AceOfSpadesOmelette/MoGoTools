@@ -734,8 +734,11 @@ stickerContainer.addEventListener('input', function(event) {
       } else {
         target.value = target.value.slice(0, 2);
       }
-    } else if (target.value < 0 || target.value === '') {
+    } else if (target.value < 0) {
       target.value = 0;
+    }
+    else if (target.value === ''){
+      setTimeout(() => {target.value = 0;}, 5000); //set 5s timeout for user to type before setting it to zero
     }
     if (target.value > 0) {
       if (!clickedStickerContainer.classList.contains('selected')) {
