@@ -18,7 +18,6 @@ const defaultValues = {
   fortrade: "0",
 };
 
-// Sets up the website
 function init() {
   console.log('Hello world!');
   GenerateFilterSetButtons();   
@@ -35,9 +34,17 @@ function init() {
     generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');  
     PerformSort({ currentTarget: document.querySelector('button[data-sort-type="GlobalID"]') });  
     NotSelectedByDefault();  
-    countSelectedStickers();
-    countValveStickers();
   }
+
+  UpdateTotalStickerQuantity();
+  UpdateTotalStickerByRarityQuantity();
+  updateProgressBar();  
+  countSelectedStickers();
+  countValveStickers();
+
+  UpdateAlbumStartEndTime();
+  compareViewport();
+}
 
   UpdateTotalStickerQuantity();
   UpdateTotalStickerByRarityQuantity();
