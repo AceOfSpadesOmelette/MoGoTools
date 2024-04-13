@@ -1070,7 +1070,7 @@ exportFromFileBtn.addEventListener('click', () => {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.href = url;
-  link.download = 'userData.txt';
+  link.download = 'mogotools-userData.txt';
   link.click();
 });
 
@@ -1390,7 +1390,7 @@ function captureScreenshot() {
       var dataURL = canvas.toDataURL("image/png");
       var link = document.createElement("a");
       link.href = dataURL;
-      link.download = "collection-screenshot.png";
+      link.download = "mogotools-collection-screenshot.png";
       link.click();
     });
   } else {
