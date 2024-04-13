@@ -708,8 +708,8 @@ input.spare-text{
 .valve-prestige-text {
 	font-size: 12px;
 	font-family: "Quicksand-Bold";
-	color: #2a7251;
-	background-color: #c1f496;
+	color: #136e21;
+	background-color: transparent;
 	border-radius: 5px;
 	border-color: transparent;
 	text-align: center;
@@ -718,7 +718,7 @@ input.spare-text{
 }
 
 .leftover-valve-subcontainer {
-	background-color: #c1f496;
+	background-color: var(--lightbrown);
 	border-radius: 5px;
 	width: 80%;
 	display: flex;

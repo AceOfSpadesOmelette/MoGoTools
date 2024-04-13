@@ -699,8 +699,8 @@ input.spare-text{
 .valve-prestige-text{
 	font-size: 0.75rem;
 	font-family: "Quicksand-Bold";
-	color: #2a7251;
-	background-color: #c1f496;
+	color: #136e21;
+	background-color: transparent;
 	border-radius: 5px;
 	border: none;
 	border-color: transparent;
@@ -710,7 +710,7 @@ input.spare-text{
 }
 
 .leftover-valve-subcontainer{
-	background-color: #c1f496;
+	background-color: var(--lightbrown);
 	border-radius: 5px;
 	width: 85%;
 	display: flex;
@@ -718,7 +718,7 @@ input.spare-text{
 	justify-content: center;
 	margin-left: 15%;
 	height: 18px;
-	/* set parent container position relative for tooltiptext-bottom */
+	/* set parent container position relative for tooltiptext */
 	position: relative;
 }
   
