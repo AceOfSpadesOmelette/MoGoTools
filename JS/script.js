@@ -18,6 +18,7 @@ const defaultValues = {
   fortrade: "0",
 };
 
+// Sets up the website
 function init() {
   console.log('Hello world!');
   GenerateFilterSetButtons();   
@@ -1458,6 +1459,10 @@ var ProgressMenuModal = document.getElementById("progress-menu-modal");
 var ProgressMenuMobileOpenBtn = document.getElementById("mobileMenuOptions");
 var ProgressMenuMobileCloseBtn = document.getElementById("progress-menu-footer");
 
+var CurrentFiltersModal = document.getElementById("current-filters-modal");
+var CurrentFiltersOpenBtn = document.getElementById("ViewCurrentFiltersBtn");
+var CurrentFiltersCloseBtn = document.getElementById("current-filters-footer");
+
 // var BasicMenuModal = document.getElementById("basic-menu-modal");
 // var BasicMenuMobileOpenBtn = document.getElementById("mobileBasicMenu");
 // var BasicMenuMobileCloseBtn = document.getElementById("basic-menu-footer");
@@ -1477,6 +1482,89 @@ ProgressMenuMobileOpenBtn.onclick = function() {
 ProgressMenuMobileCloseBtn.onclick = function() {
   ProgressMenuModal.style.display = "none";
 };
+
+CurrentFiltersOpenBtn.onclick = function() {
+  CurrentFiltersModal.style.display = "block";
+  console.log(FilterList);
+  generateCurrentFiltersModalText();
+};
+
+CurrentFiltersCloseBtn.onclick = function() {
+  CurrentFiltersModal.style.display = "none";
+};
+
+function generateCurrentFiltersModalText() {
+  const currentFiltersContent = document.getElementById('current-filters-content');
+  currentFiltersContent.innerHTML = ''; // Empty the current-filters-content
+
+  const includeFilters = [];
+  const excludeFilters = [];
+
+  Object.values(FilterList).forEach((filter) => {
+    if (filter.FilterState === 1) {
+      if (filter.FilterName === '1>StickerName>') {
+        if (Array.isArray(filter.FilterValue)) {
+          filter.FilterValue.forEach((value) => {
+            includeFilters.push(`IS "${value}"`);
+          });
+        }
+      } else if (filter.FilterName !== '0>spare>spare-filter-min|spare-filter-max') {
+        const filterBtn = document.querySelector(`button[data-filtervalue="${filter.FilterName}"]`);
+        if (filterBtn) {
+          includeFilters.push(`IS ${filterBtn.innerHTML}`);
+        }
+      }
+    } else if (filter.FilterState === 2) {
+      if (filter.FilterName === '1>StickerName>') {
+        if (Array.isArray(filter.FilterValue)) {
+          filter.FilterValue.forEach((value) => {
+            excludeFilters.push(`NOT "${value}"`);
+          });
+        }
+      } else if (filter.FilterName !== '0>spare>spare-filter-min|spare-filter-max') {
+        const filterBtn = document.querySelector(`button[data-filtervalue="${filter.FilterName}"]`);
+        if (filterBtn) {
+          excludeFilters.push(`NOT ${filterBtn.innerHTML}`);
+        }
+      }
+    }
+  });
+
+  let filterModeText = '';
+  if (AndZeroOrOne === 0) {
+    filterModeText = 'Current filter mode: AND';
+  } else {
+    filterModeText = 'Current filter mode: OR';
+  }
+
+  const spareMinValue = document.getElementById('spare-filter-min').value;
+  const spareMaxValue = document.getElementById('spare-filter-max').value;
+
+  let filterModeDescription = '';
+  if (AndZeroOrOne === 0 && FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState !== 0) {
+    const filterStateText = FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState === 2 ? 'not between' : 'between';
+    filterModeDescription = `Stickers that match ALL filter conditions and have spares ${filterStateText} ${spareMinValue} and ${spareMaxValue} will be displayed in the board.`;
+  } else if (AndZeroOrOne === 0 && FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState === 0) {
+    filterModeDescription = `Stickers that match ALL filter conditions will be displayed in the board.`;
+  } else if (AndZeroOrOne === 1 && FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState !== 0) {
+    const filterStateText = FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState === 2 ? 'not between' : 'between';
+    filterModeDescription = `Stickers that match AT LEAST one of the filter conditions and have spares ${filterStateText} ${spareMinValue} and ${spareMaxValue} will be displayed in the board.`;
+  } else if (AndZeroOrOne === 1 && FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState === 0) {
+    filterModeDescription = `Stickers that match AT LEAST one of the filter conditions will be displayed in the board.`;
+  }
+
+  let includeFiltersText = '';
+  if (includeFilters.length > 0) {
+    includeFiltersText = `<b>Include filters:</b><br><ul>\n${includeFilters.map(filter => `<li>${filter}</li>`).join('\n')}\n</ul>`;
+  }
+
+  let excludeFiltersText = '';
+  if (excludeFilters.length > 0) {
+    excludeFiltersText = `<b>Exclude filters:</b><br><ul>\n${excludeFilters.map(filter => `<li>${filter}</li>`).join('\n')}\n</ul>`;
+  }
+
+  currentFiltersContent.innerHTML = `${filterModeText}<br><br>${filterModeDescription}<br><br>${includeFiltersText}<br>${excludeFiltersText}`;
+}
 
 // BasicMenuMobileOpenBtn.onclick = function() {
 //   BasicMenuModal.style.display = "block";
