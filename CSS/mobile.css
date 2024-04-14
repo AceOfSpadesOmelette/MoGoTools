@@ -52,7 +52,7 @@ body {
 	min-height: auto;
 }
 
-*:not(input) {
+img {
 	-webkit-touch-callout: none !important;
 	-webkit-user-select: none !important;
 	-khtml-user-select: none !important;

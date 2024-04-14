@@ -50,7 +50,7 @@ body {
 	background-color: rgba(248,244,228);
 }
 
-*:not(input) {
+img {
 	-webkit-touch-callout: none !important;
 	-webkit-user-select: none !important;
 	-khtml-user-select: none !important;
