@@ -1580,9 +1580,9 @@ window.onclick = function(event) {
     ProgressMenuModal.style.display = "none";
   }
 
-  if (event.target === BasicMenuModal) {
-    BasicMenuModal.style.display = "none";
-  }
+  //if (event.target === BasicMenuModal) {
+  //  BasicMenuModal.style.display = "none";
+  //}
 };
 
 document.getElementById('generate-trade-post-btn').addEventListener('click', function() {
