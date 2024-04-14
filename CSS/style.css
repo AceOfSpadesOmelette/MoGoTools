@@ -1145,7 +1145,7 @@ input[class="player-info-field"]{
 	height: calc(85vh - 30px);
 	padding: 10px;
 	color: var(--darkerbrown);
-	font-size: 0.7rem;
+	font-size: 13px;
 }
 
 #current-filters-footer{
