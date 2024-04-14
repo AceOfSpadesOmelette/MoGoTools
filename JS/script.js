@@ -735,9 +735,12 @@ stickerContainer.addEventListener('input', function(event) {
       }
     } else if (target.value < 0) {
       target.value = 0;
-    }
-    else if (target.value === ''){
-      setTimeout(() => {target.value = 0;}, 5000); //set 5s timeout for user to type before setting it to zero
+    } else if (target.value === ''){
+      setTimeout(() => {
+        if (target.value === '') { // Check if value is still empty before setting it to 0
+          target.value = 0;
+        }
+      }, 5000); // Set 5s timeout for user to type before setting it to zero
     }
     if (target.value > 0) {
       if (!clickedStickerContainer.classList.contains('selected')) {
