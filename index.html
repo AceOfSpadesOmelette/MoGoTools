@@ -57,18 +57,19 @@
 							<div id="filter-btn-group-container">
 								<div id="search-bar-container">
 									<input type="text" id="filtermenu-searchbar" data-filtervalue="1>StickerName>"
-										placeholder="Search...">
+										placeholder="Search...">										
 									<button id="ClearFilterMenuSearchBar" class="btn" type="button">×</button>
 								</div>
 								<div id="filter-settings-container">
 									<button id="AndOrFilterModeBtn" class="btn filter-settings-btn" type="button">
 										<span id="AndOrFilterModeBtnText">Filter Mode: AND</span>
-										<span id="AndOrFilterModeBtnTooltip" class="tooltiptext-top">AND Mode: Only stickers that match ALL filter conditions will be displayed.</span>
+										<span id="AndOrFilterModeBtnTooltip" class="tooltiptext-bottom">AND Mode: Only stickers that match ALL filter conditions will be displayed.</span>
 									</button>
 									<button id="ClearFiltersBtn" class="btn filter-settings-btn" type="button">
 										<span>× Clear Filters (<span id="filterLength">0</span>)</span>
 									</button>
-									<button id="RefreshFiltersBtn" class="btn">⟳</button>
+									<button id="ViewCurrentFiltersBtn" class="btn">👁<span class="tooltiptext-bottom">View Filters</span></button>
+									<button id="RefreshFiltersBtn" class="btn">⟳<span class="tooltiptext-bottom">Refresh</span></button>
 								</div>
 								<div id="quick-toggle-menu">
 									<div class="btn-grp-title">
@@ -335,6 +336,15 @@
 			<button type="button" class="btn" id="mobileMenuFilters">Settings</button>			
 			<!-- <button type="button" class="btn" id="mobileBasicMenu">Menu</button> -->
 			<button type="button" class="btn" id="mobileMenuOptions">Your Profile</button>
+		</div>
+		</div>
+
+		<div id="current-filters-side">
+			<div id="current-filters-modal"><div id="current-filters-body">
+				<div id="current-filters-header">Current Filters</div>
+				<div id="current-filters-content"></div>
+				<div id="current-filters-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close</div>
+			</div>
 		</div>
 		</div>
 		
