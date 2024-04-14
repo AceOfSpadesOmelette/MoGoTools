@@ -556,7 +556,7 @@ input[type=text] {
 .sticker-star-container{
 	display: flex;
 	gap: 2px;
-	margin-bottom: -15px;
+	margin-bottom: -16px;
 	position: relative;
 	z-index: 3;
 	justify-content: center;
