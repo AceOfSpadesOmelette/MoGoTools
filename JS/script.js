@@ -23,7 +23,7 @@ function init() {
   console.log('Hello world!');
   GenerateFilterSetButtons();   
   SetDefaultFilterStates();
-
+  
   // Check if userData exists in localStorage
   const LocaluserData = localStorage.getItem("userData");
   if (LocaluserData) {
@@ -31,17 +31,15 @@ function init() {
     textArea.value = LocaluserData;
   } else {
     CreateNewUserData(STICKER_DATA);
-
-    generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');  
-    PerformSort({ currentTarget: document.querySelector('button[data-sort-type="GlobalID"]') });  
-    NotSelectedByDefault();  
   }
-
+  generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');  
+  PerformSort({ currentTarget: document.querySelector('button[data-sort-type="GlobalID"]') });  
+  NotSelectedByDefault(); 
+  countValveStickers();
   UpdateTotalStickerQuantity();
   UpdateTotalStickerByRarityQuantity();
-  updateProgressBar();  
+  //updateProgressBar();  
   countSelectedStickers();
-  countValveStickers();
 
   UpdateAlbumStartEndTime();
   compareViewport();
@@ -216,7 +214,7 @@ function updateLFOrFTValue(globalID, property) {
   if (button) {
     // Update the userData property value
     userData[globalID][property] = ((parseInt(userData[globalID][property]) + 1) % 2).toString();
-    console.log(userData[globalID][property]);
+    //console.log(userData[globalID][property]);
 
     // Add or remove the .btnGreen class based on the updated value
     if (userData[globalID][property] === '1') {      
@@ -446,12 +444,12 @@ function FilterBySearchbar(GlobalID) {
 }
 
 const searchbar = document.getElementById('filtermenu-searchbar');
-searchbar.addEventListener('input', () => {PerformFilters();});
+searchbar.addEventListener('input', () => {PerformFilters(userData);});
 
 document.addEventListener('click', function (event) {
    if (event.target.id === 'ClearFilterMenuSearchBar') {
      document.getElementById('filtermenu-searchbar').value = '';
-     PerformFilters();
+     PerformFilters(userData);
    }
 });
 
@@ -460,7 +458,7 @@ const filterButtons = document.querySelectorAll('.filter-btn');
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
     ChangeFilterButtonState(button, true);
-    PerformFilters();
+    PerformFilters(userData);
   });
 });
 
@@ -511,7 +509,7 @@ function clearFilters() {
       ChangeFilterButtonState(FilterBtnSource, false);
     }
   })
-  PerformFilters();
+  PerformFilters(userData);
 }
 
 document.getElementById('RefreshFiltersBtn').addEventListener('click', PerformFilters);
@@ -527,10 +525,10 @@ AndOrFilterModeBtn.addEventListener('click', function () {
     buttonText.textContent = 'Filter Mode: AND';
     document.getElementById('AndOrFilterModeBtnTooltip').textContent = 'AND Mode: Only stickers that match ALL filter conditions will be displayed.';
   }
-  PerformFilters();
+  PerformFilters(userData);
 });
 
-function PerformFilters() {
+function PerformFilters(userData) {
   for (var key in userData){
     userData[key].show = '1';    
     
@@ -792,7 +790,7 @@ function SwapSpareFilterMinMax(event) {
 }
 SpareFilterBtn.addEventListener('click', () => {
   SwapSpareFilterMinMax();
-  PerformFilters();
+  PerformFilters(userData);
 });
 
 
@@ -939,7 +937,7 @@ function GenerateFilterSetButtons() {
       const button = event.target.closest('.filter-btn');
       if (button) {
         ChangeFilterButtonState(button, true);
-        PerformFilters();
+        PerformFilters(userData);
       }
     });
   });
@@ -963,6 +961,7 @@ function exportUserData() {
   const LeftoverValveStars = document.getElementById("leftover-total-valve-quantity").value;
 
   const additionalLines = [
+    `CurrentAlbumNumber: ${CurrentAlbumNumber}`,
     `player-ign: ${playerIGN}`,
     `player-link: ${playerLink}`,
     `leftover-valve-stars: ${LeftoverValveStars}`,
@@ -988,9 +987,18 @@ function importUserData(userDataString) {
     let playerIGN = '';
     let playerLink = '';
     let LeftoverValveStars = '';
+    let userDataAlbumNumber = ''
     const lines = userDataString.split('\n');
     lines.forEach(line => {
-      if (line.startsWith('player-ign: ')) {
+      if (line.startsWith('CurrentAlbumNumber: ')) {
+        userDataAlbumNumber = line.substring('CurrentAlbumNumber: '.length);
+        if (userDataAlbumNumber !== CurrentAlbumNumber) {
+          console.error('Incorrect Album:', userDataAlbumNumber);
+          CreateNewUserData(STICKER_DATA);
+          throw new Error('Incorrect Album');
+        }
+      }
+      else if (line.startsWith('player-ign: ')) {
         playerIGN = line.substring('player-ign: '.length);
       } else if (line.startsWith('player-link: ')) {
         playerLink = line.substring('player-link: '.length);
@@ -1002,7 +1010,7 @@ function importUserData(userDataString) {
     if (LeftoverValveStars === '') {LeftoverValveStars = '0';}
 
     // Remove player-ign and player-link lines from userDataString
-    const filteredLines = lines.filter(line => !line.startsWith('player-ign: ') && !line.startsWith('player-link: ') && !line.startsWith('leftover-valve-stars: '));
+    const filteredLines = lines.filter(line => !line.startsWith('CurrentAlbumNumber: ') && !line.startsWith('player-ign: ') && !line.startsWith('player-link: ') && !line.startsWith('leftover-valve-stars: '));
     const filteredUserDataString = filteredLines.join('\n');
 
     parsedData = JSON.parse(filteredUserDataString);
@@ -1018,7 +1026,6 @@ function importUserData(userDataString) {
     document.getElementById("leftover-total-valve-quantity").value = LeftoverValveStars
 
     userData = parsedData;
-    console.log('Successfully imported userData:', userData);
     clearFilters();
     const containers = document.querySelectorAll('.sticker-card-container');
     containers.forEach((container) => {
@@ -1038,6 +1045,7 @@ function importUserData(userDataString) {
     console.log('Successfully imported userData:', userData);
   } else {
     console.error('Invalid userData format. Expected an object.');
+    CreateNewUserData();
   }
 }
 
@@ -1485,7 +1493,7 @@ ProgressMenuMobileCloseBtn.onclick = function() {
 
 CurrentFiltersOpenBtn.onclick = function() {
   CurrentFiltersModal.style.display = "block";
-  console.log(FilterList);
+  //console.log(FilterList);
   generateCurrentFiltersModalText();
 };
 
@@ -1500,74 +1508,62 @@ function generateCurrentFiltersModalText() {
   const includeFilters = [];
   const excludeFilters = [];
 
-  Object.values(FilterList).forEach((filter) => {
-    if (filter.FilterState === 1) {
-      if (filter.FilterName === '1>StickerName>') {
-        if (Array.isArray(filter.FilterValue)) {
-          filter.FilterValue.forEach((value) => {
-            includeFilters.push(`IS "${value}"`);
-          });
+  for (const filter of Object.values(FilterList)) {
+    const filterName = filter.FilterName;
+    const filterState = filter.FilterState;
+    const filterValue = filter.FilterValue;
+
+    if (filterState === 1) {
+      if (filterName === '1>StickerName>') {
+        if (Array.isArray(filterValue)) {
+          includeFilters.push(...filterValue.map((value) => `IS "${value}"`));
         }
-      } else if (filter.FilterName !== '0>spare>spare-filter-min|spare-filter-max') {
-        const filterBtn = document.querySelector(`button[data-filtervalue="${filter.FilterName}"]`);
+      } else if (filterName !== '0>spare>spare-filter-min|spare-filter-max') {
+        const filterBtn = document.querySelector(`button[data-filtervalue="${filterName}"]`);
         if (filterBtn) {
           includeFilters.push(`IS ${filterBtn.innerHTML}`);
         }
       }
-    } else if (filter.FilterState === 2) {
-      if (filter.FilterName === '1>StickerName>') {
-        if (Array.isArray(filter.FilterValue)) {
-          filter.FilterValue.forEach((value) => {
-            excludeFilters.push(`NOT "${value}"`);
-          });
+    } else if (filterState === 2) {
+      if (filterName === '1>StickerName>') {
+        if (Array.isArray(filterValue)) {
+          excludeFilters.push(...filterValue.map((value) => `NOT "${value}"`));
         }
-      } else if (filter.FilterName !== '0>spare>spare-filter-min|spare-filter-max') {
-        const filterBtn = document.querySelector(`button[data-filtervalue="${filter.FilterName}"]`);
+      } else if (filterName !== '0>spare>spare-filter-min|spare-filter-max') {
+        const filterBtn = document.querySelector(`button[data-filtervalue="${filterName}"]`);
         if (filterBtn) {
           excludeFilters.push(`NOT ${filterBtn.innerHTML}`);
         }
       }
     }
-  });
-
-  let filterModeText = '';
-  if (AndZeroOrOne === 0) {
-    filterModeText = 'Current filter mode: AND';
-  } else {
-    filterModeText = 'Current filter mode: OR';
   }
 
+  const filterModeText = `Current filter mode: ${AndZeroOrOne === 0 ? 'AND' : 'OR'}`;
   const spareMinValue = document.getElementById('spare-filter-min').value;
   const spareMaxValue = document.getElementById('spare-filter-max').value;
 
   let filterModeDescription = '';
-  if (AndZeroOrOne === 0 && FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState !== 0) {
-    const filterStateText = FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState === 2 ? 'not between' : 'between';
+  const spareFilterState = FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState;
+  if (AndZeroOrOne === 0 && spareFilterState !== 0) {
+    const filterStateText = spareFilterState === 2 ? 'not between' : 'between';
     filterModeDescription = `Stickers that match ALL filter conditions and have spares ${filterStateText} ${spareMinValue} and ${spareMaxValue} will be displayed in the board.`;
-  } else if (AndZeroOrOne === 0 && FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState === 0) {
+  } else if (AndZeroOrOne === 0 && spareFilterState === 0) {
     filterModeDescription = `Stickers that match ALL filter conditions will be displayed in the board.`;
-  } else if (AndZeroOrOne === 1 && FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState !== 0) {
-    const filterStateText = FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState === 2 ? 'not between' : 'between';
+  } else if (AndZeroOrOne === 1 && spareFilterState !== 0) {
+    const filterStateText = spareFilterState === 2 ? 'not between' : 'between';
     filterModeDescription = `Stickers that match AT LEAST one of the filter conditions and have spares ${filterStateText} ${spareMinValue} and ${spareMaxValue} will be displayed in the board.`;
-  } else if (AndZeroOrOne === 1 && FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState === 0) {
+  } else if (AndZeroOrOne === 1 && spareFilterState === 0) {
     filterModeDescription = `Stickers that match AT LEAST one of the filter conditions will be displayed in the board.`;
   }
 
-  let includeFiltersText = '';
-  if (includeFilters.length > 0) {
-    includeFiltersText = `<b>Include filters:</b><br><ul>\n${includeFilters.map(filter => `<li>${filter}</li>`).join('\n')}\n</ul>`;
-  }
-
-  let excludeFiltersText = '';
-  if (excludeFilters.length > 0) {
-    excludeFiltersText = `<b>Exclude filters:</b><br><ul>\n${excludeFilters.map(filter => `<li>${filter}</li>`).join('\n')}\n</ul>`;
-  }
+  const includeFiltersText = includeFilters.length > 0 ? `<b>Include filters:</b><br><ul>\n${includeFilters.map(filter => `<li>${filter}</li>`).join('\n')}\n</ul>` : '';
+  const excludeFiltersText = excludeFilters.length > 0 ? `<b>Exclude filters:</b><br><ul>\n${excludeFilters.map(filter => `<li>${filter}</li>`).join('\n')}\n</ul>` : '';
 
   currentFiltersContent.innerHTML = `${filterModeText}<br><br>${filterModeDescription}<br><br>${includeFiltersText}<br>${excludeFiltersText}`;
 }
 
 // BasicMenuMobileOpenBtn.onclick = function() {
-//   BasicMenuModal.style.display = "block";
+//  BasicMenuModal.style.display = "block";
 // };
 
 // BasicMenuMobileCloseBtn.onclick = function() {
@@ -1584,9 +1580,9 @@ window.onclick = function(event) {
     ProgressMenuModal.style.display = "none";
   }
 
-  // if (event.target === BasicMenuModal) {
-  //   BasicMenuModal.style.display = "none";
-  // }
+  if (event.target === BasicMenuModal) {
+    BasicMenuModal.style.display = "none";
+  }
 };
 
 document.getElementById('generate-trade-post-btn').addEventListener('click', function() {
