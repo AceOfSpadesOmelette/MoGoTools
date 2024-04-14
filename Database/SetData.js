@@ -1,11 +1,176 @@
 export const SET_DATA = [
     {
+        "SetName": "Holiday Dinner",
+        "SetID": "501",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_501.png",
+        "Colour": "#6b57db"
+    },
+    {
+        "SetName": "Sweater Party",
+        "SetID": "502",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_502.png",
+        "Colour": "#79dea7"
+    },
+    {
+        "SetName": "Winter Traditions",
+        "SetID": "503",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_503.png",
+        "Colour": "#6e30f2"
+    },
+    {
+        "SetName": "Santa's Workshop",
+        "SetID": "504",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_504.png",
+        "Colour": "#67843f"
+    },
+    {
+        "SetName": "Festive Feasts",
+        "SetID": "505",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_505.png",
+        "Colour": "#2979f2"
+    },
+    {
+        "SetName": "Nutcracker Dreams",
+        "SetID": "506",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_506.png",
+        "Colour": "#e32f8d"
+    },
+    {
+        "SetName": "Sweet Home",
+        "SetID": "507",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_507.png",
+        "Colour": "#dc6262"
+    },
+    {
+        "SetName": "The Perfect Gift",
+        "SetID": "508",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_508.png",
+        "Colour": "#bd3b3e"
+    },
+    {
+        "SetName": "Snowed In",
+        "SetID": "509",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_509.png",
+        "Colour": "#0d8f61"
+    },
+    {
+        "SetName": "Holiday Bakes",
+        "SetID": "510",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_510.png",
+        "Colour": "#00e2ff"
+    },
+    {
+        "SetName": "Outdoor Fun!",
+        "SetID": "511",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_511.png",
+        "Colour": "#4ebfcd"
+    },
+    {
+        "SetName": "Monopoly World",
+        "SetID": "512",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "0",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_512.png",
+        "Colour": "#7844c4"
+    },
+    {
+        "SetName": "Merry Krampus!",
+        "SetID": "513",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "1",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_513.png",
+        "Colour": "#3e8fa4"
+    },
+    {
+        "SetName": "Australian Xmas",
+        "SetID": "514",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "1",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_514.png",
+        "Colour": "#e66847"
+    },
+    {
+        "SetName": "Christmas Parade",
+        "SetID": "515",
+        "AlbumName": "Heartfelt Holidays",
+        "AlbumNo": "5",
+        "Prestige": "1",
+        "StartTime": "1701457200",
+        "EndTime": "1704394799",
+        "ImageSource": "Icon_515.png",
+        "Colour": "#f70f0f"
+    },
+    {
         "SetName": "Best Beginnings",
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_601.png",
         "Colour": "#e52c45"
@@ -16,7 +181,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_602.png",
         "Colour": "#7d62ff"
@@ -27,7 +192,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_603.png",
         "Colour": "#21b1da"
@@ -38,7 +203,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_604.png",
         "Colour": "#34bd9e"
@@ -49,7 +214,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_605.png",
         "Colour": "#ff8449"
@@ -60,7 +225,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_606.png",
         "Colour": "#00b1d3"
@@ -71,7 +236,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_607.png",
         "Colour": "#3cbcff"
@@ -82,7 +247,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_608.png",
         "Colour": "#1fc4e6"
@@ -93,7 +258,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_609.png",
         "Colour": "#00b8a0"
@@ -104,7 +269,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_610.png",
         "Colour": "#9246d3"
@@ -115,7 +280,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_611.png",
         "Colour": "#eb407d"
@@ -126,7 +291,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_612.png",
         "Colour": "#ed758f"
@@ -137,7 +302,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_613.png",
         "Colour": "#df7015"
@@ -148,7 +313,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_614.png",
         "Colour": "#db8b20"
@@ -159,7 +324,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_615.png",
         "Colour": "#ffa400"
@@ -170,7 +335,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_616.png",
         "Colour": "#df7879"
@@ -181,7 +346,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_617.png",
         "Colour": "#dbad79"
@@ -192,7 +357,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_618.png",
         "Colour": "#71d3d2"
@@ -203,7 +368,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_619.png",
         "Colour": "#ab58fd"
@@ -214,7 +379,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_620.png",
         "Colour": "#ff73af"
@@ -225,7 +390,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "0",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_621.png",
         "Colour": "#df4320"
@@ -236,7 +401,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "1",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_622.png",
         "Colour": "#4399e5"
@@ -247,7 +412,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "1",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_623.png",
         "Colour": "#c83edf"
@@ -258,7 +423,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "1",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_624.png",
         "Colour": "#8c67d8"
@@ -269,7 +434,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "1",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_625.png",
         "Colour": "#ad31e9"
@@ -280,7 +445,7 @@ export const SET_DATA = [
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
         "Prestige": "1",
-        "StartTime": "1704394800",
+        "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_626.png",
         "Colour": "#54b8cc"
