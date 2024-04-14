@@ -832,6 +832,7 @@ input.spare-text{
 	border-width: 3px 3px 3px 3px;
 	border-style: solid;
 	height: 30px;
+	color: var(--darkerbrown);
 }
 
 #filter-sort-menu-body, #progress-menu-body {
@@ -1018,7 +1019,7 @@ input[class="player-info-field"]{
 	width: 25%;
 }
 
-#basic-menu-modal{
+#current-filters-modal{
 	display: none;
 	position: fixed;
 	top: 0;
@@ -1030,7 +1031,7 @@ input[class="player-info-field"]{
 	padding: 10px;
 }
 
-#basic-menu-header{
+#current-filters-header{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -1042,10 +1043,11 @@ input[class="player-info-field"]{
 	border-width: 3px 3px 3px 3px;
 	border-style: solid;
 	height: 30px;
+	color: var(--darkerbrown);
 }
 
 
-#basic-menu-body {
+#current-filters-body {
 	position: relative;
 	margin: auto;
 	padding: 0;
@@ -1059,12 +1061,12 @@ input[class="player-info-field"]{
 }
   
 @media screen and (min-width: 800px) {
-	#basic-menu-body {
+	#current-filters-body {
 	  width: 30%;
 	}
 }
 
-#basic-menu-content{
+#current-filters-content{
 	border-color: var(--darkerbrown);
 	border-width: 3px 3px 3px 3px;
 	border-style: solid;
@@ -1072,10 +1074,11 @@ input[class="player-info-field"]{
 	overflow-x: hidden;
 	overflow-y: overlay;
 	background-color: var(--beige);
-	height: calc(85vh - 30px)
+	height: calc(85vh - 30px);
+	color: var(--darkerbrown);
 }
 
-#basic-menu-footer{
+#current-filters-footer{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -1091,27 +1094,27 @@ input[class="player-info-field"]{
 	cursor: pointer;
 }
 
-#basic-menu-footer:active {
+#current-filters-footer:active {
 	background-color: rgba(186, 0, 0, 1);
 	transition-duration: 100ms;
 	transition-timing-function: ease-in;
 }
 
-#basic-menu-navigation {
+#current-filters-navigation {
 	display: flex;
 	background: var(--progress-bar-black);
 	justify-content: center;
 	height: 30px;
 }
 
-#basic-menu-navigation > * {
+#current-filters-navigation > * {
 	width: 33%;
 	text-align: center;
 	color: var(--beige);
 	line-height: 1.7rem;
 }
 
-.basic-menu-navigation-selected{
+.current-filters-navigation-selected{
 	background: var(--progress-bar-blue);
 }
 
@@ -1231,3 +1234,84 @@ input[class="player-info-field"]{
 .btn:hover .tooltiptext-bottom { visibility: visible; }
 .leftover-valve-subcontainer:has(.tooltiptext-bottom) { overflow:visible !important; }
 .leftover-valve-subcontainer:hover .tooltiptext-bottom { visibility: visible; }
+
+
+#current-filters-modal{
+	display: none;
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+	width: 100%;
+	height: 100vh;
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	padding: 10px;
+}
+
+#current-filters-header{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	background-color: var(--darkbrown);
+	border-color: var(--darkerbrown);
+	border-width: 3px 3px 3px 3px;
+	border-style: solid;
+	height: 30px;
+}
+
+
+#current-filters-body {
+	position: relative;
+	margin: auto;
+	padding: 0;
+	/* border: 1px solid #888; */
+	width: 80%;
+	/* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); */
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+}
+  
+@media screen and (min-width: 800px) {
+	#current-filters-body {
+	  width: 30%;
+	}
+}
+
+#current-filters-content{
+	border-color: var(--darkerbrown);
+	border-width: 3px 3px 3px 3px;
+	border-style: solid;
+	padding: 5px 5px 30px 5px;
+	overflow-x: hidden;
+	overflow-y: overlay;
+	background-color: var(--beige);
+	height: calc(85vh - 30px);
+	padding: 10px;
+}
+
+#current-filters-footer{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: red;
+	color: white;
+	border-radius: 0 0 10px 10px;
+	border-color: var(--darkerbrown);
+	border-width: 0 3px 3px 3px;
+	border-style: solid;
+	height: 30px;
+	cursor: pointer;
+}
+
+#current-filters-footer:active {
+	background-color: rgba(186, 0, 0, 1);
+	transition-duration: 100ms;
+	transition-timing-function: ease-in;
+}

@@ -1056,3 +1056,98 @@ input[class="player-info-field"]{
 .btn:hover .tooltiptext-bottom { visibility: visible; }
 .leftover-valve-subcontainer:has(.tooltiptext-bottom) { overflow:visible !important; }
 .leftover-valve-subcontainer:hover .tooltiptext-bottom { visibility: visible; }
+
+#current-filters-modal{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+	height: 100vh;
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	padding: 10px;
+}
+
+#current-filters-header{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	background-color: var(--darkbrown);
+	border-color: var(--darkerbrown);
+	border-width: 3px 3px 3px 3px;
+	border-style: solid;
+	height: 30px;
+	color: var(--darkerbrown);
+}
+
+
+#current-filters-body {
+	position: relative;
+	margin: auto;
+	padding: 0;
+	/* border: 1px solid #888; */
+	width: 80%;
+	/* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); */
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+}
+  
+@media screen and (min-width: 800px) {
+	#current-filters-body {
+	  width: 30%;
+	}
+}
+
+#current-filters-content{
+	border-color: var(--darkerbrown);
+	border-width: 3px 3px 3px 3px;
+	border-style: solid;
+	padding: 5px 5px 30px 5px;
+	overflow-x: hidden;
+	overflow-y: overlay;
+	background-color: var(--beige);
+	height: calc(85vh - 30px);
+	padding: 10px;
+	color: var(--darkerbrown);
+	font-size: 0.7rem;
+}
+
+#current-filters-footer{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: red;
+	color: white;
+	border-radius: 0 0 10px 10px;
+	border-color: var(--darkerbrown);
+	border-width: 0 3px 3px 3px;
+	border-style: solid;
+	height: 30px;
+	cursor: pointer;
+}
+
+#current-filters-footer:active {
+	background-color: rgba(186, 0, 0, 1);
+	transition-duration: 100ms;
+	transition-timing-function: ease-in;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+	from {top:300px; opacity:0} 
+	to {top:0; opacity:1}
+	}
+	
+	@keyframes animatetop {
+	from {top:300px; opacity:0}
+	to {top:0; opacity:1}
+	}
