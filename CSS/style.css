@@ -880,7 +880,7 @@ input.spare-text{
 }
 
 input[class="player-info-field"]{
-	width: 62%;
+	width: 60%;
 }
 
 .player-info-container{
@@ -1174,9 +1174,14 @@ input[class="player-info-field"]{
 @-webkit-keyframes animatetop {
 	from {top:300px; opacity:0} 
 	to {top:0; opacity:1}
-	}
+}
 	
-	@keyframes animatetop {
+@keyframes animatetop {
 	from {top:300px; opacity:0}
 	to {top:0; opacity:1}
-	}
+}
+
+
+#basic-menu-side{
+	display: none;
+}
