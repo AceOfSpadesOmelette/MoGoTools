@@ -81,7 +81,9 @@ function CreateNewUserData(dataset) {
 function NotSelectedByDefault() {
   const containers = document.querySelectorAll('.sticker-card-container');
   containers.forEach(container => {
+    if(!container.classList.contains('selected')){      
       container.classList.add('not-selected');
+    }
     });
 }
 
