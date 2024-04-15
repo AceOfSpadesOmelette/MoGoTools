@@ -227,6 +227,7 @@ img, .spare-header {
 	align-items: center;
 	flex-direction: column;
 	font-size: 0;
+	filter: drop-shadow(1px 0.5px 0px var(--darkerbrown));
 }
 
 @media screen and (max-width: 400px) {
@@ -499,7 +500,7 @@ img, .spare-header {
 }
 
 #player-ign, #player-link{
-	padding: 0px 10px 0px 10px;
+	padding: 0px 5px 0px 5px;
 	border-radius: 5px;
 	font-family: "Kabel" !important;
 	background-color: var(--lightbrown);
@@ -807,6 +808,10 @@ input.spare-text{
 #SortOrderBtn, #IgnorePrestigeBtn, #ViewportBtn{
 	width: 98%;
 	margin-top: 3px;
+}
+
+#webBasicMenu{
+	display: none;
 }
 
 #sort-btn-group-container{
@@ -1194,11 +1199,12 @@ input[class="player-info-field"]{
 .spare-snapshot-text{
 	color: #787155;
 	font-size: 12px;
-	margin-left: -31px;
+	margin-left: -31px;	
+	margin-top: 4px;
+	transform: skewY(-8deg);
 	z-index: 5;
 	position: relative;
 	width: 32px;
-	margin-top: 4px;
 	text-align: center;
 }
 
@@ -1364,4 +1370,13 @@ input[class="player-info-field"]{
 
 .basic-menu-navigation-selected{
 	background: var(--progress-bar-blue);
+	border-radius: 20px;
+}
+
+.basic-menu-news-header{
+	background: var(--darkbrown);
+	color: white;
+	text-shadow: var(--darkerbrown) 1px 0px,var(--darkerbrown) -1px 0px,var(--darkerbrown) 0px -1px,var(--darkerbrown) 0px 1px,var(--darkerbrown) 1px 1px,var(--darkerbrown) -1px 1px,var(--darkerbrown) 1px -1px,var(--darkerbrown) -1px -1px;
+	text-align: center;
+	border-radius: 10px;
 }
