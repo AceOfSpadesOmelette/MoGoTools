@@ -50,7 +50,7 @@ body {
 	background-color: rgba(248,244,228);
 }
 
-img {
+img, .spare-header {
 	-webkit-touch-callout: none !important;
 	-webkit-user-select: none !important;
 	-khtml-user-select: none !important;
@@ -575,7 +575,7 @@ input[type=text] {
 .sticker-star-container{
 	display: flex;
 	gap: 2px;
-	margin-bottom: -16px;
+	margin-bottom: -15px;
 	position: relative;
 	z-index: 3;
 	justify-content: center;
@@ -609,7 +609,7 @@ input[type=text] {
 	border-radius: 5px;
 	width: 100%;
 	color: white;
-	margin-top: 6.5px;
+	margin-top: 5px;
 }
 
 .spare-field{
