@@ -161,7 +161,7 @@ function appendSpareSpinner(stickerElement) {
   spareSpinnerContainer.innerHTML = `
     <div class="spare-field">
       <label for="SpareQuantity" class="spare-header">Spare:</label>
-      <input type="number" id="SpareQuantity" class="spare-text" name="SpareQuantity" min="0" max="100" value="0"size="6">
+      <input type="number" inputmode="numeric" id="SpareQuantity" class="spare-text" name="SpareQuantity" min="0" max="100" value="0"size="6">
     </div>
   `;
   stickerElement.appendChild(spareSpinnerContainer);
