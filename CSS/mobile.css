@@ -1199,9 +1199,9 @@ input[class="player-info-field"]{
 .spare-snapshot-text{
 	color: #787155;
 	font-size: 12px;
-	margin-left: -31px;	
-	margin-top: 4px;
-	transform: skewY(-8deg);
+	margin-left: -32px;
+	margin-top: 3.5px;
+  	transform: rotateZ(-5deg);
 	z-index: 5;
 	position: relative;
 	width: 32px;
