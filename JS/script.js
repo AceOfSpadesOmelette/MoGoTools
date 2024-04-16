@@ -55,6 +55,18 @@ function init() {
   convertEpochToYYYYMMDD();
 
   compareViewport();
+  console.log(userData);
+
+  var newUserData = userData;
+  for (var key in newUserData) {
+    if (newUserData.hasOwnProperty(key)) {
+      delete newUserData[key].show;
+      delete newUserData[key].havespare;
+    }
+  }
+  
+
+  console.log(newUserData);
 }
 
 // Runs when loading the entire site for the first time
