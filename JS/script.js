@@ -44,8 +44,6 @@ function init() {
   
   UpdateTotalStickerQuantity();
   UpdateTotalStickerByRarityQuantity();
-  
-  console.log(document.querySelector('#total-stickers-quantity').textContent)
 
   countValveStickers();
   countSelectedStickers();
