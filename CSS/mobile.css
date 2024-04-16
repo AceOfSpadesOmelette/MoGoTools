@@ -1173,6 +1173,24 @@ input[class="player-info-field"]{
 	padding: 5px 0 5px 0;
 }
 
+#collection-screenshot-footer{
+	display: flex;
+	/* width: 90%; */
+	margin: 10px auto 10px auto;
+	background: var(--darkerbrown);
+	text-align: center;
+  	justify-content: center;
+	color: var(--beige);
+	border-radius: 50px 50px 0 0;
+	padding: 5px 0 5px 0;
+}
+
+#collection-screenshot-footer > * {
+	width: 50%;
+	font-size: 10px;
+	line-height: 1.5rem;
+}
+
 #collection-screenshot-player-name, #collection-screenshot-player-link, #collection-screenshot-my-album{
 	width: 33%;
 }
@@ -1335,7 +1353,7 @@ input[class="player-info-field"]{
 	overflow-x: hidden;
 	overflow-y: overlay;
 	background-color: var(--beige);
-	height: calc(75vh - 30px);
+	height: calc(85vh - 30px);
 	padding: 10px;
 	font-size: 0.8rem;
 }
