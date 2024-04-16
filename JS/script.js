@@ -26,6 +26,7 @@ const FullAlbumValues = {
 
 // Sets up the website
 function init() {
+  compareViewport();
   console.log('Hello world!');
   GenerateFilterSetButtons();   
   SetDefaultFilterStates();
@@ -54,19 +55,7 @@ function init() {
   handleBasicMenuNavigationClick({target: document.getElementById("BasicMenuNewsBtn")});
   convertEpochToYYYYMMDD();
 
-  compareViewport();
-  console.log(userData);
-
-  var newUserData = userData;
-  for (var key in newUserData) {
-    if (newUserData.hasOwnProperty(key)) {
-      delete newUserData[key].show;
-      delete newUserData[key].havespare;
-    }
-  }
-  
-
-  console.log(newUserData);
+  // compareViewport();
 }
 
 // Runs when loading the entire site for the first time
@@ -1367,27 +1356,46 @@ function copyToCollectionScreenshot() {
 
   if (middleSide && collectionScreenshot) {
     collectionScreenshot.innerHTML = "";
-    let playerIGN = '';
-    let playerLink = '';
+
+    var playerIGN = '';
+    var playerLink = '';
+
     if (includeIGN === 1) {
       playerIGN = document.getElementById("player-ign").value;
     }
+
     if (includePlayerLink === 1) {
       playerLink = document.getElementById("player-link").value;
     }
-    // Create the new element
-    var newElement = `<div id="collection-screenshot-player-info"><div id="collection-screenshot-player-name">${playerIGN}</div><div id="collection-screenshot-my-album">My Album</div><div id="collection-screenshot-player-link">${playerLink}</div></div>`;
 
-    // Add the new element at the beginning of collectionScreenshot
-    collectionScreenshot.innerHTML = newElement + collectionScreenshot.innerHTML;
+    // Create the new element for player info
+    var newElement = `
+      <div id="collection-screenshot-player-info">
+        <div id="collection-screenshot-player-name">${playerIGN}</div>
+        <div id="collection-screenshot-my-album">My Album</div>
+        <div id="collection-screenshot-player-link">${playerLink}</div>
+      </div>
+    `;
 
     var clonedContents = middleSide.innerHTML;
-    collectionScreenshot.style.backgroundColor = "rgba(248,244,228)";
+    collectionScreenshot.style.backgroundColor = "rgba(248, 244, 228)";
     collectionScreenshot.setAttribute("style", middleSide.getAttribute("style"));
-    collectionScreenshot.style.background = `url("assets/stickers/Collections_Album_BG.png")`;
+    collectionScreenshot.style.background = `url("assets/background/Collections_Album_BG.png")`;
+
+    // Replace class names in clonedContents
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
     clonedContents = clonedContents.replace(/trade-button-container/g, "trade-button-container-screenshot");
-    collectionScreenshot.innerHTML += clonedContents;
+
+    collectionScreenshot.innerHTML = newElement + clonedContents;
+
+    var snapshotFooterElement = `<div id="collection-screenshot-footer"><div id="collection-screenshot-footer-gamever">v1.21.2</div><div id="collection-screenshot-footer-link">https://aceofspadesomelette.github.io/MoGoTools/</div></div>`;
+
+    // Add the SnapshotFooterElement after #sticker-board is cloned
+    var stickerBoard = collectionScreenshot.querySelector("#sticker-board");
+    if (stickerBoard) {
+      stickerBoard.insertAdjacentHTML("afterend", snapshotFooterElement);
+    }
+
     var screenshotContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
     screenshotContainers.forEach(function (container) {
       var globalID = container.getAttribute("data-global");
@@ -1395,11 +1403,13 @@ function copyToCollectionScreenshot() {
       spanElement.className = "spare-text-screenshot";
       spanElement.textContent = userData[globalID].spare;
       var spareTextElement = container.querySelector(".spare-text");
+
       if (spareTextElement) {
         spareTextElement.parentNode.replaceChild(spanElement, spareTextElement);
       }
 
       var spareSpinnerContainer = container.querySelector(".spare-spinner-container");
+
       if (spareSpinnerContainer) {
         spareSpinnerContainer.parentNode.removeChild(spareSpinnerContainer);
       }
@@ -1407,11 +1417,14 @@ function copyToCollectionScreenshot() {
       if (userData[globalID].spare > 0) {
         var spareContainer = document.createElement("div");
         spareContainer.className = "spare-container-no-spinner";
-        spareContainer.innerHTML = `<img draggable="false" class="spare-img" src="assets/stickers/Collections_TradingGroup_NumberBG_Small.png"><span class="spare-snapshot-text">+${userData[globalID].spare}</span>`;
+        spareContainer.innerHTML = `
+          <img draggable="false" class="spare-img" src="assets/stickers/Collections_TradingGroup_NumberBG_Small.png">
+          <span class="spare-snapshot-text">+${userData[globalID].spare}</span>
+        `;
         container.insertBefore(spareContainer, container.querySelector(".sticker-ribbon"));
-
         container.querySelector(".sticker-ribbon").style.marginTop = "-4.5px";
       }
+
       container.querySelector(".trade-button-container-screenshot").style.marginTop = "5px";
       container.querySelector(".trade-button-container-screenshot").style.width = "100%";
       container.querySelector(".trade-button-container-screenshot").style.display = "flex";
