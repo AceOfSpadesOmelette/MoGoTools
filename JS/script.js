@@ -3,11 +3,13 @@ import { SET_DATA } from '../Database/SetData.js';
 
 const CurrentAlbumNumber = '7';
 let userData = {};
+let BackupuserData = {};
 const FilterList = {};
 let AndZeroOrOne = 0;
 let AscendZeroDescendOne = 0;
 let IgnorePrestige = 0;
 let WebZeroMobileOne = 0;
+let LightZeroDarkOne = 0;
 const defaultValues = {
   id: "0",
   selected: "0",
@@ -17,6 +19,10 @@ const defaultValues = {
   lookingfor: "0",
   fortrade: "0",
 };
+const FullAlbumValues = {
+  id: "0",
+  show: "1",
+}
 
 // Sets up the website
 function init() {
@@ -34,14 +40,22 @@ function init() {
   }
   generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');  
   PerformSort({ currentTarget: document.querySelector('button[data-sort-type="GlobalID"]') });  
-  NotSelectedByDefault(); 
-  countValveStickers();
+  NotSelectedByDefault();
+  
   UpdateTotalStickerQuantity();
   UpdateTotalStickerByRarityQuantity();
-  //updateProgressBar();  
+  
+  console.log(document.querySelector('#total-stickers-quantity').textContent)
+
+  countValveStickers();
   countSelectedStickers();
+  //updateProgressBar();
 
   UpdateAlbumStartEndTime();
+
+  handleBasicMenuNavigationClick({target: document.getElementById("BasicMenuNewsBtn")});
+  convertEpochToYYYYMMDD();
+
   compareViewport();
 }
 
@@ -866,11 +880,13 @@ function RestoreTradeStates(userData, StickerContainer) {
 
 function updateProgressBar() {
   var progressContainers = document.querySelectorAll(".progress-container");
+  // console.log(document.querySelector('#total-stickers-quantity').textContent);
 
   progressContainers.forEach(function(container) {
     var progressText = container.querySelector(".progress-text").textContent;
-    var progressValue = parseInt(progressText.split(" / ")[0]);
-    var totalValue = parseInt(progressText.split(" / ")[1]);
+    progressText = progressText.replace(/\s/g, '');
+    var progressValue = parseInt(progressText.split("/")[0]);
+    var totalValue = parseInt(progressText.split("/")[1]);
 
     if(progressValue === '0'){progressBar.style.width = 0;}
     else{
@@ -995,7 +1011,7 @@ function importUserData(userDataString) {
       if (line.startsWith('CurrentAlbumNumber: ')) {
         userDataAlbumNumber = line.substring('CurrentAlbumNumber: '.length);
         if (userDataAlbumNumber !== CurrentAlbumNumber) {
-          console.error('Incorrect Album:', userDataAlbumNumber);
+          console.error('Incorrect Album:', userDataAlbumNumber, ', new userData for current album will be created.');
           CreateNewUserData(STICKER_DATA);
           throw new Error('Incorrect Album');
         }
@@ -1035,9 +1051,11 @@ function importUserData(userDataString) {
       RestoreStickerSpares(userData, container);
       RestoreTradeStates(userData, container);
       ChangeUserDataHaveSpareValue(userData, container);
-      countSelectedStickers();
+      // countSelectedStickers();
       countValveStickers();
-    });
+    });    
+    countSelectedStickers();
+    updateProgressBar();
   } catch (error) {
     console.error('Invalid JSON format:', error);
     return;
@@ -1436,6 +1454,7 @@ function handleViewportBtnClick(isClicked) {
     document.getElementById("MobileCSS").setAttribute('disabled', true);
     ViewportBtnText.textContent = 'Mobile Layout';
     document.getElementById("progress-menu-modal").style.display = "initial";
+    document.getElementById('filter-sort-modal').style.display = "initial";
   } else if (WebZeroMobileOne === 1) {
     document.getElementById("DefaultCSS").setAttribute('disabled', true);
     document.getElementById("MobileCSS").removeAttribute('disabled');
@@ -1460,6 +1479,25 @@ function compareViewport() {
   handleViewportBtnClick(false);
 }
 
+function handleLayoutThemeBtnClick(isClicked) {
+  if(isClicked === true){LightZeroDarkOne = (LightZeroDarkOne + 1) % 2;}
+  // console.log(LightZeroDarkOne);
+  const LayoutBtnText = document.getElementById('LayoutBtnText');
+
+  if (LightZeroDarkOne === 0) {
+    //document.getElementById("DefaultCSS").removeAttribute('disabled');
+    //document.getElementById("MobileCSS").setAttribute('disabled', true);
+    LayoutBtnText.textContent = 'Dark Mode';
+  } else if (LightZeroDarkOne === 1) {
+    //document.getElementById("DefaultCSS").setAttribute('disabled', true);
+    //document.getElementById("MobileCSS").removeAttribute('disabled');
+    LayoutBtnText.textContent = 'Light Mode';
+  }
+}
+document.getElementById('LayoutBtn').addEventListener('click', function() {
+  handleLayoutThemeBtnClick(true);
+});
+
 
 var FilterSortModal = document.getElementById("filter-sort-modal");
 var FilterSortMenuMobileOpenBtn = document.getElementById("mobileMenuFilters");
@@ -1473,9 +1511,10 @@ var CurrentFiltersModal = document.getElementById("current-filters-modal");
 var CurrentFiltersOpenBtn = document.getElementById("ViewCurrentFiltersBtn");
 var CurrentFiltersCloseBtn = document.getElementById("current-filters-footer");
 
-// var BasicMenuModal = document.getElementById("basic-menu-modal");
-// var BasicMenuMobileOpenBtn = document.getElementById("mobileBasicMenu");
-// var BasicMenuMobileCloseBtn = document.getElementById("basic-menu-footer");
+var BasicMenuModal = document.getElementById("basic-menu-modal");
+var BasicMenuMobileOpenBtn = document.getElementById("mobileBasicMenu");
+var BasicMenuWebOpenBtn = document.getElementById("webBasicMenu");
+var BasicMenuMobileCloseBtn = document.getElementById("basic-menu-footer");
 
 FilterSortMenuMobileOpenBtn.onclick = function() {
   FilterSortModal.style.display = "block";
@@ -1495,7 +1534,6 @@ ProgressMenuMobileCloseBtn.onclick = function() {
 
 CurrentFiltersOpenBtn.onclick = function() {
   CurrentFiltersModal.style.display = "block";
-  //console.log(FilterList);
   generateCurrentFiltersModalText();
 };
 
@@ -1564,13 +1602,17 @@ function generateCurrentFiltersModalText() {
   currentFiltersContent.innerHTML = `${filterModeText}<br><br>${filterModeDescription}<br><br>${includeFiltersText}<br>${excludeFiltersText}`;
 }
 
-// BasicMenuMobileOpenBtn.onclick = function() {
-//  BasicMenuModal.style.display = "block";
-// };
+BasicMenuMobileOpenBtn.onclick = function() {
+ BasicMenuModal.style.display = "block";
+};
 
-// BasicMenuMobileCloseBtn.onclick = function() {
-//   BasicMenuModal.style.display = "none";
-// };
+BasicMenuWebOpenBtn.onclick = function() {
+  BasicMenuModal.style.display = "block";
+};
+
+BasicMenuMobileCloseBtn.onclick = function() {
+  BasicMenuModal.style.display = "none";
+};
 
 
 window.onclick = function(event) {
@@ -1582,9 +1624,9 @@ window.onclick = function(event) {
     ProgressMenuModal.style.display = "none";
   }
 
-  // if (event.target === BasicMenuModal) {
-  //   BasicMenuModal.style.display = "none";
-  // }
+  if (event.target === BasicMenuModal) {
+    BasicMenuModal.style.display = "none";
+  }
 };
 
 document.getElementById('generate-trade-post-btn').addEventListener('click', function() {
@@ -1724,5 +1766,105 @@ function handleVaultPrestigeInput(event) {
   }
   countValveStickers();
 }
+
+
+var accordionElements = document.getElementsByClassName("accordion");
+
+for (var i = 0; i < accordionElements.length; i++) {
+  accordionElements[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    } 
+  });
+}
+
+
+function handleBasicMenuNavigationClick(event) {
+  var navigationElements = document.getElementsByClassName("basic-menu-nav-btn");
+  var contentElements = document.getElementsByClassName("basic-menu-subcontainer");
+
+  // Remove .basic-menu-navigation-selected from all navigation elements
+  for (var i = 0; i < navigationElements.length; i++) {
+    navigationElements[i].classList.remove("basic-menu-navigation-selected");
+  }
+
+  // Add .basic-menu-navigation-selected to the clicked element
+  event.target.classList.add("basic-menu-navigation-selected");
+
+  // Set the display of the corresponding content based on the clicked element
+  var selectedContentId = "";
+  if (event.target.id === "BasicMenuNewsBtn") {
+    selectedContentId = "news-content";
+  } else if (event.target.id === "BasicMenuFAQBtn") {
+    selectedContentId = "faq-info-content";
+  } else if (event.target.id === "BasicMenuDisplayBtn") {
+    selectedContentId = "display-settings-content";
+  }
+
+  // Set the display of the selected content to "initial" and the rest to "none"
+  for (var j = 0; j < contentElements.length; j++) {
+    if (contentElements[j].id === selectedContentId) {
+      contentElements[j].style.display = "initial";
+    } else {
+      contentElements[j].style.display = "none";
+    }
+  }
+}
+
+// Attach the event listener to each navigation element
+var navigationElements = document.getElementsByClassName("basic-menu-nav-btn");
+for (var k = 0; k < navigationElements.length; k++) {
+  navigationElements[k].addEventListener("click", handleBasicMenuNavigationClick);
+}
+
+
+const webBasicMenuImg = document.querySelector('.webBasicMenuImg');
+
+if (webBasicMenuImg) {
+  webBasicMenuImg.addEventListener('mousedown', () => {
+    webBasicMenuImg.classList.add('scale-down');
+  });
+
+  webBasicMenuImg.addEventListener('mouseup', () => {
+    webBasicMenuImg.classList.remove('scale-down');
+  });
+
+  webBasicMenuImg.addEventListener('mouseleave', () => {
+    webBasicMenuImg.classList.remove('scale-down');
+  });
+
+  webBasicMenuImg.addEventListener('touchstart', () => {
+    webBasicMenuImg.classList.add('scale-down');
+  });
+
+  webBasicMenuImg.addEventListener('touchend', () => {
+    webBasicMenuImg.classList.remove('scale-down');
+  });
+}
+
+function convertEpochToYYYYMMDD() {
+  // Get all .news-item-time elements
+  const newsItemTimes = document.querySelectorAll('.news-item-time');
+
+  // Convert each .news-item-time element
+  newsItemTimes.forEach((newsItemTime) => {
+    const epoch = parseInt(newsItemTime.textContent, 10);
+
+    const date = new Date(epoch * 1000); // Convert seconds to milliseconds
+    
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    const formattedDate = `${year}/${month}/${day}`;
+    newsItemTime.textContent = formattedDate;
+  });
+}
+
+
 
 window.onload = init;
