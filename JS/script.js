@@ -777,7 +777,7 @@ stickerContainer.addEventListener('input', function(event) {
         userData[dataGlobal].selected = '1';
       }
     }
-    
+    countSelectedStickers();
     UpdateCurrentAlbumStickerStates(dataGlobal);
     ChangeUserDataHaveSpareValue(userData, clickedStickerContainer);
     countValveStickers();
@@ -1533,10 +1533,12 @@ function captureScreenshot() {
   if (collectionScreenshot) {
     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
       var dataURL = canvas.toDataURL("image/png");
-
-      // Open the data URL in a new browser window
-      var newWindow = window.open();
-      newWindow.document.write('<img src="' + dataURL + '">');
+      
+      collectionScreenshot.innerHTML = "";
+      var image = document.createElement("img");
+        image.src = dataURL;
+        image.style.width = "100%";
+        collectionScreenshot.appendChild(image);
     });
   } else {
     console.log("collection-screenshot element is not found.");
@@ -1546,11 +1548,12 @@ function captureScreenshot() {
 var dlPngButton = document.getElementById("dl-png");
 if (dlPngButton) {
   dlPngButton.addEventListener("click", function() {
+    document.getElementById("collection-screenshot").innerHTML;
     dlPngButton.textContent = "Downloading...";
     dlPngButton.classList.add('btnYellow');
     copyToCollectionScreenshot();
     captureScreenshot();
-    document.getElementById("collection-screenshot").innerHTML = "";
+    //document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function() {
       dlPngButton.textContent = "Download successful!";
       setTimeout(function() {        
