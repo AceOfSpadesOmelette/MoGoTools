@@ -1490,6 +1490,7 @@ function copyToCollectionScreenshot() {
         container.querySelector(".sticker-ribbon").style.marginTop = "-4.5px";
         if(ImgOrientationLandscapeZeroPortraitOne === 1){          
           container.querySelector(".spare-snapshot-text").style.marginLeft = "-31px";
+          container.querySelector(".spare-snapshot-text").style.marginTop = "3px";
         }
       }
 
