@@ -1517,7 +1517,11 @@ function captureScreenshot() {
 
   if (collectionScreenshot) {
     window.devicePixelRatio = 2;
-    html2canvas(collectionScreenshot, {scale: 2, allowTaint: true, useCORS : true}).then(function(canvas) {
+    html2canvas(collectionScreenshot, {
+      //scale: 2,
+      allowTaint: true,
+      useCORS : true
+    }).then(function(canvas) {
       var dataURL = canvas.toDataURL("image/png");
       var link = document.createElement("a");
       link.href = dataURL;
