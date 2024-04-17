@@ -7683,7 +7683,7 @@ export const STICKER_DATA = [
         "GlobalID": "71609",
         "StickerName": "True Idols",
         "StickerRarity": "5",
-        "Golden": "1",
+        "Golden": "0",
         "Prestige": "0",
         "SetName": "K-Pop Idols",
         "SetID": "716",
