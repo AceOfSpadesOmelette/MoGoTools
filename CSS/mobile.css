@@ -1165,7 +1165,8 @@ input[class="player-info-field"]{
 #collection-screenshot-player-info{
 	display: flex;
 	/* width: 90%; */
-	margin: 10px auto 10px auto;
+	/* margin: 10px auto 10px auto; */
+	margin: auto auto 10px auto;
 	background: var(--darkerbrown);
 	text-align: center;
   	justify-content: center;
@@ -1177,7 +1178,8 @@ input[class="player-info-field"]{
 #collection-screenshot-footer{
 	display: flex;
 	/* width: 90%; */
-	margin: 10px auto 10px auto;
+	/* margin: 10px auto 10px auto; */
+	margin: 10px auto auto auto;
 	background: var(--darkerbrown);
 	text-align: center;
   	justify-content: center;
@@ -1499,4 +1501,9 @@ content: "\2212";
 
 #ViewCurrentFiltersBtn, #RefreshFiltersBtn{
 	width: 8%;
+}
+
+#snapshot-area{
+	justify-content: center;
+  	display: flex;
 }
