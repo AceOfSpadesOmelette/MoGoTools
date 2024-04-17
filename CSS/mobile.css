@@ -716,6 +716,8 @@ input.spare-text{
 	justify-content: center;
 	margin-left: 15%;
 	height: 18px;
+	/* set position relative for tooltip */
+	position: relative;
 }
 
 .valve-prestige-text{

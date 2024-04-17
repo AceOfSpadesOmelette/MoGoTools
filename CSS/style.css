@@ -726,6 +726,8 @@ input.spare-text{
 	justify-content: center;
 	margin-left: 20%;
 	height: 18px;
+	/* set position relative for tooltip */
+	position: relative;
   }
   
 .valve-prestige-text {
@@ -1118,6 +1120,8 @@ input[class="player-info-field"]{
 .btn:hover .tooltiptext-bottom { visibility: visible; }
 .leftover-valve-subcontainer:has(.tooltiptext-bottom) { overflow:visible !important; }
 .leftover-valve-subcontainer:hover .tooltiptext-bottom { visibility: visible; }
+.valve-subcontainer:has(.tooltiptext-top) { overflow:visible !important; }
+.valve-subcontainer:hover .tooltiptext-top { visibility: visible; }
 
 #current-filters-modal{
 	display: none;
