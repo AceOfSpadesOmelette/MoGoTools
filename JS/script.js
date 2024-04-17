@@ -1527,18 +1527,32 @@ function copyToCollectionScreenshot() {
 //     console.log("collection-screenshot element is not found.");
 //   }
 // }
+// function captureScreenshot() {
+//   var collectionScreenshot = document.getElementById("collection-screenshot");
+
+//   if (collectionScreenshot) {
+//     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
+//       var dataURL = canvas.toDataURL("image/png");
+      
+//       collectionScreenshot.innerHTML = "";
+//       var image = document.createElement("img");
+//         image.src = dataURL;
+//         image.style.width = "100%";
+//         collectionScreenshot.appendChild(image);
+//     });
+//   } else {
+//     console.log("collection-screenshot element is not found.");
+//   }
+// }
+
 function captureScreenshot() {
   var collectionScreenshot = document.getElementById("collection-screenshot");
-
   if (collectionScreenshot) {
     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
       var dataURL = canvas.toDataURL("image/png");
-      
-      collectionScreenshot.innerHTML = "";
-      var image = document.createElement("img");
-        image.src = dataURL;
-        image.style.width = "100%";
-        collectionScreenshot.appendChild(image);
+
+      var newWindow = window.open();
+      newWindow.document.write('<img src="' + dataURL + '" style="width:100%">');
     });
   } else {
     console.log("collection-screenshot element is not found.");
@@ -1553,7 +1567,7 @@ if (dlPngButton) {
     dlPngButton.classList.add('btnYellow');
     copyToCollectionScreenshot();
     captureScreenshot();
-    //document.getElementById("collection-screenshot").innerHTML = "";
+    document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function() {
       dlPngButton.textContent = "Download successful!";
       setTimeout(function() {        
