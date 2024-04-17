@@ -1479,10 +1479,10 @@ content: "\2212";
 }
 
 #AndOrFilterModeBtn, #ClearFiltersBtn{
-	font-size: 0.65rem;
-	width: 40%;
+	font-size: 0.6rem;
+	width: 37%;
 }
 
 #ViewCurrentFiltersBtn, #RefreshFiltersBtn{
-	width: 5%;
+	width: 8%;
 }
