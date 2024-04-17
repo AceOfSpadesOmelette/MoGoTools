@@ -1515,7 +1515,7 @@ function copyToCollectionScreenshot() {
 // function captureScreenshot() {
 //   var collectionScreenshot = document.getElementById("collection-screenshot");
 //   if (collectionScreenshot) {
-//     window.devicePixelRatio = 2;
+//     //window.devicePixelRatio = 2;
 //     html2canvas(collectionScreenshot, {scale: 2}).then(function(canvas) {
 //       var dataURL = canvas.toDataURL("image/png");
 //       var link = document.createElement("a");
@@ -1548,7 +1548,7 @@ function captureScreenshot() {
 var dlPngButton = document.getElementById("dl-png");
 if (dlPngButton) {
   dlPngButton.addEventListener("click", function() {
-    document.getElementById("collection-screenshot").innerHTML;
+    document.getElementById("collection-screenshot").innerHTML = "";
     dlPngButton.textContent = "Downloading...";
     dlPngButton.classList.add('btnYellow');
     copyToCollectionScreenshot();
