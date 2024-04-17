@@ -1250,7 +1250,6 @@ function countValveStickers() {
   if (isNaN(PrestigeLeftoverQuantity)) {
     PrestigeLeftoverQuantity = 0;
   }
-  console.log(PrestigeLeftoverQuantity);
 
   const ValveSum = valveQuantity + parseInt(PrestigeLeftoverQuantity);
   totalValveQuantity.textContent = ValveSum.toString();
