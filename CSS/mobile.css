@@ -891,6 +891,12 @@ input.spare-text{
 	}
 }
 
+@media screen and (min-width: 830px) {
+	#filter-sort-menu-body, #progress-menu-body {
+	  width: 60%;
+	}
+}
+
 /* Add Animation */
 @-webkit-keyframes animatetop {
 from {top:300px; opacity:0} 
@@ -1343,6 +1349,12 @@ input[class="player-info-field"]{
 @media screen and (min-width: 800px) {
 	#basic-menu-body {
 	  width: 30%;
+	}
+}
+
+@media screen and (min-width: 830px) {
+	#basic-menu-body {
+	  width: 60%;
 	}
 }
 
