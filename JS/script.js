@@ -1425,12 +1425,6 @@ function copyToCollectionScreenshot() {
       stickerBoard.insertAdjacentHTML("afterend", snapshotFooterElement);
     } 
 
-    if(ImgOrientationLandscapeZeroPortraitOne === 1){
-      collectionScreenshot.style.width = "400px";
-      document.getElementById("collection-screenshot-footer-gamever").style.width = "30%";
-      document.getElementById("collection-screenshot-footer-link").style.width = "70%";
-    }
-
     var screenshotContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
     screenshotContainers.forEach(function (container) {
       var globalID = container.getAttribute("data-global");
@@ -1463,7 +1457,16 @@ function copyToCollectionScreenshot() {
       container.querySelector(".trade-button-container-screenshot").style.marginTop = "5px";
       container.querySelector(".trade-button-container-screenshot").style.width = "100%";
       container.querySelector(".trade-button-container-screenshot").style.display = "flex";
+
+      if(ImgOrientationLandscapeZeroPortraitOne === 1){
+        container.style.flexBasis = "calc(28% - 10px)";
+      }
     });
+    if(ImgOrientationLandscapeZeroPortraitOne === 1){
+      collectionScreenshot.style.width = "400px";
+      document.getElementById("collection-screenshot-footer-gamever").style.width = "30%";
+      document.getElementById("collection-screenshot-footer-link").style.width = "70%";
+    }
   } else {
     console.log("Either middle-side or collection-screenshot element is not found.");
   }
