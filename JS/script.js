@@ -2,6 +2,9 @@ import { STICKER_DATA } from '../Database/StickerData.js';
 import { SET_DATA } from '../Database/SetData.js';
 
 const CurrentAlbumNumber = '7';
+const VaultTierOne = 250;
+const VaultTierTwo = 500;
+const VaultTierThree = 800;
 let userData = {};
 let BackupuserData = {};
 const FilterList = {};
@@ -1253,17 +1256,30 @@ function countValveStickers() {
 
   const ValveSum = valveQuantity + parseInt(PrestigeLeftoverQuantity);
   totalValveQuantity.textContent = ValveSum.toString();
-
+  
   const valveTierImage = document.querySelector('.valve-tier');
-  if (ValveSum < 250) {
+  let StickersToNextTier = 0;
+  let nextTierText = '';
+
+  document.getElementById('NextValveCounter').style.display = 'block';
+  if (ValveSum < VaultTierOne) {
+    StickersToNextTier = VaultTierOne - ValveSum;
+    nextTierText = `${StickersToNextTier} stars until Tier 1 vault.`;
     valveTierImage.src = '';
-  } else if (250 <= ValveSum && ValveSum < 499) {
+  } else if (VaultTierOne <= ValveSum && ValveSum < VaultTierTwo) {
+    StickersToNextTier = VaultTierTwo - ValveSum;
+    nextTierText = `${StickersToNextTier} stars until Tier 2 vault.`;
     valveTierImage.src = 'assets/stickers/StickerValveTier1.png';
-  } else if (500 <= ValveSum && ValveSum < 799) {
+  } else if (VaultTierTwo <= ValveSum && ValveSum < VaultTierThree) {
+    StickersToNextTier = VaultTierThree - ValveSum;
+    nextTierText = `${StickersToNextTier} stars until Tier 3 vault.`;
     valveTierImage.src = 'assets/stickers/StickerValveTier2.png';
-  } else if (ValveSum >= 800) {
+  } else if (ValveSum >= VaultTierThree) {
     valveTierImage.src = 'assets/stickers/StickerValveTier3.png';
+    document.getElementById('NextValveCounter').style.display = 'none';
   }
+  
+  document.getElementById('NextValveCounter').textContent = nextTierText;
 }
 
 
