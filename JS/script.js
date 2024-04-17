@@ -10,6 +10,7 @@ let AscendZeroDescendOne = 0;
 let IgnorePrestige = 0;
 let WebZeroMobileOne = 0;
 let LightZeroDarkOne = 0;
+let ImgOrientationLandscapeZeroPortraitOne = 0;
 const defaultValues = {
   id: "0",
   selected: "0",
@@ -196,18 +197,23 @@ function appendTradeButtons(stickerElement) {
   buttons.forEach((button) => {
     button.addEventListener('mousedown', () => {
       button.classList.add('scale-down');
+      button.classList.add('btnYellow');
     });
     button.addEventListener('mouseup', () => {
       button.classList.remove('scale-down');
+      button.classList.remove('btnYellow');
     });
     button.addEventListener('mouseleave', () => {
       button.classList.remove('scale-down');
+      button.classList.remove('btnYellow');
     });
     button.addEventListener('touchstart', () => {
       button.classList.add('scale-down');
+      button.classList.add('btnYellow');
     });
     button.addEventListener('touchend', () => {
       button.classList.remove('scale-down');
+      button.classList.remove('btnYellow');
     });
     
     button.addEventListener('click', (event) => {
@@ -277,18 +283,23 @@ const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
   button.addEventListener('mousedown', () => {
     button.classList.add('scale-down');
+    button.classList.add('btnYellow');
   });
   button.addEventListener('mouseup', () => {
     button.classList.remove('scale-down');
+    button.classList.remove('btnYellow');
   });
   button.addEventListener('mouseleave', () => {
     button.classList.remove('scale-down');
+    button.classList.remove('btnYellow');
   });
   button.addEventListener('touchstart', () => {
     button.classList.add('scale-down');
+    button.classList.add('btnYellow');
   });
   button.addEventListener('touchend', () => {
     button.classList.remove('scale-down');
+    button.classList.remove('btnYellow');
   });
 });
 
@@ -936,18 +947,23 @@ function GenerateFilterSetButtons() {
   buttons.forEach((button) => {
     button.addEventListener('mousedown', () => {
       button.classList.add('scale-down');
+      button.classList.add('btnYellow');
     });
     button.addEventListener('mouseup', () => {
       button.classList.remove('scale-down');
+      button.classList.remove('btnYellow');
     });
     button.addEventListener('mouseleave', () => {
       button.classList.remove('scale-down');
+      button.classList.remove('btnYellow');
     });
     button.addEventListener('touchstart', () => {
       button.classList.add('scale-down');
+      button.classList.add('btnYellow');
     });
     button.addEventListener('touchend', () => {
       button.classList.remove('scale-down');
+      button.classList.remove('btnYellow');
     });
 
     button.addEventListener('click', (event) => {
@@ -1335,6 +1351,19 @@ function DarkenColour(colour, percentagevalue) {
   return darkenedHexColour;
 }
 
+function handleSetImageOrientationBtnClick(isClicked) {
+  if(isClicked === true){ImgOrientationLandscapeZeroPortraitOne = (ImgOrientationLandscapeZeroPortraitOne + 1) % 2;}
+
+  if (ImgOrientationLandscapeZeroPortraitOne === 0) {
+    document.getElementById('SetImageOrientationBtn').textContent = 'Current Layout: Landscape';
+  } else if (ImgOrientationLandscapeZeroPortraitOne === 1) {
+    document.getElementById('SetImageOrientationBtn').textContent = 'Current Layout: Portrait';
+  }
+}
+document.getElementById('SetImageOrientationBtn').addEventListener('click', function() {
+  handleSetImageOrientationBtnClick(true);
+});
+
 let includeIGN = 0;
 let includePlayerLink = 0;
 var IncludeIGNBtn = document.getElementById('IncludeIGNBtn');
@@ -1394,6 +1423,12 @@ function copyToCollectionScreenshot() {
     var stickerBoard = collectionScreenshot.querySelector("#sticker-board");
     if (stickerBoard) {
       stickerBoard.insertAdjacentHTML("afterend", snapshotFooterElement);
+    } 
+
+    if(ImgOrientationLandscapeZeroPortraitOne === 1){
+      collectionScreenshot.style.width = "400px";
+      document.getElementById("collection-screenshot-footer-gamever").style.width = "30%";
+      document.getElementById("collection-screenshot-footer-link").style.width = "70%";
     }
 
     var screenshotContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
@@ -1455,12 +1490,14 @@ var dlPngButton = document.getElementById("dl-png");
 if (dlPngButton) {
   dlPngButton.addEventListener("click", function() {
     dlPngButton.textContent = "Downloading...";
+    dlPngButton.classList.add('btnYellow');
     copyToCollectionScreenshot();
     captureScreenshot();
     document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function() {
       dlPngButton.textContent = "Download successful!";
-      setTimeout(function() {
+      setTimeout(function() {        
+        dlPngButton.classList.remove('btnYellow');
         dlPngButton.textContent = "Download as PNG";
       }, 3000);
     }, 3000);
@@ -1703,8 +1740,10 @@ function copyTradePostAreaToClipboard() {
       const copyButton = document.querySelector('#copy-trade-post-area');
       const originalButtonText = copyButton.textContent;
 
+      copyButton.classList.add('btnYellow');
       copyButton.textContent = 'Copied!';
       setTimeout(() => {
+        copyButton.classList.remove('btnYellow');
         copyButton.textContent = originalButtonText;
       }, 3000);
 
@@ -1845,7 +1884,6 @@ for (var k = 0; k < navigationElements.length; k++) {
 
 
 const webBasicMenuImg = document.querySelector('.webBasicMenuImg');
-
 if (webBasicMenuImg) {
   webBasicMenuImg.addEventListener('mousedown', () => {
     webBasicMenuImg.classList.add('scale-down');
@@ -1887,6 +1925,33 @@ function convertEpochToYYYYMMDD() {
   });
 }
 
+// const elementIds = ['#ViewportBtn', '#SortOrderBtn', '#export-btn'];
+// elementIds.forEach((id) => {
+//   const element = document.querySelector(id);
+//   addBtnYellowListnerToElement(element);
+// });
+// function addBtnYellowListnerToElement(element) {
+//   if (element) {
+//     element.addEventListener('mousedown', () => {
+//       element.classList.add('btnYellow');
+//     });
 
+//     element.addEventListener('mouseup', () => {
+//       element.classList.remove('btnYellow');
+//     });
+
+//     element.addEventListener('mouseleave', () => {
+//       element.classList.remove('btnYellow');
+//     });
+
+//     element.addEventListener('touchstart', () => {
+//       element.classList.add('btnYellow');
+//     });
+
+//     element.addEventListener('touchend', () => {
+//       element.classList.remove('btnYellow');
+//     });
+//   }
+// }
 
 window.onload = init;
