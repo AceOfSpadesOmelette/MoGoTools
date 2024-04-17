@@ -1452,6 +1452,9 @@ function copyToCollectionScreenshot() {
         `;
         container.insertBefore(spareContainer, container.querySelector(".sticker-ribbon"));
         container.querySelector(".sticker-ribbon").style.marginTop = "-4.5px";
+        if(ImgOrientationLandscapeZeroPortraitOne === 1){          
+          container.querySelector(".spare-snapshot-text").style.marginLeft = "-31px";
+        }
       }
 
       container.querySelector(".trade-button-container-screenshot").style.marginTop = "5px";
