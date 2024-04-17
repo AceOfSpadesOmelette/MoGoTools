@@ -1353,7 +1353,7 @@ input[class="player-info-field"]{
 	overflow-x: hidden;
 	overflow-y: overlay;
 	background-color: var(--beige);
-	height: calc(85vh - 30px);
+	height: calc(75vh - 30px);
 	padding: 10px;
 	font-size: 0.8rem;
 }
