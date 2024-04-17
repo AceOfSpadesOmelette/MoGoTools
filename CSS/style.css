@@ -1413,3 +1413,12 @@ content: "\2212";
 	font-size: 0.9rem;
 	color: var(--darkerbrown);
 }
+
+#AndOrFilterModeBtn, #ClearFiltersBtn{
+	font-size: 0.6rem;
+	width: 37%;
+}
+
+#ViewCurrentFiltersBtn, #RefreshFiltersBtn{
+	width: 8%;
+}
