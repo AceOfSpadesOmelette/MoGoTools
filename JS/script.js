@@ -1512,21 +1512,43 @@ function copyToCollectionScreenshot() {
   }
 }
 
+// function captureScreenshot() {
+//   var collectionScreenshot = document.getElementById("collection-screenshot");
+//   if (collectionScreenshot) {
+//     window.devicePixelRatio = 2;
+//     html2canvas(collectionScreenshot, {scale: 2}).then(function(canvas) {
+//       var dataURL = canvas.toDataURL("image/png");
+//       var link = document.createElement("a");
+//       link.href = dataURL;
+//       link.download = "mogotools-collection-screenshot.png";
+//       link.click();
+//     });
+//   } else {
+//     console.log("collection-screenshot element is not found.");
+//   }
+// }
 function captureScreenshot() {
   var collectionScreenshot = document.getElementById("collection-screenshot");
 
   if (collectionScreenshot) {
     window.devicePixelRatio = 2;
-    html2canvas(collectionScreenshot, {
-      //scale: 2,
-      allowTaint: true,
-      useCORS : true
-    }).then(function(canvas) {
+    html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
       var dataURL = canvas.toDataURL("image/png");
       var link = document.createElement("a");
+
+      // Try downloading the image
       link.href = dataURL;
       link.download = "mogotools-collection-screenshot.png";
+      link.style.display = "none";
+      document.body.appendChild(link);
       link.click();
+      document.body.removeChild(link);
+
+      // If download fails, open it in a new browser window
+      if (!link.href) {
+        var newWindow = window.open();
+        newWindow.document.write('<img src="' + dataURL + '">');
+      }
     });
   } else {
     console.log("collection-screenshot element is not found.");
