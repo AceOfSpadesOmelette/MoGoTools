@@ -1546,6 +1546,20 @@ function copyToCollectionScreenshot() {
 // }
 
 // WORKING: OPENS IN NEW TAB
+function captureScreenshot() {
+  var collectionScreenshot = document.getElementById("collection-screenshot");
+  if (collectionScreenshot) {
+    html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
+      var dataURL = canvas.toDataURL("image/png");
+
+      var newWindow = window.open();
+      newWindow.document.write('<img src="' + dataURL + '" style="width:100%">');
+    });
+  } else {
+    console.log("collection-screenshot element is not found.");
+  }
+}
+
 // function captureScreenshot() {
 //   var collectionScreenshot = document.getElementById("collection-screenshot");
 //   if (collectionScreenshot) {
@@ -1564,27 +1578,6 @@ function copyToCollectionScreenshot() {
 //     console.log("collection-screenshot element is not found.");
 //   }
 // }
-function captureScreenshot() {
-  var collectionScreenshot = document.getElementById("collection-screenshot");
-  if (collectionScreenshot) {
-    html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
-      var dataURL = canvas.toDataURL("image/png");
-
-      var shouldDownload = window.confirm("Do you want to download the image?");
-      if (shouldDownload) {
-        var link = document.createElement("a");
-        link.href = dataURL;
-        link.download = "mogotools-collection-screenshot.png";
-
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-    });
-  } else {
-    console.log("collection-screenshot element is not found.");
-  }
-}
 
 // function captureScreenshot() {
 //   var collectionScreenshot = document.getElementById("collection-screenshot");
