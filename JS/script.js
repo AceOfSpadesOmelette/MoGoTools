@@ -538,7 +538,7 @@ function clearFilters() {
   PerformFilters(userData);
 }
 
-document.getElementById('RefreshFiltersBtn').addEventListener('click', PerformFilters);
+document.getElementById('RefreshFiltersBtn').addEventListener('click', function(){PerformFilters(userData);})
 
 const AndOrFilterModeBtn = document.getElementById('AndOrFilterModeBtn');
 AndOrFilterModeBtn.addEventListener('click', function () {
@@ -797,15 +797,21 @@ function handleFilterInput(event) {
       } else {
         target.value = target.value.slice(0, 2);
       }
-    } else if (target.value < 0 || target.value === '') {
+    } else if (target.value < 0) {
       target.value = 0;
+    } else if (target.value === ''){
+      setTimeout(() => {
+        if (target.value === '') { // Check if value is still empty before setting it to 0
+          target.value = 0;
+        }
+      }, 5000); // Set 5s timeout for user to type before setting it to zero
     }
   }
 }
 
 const SpareFilterBtn = document.getElementById('spare-filter-btn');
-minFilterInput.addEventListener('mouseleave', SwapSpareFilterMinMax);
-maxFilterInput.addEventListener('mouseleave', SwapSpareFilterMinMax);
+//minFilterInput.addEventListener('mouseleave', () => setTimeout(SwapSpareFilterMinMax, 5000));
+//maxFilterInput.addEventListener('mouseleave', () => setTimeout(SwapSpareFilterMinMax, 5000));
 function SwapSpareFilterMinMax(event) {
   if (parseInt(minFilterInput.value) > parseInt(maxFilterInput.value)) {
     let min = maxFilterInput.value;
@@ -1217,10 +1223,11 @@ function countValveStickers() {
   let valveQuantity = 0;
 
   for (const key in userData) {
-
     const globalId = userData[key].id;
     const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
-    if(IgnorePrestige === 1 && stickerData.Prestige === '1'){continue;}
+    if (IgnorePrestige === 1 && stickerData.Prestige === '1') {
+      continue;
+    }
 
     if (userData.hasOwnProperty(key) && parseInt(userData[key].spare) > 0) {
       const globalId = userData[key].id;
@@ -1230,20 +1237,34 @@ function countValveStickers() {
         const spareQuantity = parseInt(userData[key].spare);
         const stickerRarity = parseInt(stickerData.StickerRarity);
         const isPrestige = parseInt(stickerData.Golden);
-        if(isPrestige === 1){valveQuantity += spareQuantity * stickerRarity * 2}
-        else {valveQuantity += spareQuantity * stickerRarity;}
+        if (isPrestige === 1) {
+          valveQuantity += spareQuantity * stickerRarity * 2;
+        } else {
+          valveQuantity += spareQuantity * stickerRarity;
+        }
       }
     }
   }
-  const PrestigeLeftoverQuantity = document.getElementById('leftover-total-valve-quantity').value;
+
+  let PrestigeLeftoverQuantity = document.getElementById('leftover-total-valve-quantity').value;
+  if (isNaN(PrestigeLeftoverQuantity)) {
+    PrestigeLeftoverQuantity = 0;
+  }
+  console.log(PrestigeLeftoverQuantity);
+
   const ValveSum = valveQuantity + parseInt(PrestigeLeftoverQuantity);
   totalValveQuantity.textContent = ValveSum.toString();
 
   const valveTierImage = document.querySelector('.valve-tier');
-  if(ValveSum < 250){valveTierImage.src = '';}
-  else if (250 <= ValveSum && ValveSum < 499) {valveTierImage.src = 'assets/stickers/StickerValveTier1.png';}
-  else if (500 <= ValveSum && ValveSum < 799) {valveTierImage.src = 'assets/stickers/StickerValveTier2.png';}
-  else if (ValveSum >= 800) {valveTierImage.src = 'assets/stickers/StickerValveTier3.png';}
+  if (ValveSum < 250) {
+    valveTierImage.src = '';
+  } else if (250 <= ValveSum && ValveSum < 499) {
+    valveTierImage.src = 'assets/stickers/StickerValveTier1.png';
+  } else if (500 <= ValveSum && ValveSum < 799) {
+    valveTierImage.src = 'assets/stickers/StickerValveTier2.png';
+  } else if (ValveSum >= 800) {
+    valveTierImage.src = 'assets/stickers/StickerValveTier3.png';
+  }
 }
 
 
@@ -1827,11 +1848,19 @@ function handleVaultPrestigeInput(event) {
       } else {
         target.value = target.value.slice(0, 4);
       }
-    } else if (target.value < 0 || target.value === '') {
+    } else if (target.value < 0) {
       target.value = 0;
+    } else if (target.value === '') {
+      setTimeout(() => {
+        if (target.value === '') { // Check if value is still empty before setting it to 0
+          target.value = 0;
+          countValveStickers(); // Call countValveStickers() after setting value to 0
+        }
+      }, 5000); // Set 5s timeout for user to type before setting it to zero
+      return; // Exit the function here to prevent countValveStickers() from being called immediately
     }
   }
-  countValveStickers();
+  countValveStickers(); // Call countValveStickers() outside the setTimeout delay
 }
 
 
