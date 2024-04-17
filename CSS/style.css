@@ -108,6 +108,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	overflow: hidden;
 	display: inline-flex;
 	justify-content: center;
+	cursor: pointer;
 }
 
 .ft-btn{
@@ -127,6 +128,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	overflow: hidden;
 	display: inline-flex;
 	justify-content: center;
+	cursor: pointer;
 }
 
 .lfft-btn.scale-down {
@@ -211,11 +213,6 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	flex-wrap: wrap;
 	row-gap: 5px;
 	column-gap: 3px;
-}
-
-.filter-settings-btn{
-	flex: 1;
-	font-size: 9.5px;
 }
 
 #filter-results-container{
@@ -912,7 +909,7 @@ input[class="player-info-field"]{
 	background-color: var(--beige);
 }
 
-#dl-png{
+#dl-png, #SetImageOrientationBtn{
 	margin-top: 3px;
 	width: 97%;
 }
@@ -975,7 +972,13 @@ input[class="player-info-field"]{
 	height: 35px;
 }
 
-#collection-screenshot-footer > * {
+#collection-screenshot-footer-gamever {
+	width: 50%;
+	font-size: 10px;
+	line-height: 1.5rem;
+}
+
+#collection-screenshot-footer-link{
 	width: 50%;
 	font-size: 10px;
 	line-height: 1.5rem;
@@ -986,11 +989,11 @@ input[class="player-info-field"]{
 }
 
 #collection-screenshot-my-album{
-	font-size: 20px;
+	font-size: 18px;
 }
 
 #collection-screenshot-player-name, #collection-screenshot-player-link{
-	font-size: 14px;
+	font-size: 10px;
 	line-height: 1.5rem;
 }
 
