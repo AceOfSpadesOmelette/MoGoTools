@@ -1507,6 +1507,37 @@ function copyToCollectionScreenshot() {
       document.getElementById("collection-screenshot-footer-gamever").style.width = "30%";
       document.getElementById("collection-screenshot-footer-link").style.width = "70%";
     }
+
+        // Calculate the current width and height of middle-side
+        var currentWidth = collectionScreenshot.offsetWidth;
+        var currentHeight = collectionScreenshot.offsetHeight;
+    
+        // Calculate the current size in megapixels
+        var currentSize = currentWidth * currentHeight;
+        console.log(currentWidth);
+        console.log(currentHeight);
+    
+        // Check if the current size exceeds 3 megapixels
+        if (currentSize > 1579008) {
+          // Calculate the scale factor to resize the element proportionally
+          var scaleFactor = Math.sqrt(1579008 / currentSize);
+    
+          // Resize middle-side and all child elements proportionally
+          collectionScreenshot.style.transform = `scale(${scaleFactor})`;
+          collectionScreenshot.style.transformOrigin = "top left";
+          //document.getElementById("snapshot-area").style.transform = `scale(${scaleFactor})`;
+          //document.getElementById("snapshot-area").transformOrigin = "top left";
+    
+          // Update the width and height based on the new scale
+          var newWidth = currentWidth * scaleFactor;
+          var newHeight = currentHeight * scaleFactor;
+          console.log(newWidth);
+          console.log(newHeight);
+    
+          // Update the width and height of collectionScreenshot to match the resized middle-side
+          //collectionScreenshot.style.width = newWidth + "px";
+          //collectionScreenshot.style.height = newHeight + "px";
+        }
   } else {
     console.log("Either middle-side or collection-screenshot element is not found.");
   }
@@ -1550,7 +1581,26 @@ function captureScreenshot() {
   var collectionScreenshot = document.getElementById("collection-screenshot");
   if (collectionScreenshot) {
     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
-      canvas.toBlob(function(blob) {
+      // Reduce image size by 20%
+      var newWidth = canvas.width * 1;
+      var newHeight = canvas.height * 1;
+      var resizedCanvas = document.createElement("canvas");
+      resizedCanvas.width = newWidth;
+      resizedCanvas.height = newHeight;
+      var resizedContext = resizedCanvas.getContext("2d");
+      resizedContext.drawImage(
+        canvas,
+        0,
+        0,
+        canvas.width,
+        canvas.height,
+        0,
+        0,
+        newWidth,
+        newHeight
+      );
+
+      resizedCanvas.toBlob(function(blob) {
         var newWindow = window.open();
         var imageURL = URL.createObjectURL(blob);
         newWindow.document.write('<img src="' + imageURL + '" style="width:100%">');
