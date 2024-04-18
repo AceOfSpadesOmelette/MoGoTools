@@ -1494,14 +1494,6 @@ function copyToCollectionScreenshot() {
           container.querySelector(".spare-snapshot-text").style.marginTop = "3px";
         }
       }
-        if (navigator.userAgent.indexOf("Safari") > -1) {
-          var SpareSnapshotText = container.querySelector(".spare-snapshot-text");
-          var currentSpareSnapshotTextMarginTop = parseInt(SpareSnapshotText.style.marginTop);
-          SpareSnapshotText.style.marginTop = (currentSpareSnapshotTextMarginTop + 1) + "px";
-          var stickerRibbon = container.querySelector(".sticker-ribbon");
-          var currentstickerRibbonMarginTop = parseInt(stickerRibbon.style.marginTop);
-          stickerRibbon.style.marginTop = (currentstickerRibbonMarginTop + 1) + "px";
-        }
 
       container.querySelector(".trade-button-container-screenshot").style.marginTop = "5px";
       container.querySelector(".trade-button-container-screenshot").style.width = "100%";
