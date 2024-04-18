@@ -1530,7 +1530,36 @@ function copyToCollectionScreenshot() {
     console.log("Either middle-side or collection-screenshot element is not found.");
   }
 }
-
+function captureScreenshot() {
+  var collectionScreenshot = document.getElementById("collection-screenshot");
+  if (collectionScreenshot) {
+    html2canvas(collectionScreenshot, { scale: 2, useCORS: true })
+      .then(function (canvas) {
+        if (navigator.userAgent.indexOf("Safari") > -1) {
+          // For Safari, convert the canvas to a Blob object
+          canvas.toBlob(function (blob) {
+            // Create a temporary link element
+            var link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "mogotools-collection-screenshot.png";
+            link.click();
+          });
+        } else {
+          // For other browsers, convert the canvas to a data URL
+          var dataURL = canvas.toDataURL("image/png");
+          var link = document.createElement("a");
+          link.href = dataURL;
+          link.download = "mogotools-collection-screenshot.png";
+          link.click();
+        }
+      })
+      .catch(function (error) {
+        console.error("Error:", error);
+      });
+  } else {
+    console.log("collection-screenshot element is not found.");
+  }
+}
 // function captureScreenshot() {
 //   var collectionScreenshot = document.getElementById("collection-screenshot");
 //   if (collectionScreenshot) {
@@ -1565,46 +1594,46 @@ function copyToCollectionScreenshot() {
 // }
 
 // WORKING: OPENS IN NEW TAB
-function captureScreenshot() {
-  var collectionScreenshot = document.getElementById("collection-screenshot");
-  if (collectionScreenshot) {
-    html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
-      // Reduce image size by 20%
-      var newWidth = canvas.width * 1;
-      var newHeight = canvas.height * 1;
-      var resizedCanvas = document.createElement("canvas");
-      resizedCanvas.width = newWidth;
-      resizedCanvas.height = newHeight;
-      var resizedContext = resizedCanvas.getContext("2d");
-      resizedContext.drawImage(
-        canvas,
-        0,
-        0,
-        canvas.width,
-        canvas.height,
-        0,
-        0,
-        newWidth,
-        newHeight
-      );
+// function captureScreenshot() {
+//   var collectionScreenshot = document.getElementById("collection-screenshot");
+//   if (collectionScreenshot) {
+//     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
+//       // Reduce image size by 20%
+//       var newWidth = canvas.width * 1;
+//       var newHeight = canvas.height * 1;
+//       var resizedCanvas = document.createElement("canvas");
+//       resizedCanvas.width = newWidth;
+//       resizedCanvas.height = newHeight;
+//       var resizedContext = resizedCanvas.getContext("2d");
+//       resizedContext.drawImage(
+//         canvas,
+//         0,
+//         0,
+//         canvas.width,
+//         canvas.height,
+//         0,
+//         0,
+//         newWidth,
+//         newHeight
+//       );
 
-      resizedCanvas.toBlob(function(blob) {
-        var newWindow = window.open();
-        var imageURL = URL.createObjectURL(blob);
-        newWindow.document.write('<img src="' + imageURL + '" style="width:100%">');
+//       resizedCanvas.toBlob(function(blob) {
+//         var newWindow = window.open();
+//         var imageURL = URL.createObjectURL(blob);
+//         newWindow.document.write('<img src="' + imageURL + '" style="width:100%">');
 
-        var imageElement = document.createElement("img");
-        imageElement.src = imageURL;
-        // imageElement.style.width = "100%";
-        var snapshotArea = document.getElementById("snapshot-area");        
-        snapshotArea.innerHTML = "";
-        snapshotArea.appendChild(imageElement);
-      }, "image/png");
-    });
-  } else {
-    console.log("collection-screenshot element is not found.");
-  }
-}
+//         var imageElement = document.createElement("img");
+//         imageElement.src = imageURL;
+//         // imageElement.style.width = "100%";
+//         var snapshotArea = document.getElementById("snapshot-area");        
+//         snapshotArea.innerHTML = "";
+//         snapshotArea.appendChild(imageElement);
+//       }, "image/png");
+//     });
+//   } else {
+//     console.log("collection-screenshot element is not found.");
+//   }
+// }
 // function captureScreenshot() {
 //   var collectionScreenshot = document.getElementById("collection-screenshot");
 //   if (collectionScreenshot) {
