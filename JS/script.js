@@ -1510,23 +1510,21 @@ function copyToCollectionScreenshot() {
     }
 
         // Calculate the current width and height of middle-side
-        //var currentWidth = collectionScreenshot.offsetWidth;
-        //var currentHeight = collectionScreenshot.offsetHeight;
+        var currentWidth = collectionScreenshot.offsetWidth;
+        var currentHeight = collectionScreenshot.offsetHeight;
     
         // Calculate the current size in megapixels
-        //var currentSize = currentWidth * currentHeight;
-        //console.log(currentWidth);
-        //console.log(currentHeight);
+        var currentSize = currentWidth * currentHeight;
     
         // Check if the current size exceeds 3 megapixels
-        //if (currentSize > 1579008) {
+        if (currentSize > 1579008) {
           // Calculate the scale factor to resize the element proportionally
-          //var scaleFactor = Math.sqrt(1579008 / currentSize);
+          var scaleFactor = Math.sqrt(1579008 / currentSize);
     
           // Resize middle-side and all child elements proportionally
-          //collectionScreenshot.style.transform = `scale(${scaleFactor})`;
-          //collectionScreenshot.style.transformOrigin = "top left";
-        //}
+          collectionScreenshot.style.transform = `scale(${scaleFactor})`;
+          collectionScreenshot.style.transformOrigin = "top left";
+        }
   } else {
     console.log("Either middle-side or collection-screenshot element is not found.");
   }
