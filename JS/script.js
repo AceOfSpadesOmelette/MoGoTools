@@ -1710,7 +1710,7 @@ if (dlPngButton) {
     dlPngButton.classList.add('btnYellow');
     copyToCollectionScreenshot();
     captureScreenshot();
-    //document.getElementById("collection-screenshot").innerHTML = "";
+    document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function() {
       dlPngButton.textContent = "Download successful!";
       setTimeout(function() {        
