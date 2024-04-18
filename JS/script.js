@@ -1546,6 +1546,20 @@ function copyToCollectionScreenshot() {
 // }
 
 // WORKING: OPENS IN NEW TAB
+function captureScreenshot() {
+  var collectionScreenshot = document.getElementById("collection-screenshot");
+  if (collectionScreenshot) {
+    html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
+      canvas.toBlob(function(blob) {
+        var newWindow = window.open();
+        var imageURL = URL.createObjectURL(blob);
+        newWindow.document.write('<img src="' + imageURL + '" style="width:100%">');
+      }, "image/png");
+    });
+  } else {
+    console.log("collection-screenshot element is not found.");
+  }
+}
 // function captureScreenshot() {
 //   var collectionScreenshot = document.getElementById("collection-screenshot");
 //   if (collectionScreenshot) {
@@ -1559,22 +1573,23 @@ function copyToCollectionScreenshot() {
 //     console.log("collection-screenshot element is not found.");
 //   }
 // }
-function captureScreenshot() {
-  var collectionScreenshot = document.getElementById("collection-screenshot");
-  if (collectionScreenshot) {
-    html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
-      var dataURL = canvas.toDataURL("image/png");
+// function captureScreenshot() {
+//   var collectionScreenshot = document.getElementById("collection-screenshot");
+//   if (collectionScreenshot) {
+//     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
+//       var dataURL = canvas.toDataURL("image/png");
 
-      var newWindow = window.open();
-      newWindow.opener = null; // Prevent the new window from having access to the current window
-      newWindow.location = "about:blank"; // Set the location of the new window to about:blank
+//       var newWindow = window.open();
+//       newWindow.opener = null; // Prevent the new window from having access to the current window
+//       newWindow.location = "about:blank"; // Set the location of the new window to about:blank
 
-      newWindow.document.write('<img src="' + dataURL + '" style="width:100%">');
-    });
-  } else {
-    console.log("collection-screenshot element is not found.");
-  }
-}
+//       newWindow.document.write('<img src="' + dataURL + '" style="width:100%">');
+//     });
+//   } else {
+//     console.log("collection-screenshot element is not found.");
+//   }
+// }
+
 // function captureScreenshot() {
 //   var collectionScreenshot = document.getElementById("collection-screenshot");
 //   if (collectionScreenshot) {
