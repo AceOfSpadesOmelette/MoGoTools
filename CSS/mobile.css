@@ -215,8 +215,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 
 .sticker-card-container{
 	margin: 8px;	
-	min-width: 90px;
-	width: 100px;
+	width: 90px;
   	/* flex-basis: calc(30% - 10px); */
 	/* margin: 5px; */
 	/* flex-basis: calc(25% - 10px);
@@ -230,7 +229,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 
 @media screen and (max-width: 400px) {
 	.sticker-card-container{
-	  max-width: 80px;
+	  width: 80px;
 	}
 }
 
