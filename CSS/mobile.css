@@ -215,7 +215,8 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 
 .sticker-card-container{
 	margin: 8px;	
-	width: 90px;
+	min-width: 90px;
+	width: 100px;
   	/* flex-basis: calc(30% - 10px); */
 	/* margin: 5px; */
 	/* flex-basis: calc(25% - 10px);
