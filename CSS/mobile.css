@@ -229,7 +229,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 
 @media screen and (max-width: 400px) {
 	.sticker-card-container{
-	  width: 80px;
+	  width: 70px;
 	}
 }
 
