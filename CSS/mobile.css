@@ -587,12 +587,6 @@ input[type=text] {
 	width: 100%;
 }
 
-@media screen and (max-width: 400px) {
-	.set-logo{
-	  max-width: 75%;
-	}
-}
-
 .btn-subgroup-spare {
 	column-gap: 2px !important;
 }
