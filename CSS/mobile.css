@@ -1312,8 +1312,8 @@ input[class="player-info-field"]{
 .btn:hover .tooltiptext-bottom { visibility: visible; }
 .leftover-valve-subcontainer:has(.tooltiptext-bottom) { overflow:visible !important; }
 .leftover-valve-subcontainer:hover .tooltiptext-bottom { visibility: visible; }
-
-
+.valve-subcontainer:has(.tooltiptext-top) { overflow:visible !important; }
+.valve-subcontainer:hover .tooltiptext-top { visibility: visible; }
 
 #basic-menu-modal{
 	display: none;
