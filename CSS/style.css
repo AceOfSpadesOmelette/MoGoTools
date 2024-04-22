@@ -938,6 +938,7 @@ input[class="player-info-field"]{
 
 .progress-by-rarity-stars{
 	height: 18px;
+	margin: auto;
 }
 
 .progress-by-rarity-text{
