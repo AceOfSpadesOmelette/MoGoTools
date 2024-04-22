@@ -1495,7 +1495,7 @@ function copyToCollectionScreenshot() {
         }
       }
 
-      container.querySelector(".trade-button-container-screenshot").style.marginTop = "5px";
+      container.querySelector(".trade-button-container-screenshot").style.marginTop = "6px";
       container.querySelector(".trade-button-container-screenshot").style.width = "100%";
       container.querySelector(".trade-button-container-screenshot").style.display = "flex";
 
