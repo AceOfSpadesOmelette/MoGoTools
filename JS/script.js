@@ -891,10 +891,10 @@ function RestoreTradeStates(userData, StickerContainer) {
   const stickerData = userData[dataGlobalValue];
   StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.remove("btnRed");
   StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="fortrade"]`).classList.remove("btnGreen");
-  if (stickerData.lookingfor === "1") {
+  if (stickerData.lookingfor === 1) {
     StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.add("btnRed");
   }
-  if (stickerData.fortrade === "1") {
+  if (stickerData.fortrade === 1) {
     StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="fortrade"]`).classList.add("btnGreen");
   }
 }
