@@ -574,15 +574,15 @@ input[type=text] {
 .sticker-star-container{
 	display: flex;
 	gap: 2px;
-	margin-bottom: -15px;
+	margin-bottom: -16px;
 	position: relative;
 	z-index: 3;
 	justify-content: center;
 }
 
 .star-img{
-	/* width: 15px; */
-	height: 35px;
+	width: 90%;
+	/* height: 35px; */
   	z-index: 999;
 }
 
