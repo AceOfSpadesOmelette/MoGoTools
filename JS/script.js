@@ -671,7 +671,7 @@ function FilterByButtons(GlobalID){
         for (const filter of IncludeStateFilters) {
           var filterKeytemp = filter.FilterKey;
           if(filter.inDatabase === "0"){
-            if(userData[GlobalID][filterKeytemp] === filter.FilterValue){
+            if(userData[GlobalID][filterKeytemp] === parseInt(filter.FilterValue)){
               userData[GlobalID].show = 1;
               return;
             } else{userData[GlobalID].show = 0;}
@@ -688,7 +688,7 @@ function FilterByButtons(GlobalID){
         for (const filter of ExcludeStateFilters) {
           var filterKeytemp = filter.FilterKey;
           if(filter.inDatabase === "0"){
-            if(userData[GlobalID][filterKeytemp] !== filter.FilterValue){
+            if(userData[GlobalID][filterKeytemp] !== parseInt(filter.FilterValue)){
               userData[GlobalID].show = 1;
               return;
             } else {userData[GlobalID].show = 0; return;}
