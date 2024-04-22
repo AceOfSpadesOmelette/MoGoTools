@@ -1,5 +1,6 @@
 import { STICKER_DATA } from "../Database/StickerData.js";
 import { SET_DATA } from "../Database/SetData.js";
+import { NEWS_DATA } from "../Database/NewsData.js";
 
 const CurrentAlbumNumber = "7";
 const VaultTierOne = 250;
@@ -59,7 +60,7 @@ function init() {
   UpdateAlbumStartEndTime();
 
   handleBasicMenuNavigationClick({target: document.getElementById("BasicMenuNewsBtn")});
-  convertEpochToYYYYMMDD();
+  LoadNews();
 
   // compareViewport();
 }
@@ -2025,23 +2026,41 @@ if (webBasicMenuImg) {
   });
 }
 
-function convertEpochToYYYYMMDD() {
-  // Get all .news-item-time elements
-  const newsItemTimes = document.querySelectorAll(".news-item-time");
+function LoadNews() {
+  const newsContent = document.getElementById("news-content");
 
-  // Convert each .news-item-time element
-  newsItemTimes.forEach((newsItemTime) => {
-    const epoch = parseInt(newsItemTime.textContent, 10);
+  // Sort NEWS_DATA based on NewsTime in descending order
+  const sortedNewsData = NEWS_DATA.sort((a, b) => b.NewsTime - a.NewsTime);
 
-    const date = new Date(epoch * 1000); // Convert seconds to milliseconds
+  sortedNewsData.forEach((item) => {
+    const { NewsTime, NewsHeader, NewsContent } = item;
+
+    // Create the HTML string for each news item
+    const newsItemHTML = `
+      <div class="basic-menu-news-item">
+        <div class="basic-menu-news-item-header">
+          <span class="news-item-time">${convertEpochToYYYYMMDD(parseInt(NewsTime))}</span> - ${NewsHeader}
+        </div>
+        <div class="basic-menu-news-item-content">${NewsContent}</div>
+      </div><br>
+    `;
     
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-
-    const formattedDate = `${year}/${month}/${day}`;
-    newsItemTime.textContent = formattedDate;
+    // Append the news item HTML to #news-content
+    newsContent.innerHTML += newsItemHTML;
   });
+}
+
+function convertEpochToYYYYMMDD(TimeValue) {
+  const epoch = parseInt(TimeValue, 10);
+
+  const date = new Date(epoch * 1000); // Convert seconds to milliseconds
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  const formattedDate = `${year}/${month}/${day}`;
+  return formattedDate;
 }
 
 
