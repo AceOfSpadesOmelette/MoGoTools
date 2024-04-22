@@ -1154,9 +1154,9 @@ function UpdateTotalStickerByRarityQuantity() {
 }
 
 function countSelectedStickers() {
-  const userStickersQuantity = document.querySelector('#user-stickers-quantity');
+  const userStickersQuantity = document.querySelector("#user-stickers-quantity");
   const setDuplicates = new Map();
-  const setSpans = Array.from(document.querySelectorAll('[data-setid]'));
+  const setSpans = Array.from(document.querySelectorAll("[data-setid]"));
 
   // Reset each data-setid value to zero
   setSpans.forEach(setSpan => {setSpan.textContent = "0";});
@@ -1164,10 +1164,10 @@ function countSelectedStickers() {
   for (const key in userData) {
     const globalId = userData[key].id;
     const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
-    if(IgnorePrestige === 1 && stickerData.Prestige === '1'){continue;}
+    if(IgnorePrestige === 1 && stickerData.Prestige === "1"){continue;}
 
     else{
-      if (userData.hasOwnProperty(key) && userData[key].selected === "1") {
+      if (userData.hasOwnProperty(key) && userData[key].selected === 1) {
         const setId = Math.floor(userData[key].id / 100);
   
         if (setDuplicates.has(setId)) {
@@ -1181,7 +1181,7 @@ function countSelectedStickers() {
 
   let count = 0;
   for (const [setId, setCount] of setDuplicates) {
-    const setSpan = setSpans.find(span => span.getAttribute('data-setid') === setId.toString());
+    const setSpan = setSpans.find(span => span.getAttribute("data-setid") === setId.toString());
     if (setSpan) {
       setSpan.textContent = (parseInt(setSpan.textContent, 10) + setCount).toString();
     }
@@ -1198,16 +1198,19 @@ function countSelectedStickerByRarity() {
     document.getElementById(`rarity${RarityNumber}-quantity`).textContent = 0;
     document.getElementById(`rarity${RarityNumber}-percentage`).textContent = 0;
   }
+  document.getElementById(`gold-quantity`).textContent = 0;
+  document.getElementById(`gold-percentage`).textContent = 0;
 
   for (const key in userData) {
     const globalId = userData[key].id;
     const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
-    if(IgnorePrestige === 1 && stickerData.Prestige === '1'){continue;}
+    if(IgnorePrestige === 1 && stickerData.Prestige === "1"){continue;}
 
     else{
-      if (userData.hasOwnProperty(key) && userData[key].selected === "1") {
+      if (userData.hasOwnProperty(key) && userData[key].selected === 1) {
         const StickerRarityNumber = stickerData.StickerRarity;
-        document.getElementById(`rarity${StickerRarityNumber}-quantity`).textContent++
+        document.getElementById(`rarity${StickerRarityNumber}-quantity`).textContent++;
+        if(stickerData.Golden === "1"){document.getElementById(`gold-quantity`).textContent++}
       }
     }
   }
@@ -1218,8 +1221,10 @@ function countSelectedStickerByRarity() {
     const percentage = (StickerQuantity / TotalStickerQuantity * 100).toFixed(1);
     document.getElementById(`rarity${RarityNumber}-percentage`).textContent = `${percentage}%`;
   }
+  
+  const GoldenPercentage = (parseInt(document.getElementById(`gold-quantity`).textContent) / parseInt(document.getElementById(`total-gold-quantity`).textContent) * 100).toFixed(1);
+  document.getElementById(`gold-percentage`).textContent = `${GoldenPercentage}%`;
 }
-
 function countValveStickers() {
   const totalValveQuantity = document.querySelector('#total-valve-quantity');
 
