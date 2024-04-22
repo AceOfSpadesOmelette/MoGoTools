@@ -1,12 +1,13 @@
-import { STICKER_DATA } from '../Database/StickerData.js';
-import { SET_DATA } from '../Database/SetData.js';
+import { STICKER_DATA } from "../Database/StickerData.js";
+import { SET_DATA } from "../Database/SetData.js";
 
-const CurrentAlbumNumber = '7';
+const CurrentAlbumNumber = "7";
 const VaultTierOne = 250;
 const VaultTierTwo = 500;
 const VaultTierThree = 800;
 let userData = {};
 let BackupuserData = {};
+let AlbumCurrentZeroAllOne = 0;
 const FilterList = {};
 let AndZeroOrOne = 0;
 let AscendZeroDescendOne = 0;
@@ -16,22 +17,23 @@ let LightZeroDarkOne = 0;
 let ImgOrientationLandscapeZeroPortraitOne = 0;
 const defaultValues = {
   id: "0",
-  selected: "0",
-  spare: "0",
-  show: "1",
-  havespare: "0",
-  lookingfor: "0",
-  fortrade: "0",
+  selected: 0,
+  spare: 0,
+  show: 1,
+  havespare: 0,
+  lookingfor: 0,
+  fortrade: 0,
+  // heartvalue: 0,
 };
 const FullAlbumValues = {
   id: "0",
-  show: "1",
+  show: 1,
 }
 
 // Sets up the website
 function init() {
   compareViewport();
-  console.log('Hello world!');
+  console.log("Hello world!");
   GenerateFilterSetButtons();   
   SetDefaultFilterStates();
   
@@ -43,8 +45,8 @@ function init() {
   } else {
     CreateNewUserData(STICKER_DATA);
   }
-  generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');  
-  PerformSort({ currentTarget: document.querySelector('button[data-sort-type="GlobalID"]') });  
+  generateCurrentStickerBoard(STICKER_DATA, userData, "current-sticker-board");  
+  PerformSort({ currentTarget: document.querySelector("button[data-sort-type='GlobalID']") });  
   NotSelectedByDefault();
   
   UpdateTotalStickerQuantity();
@@ -63,21 +65,21 @@ function init() {
 }
 
 // Runs when loading the entire site for the first time
-window.addEventListener('DOMContentLoaded', () => {
-  const loadingOverlay = document.getElementById('loading-overlay');
-  loadingOverlay.style.display = 'block';
-  setTimeout(() => {loadingOverlay.style.display = 'none';}, 2000);
+window.addEventListener("DOMContentLoaded", () => {
+  const loadingOverlay = document.getElementById("loading-overlay");
+  loadingOverlay.style.display = "block";
+  setTimeout(() => {loadingOverlay.style.display = "none";}, 2000);
 });
 
 function SetDefaultFilterStates(){
-  var FilterOptions = document.querySelectorAll('[data-filtervalue]');
+  var FilterOptions = document.querySelectorAll("[data-filtervalue]");
   FilterOptions.forEach(item => {
-    var filterDataAttribute = item.getAttribute('data-filtervalue');
-    let FilterKey_Value = filterDataAttribute.split('>')[1];
-    let FilterValue_Value = filterDataAttribute.split('>')[2];
-    if(FilterValue_Value.includes('|')){FilterValue_Value = FilterValue_Value.split('|');}
+    var filterDataAttribute = item.getAttribute("data-filtervalue");
+    let FilterKey_Value = filterDataAttribute.split(">")[1];
+    let FilterValue_Value = filterDataAttribute.split(">")[2];
+    if(FilterValue_Value.includes("|")){FilterValue_Value = FilterValue_Value.split("|");}
     FilterList[filterDataAttribute] = {      
-      inDatabase: filterDataAttribute.split('>')[0],
+      inDatabase: filterDataAttribute.split(">")[0],
       FilterName: filterDataAttribute,
       FilterKey: FilterKey_Value,
       FilterValue: FilterValue_Value,
@@ -88,18 +90,18 @@ function SetDefaultFilterStates(){
 
 function CreateNewUserData(dataset) {
   dataset
-    .filter(item => item['AlbumNo'] === CurrentAlbumNumber)
+    .filter(item => item["AlbumNo"] === CurrentAlbumNumber)
     .forEach(item => {
-      const userDataItem = { ...defaultValues, id: item['GlobalID'] };
-      userData[item['GlobalID']] = userDataItem;
+      const userDataItem = { ...defaultValues, id: item["GlobalID"]};
+      userData[item["GlobalID"]] = userDataItem;
     });
 }
 
 function NotSelectedByDefault() {
-  const containers = document.querySelectorAll('.sticker-card-container');
+  const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach(container => {
-    if(!container.classList.contains('selected')){      
-      container.classList.add('not-selected');
+    if(!container.classList.contains("selected")){      
+      container.classList.add("not-selected");
     }
     });
 }
@@ -111,23 +113,23 @@ function generateCurrentStickerBoard(dataset, userData, targetParentElementID) {
 
   const fragment = document.createDocumentFragment();
 
-  for (const item of dataset.filter(item => item['GlobalID'] in userData)) {
-    const userDataItem = userData[item['GlobalID']];
+  for (const item of dataset.filter(item => item["GlobalID"] in userData)) {
+    const userDataItem = userData[item["GlobalID"]];
     const globalId = userDataItem.id;
 
     const stickerCardContainer = document.querySelector(`${stickerContainerSelector}[data-global="${userDataItem.id}"]`);
 
     const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
-    if(IgnorePrestige === 1 && stickerData.Prestige === '1'){
+    if(IgnorePrestige === 1 && stickerData.Prestige === "1"){
       if(stickerCardContainer){stickerCardContainer.remove();}
       continue;
     }
 
     else{
-      if ((userDataItem.show === '0' && stickerCardContainer)) {
+      if ((userDataItem.show === 0 && stickerCardContainer)) {
         stickerCardContainer.remove();
-      } else if (userDataItem.show === '1' && !stickerCardContainer) {
-        const stickerElement = CreateStickerElement(item, 'sticker-card-container', 'sticker-card', true);
+      } else if (userDataItem.show === 1 && !stickerCardContainer) {
+        const stickerElement = CreateStickerElement(item, "sticker-card-container", "sticker-card", true);
         
         fragment.appendChild(stickerElement);
       }
@@ -144,19 +146,19 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   const StickerSetNo = GlobalID - SetID * 100;
   const DarkenedColour = DarkenColour(Colour, 25);
 
-  let StickerNameClass = 'sticker-name';
-  if (StickerName.length > 14) {StickerNameClass = 'sticker-name-long-min14';}
-  if (StickerName.length > 18) {StickerNameClass = 'sticker-name-long-min18';}
-  if (isBrighterThan(Colour, '#CCCCCC')) {StickerNameClass += '-dark';}
+  let StickerNameClass = "sticker-name";
+  if (StickerName.length > 14) {StickerNameClass = "sticker-name-long-min14";}
+  if (StickerName.length > 18) {StickerNameClass = "sticker-name-long-min18";}
+  if (isBrighterThan(Colour, "#CCCCCC")) {StickerNameClass += "-dark";}
 
-  let starIcon = 'Icon_Star.png';
-  if (Prestige === '1') {starIcon = 'Icon_Star_Rainbow.png';}
+  let starIcon = "Icon_Star.png";
+  if (Prestige === "1") {starIcon = "Icon_Star_Rainbow.png";}
 
-  let FrameHTML = '';
-  if (Golden === '1') {FrameHTML = '<img draggable="false" class="gold-frame" src="assets/stickers/BG_StickerSpecial.png">';}
-  else{FrameHTML = '<img draggable="false" class="normal-frame" src="assets/stickers/BG_StickerBasic.png">';}
+  let FrameHTML = "";
+  if (Golden === "1") {FrameHTML = `<img draggable="false" class="gold-frame" src="assets/stickers/BG_StickerSpecial.png">`;}
+  else{FrameHTML = `<img draggable="false" class="normal-frame" src="assets/stickers/BG_StickerBasic.png">`;}
 
-  const container = document.createElement('div');
+  const container = document.createElement("div");
   container.dataset.global = GlobalID;
   container.classList.add(ContainerClass);
 
@@ -175,8 +177,8 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
 }
 
 function appendSpareSpinner(stickerElement) {
-  const spareSpinnerContainer = document.createElement('div');
-  spareSpinnerContainer.classList.add('spare-spinner-container');
+  const spareSpinnerContainer = document.createElement("div");
+  spareSpinnerContainer.classList.add("spare-spinner-container");
   spareSpinnerContainer.innerHTML = `
     <div class="spare-field">
       <label for="SpareQuantity" class="spare-header">Spare:</label>
@@ -187,40 +189,40 @@ function appendSpareSpinner(stickerElement) {
 }
 
 function appendTradeButtons(stickerElement) {
-  const TradeButtonContainer = document.createElement('div');
-  TradeButtonContainer.classList.add('trade-button-container');
-  TradeButtonContainer.classList.add('BtnGroup2');
+  const TradeButtonContainer = document.createElement("div");
+  TradeButtonContainer.classList.add("trade-button-container");
+  TradeButtonContainer.classList.add("BtnGroup2");
   TradeButtonContainer.innerHTML = `
     <button class="lfft-btn lf-btn" type="button" data-property="lookingfor">LF</button><button class="lfft-btn ft-btn" type="button" data-property="fortrade">FT</button>
   `;
   stickerElement.appendChild(TradeButtonContainer);
 
-  const buttons = TradeButtonContainer.querySelectorAll('.lfft-btn'); // Target buttons within TradeButtonContainer
+  const buttons = TradeButtonContainer.querySelectorAll(".lfft-btn"); // Target buttons within TradeButtonContainer
 
   buttons.forEach((button) => {
-    button.addEventListener('mousedown', () => {
-      button.classList.add('scale-down');
-      button.classList.add('btnYellow');
+    button.addEventListener("mousedown", () => {
+      button.classList.add("scale-down");
+      button.classList.add("btnYellow");
     });
-    button.addEventListener('mouseup', () => {
-      button.classList.remove('scale-down');
-      button.classList.remove('btnYellow');
+    button.addEventListener("mouseup", () => {
+      button.classList.remove("scale-down");
+      button.classList.remove("btnYellow");
     });
-    button.addEventListener('mouseleave', () => {
-      button.classList.remove('scale-down');
-      button.classList.remove('btnYellow');
+    button.addEventListener("mouseleave", () => {
+      button.classList.remove("scale-down");
+      button.classList.remove("btnYellow");
     });
-    button.addEventListener('touchstart', () => {
-      button.classList.add('scale-down');
-      button.classList.add('btnYellow');
+    button.addEventListener("touchstart", () => {
+      button.classList.add("scale-down");
+      button.classList.add("btnYellow");
     });
-    button.addEventListener('touchend', () => {
-      button.classList.remove('scale-down');
-      button.classList.remove('btnYellow');
+    button.addEventListener("touchend", () => {
+      button.classList.remove("scale-down");
+      button.classList.remove("btnYellow");
     });
     
-    button.addEventListener('click', (event) => {
-      const button = event.target.closest('.lfft-btn');
+    button.addEventListener("click", (event) => {
+      const button = event.target.closest(".lfft-btn");
       var globalID = button.closest(".sticker-card-container").getAttribute("data-global");
       var property = button.getAttribute("data-property");
       if (button) {
@@ -237,11 +239,11 @@ function updateLFOrFTValue(globalID, property) {
 
   if (button) {
     // Update the userData property value
-    userData[globalID][property] = ((parseInt(userData[globalID][property]) + 1) % 2).toString();
+    userData[globalID][property] = ((userData[globalID][property]) + 1) % 2;
     //console.log(userData[globalID][property]);
 
     // Add or remove the .btnGreen class based on the updated value
-    if (userData[globalID][property] === '1') {      
+    if (userData[globalID][property] === 1) {      
       if(property === "lookingfor"){button.classList.add("btnRed");}
       if(property === "fortrade"){button.classList.add("btnGreen");}
     } else {
@@ -251,7 +253,7 @@ function updateLFOrFTValue(globalID, property) {
   }
 }
 
-var IgnorePrestigeBtn = document.getElementById('IgnorePrestigeBtn');
+var IgnorePrestigeBtn = document.getElementById("IgnorePrestigeBtn");
 IgnorePrestigeBtn.addEventListener("click", function() {
   IgnorePrestige = (IgnorePrestige + 1) % 2;
   if(IgnorePrestige === 1){IgnorePrestigeBtn.classList.add("btnGreen");}
@@ -260,7 +262,7 @@ IgnorePrestigeBtn.addEventListener("click", function() {
   GenerateFilterSetButtons();  
   UpdateTotalStickerQuantity();
   UpdateTotalStickerByRarityQuantity(); 
-  const containers = document.querySelectorAll('.sticker-card-container');
+  const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
     RestoreSelected(userData, container);
     RestoreStickerSpares(userData, container);
@@ -282,33 +284,33 @@ document.querySelectorAll(".trade-button-container .btn").forEach(function(butto
 
 
 // Effects for ALL .btn buttons in the website
-const buttons = document.querySelectorAll('.btn');
+const buttons = document.querySelectorAll(".btn");
 buttons.forEach(button => {
-  button.addEventListener('mousedown', () => {
-    button.classList.add('scale-down');
-    button.classList.add('btnYellow');
+  button.addEventListener("mousedown", () => {
+    button.classList.add("scale-down");
+    button.classList.add("btnYellow");
   });
-  button.addEventListener('mouseup', () => {
-    button.classList.remove('scale-down');
-    button.classList.remove('btnYellow');
+  button.addEventListener("mouseup", () => {
+    button.classList.remove("scale-down");
+    button.classList.remove("btnYellow");
   });
-  button.addEventListener('mouseleave', () => {
-    button.classList.remove('scale-down');
-    button.classList.remove('btnYellow');
+  button.addEventListener("mouseleave", () => {
+    button.classList.remove("scale-down");
+    button.classList.remove("btnYellow");
   });
-  button.addEventListener('touchstart', () => {
-    button.classList.add('scale-down');
-    button.classList.add('btnYellow');
+  button.addEventListener("touchstart", () => {
+    button.classList.add("scale-down");
+    button.classList.add("btnYellow");
   });
-  button.addEventListener('touchend', () => {
-    button.classList.remove('scale-down');
-    button.classList.remove('btnYellow');
+  button.addEventListener("touchend", () => {
+    button.classList.remove("scale-down");
+    button.classList.remove("btnYellow");
   });
 });
 
-const SortButtons = document.querySelectorAll('.sort-btn');
+const SortButtons = document.querySelectorAll(".sort-btn");
 SortButtons.forEach(button => {
-  button.addEventListener('click', (event) => {
+  button.addEventListener("click", (event) => {
     PerformSort(event);
   });
 });
@@ -317,7 +319,7 @@ function PerformSort(event) {
   const clickedButton = event.currentTarget;
   const toSortKey = clickedButton.dataset.sortType;
 
-  const containers = Array.from(document.querySelectorAll('#current-sticker-board .sticker-card-container'));
+  const containers = Array.from(document.querySelectorAll("#current-sticker-board .sticker-card-container"));
   if(containers.length === 0){return;}
 
   containers.sort((a, b) => {
@@ -347,25 +349,25 @@ function PerformSort(event) {
   const parentElement = containers[0].parentElement;
   containers.forEach(container => parentElement.appendChild(container));
 
-  if (clickedButton.dataset.sortOnsite === 'selected') {
+  if (clickedButton.dataset.sortOnsite === "selected") {
     PerformSortOnsite(clickedButton);
   }
-  const sortButtons = Array.from(document.querySelectorAll('.sort-btn'));
-  sortButtons.forEach(button => button.classList.remove('btnBlue'));
-  clickedButton.classList.add('btnBlue');
+  const sortButtons = Array.from(document.querySelectorAll(".sort-btn"));
+  sortButtons.forEach(button => button.classList.remove("btnBlue"));
+  clickedButton.classList.add("btnBlue");
 }
 
 function PerformSortOnsite(clickedSortBtn) {
-  const containerSelector = '#current-sticker-board .sticker-card-container';
+  const containerSelector = "#current-sticker-board .sticker-card-container";
   const containers = document.querySelectorAll(containerSelector);
   const prioritizeClassToSort = clickedSortBtn.dataset.sortOnsite;
 
-  if (prioritizeClassToSort === 'selected') {
+  if (prioritizeClassToSort === "selected") {
     const selectedContainers = Array.from(containers).filter(container =>
-      container.classList.contains('selected')
+      container.classList.contains("selected")
     );
     const notSelectedContainers = Array.from(containers).filter(container =>
-      !container.classList.contains('selected')
+      !container.classList.contains("selected")
     );
 
     const parentElement = containers[0].parentElement;
@@ -374,54 +376,54 @@ function PerformSortOnsite(clickedSortBtn) {
   }
 }
 
-const sortButtons = Array.from(document.querySelectorAll('.sort-btn'));
-sortButtons.forEach(button => button.addEventListener('click', PerformSort));
+const sortButtons = Array.from(document.querySelectorAll(".sort-btn"));
+sortButtons.forEach(button => button.addEventListener("click", PerformSort));
 
-function findStickerData(globalId) {return STICKER_DATA.find(item => item['GlobalID'] === globalId);}
+function findStickerData(globalId) {return STICKER_DATA.find(item => item["GlobalID"] === globalId);}
 
 function compareStickerNames(aData, bData) {
-  const aName = aData['GlobalID'];
-  const bName = bData['GlobalID'];
+  const aName = aData["GlobalID"];
+  const bName = bData["GlobalID"];
   return aName.localeCompare(bName);
 }
 
 function handleSortOrderBtnClick() {
   AscendZeroDescendOne = (AscendZeroDescendOne + 1) % 2;
-  const containerSelector = '#sticker-board #current-sticker-board';
+  const containerSelector = "#sticker-board #current-sticker-board";
   const container = document.querySelector(containerSelector);
-  const sortOrderBtnText = document.getElementById('SortOrderBtnText');
+  const sortOrderBtnText = document.getElementById("SortOrderBtnText");
 
   Array.from(container.children).reverse().forEach(child => {container.appendChild(child);});
   
-  if (AscendZeroDescendOne === 0) {sortOrderBtnText.textContent = 'Ascending ⬆';} 
-  else if (AscendZeroDescendOne === 1) {sortOrderBtnText.textContent = 'Descending ⬇';}
+  if (AscendZeroDescendOne === 0) {sortOrderBtnText.textContent = "Ascending ⬆";} 
+  else if (AscendZeroDescendOne === 1) {sortOrderBtnText.textContent = "Descending ⬇";}
 }
 
-document.getElementById('SortOrderBtn').addEventListener('click', handleSortOrderBtnClick);
+document.getElementById("SortOrderBtn").addEventListener("click", handleSortOrderBtnClick);
 
 
 // SEARCH BAR (Filter)
 function FilterBySearchbar(GlobalID) {
-  var searchbar = document.getElementById('filtermenu-searchbar');
-  var filterName = searchbar.getAttribute('data-filtervalue');
+  var searchbar = document.getElementById("filtermenu-searchbar");
+  var filterName = searchbar.getAttribute("data-filtervalue");
 
-  if (searchbar.value === '') {
+  if (searchbar.value === "") {
     FilterList[filterName].FilterState = 0;
-    userData[GlobalID].show = "1";
+    userData[GlobalID].show = 1;
     updateClearFiltersButton();
     return;
   }
 
   var filterValue = searchbar.value.trim();
 
-  if (filterValue.includes(',')) {
-    filterValue = filterValue.split(',');
+  if (filterValue.includes(",")) {
+    filterValue = filterValue.split(",");
   } else {
     filterValue = [filterValue];
   }
 
   filterValue = filterValue.filter(function (value) {
-    return value.trim() !== '';
+    return value.trim() !== "";
   });
 
   if (FilterList.hasOwnProperty(filterName)) {
@@ -435,57 +437,57 @@ function FilterBySearchbar(GlobalID) {
   
   
   if (sticker) {
-    var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, 'e').replace(/ü/g, 'u');
+    var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u");
     var lowercaseFilterValue = filterValue.map(function (value) {
-      return value.toLowerCase().replace(/é/g, 'e');
+      return value.toLowerCase().replace(/é/g, "e");
     });
     
     if (filterValue.length === 1) {
       if (lowercaseFilterValue.some(function (value) {
         return stickerName.includes(value);
       })) {        
-        userData[GlobalID].show = "1";
+        userData[GlobalID].show = 1;
       } else {
-        userData[GlobalID].show = "0";
+        userData[GlobalID].show = 0;
       }
     } else if (filterValue.length > 1) {
       if(AndZeroOrOne === 0){
         if (lowercaseFilterValue.every(function (value) {
           return stickerName.includes(value);
         })) {
-          userData[GlobalID].show = "1";
+          userData[GlobalID].show = 1;
         } else {
-          userData[GlobalID].show = "0";
+          userData[GlobalID].show = 0;
         }
       }
       else if (AndZeroOrOne === 1){
         if (lowercaseFilterValue.some(function (value) {
           return stickerName.includes(value);
         })) {
-          userData[GlobalID].show = "1";
+          userData[GlobalID].show = 1;
           return;
         } else {
-          userData[GlobalID].show = "0";
+          userData[GlobalID].show = 0;
         }
       }
     }
   }
 }
 
-const searchbar = document.getElementById('filtermenu-searchbar');
-searchbar.addEventListener('input', () => {PerformFilters(userData);});
+const searchbar = document.getElementById("filtermenu-searchbar");
+searchbar.addEventListener("input", () => {PerformFilters(userData);});
 
-document.addEventListener('click', function (event) {
-   if (event.target.id === 'ClearFilterMenuSearchBar') {
-     document.getElementById('filtermenu-searchbar').value = '';
+document.addEventListener("click", function (event) {
+   if (event.target.id === "ClearFilterMenuSearchBar") {
+     document.getElementById("filtermenu-searchbar").value = "";
      PerformFilters(userData);
    }
 });
 
 // FILTER (Filter)
-const filterButtons = document.querySelectorAll('.filter-btn');
+const filterButtons = document.querySelectorAll(".filter-btn");
 filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
+  button.addEventListener("click", () => {
     ChangeFilterButtonState(button, true);
     PerformFilters(userData);
   });
@@ -503,9 +505,9 @@ function ChangeFilterButtonState(ButtonElement, isThisBtnClicked) {
 
 function ChangeFilterBtnStyle(ButtonElement) {
   const filterState = FilterList[ButtonElement.dataset.filtervalue].FilterState;
-  if (filterState === 0) { ButtonElement.classList.remove('btnRed', 'btnGreen'); }
-  else if (filterState === 1) {ButtonElement.classList.add('btnGreen'); ButtonElement.classList.remove('btnRed'); }
-  else if (filterState === 2) { ButtonElement.classList.add('btnRed'); ButtonElement.classList.remove('btnGreen'); }
+  if (filterState === 0) { ButtonElement.classList.remove("btnRed", "btnGreen"); }
+  else if (filterState === 1) {ButtonElement.classList.add("btnGreen"); ButtonElement.classList.remove("btnRed"); }
+  else if (filterState === 2) { ButtonElement.classList.add("btnRed"); ButtonElement.classList.remove("btnGreen"); }
 }
 
 // Function to update the filter lengths
@@ -514,25 +516,25 @@ function updateClearFiltersButton() {
   Object.values(FilterList).forEach(item => {
     if(item.FilterState !== 0){filterLengthElement++;}
   })
-  document.getElementById('filterLength').textContent = filterLengthElement;
+  document.getElementById("filterLength").textContent = filterLengthElement;
   ChangeClearFiltersButtonStyle();
 }
 
 function ChangeClearFiltersButtonStyle(){
-  if (document.getElementById('filterLength').textContent > 0) {
-    document.getElementById('ClearFiltersBtn').classList.add('btnRed');
+  if (document.getElementById("filterLength").textContent > 0) {
+    document.getElementById("ClearFiltersBtn").classList.add("btnRed");
   } else {
-    document.getElementById('ClearFiltersBtn').classList.remove('btnRed');
+    document.getElementById("ClearFiltersBtn").classList.remove("btnRed");
   }
 }
 
 
-const clearFiltersBtn = document.getElementById('ClearFiltersBtn');
-clearFiltersBtn.addEventListener('click', () => {clearFilters();})
+const clearFiltersBtn = document.getElementById("ClearFiltersBtn");
+clearFiltersBtn.addEventListener("click", () => {clearFilters();})
 function clearFilters() {  
-  document.getElementById('filtermenu-searchbar').value = '';
+  document.getElementById("filtermenu-searchbar").value = "";
   Object.values(FilterList).forEach(item => {
-    if(item.FilterState !== 0 && item.FilterName !== '1>StickerName>'){
+    if(item.FilterState !== 0 && item.FilterName !== "1>StickerName>"){
       item.FilterState = 0;
       const FilterBtnSource = document.querySelector(`.filter-btn[data-filtervalue="${item.FilterName}"]`);
       ChangeFilterButtonState(FilterBtnSource, false);
@@ -541,59 +543,59 @@ function clearFilters() {
   PerformFilters(userData);
 }
 
-document.getElementById('RefreshFiltersBtn').addEventListener('click', function(){PerformFilters(userData);})
+document.getElementById("RefreshFiltersBtn").addEventListener("click", function(){PerformFilters(userData);})
 
-const AndOrFilterModeBtn = document.getElementById('AndOrFilterModeBtn');
-AndOrFilterModeBtn.addEventListener('click', function () {
-  const buttonText = document.getElementById('AndOrFilterModeBtnText');
+const AndOrFilterModeBtn = document.getElementById("AndOrFilterModeBtn");
+AndOrFilterModeBtn.addEventListener("click", function () {
+  const buttonText = document.getElementById("AndOrFilterModeBtnText");
   AndZeroOrOne = (AndZeroOrOne + 1) % 2;
   if (AndZeroOrOne === 1) {
-    buttonText.textContent = 'Filter Mode: OR';
-    document.getElementById('AndOrFilterModeBtnTooltip').textContent = 'OR Mode: Stickers that match at least ONE of the filter conditions will be displayed.';
+    buttonText.textContent = "Filter Mode: OR";
+    document.getElementById("AndOrFilterModeBtnTooltip").textContent = "OR Mode: Stickers that match at least ONE of the filter conditions will be displayed.";
   } else {
-    buttonText.textContent = 'Filter Mode: AND';
-    document.getElementById('AndOrFilterModeBtnTooltip').textContent = 'AND Mode: Only stickers that match ALL filter conditions will be displayed.';
+    buttonText.textContent = "Filter Mode: AND";
+    document.getElementById("AndOrFilterModeBtnTooltip").textContent = "AND Mode: Only stickers that match ALL filter conditions will be displayed.";
   }
   PerformFilters(userData);
 });
 
 function PerformFilters(userData) {
   for (var key in userData){
-    userData[key].show = '1';    
+    userData[key].show = 1;    
     
     if(AndZeroOrOne === 0){
       FilterBySpareRange(FilterList, key);
-      if(userData[key].show === "1"){
+      if(userData[key].show === 1){
         FilterBySearchbar(key);
-        if(userData[key].show === "1"){
+        if(userData[key].show === 1){
           FilterByButtons(key);
         }
       }
     }else if (AndZeroOrOne === 1){
       FilterBySpareRange(FilterList, key);
-      if(userData[key].show === "1"){
+      if(userData[key].show === 1){
         FilterByButtons(key);
         if(IncludeStateFilters.length === 0 && ExcludeStateFilters.length === 0){
-          userData[key].show = "0";
-          if(document.getElementById('filtermenu-searchbar').value === ''){
-            userData[key].show = "1";
+          userData[key].show = 0;
+          if(document.getElementById("filtermenu-searchbar").value === ""){
+            userData[key].show = 1;
           }
         }
-        if((userData[key].show === "0" && document.getElementById('filtermenu-searchbar').value !== '')){
+        if((userData[key].show === 0 && document.getElementById("filtermenu-searchbar").value !== "")){
           FilterBySearchbar(key);
         }
       }
     }
 
   }
-  if(document.getElementById('filtermenu-searchbar').value === ''){FilterList[document.getElementById('filtermenu-searchbar').getAttribute('data-filtervalue')].FilterState = 0;}
+  if(document.getElementById("filtermenu-searchbar").value === ""){FilterList[document.getElementById("filtermenu-searchbar").getAttribute("data-filtervalue")].FilterState = 0;}
   updateClearFiltersButton();
-  generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');
-  const currentTarget = document.querySelector('.sort-btn.btnBlue');
+  generateCurrentStickerBoard(STICKER_DATA, userData, "current-sticker-board");
+  const currentTarget = document.querySelector(".sort-btn.btnBlue");
   if (currentTarget) {
     PerformSort({ currentTarget });
   } else {
-    PerformSort({ currentTarget: document.querySelector('button[data-sort-type="GlobalID"]') });
+    PerformSort({ currentTarget: document.querySelector(`button[data-sort-type="GlobalID"]`) });
   }
 }
 
@@ -629,7 +631,7 @@ function FilterByButtons(GlobalID){
         }
     }
     if(IncludeStateFilters.length === 0 && ExcludeStateFilters.length === 0){
-      userData[GlobalID].show = "1"; return;
+      userData[GlobalID].show = 1; return;
     }
     
     // AND Mode
@@ -637,26 +639,26 @@ function FilterByButtons(GlobalID){
       // Include Filter (AND)
       for (const filter of IncludeStateFilters) {
         var filterKeytemp = filter.FilterKey;
-        if(filter.inDatabase === '0'){
-          if(userData[GlobalID][filterKeytemp] !== filter.FilterValue){
-            userData[GlobalID].show = "0";
+        if(filter.inDatabase === "0"){
+          if(userData[GlobalID][filterKeytemp] !== parseInt(filter.FilterValue)){
+            userData[GlobalID].show = 0;
           }
-        } else if(filter.inDatabase === '1'){
+        } else if(filter.inDatabase === "1"){
           if(sticker[filterKeytemp] !== filter.FilterValue){
-            userData[GlobalID].show = "0";
+            userData[GlobalID].show = 0;
           }
         }
       }
       // Exclude Filter (AND)
       for (const filter of ExcludeStateFilters) {
         var filterKeytemp = filter.FilterKey;
-        if(filter.inDatabase === '0'){
-          if(userData[GlobalID][filterKeytemp] === filter.FilterValue){
-            userData[GlobalID].show = "0";
+        if(filter.inDatabase === "0"){
+          if(userData[GlobalID][filterKeytemp] === parseInt(filter.FilterValue)){
+            userData[GlobalID].show = 0;
           }
-        } else if(filter.inDatabase === '1'){
+        } else if(filter.inDatabase === "1"){
           if(sticker[filterKeytemp] === filter.FilterValue){
-            userData[GlobalID].show = "0";
+            userData[GlobalID].show = 0;
           }
         }
       }
@@ -667,33 +669,33 @@ function FilterByButtons(GlobalID){
       if(IncludeStateFilters.length > 0){      
         for (const filter of IncludeStateFilters) {
           var filterKeytemp = filter.FilterKey;
-          if(filter.inDatabase === '0'){
+          if(filter.inDatabase === "0"){
             if(userData[GlobalID][filterKeytemp] === filter.FilterValue){
-              userData[GlobalID].show = "1";
+              userData[GlobalID].show = 1;
               return;
-            } else{userData[GlobalID].show = "0";}
-          } else if(filter.inDatabase === '1'){
+            } else{userData[GlobalID].show = 0;}
+          } else if(filter.inDatabase === "1"){
             if(sticker[filterKeytemp] === filter.FilterValue){
-              userData[GlobalID].show = "1";
+              userData[GlobalID].show = 1;
               return;
-            } else{userData[GlobalID].show = "0";}
+            } else{userData[GlobalID].show = 0;}
           }
         }
       }
       // Exclude Filter (OR)
-      if(userData[GlobalID].show === "0" || ExcludeStateFilters.length > 0){
+      if(userData[GlobalID].show === 0 || ExcludeStateFilters.length > 0){
         for (const filter of ExcludeStateFilters) {
           var filterKeytemp = filter.FilterKey;
-          if(filter.inDatabase === '0'){
+          if(filter.inDatabase === "0"){
             if(userData[GlobalID][filterKeytemp] !== filter.FilterValue){
-              userData[GlobalID].show = "1";
+              userData[GlobalID].show = 1;
               return;
-            } else {userData[GlobalID].show = "0"; return;}
-          } else if(filter.inDatabase === '1'){
+            } else {userData[GlobalID].show = 0; return;}
+          } else if(filter.inDatabase === "1"){
             if(sticker[filterKeytemp] !== filter.FilterValue){
-              userData[GlobalID].show = "1";
+              userData[GlobalID].show = 1;
               return;
-            } else {userData[GlobalID].show = "0"; return;}
+            } else {userData[GlobalID].show = 0; return;}
           }
         }
       }
@@ -702,14 +704,14 @@ function FilterByButtons(GlobalID){
 
 
 function handleExpandBtnIconClick() {
-  const btnGroupTitles = document.getElementsByClassName('btn-grp-title');
+  const btnGroupTitles = document.getElementsByClassName("btn-grp-title");
   Array.from(btnGroupTitles).forEach(btnGroupTitle => {
-    btnGroupTitle.addEventListener('click', (event) => {
-      const expandBtnIcon = event.currentTarget.querySelector('.ExpandBtnIcon');
-      const currentSrc = expandBtnIcon.getAttribute('src');
-      const upwardsArrowFilename = 'UpwardsArrow.png';
-      const downwardsArrowFilename = 'DownwardsArrow.png';
-      const currentFilename = currentSrc.substring(currentSrc.lastIndexOf('/') + 1);
+    btnGroupTitle.addEventListener("click", (event) => {
+      const expandBtnIcon = event.currentTarget.querySelector(".ExpandBtnIcon");
+      const currentSrc = expandBtnIcon.getAttribute("src");
+      const upwardsArrowFilename = "UpwardsArrow.png";
+      const downwardsArrowFilename = "DownwardsArrow.png";
+      const currentFilename = currentSrc.substring(currentSrc.lastIndexOf("/") + 1);
       if (currentFilename === upwardsArrowFilename) {
         expandBtnIcon.src = currentSrc.replace(upwardsArrowFilename, downwardsArrowFilename);
       } else if (currentFilename === downwardsArrowFilename) {
@@ -718,63 +720,63 @@ function handleExpandBtnIconClick() {
     });
   });
 }
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   handleExpandBtnIconClick();
 });
 
-document.addEventListener('click', event => {
+document.addEventListener("click", event => {
   const target = event.target;
-  const parentContainer = target.closest('.sticker-card-container');
-  if (parentContainer && target.classList.contains('sticker-card')) {
-    parentContainer.classList.toggle('selected');
-    parentContainer.classList.toggle('not-selected');
-    UpdateCurrentAlbumStickerStates(parentContainer.getAttribute('data-global'));
+  const parentContainer = target.closest(".sticker-card-container");
+  if (parentContainer && target.classList.contains("sticker-card")) {
+    parentContainer.classList.toggle("selected");
+    parentContainer.classList.toggle("not-selected");
+    UpdateCurrentAlbumStickerStates(parentContainer.getAttribute("data-global"));
     ChangeUserDataHaveSpareValue(userData, parentContainer);
     countSelectedStickers();
   }
 });
 
 
-const btnGroupTitles = document.querySelectorAll('.btn-grp-title');
+const btnGroupTitles = document.querySelectorAll(".btn-grp-title");
 
 btnGroupTitles.forEach(btnGroupTitle => {
-  btnGroupTitle.addEventListener('click', () => {
+  btnGroupTitle.addEventListener("click", () => {
     const parentContainer = btnGroupTitle.parentElement;
-    const filterBtnSubgroup = parentContainer.querySelectorAll('.btn-subgroup');
+    const filterBtnSubgroup = parentContainer.querySelectorAll(".btn-subgroup");
     filterBtnSubgroup.forEach(element => {
-      element.classList.toggle('hidden');
+      element.classList.toggle("hidden");
     });
   });
 });
 
 
-const stickerContainer = document.getElementById('current-sticker-board');
-stickerContainer.addEventListener('input', function(event) {
+const stickerContainer = document.getElementById("current-sticker-board");
+stickerContainer.addEventListener("input", function(event) {
   const target = event.target;
-  const clickedStickerContainer = target.closest('.sticker-card-container');
-  if (target.classList.contains('spare-text') && clickedStickerContainer) {
-    target.value = target.value.replace(/^0+(?=\d)/, '');
-    const dataGlobal = clickedStickerContainer.getAttribute('data-global');
+  const clickedStickerContainer = target.closest(".sticker-card-container");
+  if (target.classList.contains("spare-text") && clickedStickerContainer) {
+    target.value = target.value.replace(/^0+(?=\d)/, "");
+    const dataGlobal = clickedStickerContainer.getAttribute("data-global");
     if (target.value > 100) {
-      if (target.value.slice(0, -1) === '100') {
-        target.value = '100';
+      if (target.value.slice(0, -1) === "100") {
+        target.value = "100";
       } else {
         target.value = target.value.slice(0, 2);
       }
     } else if (target.value < 0) {
       target.value = 0;
-    } else if (target.value === ''){
+    } else if (target.value === ""){
       setTimeout(() => {
-        if (target.value === '') { // Check if value is still empty before setting it to 0
+        if (target.value === "") { // Check if value is still empty before setting it to 0
           target.value = 0;
         }
       }, 5000); // Set 5s timeout for user to type before setting it to zero
     }
     if (target.value > 0) {
-      if (!clickedStickerContainer.classList.contains('selected')) {
-        clickedStickerContainer.classList.add('selected');
-        clickedStickerContainer.classList.remove('not-selected');
-        userData[dataGlobal].selected = '1';
+      if (!clickedStickerContainer.classList.contains("selected")) {
+        clickedStickerContainer.classList.add("selected");
+        clickedStickerContainer.classList.remove("not-selected");
+        userData[dataGlobal].selected = 1;
       }
     }
     countSelectedStickers();
@@ -784,27 +786,27 @@ stickerContainer.addEventListener('input', function(event) {
   }
 });
 
-const minFilterInput = document.getElementById('spare-filter-min');
-const maxFilterInput = document.getElementById('spare-filter-max');
+const minFilterInput = document.getElementById("spare-filter-min");
+const maxFilterInput = document.getElementById("spare-filter-max");
 
-minFilterInput.addEventListener('input', handleFilterInput);
-maxFilterInput.addEventListener('input', handleFilterInput);
+minFilterInput.addEventListener("input", handleFilterInput);
+maxFilterInput.addEventListener("input", handleFilterInput);
 
 function handleFilterInput(event) {
   const target = event.target;
-  if (target.classList.contains('spare-filter-text')) {
-    target.value = target.value.replace(/^0+(?=\d)/, '');
+  if (target.classList.contains("spare-filter-text")) {
+    target.value = target.value.replace(/^0+(?=\d)/, "");
     if (target.value > 100) {
-      if (target.value.slice(0, -1) === '100') {
-        target.value = '100';
+      if (target.value.slice(0, -1) === "100") {
+        target.value = "100";
       } else {
         target.value = target.value.slice(0, 2);
       }
     } else if (target.value < 0) {
       target.value = 0;
-    } else if (target.value === ''){
+    } else if (target.value === ""){
       setTimeout(() => {
-        if (target.value === '') { // Check if value is still empty before setting it to 0
+        if (target.value === "") { // Check if value is still empty before setting it to 0
           target.value = 0;
         }
       }, 5000); // Set 5s timeout for user to type before setting it to zero
@@ -812,9 +814,9 @@ function handleFilterInput(event) {
   }
 }
 
-const SpareFilterBtn = document.getElementById('spare-filter-btn');
-//minFilterInput.addEventListener('mouseleave', () => setTimeout(SwapSpareFilterMinMax, 5000));
-//maxFilterInput.addEventListener('mouseleave', () => setTimeout(SwapSpareFilterMinMax, 5000));
+const SpareFilterBtn = document.getElementById("spare-filter-btn");
+//minFilterInput.addEventListener("mouseleave", () => setTimeout(SwapSpareFilterMinMax, 5000));
+//maxFilterInput.addEventListener("mouseleave", () => setTimeout(SwapSpareFilterMinMax, 5000));
 function SwapSpareFilterMinMax(event) {
   if (parseInt(minFilterInput.value) > parseInt(maxFilterInput.value)) {
     let min = maxFilterInput.value;
@@ -823,7 +825,7 @@ function SwapSpareFilterMinMax(event) {
     maxFilterInput.value = max;
   }
 }
-SpareFilterBtn.addEventListener('click', () => {
+SpareFilterBtn.addEventListener("click", () => {
   SwapSpareFilterMinMax();
   PerformFilters(userData);
 });
@@ -831,8 +833,8 @@ SpareFilterBtn.addEventListener('click', () => {
 
 function UpdateCurrentAlbumStickerStates(StickerGlobalID) {
   const stickerElement = document.querySelector(`.sticker-card-container[data-global="${StickerGlobalID}"]`);
-  const selected = stickerElement.classList.contains('not-selected') ? '0' : '1';
-  const spareValue = stickerElement.querySelector('.spare-text').value;
+  const selected = stickerElement.classList.contains("not-selected") ? 0 : 1;
+  const spareValue = parseInt(stickerElement.querySelector(".spare-text").value);
   userData[StickerGlobalID] = {
     ...userData[StickerGlobalID],
     selected: selected,
@@ -847,7 +849,7 @@ function FilterBySpareRange(FilterList, GlobalID) {
   const filterData = FilterList[filterKey];
 
   if (filterData && filterData.FilterState === 0) {
-    userData[GlobalID].show = "1";
+    userData[GlobalID].show = 1;
     return;
   }
 
@@ -860,54 +862,54 @@ function FilterBySpareRange(FilterList, GlobalID) {
   const spareValue = parseInt(userData[GlobalID].spare, 10);
 
   if (spareValue >= minValue && spareValue <= maxValue) {
-    userData[GlobalID].show = invertFilter ? "0" : "1";
+    userData[GlobalID].show = invertFilter ? 0 : 1;
   } else {
-    userData[GlobalID].show = invertFilter ? "1" : "0";
+    userData[GlobalID].show = invertFilter ? 1 : 0;
   }
   return;
 }
 
 function RestoreStickerSpares(userData, StickerContainer) {
-  const dataGlobalValue = StickerContainer.getAttribute('data-global');
+  const dataGlobalValue = StickerContainer.getAttribute("data-global");
   const stickerData = userData[dataGlobalValue];
   const spareValue = stickerData.spare;
-  StickerContainer.querySelector('.spare-text').value = spareValue;
+  StickerContainer.querySelector(".spare-text").value = spareValue;
 }
 
 function RestoreSelected(userData, StickerContainer) {
   
-  const dataGlobalValue = StickerContainer.getAttribute('data-global');
+  const dataGlobalValue = StickerContainer.getAttribute("data-global");
   const stickerData = userData[dataGlobalValue];
   const selectedValue = stickerData.selected;
 
-  StickerContainer.classList.toggle('selected', selectedValue === '1');
-  StickerContainer.classList.toggle('not-selected', selectedValue === '0');
+  StickerContainer.classList.toggle("selected", selectedValue === 1);
+  StickerContainer.classList.toggle("not-selected", selectedValue === 0);
 }
 
 function RestoreTradeStates(userData, StickerContainer) {
-  const dataGlobalValue = StickerContainer.getAttribute('data-global');
+  const dataGlobalValue = StickerContainer.getAttribute("data-global");
   const stickerData = userData[dataGlobalValue];
   StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.remove("btnRed");
   StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="fortrade"]`).classList.remove("btnGreen");
-  if (stickerData.lookingfor === '1') {
+  if (stickerData.lookingfor === "1") {
     StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="lookingfor"]`).classList.add("btnRed");
   }
-  if (stickerData.fortrade === '1') {
+  if (stickerData.fortrade === "1") {
     StickerContainer.querySelector(`.trade-button-container .lfft-btn[data-property="fortrade"]`).classList.add("btnGreen");
   }
 }
 
 function updateProgressBar() {
   var progressContainers = document.querySelectorAll(".progress-container");
-  // console.log(document.querySelector('#total-stickers-quantity').textContent);
+  // console.log(document.querySelector("#total-stickers-quantity").textContent);
 
   progressContainers.forEach(function(container) {
     var progressText = container.querySelector(".progress-text").textContent;
-    progressText = progressText.replace(/\s/g, '');
+    progressText = progressText.replace(/\s/g, "");
     var progressValue = parseInt(progressText.split("/")[0]);
     var totalValue = parseInt(progressText.split("/")[1]);
 
-    if(progressValue === '0'){progressBar.style.width = 0;}
+    if(progressValue === "0"){progressBar.style.width = 0;}
     else{
       var progressPercentage = (progressValue / totalValue) * 100;
 
@@ -918,9 +920,9 @@ function updateProgressBar() {
 }
 
 function GenerateFilterSetButtons() {
-  const filterBtnSubgroup = document.querySelector('#stickerset-filter .btn-subgroup');
-  const setProgressTracker = document.querySelector('#set-progress-tracker');
-  filterBtnSubgroup.innerHTML = setProgressTracker.innerHTML = '';
+  const filterBtnSubgroup = document.querySelector("#stickerset-filter .btn-subgroup");
+  const setProgressTracker = document.querySelector("#set-progress-tracker");
+  filterBtnSubgroup.innerHTML = setProgressTracker.innerHTML = "";
 
   SET_DATA.forEach((set) => {
     if (set.AlbumNo === CurrentAlbumNumber) {
@@ -932,7 +934,7 @@ function GenerateFilterSetButtons() {
       const SetTotalStickers = STICKER_DATA.filter(sticker => sticker.SetID === SetID).length;
       const SetIsPrestige = set.Prestige;
       
-      if(IgnorePrestige === 1 && SetIsPrestige === '1'){return;}
+      if(IgnorePrestige === 1 && SetIsPrestige === "1"){return;}
       else{
         
         let ButtonElement = `
@@ -940,43 +942,43 @@ function GenerateFilterSetButtons() {
         `;
         filterBtnSubgroup.innerHTML += ButtonElement;
 
-        let SetNameClass = 'set-name';
-        if (SetName.length > 15) {SetNameClass = 'set-name-long-min15';}
-        if (isBrighterThan(SetColour, '#CCCCCC')) {SetNameClass += '-dark';}
+        let SetNameClass = "set-name";
+        if (SetName.length > 15) {SetNameClass = "set-name-long-min15";}
+        if (isBrighterThan(SetColour, "#CCCCCC")) {SetNameClass += "-dark";}
         const SetCardContainerElement = `
-          <div class="set-card-container"><img draggable="false" class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src='logo/Icon_Placeholder.png';"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
+          <div class="set-card-container"><img draggable="false" class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src="logo/Icon_Placeholder.png";"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
         `;
 
         setProgressTracker.innerHTML += SetCardContainerElement;
       }
     }
   });
-  const buttons = filterBtnSubgroup.querySelectorAll('.filter-btn');
+  const buttons = filterBtnSubgroup.querySelectorAll(".filter-btn");
 
   buttons.forEach((button) => {
-    button.addEventListener('mousedown', () => {
-      button.classList.add('scale-down');
-      button.classList.add('btnYellow');
+    button.addEventListener("mousedown", () => {
+      button.classList.add("scale-down");
+      button.classList.add("btnYellow");
     });
-    button.addEventListener('mouseup', () => {
-      button.classList.remove('scale-down');
-      button.classList.remove('btnYellow');
+    button.addEventListener("mouseup", () => {
+      button.classList.remove("scale-down");
+      button.classList.remove("btnYellow");
     });
-    button.addEventListener('mouseleave', () => {
-      button.classList.remove('scale-down');
-      button.classList.remove('btnYellow');
+    button.addEventListener("mouseleave", () => {
+      button.classList.remove("scale-down");
+      button.classList.remove("btnYellow");
     });
-    button.addEventListener('touchstart', () => {
-      button.classList.add('scale-down');
-      button.classList.add('btnYellow');
+    button.addEventListener("touchstart", () => {
+      button.classList.add("scale-down");
+      button.classList.add("btnYellow");
     });
-    button.addEventListener('touchend', () => {
-      button.classList.remove('scale-down');
-      button.classList.remove('btnYellow');
+    button.addEventListener("touchend", () => {
+      button.classList.remove("scale-down");
+      button.classList.remove("btnYellow");
     });
 
-    button.addEventListener('click', (event) => {
-      const button = event.target.closest('.filter-btn');
+    button.addEventListener("click", (event) => {
+      const button = event.target.closest(".filter-btn");
       if (button) {
         ChangeFilterButtonState(button, true);
         PerformFilters(userData);
@@ -985,16 +987,17 @@ function GenerateFilterSetButtons() {
   });
 }
 
-const importBtn = document.querySelector('#import-btn');
-const importFromFileBtn = document.querySelector('#import-from-file-btn');
-const exportBtn = document.querySelector('#export-btn');
-const exportFromFileBtn = document.querySelector('#export-from-file-btn');
-const textArea = document.querySelector('.backup-area');
+const importBtn = document.querySelector("#import-btn");
+const importFromFileBtn = document.querySelector("#import-from-file-btn");
+const exportBtn = document.querySelector("#export-btn");
+const exportFromFileBtn = document.querySelector("#export-from-file-btn");
+const textArea = document.querySelector(".backup-area");
 
 
 
 function exportUserData() {
   Object.keys(userData).forEach((key) => {
+    userData[key].spare = parseInt(userData[key].spare);
     userData[key] = { ...defaultValues, ...userData[key] };
   });
 
@@ -1018,58 +1021,66 @@ function exportUserData() {
 }
 
 function importUserData(userDataString) {
-  if (userDataString === '') {
-    console.error('Textarea value is empty.');
+  if (userDataString === "") {
+    console.error("Textarea value is empty.");
     return;
   }
 
   let parsedData;
   try {
     // Extract player-ign and player-link values
-    let playerIGN = '';
-    let playerLink = '';
-    let LeftoverValveStars = '';
-    let userDataAlbumNumber = ''
-    const lines = userDataString.split('\n');
+    let playerIGN = "";
+    let playerLink = "";
+    let LeftoverValveStars = "";
+    let userDataAlbumNumber = ""
+    const lines = userDataString.split("\n");
     lines.forEach(line => {
-      if (line.startsWith('CurrentAlbumNumber: ')) {
-        userDataAlbumNumber = line.substring('CurrentAlbumNumber: '.length);
+      if (line.startsWith("CurrentAlbumNumber: ")) {
+        userDataAlbumNumber = line.substring("CurrentAlbumNumber: ".length);
         if (userDataAlbumNumber !== CurrentAlbumNumber) {
-          console.error('Incorrect Album:', userDataAlbumNumber, ', new userData for current album will be created.');
+          console.error("Incorrect Album:", userDataAlbumNumber, ", new userData for current album will be created.");
           CreateNewUserData(STICKER_DATA);
-          throw new Error('Incorrect Album');
+          throw new Error("Incorrect Album");
         }
       }
-      else if (line.startsWith('player-ign: ')) {
-        playerIGN = line.substring('player-ign: '.length);
-      } else if (line.startsWith('player-link: ')) {
-        playerLink = line.substring('player-link: '.length);
+      else if (line.startsWith("player-ign: ")) {
+        playerIGN = line.substring("player-ign: ".length);
+      } else if (line.startsWith("player-link: ")) {
+        playerLink = line.substring("player-link: ".length);
       }
-      else if(line.startsWith('leftover-valve-stars: ')){
-        LeftoverValveStars = line.substring('leftover-valve-stars: '.length);
+      else if(line.startsWith("leftover-valve-stars: ")){
+        LeftoverValveStars = line.substring("leftover-valve-stars: ".length);
       }
     });
-    if (LeftoverValveStars === '') {LeftoverValveStars = '0';}
+    if (LeftoverValveStars === "") {LeftoverValveStars = "0";}
 
     // Remove player-ign and player-link lines from userDataString
-    const filteredLines = lines.filter(line => !line.startsWith('CurrentAlbumNumber: ') && !line.startsWith('player-ign: ') && !line.startsWith('player-link: ') && !line.startsWith('leftover-valve-stars: '));
-    const filteredUserDataString = filteredLines.join('\n');
+    const filteredLines = lines.filter(line => !line.startsWith("CurrentAlbumNumber: ") && !line.startsWith("player-ign: ") && !line.startsWith("player-link: ") && !line.startsWith("leftover-valve-stars: "));
+    const filteredUserDataString = filteredLines.join("\n");
 
     parsedData = JSON.parse(filteredUserDataString);
 
     // Check for missing keys and add default values
     Object.keys(parsedData).forEach((key) => {
-      parsedData[key] = { ...defaultValues, ...parsedData[key] };
+      // Destructure the 'id' property from the object
+      const { id, ...values } = parsedData[key];    
+      // Create a new object with the parsed values
+      parsedData[key] = {
+        // Keep the 'id' property as is
+        id,
+        // Parse the remaining values into integers
+        ...Object.fromEntries(Object.entries(values).map(([key, value]) => [key, parseInt(value)]))
+      };
     });
 
     // Store player-ign and player-link values
-    document.getElementById('player-ign').value = playerIGN;
-    document.getElementById('player-link').value = playerLink;
+    document.getElementById("player-ign").value = playerIGN;
+    document.getElementById("player-link").value = playerLink;
     document.getElementById("leftover-total-valve-quantity").value = LeftoverValveStars
 
     userData = parsedData;
     clearFilters();
-    const containers = document.querySelectorAll('.sticker-card-container');
+    const containers = document.querySelectorAll(".sticker-card-container");
     containers.forEach((container) => {
       RestoreSelected(userData, container);
       RestoreStickerSpares(userData, container);
@@ -1081,28 +1092,28 @@ function importUserData(userDataString) {
     countSelectedStickers();
     updateProgressBar();
   } catch (error) {
-    console.error('Invalid JSON format:', error);
+    console.error("Invalid JSON format:", error);
     return;
   }
 
-  if (typeof userData === 'object' && !Array.isArray(userData)) {
-    console.log('Successfully imported userData:', userData);
+  if (typeof userData === "object" && !Array.isArray(userData)) {
+    console.log("Successfully imported userData:", userData);
   } else {
-    console.error('Invalid userData format. Expected an object.');
+    console.error("Invalid userData format. Expected an object.");
     CreateNewUserData();
   }
 }
 
-importBtn.addEventListener('click', () => {
+importBtn.addEventListener("click", () => {
   const userDataString = textArea.value.trim();
   importUserData(userDataString);
 });
 
-importFromFileBtn.addEventListener('click', () => {
-  const fileInput = document.createElement('input');
-  fileInput.type = 'file';
-  fileInput.accept = '.txt';
-  fileInput.addEventListener('change', () => {
+importFromFileBtn.addEventListener("click", () => {
+  const fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.accept = ".txt";
+  fileInput.addEventListener("change", () => {
     const file = fileInput.files[0];
     const reader = new FileReader();
     reader.onload = function(event) {
@@ -1117,23 +1128,23 @@ importFromFileBtn.addEventListener('click', () => {
 
 
 
-exportBtn.addEventListener('click', exportUserData);
+exportBtn.addEventListener("click", exportUserData);
 
-exportFromFileBtn.addEventListener('click', () => {
+exportFromFileBtn.addEventListener("click", () => {
   exportUserData();
-  const blob = new Blob([textArea.value], { type: 'text/plain' });
+  const blob = new Blob([textArea.value], { type: "text/plain" });
   const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
+  const link = document.createElement("a");
   link.href = url;
-  link.download = 'mogotools-userData.txt';
+  link.download = "mogotools-userData.txt";
   link.click();
 });
 
 function UpdateTotalStickerQuantity() {
-  const totalStickersQuantity = document.querySelector('#total-stickers-quantity');
+  const totalStickersQuantity = document.querySelector("#total-stickers-quantity");
   let count = 0;
   STICKER_DATA.forEach((sticker) => {
-    if (IgnorePrestige === 1 && sticker.Prestige === '1'){return;}
+    if (IgnorePrestige === 1 && sticker.Prestige === "1"){return;}
     if (sticker.AlbumNo === CurrentAlbumNumber) {count++;}
   })
   totalStickersQuantity.textContent = count.toString();
@@ -1145,12 +1156,21 @@ function UpdateTotalStickerByRarityQuantity() {
     let count = 0;
 
     STICKER_DATA.forEach((sticker) => {
-      if (IgnorePrestige === 1 && sticker.Prestige === '1') {return;}
+      if (IgnorePrestige === 1 && sticker.Prestige === "1") {return;}
       if (parseInt(sticker.StickerRarity) === RarityNumber && sticker.AlbumNo === CurrentAlbumNumber) {count++;}
     });
 
     RarityQuantity.textContent = count.toString();
   }
+  const GoldQuantity = document.getElementById(`total-gold-quantity`);
+    let count = 0;
+
+    STICKER_DATA.forEach((sticker) => {
+      if (IgnorePrestige === 1 && sticker.Prestige === "1") {return;}
+      if (parseInt(sticker.Golden) === 1 && sticker.AlbumNo === CurrentAlbumNumber) {count++;}
+    });
+
+    GoldQuantity.textContent = count.toString();
 }
 
 function countSelectedStickers() {
@@ -1225,24 +1245,25 @@ function countSelectedStickerByRarity() {
   const GoldenPercentage = (parseInt(document.getElementById(`gold-quantity`).textContent) / parseInt(document.getElementById(`total-gold-quantity`).textContent) * 100).toFixed(1);
   document.getElementById(`gold-percentage`).textContent = `${GoldenPercentage}%`;
 }
+
 function countValveStickers() {
-  const totalValveQuantity = document.querySelector('#total-valve-quantity');
+  const totalValveQuantity = document.querySelector("#total-valve-quantity");
 
   let valveQuantity = 0;
 
   for (const key in userData) {
     const globalId = userData[key].id;
     const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
-    if (IgnorePrestige === 1 && stickerData.Prestige === '1') {
+    if (IgnorePrestige === 1 && stickerData.Prestige === "1") {
       continue;
     }
 
-    if (userData.hasOwnProperty(key) && parseInt(userData[key].spare) > 0) {
+    if (userData.hasOwnProperty(key) && userData[key].spare > 0) {
       const globalId = userData[key].id;
       const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
 
       if (stickerData) {
-        const spareQuantity = parseInt(userData[key].spare);
+        const spareQuantity = userData[key].spare;
         const stickerRarity = parseInt(stickerData.StickerRarity);
         const isPrestige = parseInt(stickerData.Golden);
         if (isPrestige === 1) {
@@ -1254,7 +1275,7 @@ function countValveStickers() {
     }
   }
 
-  let PrestigeLeftoverQuantity = document.getElementById('leftover-total-valve-quantity').value;
+  let PrestigeLeftoverQuantity = document.getElementById("leftover-total-valve-quantity").value;
   if (isNaN(PrestigeLeftoverQuantity)) {
     PrestigeLeftoverQuantity = 0;
   }
@@ -1262,45 +1283,45 @@ function countValveStickers() {
   const ValveSum = valveQuantity + parseInt(PrestigeLeftoverQuantity);
   totalValveQuantity.textContent = ValveSum.toString();
   
-  const valveTierImage = document.querySelector('.valve-tier');
+  const valveTierImage = document.querySelector(".valve-tier");
   let StickersToNextTier = 0;
-  let nextTierText = '';
+  let nextTierText = "";
 
-  document.getElementById('NextValveCounter').style.display = 'block';
+  document.getElementById("NextValveCounter").style.display = "block";
   if (ValveSum < VaultTierOne) {
     StickersToNextTier = VaultTierOne - ValveSum;
     nextTierText = `${StickersToNextTier} stars until Tier 1 vault.`;
-    valveTierImage.src = '';
+    valveTierImage.src = "";
   } else if (VaultTierOne <= ValveSum && ValveSum < VaultTierTwo) {
     StickersToNextTier = VaultTierTwo - ValveSum;
     nextTierText = `${StickersToNextTier} stars until Tier 2 vault.`;
-    valveTierImage.src = 'assets/stickers/StickerValveTier1.png';
+    valveTierImage.src = "assets/stickers/StickerValveTier1.png";
   } else if (VaultTierTwo <= ValveSum && ValveSum < VaultTierThree) {
     StickersToNextTier = VaultTierThree - ValveSum;
     nextTierText = `${StickersToNextTier} stars until Tier 3 vault.`;
-    valveTierImage.src = 'assets/stickers/StickerValveTier2.png';
+    valveTierImage.src = "assets/stickers/StickerValveTier2.png";
   } else if (ValveSum >= VaultTierThree) {
-    valveTierImage.src = 'assets/stickers/StickerValveTier3.png';
-    document.getElementById('NextValveCounter').style.display = 'none';
+    valveTierImage.src = "assets/stickers/StickerValveTier3.png";
+    document.getElementById("NextValveCounter").style.display = "none";
   }
   
-  document.getElementById('NextValveCounter').textContent = nextTierText;
+  document.getElementById("NextValveCounter").textContent = nextTierText;
 }
 
 
 function ChangeUserDataHaveSpareValue(userData, StickerContainer){
-  const dataGlobalValue = StickerContainer.getAttribute('data-global');
-  if(parseInt(userData[dataGlobalValue].selected) === 1 && parseInt(userData[dataGlobalValue].spare) > 0){
-    userData[dataGlobalValue].havespare = '1';
-  } else{userData[dataGlobalValue].havespare = '0';}
+  const dataGlobalValue = StickerContainer.getAttribute("data-global");
+  if(userData[dataGlobalValue].selected === 1 && userData[dataGlobalValue].spare > 0){
+    userData[dataGlobalValue].havespare = 1;
+  } else{userData[dataGlobalValue].havespare = 0;}
 }
 
 function UpdateAlbumStartEndTime() {
-  const AlbumIconElement = document.getElementById('album-logo-container');
+  const AlbumIconElement = document.getElementById("album-logo-container");
   AlbumIconElement.innerHTML = `<img draggable="false" class="album-logo" src="logo/album_${CurrentAlbumNumber}.png">`;
   
-  const startTimeSpan = document.querySelector('#start-time');
-  const endTimeSpan = document.querySelector('#end-time');
+  const startTimeSpan = document.querySelector("#start-time");
+  const endTimeSpan = document.querySelector("#end-time");
 
   let earliestStartTime = Infinity;
   let earliestEndTime = Infinity;
@@ -1323,20 +1344,20 @@ function UpdateAlbumStartEndTime() {
   const startDateTime = new Date(earliestStartTime * 1000);
   const endDateTime = new Date(earliestEndTime * 1000); 
 
-  const startFormattedTime = startDateTime.toLocaleString('en-US', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit'
+  const startFormattedTime = startDateTime.toLocaleString("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit"
   });
 
-  const endFormattedTime = endDateTime.toLocaleString('en-US', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit'
+  const endFormattedTime = endDateTime.toLocaleString("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit"
   });
 
   startTimeSpan.textContent = startFormattedTime;
@@ -1381,7 +1402,7 @@ function DarkenColour(colour, percentagevalue) {
     const [r, g, b] = rgb;
     const toHex = (c) => {
       const hex = c.toString(16);
-      return hex.length === 1 ? "0" + hex : hex;
+      return hex.length === 1 ? 0 + hex : hex;
     };
     return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
   };
@@ -1396,19 +1417,19 @@ function handleSetImageOrientationBtnClick(isClicked) {
   if(isClicked === true){ImgOrientationLandscapeZeroPortraitOne = (ImgOrientationLandscapeZeroPortraitOne + 1) % 2;}
 
   if (ImgOrientationLandscapeZeroPortraitOne === 0) {
-    document.getElementById('SetImageOrientationBtn').textContent = 'Current Layout: Landscape';
+    document.getElementById("SetImageOrientationBtn").textContent = "Current Layout: Landscape";
   } else if (ImgOrientationLandscapeZeroPortraitOne === 1) {
-    document.getElementById('SetImageOrientationBtn').textContent = 'Current Layout: Portrait';
+    document.getElementById("SetImageOrientationBtn").textContent = "Current Layout: Portrait";
   }
 }
-document.getElementById('SetImageOrientationBtn').addEventListener('click', function() {
+document.getElementById("SetImageOrientationBtn").addEventListener("click", function() {
   handleSetImageOrientationBtnClick(true);
 });
 
 let includeIGN = 0;
 let includePlayerLink = 0;
-var IncludeIGNBtn = document.getElementById('IncludeIGNBtn');
- var IncludePlayerLinkBtn = document.getElementById('IncludePlayerLinkBtn');
+var IncludeIGNBtn = document.getElementById("IncludeIGNBtn");
+ var IncludePlayerLinkBtn = document.getElementById("IncludePlayerLinkBtn");
 IncludeIGNBtn.addEventListener("click", function() {
    includeIGN = (includeIGN + 1) % 2;
    if(includeIGN === 1){IncludeIGNBtn.classList.add("btnGreen");}
@@ -1428,8 +1449,8 @@ function copyToCollectionScreenshot() {
   if (middleSide && collectionScreenshot) {
     collectionScreenshot.innerHTML = "";
 
-    var playerIGN = '';
-    var playerLink = '';
+    var playerIGN = "";
+    var playerLink = "";
 
     if (includeIGN === 1) {
       playerIGN = document.getElementById("player-ign").value;
@@ -1498,6 +1519,14 @@ function copyToCollectionScreenshot() {
           container.querySelector(".spare-snapshot-text").style.marginLeft = "-31px";
           container.querySelector(".spare-snapshot-text").style.marginTop = "3px";
         }
+        if (navigator.userAgent.indexOf("Safari") > -1) {
+          var SpareSnapshotText = container.querySelector(".spare-snapshot-text");
+          var currentSpareSnapshotTextMarginTop = parseInt(SpareSnapshotText.style.marginTop);
+          SpareSnapshotText.style.marginTop = (currentSpareSnapshotTextMarginTop + 1) + "px";
+          var stickerRibbon = container.querySelector(".sticker-ribbon");
+          var currentstickerRibbonMarginTop = parseInt(stickerRibbon.style.marginTop);
+          stickerRibbon.style.marginTop = (currentstickerRibbonMarginTop + 1) + "px";
+        }
       }
 
       container.querySelector(".trade-button-container-screenshot").style.marginTop = "6px";
@@ -1520,6 +1549,8 @@ function copyToCollectionScreenshot() {
     
         // Calculate the current size in megapixels
         var currentSize = currentWidth * currentHeight;
+        //console.log(currentWidth);
+        //console.log(currentHeight);
     
         // Check if the current size exceeds 3 megapixels
         if (currentSize > 1579008) {
@@ -1564,161 +1595,20 @@ function captureScreenshot() {
     console.log("collection-screenshot element is not found.");
   }
 }
-// function captureScreenshot() {
-//   var collectionScreenshot = document.getElementById("collection-screenshot");
-//   if (collectionScreenshot) {
-//     //window.devicePixelRatio = 2;
-//     html2canvas(collectionScreenshot, {scale: 2}).then(function(canvas) {
-//       var dataURL = canvas.toDataURL("image/png");
-//       var link = document.createElement("a");
-//       link.href = dataURL;
-//       link.download = "mogotools-collection-screenshot.png";
-//       link.click();
-//     });
-//   } else {
-//     console.log("collection-screenshot element is not found.");
-//   }
-// }
-// function captureScreenshot() {
-//   var collectionScreenshot = document.getElementById("collection-screenshot");
-
-//   if (collectionScreenshot) {
-//     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
-//       var dataURL = canvas.toDataURL("image/png");
-      
-//       collectionScreenshot.innerHTML = "";
-//       var image = document.createElement("img");
-//         image.src = dataURL;
-//         image.style.width = "100%";
-//         collectionScreenshot.appendChild(image);
-//     });
-//   } else {
-//     console.log("collection-screenshot element is not found.");
-//   }
-// }
-
-// WORKING: OPENS IN NEW TAB
-// function captureScreenshot() {
-//   var collectionScreenshot = document.getElementById("collection-screenshot");
-//   if (collectionScreenshot) {
-//     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
-//       // Reduce image size by 20%
-//       var newWidth = canvas.width * 1;
-//       var newHeight = canvas.height * 1;
-//       var resizedCanvas = document.createElement("canvas");
-//       resizedCanvas.width = newWidth;
-//       resizedCanvas.height = newHeight;
-//       var resizedContext = resizedCanvas.getContext("2d");
-//       resizedContext.drawImage(
-//         canvas,
-//         0,
-//         0,
-//         canvas.width,
-//         canvas.height,
-//         0,
-//         0,
-//         newWidth,
-//         newHeight
-//       );
-
-//       resizedCanvas.toBlob(function(blob) {
-//         var newWindow = window.open();
-//         var imageURL = URL.createObjectURL(blob);
-//         newWindow.document.write('<img src="' + imageURL + '" style="width:100%">');
-
-//         var imageElement = document.createElement("img");
-//         imageElement.src = imageURL;
-//         // imageElement.style.width = "100%";
-//         var snapshotArea = document.getElementById("snapshot-area");        
-//         snapshotArea.innerHTML = "";
-//         snapshotArea.appendChild(imageElement);
-//       }, "image/png");
-//     });
-//   } else {
-//     console.log("collection-screenshot element is not found.");
-//   }
-// }
-// function captureScreenshot() {
-//   var collectionScreenshot = document.getElementById("collection-screenshot");
-//   if (collectionScreenshot) {
-//     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
-//       var dataURL = canvas.toDataURL("image/png");
-
-//       var newWindow = window.open();
-//       newWindow.document.write('<img src="' + dataURL + '" style="width:100%">');
-//     });
-//   } else {
-//     console.log("collection-screenshot element is not found.");
-//   }
-// }
-// function captureScreenshot() {
-//   var collectionScreenshot = document.getElementById("collection-screenshot");
-//   if (collectionScreenshot) {
-//     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
-//       var dataURL = canvas.toDataURL("image/png");
-
-//       var newWindow = window.open();
-//       newWindow.opener = null; // Prevent the new window from having access to the current window
-//       newWindow.location = "about:blank"; // Set the location of the new window to about:blank
-
-//       newWindow.document.write('<img src="' + dataURL + '" style="width:100%">');
-//     });
-//   } else {
-//     console.log("collection-screenshot element is not found.");
-//   }
-// }
-
-// function captureScreenshot() {
-//   var collectionScreenshot = document.getElementById("collection-screenshot");
-//   if (collectionScreenshot) {
-//     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
-//       var dataURL = canvas.toDataURL("image/png");
-
-//       var link = document.createElement("a");
-//       link.href = dataURL;
-//       link.download = "mogotools-collection-screenshot.png";
-
-//       document.body.appendChild(link);
-//       link.click();
-//       document.body.removeChild(link);
-//     });
-//   } else {
-//     console.log("collection-screenshot element is not found.");
-//   }
-// }
-
-// function captureScreenshot() {
-//   var collectionScreenshot = document.getElementById("collection-screenshot");
-//   if (collectionScreenshot) {
-//     html2canvas(collectionScreenshot, { scale: 2 }).then(function(canvas) {
-//       var dataURL = canvas.toDataURL("image/png");
-
-//       var link = document.createElement("a");
-//       link.href = dataURL;
-//       link.download = "mogotools-collection-screenshot.png";
-
-//       document.body.appendChild(link);
-//       link.click();
-//       document.body.removeChild(link);
-//     });
-//   } else {
-//     console.log("collection-screenshot element is not found.");
-//   }
-// }
 
 var dlPngButton = document.getElementById("dl-png");
 if (dlPngButton) {
   dlPngButton.addEventListener("click", function() {
     document.getElementById("collection-screenshot").innerHTML = "";
     dlPngButton.textContent = "Downloading...";
-    dlPngButton.classList.add('btnYellow');
+    dlPngButton.classList.add("btnYellow");
     copyToCollectionScreenshot();
     captureScreenshot();
     document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function() {
       dlPngButton.textContent = "Download successful!";
       setTimeout(function() {        
-        dlPngButton.classList.remove('btnYellow');
+        dlPngButton.classList.remove("btnYellow");
         dlPngButton.textContent = "Download as PNG";
       }, 3000);
     }, 3000);
@@ -1727,23 +1617,23 @@ if (dlPngButton) {
 
 function handleViewportBtnClick(isClicked) {
   if(isClicked === true){WebZeroMobileOne = (WebZeroMobileOne + 1) % 2;}
-  const ViewportBtnText = document.getElementById('ViewportBtnText');
+  const ViewportBtnText = document.getElementById("ViewportBtnText");
 
   if (WebZeroMobileOne === 0) {
-    document.getElementById("DefaultCSS").removeAttribute('disabled');
-    document.getElementById("MobileCSS").setAttribute('disabled', true);
-    ViewportBtnText.textContent = 'Mobile Layout';
+    document.getElementById("DefaultCSS").removeAttribute("disabled");
+    document.getElementById("MobileCSS").setAttribute("disabled", true);
+    ViewportBtnText.textContent = "Mobile Layout";
     document.getElementById("progress-menu-modal").style.display = "initial";
-    document.getElementById('filter-sort-modal').style.display = "initial";
+    document.getElementById("filter-sort-modal").style.display = "initial";
   } else if (WebZeroMobileOne === 1) {
-    document.getElementById("DefaultCSS").setAttribute('disabled', true);
-    document.getElementById("MobileCSS").removeAttribute('disabled');
-    ViewportBtnText.textContent = 'Web Layout';
-    document.getElementById('filter-sort-modal').style.display = "none";
-    document.getElementById('progress-menu-modal').style.display = "none";
+    document.getElementById("DefaultCSS").setAttribute("disabled", true);
+    document.getElementById("MobileCSS").removeAttribute("disabled");
+    ViewportBtnText.textContent = "Web Layout";
+    document.getElementById("filter-sort-modal").style.display = "none";
+    document.getElementById("progress-menu-modal").style.display = "none";
   }
 }
-document.getElementById('ViewportBtn').addEventListener('click', function() {
+document.getElementById("ViewportBtn").addEventListener("click", function() {
   handleViewportBtnClick(true);
 });
 
@@ -1762,19 +1652,19 @@ function compareViewport() {
 function handleLayoutThemeBtnClick(isClicked) {
   if(isClicked === true){LightZeroDarkOne = (LightZeroDarkOne + 1) % 2;}
   // console.log(LightZeroDarkOne);
-  const LayoutBtnText = document.getElementById('LayoutBtnText');
+  const LayoutBtnText = document.getElementById("LayoutBtnText");
 
   if (LightZeroDarkOne === 0) {
-    //document.getElementById("DefaultCSS").removeAttribute('disabled');
-    //document.getElementById("MobileCSS").setAttribute('disabled', true);
-    LayoutBtnText.textContent = 'Dark Mode';
+    //document.getElementById("DefaultCSS").removeAttribute("disabled");
+    //document.getElementById("MobileCSS").setAttribute("disabled", true);
+    LayoutBtnText.textContent = "Dark Mode";
   } else if (LightZeroDarkOne === 1) {
-    //document.getElementById("DefaultCSS").setAttribute('disabled', true);
-    //document.getElementById("MobileCSS").removeAttribute('disabled');
-    LayoutBtnText.textContent = 'Light Mode';
+    //document.getElementById("DefaultCSS").setAttribute("disabled", true);
+    //document.getElementById("MobileCSS").removeAttribute("disabled");
+    LayoutBtnText.textContent = "Light Mode";
   }
 }
-document.getElementById('LayoutBtn').addEventListener('click', function() {
+document.getElementById("LayoutBtn").addEventListener("click", function() {
   handleLayoutThemeBtnClick(true);
 });
 
@@ -1822,8 +1712,8 @@ CurrentFiltersCloseBtn.onclick = function() {
 };
 
 function generateCurrentFiltersModalText() {
-  const currentFiltersContent = document.getElementById('current-filters-content');
-  currentFiltersContent.innerHTML = ''; // Empty the current-filters-content
+  const currentFiltersContent = document.getElementById("current-filters-content");
+  currentFiltersContent.innerHTML = ""; // Empty the current-filters-content
 
   const includeFilters = [];
   const excludeFilters = [];
@@ -1834,22 +1724,22 @@ function generateCurrentFiltersModalText() {
     const filterValue = filter.FilterValue;
 
     if (filterState === 1) {
-      if (filterName === '1>StickerName>') {
+      if (filterName === "1>StickerName>") {
         if (Array.isArray(filterValue)) {
           includeFilters.push(...filterValue.map((value) => `IS "${value}"`));
         }
-      } else if (filterName !== '0>spare>spare-filter-min|spare-filter-max') {
+      } else if (filterName !== "0>spare>spare-filter-min|spare-filter-max") {
         const filterBtn = document.querySelector(`button[data-filtervalue="${filterName}"]`);
         if (filterBtn) {
           includeFilters.push(`IS ${filterBtn.innerHTML}`);
         }
       }
     } else if (filterState === 2) {
-      if (filterName === '1>StickerName>') {
+      if (filterName === "1>StickerName>") {
         if (Array.isArray(filterValue)) {
           excludeFilters.push(...filterValue.map((value) => `NOT "${value}"`));
         }
-      } else if (filterName !== '0>spare>spare-filter-min|spare-filter-max') {
+      } else if (filterName !== "0>spare>spare-filter-min|spare-filter-max") {
         const filterBtn = document.querySelector(`button[data-filtervalue="${filterName}"]`);
         if (filterBtn) {
           excludeFilters.push(`NOT ${filterBtn.innerHTML}`);
@@ -1858,26 +1748,26 @@ function generateCurrentFiltersModalText() {
     }
   }
 
-  const filterModeText = `Current filter mode: ${AndZeroOrOne === 0 ? 'AND' : 'OR'}`;
-  const spareMinValue = document.getElementById('spare-filter-min').value;
-  const spareMaxValue = document.getElementById('spare-filter-max').value;
+  const filterModeText = `Current filter mode: ${AndZeroOrOne === 0 ? "AND" : "OR"}`;
+  const spareMinValue = document.getElementById("spare-filter-min").value;
+  const spareMaxValue = document.getElementById("spare-filter-max").value;
 
-  let filterModeDescription = '';
-  const spareFilterState = FilterList['0>spare>spare-filter-min|spare-filter-max'].FilterState;
+  let filterModeDescription = "";
+  const spareFilterState = FilterList["0>spare>spare-filter-min|spare-filter-max"].FilterState;
   if (AndZeroOrOne === 0 && spareFilterState !== 0) {
-    const filterStateText = spareFilterState === 2 ? 'not between' : 'between';
+    const filterStateText = spareFilterState === 2 ? "not between" : "between";
     filterModeDescription = `Stickers that match ALL filter conditions and have spares ${filterStateText} ${spareMinValue} and ${spareMaxValue} will be displayed in the board.`;
   } else if (AndZeroOrOne === 0 && spareFilterState === 0) {
     filterModeDescription = `Stickers that match ALL filter conditions will be displayed in the board.`;
   } else if (AndZeroOrOne === 1 && spareFilterState !== 0) {
-    const filterStateText = spareFilterState === 2 ? 'not between' : 'between';
+    const filterStateText = spareFilterState === 2 ? "not between" : "between";
     filterModeDescription = `Stickers that match AT LEAST one of the filter conditions and have spares ${filterStateText} ${spareMinValue} and ${spareMaxValue} will be displayed in the board.`;
   } else if (AndZeroOrOne === 1 && spareFilterState === 0) {
     filterModeDescription = `Stickers that match AT LEAST one of the filter conditions will be displayed in the board.`;
   }
 
-  const includeFiltersText = includeFilters.length > 0 ? `<b>Include filters:</b><br><ul>\n${includeFilters.map(filter => `<li>${filter}</li>`).join('\n')}\n</ul>` : '';
-  const excludeFiltersText = excludeFilters.length > 0 ? `<b>Exclude filters:</b><br><ul>\n${excludeFilters.map(filter => `<li>${filter}</li>`).join('\n')}\n</ul>` : '';
+  const includeFiltersText = includeFilters.length > 0 ? `<b>Include filters:</b><br><ul>\n${includeFilters.map(filter => `<li>${filter}</li>`).join("\n")}\n</ul>` : "";
+  const excludeFiltersText = excludeFilters.length > 0 ? `<b>Exclude filters:</b><br><ul>\n${excludeFilters.map(filter => `<li>${filter}</li>`).join("\n")}\n</ul>` : "";
 
   currentFiltersContent.innerHTML = `${filterModeText}<br><br>${filterModeDescription}<br><br>${includeFiltersText}<br>${excludeFiltersText}`;
 }
@@ -1909,21 +1799,21 @@ window.onclick = function(event) {
   }
 };
 
-document.getElementById('generate-trade-post-btn').addEventListener('click', function() {
+document.getElementById("generate-trade-post-btn").addEventListener("click", function() {
   GenerateTradePostClipboard();
 });
 
 function GenerateTradePostClipboard() {
-  const tradePostArea = document.querySelector('.trade-post-area');
-  tradePostArea.value = ''; // Clear the trade post area
+  const tradePostArea = document.querySelector(".trade-post-area");
+  tradePostArea.value = ""; // Clear the trade post area
 
-  let tradePostLinesLF = '';
-  let tradePostLinesFT = '';
+  let tradePostLinesLF = "";
+  let tradePostLinesFT = "";
 
   for (const key in userData) {
-    if (userData[key].lookingfor === "1") {
+    if (userData[key].lookingfor === 1) {
       const globalId = userData[key].id;
-      const sticker = STICKER_DATA.find(item => item['GlobalID'] === globalId);
+      const sticker = STICKER_DATA.find(item => item["GlobalID"] === globalId);
 
       if (sticker) {
         const { StickerName, SetID, AlbumNo, GlobalID, StickerRarity } = sticker;
@@ -1934,9 +1824,9 @@ function GenerateTradePostClipboard() {
       }
     }
 
-    if (userData[key].fortrade === "1") {
+    if (userData[key].fortrade === 1) {
       const globalId = userData[key].id;
-      const sticker = STICKER_DATA.find(item => item['GlobalID'] === globalId);
+      const sticker = STICKER_DATA.find(item => item["GlobalID"] === globalId);
 
       if (sticker) {
         const { StickerName, SetID, AlbumNo, GlobalID, StickerRarity } = sticker;
@@ -1953,73 +1843,73 @@ function GenerateTradePostClipboard() {
 }
 
 function copyTradePostAreaToClipboard() {
-  const tradePostArea = document.querySelector('.trade-post-area');
+  const tradePostArea = document.querySelector(".trade-post-area");
   const tradePostText = tradePostArea.value;
 
   navigator.clipboard.writeText(tradePostText)
     .then(() => {
-      const copyButton = document.querySelector('#copy-trade-post-area');
+      const copyButton = document.querySelector("#copy-trade-post-area");
       const originalButtonText = copyButton.textContent;
 
-      copyButton.classList.add('btnYellow');
-      copyButton.textContent = 'Copied!';
+      copyButton.classList.add("btnYellow");
+      copyButton.textContent = "Copied!";
       setTimeout(() => {
-        copyButton.classList.remove('btnYellow');
+        copyButton.classList.remove("btnYellow");
         copyButton.textContent = originalButtonText;
       }, 3000);
 
-      console.log('Text copied to clipboard');
+      console.log("Text copied to clipboard");
     })
     .catch((err) => {
-      console.error('Failed to copy text: ', err);
+      console.error("Failed to copy text: ", err);
     });
 }
-const copyButton = document.querySelector('#copy-trade-post-area');
-copyButton.addEventListener('click', copyTradePostAreaToClipboard);
+const copyButton = document.querySelector("#copy-trade-post-area");
+copyButton.addEventListener("click", copyTradePostAreaToClipboard);
 
-document.getElementById('ToggleSelectedBtn').onclick = function() {
-  const containers = document.querySelectorAll('.sticker-card-container');
+document.getElementById("ToggleSelectedBtn").onclick = function() {
+  const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
-    const CurrentStickerGlobalID = container.getAttribute('data-global');
-    userData[CurrentStickerGlobalID].selected = ((parseInt(userData[CurrentStickerGlobalID].selected) + 1) % 2).toString();
+    const CurrentStickerGlobalID = container.getAttribute("data-global");
+    userData[CurrentStickerGlobalID].selected = (userData[CurrentStickerGlobalID].selected + 1) % 2;
     RestoreSelected(userData, container);
   });
   countSelectedStickers();
 }
 
-document.getElementById('ResetSparesBtn').onclick = function() {
-  const containers = document.querySelectorAll('.sticker-card-container');
+document.getElementById("ResetSparesBtn").onclick = function() {
+  const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
-    const CurrentStickerGlobalID = container.getAttribute('data-global');
-    userData[CurrentStickerGlobalID].spare = parseInt('0');
+    const CurrentStickerGlobalID = container.getAttribute("data-global");
+    userData[CurrentStickerGlobalID].spare = 0;
     RestoreStickerSpares(userData, container);
     ChangeUserDataHaveSpareValue(userData, container);
   });
   countValveStickers();
 }
 
-document.getElementById('ToggleLFBtn').onclick = function() {
-  const containers = document.querySelectorAll('.sticker-card-container');
+document.getElementById("ToggleLFBtn").onclick = function() {
+  const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
-    const CurrentStickerGlobalID = container.getAttribute('data-global');
-    userData[CurrentStickerGlobalID].lookingfor = ((parseInt(userData[CurrentStickerGlobalID].lookingfor) + 1) % 2).toString();
+    const CurrentStickerGlobalID = container.getAttribute("data-global");
+    userData[CurrentStickerGlobalID].lookingfor = (userData[CurrentStickerGlobalID].lookingfor + 1) % 2;
     RestoreTradeStates(userData, container);
   });
 }
 
-document.getElementById('ToggleFTBtn').onclick = function() {
-  const containers = document.querySelectorAll('.sticker-card-container');
+document.getElementById("ToggleFTBtn").onclick = function() {
+  const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
-    const CurrentStickerGlobalID = container.getAttribute('data-global');
-    userData[CurrentStickerGlobalID].fortrade = ((parseInt(userData[CurrentStickerGlobalID].fortrade) + 1) % 2).toString();
+    const CurrentStickerGlobalID = container.getAttribute("data-global");
+    userData[CurrentStickerGlobalID].fortrade = (userData[CurrentStickerGlobalID].fortrade + 1) % 2;
     RestoreTradeStates(userData, container);
   });
 }
 
-document.getElementById('ResetAllStickersBtn').onclick = function() {
+document.getElementById("ResetAllStickersBtn").onclick = function() {
   CreateNewUserData(STICKER_DATA);
   clearFilters();
-  const containers = document.querySelectorAll('.sticker-card-container');
+  const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
     RestoreSelected(userData, container);
     RestoreStickerSpares(userData, container);
@@ -2027,26 +1917,26 @@ document.getElementById('ResetAllStickersBtn').onclick = function() {
   })
   countSelectedStickers();
   countValveStickers();
-  generateCurrentStickerBoard(STICKER_DATA, userData, 'current-sticker-board');
+  generateCurrentStickerBoard(STICKER_DATA, userData, "current-sticker-board");
 }
 
-document.getElementById('leftover-total-valve-quantity').addEventListener('input', handleVaultPrestigeInput);
+document.getElementById("leftover-total-valve-quantity").addEventListener("input", handleVaultPrestigeInput);
 
 function handleVaultPrestigeInput(event) {
   const target = event.target;
-  if (target.classList.contains('valve-prestige-text')) {
-    target.value = target.value.replace(/^0+(?=\d)/, '');
+  if (target.classList.contains("valve-prestige-text")) {
+    target.value = target.value.replace(/^0+(?=\d)/, "");
     if (target.value > 9999) {
-      if (target.value.slice(0, -1) === '9999') {
-        target.value = '9999';
+      if (target.value.slice(0, -1) === "9999") {
+        target.value = "9999";
       } else {
         target.value = target.value.slice(0, 4);
       }
     } else if (target.value < 0) {
       target.value = 0;
-    } else if (target.value === '') {
+    } else if (target.value === "") {
       setTimeout(() => {
-        if (target.value === '') { // Check if value is still empty before setting it to 0
+        if (target.value === "") { // Check if value is still empty before setting it to 0
           target.value = 0;
           countValveStickers(); // Call countValveStickers() after setting value to 0
         }
@@ -2112,32 +2002,32 @@ for (var k = 0; k < navigationElements.length; k++) {
 }
 
 
-const webBasicMenuImg = document.querySelector('.webBasicMenuImg');
+const webBasicMenuImg = document.querySelector(".webBasicMenuImg");
 if (webBasicMenuImg) {
-  webBasicMenuImg.addEventListener('mousedown', () => {
-    webBasicMenuImg.classList.add('scale-down');
+  webBasicMenuImg.addEventListener("mousedown", () => {
+    webBasicMenuImg.classList.add("scale-down");
   });
 
-  webBasicMenuImg.addEventListener('mouseup', () => {
-    webBasicMenuImg.classList.remove('scale-down');
+  webBasicMenuImg.addEventListener("mouseup", () => {
+    webBasicMenuImg.classList.remove("scale-down");
   });
 
-  webBasicMenuImg.addEventListener('mouseleave', () => {
-    webBasicMenuImg.classList.remove('scale-down');
+  webBasicMenuImg.addEventListener("mouseleave", () => {
+    webBasicMenuImg.classList.remove("scale-down");
   });
 
-  webBasicMenuImg.addEventListener('touchstart', () => {
-    webBasicMenuImg.classList.add('scale-down');
+  webBasicMenuImg.addEventListener("touchstart", () => {
+    webBasicMenuImg.classList.add("scale-down");
   });
 
-  webBasicMenuImg.addEventListener('touchend', () => {
-    webBasicMenuImg.classList.remove('scale-down');
+  webBasicMenuImg.addEventListener("touchend", () => {
+    webBasicMenuImg.classList.remove("scale-down");
   });
 }
 
 function convertEpochToYYYYMMDD() {
   // Get all .news-item-time elements
-  const newsItemTimes = document.querySelectorAll('.news-item-time');
+  const newsItemTimes = document.querySelectorAll(".news-item-time");
 
   // Convert each .news-item-time element
   newsItemTimes.forEach((newsItemTime) => {
@@ -2146,41 +2036,13 @@ function convertEpochToYYYYMMDD() {
     const date = new Date(epoch * 1000); // Convert seconds to milliseconds
     
     const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
 
     const formattedDate = `${year}/${month}/${day}`;
     newsItemTime.textContent = formattedDate;
   });
 }
 
-// const elementIds = ['#ViewportBtn', '#SortOrderBtn', '#export-btn'];
-// elementIds.forEach((id) => {
-//   const element = document.querySelector(id);
-//   addBtnYellowListnerToElement(element);
-// });
-// function addBtnYellowListnerToElement(element) {
-//   if (element) {
-//     element.addEventListener('mousedown', () => {
-//       element.classList.add('btnYellow');
-//     });
-
-//     element.addEventListener('mouseup', () => {
-//       element.classList.remove('btnYellow');
-//     });
-
-//     element.addEventListener('mouseleave', () => {
-//       element.classList.remove('btnYellow');
-//     });
-
-//     element.addEventListener('touchstart', () => {
-//       element.classList.add('btnYellow');
-//     });
-
-//     element.addEventListener('touchend', () => {
-//       element.classList.remove('btnYellow');
-//     });
-//   }
-// }
 
 window.onload = init;
