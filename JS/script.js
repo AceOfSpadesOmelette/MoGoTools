@@ -1530,6 +1530,25 @@ function copyToCollectionScreenshot() {
         }
       }
 
+    // Check if all ".lf-btn" in all ".trade-button-container-screenshot" have ".btnRed" class
+    var allButtonsRed = true;
+    var tradeButtonContainers = collectionScreenshot.querySelectorAll(".trade-button-container-screenshot");
+    tradeButtonContainers.forEach(function (container) {
+      var buttons = container.querySelectorAll(".lf-btn");
+      buttons.forEach(function (button) {
+        if (!button.classList.contains("btnRed")) {
+          allButtonsRed = false;
+        }
+      });
+    });
+    // Set the opacity of all ".sticker-card-container-screenshot" elements based on the condition
+    if (allButtonsRed) {
+      var stickerCardContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
+      stickerCardContainers.forEach(function (container) {
+        container.style.opacity = "1.0";
+      });
+    }
+
       container.querySelector(".trade-button-container-screenshot").style.marginTop = "6px";
       container.querySelector(".trade-button-container-screenshot").style.width = "100%";
       container.querySelector(".trade-button-container-screenshot").style.display = "flex";
@@ -1566,6 +1585,7 @@ function copyToCollectionScreenshot() {
     console.log("Either middle-side or collection-screenshot element is not found.");
   }
 }
+
 function captureScreenshot() {
   var collectionScreenshot = document.getElementById("collection-screenshot");
   if (collectionScreenshot) {
