@@ -1302,13 +1302,13 @@ function countValveStickers() {
     nextTierText = `${StickersToNextTier} stars until Tier 3 vault.`;
     valveTierImage.src = "assets/stickers/StickerValveTier2.png";
   } else if (ValveSum >= VaultTierThree) {
+    StickersToNextTier = ValveSum - VaultTierThree;
     valveTierImage.src = "assets/stickers/StickerValveTier3.png";
-    document.getElementById("NextValveCounter").style.display = "none";
+    nextTierText = `${StickersToNextTier} stars remaining after exchanging Tier 3 vault.`;
   }
   
   document.getElementById("NextValveCounter").textContent = nextTierText;
 }
-
 
 function ChangeUserDataHaveSpareValue(userData, StickerContainer){
   const dataGlobalValue = StickerContainer.getAttribute("data-global");
@@ -1320,7 +1320,7 @@ function ChangeUserDataHaveSpareValue(userData, StickerContainer){
 function UpdateAlbumStartEndTime() {
   const AlbumIconElement = document.getElementById("album-logo-container");
   AlbumIconElement.innerHTML = `<img draggable="false" class="album-logo" src="logo/album_${CurrentAlbumNumber}.png">`;
-  
+
   const startTimeSpan = document.querySelector("#start-time");
   const endTimeSpan = document.querySelector("#end-time");
 
@@ -1332,18 +1332,13 @@ function UpdateAlbumStartEndTime() {
       const startTime = parseInt(set.StartTime);
       const endTime = parseInt(set.EndTime);
 
-      if (startTime < earliestStartTime) {
-        earliestStartTime = startTime;
-      }
-
-      if (endTime < earliestEndTime) {
-        earliestEndTime = endTime;
-      }
+      if (startTime < earliestStartTime) {earliestStartTime = startTime;}
+      if (endTime < earliestEndTime) {earliestEndTime = endTime;}
     }
   });
 
   const startDateTime = new Date(earliestStartTime * 1000);
-  const endDateTime = new Date(earliestEndTime * 1000); 
+  const endDateTime = new Date(earliestEndTime * 1000);
 
   const startFormattedTime = startDateTime.toLocaleString("en-US", {
     year: "numeric",
@@ -1363,6 +1358,9 @@ function UpdateAlbumStartEndTime() {
 
   startTimeSpan.textContent = startFormattedTime;
   endTimeSpan.textContent = endFormattedTime;
+
+  updateTimeLeft(endDateTime); // Call the function initially to display the time left
+  setInterval(() => updateTimeLeft(endDateTime), 1000); // Update the time left every second
 }
 
 function isBrighterThan(color1, color2) {
