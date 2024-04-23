@@ -1358,8 +1358,7 @@ function UpdateAlbumStartEndTime() {
   startTimeSpan.textContent = startFormattedTime;
   endTimeSpan.textContent = endFormattedTime;
 
-  updateTimeLeft(endDateTime); // Call the function initially to display the time left
-  setInterval(() => updateTimeLeft(endDateTime), 1000); // Update the time left every second
+  return endDateTime; // Return the endDateTime value
 }
 
 function updateTimeLeft(endDateTime) {
@@ -1388,6 +1387,10 @@ function updateTimeLeft(endDateTime) {
     else {timeLeftSpan.style.color = "";}
   }
 }
+
+const endDateTime = UpdateAlbumStartEndTime();
+updateTimeLeft(endDateTime); // Call the function initially to display the time left
+setInterval(() => updateTimeLeft(endDateTime), 1000); // Update the time left every second
 
 function isBrighterThan(color1, color2) {
   const brightness1 = calculateBrightness(color1);
