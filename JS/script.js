@@ -56,11 +56,10 @@ function init() {
   countValveStickers();
   countSelectedStickers();
   //updateProgressBar();
-
-  UpdateAlbumStartEndTime();
-
   handleBasicMenuNavigationClick({target: document.getElementById("BasicMenuNewsBtn")});
   LoadNews();
+  
+  UpdateAlbumStartEndTime();
 
   // compareViewport();
 }
