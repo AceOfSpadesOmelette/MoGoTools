@@ -1363,6 +1363,33 @@ function UpdateAlbumStartEndTime() {
   setInterval(() => updateTimeLeft(endDateTime), 1000); // Update the time left every second
 }
 
+function updateTimeLeft(endDateTime) {
+  const timeLeftSpan = document.querySelector("#time-left");
+  const currentTime = new Date();
+  const timeDiff = endDateTime.getTime() - currentTime.getTime();
+
+  if (timeDiff <= 0) {
+    timeLeftSpan.textContent = "Album has ended. Waiting for next update...";
+  } else {
+    const daysLeft = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const hoursLeft = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutesLeft = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const secondsLeft = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+    let timeLeftString = "";
+
+    if (daysLeft > 0) {timeLeftString += `${daysLeft}d `;}
+    if (hoursLeft > 0) {timeLeftString += `${hoursLeft}h `;}
+    if (minutesLeft > 0) {timeLeftString += `${minutesLeft}m `;}
+    timeLeftString += `${secondsLeft}s`;
+
+    timeLeftSpan.textContent = timeLeftString.trim();
+
+    if (timeDiff <= 24 * 60 * 60 * 1000) {timeLeftSpan.style.color = "red";}
+    else {timeLeftSpan.style.color = "";}
+  }
+}
+
 function isBrighterThan(color1, color2) {
   const brightness1 = calculateBrightness(color1);
   const brightness2 = calculateBrightness(color2);
