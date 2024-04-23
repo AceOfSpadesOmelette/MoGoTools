@@ -880,11 +880,9 @@ function RestoreStickerSpares(userData, StickerContainer) {
 function RestoreSelected(userData, StickerContainer) {
   
   const dataGlobalValue = StickerContainer.getAttribute("data-global");
-  const stickerData = userData[dataGlobalValue];
-  const selectedValue = stickerData.selected;
 
-  StickerContainer.classList.toggle("selected", selectedValue === 1);
-  StickerContainer.classList.toggle("not-selected", selectedValue === 0);
+  StickerContainer.classList.toggle("selected", userData[dataGlobalValue].selected === 1);
+  StickerContainer.classList.toggle("not-selected", userData[dataGlobalValue].selected === 0);
 }
 
 function RestoreTradeStates(userData, StickerContainer) {
