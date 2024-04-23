@@ -1258,7 +1258,7 @@ function countValveStickers() {
       continue;
     }
 
-    if (userData.hasOwnProperty(key) && userData[key].spare > 0) {
+    if (userData.hasOwnProperty(key) && userData[key].spare > 0 && userData[key].selected === 1) {
       const globalId = userData[key].id;
       const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
 
