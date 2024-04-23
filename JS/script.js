@@ -437,9 +437,9 @@ function FilterBySearchbar(GlobalID) {
   
   
   if (sticker) {
-    var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u");
+    var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
     var lowercaseFilterValue = filterValue.map(function (value) {
-      return value.toLowerCase().replace(/é/g, "e");
+      return value.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
     });
     
     if (filterValue.length === 1) {
