@@ -733,6 +733,7 @@ document.addEventListener("click", event => {
     UpdateCurrentAlbumStickerStates(parentContainer.getAttribute("data-global"));
     ChangeUserDataHaveSpareValue(userData, parentContainer);
     countSelectedStickers();
+    countValveStickers();
   }
 });
 
