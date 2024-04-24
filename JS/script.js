@@ -1684,7 +1684,7 @@ function copyToCollectionScreenshot() {
           var SpareSnapshotText = container.querySelector(".spare-snapshot-text");
           var currentSpareSnapshotTextMarginTop = parseInt(SpareSnapshotText.style.marginTop);
           SpareSnapshotText.style.marginTop = (currentSpareSnapshotTextMarginTop + 1) + "px";
-          if(querySelector(".sticker-ribbon")){            
+          if(container.querySelector(".sticker-ribbon")){            
             var stickerRibbon = container.querySelector(".sticker-ribbon");
           }
           if(container.querySelector(".sticker-ribbon-transparent")){
