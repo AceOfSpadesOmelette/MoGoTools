@@ -243,14 +243,14 @@ function ApplySelectedStyle(container) {
   //RestoreTradeStates(userData, container);
 
   if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
-    container.querySelector('.spare-spinner-container').style.marginTop = '53.5%';
+    container.querySelector('.spare-spinner-container').style.marginTop = '53.5px';
     if(WebZeroMobileOne === 1){
-      container.querySelector('.spare-spinner-container').style.marginTop = '52%';
+      container.querySelector('.spare-spinner-container').style.marginTop = '55%';
       container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-90%';
     }
   }
   if (userDataItem.selected === 1 && StickerSelectedZeroShowOneBack === 1) {
-    container.querySelector('.spare-spinner-container').style.marginTop = '5%';
+    container.querySelector('.spare-spinner-container').style.marginTop = '5px';
   }
 }
 
