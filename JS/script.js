@@ -245,8 +245,8 @@ function ApplySelectedStyle(container) {
   if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
     container.querySelector('.spare-spinner-container').style.marginTop = '53.5%';
     if(WebZeroMobileOne === 1){
-      container.querySelector('.spare-spinner-container').style.marginTop = '56.5%';
-      container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-90%';
+      container.querySelector('.spare-spinner-container').style.marginTop = '55%';
+      container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-88.5%';
     }
   }
   if (userDataItem.selected === 1 && StickerSelectedZeroShowOneBack === 1) {
