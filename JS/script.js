@@ -244,7 +244,7 @@ function ApplySelectedStyle(container) {
   //RestoreTradeStates(userData, container);
 
   if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
-    container.querySelector('.spare-spinner-container').style.marginTop = '54px';
+    container.querySelector('.spare-spinner-container').style.marginTop = '53.5px';
   }
   if (userDataItem.selected === 1 && StickerSelectedZeroShowOneBack === 1) {
     container.querySelector('.spare-spinner-container').style.marginTop = '6px';
