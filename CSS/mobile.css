@@ -842,6 +842,10 @@ input.spare-text{
 	margin-top: 3px;
 }
 
+#ChangeStickerStyleBtn{
+	font-size: 0.7rem;
+}
+
 #LayoutBtn{
 	cursor: not-allowed;
 	pointer-events: none;
