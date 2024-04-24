@@ -249,7 +249,7 @@ function ApplySelectedStyle(container) {
       container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-90%';
     }
   }
-  if (userDataItem.selected === 1 && StickerSelectedZeroShowOneBack === 1) {
+  else if (userDataItem.selected === 1 && StickerSelectedZeroShowOneBack === 1) {
     container.querySelector('.spare-spinner-container').style.marginTop = '5px';
   }
 }
