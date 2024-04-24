@@ -215,7 +215,8 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 
 .sticker-card-container{
 	margin: 8px;	
-	width: 90px;
+	min-width: 90px;
+	width: 100px;
   	/* flex-basis: calc(30% - 10px); */
 	/* margin: 5px; */
 	/* flex-basis: calc(25% - 10px);
@@ -227,9 +228,9 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	filter: drop-shadow(1px 0.5px 0px var(--darkerbrown));
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
 	.sticker-card-container{
-	  min-width: 70px;
+	  width: 70px;
 	}
 }
 
@@ -306,8 +307,39 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	border-top-right-radius: 3%3px;
 	border: 2px solid black;
 	margin-top: -40px;
-  	z-index: 3;
+	position: relative;
+	z-index: 3;
 	pointer-events: none;
+}
+
+.sticker-ribbon-transparent {
+	width: 78%;
+	background-color: transparent;
+	border-radius: 50% / 10%;
+	color: white;
+	font-size: 11px;
+	font-family: "Quicksand-Bold";
+	text-align: center;
+	display: grid;
+	align-items: center;
+	transform: perspective(200px) rotateX(10deg);
+	border-bottom-left-radius: 6%20px;
+	border-top-left-radius: 3%3px;
+	border-bottom-right-radius: 6%20px;
+	border-top-right-radius: 3%3px;
+	border: 2px solid transparent;
+	margin-top: -89px;
+	margin-left: auto;
+  	margin-right: auto;
+	position: relative;
+	z-index: 3;
+	pointer-events: none;
+}
+
+.sticker-structure-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .sticker-name {
@@ -805,7 +837,7 @@ input.spare-text{
   	margin-left: 10px;
 }
 
-#SortOrderBtn, #IgnorePrestigeBtn, #ViewportBtn, #LayoutBtn{
+#SortOrderBtn, #IgnorePrestigeBtn, #ViewportBtn, #LayoutBtn, #ChangeStickerStyleBtn{
 	width: 98%;
 	margin-top: 3px;
 }
@@ -1231,7 +1263,7 @@ input[class="player-info-field"]{
 	width: 100%;
 	font-size: 10px;
 	z-index: 5;
-	margin-top: -60px;
+	margin-top: -59px;
 	display: inherit;
 	position: relative;
 }
@@ -1515,4 +1547,25 @@ content: "\2212";
 #snapshot-area{
 	justify-content: center;
   	display: flex;
+}
+
+.heart-btn-container{
+	width: 12%;
+	position: relative;
+	z-index: 7;
+	margin-left: 104px;
+	margin-bottom: -55px;
+}
+
+.heart-img{
+	width: 100%;
+	z-index: 7;
+}
+
+.heart-menu-btn{	
+	cursor: pointer;
+}
+
+.heart-menu-btn.scale-down {
+	transform: scale(0.9);
 }
