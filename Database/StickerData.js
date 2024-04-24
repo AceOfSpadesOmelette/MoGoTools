@@ -6781,7 +6781,7 @@ export const STICKER_DATA = [
     },
     {
         "GlobalID": "71003",
-        "StickerName": "Pickin' Girl",
+        "StickerName": "Banjo Pluckin",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
