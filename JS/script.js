@@ -8,14 +8,18 @@ const VaultTierTwo = 500;
 const VaultTierThree = 800;
 let userData = {};
 let BackupuserData = {};
-let AlbumCurrentZeroAllOne = 0;
 const FilterList = {};
+
+// SETTINGS VARIABLE
+let AlbumCurrentZeroAllOne = 0;
 let AndZeroOrOne = 0;
 let AscendZeroDescendOne = 0;
 let IgnorePrestige = 0;
 let WebZeroMobileOne = 0;
 let LightZeroDarkOne = 0;
 let ImgOrientationLandscapeZeroPortraitOne = 0;
+let StickerSelectedZeroShowOneBack = 0;
+
 const defaultValues = {
   id: "0",
   selected: 0,
@@ -35,9 +39,9 @@ const FullAlbumValues = {
 function init() {
   compareViewport();
   console.log("Hello world!");
-  GenerateFilterSetButtons();   
+  GenerateFilterSetButtons();
   SetDefaultFilterStates();
-  
+
   // Check if userData exists in localStorage
   const LocaluserData = localStorage.getItem("userData");
   if (LocaluserData) {
@@ -46,19 +50,19 @@ function init() {
   } else {
     CreateNewUserData(STICKER_DATA);
   }
-  generateCurrentStickerBoard(STICKER_DATA, userData, "current-sticker-board");  
-  PerformSort({ currentTarget: document.querySelector("button[data-sort-type='GlobalID']") });  
+  generateCurrentStickerBoard(STICKER_DATA, userData, "current-sticker-board");
+  PerformSort({ currentTarget: document.querySelector("button[data-sort-type='GlobalID']") });
   NotSelectedByDefault();
-  
+
   UpdateTotalStickerQuantity();
   UpdateTotalStickerByRarityQuantity();
 
   countValveStickers();
   countSelectedStickers();
   //updateProgressBar();
-  handleBasicMenuNavigationClick({target: document.getElementById("BasicMenuNewsBtn")});
+
+  handleBasicMenuNavigationClick({ target: document.getElementById("BasicMenuNewsBtn") });
   LoadNews();
-  
   UpdateAlbumStartEndTime();
 
   // compareViewport();
@@ -68,17 +72,17 @@ function init() {
 window.addEventListener("DOMContentLoaded", () => {
   const loadingOverlay = document.getElementById("loading-overlay");
   loadingOverlay.style.display = "block";
-  setTimeout(() => {loadingOverlay.style.display = "none";}, 2000);
+  setTimeout(() => { loadingOverlay.style.display = "none"; }, 2000);
 });
 
-function SetDefaultFilterStates(){
+function SetDefaultFilterStates() {
   var FilterOptions = document.querySelectorAll("[data-filtervalue]");
   FilterOptions.forEach(item => {
     var filterDataAttribute = item.getAttribute("data-filtervalue");
     let FilterKey_Value = filterDataAttribute.split(">")[1];
     let FilterValue_Value = filterDataAttribute.split(">")[2];
-    if(FilterValue_Value.includes("|")){FilterValue_Value = FilterValue_Value.split("|");}
-    FilterList[filterDataAttribute] = {      
+    if (FilterValue_Value.includes("|")) { FilterValue_Value = FilterValue_Value.split("|"); }
+    FilterList[filterDataAttribute] = {
       inDatabase: filterDataAttribute.split(">")[0],
       FilterName: filterDataAttribute,
       FilterKey: FilterKey_Value,
@@ -92,7 +96,7 @@ function CreateNewUserData(dataset) {
   dataset
     .filter(item => item["AlbumNo"] === CurrentAlbumNumber)
     .forEach(item => {
-      const userDataItem = { ...defaultValues, id: item["GlobalID"]};
+      const userDataItem = { ...defaultValues, id: item["GlobalID"] };
       userData[item["GlobalID"]] = userDataItem;
     });
 }
@@ -100,10 +104,11 @@ function CreateNewUserData(dataset) {
 function NotSelectedByDefault() {
   const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach(container => {
-    if(!container.classList.contains("selected")){      
+    if (!container.classList.contains("selected")) {
       container.classList.add("not-selected");
     }
-    });
+    ApplySelectedStyle(container);
+  });
 }
 
 function generateCurrentStickerBoard(dataset, userData, targetParentElementID) {
@@ -117,56 +122,60 @@ function generateCurrentStickerBoard(dataset, userData, targetParentElementID) {
     const userDataItem = userData[item["GlobalID"]];
     const globalId = userDataItem.id;
 
-    const stickerCardContainer = document.querySelector(`${stickerContainerSelector}[data-global="${userDataItem.id}"]`);
+    const stickerCardContainer = document.querySelector(`${stickerContainerSelector}[data-global="${globalId}"]`);
 
     const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
-    if(IgnorePrestige === 1 && stickerData.Prestige === "1"){
-      if(stickerCardContainer){stickerCardContainer.remove();}
+    if (IgnorePrestige === 1 && stickerData.Prestige === "1") {
+      if (stickerCardContainer) { stickerCardContainer.remove(); }
       continue;
     }
 
-    else{
+    else {
       if ((userDataItem.show === 0 && stickerCardContainer)) {
         stickerCardContainer.remove();
-      } else if (userDataItem.show === 1 && !stickerCardContainer) {
+      } else if (userDataItem.show === 1) {
+        if(stickerCardContainer){
+          //console.log(stickerCardContainer.innerHTML);
+          ApplySelectedStyle(stickerCardContainer);
+        }
+        else {
+        if(!stickerCardContainer){
         const stickerElement = CreateStickerElement(item, "sticker-card-container", "sticker-card", true);
-        
         fragment.appendChild(stickerElement);
+        }
       }
       board.appendChild(fragment);
     }
   }
+  }
 }
 
 function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
-  const { StickerName, SetID, AlbumNo, GlobalID, AlbumName, Prestige, Golden, StickerRarity, ImageSource, Colour } = item;
-  
+  const { StickerName, SetID, AlbumNo, GlobalID, AlbumName, Golden, StickerRarity, ImageSource, Colour } = item;
+
   const StickerSet = SetID - AlbumNo * 100;
   const StickerSetPath = AlbumName;
   const StickerSetNo = GlobalID - SetID * 100;
   const DarkenedColour = DarkenColour(Colour, 25);
 
   let StickerNameClass = "sticker-name";
-  if (StickerName.length > 14) {StickerNameClass = "sticker-name-long-min14";}
-  if (StickerName.length > 18) {StickerNameClass = "sticker-name-long-min18";}
-  if (isBrighterThan(Colour, "#CCCCCC")) {StickerNameClass += "-dark";}
-
-  let starIcon = "Icon_Star.png";
-  if (Prestige === "1") {starIcon = "Icon_Star_Rainbow.png";}
+  if (StickerName.length > 14) { StickerNameClass = "sticker-name-long-min14"; }
+  if (StickerName.length > 18) { StickerNameClass = "sticker-name-long-min18"; }
+  if (isBrighterThan(Colour, "#CCCCCC")) { StickerNameClass += "-dark"; }
 
   let FrameHTML = "";
-  if (Golden === "1") {FrameHTML = `<img draggable="false" class="gold-frame" src="assets/stickers/BG_StickerSpecial.png">`;}
-  else{FrameHTML = `<img draggable="false" class="normal-frame" src="assets/stickers/BG_StickerBasic.png">`;}
+  if (Golden === "1") { FrameHTML = `<img draggable="false" class="gold-frame" src="assets/stickers/BG_StickerSpecial.png">`; }
+  else { FrameHTML = `<img draggable="false" class="normal-frame" src="assets/stickers/BG_StickerBasic.png">`; }
 
   const container = document.createElement("div");
   container.dataset.global = GlobalID;
   container.classList.add(ContainerClass);
 
   container.innerHTML = `
-    <div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img draggable="false" class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background-color: ${Colour}; border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</span></div></div>
+    <div class="sticker-structure-container"><div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img draggable="false" class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background-color: ${Colour}; border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</span></div></div></div>
   `;
-
-  if(isTracking){
+  if (isTracking) {
+    //appendHeartButtons(container);
     appendSpareSpinner(container);
     appendTradeButtons(container);
     RestoreSelected(userData, container);
@@ -174,6 +183,128 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
     RestoreTradeStates(userData, container);
   }
   return container;
+}
+
+function ApplySelectedStyle(container) {
+  const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === container.getAttribute("data-global"));
+  const userDataItem = userData[stickerData.GlobalID];
+  const StickerStructureContainer = container.querySelector('.sticker-structure-container');
+
+  const StickerSet = stickerData.SetID - stickerData.AlbumNo * 100;
+  const StickerSetPath = stickerData.AlbumName;
+  const StickerSetNo = stickerData.GlobalID - stickerData.SetID * 100;
+  const DarkenedColour = DarkenColour(stickerData.Colour, 25);
+  let StickerNameClass = "sticker-name";
+  if (stickerData.StickerName.length > 14) { StickerNameClass = "sticker-name-long-min14"; }
+  if (stickerData.StickerName.length > 18) { StickerNameClass = "sticker-name-long-min18"; }
+  if (isBrighterThan(stickerData.Colour, "#CCCCCC")) { StickerNameClass += "-dark"; }
+
+  let FrameHTML = "";
+  if (stickerData.Golden === "1") { FrameHTML = `<img draggable="false" class="gold-frame" src="assets/stickers/BG_StickerSpecial.png">`; }
+  else { FrameHTML = `<img draggable="false" class="normal-frame" src="assets/stickers/BG_StickerBasic.png">`; }
+
+  //const spareSpinnerHTML = container.querySelector('.spare-spinner-container').outerHTML;
+  //const tradeButtonHTML = container.querySelector('.trade-button-container').outerHTML;
+
+  StickerStructureContainer.innerHTML = `
+    <div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${stickerData.StickerRarity}Star.png"></div>
+    <div class="sticker-photo-container"><img draggable="false" class="sticker-card" src="stickers/${StickerSetPath}/${stickerData.ImageSource}">${FrameHTML}</div>
+    <div class="sticker-ribbon" style="background-color: ${stickerData.Colour}; border: 2px solid ${DarkenedColour};">
+      <span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${stickerData.StickerName}</span>
+    </div>
+  `;
+
+  if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 0) {
+    container.style.opacity = '0.4';
+    container.style.transition = '0.1s';
+  } else if (userDataItem.selected === 1 && StickerSelectedZeroShowOneBack === 0) {
+    container.style.opacity = '1.0';
+    container.style.transition = '0.1s';
+  }
+
+  if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
+    container.style.opacity = '1.0';
+    let StickerWhenNotSelected = "";
+    if (stickerData.Golden === "1") { StickerWhenNotSelected = `assets/stickers/CardBack_Special.png`; }
+    else { StickerWhenNotSelected = `assets/stickers/CardBack_Basic.png`; }
+
+    StickerStructureContainer.innerHTML = `
+      <div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${stickerData.StickerRarity}Star_Grey.png"></div>
+      <div class="sticker-photo-container"><img draggable="false" class="sticker-card" src="${StickerWhenNotSelected}"></div>
+      <div class="sticker-ribbon-transparent">
+        <span class="${StickerNameClass}" style="color: #9a9381;">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${stickerData.StickerName}</span>
+      </div>
+    `;
+  }
+
+  //container.insertAdjacentHTML('beforeend', spareSpinnerHTML);
+  //container.insertAdjacentHTML('beforeend', tradeButtonHTML);
+
+  //RestoreStickerSpares(userData, container);
+  //RestoreTradeStates(userData, container);
+
+  if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
+    container.querySelector('.spare-spinner-container').style.marginTop = '54px';
+  }
+  if (userDataItem.selected === 1 && StickerSelectedZeroShowOneBack === 1) {
+    container.querySelector('.spare-spinner-container').style.marginTop = '6px';
+  }
+}
+
+function appendHeartButtons(stickerElement) {
+  const heartElementHTML = `
+  <div class="heart-btn-container">
+    <img class="heart-menu-btn heart-img" src="assets/hearts/Heart_Default.png">
+    <div class="tooltiptext-heart"><img class="heart-img" src="assets/hearts/Heart_Light_1.png"><img class="heart-img" src="assets/hearts/Heart_Light_2.png"><img class="heart-img" src="assets/hearts/Heart_Light_3.png"><img class="heart-img" src="assets/hearts/Heart_Light_4.png"><img class="heart-img" src="assets/hearts/Heart_Light_5.png"><img class="heart-img" src="assets/hearts/Heart_Light_6.png"><img class="heart-img" src="assets/hearts/Heart_Light_7.png"><img class="heart-img" src="assets/hearts/Heart_Light_8.png"><img class="heart-img" src="assets/hearts/Heart_Light_9.png"></div>
+  </div>
+`;
+
+  const heartElement = document.createElement('div');
+  heartElement.innerHTML = heartElementHTML;
+
+  const stickerStarContainer = stickerElement.querySelector('.sticker-star-container');
+  stickerStarContainer.insertAdjacentElement('afterend', heartElement);
+
+  const HeartMenuBtn = stickerElement.querySelector(".heart-menu-btn");
+
+  HeartMenuBtn.addEventListener("mousedown", () => {
+    HeartMenuBtn.classList.add("scale-down");
+  });
+  HeartMenuBtn.addEventListener("mouseup", () => {
+    HeartMenuBtn.classList.remove("scale-down");
+  });
+  HeartMenuBtn.addEventListener("mouseleave", () => {
+    HeartMenuBtn.classList.remove("scale-down");
+  });
+  HeartMenuBtn.addEventListener("touchstart", () => {
+    HeartMenuBtn.classList.add("scale-down");
+  });
+  HeartMenuBtn.addEventListener("touchend", () => {
+    HeartMenuBtn.classList.remove("scale-down");
+  });
+}
+
+
+// window.addEventListener('load', function() {
+//   toggleHeartMenuBtn();
+// });
+
+function toggleHeartMenuBtn() {
+  document.addEventListener('click', function (event) {
+    if (event.target.matches('.heart-menu-btn')) {
+      var btn = event.target;
+      var currentSrc = btn.getAttribute('src');
+      var newSrc = '';
+
+      if (currentSrc.includes('HeartMenuCloseBtn_Light.png')) {
+        newSrc = currentSrc.replace('HeartMenuCloseBtn_Light.png', 'Heart_Default.png');
+      } else {
+        newSrc = currentSrc.replace('Heart_Default.png', 'HeartMenuCloseBtn_Light.png');
+      }
+
+      btn.setAttribute('src', newSrc);
+    }
+  });
 }
 
 function appendSpareSpinner(stickerElement) {
@@ -220,7 +351,7 @@ function appendTradeButtons(stickerElement) {
       button.classList.remove("scale-down");
       button.classList.remove("btnYellow");
     });
-    
+
     button.addEventListener("click", (event) => {
       const button = event.target.closest(".lfft-btn");
       var globalID = button.closest(".sticker-card-container").getAttribute("data-global");
@@ -233,7 +364,6 @@ function appendTradeButtons(stickerElement) {
 }
 
 function updateLFOrFTValue(globalID, property) {
-
   // Get the LF or FT button element based on the property value
   var button = document.querySelector(`[data-global="${globalID}"] .trade-button-container .lfft-btn[data-property="${property}"]`);
 
@@ -243,39 +373,39 @@ function updateLFOrFTValue(globalID, property) {
     //console.log(userData[globalID][property]);
 
     // Add or remove the .btnGreen class based on the updated value
-    if (userData[globalID][property] === 1) {      
-      if(property === "lookingfor"){button.classList.add("btnRed");}
-      if(property === "fortrade"){button.classList.add("btnGreen");}
+    if (userData[globalID][property] === 1) {
+      if (property === "lookingfor") { button.classList.add("btnRed"); }
+      if (property === "fortrade") { button.classList.add("btnGreen"); }
     } else {
-      if(property === "lookingfor"){button.classList.remove("btnRed");}
-      if(property === "fortrade"){button.classList.remove("btnGreen");}
+      if (property === "lookingfor") { button.classList.remove("btnRed"); }
+      if (property === "fortrade") { button.classList.remove("btnGreen"); }
     }
   }
 }
 
 var IgnorePrestigeBtn = document.getElementById("IgnorePrestigeBtn");
-IgnorePrestigeBtn.addEventListener("click", function() {
+IgnorePrestigeBtn.addEventListener("click", function () {
   IgnorePrestige = (IgnorePrestige + 1) % 2;
-  if(IgnorePrestige === 1){IgnorePrestigeBtn.classList.add("btnGreen");}
-  else{IgnorePrestigeBtn.classList.remove("btnGreen");}
+  if (IgnorePrestige === 1) { IgnorePrestigeBtn.classList.add("btnGreen"); }
+  else { IgnorePrestigeBtn.classList.remove("btnGreen"); }
   clearFilters();
-  GenerateFilterSetButtons();  
+  GenerateFilterSetButtons();
   UpdateTotalStickerQuantity();
-  UpdateTotalStickerByRarityQuantity(); 
+  UpdateTotalStickerByRarityQuantity();
   const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
     RestoreSelected(userData, container);
     RestoreStickerSpares(userData, container);
     RestoreTradeStates(userData, container);
     ChangeUserDataHaveSpareValue(userData, container);
-  });  
+  });
   countSelectedStickers();
-  countValveStickers(); 
+  countValveStickers();
 });
 
 // Add event listeners to LF and FT buttons
-document.querySelectorAll(".trade-button-container .btn").forEach(function(button) {
-  button.addEventListener("click", function() {
+document.querySelectorAll(".trade-button-container .btn").forEach(function (button) {
+  button.addEventListener("click", function () {
     var globalID = button.closest(".sticker-card-container").getAttribute("data-global");
     var property = button.getAttribute("data-property");
     updateLFOrFTValue(globalID, property);
@@ -320,7 +450,7 @@ function PerformSort(event) {
   const toSortKey = clickedButton.dataset.sortType;
 
   const containers = Array.from(document.querySelectorAll("#current-sticker-board .sticker-card-container"));
-  if(containers.length === 0){return;}
+  if (containers.length === 0) { return; }
 
   containers.sort((a, b) => {
     const aData = findStickerData(a.dataset.global);
@@ -379,7 +509,7 @@ function PerformSortOnsite(clickedSortBtn) {
 const sortButtons = Array.from(document.querySelectorAll(".sort-btn"));
 sortButtons.forEach(button => button.addEventListener("click", PerformSort));
 
-function findStickerData(globalId) {return STICKER_DATA.find(item => item["GlobalID"] === globalId);}
+function findStickerData(globalId) { return STICKER_DATA.find(item => item["GlobalID"] === globalId); }
 
 function compareStickerNames(aData, bData) {
   const aName = aData["GlobalID"];
@@ -393,10 +523,10 @@ function handleSortOrderBtnClick() {
   const container = document.querySelector(containerSelector);
   const sortOrderBtnText = document.getElementById("SortOrderBtnText");
 
-  Array.from(container.children).reverse().forEach(child => {container.appendChild(child);});
-  
-  if (AscendZeroDescendOne === 0) {sortOrderBtnText.textContent = "Ascending ⬆";} 
-  else if (AscendZeroDescendOne === 1) {sortOrderBtnText.textContent = "Descending ⬇";}
+  Array.from(container.children).reverse().forEach(child => { container.appendChild(child); });
+
+  if (AscendZeroDescendOne === 0) { sortOrderBtnText.textContent = "Ascending ⬆"; }
+  else if (AscendZeroDescendOne === 1) { sortOrderBtnText.textContent = "Descending ⬇"; }
 }
 
 document.getElementById("SortOrderBtn").addEventListener("click", handleSortOrderBtnClick);
@@ -434,24 +564,24 @@ function FilterBySearchbar(GlobalID) {
   var sticker = STICKER_DATA.find(function (item) {
     return item.GlobalID === GlobalID;
   });
-  
-  
+
+
   if (sticker) {
     var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
     var lowercaseFilterValue = filterValue.map(function (value) {
       return value.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
     });
-    
+
     if (filterValue.length === 1) {
       if (lowercaseFilterValue.some(function (value) {
         return stickerName.includes(value);
-      })) {        
+      })) {
         userData[GlobalID].show = 1;
       } else {
         userData[GlobalID].show = 0;
       }
     } else if (filterValue.length > 1) {
-      if(AndZeroOrOne === 0){
+      if (AndZeroOrOne === 0) {
         if (lowercaseFilterValue.every(function (value) {
           return stickerName.includes(value);
         })) {
@@ -460,7 +590,7 @@ function FilterBySearchbar(GlobalID) {
           userData[GlobalID].show = 0;
         }
       }
-      else if (AndZeroOrOne === 1){
+      else if (AndZeroOrOne === 1) {
         if (lowercaseFilterValue.some(function (value) {
           return stickerName.includes(value);
         })) {
@@ -475,13 +605,13 @@ function FilterBySearchbar(GlobalID) {
 }
 
 const searchbar = document.getElementById("filtermenu-searchbar");
-searchbar.addEventListener("input", () => {PerformFilters(userData);});
+searchbar.addEventListener("input", () => { PerformFilters(userData); });
 
 document.addEventListener("click", function (event) {
-   if (event.target.id === "ClearFilterMenuSearchBar") {
-     document.getElementById("filtermenu-searchbar").value = "";
-     PerformFilters(userData);
-   }
+  if (event.target.id === "ClearFilterMenuSearchBar") {
+    document.getElementById("filtermenu-searchbar").value = "";
+    PerformFilters(userData);
+  }
 });
 
 // FILTER (Filter)
@@ -494,7 +624,7 @@ filterButtons.forEach(button => {
 });
 
 function ChangeFilterButtonState(ButtonElement, isThisBtnClicked) {
-  if (isThisBtnClicked){
+  if (isThisBtnClicked) {
     FilterList[ButtonElement.dataset.filtervalue] = {
       ...FilterList[ButtonElement.dataset.filtervalue],
       FilterState: (FilterList[ButtonElement.dataset.filtervalue].FilterState + 1) % 3,
@@ -506,7 +636,7 @@ function ChangeFilterButtonState(ButtonElement, isThisBtnClicked) {
 function ChangeFilterBtnStyle(ButtonElement) {
   const filterState = FilterList[ButtonElement.dataset.filtervalue].FilterState;
   if (filterState === 0) { ButtonElement.classList.remove("btnRed", "btnGreen"); }
-  else if (filterState === 1) {ButtonElement.classList.add("btnGreen"); ButtonElement.classList.remove("btnRed"); }
+  else if (filterState === 1) { ButtonElement.classList.add("btnGreen"); ButtonElement.classList.remove("btnRed"); }
   else if (filterState === 2) { ButtonElement.classList.add("btnRed"); ButtonElement.classList.remove("btnGreen"); }
 }
 
@@ -514,13 +644,13 @@ function ChangeFilterBtnStyle(ButtonElement) {
 function updateClearFiltersButton() {
   let filterLengthElement = 0;
   Object.values(FilterList).forEach(item => {
-    if(item.FilterState !== 0){filterLengthElement++;}
+    if (item.FilterState !== 0) { filterLengthElement++; }
   })
   document.getElementById("filterLength").textContent = filterLengthElement;
   ChangeClearFiltersButtonStyle();
 }
 
-function ChangeClearFiltersButtonStyle(){
+function ChangeClearFiltersButtonStyle() {
   if (document.getElementById("filterLength").textContent > 0) {
     document.getElementById("ClearFiltersBtn").classList.add("btnRed");
   } else {
@@ -530,11 +660,11 @@ function ChangeClearFiltersButtonStyle(){
 
 
 const clearFiltersBtn = document.getElementById("ClearFiltersBtn");
-clearFiltersBtn.addEventListener("click", () => {clearFilters();})
-function clearFilters() {  
+clearFiltersBtn.addEventListener("click", () => { clearFilters(); })
+function clearFilters() {
   document.getElementById("filtermenu-searchbar").value = "";
   Object.values(FilterList).forEach(item => {
-    if(item.FilterState !== 0 && item.FilterName !== "1>StickerName>"){
+    if (item.FilterState !== 0 && item.FilterName !== "1>StickerName>") {
       item.FilterState = 0;
       const FilterBtnSource = document.querySelector(`.filter-btn[data-filtervalue="${item.FilterName}"]`);
       ChangeFilterButtonState(FilterBtnSource, false);
@@ -543,7 +673,7 @@ function clearFilters() {
   PerformFilters(userData);
 }
 
-document.getElementById("RefreshFiltersBtn").addEventListener("click", function(){PerformFilters(userData);})
+document.getElementById("RefreshFiltersBtn").addEventListener("click", function () { PerformFilters(userData); })
 
 const AndOrFilterModeBtn = document.getElementById("AndOrFilterModeBtn");
 AndOrFilterModeBtn.addEventListener("click", function () {
@@ -560,35 +690,35 @@ AndOrFilterModeBtn.addEventListener("click", function () {
 });
 
 function PerformFilters(userData) {
-  for (var key in userData){
-    userData[key].show = 1;    
-    
-    if(AndZeroOrOne === 0){
+  for (var key in userData) {
+    userData[key].show = 1;
+
+    if (AndZeroOrOne === 0) {
       FilterBySpareRange(FilterList, key);
-      if(userData[key].show === 1){
+      if (userData[key].show === 1) {
         FilterBySearchbar(key);
-        if(userData[key].show === 1){
+        if (userData[key].show === 1) {
           FilterByButtons(key);
         }
       }
-    }else if (AndZeroOrOne === 1){
+    } else if (AndZeroOrOne === 1) {
       FilterBySpareRange(FilterList, key);
-      if(userData[key].show === 1){
+      if (userData[key].show === 1) {
         FilterByButtons(key);
-        if(IncludeStateFilters.length === 0 && ExcludeStateFilters.length === 0){
+        if (IncludeStateFilters.length === 0 && ExcludeStateFilters.length === 0) {
           userData[key].show = 0;
-          if(document.getElementById("filtermenu-searchbar").value === ""){
+          if (document.getElementById("filtermenu-searchbar").value === "") {
             userData[key].show = 1;
           }
         }
-        if((userData[key].show === 0 && document.getElementById("filtermenu-searchbar").value !== "")){
+        if ((userData[key].show === 0 && document.getElementById("filtermenu-searchbar").value !== "")) {
           FilterBySearchbar(key);
         }
       }
     }
 
   }
-  if(document.getElementById("filtermenu-searchbar").value === ""){FilterList[document.getElementById("filtermenu-searchbar").getAttribute("data-filtervalue")].FilterState = 0;}
+  if (document.getElementById("filtermenu-searchbar").value === "") { FilterList[document.getElementById("filtermenu-searchbar").getAttribute("data-filtervalue")].FilterState = 0; }
   updateClearFiltersButton();
   generateCurrentStickerBoard(STICKER_DATA, userData, "current-sticker-board");
   const currentTarget = document.querySelector(".sort-btn.btnBlue");
@@ -602,8 +732,8 @@ function PerformFilters(userData) {
 const DefaultStateFilters = [];
 const IncludeStateFilters = [];
 const ExcludeStateFilters = [];
-function FilterByButtons(GlobalID){
-  var sticker = STICKER_DATA.find(function (item) {return item.GlobalID === GlobalID;});
+function FilterByButtons(GlobalID) {
+  var sticker = STICKER_DATA.find(function (item) { return item.GlobalID === GlobalID; });
   DefaultStateFilters.length = 0;
   IncludeStateFilters.length = 0;
   ExcludeStateFilters.length = 0;
@@ -614,92 +744,93 @@ function FilterByButtons(GlobalID){
     if (
       filter.FilterName !== "1>StickerName>" &&
       filter.FilterName !== "0>spare>spare-filter-min|spare-filter-max"
-      ){
-          switch (filter.FilterState) {
-            case 0:
-              DefaultStateFilters.push(filter);
-              break;
-            case 1:
-              IncludeStateFilters.push(filter);
-              break;
-            case 2:
-              ExcludeStateFilters.push(filter);
-              break;
-            default:
-              break;
-            }
+    ) {
+      switch (filter.FilterState) {
+        case 0:
+          DefaultStateFilters.push(filter);
+          break;
+        case 1:
+          IncludeStateFilters.push(filter);
+          break;
+        case 2:
+          ExcludeStateFilters.push(filter);
+          break;
+        default:
+          break;
+      }
+    }
+  }
+  if (IncludeStateFilters.length === 0 && ExcludeStateFilters.length === 0) {
+    userData[GlobalID].show = 1; return;
+  }
+
+  // AND Mode
+  if (AndZeroOrOne === 0) {
+    // Include Filter (AND)
+    for (const filter of IncludeStateFilters) {
+      var filterKeytemp = filter.FilterKey;
+      if (filter.inDatabase === "0") {
+        if (userData[GlobalID][filterKeytemp] !== parseInt(filter.FilterValue)) {
+          userData[GlobalID].show = 0;
         }
+      } else if (filter.inDatabase === "1") {
+        if (sticker[filterKeytemp] !== filter.FilterValue) {
+          userData[GlobalID].show = 0;
+        }
+      }
     }
-    if(IncludeStateFilters.length === 0 && ExcludeStateFilters.length === 0){
-      userData[GlobalID].show = 1; return;
+    // Exclude Filter (AND)
+    for (const filter of ExcludeStateFilters) {
+      var filterKeytemp = filter.FilterKey;
+      if (filter.inDatabase === "0") {
+        if (userData[GlobalID][filterKeytemp] === parseInt(filter.FilterValue)) {
+          userData[GlobalID].show = 0;
+        }
+      } else if (filter.inDatabase === "1") {
+        if (sticker[filterKeytemp] === filter.FilterValue) {
+          userData[GlobalID].show = 0;
+        }
+      }
     }
-    
-    // AND Mode
-    if(AndZeroOrOne === 0){
-      // Include Filter (AND)
+  }
+  // OR Mode
+  else if (AndZeroOrOne === 1) {
+    // Include Filter (OR)
+    if (IncludeStateFilters.length > 0) {
       for (const filter of IncludeStateFilters) {
         var filterKeytemp = filter.FilterKey;
-        if(filter.inDatabase === "0"){
-          if(userData[GlobalID][filterKeytemp] !== parseInt(filter.FilterValue)){
-            userData[GlobalID].show = 0;
-          }
-        } else if(filter.inDatabase === "1"){
-          if(sticker[filterKeytemp] !== filter.FilterValue){
-            userData[GlobalID].show = 0;
-          }
+
+        if (filter.inDatabase === "0") {
+          if (userData[GlobalID][filterKeytemp] === parseInt(filter.FilterValue)) {
+            userData[GlobalID].show = 1;
+            return;
+          } else { userData[GlobalID].show = 0; }
+        } else if (filter.inDatabase === "1") {
+          if (sticker[filterKeytemp] === filter.FilterValue) {
+            userData[GlobalID].show = 1;
+            return;
+          } else { userData[GlobalID].show = 0; }
         }
       }
-      // Exclude Filter (AND)
+    }
+    // Exclude Filter (OR)
+    if (userData[GlobalID].show === 0 || ExcludeStateFilters.length > 0) {
       for (const filter of ExcludeStateFilters) {
         var filterKeytemp = filter.FilterKey;
-        if(filter.inDatabase === "0"){
-          if(userData[GlobalID][filterKeytemp] === parseInt(filter.FilterValue)){
-            userData[GlobalID].show = 0;
-          }
-        } else if(filter.inDatabase === "1"){
-          if(sticker[filterKeytemp] === filter.FilterValue){
-            userData[GlobalID].show = 0;
-          }
+        if (filter.inDatabase === "0") {
+          if (userData[GlobalID][filterKeytemp] !== parseInt(filter.FilterValue)) {
+            userData[GlobalID].show = 1;
+            return;
+          } else { userData[GlobalID].show = 0; return; }
+        } else if (filter.inDatabase === "1") {
+          if (sticker[filterKeytemp] !== filter.FilterValue) {
+            userData[GlobalID].show = 1;
+            return;
+          } else { userData[GlobalID].show = 0; return; }
         }
       }
     }
-    // OR Mode
-    else if (AndZeroOrOne === 1){
-      // Include Filter (OR)
-      if(IncludeStateFilters.length > 0){      
-        for (const filter of IncludeStateFilters) {
-          var filterKeytemp = filter.FilterKey;
-          if(filter.inDatabase === "0"){
-            if(userData[GlobalID][filterKeytemp] === parseInt(filter.FilterValue)){
-              userData[GlobalID].show = 1;
-              return;
-            } else{userData[GlobalID].show = 0;}
-          } else if(filter.inDatabase === "1"){
-            if(sticker[filterKeytemp] === filter.FilterValue){
-              userData[GlobalID].show = 1;
-              return;
-            } else{userData[GlobalID].show = 0;}
-          }
-        }
-      }
-      // Exclude Filter (OR)
-      if(userData[GlobalID].show === 0 || ExcludeStateFilters.length > 0){
-        for (const filter of ExcludeStateFilters) {
-          var filterKeytemp = filter.FilterKey;
-          if(filter.inDatabase === "0"){
-            if(userData[GlobalID][filterKeytemp] !== parseInt(filter.FilterValue)){
-              userData[GlobalID].show = 1;
-              return;
-            } else {userData[GlobalID].show = 0; return;}
-          } else if(filter.inDatabase === "1"){
-            if(sticker[filterKeytemp] !== filter.FilterValue){
-              userData[GlobalID].show = 1;
-              return;
-            } else {userData[GlobalID].show = 0; return;}
-          }
-        }
-      }
-    }
+  }
 }
 
 
@@ -730,7 +861,8 @@ document.addEventListener("click", event => {
   if (parentContainer && target.classList.contains("sticker-card")) {
     parentContainer.classList.toggle("selected");
     parentContainer.classList.toggle("not-selected");
-    UpdateCurrentAlbumStickerStates(parentContainer.getAttribute("data-global"));
+    UpdateCurrentAlbumStickerStates(parentContainer.getAttribute("data-global"));    
+    ApplySelectedStyle(parentContainer);
     ChangeUserDataHaveSpareValue(userData, parentContainer);
     countSelectedStickers();
     countValveStickers();
@@ -752,26 +884,18 @@ btnGroupTitles.forEach(btnGroupTitle => {
 
 
 const stickerContainer = document.getElementById("current-sticker-board");
-stickerContainer.addEventListener("input", function(event) {
+stickerContainer.addEventListener("input", function (event) {
   const target = event.target;
   const clickedStickerContainer = target.closest(".sticker-card-container");
   if (target.classList.contains("spare-text") && clickedStickerContainer) {
     target.value = target.value.replace(/^0+(?=\d)/, "");
     const dataGlobal = clickedStickerContainer.getAttribute("data-global");
     if (target.value > 100) {
-      if (target.value.slice(0, -1) === "100") {
-        target.value = "100";
-      } else {
-        target.value = target.value.slice(0, 2);
-      }
-    } else if (target.value < 0) {
-      target.value = 0;
-    } else if (target.value === ""){
-      setTimeout(() => {
-        if (target.value === "") { // Check if value is still empty before setting it to 0
-          target.value = 0;
-        }
-      }, 5000); // Set 5s timeout for user to type before setting it to zero
+      if (target.value.slice(0, -1) === "100") {target.value = "100";} 
+      else {target.value = target.value.slice(0, 2);}
+    } else if (target.value < 0) {target.value = 0;} else if (target.value === "") {
+      setTimeout(() => {if (target.value === "") {target.value = 0;}}, 5000);
+      // Set 5s timeout for user to type before setting it to zero
     }
     if (target.value > 0) {
       if (!clickedStickerContainer.classList.contains("selected")) {
@@ -783,6 +907,8 @@ stickerContainer.addEventListener("input", function(event) {
     countSelectedStickers();
     UpdateCurrentAlbumStickerStates(dataGlobal);
     ChangeUserDataHaveSpareValue(userData, clickedStickerContainer);
+    //setTimeout(() => {ApplySelectedStyle(clickedStickerContainer);}, 0);
+    ApplySelectedStyle(clickedStickerContainer)
     countValveStickers();
   }
 });
@@ -805,7 +931,7 @@ function handleFilterInput(event) {
       }
     } else if (target.value < 0) {
       target.value = 0;
-    } else if (target.value === ""){
+    } else if (target.value === "") {
       setTimeout(() => {
         if (target.value === "") { // Check if value is still empty before setting it to 0
           target.value = 0;
@@ -878,11 +1004,10 @@ function RestoreStickerSpares(userData, StickerContainer) {
 }
 
 function RestoreSelected(userData, StickerContainer) {
-  
   const dataGlobalValue = StickerContainer.getAttribute("data-global");
-
   StickerContainer.classList.toggle("selected", userData[dataGlobalValue].selected === 1);
   StickerContainer.classList.toggle("not-selected", userData[dataGlobalValue].selected === 0);
+  ApplySelectedStyle(StickerContainer);
 }
 
 function RestoreTradeStates(userData, StickerContainer) {
@@ -902,14 +1027,14 @@ function updateProgressBar() {
   var progressContainers = document.querySelectorAll(".progress-container");
   // console.log(document.querySelector("#total-stickers-quantity").textContent);
 
-  progressContainers.forEach(function(container) {
+  progressContainers.forEach(function (container) {
     var progressText = container.querySelector(".progress-text").textContent;
     progressText = progressText.replace(/\s/g, "");
     var progressValue = parseInt(progressText.split("/")[0]);
     var totalValue = parseInt(progressText.split("/")[1]);
 
-    if(progressValue === "0"){progressBar.style.width = 0;}
-    else{
+    if (progressValue === "0") { progressBar.style.width = 0; }
+    else {
       var progressPercentage = (progressValue / totalValue) * 100;
 
       var progressBar = container.querySelector(".progress-bar");
@@ -929,21 +1054,21 @@ function GenerateFilterSetButtons() {
       const SetColour = set.Colour;
       const SetNo = parseInt(SetID) - parseInt(set.AlbumNo) * 100;
       const SetName = set.SetName;
-      const SetImgSrc =  `Icon_${SetID}.png`;
+      const SetImgSrc = `Icon_${SetID}.png`;
       const SetTotalStickers = STICKER_DATA.filter(sticker => sticker.SetID === SetID).length;
       const SetIsPrestige = set.Prestige;
-      
-      if(IgnorePrestige === 1 && SetIsPrestige === "1"){return;}
-      else{
-        
+
+      if (IgnorePrestige === 1 && SetIsPrestige === "1") { return; }
+      else {
+
         let ButtonElement = `
           <button data-filtervalue="1>SetID>${SetID}" class="filter-btn btn" type="button">Set ${SetNo}</button>
         `;
         filterBtnSubgroup.innerHTML += ButtonElement;
 
         let SetNameClass = "set-name";
-        if (SetName.length > 15) {SetNameClass = "set-name-long-min15";}
-        if (isBrighterThan(SetColour, "#CCCCCC")) {SetNameClass += "-dark";}
+        if (SetName.length > 15) { SetNameClass = "set-name-long-min15"; }
+        if (isBrighterThan(SetColour, "#CCCCCC")) { SetNameClass += "-dark"; }
         const SetCardContainerElement = `
           <div class="set-card-container"><img draggable="false" class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src="logo/Icon_Placeholder.png";"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
         `;
@@ -1047,11 +1172,11 @@ function importUserData(userDataString) {
       } else if (line.startsWith("player-link: ")) {
         playerLink = line.substring("player-link: ".length);
       }
-      else if(line.startsWith("leftover-valve-stars: ")){
+      else if (line.startsWith("leftover-valve-stars: ")) {
         LeftoverValveStars = line.substring("leftover-valve-stars: ".length);
       }
     });
-    if (LeftoverValveStars === "") {LeftoverValveStars = "0";}
+    if (LeftoverValveStars === "") { LeftoverValveStars = "0"; }
 
     // Remove player-ign and player-link lines from userDataString
     const filteredLines = lines.filter(line => !line.startsWith("CurrentAlbumNumber: ") && !line.startsWith("player-ign: ") && !line.startsWith("player-link: ") && !line.startsWith("leftover-valve-stars: "));
@@ -1062,7 +1187,7 @@ function importUserData(userDataString) {
     // Check for missing keys and add default values
     Object.keys(parsedData).forEach((key) => {
       // Destructure the 'id' property from the object
-      const { id, ...values } = parsedData[key];    
+      const { id, ...values } = parsedData[key];
       // Create a new object with the parsed values
       parsedData[key] = {
         // Keep the 'id' property as is
@@ -1087,7 +1212,7 @@ function importUserData(userDataString) {
       ChangeUserDataHaveSpareValue(userData, container);
       // countSelectedStickers();
       countValveStickers();
-    });    
+    });
     countSelectedStickers();
     updateProgressBar();
   } catch (error) {
@@ -1115,7 +1240,7 @@ importFromFileBtn.addEventListener("click", () => {
   fileInput.addEventListener("change", () => {
     const file = fileInput.files[0];
     const reader = new FileReader();
-    reader.onload = function(event) {
+    reader.onload = function (event) {
       const userDataString = event.target.result.trim();
       textArea.value = userDataString;
       importUserData(userDataString);
@@ -1143,8 +1268,8 @@ function UpdateTotalStickerQuantity() {
   const totalStickersQuantity = document.querySelector("#total-stickers-quantity");
   let count = 0;
   STICKER_DATA.forEach((sticker) => {
-    if (IgnorePrestige === 1 && sticker.Prestige === "1"){return;}
-    if (sticker.AlbumNo === CurrentAlbumNumber) {count++;}
+    if (IgnorePrestige === 1 && sticker.Prestige === "1") { return; }
+    if (sticker.AlbumNo === CurrentAlbumNumber) { count++; }
   })
   totalStickersQuantity.textContent = count.toString();
 }
@@ -1155,21 +1280,21 @@ function UpdateTotalStickerByRarityQuantity() {
     let count = 0;
 
     STICKER_DATA.forEach((sticker) => {
-      if (IgnorePrestige === 1 && sticker.Prestige === "1") {return;}
-      if (parseInt(sticker.StickerRarity) === RarityNumber && sticker.AlbumNo === CurrentAlbumNumber) {count++;}
+      if (IgnorePrestige === 1 && sticker.Prestige === "1") { return; }
+      if (parseInt(sticker.StickerRarity) === RarityNumber && sticker.AlbumNo === CurrentAlbumNumber) { count++; }
     });
 
     RarityQuantity.textContent = count.toString();
   }
   const GoldQuantity = document.getElementById(`total-gold-quantity`);
-    let count = 0;
+  let count = 0;
 
-    STICKER_DATA.forEach((sticker) => {
-      if (IgnorePrestige === 1 && sticker.Prestige === "1") {return;}
-      if (parseInt(sticker.Golden) === 1 && sticker.AlbumNo === CurrentAlbumNumber) {count++;}
-    });
+  STICKER_DATA.forEach((sticker) => {
+    if (IgnorePrestige === 1 && sticker.Prestige === "1") { return; }
+    if (parseInt(sticker.Golden) === 1 && sticker.AlbumNo === CurrentAlbumNumber) { count++; }
+  });
 
-    GoldQuantity.textContent = count.toString();
+  GoldQuantity.textContent = count.toString();
 }
 
 function countSelectedStickers() {
@@ -1178,17 +1303,17 @@ function countSelectedStickers() {
   const setSpans = Array.from(document.querySelectorAll("[data-setid]"));
 
   // Reset each data-setid value to zero
-  setSpans.forEach(setSpan => {setSpan.textContent = "0";});
+  setSpans.forEach(setSpan => { setSpan.textContent = "0"; });
 
   for (const key in userData) {
     const globalId = userData[key].id;
     const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
-    if(IgnorePrestige === 1 && stickerData.Prestige === "1"){continue;}
+    if (IgnorePrestige === 1 && stickerData.Prestige === "1") { continue; }
 
-    else{
+    else {
       if (userData.hasOwnProperty(key) && userData[key].selected === 1) {
         const setId = Math.floor(userData[key].id / 100);
-  
+
         if (setDuplicates.has(setId)) {
           setDuplicates.set(setId, setDuplicates.get(setId) + 1);
         } else {
@@ -1223,13 +1348,13 @@ function countSelectedStickerByRarity() {
   for (const key in userData) {
     const globalId = userData[key].id;
     const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
-    if(IgnorePrestige === 1 && stickerData.Prestige === "1"){continue;}
+    if (IgnorePrestige === 1 && stickerData.Prestige === "1") { continue; }
 
-    else{
+    else {
       if (userData.hasOwnProperty(key) && userData[key].selected === 1) {
         const StickerRarityNumber = stickerData.StickerRarity;
         document.getElementById(`rarity${StickerRarityNumber}-quantity`).textContent++;
-        if(stickerData.Golden === "1"){document.getElementById(`gold-quantity`).textContent++}
+        if (stickerData.Golden === "1") { document.getElementById(`gold-quantity`).textContent++ }
       }
     }
   }
@@ -1240,7 +1365,7 @@ function countSelectedStickerByRarity() {
     const percentage = (StickerQuantity / TotalStickerQuantity * 100).toFixed(1);
     document.getElementById(`rarity${RarityNumber}-percentage`).textContent = `${percentage}%`;
   }
-  
+
   const GoldenPercentage = (parseInt(document.getElementById(`gold-quantity`).textContent) / parseInt(document.getElementById(`total-gold-quantity`).textContent) * 100).toFixed(1);
   document.getElementById(`gold-percentage`).textContent = `${GoldenPercentage}%`;
 }
@@ -1258,7 +1383,7 @@ function countValveStickers() {
     }
 
     if (userData.hasOwnProperty(key) && userData[key].spare > 0 && userData[key].selected === 1) {
-      const globalId = userData[key].id;
+      //const globalId = userData[key].id;
       const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
 
       if (stickerData) {
@@ -1281,7 +1406,7 @@ function countValveStickers() {
 
   const ValveSum = valveQuantity + parseInt(PrestigeLeftoverQuantity);
   totalValveQuantity.textContent = ValveSum.toString();
-  
+
   const valveTierImage = document.querySelector(".valve-tier");
   let StickersToNextTier = 0;
   let nextTierText = "";
@@ -1304,15 +1429,16 @@ function countValveStickers() {
     valveTierImage.src = "assets/stickers/StickerValveTier3.png";
     nextTierText = `${StickersToNextTier} stars remaining after exchanging Tier 3 vault.`;
   }
-  
+
   document.getElementById("NextValveCounter").textContent = nextTierText;
 }
 
-function ChangeUserDataHaveSpareValue(userData, StickerContainer){
+
+function ChangeUserDataHaveSpareValue(userData, StickerContainer) {
   const dataGlobalValue = StickerContainer.getAttribute("data-global");
-  if(userData[dataGlobalValue].selected === 1 && userData[dataGlobalValue].spare > 0){
+  if (userData[dataGlobalValue].selected === 1 && userData[dataGlobalValue].spare > 0) {
     userData[dataGlobalValue].havespare = 1;
-  } else{userData[dataGlobalValue].havespare = 0;}
+  } else { userData[dataGlobalValue].havespare = 0; }
 }
 
 function UpdateAlbumStartEndTime() {
@@ -1330,8 +1456,8 @@ function UpdateAlbumStartEndTime() {
       const startTime = parseInt(set.StartTime);
       const endTime = parseInt(set.EndTime);
 
-      if (startTime < earliestStartTime) {earliestStartTime = startTime;}
-      if (endTime < earliestEndTime) {earliestEndTime = endTime;}
+      if (startTime < earliestStartTime) { earliestStartTime = startTime; }
+      if (endTime < earliestEndTime) { earliestEndTime = endTime; }
     }
   });
 
@@ -1375,15 +1501,15 @@ function updateTimeLeft(endDateTime) {
 
     let timeLeftString = "";
 
-    if (daysLeft > 0) {timeLeftString += `${daysLeft}d `;}
-    if (hoursLeft > 0) {timeLeftString += `${hoursLeft}h `;}
-    if (minutesLeft > 0) {timeLeftString += `${minutesLeft}m `;}
+    if (daysLeft > 0) { timeLeftString += `${daysLeft}d `; }
+    if (hoursLeft > 0) { timeLeftString += `${hoursLeft}h `; }
+    if (minutesLeft > 0) { timeLeftString += `${minutesLeft}m `; }
     timeLeftString += `${secondsLeft}s`;
 
     timeLeftSpan.textContent = timeLeftString.trim();
 
-    if (timeDiff <= 24 * 60 * 60 * 1000) {timeLeftSpan.style.color = "red";}
-    else {timeLeftSpan.style.color = "";}
+    if (timeDiff <= 24 * 60 * 60 * 1000) { timeLeftSpan.style.color = "red"; }
+    else { timeLeftSpan.style.color = ""; }
   }
 }
 
@@ -1441,7 +1567,7 @@ function DarkenColour(colour, percentagevalue) {
 }
 
 function handleSetImageOrientationBtnClick(isClicked) {
-  if(isClicked === true){ImgOrientationLandscapeZeroPortraitOne = (ImgOrientationLandscapeZeroPortraitOne + 1) % 2;}
+  if (isClicked === true) { ImgOrientationLandscapeZeroPortraitOne = (ImgOrientationLandscapeZeroPortraitOne + 1) % 2; }
 
   if (ImgOrientationLandscapeZeroPortraitOne === 0) {
     document.getElementById("SetImageOrientationBtn").textContent = "Current Layout: Landscape";
@@ -1449,23 +1575,23 @@ function handleSetImageOrientationBtnClick(isClicked) {
     document.getElementById("SetImageOrientationBtn").textContent = "Current Layout: Portrait";
   }
 }
-document.getElementById("SetImageOrientationBtn").addEventListener("click", function() {
+document.getElementById("SetImageOrientationBtn").addEventListener("click", function () {
   handleSetImageOrientationBtnClick(true);
 });
 
 let includeIGN = 0;
 let includePlayerLink = 0;
 var IncludeIGNBtn = document.getElementById("IncludeIGNBtn");
- var IncludePlayerLinkBtn = document.getElementById("IncludePlayerLinkBtn");
-IncludeIGNBtn.addEventListener("click", function() {
-   includeIGN = (includeIGN + 1) % 2;
-   if(includeIGN === 1){IncludeIGNBtn.classList.add("btnGreen");}
-   else{IncludeIGNBtn.classList.remove("btnGreen");}
+var IncludePlayerLinkBtn = document.getElementById("IncludePlayerLinkBtn");
+IncludeIGNBtn.addEventListener("click", function () {
+  includeIGN = (includeIGN + 1) % 2;
+  if (includeIGN === 1) { IncludeIGNBtn.classList.add("btnGreen"); }
+  else { IncludeIGNBtn.classList.remove("btnGreen"); }
 });
-IncludePlayerLinkBtn.addEventListener("click", function() {
-   includePlayerLink = (includePlayerLink + 1) % 2;
-   if(includePlayerLink === 1){IncludePlayerLinkBtn.classList.add("btnGreen");}
-   else{IncludePlayerLinkBtn.classList.remove("btnGreen");}
+IncludePlayerLinkBtn.addEventListener("click", function () {
+  includePlayerLink = (includePlayerLink + 1) % 2;
+  if (includePlayerLink === 1) { IncludePlayerLinkBtn.classList.add("btnGreen"); }
+  else { IncludePlayerLinkBtn.classList.remove("btnGreen"); }
 });
 
 function copyToCollectionScreenshot() {
@@ -1513,7 +1639,7 @@ function copyToCollectionScreenshot() {
     var stickerBoard = collectionScreenshot.querySelector("#sticker-board");
     if (stickerBoard) {
       stickerBoard.insertAdjacentHTML("afterend", snapshotFooterElement);
-    } 
+    }
 
     var screenshotContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
     screenshotContainers.forEach(function (container) {
@@ -1540,9 +1666,17 @@ function copyToCollectionScreenshot() {
           <img draggable="false" class="spare-img" src="assets/stickers/Collections_TradingGroup_NumberBG_Small.png">
           <span class="spare-snapshot-text">+${userData[globalID].spare}</span>
         `;
-        container.insertBefore(spareContainer, container.querySelector(".sticker-ribbon"));
-        container.querySelector(".sticker-ribbon").style.marginTop = "-4.5px";
-        if(ImgOrientationLandscapeZeroPortraitOne === 1){          
+        if(container.querySelector(".sticker-ribbon")){
+          const parentElement = container.querySelector(".sticker-ribbon").parentNode;
+          parentElement.insertBefore(spareContainer, container.querySelector(".sticker-ribbon"));
+          container.querySelector(".sticker-ribbon").style.marginTop = "-4.5px";
+        }
+        if(container.querySelector(".sticker-ribbon-transparent")){
+          const parentElement = container.querySelector(".sticker-ribbon-transparent").parentNode;
+          parentElement.insertBefore(spareContainer, container.querySelector(".sticker-ribbon-transparent"));
+          container.querySelector(".sticker-ribbon-transparent").style.marginTop = "-58.5px";
+        }
+        if (ImgOrientationLandscapeZeroPortraitOne === 1) {
           container.querySelector(".spare-snapshot-text").style.marginLeft = "-31px";
           container.querySelector(".spare-snapshot-text").style.marginTop = "3px";
         }
@@ -1550,63 +1684,70 @@ function copyToCollectionScreenshot() {
           var SpareSnapshotText = container.querySelector(".spare-snapshot-text");
           var currentSpareSnapshotTextMarginTop = parseInt(SpareSnapshotText.style.marginTop);
           SpareSnapshotText.style.marginTop = (currentSpareSnapshotTextMarginTop + 1) + "px";
-          var stickerRibbon = container.querySelector(".sticker-ribbon");
+          if(querySelector(".sticker-ribbon")){            
+            var stickerRibbon = container.querySelector(".sticker-ribbon");
+          }
+          if(container.querySelector(".sticker-ribbon-transparent")){
+            var stickerRibbon = container.querySelector(".sticker-ribbon-transparent");
+          }
           var currentstickerRibbonMarginTop = parseInt(stickerRibbon.style.marginTop);
           stickerRibbon.style.marginTop = (currentstickerRibbonMarginTop + 1) + "px";
         }
       }
 
-    // Check if all ".lf-btn" in all ".trade-button-container-screenshot" have ".btnRed" class
-    var allButtonsRed = true;
-    var tradeButtonContainers = collectionScreenshot.querySelectorAll(".trade-button-container-screenshot");
-    tradeButtonContainers.forEach(function (container) {
-      var buttons = container.querySelectorAll(".lf-btn");
-      buttons.forEach(function (button) {
-        if (!button.classList.contains("btnRed")) {
-          allButtonsRed = false;
-        }
+      // Check if all ".lf-btn" in all ".trade-button-container-screenshot" have ".btnRed" class
+      var allButtonsRed = true;
+      var tradeButtonContainers = collectionScreenshot.querySelectorAll(".trade-button-container-screenshot");
+      tradeButtonContainers.forEach(function (container) {
+        var buttons = container.querySelectorAll(".lf-btn");
+        buttons.forEach(function (button) {
+          if (!button.classList.contains("btnRed")) {
+            allButtonsRed = false;
+          }
+        });
       });
-    });
-    // Set the opacity of all ".sticker-card-container-screenshot" elements based on the condition
-    if (allButtonsRed) {
-      var stickerCardContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
-      stickerCardContainers.forEach(function (container) {
-        container.style.opacity = "1.0";
-      });
-    }
-
-      container.querySelector(".trade-button-container-screenshot").style.marginTop = "6px";
+      // Set the opacity of all ".sticker-card-container-screenshot" elements based on the condition
+      if (allButtonsRed) {
+        var stickerCardContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
+        stickerCardContainers.forEach(function (container) {
+          container.style.opacity = "1.0";
+        });
+      }
+      if(container.querySelector(".sticker-ribbon-transparent")){
+        container.querySelector(".trade-button-container-screenshot").style.marginTop = "54px";
+      }
+      else{container.querySelector(".trade-button-container-screenshot").style.marginTop = "6px";}
       container.querySelector(".trade-button-container-screenshot").style.width = "100%";
       container.querySelector(".trade-button-container-screenshot").style.display = "flex";
 
-      if(ImgOrientationLandscapeZeroPortraitOne === 1){
+      if (ImgOrientationLandscapeZeroPortraitOne === 1) {
         container.style.flexBasis = "calc(28% - 10px)";
       }
     });
-    if(ImgOrientationLandscapeZeroPortraitOne === 1){
+    if (ImgOrientationLandscapeZeroPortraitOne === 1) {
       collectionScreenshot.style.width = "400px";
       document.getElementById("collection-screenshot-footer-gamever").style.width = "30%";
       document.getElementById("collection-screenshot-footer-link").style.width = "70%";
     }
 
-        // Calculate the current width and height of middle-side
-        var currentWidth = collectionScreenshot.offsetWidth;
-        var currentHeight = collectionScreenshot.offsetHeight;
-    
-        // Calculate the current size in megapixels
-        var currentSize = currentWidth * currentHeight;
-        //console.log(currentWidth);
-        //console.log(currentHeight);
-    
-        // Check if the current size exceeds 3 megapixels
-        if (currentSize > 1579008) {
-          // Calculate the scale factor to resize the element proportionally
-          var scaleFactor = Math.sqrt(1579008 / currentSize);
-    
-          // Resize middle-side and all child elements proportionally
-          collectionScreenshot.style.transform = `scale(${scaleFactor})`;
-          collectionScreenshot.style.transformOrigin = "top left";
-        }
+    // Calculate the current width and height of middle-side
+    var currentWidth = collectionScreenshot.offsetWidth;
+    var currentHeight = collectionScreenshot.offsetHeight;
+
+    // Calculate the current size in megapixels
+    var currentSize = currentWidth * currentHeight;
+    //console.log(currentWidth);
+    //console.log(currentHeight);
+
+    // Check if the current size exceeds 3 megapixels
+    if (currentSize > 1579008) {
+      // Calculate the scale factor to resize the element proportionally
+      var scaleFactor = Math.sqrt(1579008 / currentSize);
+
+      // Resize middle-side and all child elements proportionally
+      collectionScreenshot.style.transform = `scale(${scaleFactor})`;
+      collectionScreenshot.style.transformOrigin = "top left";
+    }
   } else {
     console.log("Either middle-side or collection-screenshot element is not found.");
   }
@@ -1645,16 +1786,16 @@ function captureScreenshot() {
 
 var dlPngButton = document.getElementById("dl-png");
 if (dlPngButton) {
-  dlPngButton.addEventListener("click", function() {
+  dlPngButton.addEventListener("click", function () {
     document.getElementById("collection-screenshot").innerHTML = "";
     dlPngButton.textContent = "Downloading...";
     dlPngButton.classList.add("btnYellow");
     copyToCollectionScreenshot();
     captureScreenshot();
     document.getElementById("collection-screenshot").innerHTML = "";
-    setTimeout(function() {
+    setTimeout(function () {
       dlPngButton.textContent = "Download successful!";
-      setTimeout(function() {        
+      setTimeout(function () {
         dlPngButton.classList.remove("btnYellow");
         dlPngButton.textContent = "Download as PNG";
       }, 3000);
@@ -1663,7 +1804,7 @@ if (dlPngButton) {
 }
 
 function handleViewportBtnClick(isClicked) {
-  if(isClicked === true){WebZeroMobileOne = (WebZeroMobileOne + 1) % 2;}
+  if (isClicked === true) { WebZeroMobileOne = (WebZeroMobileOne + 1) % 2; }
   const ViewportBtnText = document.getElementById("ViewportBtnText");
 
   if (WebZeroMobileOne === 0) {
@@ -1680,7 +1821,7 @@ function handleViewportBtnClick(isClicked) {
     document.getElementById("progress-menu-modal").style.display = "none";
   }
 }
-document.getElementById("ViewportBtn").addEventListener("click", function() {
+document.getElementById("ViewportBtn").addEventListener("click", function () {
   handleViewportBtnClick(true);
 });
 
@@ -1697,7 +1838,7 @@ function compareViewport() {
 }
 
 function handleLayoutThemeBtnClick(isClicked) {
-  if(isClicked === true){LightZeroDarkOne = (LightZeroDarkOne + 1) % 2;}
+  if (isClicked === true) { LightZeroDarkOne = (LightZeroDarkOne + 1) % 2; }
   // console.log(LightZeroDarkOne);
   const LayoutBtnText = document.getElementById("LayoutBtnText");
 
@@ -1711,7 +1852,7 @@ function handleLayoutThemeBtnClick(isClicked) {
     LayoutBtnText.textContent = "Light Mode";
   }
 }
-document.getElementById("LayoutBtn").addEventListener("click", function() {
+document.getElementById("LayoutBtn").addEventListener("click", function () {
   handleLayoutThemeBtnClick(true);
 });
 
@@ -1733,28 +1874,28 @@ var BasicMenuMobileOpenBtn = document.getElementById("mobileBasicMenu");
 var BasicMenuWebOpenBtn = document.getElementById("webBasicMenu");
 var BasicMenuMobileCloseBtn = document.getElementById("basic-menu-footer");
 
-FilterSortMenuMobileOpenBtn.onclick = function() {
+FilterSortMenuMobileOpenBtn.onclick = function () {
   FilterSortModal.style.display = "block";
 };
 
-FilterSortMenuMobileCloseBtn.onclick = function() {
+FilterSortMenuMobileCloseBtn.onclick = function () {
   FilterSortModal.style.display = "none";
 };
 
-ProgressMenuMobileOpenBtn.onclick = function() {
+ProgressMenuMobileOpenBtn.onclick = function () {
   ProgressMenuModal.style.display = "block";
 };
 
-ProgressMenuMobileCloseBtn.onclick = function() {
+ProgressMenuMobileCloseBtn.onclick = function () {
   ProgressMenuModal.style.display = "none";
 };
 
-CurrentFiltersOpenBtn.onclick = function() {
+CurrentFiltersOpenBtn.onclick = function () {
   CurrentFiltersModal.style.display = "block";
   generateCurrentFiltersModalText();
 };
 
-CurrentFiltersCloseBtn.onclick = function() {
+CurrentFiltersCloseBtn.onclick = function () {
   CurrentFiltersModal.style.display = "none";
 };
 
@@ -1819,20 +1960,20 @@ function generateCurrentFiltersModalText() {
   currentFiltersContent.innerHTML = `${filterModeText}<br><br>${filterModeDescription}<br><br>${includeFiltersText}<br>${excludeFiltersText}`;
 }
 
-BasicMenuMobileOpenBtn.onclick = function() {
- BasicMenuModal.style.display = "block";
-};
-
-BasicMenuWebOpenBtn.onclick = function() {
+BasicMenuMobileOpenBtn.onclick = function () {
   BasicMenuModal.style.display = "block";
 };
 
-BasicMenuMobileCloseBtn.onclick = function() {
+BasicMenuWebOpenBtn.onclick = function () {
+  BasicMenuModal.style.display = "block";
+};
+
+BasicMenuMobileCloseBtn.onclick = function () {
   BasicMenuModal.style.display = "none";
 };
 
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target === FilterSortModal) {
     FilterSortModal.style.display = "none";
   }
@@ -1846,7 +1987,7 @@ window.onclick = function(event) {
   }
 };
 
-document.getElementById("generate-trade-post-btn").addEventListener("click", function() {
+document.getElementById("generate-trade-post-btn").addEventListener("click", function () {
   GenerateTradePostClipboard();
 });
 
@@ -1914,7 +2055,7 @@ function copyTradePostAreaToClipboard() {
 const copyButton = document.querySelector("#copy-trade-post-area");
 copyButton.addEventListener("click", copyTradePostAreaToClipboard);
 
-document.getElementById("ToggleSelectedBtn").onclick = function() {
+document.getElementById("ToggleSelectedBtn").onclick = function () {
   const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
     const CurrentStickerGlobalID = container.getAttribute("data-global");
@@ -1924,7 +2065,7 @@ document.getElementById("ToggleSelectedBtn").onclick = function() {
   countSelectedStickers();
 }
 
-document.getElementById("ResetSparesBtn").onclick = function() {
+document.getElementById("ResetSparesBtn").onclick = function () {
   const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
     const CurrentStickerGlobalID = container.getAttribute("data-global");
@@ -1935,7 +2076,7 @@ document.getElementById("ResetSparesBtn").onclick = function() {
   countValveStickers();
 }
 
-document.getElementById("ToggleLFBtn").onclick = function() {
+document.getElementById("ToggleLFBtn").onclick = function () {
   const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
     const CurrentStickerGlobalID = container.getAttribute("data-global");
@@ -1944,7 +2085,7 @@ document.getElementById("ToggleLFBtn").onclick = function() {
   });
 }
 
-document.getElementById("ToggleFTBtn").onclick = function() {
+document.getElementById("ToggleFTBtn").onclick = function () {
   const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
     const CurrentStickerGlobalID = container.getAttribute("data-global");
@@ -1953,7 +2094,7 @@ document.getElementById("ToggleFTBtn").onclick = function() {
   });
 }
 
-document.getElementById("ResetAllStickersBtn").onclick = function() {
+document.getElementById("ResetAllStickersBtn").onclick = function () {
   CreateNewUserData(STICKER_DATA);
   clearFilters();
   const containers = document.querySelectorAll(".sticker-card-container");
@@ -1998,14 +2139,14 @@ function handleVaultPrestigeInput(event) {
 var accordionElements = document.getElementsByClassName("accordion");
 
 for (var i = 0; i < accordionElements.length; i++) {
-  accordionElements[i].addEventListener("click", function() {
+  accordionElements[i].addEventListener("click", function () {
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
     } else {
       panel.style.display = "block";
-    } 
+    }
   });
 }
 
@@ -2090,7 +2231,7 @@ function LoadNews() {
         <div class="basic-menu-news-item-content">${NewsContent}</div>
       </div><br>
     `;
-    
+
     // Append the news item HTML to #news-content
     newsContent.innerHTML += newsItemHTML;
   });
@@ -2109,5 +2250,26 @@ function convertEpochToYYYYMMDD(TimeValue) {
   return formattedDate;
 }
 
+function handleChangeStickerStyleBtn(isClicked) {
+  if (isClicked === true) { StickerSelectedZeroShowOneBack = (StickerSelectedZeroShowOneBack + 1) % 2; }
+  const ChangeStickerStyleBtnText = document.getElementById("ChangeStickerStyleBtnText");
+
+  if (StickerSelectedZeroShowOneBack === 0) {
+    ChangeStickerStyleBtnText.textContent = "OFF";
+    document.getElementById("ChangeStickerStyleBtn").classList.remove("btnGreen");
+  } else if (StickerSelectedZeroShowOneBack === 1) {
+    ChangeStickerStyleBtnText.textContent = "ON";
+    document.getElementById("ChangeStickerStyleBtn").classList.add("btnGreen");
+  }
+}
+
+document.getElementById("ChangeStickerStyleBtn").addEventListener("click", function () {
+  handleChangeStickerStyleBtn(true);
+  const StickerContainers = document.querySelectorAll(".sticker-card-container");
+  StickerContainers.forEach(container => {
+    const dataGlobalValue = container.getAttribute("data-global");
+    if (userData[dataGlobalValue].selected === 0) {ApplySelectedStyle(container);}
+  })
+});
 
 window.onload = init;
