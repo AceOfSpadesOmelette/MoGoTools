@@ -208,7 +208,6 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	flex-wrap: wrap;
 	border-radius: 30px;
 	/* padding: 1% 2% 2% 2%; */
-	border-radius: 10px;
 	max-height: calc(100% - 40px);
 	background-color: rgb(219 197 133 / 40%);
 }
