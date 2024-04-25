@@ -241,8 +241,10 @@ function ApplySelectedStyle(container) {
 
   //RestoreStickerSpares(userData, container);
   //RestoreTradeStates(userData, container);
-
-  if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
+  if(StickerSelectedZeroShowOneBack === 0){
+    container.querySelector('.spare-spinner-container').style.marginTop = '6px';
+  }
+  else if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
     if(WebZeroMobileOne === 0){container.querySelector('.spare-spinner-container').style.marginTop = '53.5px';}
     else if(WebZeroMobileOne === 1){
       container.querySelector('.spare-spinner-container').style.marginTop = '53.5%';
@@ -2266,13 +2268,16 @@ function handleChangeStickerStyleBtn(isClicked) {
   }
 }
 
-document.getElementById("ChangeStickerStyleBtn").addEventListener("click", function () {
+document.getElementById("ChangeStickerStyleBtn").addEventListener("click", function() {
   handleChangeStickerStyleBtn(true);
   const StickerContainers = document.querySelectorAll(".sticker-card-container");
-  StickerContainers.forEach(container => {
+  const filteredContainers = Array.from(StickerContainers).filter(function(container) {
     const dataGlobalValue = container.getAttribute("data-global");
-    if (userData[dataGlobalValue].selected === 0) {ApplySelectedStyle(container);}
-  })
+    return userData[dataGlobalValue].selected === 0;
+  });
+  filteredContainers.forEach(function(container) {
+    ApplySelectedStyle(container);
+  });
 });
 
 document.addEventListener('click', function(event) {
