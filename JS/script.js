@@ -249,7 +249,7 @@ function ApplySelectedStyle(container) {
     else if(WebZeroMobileOne === 1){
       // or 53.5%
       if(window.innerWidth > 1024){container.querySelector('.spare-spinner-container').style.marginTop = "55%";}
-      else{container.querySelector('.spare-spinner-container').style.marginTop = '51%';}
+      else{container.querySelector('.spare-spinner-container').style.marginTop = '52px';}
       container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-90%';
     }
   }
