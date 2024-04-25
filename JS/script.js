@@ -246,10 +246,14 @@ function ApplySelectedStyle(container) {
   }
   else if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
     //if(WebZeroMobileOne === 1){container.querySelector('.spare-spinner-container').style.marginTop = '56px';}
-    if(WebZeroMobileOne === 1){container.querySelector('.spare-spinner-container').style.marginTop = '3.24rem';}
-      else{container.querySelector('.spare-spinner-container').style.marginTop = '55px';}
-      //container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-91px';
+    if(WebZeroMobileOne === 1){
       container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-5.4rem';
+      container.querySelector('.spare-spinner-container').style.marginTop = '3.24rem';
+    }
+      else{        
+        container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-91px';
+        container.querySelector('.spare-spinner-container').style.marginTop = '55px';}
+      //container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-91px';
   }
 }
 
