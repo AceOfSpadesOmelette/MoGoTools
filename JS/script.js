@@ -248,7 +248,8 @@ function ApplySelectedStyle(container) {
     if(WebZeroMobileOne === 0){container.querySelector('.spare-spinner-container').style.marginTop = '53.5px';}
     else if(WebZeroMobileOne === 1){
       // or 53.5%
-      container.querySelector('.spare-spinner-container').style.marginTop = '51.5%';
+      if(window.innerWidth > 1024){container.querySelector('.spare-spinner-container').style.marginTop = "55%";}
+      else{container.querySelector('.spare-spinner-container').style.marginTop = '51.5%';}
       container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-90%';
     }
   }
