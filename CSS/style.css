@@ -1527,3 +1527,11 @@ content: "\2212";
 
 .heart-btn-container:has(.tooltiptext-heart) { overflow:visible !important; }
 .heart-btn-container:hover .tooltiptext-heart { visibility: visible; }
+
+.set-logo {
+	cursor: pointer;
+}
+
+.set-logo.scale-down {
+	transform: scale(0.95);
+}
