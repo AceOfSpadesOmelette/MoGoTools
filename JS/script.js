@@ -247,7 +247,8 @@ function ApplySelectedStyle(container) {
   else if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
     if(WebZeroMobileOne === 0){container.querySelector('.spare-spinner-container').style.marginTop = '53.5px';}
     else if(WebZeroMobileOne === 1){
-      container.querySelector('.spare-spinner-container').style.marginTop = '51%';
+      // or 53.5%
+      container.querySelector('.spare-spinner-container').style.marginTop = '51.5%';
       container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-90%';
     }
   }
@@ -1637,7 +1638,7 @@ function copyToCollectionScreenshot() {
     clonedContents = clonedContents.replace(/trade-button-container/g, "trade-button-container-screenshot");
 
     collectionScreenshot.innerHTML = newElement + clonedContents;
-
+    
     var snapshotFooterElement = `<div id="collection-screenshot-footer"><div id="collection-screenshot-footer-gamever">v1.21.2</div><div id="collection-screenshot-footer-link">https://aceofspadesomelette.github.io/MoGoTools/</div></div>`;
 
     // Add the SnapshotFooterElement after #sticker-board is cloned
@@ -2281,18 +2282,17 @@ document.getElementById("ChangeStickerStyleBtn").addEventListener("click", funct
 });
 
 document.addEventListener('click', function(event) {
-  // Find the closest ancestor element with the class 'set-logo'
-  var setLogo = event.target.closest('.set-logo');
-  const SetID = parseInt(setLogo.getAttribute("data-setidnumber"));
-    
-    // Find the first sticker card container that matches the number
+  var setLogo = event.target.closest('.set-logo');  
+  if (setLogo) {
+    const SetID = parseInt(setLogo.getAttribute("data-setidnumber"));
     var stickerCardContainer = Array.from(document.querySelectorAll('.sticker-card-container[data-global]')).find(function(container) {
       var globalAttr = container.getAttribute('data-global');
       return Math.floor(globalAttr / 100) === SetID;
     });
-    
-    if (stickerCardContainer) {stickerCardContainer.scrollIntoView({ behavior: 'smooth' });}
-
+    if (stickerCardContainer) {
+      stickerCardContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 });
 
 document.addEventListener('mousedown', function(event) {
