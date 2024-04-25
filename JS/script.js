@@ -241,20 +241,28 @@ function ApplySelectedStyle(container) {
 
   //RestoreStickerSpares(userData, container);
   //RestoreTradeStates(userData, container);
-  if(userDataItem.selected === 1){
-    container.querySelector('.spare-spinner-container').style.marginTop = '5.5px';
+  if(StickerSelectedZeroShowOneBack === 0){
+      container.querySelector('.spare-spinner-container').style.marginTop = '5.5px';
+      //if(WebZeroMobileOne === 1 && userDataItem.selected === 0){container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-91px';}
   }
-  else if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
+  else if (StickerSelectedZeroShowOneBack === 1) {
     //if(WebZeroMobileOne === 1){container.querySelector('.spare-spinner-container').style.marginTop = '56px';}
-    if(WebZeroMobileOne === 1){
-      container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-5.4rem';
-      container.querySelector('.spare-spinner-container').style.marginTop = '3.24rem';
+    if(WebZeroMobileOne === 0){
+      if(userDataItem.selected === 0){
+        container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-90px';
+        container.querySelector('.spare-spinner-container').style.marginTop = '55px';
+      }
+      else{container.querySelector('.spare-spinner-container').style.marginTop = '6.5px';}      
     }
-      else{        
-        container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-91px';
-        container.querySelector('.spare-spinner-container').style.marginTop = '55px';}
-      //container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-91px';
+    else if(WebZeroMobileOne === 1){            
+      if(userDataItem.selected === 0){
+        container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-5.4rem';
+        container.querySelector('.spare-spinner-container').style.marginTop = '3.29rem';
+      }
+      else{container.querySelector('.spare-spinner-container').style.marginTop = '0.34rem';}
+    }
   }
+      //container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-91px';
 }
 
 function appendHeartButtons(stickerElement) {
