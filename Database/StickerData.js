@@ -7842,7 +7842,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_1.png",
-        "Colour": "#c57eb9"
+        "Colour": "#e180c3"
     },
     {
         "GlobalID": "71802",
@@ -7857,7 +7857,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_2.png",
-        "Colour": "#c57eb9"
+        "Colour": "#e180c3"
     },
     {
         "GlobalID": "71803",
@@ -7872,7 +7872,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_3.png",
-        "Colour": "#c57eb9"
+        "Colour": "#e180c3"
     },
     {
         "GlobalID": "71804",
@@ -7887,7 +7887,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_4.png",
-        "Colour": "#c57eb9"
+        "Colour": "#e180c3"
     },
     {
         "GlobalID": "71805",
@@ -7902,7 +7902,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_5.png",
-        "Colour": "#c57eb9"
+        "Colour": "#e180c3"
     },
     {
         "GlobalID": "71806",
@@ -7917,7 +7917,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_6.png",
-        "Colour": "#c57eb9"
+        "Colour": "#e180c3"
     },
     {
         "GlobalID": "71807",
@@ -7932,7 +7932,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_7.png",
-        "Colour": "#c57eb9"
+        "Colour": "#e180c3"
     },
     {
         "GlobalID": "71808",
@@ -7947,7 +7947,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_8.png",
-        "Colour": "#c57eb9"
+        "Colour": "#e180c3"
     },
     {
         "GlobalID": "71809",
@@ -7962,7 +7962,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_9.png",
-        "Colour": "#c57eb9"
+        "Colour": "#e180c3"
     },
     {
         "GlobalID": "71901",
@@ -7977,7 +7977,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_1.png",
-        "Colour": "#75a397"
+        "Colour": "#7bb096"
     },
     {
         "GlobalID": "71902",
@@ -7992,7 +7992,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_2.png",
-        "Colour": "#75a397"
+        "Colour": "#7bb096"
     },
     {
         "GlobalID": "71903",
@@ -8007,7 +8007,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_3.png",
-        "Colour": "#75a397"
+        "Colour": "#7bb096"
     },
     {
         "GlobalID": "71904",
@@ -8022,7 +8022,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_4.png",
-        "Colour": "#75a397"
+        "Colour": "#7bb096"
     },
     {
         "GlobalID": "71905",
@@ -8037,7 +8037,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_5.png",
-        "Colour": "#75a397"
+        "Colour": "#7bb096"
     },
     {
         "GlobalID": "71906",
@@ -8052,7 +8052,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_6.png",
-        "Colour": "#75a397"
+        "Colour": "#7bb096"
     },
     {
         "GlobalID": "71907",
@@ -8067,7 +8067,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_7.png",
-        "Colour": "#75a397"
+        "Colour": "#7bb096"
     },
     {
         "GlobalID": "71908",
@@ -8082,7 +8082,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_8.png",
-        "Colour": "#75a397"
+        "Colour": "#7bb096"
     },
     {
         "GlobalID": "71909",
@@ -8097,7 +8097,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_9.png",
-        "Colour": "#75a397"
+        "Colour": "#7bb096"
     },
     {
         "GlobalID": "72001",
@@ -8652,7 +8652,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_1.png",
-        "Colour": "#ebeb93"
+        "Colour": "#f2d56d"
     },
     {
         "GlobalID": "72402",
@@ -8667,7 +8667,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_2.png",
-        "Colour": "#ebeb93"
+        "Colour": "#f2d56d"
     },
     {
         "GlobalID": "72403",
@@ -8682,7 +8682,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_3.png",
-        "Colour": "#ebeb93"
+        "Colour": "#f2d56d"
     },
     {
         "GlobalID": "72404",
@@ -8697,7 +8697,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_4.png",
-        "Colour": "#ebeb93"
+        "Colour": "#f2d56d"
     },
     {
         "GlobalID": "72405",
@@ -8712,7 +8712,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_5.png",
-        "Colour": "#ebeb93"
+        "Colour": "#f2d56d"
     },
     {
         "GlobalID": "72406",
@@ -8727,7 +8727,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_6.png",
-        "Colour": "#ebeb93"
+        "Colour": "#f2d56d"
     },
     {
         "GlobalID": "72407",
@@ -8742,7 +8742,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_7.png",
-        "Colour": "#ebeb93"
+        "Colour": "#f2d56d"
     },
     {
         "GlobalID": "72408",
@@ -8757,7 +8757,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_8.png",
-        "Colour": "#ebeb93"
+        "Colour": "#f2d56d"
     },
     {
         "GlobalID": "72409",
@@ -8772,7 +8772,7 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_9.png",
-        "Colour": "#ebeb93"
+        "Colour": "#f2d56d"
     },
     {
         "GlobalID": "72501",

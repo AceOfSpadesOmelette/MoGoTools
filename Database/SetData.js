@@ -646,7 +646,7 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_718.png",
-        "Colour": "#c57eb9"
+        "Colour": "#e180c3"
     },
     {
         "SetName": "Rockstar Dreams",
@@ -657,7 +657,7 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_719.png",
-        "Colour": "#75a397"
+        "Colour": "#7bb096"
     },
     {
         "SetName": "Hip Hop",
@@ -712,7 +712,7 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_724.png",
-        "Colour": "#ebeb93"
+        "Colour": "#f2d56d"
     },
     {
         "SetName": "Primal Groove",
