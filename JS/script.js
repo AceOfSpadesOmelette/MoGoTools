@@ -1075,7 +1075,7 @@ function GenerateFilterSetButtons() {
         if (SetName.length > 15) { SetNameClass = "set-name-long-min15"; }
         if (isBrighterThan(SetColour, "#CCCCCC")) { SetNameClass += "-dark"; }
         const SetCardContainerElement = `
-          <div class="set-card-container"><img draggable="false" class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src="logo/Icon_Placeholder.png";"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
+          <div class="set-card-container"><img draggable="false" data-setidnumber="${SetID}" class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src="logo/Icon_Placeholder.png";"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
         `;
 
         setProgressTracker.innerHTML += SetCardContainerElement;
@@ -2283,19 +2283,16 @@ document.getElementById("ChangeStickerStyleBtn").addEventListener("click", funct
 document.addEventListener('click', function(event) {
   // Find the closest ancestor element with the class 'set-logo'
   var setLogo = event.target.closest('.set-logo');
-  if (setLogo) {
-    // Extract the number from the 'src' attribute of the set logo
-    var src = setLogo.getAttribute('src');
-    var number = src.match(/_(\d+)\./)[1];
+  const SetID = parseInt(setLogo.getAttribute("data-setidnumber"));
     
     // Find the first sticker card container that matches the number
     var stickerCardContainer = Array.from(document.querySelectorAll('.sticker-card-container[data-global]')).find(function(container) {
       var globalAttr = container.getAttribute('data-global');
-      return Math.floor(globalAttr / 100) === Number(number);
+      return Math.floor(globalAttr / 100) === SetID;
     });
     
     if (stickerCardContainer) {stickerCardContainer.scrollIntoView({ behavior: 'smooth' });}
-  }
+
 });
 
 document.addEventListener('mousedown', function(event) {
