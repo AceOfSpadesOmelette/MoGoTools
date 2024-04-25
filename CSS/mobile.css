@@ -1572,3 +1572,11 @@ content: "\2212";
 .heart-menu-btn.scale-down {
 	transform: scale(0.9);
 }
+
+.set-logo {
+	cursor: pointer;
+}
+
+.set-logo.scale-down {
+	transform: scale(0.95);
+}
