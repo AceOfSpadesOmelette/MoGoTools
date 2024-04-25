@@ -2275,4 +2275,52 @@ document.getElementById("ChangeStickerStyleBtn").addEventListener("click", funct
   })
 });
 
+document.addEventListener('click', function(event) {
+  // Find the closest ancestor element with the class 'set-logo'
+  var setLogo = event.target.closest('.set-logo');
+  if (setLogo) {
+    // Extract the number from the 'src' attribute of the set logo
+    var src = setLogo.getAttribute('src');
+    var number = src.match(/_(\d+)\./)[1];
+    
+    // Find the first sticker card container that matches the number
+    var stickerCardContainer = Array.from(document.querySelectorAll('.sticker-card-container[data-global]')).find(function(container) {
+      var globalAttr = container.getAttribute('data-global');
+      return Math.floor(globalAttr / 100) === Number(number);
+    });
+    
+    if (stickerCardContainer) {stickerCardContainer.scrollIntoView({ behavior: 'smooth' });}
+  }
+});
+
+document.addEventListener('mousedown', function(event) {
+  if (event.target.classList.contains('set-logo')) {
+    event.target.classList.add('scale-down');
+  }
+});
+
+document.addEventListener('mouseup', function(event) {
+  if (event.target.classList.contains('set-logo')) {
+    event.target.classList.remove('scale-down');
+  }
+});
+
+document.addEventListener('mouseleave', function(event) {
+  if (event.target.classList.contains('set-logo')) {
+    event.target.classList.remove('scale-down');
+  }
+});
+
+document.addEventListener('touchstart', function(event) {
+  if (event.target.classList.contains('set-logo')) {
+    event.target.classList.add('scale-down');
+  }
+});
+
+document.addEventListener('touchend', function(event) {
+  if (event.target.classList.contains('set-logo')) {
+    event.target.classList.remove('scale-down');
+  }
+});
+
 window.onload = init;
