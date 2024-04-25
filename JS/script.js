@@ -241,20 +241,13 @@ function ApplySelectedStyle(container) {
 
   //RestoreStickerSpares(userData, container);
   //RestoreTradeStates(userData, container);
-  if(StickerSelectedZeroShowOneBack === 0){
-    container.querySelector('.spare-spinner-container').style.marginTop = '6px';
+  if(userDataItem.selected === 1){
+    container.querySelector('.spare-spinner-container').style.marginTop = '5.5px';
   }
   else if (userDataItem.selected === 0 && StickerSelectedZeroShowOneBack === 1) {
-    if(WebZeroMobileOne === 0){container.querySelector('.spare-spinner-container').style.marginTop = '53.5px';}
-    else if(WebZeroMobileOne === 1){
-      // or 53.5%
-      if(window.innerWidth > 1024){container.querySelector('.spare-spinner-container').style.marginTop = "55%";}
-      else{container.querySelector('.spare-spinner-container').style.marginTop = '52px';}
-      container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-90%';
-    }
-  }
-  else if (userDataItem.selected === 1 && StickerSelectedZeroShowOneBack === 1) {
-    container.querySelector('.spare-spinner-container').style.marginTop = '5px';
+
+      container.querySelector('.spare-spinner-container').style.marginTop = '55px';
+      container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-91px';
   }
 }
 
