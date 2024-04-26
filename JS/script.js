@@ -1694,6 +1694,8 @@ function copyToCollectionScreenshot() {
           spareContainer.querySelector(".spare-img").style.width = "50%"; 
           spareContainer.style.marginTop = "-63px";
           spareContainer.querySelector(".spare-snapshot-text").style.color = "white";
+          
+          spareContainer.querySelector(".spare-snapshot-text").style.marginTop = "4.5px";
         };
 
         if(container.querySelector(".sticker-ribbon")){
@@ -1714,7 +1716,6 @@ function copyToCollectionScreenshot() {
           }
           else{
             container.querySelector(".spare-snapshot-text").style.marginLeft = "-33px";
-            container.querySelector(".spare-snapshot-text").style.marginTop = "5.5px";
           }
         }
         if (navigator.userAgent.indexOf("Safari") > -1) {
@@ -1828,8 +1829,8 @@ if (dlPngButton) {
     dlPngButton.textContent = "Downloading...";
     dlPngButton.classList.add("btnYellow");
     copyToCollectionScreenshot();
-    captureScreenshot();
-    document.getElementById("collection-screenshot").innerHTML = "";
+    //captureScreenshot();
+    //document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function () {
       dlPngButton.textContent = "Download successful!";
       setTimeout(function () {
