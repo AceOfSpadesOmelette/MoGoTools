@@ -1713,9 +1713,9 @@ function copyToCollectionScreenshot() {
           else{
             container.querySelector(".spare-snapshot-text").style.marginLeft = "-33px";
             container.querySelector(".spare-snapshot-text").style.marginTop = "5.5px";
-            container.querySelector(".spare-snapshot-text").style.color = "white";
           }
-        }
+        }        
+        container.querySelector(".spare-snapshot-text").style.color = "white";
         if (navigator.userAgent.indexOf("Safari") > -1) {
           var SpareSnapshotText = container.querySelector(".spare-snapshot-text");
           var currentSpareSnapshotTextMarginTop = parseInt(SpareSnapshotText.style.marginTop);
