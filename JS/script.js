@@ -1828,8 +1828,8 @@ if (dlPngButton) {
     dlPngButton.textContent = "Downloading...";
     dlPngButton.classList.add("btnYellow");
     copyToCollectionScreenshot();
-    //captureScreenshot();
-    //document.getElementById("collection-screenshot").innerHTML = "";
+    captureScreenshot();
+    document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function () {
       dlPngButton.textContent = "Download successful!";
       setTimeout(function () {
