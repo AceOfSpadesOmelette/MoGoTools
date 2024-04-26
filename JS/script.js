@@ -1693,6 +1693,7 @@ function copyToCollectionScreenshot() {
         if(stickerData.Golden === "1"){
           spareContainer.querySelector(".spare-img").style.width = "50%"; 
           spareContainer.style.marginTop = "-63px";
+          container.querySelector(".spare-snapshot-text").style.color = "white";
         };
 
         if(container.querySelector(".sticker-ribbon")){
@@ -1714,8 +1715,7 @@ function copyToCollectionScreenshot() {
             container.querySelector(".spare-snapshot-text").style.marginLeft = "-33px";
             container.querySelector(".spare-snapshot-text").style.marginTop = "5.5px";
           }
-        }        
-        container.querySelector(".spare-snapshot-text").style.color = "white";
+        }
         if (navigator.userAgent.indexOf("Safari") > -1) {
           var SpareSnapshotText = container.querySelector(".spare-snapshot-text");
           var currentSpareSnapshotTextMarginTop = parseInt(SpareSnapshotText.style.marginTop);
