@@ -157,6 +157,7 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   const StickerSetPath = AlbumName;
   const StickerSetNo = GlobalID - SetID * 100;
   const DarkenedColour = DarkenColour(Colour, 25);
+  const RibbonEdgeColour = DarkenColour(Colour, 6);
 
   let StickerNameClass = "sticker-name";
   if (StickerName.length > 14) { StickerNameClass = "sticker-name-long-min14"; }
@@ -172,7 +173,7 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   container.classList.add(ContainerClass);
 
   container.innerHTML = `
-    <div class="sticker-structure-container"><div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img draggable="false" class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background-color: ${Colour}; border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</span></div></div></div>
+    <div class="sticker-structure-container"><div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img draggable="false" class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background: ${RibbonEdgeColour}; background: -moz-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); background: -webkit-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); background: linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</span></div></div></div>
   `;
   if (isTracking) {
     //appendHeartButtons(container);
@@ -194,6 +195,8 @@ function ApplySelectedStyle(container) {
   const StickerSetPath = stickerData.AlbumName;
   const StickerSetNo = stickerData.GlobalID - stickerData.SetID * 100;
   const DarkenedColour = DarkenColour(stickerData.Colour, 25);
+  const RibbonEdgeColour = DarkenColour(stickerData.Colour, 6);
+
   let StickerNameClass = "sticker-name";
   if (stickerData.StickerName.length > 14) { StickerNameClass = "sticker-name-long-min14"; }
   if (stickerData.StickerName.length > 18) { StickerNameClass = "sticker-name-long-min18"; }
@@ -209,7 +212,7 @@ function ApplySelectedStyle(container) {
   StickerStructureContainer.innerHTML = `
     <div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${stickerData.StickerRarity}Star.png"></div>
     <div class="sticker-photo-container"><img draggable="false" class="sticker-card" src="stickers/${StickerSetPath}/${stickerData.ImageSource}">${FrameHTML}</div>
-    <div class="sticker-ribbon" style="background-color: ${stickerData.Colour}; border: 2px solid ${DarkenedColour};">
+    <div class="sticker-ribbon" style="background: ${RibbonEdgeColour}; background: -moz-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); background: -webkit-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); background: linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); border: 2px solid ${DarkenedColour};">
       <span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${stickerData.StickerName}</span>
     </div>
   `;
