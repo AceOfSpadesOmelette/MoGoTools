@@ -156,8 +156,8 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   const StickerSet = SetID - AlbumNo * 100;
   const StickerSetPath = AlbumName;
   const StickerSetNo = GlobalID - SetID * 100;
-  const DarkenedColour = DarkenColour(Colour, 25);
-  const RibbonEdgeColour = DarkenColour(Colour, 6);
+  const DarkenedColour = DarkenColour(Colour, 15);
+  const RibbonEdgeColour = DarkenColour(Colour, 5);
 
   let StickerNameClass = "sticker-name";
   if (StickerName.length > 14) { StickerNameClass = "sticker-name-long-min14"; }
@@ -194,8 +194,8 @@ function ApplySelectedStyle(container) {
   const StickerSet = stickerData.SetID - stickerData.AlbumNo * 100;
   const StickerSetPath = stickerData.AlbumName;
   const StickerSetNo = stickerData.GlobalID - stickerData.SetID * 100;
-  const DarkenedColour = DarkenColour(stickerData.Colour, 25);
-  const RibbonEdgeColour = DarkenColour(stickerData.Colour, 6);
+  const DarkenedColour = DarkenColour(stickerData.Colour, 15);
+  const RibbonEdgeColour = DarkenColour(stickerData.Colour, 5);
 
   let StickerNameClass = "sticker-name";
   if (stickerData.StickerName.length > 14) { StickerNameClass = "sticker-name-long-min14"; }
