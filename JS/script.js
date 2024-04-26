@@ -1649,8 +1649,10 @@ function copyToCollectionScreenshot() {
     clonedContents = clonedContents.replace(/trade-button-container/g, "trade-button-container-screenshot");
 
     collectionScreenshot.innerHTML = newElement + clonedContents;
+
+    const TimeNow = Math.floor(Date.now() / 1000);
     
-    var snapshotFooterElement = `<div id="collection-screenshot-footer"><div id="collection-screenshot-footer-gamever">v1.21.2</div><div id="collection-screenshot-footer-link">https://aceofspadesomelette.github.io/MoGoTools/</div></div>`;
+    var snapshotFooterElement = `<div id="collection-screenshot-footer"><div id="collection-screenshot-footer-gamever">v1.21.2_${TimeNow}</div><div id="collection-screenshot-footer-link">https://aceofspadesomelette.github.io/MoGoTools/</div></div>`;
 
     // Add the SnapshotFooterElement after #sticker-board is cloned
     var stickerBoard = collectionScreenshot.querySelector("#sticker-board");
@@ -1677,12 +1679,22 @@ function copyToCollectionScreenshot() {
       }
 
       if (userData[globalID].spare > 0) {
+        const stickerData = STICKER_DATA.find(item => item["GlobalID"] === globalID)
+        var SpareImagePath = "Collections_TradingGroup_NumberBG_Small.png";
+        if(stickerData.Golden === "1"){
+          SpareImagePath = "GoldenBlitz_Stickers_Badge01.png";
+        };
         var spareContainer = document.createElement("div");
         spareContainer.className = "spare-container-no-spinner";
         spareContainer.innerHTML = `
-          <img draggable="false" class="spare-img" src="assets/stickers/Collections_TradingGroup_NumberBG_Small.png">
+          <img draggable="false" class="spare-img" src="assets/stickers/${SpareImagePath}">
           <span class="spare-snapshot-text">+${userData[globalID].spare}</span>
         `;
+        if(stickerData.Golden === "1"){
+          spareContainer.querySelector(".spare-img").style.width = "50%"; 
+          spareContainer.style.marginTop = "-63px";
+        };
+
         if(container.querySelector(".sticker-ribbon")){
           const parentElement = container.querySelector(".sticker-ribbon").parentNode;
           parentElement.insertBefore(spareContainer, container.querySelector(".sticker-ribbon"));
@@ -1694,8 +1706,15 @@ function copyToCollectionScreenshot() {
           container.querySelector(".sticker-ribbon-transparent").style.marginTop = "-58.5px";
         }
         if (ImgOrientationLandscapeZeroPortraitOne === 1) {
-          container.querySelector(".spare-snapshot-text").style.marginLeft = "-31px";
-          container.querySelector(".spare-snapshot-text").style.marginTop = "3px";
+          if(stickerData.Golden === "0"){
+            container.querySelector(".spare-snapshot-text").style.marginLeft = "-31px";
+            container.querySelector(".spare-snapshot-text").style.marginTop = "3px";
+          }
+          else{
+            container.querySelector(".spare-snapshot-text").style.marginLeft = "-33px";
+            container.querySelector(".spare-snapshot-text").style.marginTop = "5.5px";
+            container.querySelector(".spare-snapshot-text").style.color = "white";
+          }
         }
         if (navigator.userAgent.indexOf("Safari") > -1) {
           var SpareSnapshotText = container.querySelector(".spare-snapshot-text");
