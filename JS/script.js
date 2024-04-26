@@ -1700,6 +1700,7 @@ function copyToCollectionScreenshot() {
           const parentElement = container.querySelector(".sticker-ribbon").parentNode;
           parentElement.insertBefore(spareContainer, container.querySelector(".sticker-ribbon"));
           container.querySelector(".sticker-ribbon").style.marginTop = "-4.5px";
+          if(stickerData.Golden === "1"){container.querySelector(".sticker-ribbon").style.marginTop = "-8.5px";}
         }
         if(container.querySelector(".sticker-ribbon-transparent")){
           const parentElement = container.querySelector(".sticker-ribbon-transparent").parentNode;
@@ -1827,8 +1828,8 @@ if (dlPngButton) {
     dlPngButton.textContent = "Downloading...";
     dlPngButton.classList.add("btnYellow");
     copyToCollectionScreenshot();
-    captureScreenshot();
-    document.getElementById("collection-screenshot").innerHTML = "";
+    //captureScreenshot();
+    //document.getElementById("collection-screenshot").innerHTML = "";
     setTimeout(function () {
       dlPngButton.textContent = "Download successful!";
       setTimeout(function () {
