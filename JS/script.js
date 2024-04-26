@@ -1693,7 +1693,7 @@ function copyToCollectionScreenshot() {
         if(stickerData.Golden === "1"){
           spareContainer.querySelector(".spare-img").style.width = "50%"; 
           spareContainer.style.marginTop = "-63px";
-          container.querySelector(".spare-snapshot-text").style.color = "white";
+          spareContainer.querySelector(".spare-snapshot-text").style.color = "white";
         };
 
         if(container.querySelector(".sticker-ribbon")){
