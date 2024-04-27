@@ -666,7 +666,6 @@ function ChangeFilterButtonState(ButtonElement, isThisBtnClicked) {
   if (isThisBtnClicked) {
     FilterList[ButtonElement.dataset.filtervalue] = {
       ...FilterList[ButtonElement.dataset.filtervalue],
-      FilterState: (FilterList[ButtonElement.dataset.filtervalue].FilterState + 1) % 3,
 // SEARCH BAR (Filter)
 function FilterBySearchbar(GlobalID) {
   var searchbar = document.getElementById("filtermenu-searchbar");
@@ -715,8 +714,8 @@ function FilterBySearchbar(GlobalID) {
         stickerName.includes(lowercaseFilterValue[0]) ||
         setName.includes(lowercaseFilterValue[0]) ||
         albumName.includes(lowercaseFilterValue[0]) ||
-        GlobalID.toString() === lowercaseFilterValue[0] ||
-        sticker.SetID.toString() === lowercaseFilterValue[0]
+        GlobalID.toString().includes(lowercaseFilterValue[0]) ||
+        sticker.SetID.toString().includes(lowercaseFilterValue[0])
       ) {
         userData[GlobalID].show = 1;
       } else {
@@ -730,8 +729,8 @@ function FilterBySearchbar(GlobalID) {
               stickerName.includes(value) ||
               setName.includes(value) ||
               albumName.includes(value) ||
-              GlobalID.toString() === value ||
-              sticker.SetID.toString() === value
+              GlobalID.toString().includes(value) ||
+              sticker.SetID.toString().includes(value)
             );
           })
         ) {
@@ -746,8 +745,8 @@ function FilterBySearchbar(GlobalID) {
               stickerName.includes(value) ||
               setName.includes(value) ||
               albumName.includes(value) ||
-              GlobalID.toString() === value ||
-              sticker.SetID.toString() === value
+              GlobalID.toString().includes(value) ||
+              sticker.SetID.toString().includes(value)
             );
           })
         ) {
