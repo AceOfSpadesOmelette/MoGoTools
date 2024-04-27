@@ -38,7 +38,7 @@ const FullAlbumValues = {
 // Sets up the website
 function init() {
   compareViewport();
-  console.log("Hello world!");
+  //console.log("Hello world!");
   GenerateFilterSetButtons();
   SetDefaultFilterStates();
 
@@ -567,22 +567,16 @@ function FilterBySearchbar(GlobalID) {
     filterValue = filterValue.split(",").map(function (value) {
       return value.trim(); // Remove leading and trailing spaces
     });
-  } else {
-    filterValue = [filterValue];
-  }
+  } else {filterValue = [filterValue];}
 
-  filterValue = filterValue.filter(function (value) {
-    return value.trim() !== "";
-  });
+  filterValue = filterValue.filter(function (value) {return value.trim() !== "";});
 
   if (FilterList.hasOwnProperty(filterName)) {
     FilterList[filterName].FilterValue = filterValue;
     FilterList[filterName].FilterState = filterValue.length > 0 ? 1 : 0;
   }
 
-  var sticker = STICKER_DATA.find(function (item) {
-    return item.GlobalID === GlobalID;
-  });
+  var sticker = STICKER_DATA.find(function (item) {return item.GlobalID === GlobalID;});
 
   if (sticker) {
     var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
@@ -596,14 +590,9 @@ function FilterBySearchbar(GlobalID) {
       if (
         stickerName.includes(lowercaseFilterValue[0]) ||
         setName.includes(lowercaseFilterValue[0]) ||
-        albumName.includes(lowercaseFilterValue[0]) ||
-        GlobalID.toString().includes(lowercaseFilterValue[0]) ||
-        sticker.SetID.toString().includes(lowercaseFilterValue[0])
-      ) {
-        userData[GlobalID].show = 1;
-      } else {
-        userData[GlobalID].show = 0;
-      }
+        albumName.includes(lowercaseFilterValue[0])
+      ) {userData[GlobalID].show = 1;}
+        else {userData[GlobalID].show = 0;}
     } else if (filterValue.length > 1) {
       if (AndZeroOrOne === 0) {
         if (
@@ -611,33 +600,22 @@ function FilterBySearchbar(GlobalID) {
             return (
               stickerName.includes(value) ||
               setName.includes(value) ||
-              albumName.includes(value) ||
-              GlobalID.toString().includes(value) ||
-              sticker.SetID.toString().includes(value)
+              albumName.includes(value)
             );
           })
-        ) {
-          userData[GlobalID].show = 1;
-        } else {
-          userData[GlobalID].show = 0;
-        }
+        ) {userData[GlobalID].show = 1;}
+        else {userData[GlobalID].show = 0;}
       } else if (AndZeroOrOne === 1) {
         if (
           lowercaseFilterValue.some(function (value) {
             return (
               stickerName.includes(value) ||
               setName.includes(value) ||
-              albumName.includes(value) ||
-              GlobalID.toString().includes(value) ||
-              sticker.SetID.toString().includes(value)
+              albumName.includes(value)
             );
           })
-        ) {
-          userData[GlobalID].show = 1;
-          return;
-        } else {
-          userData[GlobalID].show = 0;
-        }
+        ) {userData[GlobalID].show = 1; return;}
+        else {userData[GlobalID].show = 0;}
       }
     }
   }
@@ -666,99 +644,11 @@ function ChangeFilterButtonState(ButtonElement, isThisBtnClicked) {
   if (isThisBtnClicked) {
     FilterList[ButtonElement.dataset.filtervalue] = {
       ...FilterList[ButtonElement.dataset.filtervalue],
-// SEARCH BAR (Filter)
-function FilterBySearchbar(GlobalID) {
-  var searchbar = document.getElementById("filtermenu-searchbar");
-  var filterName = searchbar.getAttribute("data-filtervalue");
-
-  if (searchbar.value === "") {
-    FilterList[filterName].FilterState = 0;
-    userData[GlobalID].show = 1;
-    updateClearFiltersButton();
-    return;
+      FilterState: (FilterList[ButtonElement.dataset.filtervalue].FilterState + 1) % 3,
+    };
   }
-
-  var filterValue = searchbar.value.trim();
-
-  if (filterValue.includes(",")) {
-    filterValue = filterValue.split(",").map(function (value) {
-      return value.trim(); // Remove leading and trailing spaces
-    });
-  } else {
-    filterValue = [filterValue];
-  }
-
-  filterValue = filterValue.filter(function (value) {
-    return value.trim() !== "";
-  });
-
-  if (FilterList.hasOwnProperty(filterName)) {
-    FilterList[filterName].FilterValue = filterValue;
-    FilterList[filterName].FilterState = filterValue.length > 0 ? 1 : 0;
-  }
-
-  var sticker = STICKER_DATA.find(function (item) {
-    return item.GlobalID === GlobalID;
-  });
-
-  if (sticker) {
-    var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
-    var setName = sticker.SetName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
-    var albumName = sticker.AlbumName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
-    var lowercaseFilterValue = filterValue.map(function (value) {
-      return value.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
-    });
-
-    if (filterValue.length === 1) {
-      if (
-        stickerName.includes(lowercaseFilterValue[0]) ||
-        setName.includes(lowercaseFilterValue[0]) ||
-        albumName.includes(lowercaseFilterValue[0]) ||
-        GlobalID.toString().includes(lowercaseFilterValue[0]) ||
-        sticker.SetID.toString().includes(lowercaseFilterValue[0])
-      ) {
-        userData[GlobalID].show = 1;
-      } else {
-        userData[GlobalID].show = 0;
-      }
-    } else if (filterValue.length > 1) {
-      if (AndZeroOrOne === 0) {
-        if (
-          lowercaseFilterValue.every(function (value) {
-            return (
-              stickerName.includes(value) ||
-              setName.includes(value) ||
-              albumName.includes(value) ||
-              GlobalID.toString().includes(value) ||
-              sticker.SetID.toString().includes(value)
-            );
-          })
-        ) {
-          userData[GlobalID].show = 1;
-        } else {
-          userData[GlobalID].show = 0;
-        }
-      } else if (AndZeroOrOne === 1) {
-        if (
-          lowercaseFilterValue.some(function (value) {
-            return (
-              stickerName.includes(value) ||
-              setName.includes(value) ||
-              albumName.includes(value) ||
-              GlobalID.toString().includes(value) ||
-              sticker.SetID.toString().includes(value)
-            );
-          })
-        ) {
-          userData[GlobalID].show = 1;
-          return;
-        } else {
-          userData[GlobalID].show = 0;
-        }
-      }
-    }
-  }
-}
+  ChangeFilterBtnStyle(ButtonElement);
+};
 
 function ChangeFilterBtnStyle(ButtonElement) {
   const filterState = FilterList[ButtonElement.dataset.filtervalue].FilterState;
@@ -1762,7 +1652,7 @@ function copyToCollectionScreenshot() {
 
     const TimeNow = Math.floor(Date.now() / 1000);
     
-    var snapshotFooterElement = `<div id="collection-screenshot-footer"><div id="collection-screenshot-footer-gamever">v1.21.2_${TimeNow}</div><div id="collection-screenshot-footer-link">https://aceofspadesomelette.github.io/MoGoTools/</div></div>`;
+    var snapshotFooterElement = `<div id="collection-screenshot-footer"><div id="collection-screenshot-footer-gamever">v1.21.2_${TimeNow}</div><div id="collection-screenshot-footer-link">https://mogotools.web.app/</div></div>`;
 
     // Add the SnapshotFooterElement after #sticker-board is cloned
     var stickerBoard = collectionScreenshot.querySelector("#sticker-board");
@@ -1874,8 +1764,8 @@ function copyToCollectionScreenshot() {
     });
     if (ImgOrientationLandscapeZeroPortraitOne === 1) {
       collectionScreenshot.style.width = "400px";
-      document.getElementById("collection-screenshot-footer-gamever").style.width = "30%";
-      document.getElementById("collection-screenshot-footer-link").style.width = "70%";
+      document.getElementById("collection-screenshot-footer-gamever").style.width = "50%";
+      document.getElementById("collection-screenshot-footer-link").style.width = "50%";
     }
 
     // Calculate the current width and height of middle-side
