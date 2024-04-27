@@ -667,10 +667,99 @@ function ChangeFilterButtonState(ButtonElement, isThisBtnClicked) {
     FilterList[ButtonElement.dataset.filtervalue] = {
       ...FilterList[ButtonElement.dataset.filtervalue],
       FilterState: (FilterList[ButtonElement.dataset.filtervalue].FilterState + 1) % 3,
-    };
+// SEARCH BAR (Filter)
+function FilterBySearchbar(GlobalID) {
+  var searchbar = document.getElementById("filtermenu-searchbar");
+  var filterName = searchbar.getAttribute("data-filtervalue");
+
+  if (searchbar.value === "") {
+    FilterList[filterName].FilterState = 0;
+    userData[GlobalID].show = 1;
+    updateClearFiltersButton();
+    return;
   }
-  ChangeFilterBtnStyle(ButtonElement);
-};
+
+  var filterValue = searchbar.value.trim();
+
+  if (filterValue.includes(",")) {
+    filterValue = filterValue.split(",").map(function (value) {
+      return value.trim(); // Remove leading and trailing spaces
+    });
+  } else {
+    filterValue = [filterValue];
+  }
+
+  filterValue = filterValue.filter(function (value) {
+    return value.trim() !== "";
+  });
+
+  if (FilterList.hasOwnProperty(filterName)) {
+    FilterList[filterName].FilterValue = filterValue;
+    FilterList[filterName].FilterState = filterValue.length > 0 ? 1 : 0;
+  }
+
+  var sticker = STICKER_DATA.find(function (item) {
+    return item.GlobalID === GlobalID;
+  });
+
+  if (sticker) {
+    var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
+    var setName = sticker.SetName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
+    var albumName = sticker.AlbumName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
+    var lowercaseFilterValue = filterValue.map(function (value) {
+      return value.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
+    });
+
+    if (filterValue.length === 1) {
+      if (
+        stickerName.includes(lowercaseFilterValue[0]) ||
+        setName.includes(lowercaseFilterValue[0]) ||
+        albumName.includes(lowercaseFilterValue[0]) ||
+        GlobalID.toString() === lowercaseFilterValue[0] ||
+        sticker.SetID.toString() === lowercaseFilterValue[0]
+      ) {
+        userData[GlobalID].show = 1;
+      } else {
+        userData[GlobalID].show = 0;
+      }
+    } else if (filterValue.length > 1) {
+      if (AndZeroOrOne === 0) {
+        if (
+          lowercaseFilterValue.every(function (value) {
+            return (
+              stickerName.includes(value) ||
+              setName.includes(value) ||
+              albumName.includes(value) ||
+              GlobalID.toString() === value ||
+              sticker.SetID.toString() === value
+            );
+          })
+        ) {
+          userData[GlobalID].show = 1;
+        } else {
+          userData[GlobalID].show = 0;
+        }
+      } else if (AndZeroOrOne === 1) {
+        if (
+          lowercaseFilterValue.some(function (value) {
+            return (
+              stickerName.includes(value) ||
+              setName.includes(value) ||
+              albumName.includes(value) ||
+              GlobalID.toString() === value ||
+              sticker.SetID.toString() === value
+            );
+          })
+        ) {
+          userData[GlobalID].show = 1;
+          return;
+        } else {
+          userData[GlobalID].show = 0;
+        }
+      }
+    }
+  }
+}
 
 function ChangeFilterBtnStyle(ButtonElement) {
   const filterState = FilterList[ButtonElement.dataset.filtervalue].FilterState;
