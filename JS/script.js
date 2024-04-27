@@ -567,16 +567,22 @@ function FilterBySearchbar(GlobalID) {
     filterValue = filterValue.split(",").map(function (value) {
       return value.trim(); // Remove leading and trailing spaces
     });
-  } else {filterValue = [filterValue];}
+  } else {
+    filterValue = [filterValue];
+  }
 
-  filterValue = filterValue.filter(function (value) {return value.trim() !== "";});
+  filterValue = filterValue.filter(function (value) {
+    return value.trim() !== "";
+  });
 
   if (FilterList.hasOwnProperty(filterName)) {
     FilterList[filterName].FilterValue = filterValue;
     FilterList[filterName].FilterState = filterValue.length > 0 ? 1 : 0;
   }
 
-  var sticker = STICKER_DATA.find(function (item) {return item.GlobalID === GlobalID;});
+  var sticker = STICKER_DATA.find(function (item) {
+    return item.GlobalID === GlobalID;
+  });
 
   if (sticker) {
     var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
@@ -590,9 +596,14 @@ function FilterBySearchbar(GlobalID) {
       if (
         stickerName.includes(lowercaseFilterValue[0]) ||
         setName.includes(lowercaseFilterValue[0]) ||
-        albumName.includes(lowercaseFilterValue[0])
-      ) {userData[GlobalID].show = 1;}
-        else {userData[GlobalID].show = 0;}
+        albumName.includes(lowercaseFilterValue[0]) ||
+        GlobalID.toString().includes(lowercaseFilterValue[0]) ||
+        sticker.SetID.toString().includes(lowercaseFilterValue[0])
+      ) {
+        userData[GlobalID].show = 1;
+      } else {
+        userData[GlobalID].show = 0;
+      }
     } else if (filterValue.length > 1) {
       if (AndZeroOrOne === 0) {
         if (
@@ -600,22 +611,33 @@ function FilterBySearchbar(GlobalID) {
             return (
               stickerName.includes(value) ||
               setName.includes(value) ||
-              albumName.includes(value)
+              albumName.includes(value) ||
+              GlobalID.toString().includes(value) ||
+              sticker.SetID.toString().includes(value)
             );
           })
-        ) {userData[GlobalID].show = 1;}
-        else {userData[GlobalID].show = 0;}
+        ) {
+          userData[GlobalID].show = 1;
+        } else {
+          userData[GlobalID].show = 0;
+        }
       } else if (AndZeroOrOne === 1) {
         if (
           lowercaseFilterValue.some(function (value) {
             return (
               stickerName.includes(value) ||
               setName.includes(value) ||
-              albumName.includes(value)
+              albumName.includes(value) ||
+              GlobalID.toString().includes(value) ||
+              sticker.SetID.toString().includes(value)
             );
           })
-        ) {userData[GlobalID].show = 1; return;}
-        else {userData[GlobalID].show = 0;}
+        ) {
+          userData[GlobalID].show = 1;
+          return;
+        } else {
+          userData[GlobalID].show = 0;
+        }
       }
     }
   }
