@@ -17,6 +17,6 @@ export const NEWS_DATA = [
     {
         "NewsTime": "1714278535",
         "NewsHeader": "MoGoTools Public Release",
-        "NewsContent": "MoGoTools has been officially released to public. Cheers!"
+        "NewsContent": "MoGoTools has been officially released to public. Cheers!<br>Remember to bookmark the link here:  https://mogotools.web.app/"
     }
 ]
