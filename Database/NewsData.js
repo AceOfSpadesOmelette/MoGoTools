@@ -13,5 +13,10 @@ export const NEWS_DATA = [
         "NewsTime": "1714036372",
         "NewsHeader": "Quick Set Scrolling Feature Added!",
         "NewsContent": "Added the ability to quickly scroll between sets.<br>Simply click on the set icon to automatically scroll to the first sticker that matches the set, if there are any."
+    },
+    {
+        "NewsTime": "1714278535",
+        "NewsHeader": "MoGoTools Public Release",
+        "NewsContent": "MoGoTools has been officially released to public. Cheers!"
     }
 ]
