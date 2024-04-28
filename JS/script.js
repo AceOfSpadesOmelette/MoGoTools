@@ -1464,13 +1464,10 @@ function countValveStickers() {
     nextTierText = `${StickersToNextTier} stars until Tier 3 vault.`;
     valveTierImage.src = "assets/stickers/StickerValveTier2.png";
   } else if (ValveSum >= VaultTierThree) {
-    StickersToNextTier = ValveSum - VaultTierThree;
-    var TierThreeVaultExchangeAmount = Math.floor(StickersToNextTier / VaultTierThree);
+    var TierThreeVaultExchangeAmount = Math.floor(ValveSum / VaultTierThree);
     valveTierImage.src = "assets/stickers/StickerValveTier3.png";
-    nextTierText = `${StickersToNextTier} stars remaining after unlocking Tier 3 vault.`;    
-    if (TierThreeVaultExchangeAmount > 0) {
-        nextTierText += ` (Can exchange Tier 3 vault ${TierThreeVaultExchangeAmount} time${TierThreeVaultExchangeAmount > 1 ? 's' : ''}.)`;
-    }
+    var times = TierThreeVaultExchangeAmount === 0 || TierThreeVaultExchangeAmount > 1 ? 'times' : 'time';
+    nextTierText = `${StickersToNextTier} stars remaining after unlocking Tier 3 vault. (Can unlock Tier 3 vault ${TierThreeVaultExchangeAmount} ${times}.)`;
   }
   document.getElementById("NextValveCounter").textContent = nextTierText;
 }
