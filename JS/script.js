@@ -1450,7 +1450,7 @@ function countValveStickers() {
   let StickersToNextTier = 0;
   let nextTierText = "";
 
-  document.getElementById("NextValveCounter").style.display = "block";
+    document.getElementById("NextValveCounter").style.display = "block";
   if (ValveSum < VaultTierOne) {
     StickersToNextTier = VaultTierOne - ValveSum;
     nextTierText = `${StickersToNextTier} stars until Tier 1 vault.`;
@@ -1464,6 +1464,7 @@ function countValveStickers() {
     nextTierText = `${StickersToNextTier} stars until Tier 3 vault.`;
     valveTierImage.src = "assets/stickers/StickerValveTier2.png";
   } else if (ValveSum >= VaultTierThree) {
+    StickersToNextTier = ValveSum - VaultTierThree;
     var TierThreeVaultExchangeAmount = Math.floor(ValveSum / VaultTierThree);
     valveTierImage.src = "assets/stickers/StickerValveTier3.png";
     var times = TierThreeVaultExchangeAmount === 0 || TierThreeVaultExchangeAmount > 1 ? 'times' : 'time';
