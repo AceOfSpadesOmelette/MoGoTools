@@ -592,7 +592,7 @@ function FilterBySearchbar(GlobalID) {
   if (sticker) {
     var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
     var setName = sticker.SetName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
-    var albumName = sticker.AlbumName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
+    //var albumName = sticker.AlbumName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
     var lowercaseFilterValue = filterValue.map(function (value) {
       return value.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
     });
@@ -601,7 +601,7 @@ function FilterBySearchbar(GlobalID) {
       if (
         stickerName.includes(lowercaseFilterValue[0]) ||
         setName.includes(lowercaseFilterValue[0]) ||
-        albumName.includes(lowercaseFilterValue[0]) ||
+        //albumName.includes(lowercaseFilterValue[0]) ||
         GlobalID.toString() === lowercaseFilterValue[0] ||
         sticker.SetID.toString() === lowercaseFilterValue[0]
       ) {
@@ -616,7 +616,7 @@ function FilterBySearchbar(GlobalID) {
             return (
               stickerName.includes(value) ||
               setName.includes(value) ||
-              albumName.includes(value) ||
+              //albumName.includes(value) ||
               GlobalID.toString() === value ||
               sticker.SetID.toString() === value
             );
@@ -632,7 +632,7 @@ function FilterBySearchbar(GlobalID) {
             return (
               stickerName.includes(value) ||
               setName.includes(value) ||
-              albumName.includes(value) ||
+              //albumName.includes(value) ||
               GlobalID.toString() === value ||
               sticker.SetID.toString() === value
             );
