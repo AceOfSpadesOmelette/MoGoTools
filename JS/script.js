@@ -405,17 +405,22 @@ IgnorePrestigeBtn.addEventListener("click", function () {
   IgnorePrestige = (IgnorePrestige + 1) % 2;
   if (IgnorePrestige === 1) { IgnorePrestigeBtn.classList.add("btnGreen"); }
   else { IgnorePrestigeBtn.classList.remove("btnGreen"); }
-  clearFilters();
+  //clearFilters();
   GenerateFilterSetButtons();
+  document.querySelector("#stickerset-filter .btn-subgroup").querySelectorAll(".filter-btn").forEach((button) => {ChangeFilterBtnStyle(button);})
   UpdateTotalStickerQuantity();
   UpdateTotalStickerByRarityQuantity();
   const containers = document.querySelectorAll(".sticker-card-container");
   containers.forEach((container) => {
-    RestoreSelected(userData, container);
-    RestoreStickerSpares(userData, container);
-    RestoreTradeStates(userData, container);
-    ChangeUserDataHaveSpareValue(userData, container);
+    const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === container.getAttribute("data-global"));
+    if (stickerData.Prestige === "1") {      
+      RestoreSelected(userData, container);
+      RestoreStickerSpares(userData, container);
+      RestoreTradeStates(userData, container);
+      ChangeUserDataHaveSpareValue(userData, container);
+    }
   });
+  PerformFilters(userData);
   countSelectedStickers();
   countValveStickers();
 });
