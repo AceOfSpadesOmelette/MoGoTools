@@ -2068,7 +2068,8 @@ if (dlPngButton) {
       dlPngButton.textContent = DownloadSuccessfulText;
       setTimeout(function () {
         dlPngButton.classList.remove("btnYellow");
-        dlPngButton.textContent = "Download as PNG";
+        const DownloadPNGBtnText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "DownloadPNGBtnText")[CurrentLanguageCode];
+        dlPngButton.textContent = DownloadPNGBtnText;
       }, 3000);
     }, 3000);
   });
@@ -2167,7 +2168,8 @@ if (dlTradePngButton) {
       dlTradePngButton.textContent = DownloadSuccessfulText;
       setTimeout(function () {
         dlTradePngButton.classList.remove("btnYellow");
-        dlTradePngButton.textContent = "Download as PNG";
+        const DownloadPNGBtnText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "DownloadPNGBtnText")[CurrentLanguageCode];
+        dlTradePngButton.textContent = DownloadPNGBtnText;
       }, 3000);
     }, 3000);
   });
