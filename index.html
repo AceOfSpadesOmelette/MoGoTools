@@ -7,9 +7,13 @@
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 	<meta name="description" content="Sticker Tracker for Monopoly Go!">
+	<meta name="google-site-verification" content="kdCKf8EhTJ6xe9h9Im1VOuCWnsM9ymAB1iLd6At2CII" />
 	<link rel="icon" type="image/png" href="assets/stickers/StickerBoom_IconOnTop.png">
 	<link rel="stylesheet" id="DefaultCSS" type="text/css" href="CSS/style.css">
 	<link rel="stylesheet" id="MobileCSS" type="text/css" href="CSS/mobile.css" disabled>
+	<meta name="author" content="AceOfSpadesOmelette">
+	<meta name="description" content="MoGoTools is a Monopoly Go! tool that helps users keep track of their stickers and album.">
+  	<meta name="keywords" content="monopoly go, monopoly, monopoly go stickers, sticker tracker, monopoly go sticker tracker, mogotools, monopoly go tools, mogo, 大富翁, モノポリー">
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -23,6 +27,7 @@
 </script>
 
 
+
 <body>
 	<div id="main">
 		<div id="main-wrapper">
@@ -32,113 +37,116 @@
 			<div id="left-side">
 				<div id="filter-sort-modal">
 					<div id="filter-sort-menu-body">
-						<div id="filter-sort-menu-header">Settings</div>
+						<div id="filter-sort-menu-header" data-translation-key="settings"></div>
 						<div id="filter-sort-menu-content">
 							<div id="web-layout-basic-menu-container">
 								<!-- <button id="webBasicMenu" class="btn" type="button">Menu</button> -->
 								<img id="webBasicMenu" class="webBasicMenuImg" src="assets/MenuIcon.png">
 							</div>
 							<div id="sort-menu">
-								<div class="section-header"><span>Sort</span></div>
+								<div class="section-header"><span data-translation-key="sort"></span></div>
 								<div class="btn-subgroup">									
 									<button id="SortOrderBtn" class="btn" type="button">
-										Sort Order:&nbsp;&nbsp;&nbsp;<span id="SortOrderBtnText">Ascending ⬆</span>
+										<span id="SortOrderBtnText" data-translation-key="SortOrderBtnText_0"></span>
 									</button>
 								</div>
 								<div id="sort-btn-group-container" class="BtnGroup3">
 									<button data-sort-type="GlobalID" class="btn sort-btn" type="button">
-										<span class="sort-btn-name">Dex</span>
+										<span class="sort-btn-name" data-translation-key="SortBtnDexText"></span>
 									</button>
 									<button data-sort-type="StickerName" class="btn sort-btn" type="button">
-										<span class="sort-btn-name">Name</span>
+										<span class="sort-btn-name" data-translation-key="SortBtnNameText"></span>
 									</button>
 									<button data-sort-type="SetID" class="btn sort-btn" type="button">
-										<span class="sort-btn-name">Set</span>
+										<span class="sort-btn-name" data-translation-key="set"></span>
 									</button>
 									<button data-sort-type="StickerRarity" class="btn sort-btn" type="button">
-										<span class="sort-btn-name">Rarity</span>
+										<span class="sort-btn-name" data-translation-key="SortBtnRarityText"></span>
 									</button>
 									<button data-sort-type="Golden" class="btn sort-btn" type="button">
-										<span class="sort-btn-name">Golden</span>
+										<span class="sort-btn-name" data-translation-key="SortBtnGoldenText"></span>
 									</button>
 									<button data-sort-type="Possession" data-sort-onsite="selected" class="btn sort-btn"
 										type="button">
-										<span class="sort-btn-name">Possession</span>
+										<span class="sort-btn-name" data-translation-key="SortBtnPossessionText"></span>
 									</button>
 								</div>
 							</div>
 
 							<div id="quick-toggle-menu">
-								<div class="section-header"><span>Shortcut</span></div>
+								<div class="section-header"><span data-translation-key="shortcut"></span></div>
 								<div class="btn-grp-title">
-									Quick Board Toggle
+									<span data-translation-key="QuickBoardToggle"></span>
 									<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
 								</div>
 								<div class="btn-subgroup BtnGroup2">
 									<button id="ToggleSelectedBtn" class="btn" type="button">
-										Invert Selected
-										<span class="tooltiptext-top">Turns non-selected into selected stickers and vice versa.</span>
+										<span data-translation-key="InvertSelected"></span>
+										<span class="tooltiptext-top" data-translation-key="ToggleSelectedBtnTooltipText"></span>
 									</button>
-									<button id="ResetSparesBtn" class="btn" type="button">
-										Reset Spares
-									</button>
+									<button id="ResetSparesBtn" class="btn" type="button"><span data-translation-key="ResetSpares"></span></button>
 									<button id="ToggleLFBtn" class="btn" type="button">
-										Invert LF
-										<span class="tooltiptext-top">Inverts Looking For (LF) label of each sticker in
-											the current selection</span>
+										<span data-translation-key="ToggleLF"></span>
+										<span class="tooltiptext-top" data-translation-key="ToggleLFBtnTooltipText"></span>
 									</button>
 									<button id="ToggleFTBtn" class="btn" type="button">
-										Invert FT
-										<span class="tooltiptext-top">Inverts For Trade (FT) label of each sticker in
-											the current selection</span>
+										<span data-translation-key="ToggleFT"></span>
+										<span class="tooltiptext-top" data-translation-key="ToggleFTBtnTooltipText"></span>
+									</button>
+									<button id="ResetLFBtn" class="btn" type="button">
+										<span data-translation-key="ResetLF"></span>
+										<span class="tooltiptext-top" data-translation-key="ResetLFBtnTooltipText"></span>
+									</button>
+									<button id="ResetFTBtn" class="btn" type="button">
+										<span data-translation-key="ResetFT"></span>
+										<span class="tooltiptext-top" data-translation-key="ResetFTBtnTooltipText"></span>
 									</button>
 									<button id="ResetAllStickersBtn" class="btn" type="button">
-										Reset All Stickers
+										<span data-translation-key="ResetAllStickers"></span>
 									</button>
 								</div>
 							</div>
 
 							<div id="filter-menu">
-								<div class="section-header"><span>Filter</span></div>
+								<div class="section-header"><span data-translation-key="filter"></span></div>
 								<div id="filter-btn-group-container">
 									<div id="search-bar-container">
 										<input type="text" id="filtermenu-searchbar" data-filtervalue="1>StickerName>"
-											placeholder="Search...">
+										data-translation-key="SearchBarPlaceholderText" placeholder="">
 										<button id="ClearFilterMenuSearchBar" class="btn" type="button">×</button>
 									</div>
 									<div id="filter-settings-container">
 										<button id="AndOrFilterModeBtn" class="btn filter-settings-btn" type="button">
-											<span id="AndOrFilterModeBtnText">Filter Mode: AND</span>
-											<span id="AndOrFilterModeBtnTooltip" class="tooltiptext-bottom">AND Mode:
-												Only stickers that match ALL filter conditions will be displayed.</span>
+											<span id="AndOrFilterModeBtnText" data-translation-key="AndOrFilterModeBtnText_0"></span>
+											<span id="AndOrFilterModeBtnTooltip" class="tooltiptext-bottom" data-translation-key="AndOrFilterModeBtnTooltipText_0"></span>
 										</button>
 										<button id="ClearFiltersBtn" class="btn filter-settings-btn" type="button">
-											<span>× Clear Filters (<span id="filterLength">0</span>)</span>
+											×&nbsp;<span data-translation-key="ClearFiltersBtnText"></span>&nbsp;(<span id="filterLength">0</span>)</span>
 										</button>
 										<button id="ViewCurrentFiltersBtn" class="btn">👁<span
-												class="tooltiptext-bottom">View Applied Filters</span></button>
+												class="tooltiptext-bottom" data-translation-key="ViewCurrentFiltersBtnText"></span></button>
 										<button id="RefreshFiltersBtn" class="btn">⟳<span
-												class="tooltiptext-bottom">Refresh</span></button>
+												class="tooltiptext-bottom" data-translation-key="RefreshFiltersBtnText"></span></button>
 									</div>
 									<div id="trade-filter">
 										<div class="btn-grp-title">
-											Trade
+											<span data-translation-key="trade"></span>
 											<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
 										</div>
 										<div class="btn-subgroup BtnGroup2">
 											<button data-filtervalue="0>lookingfor>1" class="filter-btn btn"
 												type="button">
-												Looking For (LF)
+												<span data-translation-key="LookingFor"></span>
 											</button>
 											<button data-filtervalue="0>fortrade>1" class="filter-btn btn"
 												type="button">
-												For Trade (FT)
+												<span data-translation-key="ForTrade"></span>
 											</button>
 										</div>
 									</div>
 									<div id="rarity-filter">
 										<div class="btn-grp-title">
-											Rarity
+											<span data-translation-key="RarityFilterHeader"></span>
 											<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
 										</div>
 										<div class="btn-subgroup BtnGroup5">
@@ -166,54 +174,54 @@
 									</div>
 									<div id="stickertype-filter">
 										<div class="btn-grp-title">
-											Sticker Type
+											<span data-translation-key="StickerTypeFilterHeader"></span>
 											<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
 										</div>
 										<div class="btn-subgroup BtnGroup2">
 											<button data-filtervalue="1>Golden>1" class="filter-btn btn" type="button">
 												<img class="filter-btn-icon"
-													src="assets/stickers/GoldenBlitz_AlbumSet_Icon.png"> &nbsp; Golden
+													src="assets/stickers/GoldenBlitz_AlbumSet_Icon.png"> &nbsp; <span data-translation-key="golden"></span>
 											</button>
 											<button data-filtervalue="1>Prestige>1" class="filter-btn btn"
 												type="button">
 												<img class="filter-btn-icon"
 													src="assets/stickers/Icon_Star_Rainbow.png"> &nbsp;
-												Prestige
+													<span data-translation-key="prestige"></span>
 											</button>
 											<button data-filtervalue="0>selected>1" class="filter-btn btn"
 												type="button">
-												Obtained
+												<span data-translation-key="obtained"></span>
 											</button>
 											<button data-filtervalue="0>havespare>1" class="filter-btn btn"
 												type="button">
-												Spare
+												<span data-translation-key="spare"></span>
 											</button>
 										</div>
 									</div>
 									<div id="spares-filter">
 										<div class="btn-grp-title">
-											Spares
+											<span data-translation-key="spares"></span>
 											<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
 										</div>
 										<div class="btn-subgroup btn-subgroup-spare">
-											<label for="SpareFilterMin" class="spare-filter-header">From:</label><input
+											<label for="SpareFilterMin" class="spare-filter-header" data-translation-key="from"></label><input
 												type="number" id="spare-filter-min"
 												class="spare-filter-text spare-filter-min" name="SpareFilterMin" min="0"
 												max="100" value="0" size="4">
-											<label for="SpareFilterMax" class="spare-filter-header">To:</label><input
+											<label for="SpareFilterMax" class="spare-filter-header" data-translation-key="to"></label><input
 												type="number" id="spare-filter-max"
 												class="spare-filter-text spare-filter-max" name="SpareFilterMax" min="0"
 												max="100" value="100" size="4">
 											<button id="spare-filter-btn"
 												data-filtervalue="0>spare>spare-filter-min|spare-filter-max"
 												class="filter-btn btn" type="button">
-												Filter
+												<span data-translation-key="SpareFilterBtnText"></span>
 											</button>
 										</div>
 									</div>
 									<div id="stickerset-filter">
 										<div class="btn-grp-title">
-											Set
+											<span data-translation-key="set"></span>
 											<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
 										</div>
 										<div class="btn-subgroup BtnGroup3"></div>
@@ -222,71 +230,67 @@
 								</div>
 							</div>
 							<div>
-								<div class="section-header"><span>Miscellaneous</span></div>
+								<div class="section-header"><span data-translation-key="miscellaneous"></span></div>
 								<div class="btn-grp-title">
-									Backup
+									<span data-translation-key="backup"></span>
 									<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
 								</div>
 								<div class="btn-subgroup BtnGroup2">
 									<button id="import-btn" class="btn filter-settings-btn" type="button">
-										Import
+										<span data-translation-key="import"></span>
 									</button>
 									<button id="export-btn" class="btn filter-settings-btn" type="button">
-										Save
+										<span data-translation-key="save"></span>
 									</button>
 									<button id="import-from-file-btn" class="btn filter-settings-btn" type="button">
-										Load from .TXT
+										<span data-translation-key="LoadFromText"></span>
 									</button>
 									<button id="export-from-file-btn" class="btn filter-settings-btn" type="button">
-										Save as .TXT
+										<span data-translation-key="SaveAsText"></span>
 									</button>
 								</div>
 								<div class="btn-subgroup">
-									<textarea class="backup-area"
-										placeholder="Click the Export button to generate a text file here to be copied for backup. Click the Import to restore your backup. Do not edit the contents of the save file to avoid causing any errors."></textarea>
+									<textarea class="backup-area" data-translation-key="BackupAreaPlaceholder"
+										placeholder=""></textarea>
 								</div>
 								<div>
 									<div class="btn-grp-title">
-										Download Image
+										<span data-translation-key="DownloadImage"></span>
 										<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
 									</div>
-									<div class="btn-subgroup BtnGroup2">
-										<button id="IncludeIGNBtn" class="btn" type="button">
-											Include IGN
-											<span class="tooltiptext-top">Your in-game name (IGN) will be displayed in
-												the image if this button is on.</span>
-										</button>
-										<button id="IncludePlayerLinkBtn" class="btn" type="button">Include Link
-											<span class="tooltiptext-top">Your invite link will be displayed in the
-												image if this button is on.</span>
-										</button>
-									</div>
-									<div class="btn-subgroup"><button class="btn" id="SetImageOrientationBtn">Current Layout: Landscape</button>
-									</div>
-									<div class="btn-subgroup"><button class="btn" id="dl-png">Download as PNG</button>
+
+									
+									<div class="btn-subgroup"><button class="btn" id="dl-png" data-translation-key="DownloadPNGBtnText"></button>
 									</div>
 								</div>
 								<div>
 									<div class="btn-grp-title">
-										Trade Post Clipboard
+										<span data-translation-key="TradePostClipboard"></span>
 										<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
 									</div>
 									<div class="btn-subgroup BtnGroup2">
 										<button id="generate-trade-post-btn" class="btn" type="button">
-											Generate
+											<span data-translation-key="generate"></span>
+											<span
+												class="tooltiptext-bottom" data-translation-key="TradePostClipboardGenerateBtnText"></span>
 										</button>
 										<button id="copy-trade-post-area" class="btn" type="button">
-											Copy
+											<span data-translation-key="copy"></span>
 										</button>
+									</div>								
+									<div class="btn-subgroup"><button class="btn" id="dl-trade-png">
+										<span data-translation-key="DownloadPNGBtnText"></span>
+										<span class="tooltiptext-bottom" data-translation-key="TradePostClipboardDownloadPNGBtnText"></span>
+									</button>
 									</div>
 									<div class="btn-subgroup">
-										<textarea class="trade-post-area"
-											placeholder="Click the Generate button to generate a trade post!"></textarea>
+										<textarea class="trade-post-area" data-translation-key="TradePostAreaPlaceholder"
+											placeholder=""></textarea>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div id="filter-sort-menu-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close</div>
+						<div id="filter-sort-menu-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-translation-key="close"></span></div>
 					</div>
 				</div>
 			</div>
@@ -299,23 +303,22 @@
 			<div id="right-side">
 				<div id="progress-menu-modal">
 					<div id="progress-menu-body">
-						<div id="progress-menu-header">Your Profile</div>
+						<div id="progress-menu-header"><span data-translation-key="YourProfile"></span></div>
 						<div id="progress-menu-content">
 							<div class="player-info-container">
 								<div class="player-info-row">
-									<span class="player-info-header">Your IGN:</span>
-									<input type="text" id="player-ign" class="player-info-field"
+									<span class="player-info-header" data-translation-key="YourIGN"></span>
+									<input type="text" id="player-ign" class="player-info-field" data-translation-key="optional"
 										placeholder="(Optional)">
 								</div>
 								<div class="player-info-row">
-									<span class="player-info-header">Invite Link:</span>
+									<span class="player-info-header" data-translation-key="InviteLink"></span>
 									<input type="text" id="player-link" class="player-info-field"
 										placeholder="(Optional)">
 								</div>
 							</div>
-							<button id="IgnorePrestigeBtn" class="btn" type="button">Ignore Prestige
-								<span class="tooltiptext-bottom">Toggle this button if you haven't reached prestige
-									album!</span>
+							<button id="IgnorePrestigeBtn" class="btn" type="button"><span data-translation-key="IgnorePrestige"></span>
+								<span class="tooltiptext-bottom" data-translation-key="IgnorePrestigeBtnTooptipText"></span>
 							</button>
 							<div id="album-progress-container">
 								<div id="album-logo-container">
@@ -323,37 +326,37 @@
 								<div class="album-time-info">
 									<div class="time-container">
 										<div class="time-row">
-											<span class="time-header">Start:</span>
+											<span class="time-header" data-translation-key="start"></span>
 											<span class="time-value" id="start-time"></span>
 										</div>
 										<div class="time-row">
-											<span class="time-header">End:</span>
+											<span class="time-header" data-translation-key="end"></span>
 											<span class="time-value" id="end-time"></span>
 										</div>
 										<div class="time-row">
-											<span class="time-header">Time Left:</span>
+											<span class="time-header" data-translation-key="TimeLeft"></span>
 											<span class="time-value" id="time-left"></span>
 										</div>
 									</div>
-									<div id="progress-and-valve">
+									<div id="progress-and-vault">
 										<div class="progress-container" id="album-progress-tracker">
 											<div class="progress-bar"></div>
 											<div class="progress-text"><span id="user-stickers-quantity">0</span> /
 												<span id="total-stickers-quantity">0</span></div>
 										</div>
-										<div class="valve-container">
-											<div class="valve-subcontainer">
-												<img class="valve-star" src="assets/stickers/Icon_Star.png">
-												<img class="valve-tier">											
-												<span id="total-valve-quantity">0</span>
+										<div class="vault-container">
+											<div class="vault-subcontainer">
+												<img class="vault-star" src="assets/stickers/Icon_Star.png">
+												<img class="vault-tier">											
+												<span id="total-vault-quantity">0</span>
 												
-												<span class="tooltiptext-top" id="NextValveCounter"></span>
+												<span class="tooltiptext-top" id="NextVaultCounter" data-translation-key=""></span>
 											</div>
-											<div class="leftover-valve-subcontainer">
-												<img class="valve-star" src="assets/stickers/Icon_Star_Rainbow.png">
-												<span class="tooltiptext-bottom">Enter your duplicate Sticker Stars here! (Applicable to players who have reached prestige album.)</span>
-												<input type="number" id="leftover-total-valve-quantity"
-													class="valve-prestige-text" name="LeftoverTotalValveQuantity"
+											<div class="leftover-vault-subcontainer">
+												<img class="vault-star" src="assets/stickers/Icon_Star_Rainbow.png">
+												<span class="tooltiptext-bottom" data-translation-key="LeftoverVaultSubcontainerTooltipText"></span>
+												<input type="number" id="leftover-total-vault-quantity"
+													class="vault-prestige-text" name="LeftoverTotalVaultQuantity"
 													min="0" max="9999" value="0" size="5">
 											</div>
 										</div>
@@ -396,40 +399,55 @@
 								</div>
 							</div>
 						</div>
-						<div id="progress-menu-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close</div>
+						<div id="progress-menu-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-translation-key="close">Close</span></div>
 					</div>
 				</div>
 			</div>
 			<div id="mobileMenu">
-				<button type="button" class="btn" id="mobileBasicMenu">Menu</button>
-				<button type="button" class="btn" id="mobileMenuFilters">Settings</button>
-				<button type="button" class="btn" id="mobileMenuOptions">Your Profile</button>
+				<button type="button" class="btn" id="mobileBasicMenu"><span data-translation-key="menu">Menu</span></button>
+				<button type="button" class="btn" id="mobileMenuFilters"><span data-translation-key="settings">Settings</span></button>
+				<button type="button" class="btn" id="mobileMenuOptions"><span data-translation-key="YourProfile">Your Profile</span></button>
 			</div>
 		</div>
 
 		<div id="current-filters-side">
 			<div id="current-filters-modal">
 				<div id="current-filters-body">
-					<div id="current-filters-header">Current Filters</div>
+					<div id="current-filters-header"><span data-translation-key="CurrentFilters">Current Filters</span></div>
 					<div id="current-filters-content"></div>
-					<div id="current-filters-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close</div>
+					<div id="current-filters-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-translation-key="close"></span></div>
 				</div>
 			</div>
 		</div>
 
 		<div id="snapshot-area">
-			<div id="collection-screenshot">
+			<div id="collection-screenshot"></div>
+			<div id="trade-screenshot">
+				<div id="trade-screenshot-container">			
+					<div class="lfft-screenshot-section">
+						<div class="lfft-section-header ft-trade-snapshot-header">
+							<span class="lfft-trade-snapshot-header" data-translation-key="LookingFor"></span>
+						</div>
+						<div id="lookingfor-screenshot-area"></div>
+					</div>
+					<div class="lfft-screenshot-section">
+						<div class="lfft-section-header lf-trade-snapshot-header">
+							<span class="lfft-trade-snapshot-header" data-translation-key="ForTrade"></span>
+						</div>
+						<div id="fortrade-screenshot-area"></div>
+					</div>
+				</div>	
 			</div>
 		</div>
 
 		<div id="basic-menu-side">
 			<div id="basic-menu-modal">
 				<div id="basic-menu-body">
-					<div id="basic-menu-header">Menu</div>
+					<div id="basic-menu-header"><span data-translation-key="menu"></span></div>
 					<div id="basic-menu-navigation">
-						<div id="BasicMenuNewsBtn" class="basic-menu-nav-btn basic-menu-navigation-selected">News</div>
-						<div id="BasicMenuFAQBtn" class="basic-menu-nav-btn">FAQ / Info</div>
-						<div id="BasicMenuDisplayBtn" class="basic-menu-nav-btn">Display</div>
+						<div id="BasicMenuNewsBtn" class="basic-menu-nav-btn basic-menu-navigation-selected"><span class="basic-menu-navigation-btn-text" data-translation-key="news"></span></div>
+						<div id="BasicMenuFAQBtn" class="basic-menu-nav-btn"><span class="basic-menu-navigation-btn-text" data-translation-key="FAQorInfo"></span></div>
+						<div id="BasicMenuDisplayBtn" class="basic-menu-nav-btn"><span class="basic-menu-navigation-btn-text" data-translation-key="display"></span></div>
 					</div>
 					<div id="basic-menu-content">
 						<div class="basic-menu-subcontainer" id="news-content">
@@ -437,7 +455,6 @@
 						<div class="basic-menu-subcontainer" id="faq-info-content">
 							<span>
 								Disclaimer:
-								About MoGoTools
 								<ul>
 									<li>MoGoTools is not affiliated with Scopely or Hasbro. All in-game assets belong to Monopoly GO.</li>
 									<li>MoGoTools is not responsible for any in-game trades. Please always make sure safe exchange is enabled before you perform any exchanges!</li>
@@ -470,7 +487,7 @@
 								<button class="accordion">What are Stickers?</button>
 								<div class="accordion-panel">
 									<ul>
-										<li>Stickers are collectible items that are found throughout the game. 9 unique Stickers make up each themed Album. Completing a sticker set and album will reward you with dice and cash.</li>
+										<li>Stickers are collectible items that are found throughout the game. Nine unique Stickers make up each themed Album. Completing a sticker set and album will reward you with dice and cash.</li>
 										<li>Once you complete an Album for the first time, you will start over with prestige sets unlocked.</li>
 										<li>Stickers with a gold frame are called Gold Stickers. They cannot be traded with other players except during Golden Blitz, where two specific golden stickers becomes tradable for a certain period of time (usually a day).</li>
 										<li>Any duplicate stickers you have from your previous album will be removed. Any leftover stars earned will be carried over.</li>
@@ -528,7 +545,7 @@
 								<button class="accordion">How do I download my album as an image?</button>
 								<div class="accordion-panel">
 									<ol>											
-										<li> On PC, go to Miscellaneous. On mobile, click Settings and scroll down until the Miscellaneous section appears.</li>
+										<li> Go to Menu > Display > Image Settings.</li>
 										<li> If you want the image to include your in-game name (IGN) and/or link, click "Include IGN" and "Include Link". Do note that these information will not appear if they are empty even if the buttons are selected.</li>
 										<li> Set the "Current Layout" as "landscape" if you'd like to have 9 stickers per row. If you want to have 3 stickers per row, set it as "portrait" isntead. You can toggle between layouts by clicking on the button. </li>
 										<li> Click "Download as PNG". The current sticker selection will then be downloaded.</li>
@@ -549,27 +566,56 @@
 							</div>
 						</div>
 						<div class="basic-menu-subcontainer" id="display-settings-content">
+							<div class="section-header" data-translation-key="ViewSettings"><span></span></div>
 							<div id="viewport-menu">
 								<button id="ViewportBtn" class="btn" type="button">
-									Switch To:&nbsp;&nbsp;&nbsp;<span id="ViewportBtnText">Mobile Layout</span>
+									<span id="ViewportBtnText" data-translation-key="ViewportBtnText_0" data-translation-key="ViewportBtnText"></span>
 								</button>
 							</div>
 							<div id="viewport-menu">
 								<button id="ChangeStickerStyleBtn" class="btn" type="button">
-									Show sticker art when not obtained:&nbsp;&nbsp;&nbsp;<span id="ChangeStickerStyleBtnText">OFF</span>
+                                    <span id="ChangeStickerStyleBtnText" data-translation-key="ChangeStickerStyleBtnText_0"></span>
 								</button>
 							</div>
 							<div id="viewport-menu">
 								<button id="LayoutBtn" class="btn" type="button">
-									Switch To:&nbsp;&nbsp;&nbsp;<span id="LayoutBtnText">Dark Mode</span>&nbsp;(Coming Soon!)
+									<span id="LayoutBtnText" data-translation-key="LayoutBtnText_0"></span>
+								</button>
+							</div>
+							<br>
+							<div class="section-header" data-translation-key="ImageSettings"><span></span></div>
+							<div id="viewport-menu" class="btn-subgroup BtnGroup2">
+								<button id="IncludeIGNBtn" class="btn" type="button">
+									<span data-translation-key="IncludeIGN"></span>
+									<span class="tooltiptext-top" data-translation-key="IncludeIGNBtnTooltipText"></span>
+								</button>
+								<button id="IncludePlayerLinkBtn" class="btn" type="button">
+									<span data-translation-key="IncludeLink"></span>
+									<span class="tooltiptext-top" data-translation-key="IncludeLinkBtnTooltipText"></span>
+								</button>
+							</div>
+							<div class="btn-subgroup"><button class="btn" id="SetImageOrientationBtn" data-translation-key="SetImageOrientationBtnText_0"></button>
+							</div>
+
+							<div class="section-header" data-translation-key="LanguageSettings"><span></span></div>
+							<div id="viewport-menu" class="btn-subgroup BtnGroup3">
+								<button class="translation-btn btn" type="button" data-translation-pointer="EN">
+									<span >English</span>
+								</button>
+								<button class="translation-btn btn" type="button" data-translation-pointer="TC">
+									<span >繁體中文</span>
+								</button>
+								<button class="translation-btn btn" type="button" data-translation-pointer="SC">
+									<span >简体中文</span>
 								</button>
 							</div>
 						</div>
 					</div>
-					<div id="basic-menu-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close</div>
+					<div id="basic-menu-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-translation-key="close"></span></div>
 				</div>
 			</div>
 		</div>
+		<noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 
 <script type="module" src="JS/script.js"></script>
