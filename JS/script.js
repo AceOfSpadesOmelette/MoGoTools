@@ -596,15 +596,15 @@ function FilterBySearchbar(GlobalID) {
     FilterList[filterName].FilterState = filterValue.length > 0 ? 1 : 0;
   }
 
-  var sticker = STICKER_DATA.find(function (item) {
-    return item.GlobalID === GlobalID;
-  });
+  var stickerObject = STICKER_DATA.find(function (item) {return item.GlobalID === GlobalID;});
+  var SetID = stickerObject.SetID;
+  var setObject = SET_DATA.find(function (item) {return item.SetID === SetID;})
+  var setNameOriginal = setObject[`SetName${CurrentLanguageCode}`];
 
-  if (sticker) {
-    //var stickerName = sticker.StickerNameEN.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "").replace(/！/g, "!");
-    var stickerName = sticker[`StickerName${CurrentLanguageCode}`].toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "").replace(/！/g, "!");
-    var setName = sticker.SetName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "").replace(/！/g, "!");
-    //var albumName = sticker.AlbumName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
+  if (stickerObject) {
+    var stickerName = stickerObject[`StickerName${CurrentLanguageCode}`].toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "").replace(/！/g, "!");
+    var setName = setNameOriginal.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "").replace(/！/g, "!");
+    //var albumName = stickerObject.AlbumName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
     var lowercaseFilterValue = filterValue.map(function (value) {
       return value.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "").replace(/！/g, "!");
     });
@@ -615,7 +615,7 @@ function FilterBySearchbar(GlobalID) {
         setName.includes(lowercaseFilterValue[0]) ||
         //albumName.includes(lowercaseFilterValue[0]) ||
         GlobalID.toString() === lowercaseFilterValue[0] ||
-        sticker.SetID.toString() === lowercaseFilterValue[0]
+        stickerObject.SetID.toString() === lowercaseFilterValue[0]
       ) {
         userData[GlobalID].show = 1;
       } else {
@@ -630,7 +630,7 @@ function FilterBySearchbar(GlobalID) {
               setName.includes(value) ||
               //albumName.includes(value) ||
               GlobalID.toString() === value ||
-              sticker.SetID.toString() === value
+              stickerObject.SetID.toString() === value
             );
           })
         ) {
@@ -646,7 +646,7 @@ function FilterBySearchbar(GlobalID) {
               setName.includes(value) ||
               //albumName.includes(value) ||
               GlobalID.toString() === value ||
-              sticker.SetID.toString() === value
+              stickerObject.SetID.toString() === value
             );
           })
         ) {
