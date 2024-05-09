@@ -16,6 +16,12 @@
 	src: url("../fonts/KBL75.ttf") format("truetype");
 }
 
+@font-face {
+	font-family: 'ChineseFont';
+	src: url('../chinese.msyh.ttf') format("truetype");
+	unicode-range: U+4E00-9FFF;
+}
+
 :root{
 	--beige: #f6f3e3;
 	--lightbrown: #ecd89b;
@@ -46,7 +52,7 @@ body {
 
 
 #main {
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	/* width: 1200px; */
 	margin-left: auto;
     margin-right: auto;
@@ -79,7 +85,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	border-bottom-left-radius: 2px;
 	box-shadow: 1px 1px 3px var(--mediumbrown);
 	transition-duration: 50ms;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	font-size: 12px;
 	line-height: 20px;
 	text-align: center;
@@ -99,7 +105,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	border-bottom-left-radius: 6px;
 	box-shadow: 1px 1px 3px var(--mediumbrown);
 	transition-duration: 50ms;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	font-size: 0.7rem;
 	height: 20px;
 	text-align: center;
@@ -119,7 +125,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	border-bottom-right-radius: 6px;
 	box-shadow: 1px 1px 3px var(--mediumbrown);
 	transition-duration: 50ms;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	font-size: 0.7rem;
 	height: 20px;
 	text-align: center;
@@ -270,7 +276,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	border-radius: 5px;
 	color: white;
 	font-size: 0.55rem;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -285,7 +291,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	border-radius: 5px;
 	color: white;
 	font-size: 0.5rem;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -300,7 +306,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	border-radius: 5px;
 	color: #423b4b;
 	font-size: 11px;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -315,7 +321,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	border-radius: 5px;
 	color: #423b4b;
 	font-size: 10px;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -328,7 +334,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	border-radius: 50% / 10%;
 	color: white;
 	font-size: 11px;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	text-align: center;
 	display: grid;
 	align-items: center;
@@ -350,7 +356,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	border-radius: 50% / 10%;
 	color: white;
 	font-size: 11px;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	text-align: center;
 	display: grid;
 	align-items: center;
@@ -380,7 +386,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	max-height: 2rem;
 	color: white;
 	font-size: 0.6rem;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	text-align: center;	
 	border-radius: 10px 10px 5px 5px;
 	display: flex;
@@ -393,7 +399,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	width: 100%;
 	color: white;
 	font-size: 0.55rem;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	text-align: center;
 	min-height: 2rem;
 	max-height: 2rem;
@@ -407,7 +413,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	width: 100%;
 	color: white;
 	font-size: 0.5rem;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	text-align: center;
 	min-height: 2rem;
 	max-height: 2rem;
@@ -423,7 +429,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	max-height: 2rem;
 	color: #423b4b;
 	font-size: 11px;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	text-align: center;
 	display: flex;
 	align-items: center;
@@ -435,7 +441,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	width: 100%;
 	color: #423b4b;
 	font-size: 10px;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	text-align: center;
 	min-height: 2rem;
 	max-height: 2rem;
@@ -449,7 +455,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	width: 100%;
 	color: #423b4b;
 	font-size: 9px;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	text-align: center;
 	min-height: 2rem;
 	max-height: 2rem;
@@ -691,7 +697,7 @@ input[type=text] {
 
 .spare-text{
 	font-size: 0.6rem;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	color: white;
 	background-color: transparent;
 	border-radius: 0 0 5px 5px;
@@ -712,7 +718,7 @@ input.spare-text{
 
 .spare-filter-text{
 	font-size: 15px;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	color: var(--darkerbrown);
 	background-color: var(--darkbrown);
 	border-radius: 5px;
@@ -802,7 +808,7 @@ input.spare-text{
 
 .vault-prestige-text{
 	font-size: 0.75rem;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	color: #136e21;
 	background-color: transparent;
 	border-radius: 5px;
@@ -1094,7 +1100,7 @@ input[class="player-info-field"]{
 	border-bottom-left-radius: 2px;
 	box-shadow: 1px 1px 3px var(--darkerbrown);
 	transition-duration: 50ms;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 	font-size: 12px;
 	text-align: center;
 }
@@ -1552,7 +1558,7 @@ input[class="player-info-field"]{
 	outline: none;
 	font-size: 15px;
 	transition: 0.4s;
-	font-family: "Quicksand-Bold";
+	font-family: "Quicksand-Bold", "MYSH Font";
 }
 
 .active, .accordion:hover {
