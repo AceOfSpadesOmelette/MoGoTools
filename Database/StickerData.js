@@ -1,142 +1,169 @@
 export const STICKER_DATA = [
     {
         "GlobalID": "50101",
-        "StickerName": "Chop Chop!",
+        "StickerNameEN": "Chop Chop!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
-        "SetName": "Holiday Dinner ",
+        "SetName": "Holiday Dinner",
         "SetID": "501",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_1_1.png",
-        "Colour": "#6b57db"
+        "Colour": "#6b57db",
+        "Raw": "1",
+        "StickerNameTC": "Chop Chop!",
+        "StickerNameSC": "Chop Chop!"
     },
     {
         "GlobalID": "50102",
-        "StickerName": "Tree Trimming",
+        "StickerNameEN": "Tree Trimming",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
-        "SetName": "Holiday Dinner ",
+        "SetName": "Holiday Dinner",
         "SetID": "501",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_1_2.png",
-        "Colour": "#6b57db"
+        "Colour": "#6b57db",
+        "Raw": "1",
+        "StickerNameTC": "Tree Trimming",
+        "StickerNameSC": "Tree Trimming"
     },
     {
         "GlobalID": "50103",
-        "StickerName": "Top it Off",
+        "StickerNameEN": "Top it Off",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
-        "SetName": "Holiday Dinner ",
+        "SetName": "Holiday Dinner",
         "SetID": "501",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_1_3.png",
-        "Colour": "#6b57db"
+        "Colour": "#6b57db",
+        "Raw": "1",
+        "StickerNameTC": "Top it Off",
+        "StickerNameSC": "Top it Off"
     },
     {
         "GlobalID": "50104",
-        "StickerName": "Cardinal Rule",
+        "StickerNameEN": "Cardinal Rule",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
-        "SetName": "Holiday Dinner ",
+        "SetName": "Holiday Dinner",
         "SetID": "501",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_1_4.png",
-        "Colour": "#6b57db"
+        "Colour": "#6b57db",
+        "Raw": "1",
+        "StickerNameTC": "Cardinal Rule",
+        "StickerNameSC": "Cardinal Rule"
     },
     {
         "GlobalID": "50105",
-        "StickerName": "Stir the Pot",
+        "StickerNameEN": "Stir the Pot",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
-        "SetName": "Holiday Dinner ",
+        "SetName": "Holiday Dinner",
         "SetID": "501",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_1_5.png",
-        "Colour": "#6b57db"
+        "Colour": "#6b57db",
+        "Raw": "1",
+        "StickerNameTC": "Stir the Pot",
+        "StickerNameSC": "Stir the Pot"
     },
     {
         "GlobalID": "50106",
-        "StickerName": "Sous Chef",
+        "StickerNameEN": "Sous Chef",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
-        "SetName": "Holiday Dinner ",
+        "SetName": "Holiday Dinner",
         "SetID": "501",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_1_6.png",
-        "Colour": "#6b57db"
+        "Colour": "#6b57db",
+        "Raw": "1",
+        "StickerNameTC": "Sous Chef",
+        "StickerNameSC": "Sous Chef"
     },
     {
         "GlobalID": "50107",
-        "StickerName": "Table Bling",
+        "StickerNameEN": "Table Bling",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
-        "SetName": "Holiday Dinner ",
+        "SetName": "Holiday Dinner",
         "SetID": "501",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_1_7.png",
-        "Colour": "#6b57db"
+        "Colour": "#6b57db",
+        "Raw": "1",
+        "StickerNameTC": "Table Bling",
+        "StickerNameSC": "Table Bling"
     },
     {
         "GlobalID": "50108",
-        "StickerName": "Top Dessert",
+        "StickerNameEN": "Top Dessert",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
-        "SetName": "Holiday Dinner ",
+        "SetName": "Holiday Dinner",
         "SetID": "501",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_1_8.png",
-        "Colour": "#6b57db"
+        "Colour": "#6b57db",
+        "Raw": "1",
+        "StickerNameTC": "Top Dessert",
+        "StickerNameSC": "Top Dessert"
     },
     {
         "GlobalID": "50109",
-        "StickerName": "Comfort and Joy",
+        "StickerNameEN": "Comfort and Joy",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
-        "SetName": "Holiday Dinner ",
+        "SetName": "Holiday Dinner",
         "SetID": "501",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_1_9.png",
-        "Colour": "#6b57db"
+        "Colour": "#6b57db",
+        "Raw": "1",
+        "StickerNameTC": "Comfort and Joy",
+        "StickerNameSC": "Comfort and Joy"
     },
     {
         "GlobalID": "50201",
-        "StickerName": "Found Photo",
+        "StickerNameEN": "Found Photo",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -145,13 +172,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_2_1.png",
-        "Colour": "#79dea7"
+        "Colour": "#79dea7",
+        "Raw": "1",
+        "StickerNameTC": "Found Photo",
+        "StickerNameSC": "Found Photo"
     },
     {
         "GlobalID": "50202",
-        "StickerName": "Memory Lane",
+        "StickerNameEN": "Memory Lane",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -160,13 +190,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_2_2.png",
-        "Colour": "#79dea7"
+        "Colour": "#79dea7",
+        "Raw": "1",
+        "StickerNameTC": "Memory Lane",
+        "StickerNameSC": "Memory Lane"
     },
     {
         "GlobalID": "50203",
-        "StickerName": "Yarn Quest",
+        "StickerNameEN": "Yarn Quest",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -175,13 +208,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_2_3.png",
-        "Colour": "#79dea7"
+        "Colour": "#79dea7",
+        "Raw": "1",
+        "StickerNameTC": "Yarn Quest",
+        "StickerNameSC": "Yarn Quest"
     },
     {
         "GlobalID": "50204",
-        "StickerName": "New Knits",
+        "StickerNameEN": "New Knits",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -190,13 +226,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_2_4.png",
-        "Colour": "#79dea7"
+        "Colour": "#79dea7",
+        "Raw": "1",
+        "StickerNameTC": "New Knits",
+        "StickerNameSC": "New Knits"
     },
     {
         "GlobalID": "50205",
-        "StickerName": "Happy Helper",
+        "StickerNameEN": "Happy Helper",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -205,13 +244,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_2_5.png",
-        "Colour": "#79dea7"
+        "Colour": "#79dea7",
+        "Raw": "1",
+        "StickerNameTC": "Happy Helper",
+        "StickerNameSC": "Happy Helper"
     },
     {
         "GlobalID": "50206",
-        "StickerName": "Sweater Party",
+        "StickerNameEN": "Sweater Party",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -220,13 +262,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_2_6.png",
-        "Colour": "#79dea7"
+        "Colour": "#79dea7",
+        "Raw": "1",
+        "StickerNameTC": "Sweater Party",
+        "StickerNameSC": "Sweater Party"
     },
     {
         "GlobalID": "50207",
-        "StickerName": "Almost Twinsies",
+        "StickerNameEN": "Almost Twinsies",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -235,13 +280,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_2_7.png",
-        "Colour": "#79dea7"
+        "Colour": "#79dea7",
+        "Raw": "1",
+        "StickerNameTC": "Almost Twinsies",
+        "StickerNameSC": "Almost Twinsies"
     },
     {
         "GlobalID": "50208",
-        "StickerName": "So Fly",
+        "StickerNameEN": "So Fly",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -250,13 +298,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_2_8.png",
-        "Colour": "#79dea7"
+        "Colour": "#79dea7",
+        "Raw": "1",
+        "StickerNameTC": "So Fly",
+        "StickerNameSC": "So Fly"
     },
     {
         "GlobalID": "50209",
-        "StickerName": "Better Sweater",
+        "StickerNameEN": "Better Sweater",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -265,13 +316,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_2_9.png",
-        "Colour": "#79dea7"
+        "Colour": "#79dea7",
+        "Raw": "1",
+        "StickerNameTC": "Better Sweater",
+        "StickerNameSC": "Better Sweater"
     },
     {
         "GlobalID": "50301",
-        "StickerName": "Saint Lucia",
+        "StickerNameEN": "Saint Lucia",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -280,13 +334,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_3_1.png",
-        "Colour": "#6e30f2"
+        "Colour": "#6e30f2",
+        "Raw": "1",
+        "StickerNameTC": "Saint Lucia",
+        "StickerNameSC": "Saint Lucia"
     },
     {
         "GlobalID": "50302",
-        "StickerName": "Lantern Fest",
+        "StickerNameEN": "Lantern Fest",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -295,13 +352,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_3_2.png",
-        "Colour": "#6e30f2"
+        "Colour": "#6e30f2",
+        "Raw": "1",
+        "StickerNameTC": "Lantern Fest",
+        "StickerNameSC": "Lantern Fest"
     },
     {
         "GlobalID": "50303",
-        "StickerName": "Dongzhi",
+        "StickerNameEN": "Dongzhi",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -310,13 +370,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_3_3.png",
-        "Colour": "#6e30f2"
+        "Colour": "#6e30f2",
+        "Raw": "1",
+        "StickerNameTC": "Dongzhi",
+        "StickerNameSC": "Dongzhi"
     },
     {
         "GlobalID": "50304",
-        "StickerName": "Brighton Bonfire",
+        "StickerNameEN": "Brighton Bonfire",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -325,13 +388,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_3_4.png",
-        "Colour": "#6e30f2"
+        "Colour": "#6e30f2",
+        "Raw": "1",
+        "StickerNameTC": "Brighton Bonfire",
+        "StickerNameSC": "Brighton Bonfire"
     },
     {
         "GlobalID": "50305",
-        "StickerName": "O Christmas Tree",
+        "StickerNameEN": "O Christmas Tree",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -340,13 +406,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_3_5.png",
-        "Colour": "#6e30f2"
+        "Colour": "#6e30f2",
+        "Raw": "1",
+        "StickerNameTC": "O Christmas Tree",
+        "StickerNameSC": "O Christmas Tree"
     },
     {
         "GlobalID": "50306",
-        "StickerName": "Yuzu Bath",
+        "StickerNameEN": "Yuzu Bath",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -355,13 +424,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_3_6.png",
-        "Colour": "#6e30f2"
+        "Colour": "#6e30f2",
+        "Raw": "1",
+        "StickerNameTC": "Yuzu Bath",
+        "StickerNameSC": "Yuzu Bath"
     },
     {
         "GlobalID": "50307",
-        "StickerName": "Yolda Night",
+        "StickerNameEN": "Yolda Night",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -370,13 +442,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_3_7.png",
-        "Colour": "#6e30f2"
+        "Colour": "#6e30f2",
+        "Raw": "1",
+        "StickerNameTC": "Yolda Night",
+        "StickerNameSC": "Yolda Night"
     },
     {
         "GlobalID": "50308",
-        "StickerName": "Boat Parade",
+        "StickerNameEN": "Boat Parade",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -385,13 +460,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_3_8.png",
-        "Colour": "#6e30f2"
+        "Colour": "#6e30f2",
+        "Raw": "1",
+        "StickerNameTC": "Boat Parade",
+        "StickerNameSC": "Boat Parade"
     },
     {
         "GlobalID": "50309",
-        "StickerName": "Pole Flyers",
+        "StickerNameEN": "Pole Flyers",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -400,13 +478,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_3_9.png",
-        "Colour": "#6e30f2"
+        "Colour": "#6e30f2",
+        "Raw": "1",
+        "StickerNameTC": "Pole Flyers",
+        "StickerNameSC": "Pole Flyers"
     },
     {
         "GlobalID": "50401",
-        "StickerName": "Santa's List",
+        "StickerNameEN": "Santa's List",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -415,13 +496,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_4_1.png",
-        "Colour": "#67843f"
+        "Colour": "#67843f",
+        "Raw": "1",
+        "StickerNameTC": "Santa's List",
+        "StickerNameSC": "Santa's List"
     },
     {
         "GlobalID": "50402",
-        "StickerName": "Elven Gifts",
+        "StickerNameEN": "Elven Gifts",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -430,13 +514,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_4_2.png",
-        "Colour": "#67843f"
+        "Colour": "#67843f",
+        "Raw": "1",
+        "StickerNameTC": "Elven Gifts",
+        "StickerNameSC": "Elven Gifts"
     },
     {
         "GlobalID": "50403",
-        "StickerName": "GO Time",
+        "StickerNameEN": "GO Time",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -445,13 +532,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_4_3.png",
-        "Colour": "#67843f"
+        "Colour": "#67843f",
+        "Raw": "1",
+        "StickerNameTC": "GO Time",
+        "StickerNameSC": "GO Time"
     },
     {
         "GlobalID": "50404",
-        "StickerName": "Special Reindeer",
+        "StickerNameEN": "Special Reindeer",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -460,13 +550,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_4_4.png",
-        "Colour": "#67843f"
+        "Colour": "#67843f",
+        "Raw": "1",
+        "StickerNameTC": "Special Reindeer",
+        "StickerNameSC": "Special Reindeer"
     },
     {
         "GlobalID": "50405",
-        "StickerName": "Moonlight Ride",
+        "StickerNameEN": "Moonlight Ride",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -475,13 +568,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_4_5.png",
-        "Colour": "#67843f"
+        "Colour": "#67843f",
+        "Raw": "1",
+        "StickerNameTC": "Moonlight Ride",
+        "StickerNameSC": "Moonlight Ride"
     },
     {
         "GlobalID": "50406",
-        "StickerName": "Rooftop Haul",
+        "StickerNameEN": "Rooftop Haul",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -490,13 +586,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_4_6.png",
-        "Colour": "#67843f"
+        "Colour": "#67843f",
+        "Raw": "1",
+        "StickerNameTC": "Rooftop Haul",
+        "StickerNameSC": "Rooftop Haul"
     },
     {
         "GlobalID": "50407",
-        "StickerName": "Cookie Break",
+        "StickerNameEN": "Cookie Break",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -505,13 +604,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_4_7.png",
-        "Colour": "#67843f"
+        "Colour": "#67843f",
+        "Raw": "1",
+        "StickerNameTC": "Cookie Break",
+        "StickerNameSC": "Cookie Break"
     },
     {
         "GlobalID": "50408",
-        "StickerName": "Stocking Stuffers",
+        "StickerNameEN": "Stocking Stuffers",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -520,13 +622,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_4_8.png",
-        "Colour": "#67843f"
+        "Colour": "#67843f",
+        "Raw": "1",
+        "StickerNameTC": "Stocking Stuffers",
+        "StickerNameSC": "Stocking Stuffers"
     },
     {
         "GlobalID": "50409",
-        "StickerName": "X-mas Morning",
+        "StickerNameEN": "X-mas Morning",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -535,13 +640,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_4_9.png",
-        "Colour": "#67843f"
+        "Colour": "#67843f",
+        "Raw": "1",
+        "StickerNameTC": "X-mas Morning",
+        "StickerNameSC": "X-mas Morning"
     },
     {
         "GlobalID": "50501",
-        "StickerName": "Lovely Latkes",
+        "StickerNameEN": "Lovely Latkes",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -550,13 +658,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_5_1.png",
-        "Colour": "#2979f2"
+        "Colour": "#2979f2",
+        "Raw": "1",
+        "StickerNameTC": "Lovely Latkes",
+        "StickerNameSC": "Lovely Latkes"
     },
     {
         "GlobalID": "50502",
-        "StickerName": "7 Fishes",
+        "StickerNameEN": "7 Fishes",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -565,13 +676,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_5_2.png",
-        "Colour": "#2979f2"
+        "Colour": "#2979f2",
+        "Raw": "1",
+        "StickerNameTC": "7 Fishes",
+        "StickerNameSC": "7 Fishes"
     },
     {
         "GlobalID": "50503",
-        "StickerName": "Saffron Buns",
+        "StickerNameEN": "Saffron Buns",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -580,13 +694,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_5_3.png",
-        "Colour": "#2979f2"
+        "Colour": "#2979f2",
+        "Raw": "1",
+        "StickerNameTC": "Saffron Buns",
+        "StickerNameSC": "Saffron Buns"
     },
     {
         "GlobalID": "50504",
-        "StickerName": "Chicken Cheer",
+        "StickerNameEN": "Chicken Cheer",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -595,13 +712,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_5_4.png",
-        "Colour": "#2979f2"
+        "Colour": "#2979f2",
+        "Raw": "1",
+        "StickerNameTC": "Chicken Cheer",
+        "StickerNameSC": "Chicken Cheer"
     },
     {
         "GlobalID": "50505",
-        "StickerName": "Christmas Pudding",
+        "StickerNameEN": "Christmas Pudding",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -610,13 +730,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_5_5.png",
-        "Colour": "#2979f2"
+        "Colour": "#2979f2",
+        "Raw": "1",
+        "StickerNameTC": "Christmas Pudding",
+        "StickerNameSC": "Christmas Pudding"
     },
     {
         "GlobalID": "50506",
-        "StickerName": "Holiday Tamales",
+        "StickerNameEN": "Holiday Tamales",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -625,13 +748,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_5_6.png",
-        "Colour": "#2979f2"
+        "Colour": "#2979f2",
+        "Raw": "1",
+        "StickerNameTC": "Holiday Tamales",
+        "StickerNameSC": "Holiday Tamales"
     },
     {
         "GlobalID": "50507",
-        "StickerName": "Rescon de Reyes",
+        "StickerNameEN": "Rescon de Reyes",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -640,13 +766,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_5_7.png",
-        "Colour": "#2979f2"
+        "Colour": "#2979f2",
+        "Raw": "1",
+        "StickerNameTC": "Rescon de Reyes",
+        "StickerNameSC": "Rescon de Reyes"
     },
     {
         "GlobalID": "50508",
-        "StickerName": "Sweet Cornbread",
+        "StickerNameEN": "Sweet Cornbread",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -655,13 +784,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_5_8.png",
-        "Colour": "#2979f2"
+        "Colour": "#2979f2",
+        "Raw": "1",
+        "StickerNameTC": "Sweet Cornbread",
+        "StickerNameSC": "Sweet Cornbread"
     },
     {
         "GlobalID": "50509",
-        "StickerName": "Biryani Yums",
+        "StickerNameEN": "Biryani Yums",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -670,13 +802,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_5_9.png",
-        "Colour": "#2979f2"
+        "Colour": "#2979f2",
+        "Raw": "1",
+        "StickerNameTC": "Biryani Yums",
+        "StickerNameSC": "Biryani Yums"
     },
     {
         "GlobalID": "50601",
-        "StickerName": "Storytime",
+        "StickerNameEN": "Storytime",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -685,13 +820,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_1.png",
-        "Colour": "#e32f8d"
+        "Colour": "#e32f8d",
+        "Raw": "1",
+        "StickerNameTC": "Storytime",
+        "StickerNameSC": "Storytime"
     },
     {
         "GlobalID": "50602",
-        "StickerName": "Drosselmeyer",
+        "StickerNameEN": "Drosselmeyer",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -700,13 +838,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_2.png",
-        "Colour": "#e32f8d"
+        "Colour": "#e32f8d",
+        "Raw": "1",
+        "StickerNameTC": "Drosselmeyer",
+        "StickerNameSC": "Drosselmeyer"
     },
     {
         "GlobalID": "50603",
-        "StickerName": "Up & Up!",
+        "StickerNameEN": "Up & Up!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -715,13 +856,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_3.png",
-        "Colour": "#e32f8d"
+        "Colour": "#e32f8d",
+        "Raw": "1",
+        "StickerNameTC": "Up & Up!",
+        "StickerNameSC": "Up & Up!"
     },
     {
         "GlobalID": "50604",
-        "StickerName": "Mouse King",
+        "StickerNameEN": "Mouse King",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -730,13 +874,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_4.png",
-        "Colour": "#e32f8d"
+        "Colour": "#e32f8d",
+        "Raw": "1",
+        "StickerNameTC": "Mouse King",
+        "StickerNameSC": "Mouse King"
     },
     {
         "GlobalID": "50605",
-        "StickerName": "Snow Queen",
+        "StickerNameEN": "Snow Queen",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -745,13 +892,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_5.png",
-        "Colour": "#e32f8d"
+        "Colour": "#e32f8d",
+        "Raw": "1",
+        "StickerNameTC": "Snow Queen",
+        "StickerNameSC": "Snow Queen"
     },
     {
         "GlobalID": "50606",
-        "StickerName": "Sugarplum Fairy",
+        "StickerNameEN": "Sugarplum Fairy",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -760,13 +910,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_6.png",
-        "Colour": "#e32f8d"
+        "Colour": "#e32f8d",
+        "Raw": "1",
+        "StickerNameTC": "Sugarplum Fairy",
+        "StickerNameSC": "Sugarplum Fairy"
     },
     {
         "GlobalID": "50607",
-        "StickerName": "Sweets Feast",
+        "StickerNameEN": "Sweets Feast",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -775,13 +928,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_7.png",
-        "Colour": "#e32f8d"
+        "Colour": "#e32f8d",
+        "Raw": "1",
+        "StickerNameTC": "Sweets Feast",
+        "StickerNameSC": "Sweets Feast"
     },
     {
         "GlobalID": "50608",
-        "StickerName": "Mother Ginger",
+        "StickerNameEN": "Mother Ginger",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -790,13 +946,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_8.png",
-        "Colour": "#e32f8d"
+        "Colour": "#e32f8d",
+        "Raw": "1",
+        "StickerNameTC": "Mother Ginger",
+        "StickerNameSC": "Mother Ginger"
     },
     {
         "GlobalID": "50609",
-        "StickerName": "Farewell",
+        "StickerNameEN": "Farewell",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -805,13 +964,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_9.png",
-        "Colour": "#e32f8d"
+        "Colour": "#e32f8d",
+        "Raw": "1",
+        "StickerNameTC": "Farewell",
+        "StickerNameSC": "Farewell"
     },
     {
         "GlobalID": "50701",
-        "StickerName": "Decor Skills",
+        "StickerNameEN": "Decor Skills",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -820,13 +982,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_7_1.png",
-        "Colour": "#dc6262"
+        "Colour": "#dc6262",
+        "Raw": "1",
+        "StickerNameTC": "Decor Skills",
+        "StickerNameSC": "Decor Skills"
     },
     {
         "GlobalID": "50702",
-        "StickerName": "What If",
+        "StickerNameEN": "What If",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -835,13 +1000,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_7_2.png",
-        "Colour": "#dc6262"
+        "Colour": "#dc6262",
+        "Raw": "1",
+        "StickerNameTC": "What If",
+        "StickerNameSC": "What If"
     },
     {
         "GlobalID": "50703",
-        "StickerName": "Pastry Plans",
+        "StickerNameEN": "Pastry Plans",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -850,13 +1018,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_7_3.png",
-        "Colour": "#dc6262"
+        "Colour": "#dc6262",
+        "Raw": "1",
+        "StickerNameTC": "Pastry Plans",
+        "StickerNameSC": "Pastry Plans"
     },
     {
         "GlobalID": "50704",
-        "StickerName": "SettingUp",
+        "StickerNameEN": "SettingUp",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -865,13 +1036,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_7_4.png",
-        "Colour": "#dc6262"
+        "Colour": "#dc6262",
+        "Raw": "1",
+        "StickerNameTC": "SettingUp",
+        "StickerNameSC": "SettingUp"
     },
     {
         "GlobalID": "50705",
-        "StickerName": "Messy Partner",
+        "StickerNameEN": "Messy Partner",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -880,13 +1054,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_7_5.png",
-        "Colour": "#dc6262"
+        "Colour": "#dc6262",
+        "Raw": "1",
+        "StickerNameTC": "Messy Partner",
+        "StickerNameSC": "Messy Partner"
     },
     {
         "GlobalID": "50706",
-        "StickerName": "Let's Peck!",
+        "StickerNameEN": "Let's Peck!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -895,13 +1072,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_7_6.png",
-        "Colour": "#dc6262"
+        "Colour": "#dc6262",
+        "Raw": "1",
+        "StickerNameTC": "Let's Peck!",
+        "StickerNameSC": "Let's Peck!"
     },
     {
         "GlobalID": "50707",
-        "StickerName": "Careful Now",
+        "StickerNameEN": "Careful Now",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -910,13 +1090,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_7_7.png",
-        "Colour": "#dc6262"
+        "Colour": "#dc6262",
+        "Raw": "1",
+        "StickerNameTC": "Careful Now",
+        "StickerNameSC": "Careful Now"
     },
     {
         "GlobalID": "50708",
-        "StickerName": "Bake it Happen",
+        "StickerNameEN": "Bake it Happen",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -925,13 +1108,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_7_8.png",
-        "Colour": "#dc6262"
+        "Colour": "#dc6262",
+        "Raw": "1",
+        "StickerNameTC": "Bake it Happen",
+        "StickerNameSC": "Bake it Happen"
     },
     {
         "GlobalID": "50709",
-        "StickerName": "So Proud!",
+        "StickerNameEN": "So Proud!",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -940,13 +1126,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_7_9.png",
-        "Colour": "#dc6262"
+        "Colour": "#dc6262",
+        "Raw": "1",
+        "StickerNameTC": "So Proud!",
+        "StickerNameSC": "So Proud!"
     },
     {
         "GlobalID": "50801",
-        "StickerName": "Christmas Gifts",
+        "StickerNameEN": "Christmas Gifts",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -955,13 +1144,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_8_1.png",
-        "Colour": "#bd3b3e"
+        "Colour": "#bd3b3e",
+        "Raw": "1",
+        "StickerNameTC": "Christmas Gifts",
+        "StickerNameSC": "Christmas Gifts"
     },
     {
         "GlobalID": "50802",
-        "StickerName": "Shopping Fever",
+        "StickerNameEN": "Shopping Fever",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -970,13 +1162,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_8_2.png",
-        "Colour": "#bd3b3e"
+        "Colour": "#bd3b3e",
+        "Raw": "1",
+        "StickerNameTC": "Shopping Fever",
+        "StickerNameSC": "Shopping Fever"
     },
     {
         "GlobalID": "50803",
-        "StickerName": "Suits Me!",
+        "StickerNameEN": "Suits Me!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -985,13 +1180,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_8_3.png",
-        "Colour": "#bd3b3e"
+        "Colour": "#bd3b3e",
+        "Raw": "1",
+        "StickerNameTC": "Suits Me!",
+        "StickerNameSC": "Suits Me!"
     },
     {
         "GlobalID": "50804",
-        "StickerName": "Brand New",
+        "StickerNameEN": "Brand New",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -1000,13 +1198,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_8_4.png",
-        "Colour": "#bd3b3e"
+        "Colour": "#bd3b3e",
+        "Raw": "1",
+        "StickerNameTC": "Brand New",
+        "StickerNameSC": "Brand New"
     },
     {
         "GlobalID": "50805",
-        "StickerName": "Pawesome Naps",
+        "StickerNameEN": "Pawesome Naps",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -1015,13 +1216,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_8_5.png",
-        "Colour": "#bd3b3e"
+        "Colour": "#bd3b3e",
+        "Raw": "1",
+        "StickerNameTC": "Pawesome Naps",
+        "StickerNameSC": "Pawesome Naps"
     },
     {
         "GlobalID": "50806",
-        "StickerName": "Treat-o-Clock",
+        "StickerNameEN": "Treat-o-Clock",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1030,13 +1234,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_4.png",
-        "Colour": "#bd3b3e"
+        "Colour": "#bd3b3e",
+        "Raw": "1",
+        "StickerNameTC": "Treat-o-Clock",
+        "StickerNameSC": "Treat-o-Clock"
     },
     {
         "GlobalID": "50807",
-        "StickerName": "Unwrapping",
+        "StickerNameEN": "Unwrapping",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1045,13 +1252,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_6_5.png",
-        "Colour": "#bd3b3e"
+        "Colour": "#bd3b3e",
+        "Raw": "1",
+        "StickerNameTC": "Unwrapping",
+        "StickerNameSC": "Unwrapping"
     },
     {
         "GlobalID": "50808",
-        "StickerName": "Pile of Goodies",
+        "StickerNameEN": "Pile of Goodies",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -1060,13 +1270,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_8_8.png",
-        "Colour": "#bd3b3e"
+        "Colour": "#bd3b3e",
+        "Raw": "1",
+        "StickerNameTC": "Pile of Goodies",
+        "StickerNameSC": "Pile of Goodies"
     },
     {
         "GlobalID": "50809",
-        "StickerName": "Merry Kissmas",
+        "StickerNameEN": "Merry Kissmas",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -1075,13 +1288,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_8_9.png",
-        "Colour": "#bd3b3e"
+        "Colour": "#bd3b3e",
+        "Raw": "1",
+        "StickerNameTC": "Merry Kissmas",
+        "StickerNameSC": "Merry Kissmas"
     },
     {
         "GlobalID": "50901",
-        "StickerName": "Winter-ful Day",
+        "StickerNameEN": "Winter-ful Day",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -1090,13 +1306,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_9_1.png",
-        "Colour": "#0d8f61"
+        "Colour": "#0d8f61",
+        "Raw": "1",
+        "StickerNameTC": "Winter-ful Day",
+        "StickerNameSC": "Winter-ful Day"
     },
     {
         "GlobalID": "50902",
-        "StickerName": "Pajama Party",
+        "StickerNameEN": "Pajama Party",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -1105,13 +1324,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_9_2.png",
-        "Colour": "#0d8f61"
+        "Colour": "#0d8f61",
+        "Raw": "1",
+        "StickerNameTC": "Pajama Party",
+        "StickerNameSC": "Pajama Party"
     },
     {
         "GlobalID": "50903",
-        "StickerName": "Light it Up",
+        "StickerNameEN": "Light it Up",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -1120,13 +1342,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_9_3.png",
-        "Colour": "#0d8f61"
+        "Colour": "#0d8f61",
+        "Raw": "1",
+        "StickerNameTC": "Light it Up",
+        "StickerNameSC": "Light it Up"
     },
     {
         "GlobalID": "50904",
-        "StickerName": "Gingerly",
+        "StickerNameEN": "Gingerly",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -1135,13 +1360,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_9_4.png",
-        "Colour": "#0d8f61"
+        "Colour": "#0d8f61",
+        "Raw": "1",
+        "StickerNameTC": "Gingerly",
+        "StickerNameSC": "Gingerly"
     },
     {
         "GlobalID": "50905",
-        "StickerName": "Christmas Train",
+        "StickerNameEN": "Christmas Train",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1150,13 +1378,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_9_5.png",
-        "Colour": "#0d8f61"
+        "Colour": "#0d8f61",
+        "Raw": "1",
+        "StickerNameTC": "Christmas Train",
+        "StickerNameSC": "Christmas Train"
     },
     {
         "GlobalID": "50906",
-        "StickerName": "Cozied Up",
+        "StickerNameEN": "Cozied Up",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1165,13 +1396,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_9_6.png",
-        "Colour": "#0d8f61"
+        "Colour": "#0d8f61",
+        "Raw": "1",
+        "StickerNameTC": "Cozied Up",
+        "StickerNameSC": "Cozied Up"
     },
     {
         "GlobalID": "50907",
-        "StickerName": "Binge Watching",
+        "StickerNameEN": "Binge Watching",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -1180,13 +1414,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_9_7.png",
-        "Colour": "#0d8f61"
+        "Colour": "#0d8f61",
+        "Raw": "1",
+        "StickerNameTC": "Binge Watching",
+        "StickerNameSC": "Binge Watching"
     },
     {
         "GlobalID": "50908",
-        "StickerName": "Scottie's Fort",
+        "StickerNameEN": "Scottie's Fort",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -1195,13 +1432,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_9_8.png",
-        "Colour": "#0d8f61"
+        "Colour": "#0d8f61",
+        "Raw": "1",
+        "StickerNameTC": "Scottie's Fort",
+        "StickerNameSC": "Scottie's Fort"
     },
     {
         "GlobalID": "50909",
-        "StickerName": "Game Night!",
+        "StickerNameEN": "Game Night!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -1210,13 +1450,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_9_9.png",
-        "Colour": "#0d8f61"
+        "Colour": "#0d8f61",
+        "Raw": "1",
+        "StickerNameTC": "Game Night!",
+        "StickerNameSC": "Game Night!"
     },
     {
         "GlobalID": "51001",
-        "StickerName": "Modern Kitchen",
+        "StickerNameEN": "Modern Kitchen",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -1225,13 +1468,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_10_1.png",
-        "Colour": "#00e2ff"
+        "Colour": "#00e2ff",
+        "Raw": "1",
+        "StickerNameTC": "Modern Kitchen",
+        "StickerNameSC": "Modern Kitchen"
     },
     {
         "GlobalID": "51002",
-        "StickerName": "Bake Off!",
+        "StickerNameEN": "Bake Off!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -1240,13 +1486,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_10_2.png",
-        "Colour": "#00e2ff"
+        "Colour": "#00e2ff",
+        "Raw": "1",
+        "StickerNameTC": "Bake Off!",
+        "StickerNameSC": "Bake Off!"
     },
     {
         "GlobalID": "51003",
-        "StickerName": "Recipe Generator",
+        "StickerNameEN": "Recipe Generator",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1255,13 +1504,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_10_3.png",
-        "Colour": "#00e2ff"
+        "Colour": "#00e2ff",
+        "Raw": "1",
+        "StickerNameTC": "Recipe Generator",
+        "StickerNameSC": "Recipe Generator"
     },
     {
         "GlobalID": "51004",
-        "StickerName": "Twisted!",
+        "StickerNameEN": "Twisted!",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1270,13 +1522,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_10_4.png",
-        "Colour": "#00e2ff"
+        "Colour": "#00e2ff",
+        "Raw": "1",
+        "StickerNameTC": "Twisted!",
+        "StickerNameSC": "Twisted!"
     },
     {
         "GlobalID": "51005",
-        "StickerName": "Jingle Delight",
+        "StickerNameEN": "Jingle Delight",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1285,13 +1540,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_10_5.png",
-        "Colour": "#00e2ff"
+        "Colour": "#00e2ff",
+        "Raw": "1",
+        "StickerNameTC": "Jingle Delight",
+        "StickerNameSC": "Jingle Delight"
     },
     {
         "GlobalID": "51006",
-        "StickerName": "Ginger Peg-E",
+        "StickerNameEN": "Ginger Peg-E",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -1300,13 +1558,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_10_6.png",
-        "Colour": "#00e2ff"
+        "Colour": "#00e2ff",
+        "Raw": "1",
+        "StickerNameTC": "Ginger Peg-E",
+        "StickerNameSC": "Ginger Peg-E"
     },
     {
         "GlobalID": "51007",
-        "StickerName": "Roll the Dice",
+        "StickerNameEN": "Roll the Dice",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -1315,13 +1576,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_10_7.png",
-        "Colour": "#00e2ff"
+        "Colour": "#00e2ff",
+        "Raw": "1",
+        "StickerNameTC": "Roll the Dice",
+        "StickerNameSC": "Roll the Dice"
     },
     {
         "GlobalID": "51008",
-        "StickerName": "Bite Me!",
+        "StickerNameEN": "Bite Me!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -1330,13 +1594,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_10_8.png",
-        "Colour": "#00e2ff"
+        "Colour": "#00e2ff",
+        "Raw": "1",
+        "StickerNameTC": "Bite Me!",
+        "StickerNameSC": "Bite Me!"
     },
     {
         "GlobalID": "51009",
-        "StickerName": "Sugary Feast",
+        "StickerNameEN": "Sugary Feast",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -1345,13 +1612,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_10_9.png",
-        "Colour": "#00e2ff"
+        "Colour": "#00e2ff",
+        "Raw": "1",
+        "StickerNameTC": "Sugary Feast",
+        "StickerNameSC": "Sugary Feast"
     },
     {
         "GlobalID": "51101",
-        "StickerName": "Winter Resort",
+        "StickerNameEN": "Winter Resort",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -1360,13 +1630,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_11_1.png",
-        "Colour": "#4ebfcd"
+        "Colour": "#4ebfcd",
+        "Raw": "1",
+        "StickerNameTC": "Winter Resort",
+        "StickerNameSC": "Winter Resort"
     },
     {
         "GlobalID": "51102",
-        "StickerName": "Working the Poles",
+        "StickerNameEN": "Working the Poles",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -1375,13 +1648,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_11_2.png",
-        "Colour": "#4ebfcd"
+        "Colour": "#4ebfcd",
+        "Raw": "1",
+        "StickerNameTC": "Working the Poles",
+        "StickerNameSC": "Working the Poles"
     },
     {
         "GlobalID": "51103",
-        "StickerName": "Mr. Snowman",
+        "StickerNameEN": "Mr. Snowman",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1390,13 +1666,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_11_3.png",
-        "Colour": "#4ebfcd"
+        "Colour": "#4ebfcd",
+        "Raw": "1",
+        "StickerNameTC": "Mr. Snowman",
+        "StickerNameSC": "Mr. Snowman"
     },
     {
         "GlobalID": "51104",
-        "StickerName": "On the Slopes",
+        "StickerNameEN": "On the Slopes",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1405,13 +1684,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_11_4.png",
-        "Colour": "#4ebfcd"
+        "Colour": "#4ebfcd",
+        "Raw": "1",
+        "StickerNameTC": "On the Slopes",
+        "StickerNameSC": "On the Slopes"
     },
     {
         "GlobalID": "51105",
-        "StickerName": "Watch Out!",
+        "StickerNameEN": "Watch Out!",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -1420,13 +1702,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_11_5.png",
-        "Colour": "#4ebfcd"
+        "Colour": "#4ebfcd",
+        "Raw": "1",
+        "StickerNameTC": "Watch Out!",
+        "StickerNameSC": "Watch Out!"
     },
     {
         "GlobalID": "51106",
-        "StickerName": "Joyful Snow",
+        "StickerNameEN": "Joyful Snow",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -1435,13 +1720,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_11_6.png",
-        "Colour": "#4ebfcd"
+        "Colour": "#4ebfcd",
+        "Raw": "1",
+        "StickerNameTC": "Joyful Snow",
+        "StickerNameSC": "Joyful Snow"
     },
     {
         "GlobalID": "51107",
-        "StickerName": "Sleigh All Day",
+        "StickerNameEN": "Sleigh All Day",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -1450,13 +1738,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_11_7.png",
-        "Colour": "#4ebfcd"
+        "Colour": "#4ebfcd",
+        "Raw": "1",
+        "StickerNameTC": "Sleigh All Day",
+        "StickerNameSC": "Sleigh All Day"
     },
     {
         "GlobalID": "51108",
-        "StickerName": "Team Work",
+        "StickerNameEN": "Team Work",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -1465,13 +1756,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_11_8.png",
-        "Colour": "#4ebfcd"
+        "Colour": "#4ebfcd",
+        "Raw": "1",
+        "StickerNameTC": "Team Work",
+        "StickerNameSC": "Team Work"
     },
     {
         "GlobalID": "51109",
-        "StickerName": "Well-Deserved Rest",
+        "StickerNameEN": "Well-Deserved Rest",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -1480,13 +1774,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_11_9.png",
-        "Colour": "#4ebfcd"
+        "Colour": "#4ebfcd",
+        "Raw": "1",
+        "StickerNameTC": "Well-Deserved Rest",
+        "StickerNameSC": "Well-Deserved Rest"
     },
     {
         "GlobalID": "51201",
-        "StickerName": "Christmas Park",
+        "StickerNameEN": "Christmas Park",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -1495,13 +1792,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_12_1.png",
-        "Colour": "#7844c4"
+        "Colour": "#7844c4",
+        "Raw": "1",
+        "StickerNameTC": "Christmas Park",
+        "StickerNameSC": "Christmas Park"
     },
     {
         "GlobalID": "51202",
-        "StickerName": "All Aboard",
+        "StickerNameEN": "All Aboard",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1510,13 +1810,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_12_2.png",
-        "Colour": "#7844c4"
+        "Colour": "#7844c4",
+        "Raw": "1",
+        "StickerNameTC": "All Aboard",
+        "StickerNameSC": "All Aboard"
     },
     {
         "GlobalID": "51203",
-        "StickerName": "Up & Down",
+        "StickerNameEN": "Up & Down",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -1525,13 +1828,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_12_3.png",
-        "Colour": "#7844c4"
+        "Colour": "#7844c4",
+        "Raw": "1",
+        "StickerNameTC": "Up & Down",
+        "StickerNameSC": "Up & Down"
     },
     {
         "GlobalID": "51204",
-        "StickerName": "Spin Around",
+        "StickerNameEN": "Spin Around",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -1540,13 +1846,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_12_4.png",
-        "Colour": "#7844c4"
+        "Colour": "#7844c4",
+        "Raw": "1",
+        "StickerNameTC": "Spin Around",
+        "StickerNameSC": "Spin Around"
     },
     {
         "GlobalID": "51205",
-        "StickerName": "GO! Karts",
+        "StickerNameEN": "GO! Karts",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -1555,13 +1864,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_12_5.png",
-        "Colour": "#7844c4"
+        "Colour": "#7844c4",
+        "Raw": "1",
+        "StickerNameTC": "GO! Karts",
+        "StickerNameSC": "GO! Karts"
     },
     {
         "GlobalID": "51206",
-        "StickerName": "Santa's Float",
+        "StickerNameEN": "Santa's Float",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -1570,13 +1882,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_12_6.png",
-        "Colour": "#7844c4"
+        "Colour": "#7844c4",
+        "Raw": "1",
+        "StickerNameTC": "Santa's Float",
+        "StickerNameSC": "Santa's Float"
     },
     {
         "GlobalID": "51207",
-        "StickerName": "Hang on!",
+        "StickerNameEN": "Hang on!",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -1585,13 +1900,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_12_7.png",
-        "Colour": "#7844c4"
+        "Colour": "#7844c4",
+        "Raw": "1",
+        "StickerNameTC": "Hang on!",
+        "StickerNameSC": "Hang on!"
     },
     {
         "GlobalID": "51208",
-        "StickerName": "Tycoon Ride",
+        "StickerNameEN": "Tycoon Ride",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -1600,13 +1918,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_12_8.png",
-        "Colour": "#7844c4"
+        "Colour": "#7844c4",
+        "Raw": "1",
+        "StickerNameTC": "Tycoon Ride",
+        "StickerNameSC": "Tycoon Ride"
     },
     {
         "GlobalID": "51209",
-        "StickerName": "Special Order",
+        "StickerNameEN": "Special Order",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -1615,13 +1936,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_12_9.png",
-        "Colour": "#7844c4"
+        "Colour": "#7844c4",
+        "Raw": "1",
+        "StickerNameTC": "Special Order",
+        "StickerNameSC": "Special Order"
     },
     {
         "GlobalID": "51301",
-        "StickerName": "Behave!",
+        "StickerNameEN": "Behave!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "1",
@@ -1630,13 +1954,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_13_1.png",
-        "Colour": "#3e8fa4"
+        "Colour": "#3e8fa4",
+        "Raw": "1",
+        "StickerNameTC": "Behave!",
+        "StickerNameSC": "Behave!"
     },
     {
         "GlobalID": "51302",
-        "StickerName": "Wake Up",
+        "StickerNameEN": "Wake Up",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "1",
@@ -1645,13 +1972,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_13_2.png",
-        "Colour": "#3e8fa4"
+        "Colour": "#3e8fa4",
+        "Raw": "1",
+        "StickerNameTC": "Wake Up",
+        "StickerNameSC": "Wake Up"
     },
     {
         "GlobalID": "51303",
-        "StickerName": "Spam",
+        "StickerNameEN": "Spam",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -1660,13 +1990,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_13_3.png",
-        "Colour": "#3e8fa4"
+        "Colour": "#3e8fa4",
+        "Raw": "1",
+        "StickerNameTC": "Spam",
+        "StickerNameSC": "Spam"
     },
     {
         "GlobalID": "51304",
-        "StickerName": "Teasing You",
+        "StickerNameEN": "Teasing You",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -1675,13 +2008,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_13_4.png",
-        "Colour": "#3e8fa4"
+        "Colour": "#3e8fa4",
+        "Raw": "1",
+        "StickerNameTC": "Teasing You",
+        "StickerNameSC": "Teasing You"
     },
     {
         "GlobalID": "51305",
-        "StickerName": "Naughty Ride",
+        "StickerNameEN": "Naughty Ride",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -1690,13 +2026,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_13_5.png",
-        "Colour": "#3e8fa4"
+        "Colour": "#3e8fa4",
+        "Raw": "1",
+        "StickerNameTC": "Naughty Ride",
+        "StickerNameSC": "Naughty Ride"
     },
     {
         "GlobalID": "51306",
-        "StickerName": "Krampus Style",
+        "StickerNameEN": "Krampus Style",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -1705,13 +2044,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_13_6.png",
-        "Colour": "#3e8fa4"
+        "Colour": "#3e8fa4",
+        "Raw": "1",
+        "StickerNameTC": "Krampus Style",
+        "StickerNameSC": "Krampus Style"
     },
     {
         "GlobalID": "51307",
-        "StickerName": "X-mas Canvas",
+        "StickerNameEN": "X-mas Canvas",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -1720,13 +2062,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_13_7.png",
-        "Colour": "#3e8fa4"
+        "Colour": "#3e8fa4",
+        "Raw": "1",
+        "StickerNameTC": "X-mas Canvas",
+        "StickerNameSC": "X-mas Canvas"
     },
     {
         "GlobalID": "51308",
-        "StickerName": "Bad Boy",
+        "StickerNameEN": "Bad Boy",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -1735,13 +2080,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_13_8.png",
-        "Colour": "#3e8fa4"
+        "Colour": "#3e8fa4",
+        "Raw": "1",
+        "StickerNameTC": "Bad Boy",
+        "StickerNameSC": "Bad Boy"
     },
     {
         "GlobalID": "51309",
-        "StickerName": "Sleigh What?",
+        "StickerNameEN": "Sleigh What?",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -1750,13 +2098,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_13_9.png",
-        "Colour": "#3e8fa4"
+        "Colour": "#3e8fa4",
+        "Raw": "1",
+        "StickerNameTC": "Sleigh What?",
+        "StickerNameSC": "Sleigh What?"
     },
     {
         "GlobalID": "51401",
-        "StickerName": "Beaching",
+        "StickerNameEN": "Beaching",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "1",
@@ -1765,13 +2116,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_14_1.png",
-        "Colour": "#e66847"
+        "Colour": "#e66847",
+        "Raw": "1",
+        "StickerNameTC": "Beaching",
+        "StickerNameSC": "Beaching"
     },
     {
         "GlobalID": "51402",
-        "StickerName": "Dune That",
+        "StickerNameEN": "Dune That",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -1780,13 +2134,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_14_2.png",
-        "Colour": "#e66847"
+        "Colour": "#e66847",
+        "Raw": "1",
+        "StickerNameTC": "Dune That",
+        "StickerNameSC": "Dune That"
     },
     {
         "GlobalID": "51403",
-        "StickerName": "Catch It!",
+        "StickerNameEN": "Catch It!",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -1795,13 +2152,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_14_3.png",
-        "Colour": "#e66847"
+        "Colour": "#e66847",
+        "Raw": "1",
+        "StickerNameTC": "Catch It!",
+        "StickerNameSC": "Catch It!"
     },
     {
         "GlobalID": "51404",
-        "StickerName": "SurfShack",
+        "StickerNameEN": "SurfShack",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -1810,13 +2170,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_14_4.png",
-        "Colour": "#e66847"
+        "Colour": "#e66847",
+        "Raw": "1",
+        "StickerNameTC": "SurfShack",
+        "StickerNameSC": "SurfShack"
     },
     {
         "GlobalID": "51405",
-        "StickerName": "Deck the Palms",
+        "StickerNameEN": "Deck the Palms",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -1825,13 +2188,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_14_5.png",
-        "Colour": "#e66847"
+        "Colour": "#e66847",
+        "Raw": "1",
+        "StickerNameTC": "Deck the Palms",
+        "StickerNameSC": "Deck the Palms"
     },
     {
         "GlobalID": "51406",
-        "StickerName": "Santa Sandman",
+        "StickerNameEN": "Santa Sandman",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -1840,13 +2206,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_14_6.png",
-        "Colour": "#e66847"
+        "Colour": "#e66847",
+        "Raw": "1",
+        "StickerNameTC": "Santa Sandman",
+        "StickerNameSC": "Santa Sandman"
     },
     {
         "GlobalID": "51407",
-        "StickerName": "Surf's Up!",
+        "StickerNameEN": "Surf's Up!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -1855,13 +2224,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_14_7.png",
-        "Colour": "#e66847"
+        "Colour": "#e66847",
+        "Raw": "1",
+        "StickerNameTC": "Surf's Up!",
+        "StickerNameSC": "Surf's Up!"
     },
     {
         "GlobalID": "51408",
-        "StickerName": "Chillmas",
+        "StickerNameEN": "Chillmas",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -1870,13 +2242,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_14_8.png",
-        "Colour": "#e66847"
+        "Colour": "#e66847",
+        "Raw": "1",
+        "StickerNameTC": "Chillmas",
+        "StickerNameSC": "Chillmas"
     },
     {
         "GlobalID": "51409",
-        "StickerName": "Cheers!",
+        "StickerNameEN": "Cheers!",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -1885,13 +2260,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_14_9.png",
-        "Colour": "#e66847"
+        "Colour": "#e66847",
+        "Raw": "1",
+        "StickerNameTC": "Cheers!",
+        "StickerNameSC": "Cheers!"
     },
     {
         "GlobalID": "51501",
-        "StickerName": "Seasons' Greeting",
+        "StickerNameEN": "Seasons' Greeting",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -1900,13 +2278,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_15_1.png",
-        "Colour": "#f70f0f"
+        "Colour": "#f70f0f",
+        "Raw": "1",
+        "StickerNameTC": "Seasons' Greeting",
+        "StickerNameSC": "Seasons' Greeting"
     },
     {
         "GlobalID": "51502",
-        "StickerName": "X-mas Parade",
+        "StickerNameEN": "X-mas Parade",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -1915,13 +2296,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_15_2.png",
-        "Colour": "#f70f0f"
+        "Colour": "#f70f0f",
+        "Raw": "1",
+        "StickerNameTC": "X-mas Parade",
+        "StickerNameSC": "X-mas Parade"
     },
     {
         "GlobalID": "51503",
-        "StickerName": "Elf-ementary!",
+        "StickerNameEN": "Elf-ementary!",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -1930,13 +2314,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_15_3.png",
-        "Colour": "#f70f0f"
+        "Colour": "#f70f0f",
+        "Raw": "1",
+        "StickerNameTC": "Elf-ementary!",
+        "StickerNameSC": "Elf-ementary!"
     },
     {
         "GlobalID": "51504",
-        "StickerName": "Muffin House",
+        "StickerNameEN": "Muffin House",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -1945,13 +2332,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_15_4.png",
-        "Colour": "#f70f0f"
+        "Colour": "#f70f0f",
+        "Raw": "1",
+        "StickerNameTC": "Muffin House",
+        "StickerNameSC": "Muffin House"
     },
     {
         "GlobalID": "51505",
-        "StickerName": "Go Nuts!",
+        "StickerNameEN": "Go Nuts!",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -1960,13 +2350,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_15_5.png",
-        "Colour": "#f70f0f"
+        "Colour": "#f70f0f",
+        "Raw": "1",
+        "StickerNameTC": "Go Nuts!",
+        "StickerNameSC": "Go Nuts!"
     },
     {
         "GlobalID": "51506",
-        "StickerName": "Frost Nation",
+        "StickerNameEN": "Frost Nation",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -1975,13 +2368,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_15_6.png",
-        "Colour": "#f70f0f"
+        "Colour": "#f70f0f",
+        "Raw": "1",
+        "StickerNameTC": "Frost Nation",
+        "StickerNameSC": "Frost Nation"
     },
     {
         "GlobalID": "51507",
-        "StickerName": "Feelin' Pine",
+        "StickerNameEN": "Feelin' Pine",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -1990,13 +2386,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_15_7.png",
-        "Colour": "#f70f0f"
+        "Colour": "#f70f0f",
+        "Raw": "1",
+        "StickerNameTC": "Feelin' Pine",
+        "StickerNameSC": "Feelin' Pine"
     },
     {
         "GlobalID": "51508",
-        "StickerName": "Jungle Ride",
+        "StickerNameEN": "Jungle Ride",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -2005,13 +2404,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_15_8.png",
-        "Colour": "#f70f0f"
+        "Colour": "#f70f0f",
+        "Raw": "1",
+        "StickerNameTC": "Jungle Ride",
+        "StickerNameSC": "Jungle Ride"
     },
     {
         "GlobalID": "51509",
-        "StickerName": "Ho! Ho! Ho!",
+        "StickerNameEN": "Ho! Ho! Ho!",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -2020,13 +2422,16 @@ export const STICKER_DATA = [
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
         "StartTime": "1701457200",
-        "EndTime": "1704394799",
+        "EndTime": "1704394800",
         "ImageSource": "heartfeltholidays_15_9.png",
-        "Colour": "#f70f0f"
+        "Colour": "#f70f0f",
+        "Raw": "1",
+        "StickerNameTC": "Ho! Ho! Ho!",
+        "StickerNameSC": "Ho! Ho! Ho!"
     },
     {
         "GlobalID": "60101",
-        "StickerName": "Peek at the Past",
+        "StickerNameEN": "Peek at the Past",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2034,14 +2439,17 @@ export const STICKER_DATA = [
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_1_1.png",
-        "Colour": "#e52c45"
+        "Colour": "#e52c45",
+        "Raw": "1",
+        "StickerNameTC": "Peek at the Past",
+        "StickerNameSC": "Peek at the Past"
     },
     {
         "GlobalID": "60102",
-        "StickerName": "Doggone It!",
+        "StickerNameEN": "Doggone It!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2049,14 +2457,17 @@ export const STICKER_DATA = [
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_1_2.png",
-        "Colour": "#e52c45"
+        "Colour": "#e52c45",
+        "Raw": "1",
+        "StickerNameTC": "Doggone It!",
+        "StickerNameSC": "Doggone It!"
     },
     {
         "GlobalID": "60103",
-        "StickerName": "Choo Choo!",
+        "StickerNameEN": "Choo Choo!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2064,14 +2475,17 @@ export const STICKER_DATA = [
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_1_3.png",
-        "Colour": "#e52c45"
+        "Colour": "#e52c45",
+        "Raw": "1",
+        "StickerNameTC": "Choo Choo!",
+        "StickerNameSC": "Choo Choo!"
     },
     {
         "GlobalID": "60104",
-        "StickerName": "Just in Case",
+        "StickerNameEN": "Just in Case",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2079,14 +2493,17 @@ export const STICKER_DATA = [
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_1_4.png",
-        "Colour": "#e52c45"
+        "Colour": "#e52c45",
+        "Raw": "1",
+        "StickerNameTC": "Just in Case",
+        "StickerNameSC": "Just in Case"
     },
     {
         "GlobalID": "60105",
-        "StickerName": "Community Goals",
+        "StickerNameEN": "Community Goals",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2094,14 +2511,17 @@ export const STICKER_DATA = [
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_1_5.png",
-        "Colour": "#e52c45"
+        "Colour": "#e52c45",
+        "Raw": "1",
+        "StickerNameTC": "Community Goals",
+        "StickerNameSC": "Community Goals"
     },
     {
         "GlobalID": "60106",
-        "StickerName": "Child's Play",
+        "StickerNameEN": "Child's Play",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2109,14 +2529,17 @@ export const STICKER_DATA = [
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_1_6.png",
-        "Colour": "#e52c45"
+        "Colour": "#e52c45",
+        "Raw": "1",
+        "StickerNameTC": "Child's Play",
+        "StickerNameSC": "Child's Play"
     },
     {
         "GlobalID": "60107",
-        "StickerName": "Missing Treasure",
+        "StickerNameEN": "Missing Treasure",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2124,14 +2547,17 @@ export const STICKER_DATA = [
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_1_7.png",
-        "Colour": "#e52c45"
+        "Colour": "#e52c45",
+        "Raw": "1",
+        "StickerNameTC": "Missing Treasure",
+        "StickerNameSC": "Missing Treasure"
     },
     {
         "GlobalID": "60108",
-        "StickerName": "Lost & Found",
+        "StickerNameEN": "Lost & Found",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2139,14 +2565,17 @@ export const STICKER_DATA = [
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_1_8.png",
-        "Colour": "#e52c45"
+        "Colour": "#e52c45",
+        "Raw": "1",
+        "StickerNameTC": "Lost & Found",
+        "StickerNameSC": "Lost & Found"
     },
     {
         "GlobalID": "60109",
-        "StickerName": "Story Time",
+        "StickerNameEN": "Story Time",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2154,14 +2583,17 @@ export const STICKER_DATA = [
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_1_9.png",
-        "Colour": "#e52c45"
+        "Colour": "#e52c45",
+        "Raw": "1",
+        "StickerNameTC": "Story Time",
+        "StickerNameSC": "Story Time"
     },
     {
         "GlobalID": "60201",
-        "StickerName": "Love At First Sight",
+        "StickerNameEN": "Love At First Sight",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2169,14 +2601,17 @@ export const STICKER_DATA = [
         "SetID": "602",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_2_1.png",
-        "Colour": "#7d62ff"
+        "Colour": "#7d62ff",
+        "Raw": "1",
+        "StickerNameTC": "Love At First Sight",
+        "StickerNameSC": "Love At First Sight"
     },
     {
         "GlobalID": "60202",
-        "StickerName": "Before Billions",
+        "StickerNameEN": "Before Billions",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2184,14 +2619,17 @@ export const STICKER_DATA = [
         "SetID": "602",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_2_2.png",
-        "Colour": "#7d62ff"
+        "Colour": "#7d62ff",
+        "Raw": "1",
+        "StickerNameTC": "Before Billions",
+        "StickerNameSC": "Before Billions"
     },
     {
         "GlobalID": "60203",
-        "StickerName": "Money-Minded",
+        "StickerNameEN": "Money-Minded",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2199,14 +2637,17 @@ export const STICKER_DATA = [
         "SetID": "602",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_2_3.png",
-        "Colour": "#7d62ff"
+        "Colour": "#7d62ff",
+        "Raw": "1",
+        "StickerNameTC": "Money-Minded",
+        "StickerNameSC": "Money-Minded"
     },
     {
         "GlobalID": "60204",
-        "StickerName": "Master Plan",
+        "StickerNameEN": "Master Plan",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2214,14 +2655,17 @@ export const STICKER_DATA = [
         "SetID": "602",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_2_4.png",
-        "Colour": "#7d62ff"
+        "Colour": "#7d62ff",
+        "Raw": "1",
+        "StickerNameTC": "Master Plan",
+        "StickerNameSC": "Master Plan"
     },
     {
         "GlobalID": "60205",
-        "StickerName": "Moving On Up",
+        "StickerNameEN": "Moving On Up",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2229,14 +2673,17 @@ export const STICKER_DATA = [
         "SetID": "602",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_2_5.png",
-        "Colour": "#7d62ff"
+        "Colour": "#7d62ff",
+        "Raw": "1",
+        "StickerNameTC": "Moving On Up",
+        "StickerNameSC": "Moving On Up"
     },
     {
         "GlobalID": "60206",
-        "StickerName": "Obsession",
+        "StickerNameEN": "Obsession",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2244,14 +2691,17 @@ export const STICKER_DATA = [
         "SetID": "602",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_2_6.png",
-        "Colour": "#7d62ff"
+        "Colour": "#7d62ff",
+        "Raw": "1",
+        "StickerNameTC": "Obsession",
+        "StickerNameSC": "Obsession"
     },
     {
         "GlobalID": "60207",
-        "StickerName": "Rich!",
+        "StickerNameEN": "Rich!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2259,14 +2709,17 @@ export const STICKER_DATA = [
         "SetID": "602",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_2_7.png",
-        "Colour": "#7d62ff"
+        "Colour": "#7d62ff",
+        "Raw": "1",
+        "StickerNameTC": "Rich!",
+        "StickerNameSC": "Rich!"
     },
     {
         "GlobalID": "60208",
-        "StickerName": "Long-Awaited",
+        "StickerNameEN": "Long-Awaited",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2274,14 +2727,17 @@ export const STICKER_DATA = [
         "SetID": "602",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_2_8.png",
-        "Colour": "#7d62ff"
+        "Colour": "#7d62ff",
+        "Raw": "1",
+        "StickerNameTC": "Long-Awaited",
+        "StickerNameSC": "Long-Awaited"
     },
     {
         "GlobalID": "60209",
-        "StickerName": "The Top Hat",
+        "StickerNameEN": "The Top Hat",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2289,14 +2745,17 @@ export const STICKER_DATA = [
         "SetID": "602",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_2_9.png",
-        "Colour": "#7d62ff"
+        "Colour": "#7d62ff",
+        "Raw": "1",
+        "StickerNameTC": "The Top Hat",
+        "StickerNameSC": "The Top Hat"
     },
     {
         "GlobalID": "60301",
-        "StickerName": "The Vision",
+        "StickerNameEN": "The Vision",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2304,14 +2763,17 @@ export const STICKER_DATA = [
         "SetID": "603",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_3_1.png",
-        "Colour": "#21b1da"
+        "Colour": "#21b1da",
+        "Raw": "1",
+        "StickerNameTC": "The Vision",
+        "StickerNameSC": "The Vision"
     },
     {
         "GlobalID": "60302",
-        "StickerName": "Circle Back",
+        "StickerNameEN": "Circle Back",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2319,14 +2781,17 @@ export const STICKER_DATA = [
         "SetID": "603",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_3_2.png",
-        "Colour": "#21b1da"
+        "Colour": "#21b1da",
+        "Raw": "1",
+        "StickerNameTC": "Circle Back",
+        "StickerNameSC": "Circle Back"
     },
     {
         "GlobalID": "60303",
-        "StickerName": "Get The Point",
+        "StickerNameEN": "Get The Point",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2334,14 +2799,17 @@ export const STICKER_DATA = [
         "SetID": "603",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_3_3.png",
-        "Colour": "#21b1da"
+        "Colour": "#21b1da",
+        "Raw": "1",
+        "StickerNameTC": "Get The Point",
+        "StickerNameSC": "Get The Point"
     },
     {
         "GlobalID": "60304",
-        "StickerName": "Fun, Squared!",
+        "StickerNameEN": "Fun, Squared!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2349,14 +2817,17 @@ export const STICKER_DATA = [
         "SetID": "603",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_3_4.png",
-        "Colour": "#21b1da"
+        "Colour": "#21b1da",
+        "Raw": "1",
+        "StickerNameTC": "Fun, Squared!",
+        "StickerNameSC": "Fun, Squared!"
     },
     {
         "GlobalID": "60305",
-        "StickerName": "True Colors",
+        "StickerNameEN": "True Colors",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2364,14 +2835,17 @@ export const STICKER_DATA = [
         "SetID": "603",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_3_5.png",
-        "Colour": "#21b1da"
+        "Colour": "#21b1da",
+        "Raw": "1",
+        "StickerNameTC": "True Colors",
+        "StickerNameSC": "True Colors"
     },
     {
         "GlobalID": "60306",
-        "StickerName": "The Artist",
+        "StickerNameEN": "The Artist",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2379,14 +2853,17 @@ export const STICKER_DATA = [
         "SetID": "603",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_3_6.png",
-        "Colour": "#21b1da"
+        "Colour": "#21b1da",
+        "Raw": "1",
+        "StickerNameTC": "The Artist",
+        "StickerNameSC": "The Artist"
     },
     {
         "GlobalID": "60307",
-        "StickerName": "Good Deeds",
+        "StickerNameEN": "Good Deeds",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2394,14 +2871,17 @@ export const STICKER_DATA = [
         "SetID": "603",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_3_7.png",
-        "Colour": "#21b1da"
+        "Colour": "#21b1da",
+        "Raw": "1",
+        "StickerNameTC": "Good Deeds",
+        "StickerNameSC": "Good Deeds"
     },
     {
         "GlobalID": "60308",
-        "StickerName": "Throw the Dice",
+        "StickerNameEN": "Throw the Dice",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2409,14 +2889,17 @@ export const STICKER_DATA = [
         "SetID": "603",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_3_8.png",
-        "Colour": "#21b1da"
+        "Colour": "#21b1da",
+        "Raw": "1",
+        "StickerNameTC": "Throw the Dice",
+        "StickerNameSC": "Throw the Dice"
     },
     {
         "GlobalID": "60309",
-        "StickerName": "Across the Board",
+        "StickerNameEN": "Across the Board",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2424,14 +2907,17 @@ export const STICKER_DATA = [
         "SetID": "603",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_3_9.png",
-        "Colour": "#21b1da"
+        "Colour": "#21b1da",
+        "Raw": "1",
+        "StickerNameTC": "Across the Board",
+        "StickerNameSC": "Across the Board"
     },
     {
         "GlobalID": "60401",
-        "StickerName": "Bark Voyage",
+        "StickerNameEN": "Bark Voyage",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2439,14 +2925,17 @@ export const STICKER_DATA = [
         "SetID": "604",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_4_1.png",
-        "Colour": "#34bd9e"
+        "Colour": "#34bd9e",
+        "Raw": "1",
+        "StickerNameTC": "Bark Voyage",
+        "StickerNameSC": "Bark Voyage"
     },
     {
         "GlobalID": "60402",
-        "StickerName": "My Captain!",
+        "StickerNameEN": "My Captain!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2454,14 +2943,17 @@ export const STICKER_DATA = [
         "SetID": "604",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_4_2.png",
-        "Colour": "#34bd9e"
+        "Colour": "#34bd9e",
+        "Raw": "1",
+        "StickerNameTC": "My Captain!",
+        "StickerNameSC": "My Captain!"
     },
     {
         "GlobalID": "60403",
-        "StickerName": "Sonar Peek",
+        "StickerNameEN": "Sonar Peek",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2469,14 +2961,17 @@ export const STICKER_DATA = [
         "SetID": "604",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_4_3.png",
-        "Colour": "#34bd9e"
+        "Colour": "#34bd9e",
+        "Raw": "1",
+        "StickerNameTC": "Sonar Peek",
+        "StickerNameSC": "Sonar Peek"
     },
     {
         "GlobalID": "60404",
-        "StickerName": "First Stop",
+        "StickerNameEN": "First Stop",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2484,14 +2979,17 @@ export const STICKER_DATA = [
         "SetID": "604",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_4_4.png",
-        "Colour": "#34bd9e"
+        "Colour": "#34bd9e",
+        "Raw": "1",
+        "StickerNameTC": "First Stop",
+        "StickerNameSC": "First Stop"
     },
     {
         "GlobalID": "60405",
-        "StickerName": "Born To Fly",
+        "StickerNameEN": "Born To Fly",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2499,14 +2997,17 @@ export const STICKER_DATA = [
         "SetID": "604",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_4_5.png",
-        "Colour": "#34bd9e"
+        "Colour": "#34bd9e",
+        "Raw": "1",
+        "StickerNameTC": "Born To Fly",
+        "StickerNameSC": "Born To Fly"
     },
     {
         "GlobalID": "60406",
-        "StickerName": "Map It Out",
+        "StickerNameEN": "Map It Out",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2514,14 +3015,17 @@ export const STICKER_DATA = [
         "SetID": "604",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_4_6.png",
-        "Colour": "#34bd9e"
+        "Colour": "#34bd9e",
+        "Raw": "1",
+        "StickerNameTC": "Map It Out",
+        "StickerNameSC": "Map It Out"
     },
     {
         "GlobalID": "60407",
-        "StickerName": "Adiós, Arctic!",
+        "StickerNameEN": "Adiós, Arctic!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2529,14 +3033,17 @@ export const STICKER_DATA = [
         "SetID": "604",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_4_7.png",
-        "Colour": "#34bd9e"
+        "Colour": "#34bd9e",
+        "Raw": "1",
+        "StickerNameTC": "Adiós, Arctic!",
+        "StickerNameSC": "Adiós, Arctic!"
     },
     {
         "GlobalID": "60408",
-        "StickerName": "Co-Captains",
+        "StickerNameEN": "Co-Captains",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2544,14 +3051,17 @@ export const STICKER_DATA = [
         "SetID": "604",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_4_8.png",
-        "Colour": "#34bd9e"
+        "Colour": "#34bd9e",
+        "Raw": "1",
+        "StickerNameTC": "Co-Captains",
+        "StickerNameSC": "Co-Captains"
     },
     {
         "GlobalID": "60409",
-        "StickerName": "The Battleship",
+        "StickerNameEN": "The Battleship",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2559,14 +3069,17 @@ export const STICKER_DATA = [
         "SetID": "604",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_4_9.png",
-        "Colour": "#34bd9e"
+        "Colour": "#34bd9e",
+        "Raw": "1",
+        "StickerNameTC": "The Battleship",
+        "StickerNameSC": "The Battleship"
     },
     {
         "GlobalID": "60501",
-        "StickerName": "Whittling Whiz",
+        "StickerNameEN": "Whittling Whiz",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2574,14 +3087,17 @@ export const STICKER_DATA = [
         "SetID": "605",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_5_1.png",
-        "Colour": "#ff8449"
+        "Colour": "#ff8449",
+        "Raw": "1",
+        "StickerNameTC": "Whittling Whiz",
+        "StickerNameSC": "Whittling Whiz"
     },
     {
         "GlobalID": "60502",
-        "StickerName": "A Bit Wonky",
+        "StickerNameEN": "A Bit Wonky",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2589,14 +3105,17 @@ export const STICKER_DATA = [
         "SetID": "605",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_5_2.png",
-        "Colour": "#ff8449"
+        "Colour": "#ff8449",
+        "Raw": "1",
+        "StickerNameTC": "A Bit Wonky",
+        "StickerNameSC": "A Bit Wonky"
     },
     {
         "GlobalID": "60503",
-        "StickerName": "Prototype",
+        "StickerNameEN": "Prototype",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2604,14 +3123,17 @@ export const STICKER_DATA = [
         "SetID": "605",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_5_3.png",
-        "Colour": "#ff8449"
+        "Colour": "#ff8449",
+        "Raw": "1",
+        "StickerNameTC": "Prototype",
+        "StickerNameSC": "Prototype"
     },
     {
         "GlobalID": "60504",
-        "StickerName": "The Pro",
+        "StickerNameEN": "The Pro",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2619,14 +3141,17 @@ export const STICKER_DATA = [
         "SetID": "605",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_5_4.png",
-        "Colour": "#ff8449"
+        "Colour": "#ff8449",
+        "Raw": "1",
+        "StickerNameTC": "The Pro",
+        "StickerNameSC": "The Pro"
     },
     {
         "GlobalID": "60505",
-        "StickerName": "Dice-Bot 3000",
+        "StickerNameEN": "Dice-Bot 3000",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2634,14 +3159,17 @@ export const STICKER_DATA = [
         "SetID": "605",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_5_5.png",
-        "Colour": "#ff8449"
+        "Colour": "#ff8449",
+        "Raw": "1",
+        "StickerNameTC": "Dice-Bot 3000",
+        "StickerNameSC": "Dice-Bot 3000"
     },
     {
         "GlobalID": "60506",
-        "StickerName": "On a Roll",
+        "StickerNameEN": "On a Roll",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2649,14 +3177,17 @@ export const STICKER_DATA = [
         "SetID": "605",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_5_6.png",
-        "Colour": "#ff8449"
+        "Colour": "#ff8449",
+        "Raw": "1",
+        "StickerNameTC": "On a Roll",
+        "StickerNameSC": "On a Roll"
     },
     {
         "GlobalID": "60507",
-        "StickerName": "Dream Come True",
+        "StickerNameEN": "Dream Come True",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2664,14 +3195,17 @@ export const STICKER_DATA = [
         "SetID": "605",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_5_7.png",
-        "Colour": "#ff8449"
+        "Colour": "#ff8449",
+        "Raw": "1",
+        "StickerNameTC": "Dream Come True",
+        "StickerNameSC": "Dream Come True"
     },
     {
         "GlobalID": "60508",
-        "StickerName": "Squared Joy",
+        "StickerNameEN": "Squared Joy",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2679,14 +3213,17 @@ export const STICKER_DATA = [
         "SetID": "605",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_5_8.png",
-        "Colour": "#ff8449"
+        "Colour": "#ff8449",
+        "Raw": "1",
+        "StickerNameTC": "Squared Joy",
+        "StickerNameSC": "Squared Joy"
     },
     {
         "GlobalID": "60509",
-        "StickerName": "Perfect Pair",
+        "StickerNameEN": "Perfect Pair",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2694,14 +3231,17 @@ export const STICKER_DATA = [
         "SetID": "605",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_5_9.png",
-        "Colour": "#ff8449"
+        "Colour": "#ff8449",
+        "Raw": "1",
+        "StickerNameTC": "Perfect Pair",
+        "StickerNameSC": "Perfect Pair"
     },
     {
         "GlobalID": "60601",
-        "StickerName": "Thimble Factory",
+        "StickerNameEN": "Thimble Factory",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2709,14 +3249,17 @@ export const STICKER_DATA = [
         "SetID": "606",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_6_1.png",
-        "Colour": "#00b1d3"
+        "Colour": "#00b1d3",
+        "Raw": "1",
+        "StickerNameTC": "Thimble Factory",
+        "StickerNameSC": "Thimble Factory"
     },
     {
         "GlobalID": "60602",
-        "StickerName": "In-Line",
+        "StickerNameEN": "In-Line",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2724,14 +3267,17 @@ export const STICKER_DATA = [
         "SetID": "606",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_6_2.png",
-        "Colour": "#00b1d3"
+        "Colour": "#00b1d3",
+        "Raw": "1",
+        "StickerNameTC": "In-Line",
+        "StickerNameSC": "In-Line"
     },
     {
         "GlobalID": "60603",
-        "StickerName": "Prized Possession",
+        "StickerNameEN": "Prized Possession",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2739,14 +3285,17 @@ export const STICKER_DATA = [
         "SetID": "606",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_6_3.png",
-        "Colour": "#00b1d3"
+        "Colour": "#00b1d3",
+        "Raw": "1",
+        "StickerNameTC": "Prized Possession",
+        "StickerNameSC": "Prized Possession"
     },
     {
         "GlobalID": "60604",
-        "StickerName": "Jackpot!",
+        "StickerNameEN": "Jackpot!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2754,14 +3303,17 @@ export const STICKER_DATA = [
         "SetID": "606",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_6_4.png",
-        "Colour": "#00b1d3"
+        "Colour": "#00b1d3",
+        "Raw": "1",
+        "StickerNameTC": "Jackpot!",
+        "StickerNameSC": "Jackpot!"
     },
     {
         "GlobalID": "60605",
-        "StickerName": "Lucky Charm",
+        "StickerNameEN": "Lucky Charm",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2769,14 +3321,17 @@ export const STICKER_DATA = [
         "SetID": "606",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_6_5.png",
-        "Colour": "#00b1d3"
+        "Colour": "#00b1d3",
+        "Raw": "1",
+        "StickerNameTC": "Lucky Charm",
+        "StickerNameSC": "Lucky Charm"
     },
     {
         "GlobalID": "60606",
-        "StickerName": "Bank Error!",
+        "StickerNameEN": "Bank Error!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2784,14 +3339,17 @@ export const STICKER_DATA = [
         "SetID": "606",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_6_6.png",
-        "Colour": "#00b1d3"
+        "Colour": "#00b1d3",
+        "Raw": "1",
+        "StickerNameTC": "Bank Error!",
+        "StickerNameSC": "Bank Error!"
     },
     {
         "GlobalID": "60607",
-        "StickerName": "Finally First",
+        "StickerNameEN": "Finally First",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2799,14 +3357,17 @@ export const STICKER_DATA = [
         "SetID": "606",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_6_7.png",
-        "Colour": "#00b1d3"
+        "Colour": "#00b1d3",
+        "Raw": "1",
+        "StickerNameTC": "Finally First",
+        "StickerNameSC": "Finally First"
     },
     {
         "GlobalID": "60608",
-        "StickerName": "Dividends",
+        "StickerNameEN": "Dividends",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2814,14 +3375,17 @@ export const STICKER_DATA = [
         "SetID": "606",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_6_8.png",
-        "Colour": "#00b1d3"
+        "Colour": "#00b1d3",
+        "Raw": "1",
+        "StickerNameTC": "Dividends",
+        "StickerNameSC": "Dividends"
     },
     {
         "GlobalID": "60609",
-        "StickerName": "The Thimble",
+        "StickerNameEN": "The Thimble",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -2829,14 +3393,17 @@ export const STICKER_DATA = [
         "SetID": "606",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_6_9.png",
-        "Colour": "#00b1d3"
+        "Colour": "#00b1d3",
+        "Raw": "1",
+        "StickerNameTC": "The Thimble",
+        "StickerNameSC": "The Thimble"
     },
     {
         "GlobalID": "60701",
-        "StickerName": "Adventure Time",
+        "StickerNameEN": "Adventure Time",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2844,14 +3411,17 @@ export const STICKER_DATA = [
         "SetID": "607",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_7_1.png",
-        "Colour": "#3cbcff"
+        "Colour": "#3cbcff",
+        "Raw": "1",
+        "StickerNameTC": "Adventure Time",
+        "StickerNameSC": "Adventure Time"
     },
     {
         "GlobalID": "60702",
-        "StickerName": "No Chance",
+        "StickerNameEN": "No Chance",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2859,14 +3429,17 @@ export const STICKER_DATA = [
         "SetID": "607",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_7_2.png",
-        "Colour": "#3cbcff"
+        "Colour": "#3cbcff",
+        "Raw": "1",
+        "StickerNameTC": "No Chance",
+        "StickerNameSC": "No Chance"
     },
     {
         "GlobalID": "60703",
-        "StickerName": "Wrapped Up!",
+        "StickerNameEN": "Wrapped Up!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2874,14 +3447,17 @@ export const STICKER_DATA = [
         "SetID": "607",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_7_3.png",
-        "Colour": "#3cbcff"
+        "Colour": "#3cbcff",
+        "Raw": "1",
+        "StickerNameTC": "Wrapped Up!",
+        "StickerNameSC": "Wrapped Up!"
     },
     {
         "GlobalID": "60704",
-        "StickerName": "Waterlogged",
+        "StickerNameEN": "Waterlogged",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2889,14 +3465,17 @@ export const STICKER_DATA = [
         "SetID": "607",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_7_4.png",
-        "Colour": "#3cbcff"
+        "Colour": "#3cbcff",
+        "Raw": "1",
+        "StickerNameTC": "Waterlogged",
+        "StickerNameSC": "Waterlogged"
     },
     {
         "GlobalID": "60705",
-        "StickerName": "Jungle Clue",
+        "StickerNameEN": "Jungle Clue",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2904,14 +3483,17 @@ export const STICKER_DATA = [
         "SetID": "607",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_7_5.png",
-        "Colour": "#3cbcff"
+        "Colour": "#3cbcff",
+        "Raw": "1",
+        "StickerNameTC": "Jungle Clue",
+        "StickerNameSC": "Jungle Clue"
     },
     {
         "GlobalID": "60706",
-        "StickerName": "Enchanted",
+        "StickerNameEN": "Enchanted",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2919,14 +3501,17 @@ export const STICKER_DATA = [
         "SetID": "607",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_7_6.png",
-        "Colour": "#3cbcff"
+        "Colour": "#3cbcff",
+        "Raw": "1",
+        "StickerNameTC": "Enchanted",
+        "StickerNameSC": "Enchanted"
     },
     {
         "GlobalID": "60707",
-        "StickerName": "To The Moon!",
+        "StickerNameEN": "To The Moon!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -2934,14 +3519,17 @@ export const STICKER_DATA = [
         "SetID": "607",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_7_7.png",
-        "Colour": "#3cbcff"
+        "Colour": "#3cbcff",
+        "Raw": "1",
+        "StickerNameTC": "To The Moon!",
+        "StickerNameSC": "To The Moon!"
     },
     {
         "GlobalID": "60708",
-        "StickerName": "Under Your Nose",
+        "StickerNameEN": "Under Your Nose",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -2949,14 +3537,17 @@ export const STICKER_DATA = [
         "SetID": "607",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_7_8.png",
-        "Colour": "#3cbcff"
+        "Colour": "#3cbcff",
+        "Raw": "1",
+        "StickerNameTC": "Under Your Nose",
+        "StickerNameSC": "Under Your Nose"
     },
     {
         "GlobalID": "60709",
-        "StickerName": "Treasured Cards",
+        "StickerNameEN": "Treasured Cards",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -2964,14 +3555,17 @@ export const STICKER_DATA = [
         "SetID": "607",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_7_9.png",
-        "Colour": "#3cbcff"
+        "Colour": "#3cbcff",
+        "Raw": "1",
+        "StickerNameTC": "Treasured Cards",
+        "StickerNameSC": "Treasured Cards"
     },
     {
         "GlobalID": "60801",
-        "StickerName": "Antique Hunting",
+        "StickerNameEN": "Antique Hunting",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2979,14 +3573,17 @@ export const STICKER_DATA = [
         "SetID": "608",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_8_1.png",
-        "Colour": "#1fc4e6"
+        "Colour": "#1fc4e6",
+        "Raw": "1",
+        "StickerNameTC": "Antique Hunting",
+        "StickerNameSC": "Antique Hunting"
     },
     {
         "GlobalID": "60802",
-        "StickerName": "Here It Is!",
+        "StickerNameEN": "Here It Is!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -2994,14 +3591,17 @@ export const STICKER_DATA = [
         "SetID": "608",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_8_2.png",
-        "Colour": "#1fc4e6"
+        "Colour": "#1fc4e6",
+        "Raw": "1",
+        "StickerNameTC": "Here It Is!",
+        "StickerNameSC": "Here It Is!"
     },
     {
         "GlobalID": "60803",
-        "StickerName": "Memories",
+        "StickerNameEN": "Memories",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -3009,14 +3609,17 @@ export const STICKER_DATA = [
         "SetID": "608",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_8_3.png",
-        "Colour": "#1fc4e6"
+        "Colour": "#1fc4e6",
+        "Raw": "1",
+        "StickerNameTC": "Memories",
+        "StickerNameSC": "Memories"
     },
     {
         "GlobalID": "60804",
-        "StickerName": "In the Fire",
+        "StickerNameEN": "In the Fire",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3024,14 +3627,17 @@ export const STICKER_DATA = [
         "SetID": "608",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_8_4.png",
-        "Colour": "#1fc4e6"
+        "Colour": "#1fc4e6",
+        "Raw": "1",
+        "StickerNameTC": "In the Fire",
+        "StickerNameSC": "In the Fire"
     },
     {
         "GlobalID": "60805",
-        "StickerName": "Oops!",
+        "StickerNameEN": "Oops!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3039,14 +3645,17 @@ export const STICKER_DATA = [
         "SetID": "608",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_8_5.png",
-        "Colour": "#1fc4e6"
+        "Colour": "#1fc4e6",
+        "Raw": "1",
+        "StickerNameTC": "Oops!",
+        "StickerNameSC": "Oops!"
     },
     {
         "GlobalID": "60806",
-        "StickerName": "Little Help",
+        "StickerNameEN": "Little Help",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3054,14 +3663,17 @@ export const STICKER_DATA = [
         "SetID": "608",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_8_6.png",
-        "Colour": "#1fc4e6"
+        "Colour": "#1fc4e6",
+        "Raw": "1",
+        "StickerNameTC": "Little Help",
+        "StickerNameSC": "Little Help"
     },
     {
         "GlobalID": "60807",
-        "StickerName": "New Iron!",
+        "StickerNameEN": "New Iron!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3069,14 +3681,17 @@ export const STICKER_DATA = [
         "SetID": "608",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_8_7.png",
-        "Colour": "#1fc4e6"
+        "Colour": "#1fc4e6",
+        "Raw": "1",
+        "StickerNameTC": "New Iron!",
+        "StickerNameSC": "New Iron!"
     },
     {
         "GlobalID": "60808",
-        "StickerName": "Token Factory",
+        "StickerNameEN": "Token Factory",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3084,14 +3699,17 @@ export const STICKER_DATA = [
         "SetID": "608",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_8_8.png",
-        "Colour": "#1fc4e6"
+        "Colour": "#1fc4e6",
+        "Raw": "1",
+        "StickerNameTC": "Token Factory",
+        "StickerNameSC": "Token Factory"
     },
     {
         "GlobalID": "60809",
-        "StickerName": "The Iron",
+        "StickerNameEN": "The Iron",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3099,14 +3717,17 @@ export const STICKER_DATA = [
         "SetID": "608",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_8_9.png",
-        "Colour": "#1fc4e6"
+        "Colour": "#1fc4e6",
+        "Raw": "1",
+        "StickerNameTC": "The Iron",
+        "StickerNameSC": "The Iron"
     },
     {
         "GlobalID": "60901",
-        "StickerName": "A Good Sign!",
+        "StickerNameEN": "A Good Sign!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -3114,14 +3735,17 @@ export const STICKER_DATA = [
         "SetID": "609",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_9_1.png",
-        "Colour": "#00b8a0"
+        "Colour": "#00b8a0",
+        "Raw": "1",
+        "StickerNameTC": "A Good Sign!",
+        "StickerNameSC": "A Good Sign!"
     },
     {
         "GlobalID": "60902",
-        "StickerName": "Blueprints",
+        "StickerNameEN": "Blueprints",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -3129,14 +3753,17 @@ export const STICKER_DATA = [
         "SetID": "609",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_9_2.png",
-        "Colour": "#00b8a0"
+        "Colour": "#00b8a0",
+        "Raw": "1",
+        "StickerNameTC": "Blueprints",
+        "StickerNameSC": "Blueprints"
     },
     {
         "GlobalID": "60903",
-        "StickerName": "Globe Trottin'",
+        "StickerNameEN": "Globe Trottin'",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -3144,14 +3771,17 @@ export const STICKER_DATA = [
         "SetID": "609",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_9_3.png",
-        "Colour": "#00b8a0"
+        "Colour": "#00b8a0",
+        "Raw": "1",
+        "StickerNameTC": "Globe Trottin'",
+        "StickerNameSC": "Globe Trottin'"
     },
     {
         "GlobalID": "60904",
-        "StickerName": "Round-the-world",
+        "StickerNameEN": "Round-the-world",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3159,14 +3789,17 @@ export const STICKER_DATA = [
         "SetID": "609",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_9_4.png",
-        "Colour": "#00b8a0"
+        "Colour": "#00b8a0",
+        "Raw": "1",
+        "StickerNameTC": "Round-the-world",
+        "StickerNameSC": "Round-the-world"
     },
     {
         "GlobalID": "60905",
-        "StickerName": "Palettable",
+        "StickerNameEN": "Palettable",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3174,14 +3807,17 @@ export const STICKER_DATA = [
         "SetID": "609",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_9_5.png",
-        "Colour": "#00b8a0"
+        "Colour": "#00b8a0",
+        "Raw": "1",
+        "StickerNameTC": "Palettable",
+        "StickerNameSC": "Palettable"
     },
     {
         "GlobalID": "60906",
-        "StickerName": "Dirty Deeds",
+        "StickerNameEN": "Dirty Deeds",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3189,14 +3825,17 @@ export const STICKER_DATA = [
         "SetID": "609",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_9_6.png",
-        "Colour": "#00b8a0"
+        "Colour": "#00b8a0",
+        "Raw": "1",
+        "StickerNameTC": "Dirty Deeds",
+        "StickerNameSC": "Dirty Deeds"
     },
     {
         "GlobalID": "60907",
-        "StickerName": "First Try",
+        "StickerNameEN": "First Try",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3204,14 +3843,17 @@ export const STICKER_DATA = [
         "SetID": "609",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_9_7.png",
-        "Colour": "#00b8a0"
+        "Colour": "#00b8a0",
+        "Raw": "1",
+        "StickerNameTC": "First Try",
+        "StickerNameSC": "First Try"
     },
     {
         "GlobalID": "60908",
-        "StickerName": "Flood The Market",
+        "StickerNameEN": "Flood The Market",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3219,14 +3861,17 @@ export const STICKER_DATA = [
         "SetID": "609",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_9_8.png",
-        "Colour": "#00b8a0"
+        "Colour": "#00b8a0",
+        "Raw": "1",
+        "StickerNameTC": "Flood The Market",
+        "StickerNameSC": "Flood The Market"
     },
     {
         "GlobalID": "60909",
-        "StickerName": "Room to Rent",
+        "StickerNameEN": "Room to Rent",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -3234,14 +3879,17 @@ export const STICKER_DATA = [
         "SetID": "609",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_9_9.png",
-        "Colour": "#00b8a0"
+        "Colour": "#00b8a0",
+        "Raw": "1",
+        "StickerNameTC": "Room to Rent",
+        "StickerNameSC": "Room to Rent"
     },
     {
         "GlobalID": "61001",
-        "StickerName": "Mr M's Tale",
+        "StickerNameEN": "Mr M's Tale",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -3249,14 +3897,17 @@ export const STICKER_DATA = [
         "SetID": "610",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_10_1.png",
-        "Colour": "#9246d3"
+        "Colour": "#9246d3",
+        "Raw": "1",
+        "StickerNameTC": "Mr M's Tale",
+        "StickerNameSC": "Mr M's Tale"
     },
     {
         "GlobalID": "61002",
-        "StickerName": "Doing Chores",
+        "StickerNameEN": "Doing Chores",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -3264,14 +3915,17 @@ export const STICKER_DATA = [
         "SetID": "610",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_10_2.png",
-        "Colour": "#9246d3"
+        "Colour": "#9246d3",
+        "Raw": "1",
+        "StickerNameTC": "Doing Chores",
+        "StickerNameSC": "Doing Chores"
     },
     {
         "GlobalID": "61003",
-        "StickerName": "The Boot Awards",
+        "StickerNameEN": "The Boot Awards",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3279,14 +3933,17 @@ export const STICKER_DATA = [
         "SetID": "610",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_10_3.png",
-        "Colour": "#9246d3"
+        "Colour": "#9246d3",
+        "Raw": "1",
+        "StickerNameTC": "The Boot Awards",
+        "StickerNameSC": "The Boot Awards"
     },
     {
         "GlobalID": "61004",
-        "StickerName": "Fashion Fiasco",
+        "StickerNameEN": "Fashion Fiasco",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3294,14 +3951,17 @@ export const STICKER_DATA = [
         "SetID": "610",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_10_4.png",
-        "Colour": "#9246d3"
+        "Colour": "#9246d3",
+        "Raw": "1",
+        "StickerNameTC": "Fashion Fiasco",
+        "StickerNameSC": "Fashion Fiasco"
     },
     {
         "GlobalID": "61005",
-        "StickerName": "Suit Up",
+        "StickerNameEN": "Suit Up",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3309,14 +3969,17 @@ export const STICKER_DATA = [
         "SetID": "610",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_10_5.png",
-        "Colour": "#9246d3"
+        "Colour": "#9246d3",
+        "Raw": "1",
+        "StickerNameTC": "Suit Up",
+        "StickerNameSC": "Suit Up"
     },
     {
         "GlobalID": "61006",
-        "StickerName": "To The Awards",
+        "StickerNameEN": "To The Awards",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3324,14 +3987,17 @@ export const STICKER_DATA = [
         "SetID": "610",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_10_6.png",
-        "Colour": "#9246d3"
+        "Colour": "#9246d3",
+        "Raw": "1",
+        "StickerNameTC": "To The Awards",
+        "StickerNameSC": "To The Awards"
     },
     {
         "GlobalID": "61007",
-        "StickerName": "Nominees",
+        "StickerNameEN": "Nominees",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3339,14 +4005,17 @@ export const STICKER_DATA = [
         "SetID": "610",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_10_7.png",
-        "Colour": "#9246d3"
+        "Colour": "#9246d3",
+        "Raw": "1",
+        "StickerNameTC": "Nominees",
+        "StickerNameSC": "Nominees"
     },
     {
         "GlobalID": "61008",
-        "StickerName": "Award Winner",
+        "StickerNameEN": "Award Winner",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -3354,14 +4023,17 @@ export const STICKER_DATA = [
         "SetID": "610",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_10_8.png",
-        "Colour": "#9246d3"
+        "Colour": "#9246d3",
+        "Raw": "1",
+        "StickerNameTC": "Award Winner",
+        "StickerNameSC": "Award Winner"
     },
     {
         "GlobalID": "61009",
-        "StickerName": "The Boot",
+        "StickerNameEN": "The Boot",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -3369,14 +4041,17 @@ export const STICKER_DATA = [
         "SetID": "610",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_10_9.png",
-        "Colour": "#9246d3"
+        "Colour": "#9246d3",
+        "Raw": "1",
+        "StickerNameTC": "The Boot",
+        "StickerNameSC": "The Boot"
     },
     {
         "GlobalID": "61101",
-        "StickerName": "Paperwork Punt",
+        "StickerNameEN": "Paperwork Punt",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -3384,14 +4059,17 @@ export const STICKER_DATA = [
         "SetID": "611",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_11_1.png",
-        "Colour": "#eb407d"
+        "Colour": "#eb407d",
+        "Raw": "1",
+        "StickerNameTC": "Paperwork Punt",
+        "StickerNameSC": "Paperwork Punt"
     },
     {
         "GlobalID": "61102",
-        "StickerName": "Bills?!",
+        "StickerNameEN": "Bills?!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -3399,14 +4077,17 @@ export const STICKER_DATA = [
         "SetID": "611",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_11_2.png",
-        "Colour": "#eb407d"
+        "Colour": "#eb407d",
+        "Raw": "1",
+        "StickerNameTC": "Bills?!",
+        "StickerNameSC": "Bills?!"
     },
     {
         "GlobalID": "61103",
-        "StickerName": "Not Today",
+        "StickerNameEN": "Not Today",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3414,14 +4095,17 @@ export const STICKER_DATA = [
         "SetID": "611",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_11_3.png",
-        "Colour": "#eb407d"
+        "Colour": "#eb407d",
+        "Raw": "1",
+        "StickerNameTC": "Not Today",
+        "StickerNameSC": "Not Today"
     },
     {
         "GlobalID": "61104",
-        "StickerName": "Hands On!",
+        "StickerNameEN": "Hands On!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3429,14 +4113,17 @@ export const STICKER_DATA = [
         "SetID": "611",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_11_4.png",
-        "Colour": "#eb407d"
+        "Colour": "#eb407d",
+        "Raw": "1",
+        "StickerNameTC": "Hands On!",
+        "StickerNameSC": "Hands On!"
     },
     {
         "GlobalID": "61105",
-        "StickerName": "Nailing It!",
+        "StickerNameEN": "Nailing It!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3444,14 +4131,17 @@ export const STICKER_DATA = [
         "SetID": "611",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_11_5.png",
-        "Colour": "#eb407d"
+        "Colour": "#eb407d",
+        "Raw": "1",
+        "StickerNameTC": "Nailing It!",
+        "StickerNameSC": "Nailing It!"
     },
     {
         "GlobalID": "61106",
-        "StickerName": "Electric Company",
+        "StickerNameEN": "Electric Company",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3459,14 +4149,17 @@ export const STICKER_DATA = [
         "SetID": "611",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_11_6.png",
-        "Colour": "#eb407d"
+        "Colour": "#eb407d",
+        "Raw": "1",
+        "StickerNameTC": "Electric Company",
+        "StickerNameSC": "Electric Company"
     },
     {
         "GlobalID": "61107",
-        "StickerName": "Water Works",
+        "StickerNameEN": "Water Works",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3474,14 +4167,17 @@ export const STICKER_DATA = [
         "SetID": "611",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_11_7.png",
-        "Colour": "#eb407d"
+        "Colour": "#eb407d",
+        "Raw": "1",
+        "StickerNameTC": "Water Works",
+        "StickerNameSC": "Water Works"
     },
     {
         "GlobalID": "61108",
-        "StickerName": "Sparking Fun",
+        "StickerNameEN": "Sparking Fun",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -3489,14 +4185,17 @@ export const STICKER_DATA = [
         "SetID": "611",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_11_8.png",
-        "Colour": "#eb407d"
+        "Colour": "#eb407d",
+        "Raw": "1",
+        "StickerNameTC": "Sparking Fun",
+        "StickerNameSC": "Sparking Fun"
     },
     {
         "GlobalID": "61109",
-        "StickerName": "Making a Splash",
+        "StickerNameEN": "Making a Splash",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -3504,14 +4203,17 @@ export const STICKER_DATA = [
         "SetID": "611",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_11_9.png",
-        "Colour": "#eb407d"
+        "Colour": "#eb407d",
+        "Raw": "1",
+        "StickerNameTC": "Making a Splash",
+        "StickerNameSC": "Making a Splash"
     },
     {
         "GlobalID": "61201",
-        "StickerName": "MNPL Labs",
+        "StickerNameEN": "MNPL Labs",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -3519,14 +4221,17 @@ export const STICKER_DATA = [
         "SetID": "612",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_12_1.png",
-        "Colour": "#ed758f"
+        "Colour": "#ed758f",
+        "Raw": "1",
+        "StickerNameTC": "MNPL Labs",
+        "StickerNameSC": "MNPL Labs"
     },
     {
         "GlobalID": "61202",
-        "StickerName": "Mr Captain",
+        "StickerNameEN": "Mr Captain",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3534,14 +4239,17 @@ export const STICKER_DATA = [
         "SetID": "612",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_12_2.png",
-        "Colour": "#ed758f"
+        "Colour": "#ed758f",
+        "Raw": "1",
+        "StickerNameTC": "Mr Captain",
+        "StickerNameSC": "Mr Captain"
     },
     {
         "GlobalID": "61203",
-        "StickerName": "Confetti Fun",
+        "StickerNameEN": "Confetti Fun",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3549,14 +4257,17 @@ export const STICKER_DATA = [
         "SetID": "612",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_12_3.png",
-        "Colour": "#ed758f"
+        "Colour": "#ed758f",
+        "Raw": "1",
+        "StickerNameTC": "Confetti Fun",
+        "StickerNameSC": "Confetti Fun"
     },
     {
         "GlobalID": "61204",
-        "StickerName": "On the Ball",
+        "StickerNameEN": "On the Ball",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3564,14 +4275,17 @@ export const STICKER_DATA = [
         "SetID": "612",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_12_4.png",
-        "Colour": "#ed758f"
+        "Colour": "#ed758f",
+        "Raw": "1",
+        "StickerNameTC": "On the Ball",
+        "StickerNameSC": "On the Ball"
     },
     {
         "GlobalID": "61205",
-        "StickerName": "Cannonball",
+        "StickerNameEN": "Cannonball",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3579,14 +4293,17 @@ export const STICKER_DATA = [
         "SetID": "612",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_12_5.png",
-        "Colour": "#ed758f"
+        "Colour": "#ed758f",
+        "Raw": "1",
+        "StickerNameTC": "Cannonball",
+        "StickerNameSC": "Cannonball"
     },
     {
         "GlobalID": "61206",
-        "StickerName": "Pushing Luck",
+        "StickerNameEN": "Pushing Luck",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3594,14 +4311,17 @@ export const STICKER_DATA = [
         "SetID": "612",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_12_6.png",
-        "Colour": "#ed758f"
+        "Colour": "#ed758f",
+        "Raw": "1",
+        "StickerNameTC": "Pushing Luck",
+        "StickerNameSC": "Pushing Luck"
     },
     {
         "GlobalID": "61207",
-        "StickerName": "Money Rain",
+        "StickerNameEN": "Money Rain",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -3609,14 +4329,17 @@ export const STICKER_DATA = [
         "SetID": "612",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_12_7.png",
-        "Colour": "#ed758f"
+        "Colour": "#ed758f",
+        "Raw": "1",
+        "StickerNameTC": "Money Rain",
+        "StickerNameSC": "Money Rain"
     },
     {
         "GlobalID": "61208",
-        "StickerName": "Secret Weapon",
+        "StickerNameEN": "Secret Weapon",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -3624,14 +4347,17 @@ export const STICKER_DATA = [
         "SetID": "612",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_12_8.png",
-        "Colour": "#ed758f"
+        "Colour": "#ed758f",
+        "Raw": "1",
+        "StickerNameTC": "Secret Weapon",
+        "StickerNameSC": "Secret Weapon"
     },
     {
         "GlobalID": "61209",
-        "StickerName": "The Cannon",
+        "StickerNameEN": "The Cannon",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -3639,14 +4365,17 @@ export const STICKER_DATA = [
         "SetID": "612",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_12_9.png",
-        "Colour": "#ed758f"
+        "Colour": "#ed758f",
+        "Raw": "1",
+        "StickerNameTC": "The Cannon",
+        "StickerNameSC": "The Cannon"
     },
     {
         "GlobalID": "61301",
-        "StickerName": "Fine Ride",
+        "StickerNameEN": "Fine Ride",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3654,14 +4383,17 @@ export const STICKER_DATA = [
         "SetID": "613",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_13_1.png",
-        "Colour": "#df7015"
+        "Colour": "#df7015",
+        "Raw": "1",
+        "StickerNameTC": "Fine Ride",
+        "StickerNameSC": "Fine Ride"
     },
     {
         "GlobalID": "61302",
-        "StickerName": "Not So Fast",
+        "StickerNameEN": "Not So Fast",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3669,14 +4401,17 @@ export const STICKER_DATA = [
         "SetID": "613",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_13_2.png",
-        "Colour": "#df7015"
+        "Colour": "#df7015",
+        "Raw": "1",
+        "StickerNameTC": "Not So Fast",
+        "StickerNameSC": "Not So Fast"
     },
     {
         "GlobalID": "61303",
-        "StickerName": "Laissez-faire",
+        "StickerNameEN": "Laissez-faire",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3684,14 +4419,17 @@ export const STICKER_DATA = [
         "SetID": "613",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_13_3.png",
-        "Colour": "#df7015"
+        "Colour": "#df7015",
+        "Raw": "1",
+        "StickerNameTC": "Laissez-faire",
+        "StickerNameSC": "Laissez-faire"
     },
     {
         "GlobalID": "61304",
-        "StickerName": "Parking Pains",
+        "StickerNameEN": "Parking Pains",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3699,14 +4437,17 @@ export const STICKER_DATA = [
         "SetID": "613",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_13_4.png",
-        "Colour": "#df7015"
+        "Colour": "#df7015",
+        "Raw": "1",
+        "StickerNameTC": "Parking Pains",
+        "StickerNameSC": "Parking Pains"
     },
     {
         "GlobalID": "61305",
-        "StickerName": "Car Collection",
+        "StickerNameEN": "Car Collection",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3714,14 +4455,17 @@ export const STICKER_DATA = [
         "SetID": "613",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_13_5.png",
-        "Colour": "#df7015"
+        "Colour": "#df7015",
+        "Raw": "1",
+        "StickerNameTC": "Car Collection",
+        "StickerNameSC": "Car Collection"
     },
     {
         "GlobalID": "61306",
-        "StickerName": "Auto Inspo",
+        "StickerNameEN": "Auto Inspo",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3729,14 +4473,17 @@ export const STICKER_DATA = [
         "SetID": "613",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_13_6.png",
-        "Colour": "#df7015"
+        "Colour": "#df7015",
+        "Raw": "1",
+        "StickerNameTC": "Auto Inspo",
+        "StickerNameSC": "Auto Inspo"
     },
     {
         "GlobalID": "61307",
-        "StickerName": "Le Artist",
+        "StickerNameEN": "Le Artist",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -3744,14 +4491,17 @@ export const STICKER_DATA = [
         "SetID": "613",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_13_7.png",
-        "Colour": "#df7015"
+        "Colour": "#df7015",
+        "Raw": "1",
+        "StickerNameTC": "Le Artist",
+        "StickerNameSC": "Le Artist"
     },
     {
         "GlobalID": "61308",
-        "StickerName": "Free Parking",
+        "StickerNameEN": "Free Parking",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -3759,14 +4509,17 @@ export const STICKER_DATA = [
         "SetID": "613",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_13_8.png",
-        "Colour": "#df7015"
+        "Colour": "#df7015",
+        "Raw": "1",
+        "StickerNameTC": "Free Parking",
+        "StickerNameSC": "Free Parking"
     },
     {
         "GlobalID": "61309",
-        "StickerName": "Spot Rebel",
+        "StickerNameEN": "Spot Rebel",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -3774,14 +4527,17 @@ export const STICKER_DATA = [
         "SetID": "613",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_13_9.png",
-        "Colour": "#df7015"
+        "Colour": "#df7015",
+        "Raw": "1",
+        "StickerNameTC": "Spot Rebel",
+        "StickerNameSC": "Spot Rebel"
     },
     {
         "GlobalID": "61401",
-        "StickerName": "Something's Missing",
+        "StickerNameEN": "Something's Missing",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3789,14 +4545,17 @@ export const STICKER_DATA = [
         "SetID": "614",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_14_1.png",
-        "Colour": "#db8b20"
+        "Colour": "#db8b20",
+        "Raw": "1",
+        "StickerNameTC": "Something's Missing",
+        "StickerNameSC": "Something's Missing"
     },
     {
         "GlobalID": "61402",
-        "StickerName": "Train Town",
+        "StickerNameEN": "Train Town",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3804,14 +4563,17 @@ export const STICKER_DATA = [
         "SetID": "614",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_14_2.png",
-        "Colour": "#db8b20"
+        "Colour": "#db8b20",
+        "Raw": "1",
+        "StickerNameTC": "Train Town",
+        "StickerNameSC": "Train Town"
     },
     {
         "GlobalID": "61403",
-        "StickerName": "Hello There!",
+        "StickerNameEN": "Hello There!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3819,14 +4581,17 @@ export const STICKER_DATA = [
         "SetID": "614",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_14_3.png",
-        "Colour": "#db8b20"
+        "Colour": "#db8b20",
+        "Raw": "1",
+        "StickerNameTC": "Hello There!",
+        "StickerNameSC": "Hello There!"
     },
     {
         "GlobalID": "61404",
-        "StickerName": "Any Ideas?",
+        "StickerNameEN": "Any Ideas?",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3834,14 +4599,17 @@ export const STICKER_DATA = [
         "SetID": "614",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_14_4.png",
-        "Colour": "#db8b20"
+        "Colour": "#db8b20",
+        "Raw": "1",
+        "StickerNameTC": "Any Ideas?",
+        "StickerNameSC": "Any Ideas?"
     },
     {
         "GlobalID": "61405",
-        "StickerName": "Traintastic",
+        "StickerNameEN": "Traintastic",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3849,14 +4617,17 @@ export const STICKER_DATA = [
         "SetID": "614",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_14_5.png",
-        "Colour": "#db8b20"
+        "Colour": "#db8b20",
+        "Raw": "1",
+        "StickerNameTC": "Traintastic",
+        "StickerNameSC": "Traintastic"
     },
     {
         "GlobalID": "61406",
-        "StickerName": "Gimme!",
+        "StickerNameEN": "Gimme!",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -3864,14 +4635,17 @@ export const STICKER_DATA = [
         "SetID": "614",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_14_6.png",
-        "Colour": "#db8b20"
+        "Colour": "#db8b20",
+        "Raw": "1",
+        "StickerNameTC": "Gimme!",
+        "StickerNameSC": "Gimme!"
     },
     {
         "GlobalID": "61407",
-        "StickerName": "Sketch Out",
+        "StickerNameEN": "Sketch Out",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -3879,14 +4653,17 @@ export const STICKER_DATA = [
         "SetID": "614",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_14_7.png",
-        "Colour": "#db8b20"
+        "Colour": "#db8b20",
+        "Raw": "1",
+        "StickerNameTC": "Sketch Out",
+        "StickerNameSC": "Sketch Out"
     },
     {
         "GlobalID": "61408",
-        "StickerName": "Rad Railroads",
+        "StickerNameEN": "Rad Railroads",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -3894,14 +4671,17 @@ export const STICKER_DATA = [
         "SetID": "614",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_14_8.png",
-        "Colour": "#db8b20"
+        "Colour": "#db8b20",
+        "Raw": "1",
+        "StickerNameTC": "Rad Railroads",
+        "StickerNameSC": "Rad Railroads"
     },
     {
         "GlobalID": "61409",
-        "StickerName": "Locomotion",
+        "StickerNameEN": "Locomotion",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -3909,14 +4689,17 @@ export const STICKER_DATA = [
         "SetID": "614",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_14_9.png",
-        "Colour": "#db8b20"
+        "Colour": "#db8b20",
+        "Raw": "1",
+        "StickerNameTC": "Locomotion",
+        "StickerNameSC": "Locomotion"
     },
     {
         "GlobalID": "61501",
-        "StickerName": "Teachable Tokens",
+        "StickerNameEN": "Teachable Tokens",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3924,14 +4707,17 @@ export const STICKER_DATA = [
         "SetID": "615",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_15_1.png",
-        "Colour": "#ffa400"
+        "Colour": "#ffa400",
+        "Raw": "1",
+        "StickerNameTC": "Teachable Tokens",
+        "StickerNameSC": "Teachable Tokens"
     },
     {
         "GlobalID": "61502",
-        "StickerName": "All Set!",
+        "StickerNameEN": "All Set!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -3939,14 +4725,17 @@ export const STICKER_DATA = [
         "SetID": "615",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_15_2.png",
-        "Colour": "#ffa400"
+        "Colour": "#ffa400",
+        "Raw": "1",
+        "StickerNameTC": "All Set!",
+        "StickerNameSC": "All Set!"
     },
     {
         "GlobalID": "61503",
-        "StickerName": "Showroom",
+        "StickerNameEN": "Showroom",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3954,14 +4743,17 @@ export const STICKER_DATA = [
         "SetID": "615",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_15_3.png",
-        "Colour": "#ffa400"
+        "Colour": "#ffa400",
+        "Raw": "1",
+        "StickerNameTC": "Showroom",
+        "StickerNameSC": "Showroom"
     },
     {
         "GlobalID": "61504",
-        "StickerName": "Cute Concepts",
+        "StickerNameEN": "Cute Concepts",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3969,14 +4761,17 @@ export const STICKER_DATA = [
         "SetID": "615",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_15_4.png",
-        "Colour": "#ffa400"
+        "Colour": "#ffa400",
+        "Raw": "1",
+        "StickerNameTC": "Cute Concepts",
+        "StickerNameSC": "Cute Concepts"
     },
     {
         "GlobalID": "61505",
-        "StickerName": "Memoir",
+        "StickerNameEN": "Memoir",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -3984,14 +4779,17 @@ export const STICKER_DATA = [
         "SetID": "615",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_15_5.png",
-        "Colour": "#ffa400"
+        "Colour": "#ffa400",
+        "Raw": "1",
+        "StickerNameTC": "Memoir",
+        "StickerNameSC": "Memoir"
     },
     {
         "GlobalID": "61506",
-        "StickerName": "Tradition",
+        "StickerNameEN": "Tradition",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -3999,14 +4797,17 @@ export const STICKER_DATA = [
         "SetID": "615",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_15_6.png",
-        "Colour": "#ffa400"
+        "Colour": "#ffa400",
+        "Raw": "1",
+        "StickerNameTC": "Tradition",
+        "StickerNameSC": "Tradition"
     },
     {
         "GlobalID": "61507",
-        "StickerName": "Dog Model",
+        "StickerNameEN": "Dog Model",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -4014,14 +4815,17 @@ export const STICKER_DATA = [
         "SetID": "615",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_15_7.png",
-        "Colour": "#ffa400"
+        "Colour": "#ffa400",
+        "Raw": "1",
+        "StickerNameTC": "Dog Model",
+        "StickerNameSC": "Dog Model"
     },
     {
         "GlobalID": "61508",
-        "StickerName": "Wonder-fur!",
+        "StickerNameEN": "Wonder-fur!",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4029,14 +4833,17 @@ export const STICKER_DATA = [
         "SetID": "615",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_15_8.png",
-        "Colour": "#ffa400"
+        "Colour": "#ffa400",
+        "Raw": "1",
+        "StickerNameTC": "Wonder-fur!",
+        "StickerNameSC": "Wonder-fur!"
     },
     {
         "GlobalID": "61509",
-        "StickerName": "Soul Mates",
+        "StickerNameEN": "Soul Mates",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4044,14 +4851,17 @@ export const STICKER_DATA = [
         "SetID": "615",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_15_9.png",
-        "Colour": "#ffa400"
+        "Colour": "#ffa400",
+        "Raw": "1",
+        "StickerNameTC": "Soul Mates",
+        "StickerNameSC": "Soul Mates"
     },
     {
         "GlobalID": "61601",
-        "StickerName": "Grand Opening",
+        "StickerNameEN": "Grand Opening",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -4059,14 +4869,17 @@ export const STICKER_DATA = [
         "SetID": "616",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_16_1.png",
-        "Colour": "#df7879"
+        "Colour": "#df7879",
+        "Raw": "1",
+        "StickerNameTC": "Grand Opening",
+        "StickerNameSC": "Grand Opening"
     },
     {
         "GlobalID": "61602",
-        "StickerName": "Get in Line!",
+        "StickerNameEN": "Get in Line!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -4074,14 +4887,17 @@ export const STICKER_DATA = [
         "SetID": "616",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_16_2.png",
-        "Colour": "#df7879"
+        "Colour": "#df7879",
+        "Raw": "1",
+        "StickerNameTC": "Get in Line!",
+        "StickerNameSC": "Get in Line!"
     },
     {
         "GlobalID": "61603",
-        "StickerName": "Mr Mascot",
+        "StickerNameEN": "Mr Mascot",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4089,14 +4905,17 @@ export const STICKER_DATA = [
         "SetID": "616",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_16_3.png",
-        "Colour": "#df7879"
+        "Colour": "#df7879",
+        "Raw": "1",
+        "StickerNameTC": "Mr Mascot",
+        "StickerNameSC": "Mr Mascot"
     },
     {
         "GlobalID": "61604",
-        "StickerName": "Wonder Aisle",
+        "StickerNameEN": "Wonder Aisle",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4104,14 +4923,17 @@ export const STICKER_DATA = [
         "SetID": "616",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_16_4.png",
-        "Colour": "#df7879"
+        "Colour": "#df7879",
+        "Raw": "1",
+        "StickerNameTC": "Wonder Aisle",
+        "StickerNameSC": "Wonder Aisle"
     },
     {
         "GlobalID": "61605",
-        "StickerName": "Pleeease!",
+        "StickerNameEN": "Pleeease!",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4119,14 +4941,17 @@ export const STICKER_DATA = [
         "SetID": "616",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_16_5.png",
-        "Colour": "#df7879"
+        "Colour": "#df7879",
+        "Raw": "1",
+        "StickerNameTC": "Pleeease!",
+        "StickerNameSC": "Pleeease!"
     },
     {
         "GlobalID": "61606",
-        "StickerName": "Pay Off",
+        "StickerNameEN": "Pay Off",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4134,14 +4959,17 @@ export const STICKER_DATA = [
         "SetID": "616",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_16_6.png",
-        "Colour": "#df7879"
+        "Colour": "#df7879",
+        "Raw": "1",
+        "StickerNameTC": "Pay Off",
+        "StickerNameSC": "Pay Off"
     },
     {
         "GlobalID": "61607",
-        "StickerName": "Little Break",
+        "StickerNameEN": "Little Break",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -4149,14 +4977,17 @@ export const STICKER_DATA = [
         "SetID": "616",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_16_7.png",
-        "Colour": "#df7879"
+        "Colour": "#df7879",
+        "Raw": "1",
+        "StickerNameTC": "Little Break",
+        "StickerNameSC": "Little Break"
     },
     {
         "GlobalID": "61608",
-        "StickerName": "Cha-ching!",
+        "StickerNameEN": "Cha-ching!",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4164,14 +4995,17 @@ export const STICKER_DATA = [
         "SetID": "616",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_16_8.png",
-        "Colour": "#df7879"
+        "Colour": "#df7879",
+        "Raw": "1",
+        "StickerNameTC": "Cha-ching!",
+        "StickerNameSC": "Cha-ching!"
     },
     {
         "GlobalID": "61609",
-        "StickerName": "Happy Shopping",
+        "StickerNameEN": "Happy Shopping",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -4179,14 +5013,17 @@ export const STICKER_DATA = [
         "SetID": "616",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_16_9.png",
-        "Colour": "#df7879"
+        "Colour": "#df7879",
+        "Raw": "1",
+        "StickerNameTC": "Happy Shopping",
+        "StickerNameSC": "Happy Shopping"
     },
     {
         "GlobalID": "61701",
-        "StickerName": "Extra Extra!",
+        "StickerNameEN": "Extra Extra!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -4194,14 +5031,17 @@ export const STICKER_DATA = [
         "SetID": "617",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_17_1.png",
-        "Colour": "#dbad79"
+        "Colour": "#dbad79",
+        "Raw": "1",
+        "StickerNameTC": "Extra Extra!",
+        "StickerNameSC": "Extra Extra!"
     },
     {
         "GlobalID": "61702",
-        "StickerName": "All Over",
+        "StickerNameEN": "All Over",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4209,14 +5049,17 @@ export const STICKER_DATA = [
         "SetID": "617",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_17_2.png",
-        "Colour": "#dbad79"
+        "Colour": "#dbad79",
+        "Raw": "1",
+        "StickerNameTC": "All Over",
+        "StickerNameSC": "All Over"
     },
     {
         "GlobalID": "61703",
-        "StickerName": "Up & Up",
+        "StickerNameEN": "Up & Up",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4224,14 +5067,17 @@ export const STICKER_DATA = [
         "SetID": "617",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_17_3.png",
-        "Colour": "#dbad79"
+        "Colour": "#dbad79",
+        "Raw": "1",
+        "StickerNameTC": "Up & Up",
+        "StickerNameSC": "Up & Up"
     },
     {
         "GlobalID": "61704",
-        "StickerName": "Go Far",
+        "StickerNameEN": "Go Far",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4239,14 +5085,17 @@ export const STICKER_DATA = [
         "SetID": "617",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_17_4.png",
-        "Colour": "#dbad79"
+        "Colour": "#dbad79",
+        "Raw": "1",
+        "StickerNameTC": "Go Far",
+        "StickerNameSC": "Go Far"
     },
     {
         "GlobalID": "61705",
-        "StickerName": "Late Night Chat",
+        "StickerNameEN": "Late Night Chat",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4254,14 +5103,17 @@ export const STICKER_DATA = [
         "SetID": "617",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_17_5.png",
-        "Colour": "#dbad79"
+        "Colour": "#dbad79",
+        "Raw": "1",
+        "StickerNameTC": "Late Night Chat",
+        "StickerNameSC": "Late Night Chat"
     },
     {
         "GlobalID": "61706",
-        "StickerName": "Everywhere",
+        "StickerNameEN": "Everywhere",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -4269,14 +5121,17 @@ export const STICKER_DATA = [
         "SetID": "617",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_17_6.png",
-        "Colour": "#dbad79"
+        "Colour": "#dbad79",
+        "Raw": "1",
+        "StickerNameTC": "Everywhere",
+        "StickerNameSC": "Everywhere"
     },
     {
         "GlobalID": "61707",
-        "StickerName": "Good News",
+        "StickerNameEN": "Good News",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4284,14 +5139,17 @@ export const STICKER_DATA = [
         "SetID": "617",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_17_7.png",
-        "Colour": "#dbad79"
+        "Colour": "#dbad79",
+        "Raw": "1",
+        "StickerNameTC": "Good News",
+        "StickerNameSC": "Good News"
     },
     {
         "GlobalID": "61708",
-        "StickerName": "On the Rise",
+        "StickerNameEN": "On the Rise",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4299,14 +5157,17 @@ export const STICKER_DATA = [
         "SetID": "617",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_17_8.png",
-        "Colour": "#dbad79"
+        "Colour": "#dbad79",
+        "Raw": "1",
+        "StickerNameTC": "On the Rise",
+        "StickerNameSC": "On the Rise"
     },
     {
         "GlobalID": "61709",
-        "StickerName": "Sweet Success",
+        "StickerNameEN": "Sweet Success",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -4314,14 +5175,17 @@ export const STICKER_DATA = [
         "SetID": "617",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_17_9.png",
-        "Colour": "#dbad79"
+        "Colour": "#dbad79",
+        "Raw": "1",
+        "StickerNameTC": "Sweet Success",
+        "StickerNameSC": "Sweet Success"
     },
     {
         "GlobalID": "61801",
-        "StickerName": "Born to Chew",
+        "StickerNameEN": "Born to Chew",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4329,14 +5193,17 @@ export const STICKER_DATA = [
         "SetID": "618",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_18_1.png",
-        "Colour": "#71d3d2"
+        "Colour": "#71d3d2",
+        "Raw": "1",
+        "StickerNameTC": "Born to Chew",
+        "StickerNameSC": "Born to Chew"
     },
     {
         "GlobalID": "61802",
-        "StickerName": "Pup Genius",
+        "StickerNameEN": "Pup Genius",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4344,14 +5211,17 @@ export const STICKER_DATA = [
         "SetID": "618",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_18_2.png",
-        "Colour": "#71d3d2"
+        "Colour": "#71d3d2",
+        "Raw": "1",
+        "StickerNameTC": "Pup Genius",
+        "StickerNameSC": "Pup Genius"
     },
     {
         "GlobalID": "61803",
-        "StickerName": "Printing Prints",
+        "StickerNameEN": "Printing Prints",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4359,14 +5229,17 @@ export const STICKER_DATA = [
         "SetID": "618",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_18_3.png",
-        "Colour": "#71d3d2"
+        "Colour": "#71d3d2",
+        "Raw": "1",
+        "StickerNameTC": "Printing Prints",
+        "StickerNameSC": "Printing Prints"
     },
     {
         "GlobalID": "61804",
-        "StickerName": "Final Approval",
+        "StickerNameEN": "Final Approval",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4374,14 +5247,17 @@ export const STICKER_DATA = [
         "SetID": "618",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_18_4.png",
-        "Colour": "#71d3d2"
+        "Colour": "#71d3d2",
+        "Raw": "1",
+        "StickerNameTC": "Final Approval",
+        "StickerNameSC": "Final Approval"
     },
     {
         "GlobalID": "61805",
-        "StickerName": "Chance Leap",
+        "StickerNameEN": "Chance Leap",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4389,14 +5265,17 @@ export const STICKER_DATA = [
         "SetID": "618",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_18_5.png",
-        "Colour": "#71d3d2"
+        "Colour": "#71d3d2",
+        "Raw": "1",
+        "StickerNameTC": "Chance Leap",
+        "StickerNameSC": "Chance Leap"
     },
     {
         "GlobalID": "61806",
-        "StickerName": "See Me Rollin'",
+        "StickerNameEN": "See Me Rollin'",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -4404,14 +5283,17 @@ export const STICKER_DATA = [
         "SetID": "618",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_18_6.png",
-        "Colour": "#71d3d2"
+        "Colour": "#71d3d2",
+        "Raw": "1",
+        "StickerNameTC": "See Me Rollin'",
+        "StickerNameSC": "See Me Rollin'"
     },
     {
         "GlobalID": "61807",
-        "StickerName": "The Doghouse",
+        "StickerNameEN": "The Doghouse",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4419,14 +5301,17 @@ export const STICKER_DATA = [
         "SetID": "618",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_18_7.png",
-        "Colour": "#71d3d2"
+        "Colour": "#71d3d2",
+        "Raw": "1",
+        "StickerNameTC": "The Doghouse",
+        "StickerNameSC": "The Doghouse"
     },
     {
         "GlobalID": "61808",
-        "StickerName": "Big Dog",
+        "StickerNameEN": "Big Dog",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4434,14 +5319,17 @@ export const STICKER_DATA = [
         "SetID": "618",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_18_8.png",
-        "Colour": "#71d3d2"
+        "Colour": "#71d3d2",
+        "Raw": "1",
+        "StickerNameTC": "Big Dog",
+        "StickerNameSC": "Big Dog"
     },
     {
         "GlobalID": "61809",
-        "StickerName": "Pooch Perfect",
+        "StickerNameEN": "Pooch Perfect",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -4449,14 +5337,17 @@ export const STICKER_DATA = [
         "SetID": "618",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_18_9.png",
-        "Colour": "#71d3d2"
+        "Colour": "#71d3d2",
+        "Raw": "1",
+        "StickerNameTC": "Pooch Perfect",
+        "StickerNameSC": "Pooch Perfect"
     },
     {
         "GlobalID": "61901",
-        "StickerName": "Glitz and Glam",
+        "StickerNameEN": "Glitz and Glam",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4464,14 +5355,17 @@ export const STICKER_DATA = [
         "SetID": "619",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_19_1.png",
-        "Colour": "#ab58fd"
+        "Colour": "#ab58fd",
+        "Raw": "1",
+        "StickerNameTC": "Glitz and Glam",
+        "StickerNameSC": "Glitz and Glam"
     },
     {
         "GlobalID": "61902",
-        "StickerName": "Game Awards",
+        "StickerNameEN": "Game Awards",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4479,14 +5373,17 @@ export const STICKER_DATA = [
         "SetID": "619",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_19_2.png",
-        "Colour": "#ab58fd"
+        "Colour": "#ab58fd",
+        "Raw": "1",
+        "StickerNameTC": "Game Awards",
+        "StickerNameSC": "Game Awards"
     },
     {
         "GlobalID": "61903",
-        "StickerName": "Red Carpet",
+        "StickerNameEN": "Red Carpet",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4494,14 +5391,17 @@ export const STICKER_DATA = [
         "SetID": "619",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_19_3.png",
-        "Colour": "#ab58fd"
+        "Colour": "#ab58fd",
+        "Raw": "1",
+        "StickerNameTC": "Red Carpet",
+        "StickerNameSC": "Red Carpet"
     },
     {
         "GlobalID": "61904",
-        "StickerName": "Paparazzi!",
+        "StickerNameEN": "Paparazzi!",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4509,14 +5409,17 @@ export const STICKER_DATA = [
         "SetID": "619",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_19_4.png",
-        "Colour": "#ab58fd"
+        "Colour": "#ab58fd",
+        "Raw": "1",
+        "StickerNameTC": "Paparazzi!",
+        "StickerNameSC": "Paparazzi!"
     },
     {
         "GlobalID": "61905",
-        "StickerName": "Fingers Crossed",
+        "StickerNameEN": "Fingers Crossed",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -4524,14 +5427,17 @@ export const STICKER_DATA = [
         "SetID": "619",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_19_5.png",
-        "Colour": "#ab58fd"
+        "Colour": "#ab58fd",
+        "Raw": "1",
+        "StickerNameTC": "Fingers Crossed",
+        "StickerNameSC": "Fingers Crossed"
     },
     {
         "GlobalID": "61906",
-        "StickerName": "A Shoo-In!",
+        "StickerNameEN": "A Shoo-In!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -4539,14 +5445,17 @@ export const STICKER_DATA = [
         "SetID": "619",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_19_6.png",
-        "Colour": "#ab58fd"
+        "Colour": "#ab58fd",
+        "Raw": "1",
+        "StickerNameTC": "A Shoo-In!",
+        "StickerNameSC": "A Shoo-In!"
     },
     {
         "GlobalID": "61907",
-        "StickerName": "Special Speech",
+        "StickerNameEN": "Special Speech",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4554,14 +5463,17 @@ export const STICKER_DATA = [
         "SetID": "619",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_19_7.png",
-        "Colour": "#ab58fd"
+        "Colour": "#ab58fd",
+        "Raw": "1",
+        "StickerNameTC": "Special Speech",
+        "StickerNameSC": "Special Speech"
     },
     {
         "GlobalID": "61908",
-        "StickerName": "Impressions",
+        "StickerNameEN": "Impressions",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -4569,14 +5481,17 @@ export const STICKER_DATA = [
         "SetID": "619",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_19_8.png",
-        "Colour": "#ab58fd"
+        "Colour": "#ab58fd",
+        "Raw": "1",
+        "StickerNameTC": "Impressions",
+        "StickerNameSC": "Impressions"
     },
     {
         "GlobalID": "61909",
-        "StickerName": "Photo Op",
+        "StickerNameEN": "Photo Op",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -4584,14 +5499,17 @@ export const STICKER_DATA = [
         "SetID": "619",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_19_9.png",
-        "Colour": "#ab58fd"
+        "Colour": "#ab58fd",
+        "Raw": "1",
+        "StickerNameTC": "Photo Op",
+        "StickerNameSC": "Photo Op"
     },
     {
         "GlobalID": "62001",
-        "StickerName": "Little Miss M",
+        "StickerNameEN": "Little Miss M",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4599,14 +5517,17 @@ export const STICKER_DATA = [
         "SetID": "620",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_20_1.png",
-        "Colour": "#ff73af"
+        "Colour": "#ff73af",
+        "Raw": "1",
+        "StickerNameTC": "Little Miss M",
+        "StickerNameSC": "Little Miss M"
     },
     {
         "GlobalID": "62002",
-        "StickerName": "Tot Tycoon",
+        "StickerNameEN": "Tot Tycoon",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4614,14 +5535,17 @@ export const STICKER_DATA = [
         "SetID": "620",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_20_2.png",
-        "Colour": "#ff73af"
+        "Colour": "#ff73af",
+        "Raw": "1",
+        "StickerNameTC": "Tot Tycoon",
+        "StickerNameSC": "Tot Tycoon"
     },
     {
         "GlobalID": "62003",
-        "StickerName": "The Playbook",
+        "StickerNameEN": "The Playbook",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4629,14 +5553,17 @@ export const STICKER_DATA = [
         "SetID": "620",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_20_3.png",
-        "Colour": "#ff73af"
+        "Colour": "#ff73af",
+        "Raw": "1",
+        "StickerNameTC": "The Playbook",
+        "StickerNameSC": "The Playbook"
     },
     {
         "GlobalID": "62004",
-        "StickerName": "Study Hard",
+        "StickerNameEN": "Study Hard",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4644,14 +5571,17 @@ export const STICKER_DATA = [
         "SetID": "620",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_20_4.png",
-        "Colour": "#ff73af"
+        "Colour": "#ff73af",
+        "Raw": "1",
+        "StickerNameTC": "Study Hard",
+        "StickerNameSC": "Study Hard"
     },
     {
         "GlobalID": "62005",
-        "StickerName": "Well Done!",
+        "StickerNameEN": "Well Done!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -4659,14 +5589,17 @@ export const STICKER_DATA = [
         "SetID": "620",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_20_5.png",
-        "Colour": "#ff73af"
+        "Colour": "#ff73af",
+        "Raw": "1",
+        "StickerNameTC": "Well Done!",
+        "StickerNameSC": "Well Done!"
     },
     {
         "GlobalID": "62006",
-        "StickerName": "Early Hits",
+        "StickerNameEN": "Early Hits",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4674,14 +5607,17 @@ export const STICKER_DATA = [
         "SetID": "620",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_20_6.png",
-        "Colour": "#ff73af"
+        "Colour": "#ff73af",
+        "Raw": "1",
+        "StickerNameTC": "Early Hits",
+        "StickerNameSC": "Early Hits"
     },
     {
         "GlobalID": "62007",
-        "StickerName": "Rich List",
+        "StickerNameEN": "Rich List",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4689,14 +5625,17 @@ export const STICKER_DATA = [
         "SetID": "620",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_20_7.png",
-        "Colour": "#ff73af"
+        "Colour": "#ff73af",
+        "Raw": "1",
+        "StickerNameTC": "Rich List",
+        "StickerNameSC": "Rich List"
     },
     {
         "GlobalID": "62008",
-        "StickerName": "Play the Game",
+        "StickerNameEN": "Play the Game",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -4704,14 +5643,17 @@ export const STICKER_DATA = [
         "SetID": "620",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_20_8.png",
-        "Colour": "#ff73af"
+        "Colour": "#ff73af",
+        "Raw": "1",
+        "StickerNameTC": "Play the Game",
+        "StickerNameSC": "Play the Game"
     },
     {
         "GlobalID": "62009",
-        "StickerName": "Surprise!",
+        "StickerNameEN": "Surprise!",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -4719,14 +5661,17 @@ export const STICKER_DATA = [
         "SetID": "620",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_20_9.png",
-        "Colour": "#ff73af"
+        "Colour": "#ff73af",
+        "Raw": "1",
+        "StickerNameTC": "Surprise!",
+        "StickerNameSC": "Surprise!"
     },
     {
         "GlobalID": "62101",
-        "StickerName": "Eureka!",
+        "StickerNameEN": "Eureka!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -4734,14 +5679,17 @@ export const STICKER_DATA = [
         "SetID": "621",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_21_1.png",
-        "Colour": "#df4320"
+        "Colour": "#df4320",
+        "Raw": "1",
+        "StickerNameTC": "Eureka!",
+        "StickerNameSC": "Eureka!"
     },
     {
         "GlobalID": "62102",
-        "StickerName": "The Dream",
+        "StickerNameEN": "The Dream",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4749,14 +5697,17 @@ export const STICKER_DATA = [
         "SetID": "621",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_21_2.png",
-        "Colour": "#df4320"
+        "Colour": "#df4320",
+        "Raw": "1",
+        "StickerNameTC": "The Dream",
+        "StickerNameSC": "The Dream"
     },
     {
         "GlobalID": "62103",
-        "StickerName": "Shared Vision",
+        "StickerNameEN": "Shared Vision",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -4764,14 +5715,17 @@ export const STICKER_DATA = [
         "SetID": "621",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_21_3.png",
-        "Colour": "#df4320"
+        "Colour": "#df4320",
+        "Raw": "1",
+        "StickerNameTC": "Shared Vision",
+        "StickerNameSC": "Shared Vision"
     },
     {
         "GlobalID": "62104",
-        "StickerName": "The Fun Begins",
+        "StickerNameEN": "The Fun Begins",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -4779,14 +5733,17 @@ export const STICKER_DATA = [
         "SetID": "621",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_21_4.png",
-        "Colour": "#df4320"
+        "Colour": "#df4320",
+        "Raw": "1",
+        "StickerNameTC": "The Fun Begins",
+        "StickerNameSC": "The Fun Begins"
     },
     {
         "GlobalID": "62105",
-        "StickerName": "Cool Concepts",
+        "StickerNameEN": "Cool Concepts",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -4794,14 +5751,17 @@ export const STICKER_DATA = [
         "SetID": "621",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_21_5.png",
-        "Colour": "#df4320"
+        "Colour": "#df4320",
+        "Raw": "1",
+        "StickerNameTC": "Cool Concepts",
+        "StickerNameSC": "Cool Concepts"
     },
     {
         "GlobalID": "62106",
-        "StickerName": "Mug-nificient",
+        "StickerNameEN": "Mug-nificient",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4809,14 +5769,17 @@ export const STICKER_DATA = [
         "SetID": "621",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_21_6.png",
-        "Colour": "#df4320"
+        "Colour": "#df4320",
+        "Raw": "1",
+        "StickerNameTC": "Mug-nificient",
+        "StickerNameSC": "Mug-nificient"
     },
     {
         "GlobalID": "62107",
-        "StickerName": "Behind the Scenes",
+        "StickerNameEN": "Behind the Scenes",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -4824,14 +5787,17 @@ export const STICKER_DATA = [
         "SetID": "621",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_21_7.png",
-        "Colour": "#df4320"
+        "Colour": "#df4320",
+        "Raw": "1",
+        "StickerNameTC": "Behind the Scenes",
+        "StickerNameSC": "Behind the Scenes"
     },
     {
         "GlobalID": "62108",
-        "StickerName": "QA Pals",
+        "StickerNameEN": "QA Pals",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -4839,14 +5805,17 @@ export const STICKER_DATA = [
         "SetID": "621",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_21_8.png",
-        "Colour": "#df4320"
+        "Colour": "#df4320",
+        "Raw": "1",
+        "StickerNameTC": "QA Pals",
+        "StickerNameSC": "QA Pals"
     },
     {
         "GlobalID": "62109",
-        "StickerName": "Let's GO!",
+        "StickerNameEN": "Let's GO!",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -4854,14 +5823,17 @@ export const STICKER_DATA = [
         "SetID": "621",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_21_9.png",
-        "Colour": "#df4320"
+        "Colour": "#df4320",
+        "Raw": "1",
+        "StickerNameTC": "Let's GO!",
+        "StickerNameSC": "Let's GO!"
     },
     {
         "GlobalID": "62201",
-        "StickerName": "All Packed",
+        "StickerNameEN": "All Packed",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "1",
@@ -4869,14 +5841,17 @@ export const STICKER_DATA = [
         "SetID": "622",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_22_1.png",
-        "Colour": "#4399e5"
+        "Colour": "#4399e5",
+        "Raw": "1",
+        "StickerNameTC": "All Packed",
+        "StickerNameSC": "All Packed"
     },
     {
         "GlobalID": "62202",
-        "StickerName": "Vroom Vroom",
+        "StickerNameEN": "Vroom Vroom",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -4884,14 +5859,17 @@ export const STICKER_DATA = [
         "SetID": "622",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_22_2.png",
-        "Colour": "#4399e5"
+        "Colour": "#4399e5",
+        "Raw": "1",
+        "StickerNameTC": "Vroom Vroom",
+        "StickerNameSC": "Vroom Vroom"
     },
     {
         "GlobalID": "62203",
-        "StickerName": "Open Road",
+        "StickerNameEN": "Open Road",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -4899,14 +5877,17 @@ export const STICKER_DATA = [
         "SetID": "622",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_22_3.png",
-        "Colour": "#4399e5"
+        "Colour": "#4399e5",
+        "Raw": "1",
+        "StickerNameTC": "Open Road",
+        "StickerNameSC": "Open Road"
     },
     {
         "GlobalID": "62204",
-        "StickerName": "Perfect Picnic",
+        "StickerNameEN": "Perfect Picnic",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -4914,14 +5895,17 @@ export const STICKER_DATA = [
         "SetID": "622",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_22_4.png",
-        "Colour": "#4399e5"
+        "Colour": "#4399e5",
+        "Raw": "1",
+        "StickerNameTC": "Perfect Picnic",
+        "StickerNameSC": "Perfect Picnic"
     },
     {
         "GlobalID": "62205",
-        "StickerName": "Tent Fail",
+        "StickerNameEN": "Tent Fail",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -4929,14 +5913,17 @@ export const STICKER_DATA = [
         "SetID": "622",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_22_5.png",
-        "Colour": "#4399e5"
+        "Colour": "#4399e5",
+        "Raw": "1",
+        "StickerNameTC": "Tent Fail",
+        "StickerNameSC": "Tent Fail"
     },
     {
         "GlobalID": "62206",
-        "StickerName": "Just Tired",
+        "StickerNameEN": "Just Tired",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -4944,14 +5931,17 @@ export const STICKER_DATA = [
         "SetID": "622",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_22_6.png",
-        "Colour": "#4399e5"
+        "Colour": "#4399e5",
+        "Raw": "1",
+        "StickerNameTC": "Just Tired",
+        "StickerNameSC": "Just Tired"
     },
     {
         "GlobalID": "62207",
-        "StickerName": "A Good Stretch",
+        "StickerNameEN": "A Good Stretch",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -4959,14 +5949,17 @@ export const STICKER_DATA = [
         "SetID": "622",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_22_7.png",
-        "Colour": "#4399e5"
+        "Colour": "#4399e5",
+        "Raw": "1",
+        "StickerNameTC": "A Good Stretch",
+        "StickerNameSC": "A Good Stretch"
     },
     {
         "GlobalID": "62208",
-        "StickerName": "Round 'n Round",
+        "StickerNameEN": "Round 'n Round",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -4974,14 +5967,17 @@ export const STICKER_DATA = [
         "SetID": "622",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_22_8.png",
-        "Colour": "#4399e5"
+        "Colour": "#4399e5",
+        "Raw": "1",
+        "StickerNameTC": "Round 'n Round",
+        "StickerNameSC": "Round 'n Round"
     },
     {
         "GlobalID": "62209",
-        "StickerName": "The Racecar",
+        "StickerNameEN": "The Racecar",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -4989,14 +5985,17 @@ export const STICKER_DATA = [
         "SetID": "622",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_22_9.png",
-        "Colour": "#4399e5"
+        "Colour": "#4399e5",
+        "Raw": "1",
+        "StickerNameTC": "The Racecar",
+        "StickerNameSC": "The Racecar"
     },
     {
         "GlobalID": "62301",
-        "StickerName": "Tycoon Goggles",
+        "StickerNameEN": "Tycoon Goggles",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "1",
@@ -5004,14 +6003,17 @@ export const STICKER_DATA = [
         "SetID": "623",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_23_1.png",
-        "Colour": "#c83edf"
+        "Colour": "#c83edf",
+        "Raw": "1",
+        "StickerNameTC": "Tycoon Goggles",
+        "StickerNameSC": "Tycoon Goggles"
     },
     {
         "GlobalID": "62302",
-        "StickerName": "Top Tech",
+        "StickerNameEN": "Top Tech",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -5019,14 +6021,17 @@ export const STICKER_DATA = [
         "SetID": "623",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_23_2.png",
-        "Colour": "#c83edf"
+        "Colour": "#c83edf",
+        "Raw": "1",
+        "StickerNameTC": "Top Tech",
+        "StickerNameSC": "Top Tech"
     },
     {
         "GlobalID": "62303",
-        "StickerName": "The Sneak",
+        "StickerNameEN": "The Sneak",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -5034,14 +6039,17 @@ export const STICKER_DATA = [
         "SetID": "623",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_23_3.png",
-        "Colour": "#c83edf"
+        "Colour": "#c83edf",
+        "Raw": "1",
+        "StickerNameTC": "The Sneak",
+        "StickerNameSC": "The Sneak"
     },
     {
         "GlobalID": "62304",
-        "StickerName": "Virtual Treats",
+        "StickerNameEN": "Virtual Treats",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -5049,14 +6057,17 @@ export const STICKER_DATA = [
         "SetID": "623",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_23_4.png",
-        "Colour": "#c83edf"
+        "Colour": "#c83edf",
+        "Raw": "1",
+        "StickerNameTC": "Virtual Treats",
+        "StickerNameSC": "Virtual Treats"
     },
     {
         "GlobalID": "62305",
-        "StickerName": "Augmented Boss",
+        "StickerNameEN": "Augmented Boss",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -5064,14 +6075,17 @@ export const STICKER_DATA = [
         "SetID": "623",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_23_5.png",
-        "Colour": "#c83edf"
+        "Colour": "#c83edf",
+        "Raw": "1",
+        "StickerNameTC": "Augmented Boss",
+        "StickerNameSC": "Augmented Boss"
     },
     {
         "GlobalID": "62306",
-        "StickerName": "Slice of Life",
+        "StickerNameEN": "Slice of Life",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5079,14 +6093,17 @@ export const STICKER_DATA = [
         "SetID": "623",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_23_6.png",
-        "Colour": "#c83edf"
+        "Colour": "#c83edf",
+        "Raw": "1",
+        "StickerNameTC": "Slice of Life",
+        "StickerNameSC": "Slice of Life"
     },
     {
         "GlobalID": "62307",
-        "StickerName": "Mogul Simulator",
+        "StickerNameEN": "Mogul Simulator",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5094,14 +6111,17 @@ export const STICKER_DATA = [
         "SetID": "623",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_23_7.png",
-        "Colour": "#c83edf"
+        "Colour": "#c83edf",
+        "Raw": "1",
+        "StickerNameTC": "Mogul Simulator",
+        "StickerNameSC": "Mogul Simulator"
     },
     {
         "GlobalID": "62308",
-        "StickerName": "Almost Real",
+        "StickerNameEN": "Almost Real",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5109,14 +6129,17 @@ export const STICKER_DATA = [
         "SetID": "623",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_23_8.png",
-        "Colour": "#c83edf"
+        "Colour": "#c83edf",
+        "Raw": "1",
+        "StickerNameTC": "Almost Real",
+        "StickerNameSC": "Almost Real"
     },
     {
         "GlobalID": "62309",
-        "StickerName": "Virtual Success",
+        "StickerNameEN": "Virtual Success",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -5124,14 +6147,17 @@ export const STICKER_DATA = [
         "SetID": "623",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_23_9.png",
-        "Colour": "#c83edf"
+        "Colour": "#c83edf",
+        "Raw": "1",
+        "StickerNameTC": "Virtual Success",
+        "StickerNameSC": "Virtual Success"
     },
     {
         "GlobalID": "62401",
-        "StickerName": "Better Together",
+        "StickerNameEN": "Better Together",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -5139,14 +6165,17 @@ export const STICKER_DATA = [
         "SetID": "624",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_24_1.png",
-        "Colour": "#8c67d8"
+        "Colour": "#8c67d8",
+        "Raw": "1",
+        "StickerNameTC": "Better Together",
+        "StickerNameSC": "Better Together"
     },
     {
         "GlobalID": "62402",
-        "StickerName": "Tycoon Trick",
+        "StickerNameEN": "Tycoon Trick",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -5154,14 +6183,17 @@ export const STICKER_DATA = [
         "SetID": "624",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_24_2.png",
-        "Colour": "#8c67d8"
+        "Colour": "#8c67d8",
+        "Raw": "1",
+        "StickerNameTC": "Tycoon Trick",
+        "StickerNameSC": "Tycoon Trick"
     },
     {
         "GlobalID": "62403",
-        "StickerName": "Cattitude",
+        "StickerNameEN": "Cattitude",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -5169,14 +6201,17 @@ export const STICKER_DATA = [
         "SetID": "624",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_24_3.png",
-        "Colour": "#8c67d8"
+        "Colour": "#8c67d8",
+        "Raw": "1",
+        "StickerNameTC": "Cattitude",
+        "StickerNameSC": "Cattitude"
     },
     {
         "GlobalID": "62404",
-        "StickerName": "Fair & Square",
+        "StickerNameEN": "Fair & Square",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -5184,14 +6219,17 @@ export const STICKER_DATA = [
         "SetID": "624",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_24_4.png",
-        "Colour": "#8c67d8"
+        "Colour": "#8c67d8",
+        "Raw": "1",
+        "StickerNameTC": "Fair & Square",
+        "StickerNameSC": "Fair & Square"
     },
     {
         "GlobalID": "62405",
-        "StickerName": "Playful Picnic",
+        "StickerNameEN": "Playful Picnic",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -5199,14 +6237,17 @@ export const STICKER_DATA = [
         "SetID": "624",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_24_5.png",
-        "Colour": "#8c67d8"
+        "Colour": "#8c67d8",
+        "Raw": "1",
+        "StickerNameTC": "Playful Picnic",
+        "StickerNameSC": "Playful Picnic"
     },
     {
         "GlobalID": "62406",
-        "StickerName": "Flippin' Out",
+        "StickerNameEN": "Flippin' Out",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5214,14 +6255,17 @@ export const STICKER_DATA = [
         "SetID": "624",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_24_6.png",
-        "Colour": "#8c67d8"
+        "Colour": "#8c67d8",
+        "Raw": "1",
+        "StickerNameTC": "Flippin' Out",
+        "StickerNameSC": "Flippin' Out"
     },
     {
         "GlobalID": "62407",
-        "StickerName": "Dive 'n Dice",
+        "StickerNameEN": "Dive 'n Dice",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5229,14 +6273,17 @@ export const STICKER_DATA = [
         "SetID": "624",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_24_7.png",
-        "Colour": "#8c67d8"
+        "Colour": "#8c67d8",
+        "Raw": "1",
+        "StickerNameTC": "Dive 'n Dice",
+        "StickerNameSC": "Dive 'n Dice"
     },
     {
         "GlobalID": "62408",
-        "StickerName": "Frosty Fun",
+        "StickerNameEN": "Frosty Fun",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5244,14 +6291,17 @@ export const STICKER_DATA = [
         "SetID": "624",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_24_8.png",
-        "Colour": "#8c67d8"
+        "Colour": "#8c67d8",
+        "Raw": "1",
+        "StickerNameTC": "Frosty Fun",
+        "StickerNameSC": "Frosty Fun"
     },
     {
         "GlobalID": "62409",
-        "StickerName": "In the Stars",
+        "StickerNameEN": "In the Stars",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5259,14 +6309,17 @@ export const STICKER_DATA = [
         "SetID": "624",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_24_9.png",
-        "Colour": "#8c67d8"
+        "Colour": "#8c67d8",
+        "Raw": "1",
+        "StickerNameTC": "In the Stars",
+        "StickerNameSC": "In the Stars"
     },
     {
         "GlobalID": "62501",
-        "StickerName": "Tycoon Topiary",
+        "StickerNameEN": "Tycoon Topiary",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -5274,14 +6327,17 @@ export const STICKER_DATA = [
         "SetID": "625",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_25_1.png",
-        "Colour": "#ad31e9"
+        "Colour": "#ad31e9",
+        "Raw": "1",
+        "StickerNameTC": "Tycoon Topiary",
+        "StickerNameSC": "Tycoon Topiary"
     },
     {
         "GlobalID": "62502",
-        "StickerName": "Rooting for You",
+        "StickerNameEN": "Rooting for You",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -5289,14 +6345,17 @@ export const STICKER_DATA = [
         "SetID": "625",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_25_2.png",
-        "Colour": "#ad31e9"
+        "Colour": "#ad31e9",
+        "Raw": "1",
+        "StickerNameTC": "Rooting for You",
+        "StickerNameSC": "Rooting for You"
     },
     {
         "GlobalID": "62503",
-        "StickerName": "Growing Fortunes",
+        "StickerNameEN": "Growing Fortunes",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -5304,14 +6363,17 @@ export const STICKER_DATA = [
         "SetID": "625",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_25_3.png",
-        "Colour": "#ad31e9"
+        "Colour": "#ad31e9",
+        "Raw": "1",
+        "StickerNameTC": "Growing Fortunes",
+        "StickerNameSC": "Growing Fortunes"
     },
     {
         "GlobalID": "62504",
-        "StickerName": "Big Yields",
+        "StickerNameEN": "Big Yields",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -5319,14 +6381,17 @@ export const STICKER_DATA = [
         "SetID": "625",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_25_4.png",
-        "Colour": "#ad31e9"
+        "Colour": "#ad31e9",
+        "Raw": "1",
+        "StickerNameTC": "Big Yields",
+        "StickerNameSC": "Big Yields"
     },
     {
         "GlobalID": "62505",
-        "StickerName": "Jackpot!",
+        "StickerNameEN": "Jackpot!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -5334,14 +6399,17 @@ export const STICKER_DATA = [
         "SetID": "625",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_25_5.png",
-        "Colour": "#ad31e9"
+        "Colour": "#ad31e9",
+        "Raw": "1",
+        "StickerNameTC": "Jackpot!",
+        "StickerNameSC": "Jackpot!"
     },
     {
         "GlobalID": "62506",
-        "StickerName": "Money Tree",
+        "StickerNameEN": "Money Tree",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5349,14 +6417,17 @@ export const STICKER_DATA = [
         "SetID": "625",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_25_6.png",
-        "Colour": "#ad31e9"
+        "Colour": "#ad31e9",
+        "Raw": "1",
+        "StickerNameTC": "Money Tree",
+        "StickerNameSC": "Money Tree"
     },
     {
         "GlobalID": "62507",
-        "StickerName": "Loaded Branches",
+        "StickerNameEN": "Loaded Branches",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5364,14 +6435,17 @@ export const STICKER_DATA = [
         "SetID": "625",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_25_7.png",
-        "Colour": "#ad31e9"
+        "Colour": "#ad31e9",
+        "Raw": "1",
+        "StickerNameTC": "Loaded Branches",
+        "StickerNameSC": "Loaded Branches"
     },
     {
         "GlobalID": "62508",
-        "StickerName": "A Rich Harvest",
+        "StickerNameEN": "A Rich Harvest",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -5379,14 +6453,17 @@ export const STICKER_DATA = [
         "SetID": "625",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_25_8.png",
-        "Colour": "#ad31e9"
+        "Colour": "#ad31e9",
+        "Raw": "1",
+        "StickerNameTC": "A Rich Harvest",
+        "StickerNameSC": "A Rich Harvest"
     },
     {
         "GlobalID": "62509",
-        "StickerName": "All a Dream",
+        "StickerNameEN": "All a Dream",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -5394,14 +6471,17 @@ export const STICKER_DATA = [
         "SetID": "625",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_25_9.png",
-        "Colour": "#ad31e9"
+        "Colour": "#ad31e9",
+        "Raw": "1",
+        "StickerNameTC": "All a Dream",
+        "StickerNameSC": "All a Dream"
     },
     {
         "GlobalID": "62601",
-        "StickerName": "Shopping Spree",
+        "StickerNameEN": "Shopping Spree",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -5409,14 +6489,17 @@ export const STICKER_DATA = [
         "SetID": "626",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_26_1.png",
-        "Colour": "#54b8cc"
+        "Colour": "#54b8cc",
+        "Raw": "1",
+        "StickerNameTC": "Shopping Spree",
+        "StickerNameSC": "Shopping Spree"
     },
     {
         "GlobalID": "62602",
-        "StickerName": "Cool Collection",
+        "StickerNameEN": "Cool Collection",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -5424,14 +6507,17 @@ export const STICKER_DATA = [
         "SetID": "626",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_26_2.png",
-        "Colour": "#54b8cc"
+        "Colour": "#54b8cc",
+        "Raw": "1",
+        "StickerNameTC": "Cool Collection",
+        "StickerNameSC": "Cool Collection"
     },
     {
         "GlobalID": "62603",
-        "StickerName": "Unboxing!",
+        "StickerNameEN": "Unboxing!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -5439,14 +6525,17 @@ export const STICKER_DATA = [
         "SetID": "626",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_26_3.png",
-        "Colour": "#54b8cc"
+        "Colour": "#54b8cc",
+        "Raw": "1",
+        "StickerNameTC": "Unboxing!",
+        "StickerNameSC": "Unboxing!"
     },
     {
         "GlobalID": "62604",
-        "StickerName": "Bath Time",
+        "StickerNameEN": "Bath Time",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -5454,14 +6543,17 @@ export const STICKER_DATA = [
         "SetID": "626",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_26_4.png",
-        "Colour": "#54b8cc"
+        "Colour": "#54b8cc",
+        "Raw": "1",
+        "StickerNameTC": "Bath Time",
+        "StickerNameSC": "Bath Time"
     },
     {
         "GlobalID": "62605",
-        "StickerName": "Adulting",
+        "StickerNameEN": "Adulting",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5469,14 +6561,17 @@ export const STICKER_DATA = [
         "SetID": "626",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_26_5.png",
-        "Colour": "#54b8cc"
+        "Colour": "#54b8cc",
+        "Raw": "1",
+        "StickerNameTC": "Adulting",
+        "StickerNameSC": "Adulting"
     },
     {
         "GlobalID": "62606",
-        "StickerName": "A Model Duck",
+        "StickerNameEN": "A Model Duck",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -5484,14 +6579,17 @@ export const STICKER_DATA = [
         "SetID": "626",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_26_6.png",
-        "Colour": "#54b8cc"
+        "Colour": "#54b8cc",
+        "Raw": "1",
+        "StickerNameTC": "A Model Duck",
+        "StickerNameSC": "A Model Duck"
     },
     {
         "GlobalID": "62607",
-        "StickerName": "Quack Me Up!",
+        "StickerNameEN": "Quack Me Up!",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -5499,14 +6597,17 @@ export const STICKER_DATA = [
         "SetID": "626",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_26_7.png",
-        "Colour": "#54b8cc"
+        "Colour": "#54b8cc",
+        "Raw": "1",
+        "StickerNameTC": "Quack Me Up!",
+        "StickerNameSC": "Quack Me Up!"
     },
     {
         "GlobalID": "62608",
-        "StickerName": "Two Favorites",
+        "StickerNameEN": "Two Favorites",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -5514,14 +6615,17 @@ export const STICKER_DATA = [
         "SetID": "626",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_26_8.png",
-        "Colour": "#54b8cc"
+        "Colour": "#54b8cc",
+        "Raw": "1",
+        "StickerNameTC": "Two Favorites",
+        "StickerNameSC": "Two Favorites"
     },
     {
         "GlobalID": "62609",
-        "StickerName": "The Rubber Ducky",
+        "StickerNameEN": "The Rubber Ducky",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -5529,14 +6633,17 @@ export const STICKER_DATA = [
         "SetID": "626",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
-        "StartTime": "1704394799",
+        "StartTime": "1704394800",
         "EndTime": "1711652400",
         "ImageSource": "monopolyorigins_26_9.png",
-        "Colour": "#54b8cc"
+        "Colour": "#54b8cc",
+        "Raw": "1",
+        "StickerNameTC": "The Rubber Ducky",
+        "StickerNameSC": "The Rubber Ducky"
     },
     {
         "GlobalID": "70101",
-        "StickerName": "Melody Lane",
+        "StickerNameEN": "Melody Lane",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5547,11 +6654,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_1_1.png",
-        "Colour": "#e8b04d"
+        "Colour": "#e8b04d",
+        "Raw": "1",
+        "StickerNameTC": "美妙旋律",
+        "StickerNameSC": "美妙旋律"
     },
     {
         "GlobalID": "70102",
-        "StickerName": "Big Piano!",
+        "StickerNameEN": "Big Piano!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5562,11 +6672,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_1_2.png",
-        "Colour": "#e8b04d"
+        "Colour": "#e8b04d",
+        "Raw": "1",
+        "StickerNameTC": "大鋼琴！",
+        "StickerNameSC": "大钢琴！"
     },
     {
         "GlobalID": "70103",
-        "StickerName": "Tune Tour",
+        "StickerNameEN": "Tune Tour",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5577,11 +6690,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_1_3.png",
-        "Colour": "#e8b04d"
+        "Colour": "#e8b04d",
+        "Raw": "1",
+        "StickerNameTC": "調音之旅",
+        "StickerNameSC": "调音之旅"
     },
     {
         "GlobalID": "70104",
-        "StickerName": "Tubad!",
+        "StickerNameEN": "Tubad!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5592,11 +6708,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_1_4.png",
-        "Colour": "#e8b04d"
+        "Colour": "#e8b04d",
+        "Raw": "1",
+        "StickerNameTC": "大號！",
+        "StickerNameSC": "大号！"
     },
     {
         "GlobalID": "70105",
-        "StickerName": "Can't Beat It",
+        "StickerNameEN": "Can't Beat It",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5607,11 +6726,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_1_5.png",
-        "Colour": "#e8b04d"
+        "Colour": "#e8b04d",
+        "Raw": "1",
+        "StickerNameTC": "無法演奏",
+        "StickerNameSC": "无法演奏"
     },
     {
         "GlobalID": "70106",
-        "StickerName": "Mewsic",
+        "StickerNameEN": "Mewsic",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5622,11 +6744,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_1_6.png",
-        "Colour": "#e8b04d"
+        "Colour": "#e8b04d",
+        "Raw": "1",
+        "StickerNameTC": "音樂和弦",
+        "StickerNameSC": "音乐和弦"
     },
     {
         "GlobalID": "70107",
-        "StickerName": "Off-Kilter",
+        "StickerNameEN": "Off-Kilter",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5637,11 +6762,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_1_7.png",
-        "Colour": "#e8b04d"
+        "Colour": "#e8b04d",
+        "Raw": "1",
+        "StickerNameTC": "失衡",
+        "StickerNameSC": "失衡"
     },
     {
         "GlobalID": "70108",
-        "StickerName": "Gong Pals",
+        "StickerNameEN": "Gong Pals",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5652,11 +6780,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_1_8.png",
-        "Colour": "#e8b04d"
+        "Colour": "#e8b04d",
+        "Raw": "1",
+        "StickerNameTC": "鳴鑼傳遞",
+        "StickerNameSC": "鸣锣传递"
     },
     {
         "GlobalID": "70109",
-        "StickerName": "A Natural",
+        "StickerNameEN": "A Natural",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5667,11 +6798,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_1_9.png",
-        "Colour": "#e8b04d"
+        "Colour": "#e8b04d",
+        "Raw": "1",
+        "StickerNameTC": "天生好手",
+        "StickerNameSC": "天生好手"
     },
     {
         "GlobalID": "70201",
-        "StickerName": "Got The Role",
+        "StickerNameEN": "Got The Role",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5682,11 +6816,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_2_1.png",
-        "Colour": "#7963ce"
+        "Colour": "#7963ce",
+        "Raw": "1",
+        "StickerNameTC": "扮演角色",
+        "StickerNameSC": "扮演角色"
     },
     {
         "GlobalID": "70202",
-        "StickerName": "My Forte",
+        "StickerNameEN": "My Forte",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5697,11 +6834,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_2_2.png",
-        "Colour": "#7963ce"
+        "Colour": "#7963ce",
+        "Raw": "1",
+        "StickerNameTC": "我的強項",
+        "StickerNameSC": "我的强项"
     },
     {
         "GlobalID": "70203",
-        "StickerName": "Arpeggios",
+        "StickerNameEN": "Arpeggios",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5712,11 +6852,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_2_3.png",
-        "Colour": "#7963ce"
+        "Colour": "#7963ce",
+        "Raw": "1",
+        "StickerNameTC": "琶音",
+        "StickerNameSC": "琶音"
     },
     {
         "GlobalID": "70204",
-        "StickerName": "Rehearsal",
+        "StickerNameEN": "Rehearsal",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5727,11 +6870,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_2_4.png",
-        "Colour": "#7963ce"
+        "Colour": "#7963ce",
+        "Raw": "1",
+        "StickerNameTC": "排練",
+        "StickerNameSC": "排练"
     },
     {
         "GlobalID": "70205",
-        "StickerName": "Mic Check",
+        "StickerNameEN": "Mic Check",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5742,11 +6888,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_2_5.png",
-        "Colour": "#7963ce"
+        "Colour": "#7963ce",
+        "Raw": "1",
+        "StickerNameTC": "麥克風檢查",
+        "StickerNameSC": "麦克风检查"
     },
     {
         "GlobalID": "70206",
-        "StickerName": "Sew Cute",
+        "StickerNameEN": "Sew Cute",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5757,11 +6906,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_2_6.png",
-        "Colour": "#7963ce"
+        "Colour": "#7963ce",
+        "Raw": "1",
+        "StickerNameTC": "可愛縫紉",
+        "StickerNameSC": "可爱缝纫"
     },
     {
         "GlobalID": "70207",
-        "StickerName": "Opening Night",
+        "StickerNameEN": "Opening Night",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5772,11 +6924,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_2_7.png",
-        "Colour": "#7963ce"
+        "Colour": "#7963ce",
+        "Raw": "1",
+        "StickerNameTC": "首映之夜",
+        "StickerNameSC": "首映之夜"
     },
     {
         "GlobalID": "70208",
-        "StickerName": "Spectacle!",
+        "StickerNameEN": "Spectacle!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5787,11 +6942,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_2_8.png",
-        "Colour": "#7963ce"
+        "Colour": "#7963ce",
+        "Raw": "1",
+        "StickerNameTC": "壯觀！",
+        "StickerNameSC": "壮观！"
     },
     {
         "GlobalID": "70209",
-        "StickerName": "Curtain Call",
+        "StickerNameEN": "Curtain Call",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -5802,11 +6960,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_2_9.png",
-        "Colour": "#7963ce"
+        "Colour": "#7963ce",
+        "Raw": "1",
+        "StickerNameTC": "謝幕",
+        "StickerNameSC": "谢幕"
     },
     {
         "GlobalID": "70301",
-        "StickerName": "All That Jazz",
+        "StickerNameEN": "All That Jazz",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5817,11 +6978,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_3_1.png",
-        "Colour": "#cd56b4"
+        "Colour": "#cd56b4",
+        "Raw": "1",
+        "StickerNameTC": "爵士故事",
+        "StickerNameSC": "爵士故事"
     },
     {
         "GlobalID": "70302",
-        "StickerName": "Star Employee",
+        "StickerNameEN": "Star Employee",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5832,11 +6996,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_3_2.png",
-        "Colour": "#cd56b4"
+        "Colour": "#cd56b4",
+        "Raw": "1",
+        "StickerNameTC": "星級員工",
+        "StickerNameSC": "星级员工"
     },
     {
         "GlobalID": "70303",
-        "StickerName": "Jazz It Up",
+        "StickerNameEN": "Jazz It Up",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5847,11 +7014,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_3_3.png",
-        "Colour": "#cd56b4"
+        "Colour": "#cd56b4",
+        "Raw": "1",
+        "StickerNameTC": "爵士一下",
+        "StickerNameSC": "爵士一下"
     },
     {
         "GlobalID": "70304",
-        "StickerName": "A Song to Sing",
+        "StickerNameEN": "A Song to Sing",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5862,11 +7032,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_3_4.png",
-        "Colour": "#cd56b4"
+        "Colour": "#cd56b4",
+        "Raw": "1",
+        "StickerNameTC": "心中樂曲",
+        "StickerNameSC": "心中乐曲"
     },
     {
         "GlobalID": "70305",
-        "StickerName": "Stage Dream",
+        "StickerNameEN": "Stage Dream",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5877,11 +7050,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_3_5.png",
-        "Colour": "#cd56b4"
+        "Colour": "#cd56b4",
+        "Raw": "1",
+        "StickerNameTC": "舞台成夢",
+        "StickerNameSC": "舞台成梦"
     },
     {
         "GlobalID": "70306",
-        "StickerName": "Solo Serenade",
+        "StickerNameEN": "Solo Serenade",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5892,11 +7068,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_3_6.png",
-        "Colour": "#cd56b4"
+        "Colour": "#cd56b4",
+        "Raw": "1",
+        "StickerNameTC": "獨唱夜曲",
+        "StickerNameSC": "独唱夜曲"
     },
     {
         "GlobalID": "70307",
-        "StickerName": "A Star Is Born",
+        "StickerNameEN": "A Star Is Born",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5907,11 +7086,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_3_7.png",
-        "Colour": "#cd56b4"
+        "Colour": "#cd56b4",
+        "Raw": "1",
+        "StickerNameTC": "巨星誕生",
+        "StickerNameSC": "巨星诞生"
     },
     {
         "GlobalID": "70308",
-        "StickerName": "Meet The Band",
+        "StickerNameEN": "Meet The Band",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -5922,11 +7104,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_3_8.png",
-        "Colour": "#cd56b4"
+        "Colour": "#cd56b4",
+        "Raw": "1",
+        "StickerNameTC": "認識樂隊",
+        "StickerNameSC": "认识乐队"
     },
     {
         "GlobalID": "70309",
-        "StickerName": "Dream Come True",
+        "StickerNameEN": "Dream Come True",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -5937,11 +7122,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_3_9.png",
-        "Colour": "#cd56b4"
+        "Colour": "#cd56b4",
+        "Raw": "1",
+        "StickerNameTC": "夢想成真",
+        "StickerNameSC": "梦想成真"
     },
     {
         "GlobalID": "70401",
-        "StickerName": "Baby Ludwig",
+        "StickerNameEN": "Baby Ludwig",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5952,11 +7140,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_4_1.png",
-        "Colour": "#67b1aa"
+        "Colour": "#67b1aa",
+        "Raw": "1",
+        "StickerNameTC": "嬰兒路德維希",
+        "StickerNameSC": "婴儿路德维希"
     },
     {
         "GlobalID": "70402",
-        "StickerName": "Young Promise",
+        "StickerNameEN": "Young Promise",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5967,11 +7158,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_4_2.png",
-        "Colour": "#67b1aa"
+        "Colour": "#67b1aa",
+        "Raw": "1",
+        "StickerNameTC": "備受期待",
+        "StickerNameSC": "备受期待"
     },
     {
         "GlobalID": "70403",
-        "StickerName": "#1 Fan",
+        "StickerNameEN": "#1 Fan",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5982,11 +7176,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_4_3.png",
-        "Colour": "#67b1aa"
+        "Colour": "#67b1aa",
+        "Raw": "1",
+        "StickerNameTC": "最初粉絲",
+        "StickerNameSC": "最初粉丝"
     },
     {
         "GlobalID": "70404",
-        "StickerName": "Für Elise",
+        "StickerNameEN": "Für Elise",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -5997,11 +7194,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_4_4.png",
-        "Colour": "#67b1aa"
+        "Colour": "#67b1aa",
+        "Raw": "1",
+        "StickerNameTC": "給愛麗絲",
+        "StickerNameSC": "给艾丽斯"
     },
     {
         "GlobalID": "70405",
-        "StickerName": "Clair de Lune",
+        "StickerNameEN": "Clair de Lune",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6012,11 +7212,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_4_5.png",
-        "Colour": "#67b1aa"
+        "Colour": "#67b1aa",
+        "Raw": "1",
+        "StickerNameTC": "月光曲",
+        "StickerNameSC": "月光曲"
     },
     {
         "GlobalID": "70406",
-        "StickerName": "Symphony",
+        "StickerNameEN": "Symphony",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6027,11 +7230,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_4_6.png",
-        "Colour": "#67b1aa"
+        "Colour": "#67b1aa",
+        "Raw": "1",
+        "StickerNameTC": "交響曲",
+        "StickerNameSC": "交响曲"
     },
     {
         "GlobalID": "70407",
-        "StickerName": "Resilience",
+        "StickerNameEN": "Resilience",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6042,11 +7248,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_4_7.png",
-        "Colour": "#67b1aa"
+        "Colour": "#67b1aa",
+        "Raw": "1",
+        "StickerNameTC": "逆境",
+        "StickerNameSC": "逆境"
     },
     {
         "GlobalID": "70408",
-        "StickerName": "Splendid!",
+        "StickerNameEN": "Splendid!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6057,11 +7266,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_4_8.png",
-        "Colour": "#67b1aa"
+        "Colour": "#67b1aa",
+        "Raw": "1",
+        "StickerNameTC": "棒極了！",
+        "StickerNameSC": "棒极了！"
     },
     {
         "GlobalID": "70409",
-        "StickerName": "Mr Maestro",
+        "StickerNameEN": "Mr Maestro",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6072,11 +7284,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_4_9.png",
-        "Colour": "#67b1aa"
+        "Colour": "#67b1aa",
+        "Raw": "1",
+        "StickerNameTC": "樂曲大師",
+        "StickerNameSC": "乐曲大师"
     },
     {
         "GlobalID": "70501",
-        "StickerName": "Melodic Legacy",
+        "StickerNameEN": "Melodic Legacy",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6087,11 +7302,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_5_1.png",
-        "Colour": "#f84b62"
+        "Colour": "#f84b62",
+        "Raw": "1",
+        "StickerNameTC": "旋律傳承",
+        "StickerNameSC": "旋律传承"
     },
     {
         "GlobalID": "70502",
-        "StickerName": "Carpool!",
+        "StickerNameEN": "Carpool!",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6102,11 +7320,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_5_2.png",
-        "Colour": "#f84b62"
+        "Colour": "#f84b62",
+        "Raw": "1",
+        "StickerNameTC": "車上曲目！",
+        "StickerNameSC": "车上曲目！"
     },
     {
         "GlobalID": "70503",
-        "StickerName": "Bonfire Tunes",
+        "StickerNameEN": "Bonfire Tunes",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6117,11 +7338,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_5_3.png",
-        "Colour": "#f84b62"
+        "Colour": "#f84b62",
+        "Raw": "1",
+        "StickerNameTC": "營火歌曲",
+        "StickerNameSC": "营火歌曲"
     },
     {
         "GlobalID": "70504",
-        "StickerName": "Cool Kids",
+        "StickerNameEN": "Cool Kids",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6132,11 +7356,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_5_4.png",
-        "Colour": "#f84b62"
+        "Colour": "#f84b62",
+        "Raw": "1",
+        "StickerNameTC": "酷孩子",
+        "StickerNameSC": "酷孩子"
     },
     {
         "GlobalID": "70505",
-        "StickerName": "Proud Mom",
+        "StickerNameEN": "Proud Mom",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6147,11 +7374,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_5_5.png",
-        "Colour": "#f84b62"
+        "Colour": "#f84b62",
+        "Raw": "1",
+        "StickerNameTC": "自豪的媽媽",
+        "StickerNameSC": "自豪的妈妈"
     },
     {
         "GlobalID": "70506",
-        "StickerName": "Mixtape",
+        "StickerNameEN": "Mixtape",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6162,11 +7392,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_5_6.png",
-        "Colour": "#f84b62"
+        "Colour": "#f84b62",
+        "Raw": "1",
+        "StickerNameTC": "混音帶",
+        "StickerNameSC": "混音带"
     },
     {
         "GlobalID": "70507",
-        "StickerName": "National Notes",
+        "StickerNameEN": "National Notes",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6177,11 +7410,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_5_7.png",
-        "Colour": "#f84b62"
+        "Colour": "#f84b62",
+        "Raw": "1",
+        "StickerNameTC": "國家音符",
+        "StickerNameSC": "国家音符"
     },
     {
         "GlobalID": "70508",
-        "StickerName": "Sacred Music",
+        "StickerNameEN": "Sacred Music",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6192,11 +7428,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_5_8.png",
-        "Colour": "#f84b62"
+        "Colour": "#f84b62",
+        "Raw": "1",
+        "StickerNameTC": "神聖佛樂",
+        "StickerNameSC": "神圣佛乐"
     },
     {
         "GlobalID": "70509",
-        "StickerName": "First Dance",
+        "StickerNameEN": "First Dance",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6207,11 +7446,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_5_9.png",
-        "Colour": "#f84b62"
+        "Colour": "#f84b62",
+        "Raw": "1",
+        "StickerNameTC": "初舞",
+        "StickerNameSC": "初舞"
     },
     {
         "GlobalID": "70601",
-        "StickerName": "Norse Rhythm",
+        "StickerNameEN": "Norse Rhythm",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6222,11 +7464,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_6_1.png",
-        "Colour": "#8522ec"
+        "Colour": "#8522ec",
+        "Raw": "1",
+        "StickerNameTC": "北歐旋律",
+        "StickerNameSC": "北欧旋律"
     },
     {
         "GlobalID": "70602",
-        "StickerName": "Mexico Lindo",
+        "StickerNameEN": "Mexico Lindo",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6237,11 +7482,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_6_2.png",
-        "Colour": "#8522ec"
+        "Colour": "#8522ec",
+        "Raw": "1",
+        "StickerNameTC": "美麗的墨西哥",
+        "StickerNameSC": "美丽的墨西哥"
     },
     {
         "GlobalID": "70603",
-        "StickerName": "Musical Chord",
+        "StickerNameEN": "Musical Chord",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6252,11 +7500,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_6_3.png",
-        "Colour": "#8522ec"
+        "Colour": "#8522ec",
+        "Raw": "1",
+        "StickerNameTC": "手風琴和弦",
+        "StickerNameSC": "手风琴和弦"
     },
     {
         "GlobalID": "70604",
-        "StickerName": "Sitar Song",
+        "StickerNameEN": "Sitar Song",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6267,11 +7518,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_6_4.png",
-        "Colour": "#8522ec"
+        "Colour": "#8522ec",
+        "Raw": "1",
+        "StickerNameTC": "西塔琴樂曲",
+        "StickerNameSC": "西塔琴乐曲"
     },
     {
         "GlobalID": "70605",
-        "StickerName": "Play Together",
+        "StickerNameEN": "Play Together",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6282,11 +7536,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_6_5.png",
-        "Colour": "#8522ec"
+        "Colour": "#8522ec",
+        "Raw": "1",
+        "StickerNameTC": "鼓聲同樂",
+        "StickerNameSC": "鼓声同乐"
     },
     {
         "GlobalID": "70606",
-        "StickerName": "Ocarina of Mogul",
+        "StickerNameEN": "Ocarina of Mogul",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6297,11 +7554,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_6_6.png",
-        "Colour": "#8522ec"
+        "Colour": "#8522ec",
+        "Raw": "1",
+        "StickerNameTC": "大亨陶笛",
+        "StickerNameSC": "大亨陶笛"
     },
     {
         "GlobalID": "70607",
-        "StickerName": "Edo Music",
+        "StickerNameEN": "Edo Music",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6312,11 +7572,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_6_7.png",
-        "Colour": "#8522ec"
+        "Colour": "#8522ec",
+        "Raw": "1",
+        "StickerNameTC": "江戶樂聲",
+        "StickerNameSC": "江户乐声"
     },
     {
         "GlobalID": "70608",
-        "StickerName": "Ukelele Paradise",
+        "StickerNameEN": "Ukelele Paradise",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6327,11 +7590,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_6_8.png",
-        "Colour": "#8522ec"
+        "Colour": "#8522ec",
+        "Raw": "1",
+        "StickerNameTC": "烏克麗麗樂園",
+        "StickerNameSC": "乌克丽丽乐园"
     },
     {
         "GlobalID": "70609",
-        "StickerName": "Chime Bells",
+        "StickerNameEN": "Chime Bells",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6342,11 +7608,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_6_9.png",
-        "Colour": "#8522ec"
+        "Colour": "#8522ec",
+        "Raw": "1",
+        "StickerNameTC": "古樸大鐘",
+        "StickerNameSC": "古朴大钟"
     },
     {
         "GlobalID": "70701",
-        "StickerName": "Studio Sesh",
+        "StickerNameEN": "Studio Sesh",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6357,11 +7626,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_7_1.png",
-        "Colour": "#04cfdc"
+        "Colour": "#04cfdc",
+        "Raw": "1",
+        "StickerNameTC": "工作錄音室",
+        "StickerNameSC": "工作录音室"
     },
     {
         "GlobalID": "70702",
-        "StickerName": "Press Fun",
+        "StickerNameEN": "Press Fun",
         "StickerRarity": "1",
         "Golden": "0",
         "Prestige": "0",
@@ -6372,11 +7644,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_7_2.png",
-        "Colour": "#04cfdc"
+        "Colour": "#04cfdc",
+        "Raw": "1",
+        "StickerNameTC": "訪談趣事",
+        "StickerNameSC": "访谈趣事"
     },
     {
         "GlobalID": "70703",
-        "StickerName": "New Drop",
+        "StickerNameEN": "New Drop",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6387,11 +7662,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_7_3.png",
-        "Colour": "#04cfdc"
+        "Colour": "#04cfdc",
+        "Raw": "1",
+        "StickerNameTC": "推出新作",
+        "StickerNameSC": "推出新作"
     },
     {
         "GlobalID": "70704",
-        "StickerName": "Cover Boys",
+        "StickerNameEN": "Cover Boys",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6402,11 +7680,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_7_4.png",
-        "Colour": "#04cfdc"
+        "Colour": "#04cfdc",
+        "Raw": "1",
+        "StickerNameTC": "封面男孩",
+        "StickerNameSC": "封面男孩"
     },
     {
         "GlobalID": "70705",
-        "StickerName": "Tycoon Stars",
+        "StickerNameEN": "Tycoon Stars",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6417,11 +7698,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_7_5.png",
-        "Colour": "#04cfdc"
+        "Colour": "#04cfdc",
+        "Raw": "1",
+        "StickerNameTC": "富豪明星",
+        "StickerNameSC": "富豪明星"
     },
     {
         "GlobalID": "70706",
-        "StickerName": "Talk Show",
+        "StickerNameEN": "Talk Show",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6432,11 +7716,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_7_6.png",
-        "Colour": "#04cfdc"
+        "Colour": "#04cfdc",
+        "Raw": "1",
+        "StickerNameTC": "脫口秀出場",
+        "StickerNameSC": "脱口秀出场"
     },
     {
         "GlobalID": "70707",
-        "StickerName": "Jam Packed",
+        "StickerNameEN": "Jam Packed",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6447,11 +7734,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_7_7.png",
-        "Colour": "#04cfdc"
+        "Colour": "#04cfdc",
+        "Raw": "1",
+        "StickerNameTC": "座無虛席",
+        "StickerNameSC": "座无虚席"
     },
     {
         "GlobalID": "70708",
-        "StickerName": "Superfandom",
+        "StickerNameEN": "Superfandom",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6462,11 +7752,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_7_8.png",
-        "Colour": "#04cfdc"
+        "Colour": "#04cfdc",
+        "Raw": "1",
+        "StickerNameTC": "超級粉絲團",
+        "StickerNameSC": "超级粉丝团"
     },
     {
         "GlobalID": "70709",
-        "StickerName": "Show Time!",
+        "StickerNameEN": "Show Time!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6477,11 +7770,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_7_9.png",
-        "Colour": "#04cfdc"
+        "Colour": "#04cfdc",
+        "Raw": "1",
+        "StickerNameTC": "表演時間！",
+        "StickerNameSC": "表演时间！"
     },
     {
         "GlobalID": "70801",
-        "StickerName": "Notes Avenue",
+        "StickerNameEN": "Notes Avenue",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6492,11 +7788,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_8_1.png",
-        "Colour": "#839b0a"
+        "Colour": "#839b0a",
+        "Raw": "1",
+        "StickerNameTC": "音符大道",
+        "StickerNameSC": "音符大道"
     },
     {
         "GlobalID": "70802",
-        "StickerName": "Clean Routine!",
+        "StickerNameEN": "Clean Routine!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6507,11 +7806,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_8_2.png",
-        "Colour": "#839b0a"
+        "Colour": "#839b0a",
+        "Raw": "1",
+        "StickerNameTC": "清潔日常！",
+        "StickerNameSC": "清洁日常！"
     },
     {
         "GlobalID": "70803",
-        "StickerName": "Flute Magic",
+        "StickerNameEN": "Flute Magic",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6522,11 +7824,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_8_3.png",
-        "Colour": "#839b0a"
+        "Colour": "#839b0a",
+        "Raw": "1",
+        "StickerNameTC": "長笛魔法",
+        "StickerNameSC": "长笛魔法"
     },
     {
         "GlobalID": "70804",
-        "StickerName": "High Notes",
+        "StickerNameEN": "High Notes",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6537,11 +7842,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_8_4.png",
-        "Colour": "#839b0a"
+        "Colour": "#839b0a",
+        "Raw": "1",
+        "StickerNameTC": "高音號",
+        "StickerNameSC": "高音号"
     },
     {
         "GlobalID": "70805",
-        "StickerName": "Sharp!",
+        "StickerNameEN": "Sharp!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6552,11 +7860,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_8_5.png",
-        "Colour": "#839b0a"
+        "Colour": "#839b0a",
+        "Raw": "1",
+        "StickerNameTC": "清晰響亮！",
+        "StickerNameSC": "清晰响亮！"
     },
     {
         "GlobalID": "70806",
-        "StickerName": "Détaché",
+        "StickerNameEN": "Détaché",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6567,11 +7878,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_8_6.png",
-        "Colour": "#839b0a"
+        "Colour": "#839b0a",
+        "Raw": "1",
+        "StickerNameTC": "分弓奏法",
+        "StickerNameSC": "分弓奏法"
     },
     {
         "GlobalID": "70807",
-        "StickerName": "Robotic!",
+        "StickerNameEN": "Robotic!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6582,11 +7896,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_8_7.png",
-        "Colour": "#839b0a"
+        "Colour": "#839b0a",
+        "Raw": "1",
+        "StickerNameTC": "機器人舞！",
+        "StickerNameSC": "机器人舞！"
     },
     {
         "GlobalID": "70808",
-        "StickerName": "Don't Fret",
+        "StickerNameEN": "Don't Fret",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6597,11 +7914,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_8_8.png",
-        "Colour": "#839b0a"
+        "Colour": "#839b0a",
+        "Raw": "1",
+        "StickerNameTC": "別氣餒",
+        "StickerNameSC": "别气馁"
     },
     {
         "GlobalID": "70809",
-        "StickerName": "Drumroll",
+        "StickerNameEN": "Drumroll",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6612,11 +7932,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_8_9.png",
-        "Colour": "#839b0a"
+        "Colour": "#839b0a",
+        "Raw": "1",
+        "StickerNameTC": "擊鼓練習",
+        "StickerNameSC": "击鼓练习"
     },
     {
         "GlobalID": "70901",
-        "StickerName": "Stage Fright",
+        "StickerNameEN": "Stage Fright",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6627,11 +7950,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_9_1.png",
-        "Colour": "#dc21a4"
+        "Colour": "#dc21a4",
+        "Raw": "1",
+        "StickerNameTC": "舞台恐懼",
+        "StickerNameSC": "舞台恐惧"
     },
     {
         "GlobalID": "70902",
-        "StickerName": "Best Spot",
+        "StickerNameEN": "Best Spot",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6642,11 +7968,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_9_2.png",
-        "Colour": "#dc21a4"
+        "Colour": "#dc21a4",
+        "Raw": "1",
+        "StickerNameTC": "最佳位置",
+        "StickerNameSC": "最佳位置"
     },
     {
         "GlobalID": "70903",
-        "StickerName": "The KJ",
+        "StickerNameEN": "The KJ",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6657,11 +7986,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_9_3.png",
-        "Colour": "#dc21a4"
+        "Colour": "#dc21a4",
+        "Raw": "1",
+        "StickerNameTC": "唱盤騎師",
+        "StickerNameSC": "唱盘骑师"
     },
     {
         "GlobalID": "70904",
-        "StickerName": "Sing It Out",
+        "StickerNameEN": "Sing It Out",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6672,11 +8004,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_9_4.png",
-        "Colour": "#dc21a4"
+        "Colour": "#dc21a4",
+        "Raw": "1",
+        "StickerNameTC": "盡情歡唱",
+        "StickerNameSC": "尽情欢唱"
     },
     {
         "GlobalID": "70905",
-        "StickerName": "Invested",
+        "StickerNameEN": "Invested",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6687,11 +8022,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_9_5.png",
-        "Colour": "#dc21a4"
+        "Colour": "#dc21a4",
+        "Raw": "1",
+        "StickerNameTC": "全情投入",
+        "StickerNameSC": "全情投入"
     },
     {
         "GlobalID": "70906",
-        "StickerName": "Gentle Nudge",
+        "StickerNameEN": "Gentle Nudge",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6702,11 +8040,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_9_6.png",
-        "Colour": "#dc21a4"
+        "Colour": "#dc21a4",
+        "Raw": "1",
+        "StickerNameTC": "輕輕推動",
+        "StickerNameSC": "轻轻推动"
     },
     {
         "GlobalID": "70907",
-        "StickerName": "Set The Stage",
+        "StickerNameEN": "Set The Stage",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6717,11 +8058,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_9_7.png",
-        "Colour": "#dc21a4"
+        "Colour": "#dc21a4",
+        "Raw": "1",
+        "StickerNameTC": "佈置舞台",
+        "StickerNameSC": "布置舞台"
     },
     {
         "GlobalID": "70908",
-        "StickerName": "Karaoke Dokey",
+        "StickerNameEN": "Karaoke Dokey",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6732,11 +8076,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_9_8.png",
-        "Colour": "#dc21a4"
+        "Colour": "#dc21a4",
+        "Raw": "1",
+        "StickerNameTC": "卡拉OK",
+        "StickerNameSC": "卡拉OK"
     },
     {
         "GlobalID": "70909",
-        "StickerName": "Sweet Duets",
+        "StickerNameEN": "Sweet Duets",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -6747,11 +8094,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_9_9.png",
-        "Colour": "#dc21a4"
+        "Colour": "#dc21a4",
+        "Raw": "1",
+        "StickerNameTC": "甜蜜二重奏",
+        "StickerNameSC": "甜蜜二重奏"
     },
     {
         "GlobalID": "71001",
-        "StickerName": "Hay Girl",
+        "StickerNameEN": "Hay Girl",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6762,11 +8112,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_10_1.png",
-        "Colour": "#babe5f"
+        "Colour": "#babe5f",
+        "Raw": "1",
+        "StickerNameTC": "乾草女歌手",
+        "StickerNameSC": "干草女歌手"
     },
     {
         "GlobalID": "71002",
-        "StickerName": "Saddle Up!",
+        "StickerNameEN": "Saddle Up!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6777,11 +8130,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_10_2.png",
-        "Colour": "#babe5f"
+        "Colour": "#babe5f",
+        "Raw": "1",
+        "StickerNameTC": "上馬！",
+        "StickerNameSC": "上马！"
     },
     {
         "GlobalID": "71003",
-        "StickerName": "Banjo Pluckin",
+        "StickerNameEN": "Banjo Pluckin",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6792,11 +8148,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_10_3.png",
-        "Colour": "#babe5f"
+        "Colour": "#babe5f",
+        "Raw": "1",
+        "StickerNameTC": "彈奏班鳩琴",
+        "StickerNameSC": "弹奏班鸠琴"
     },
     {
         "GlobalID": "71004",
-        "StickerName": "Steeled Lips",
+        "StickerNameEN": "Steeled Lips",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6807,11 +8166,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_10_4.png",
-        "Colour": "#babe5f"
+        "Colour": "#babe5f",
+        "Raw": "1",
+        "StickerNameTC": "唇間口琴",
+        "StickerNameSC": "唇间口琴"
     },
     {
         "GlobalID": "71005",
-        "StickerName": "Country Call",
+        "StickerNameEN": "Country Call",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6822,11 +8184,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_10_5.png",
-        "Colour": "#babe5f"
+        "Colour": "#babe5f",
+        "Raw": "1",
+        "StickerNameTC": "鄉村召喚",
+        "StickerNameSC": "乡村召唤"
     },
     {
         "GlobalID": "71006",
-        "StickerName": "Another Coin",
+        "StickerNameEN": "Another Coin",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6837,11 +8202,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_10_6.png",
-        "Colour": "#babe5f"
+        "Colour": "#babe5f",
+        "Raw": "1",
+        "StickerNameTC": "再次投幣",
+        "StickerNameSC": "再次投币"
     },
     {
         "GlobalID": "71007",
-        "StickerName": "Solid Design",
+        "StickerNameEN": "Solid Design",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6852,11 +8220,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_10_7.png",
-        "Colour": "#babe5f"
+        "Colour": "#babe5f",
+        "Raw": "1",
+        "StickerNameTC": "可靠設計",
+        "StickerNameSC": "可靠设计"
     },
     {
         "GlobalID": "71008",
-        "StickerName": "Honky-Tonk",
+        "StickerNameEN": "Honky-Tonk",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -6867,11 +8238,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_10_8.png",
-        "Colour": "#babe5f"
+        "Colour": "#babe5f",
+        "Raw": "1",
+        "StickerNameTC": "鄉村酒吧",
+        "StickerNameSC": "乡村酒吧"
     },
     {
         "GlobalID": "71009",
-        "StickerName": "Western Star",
+        "StickerNameEN": "Western Star",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -6882,11 +8256,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_10_9.png",
-        "Colour": "#babe5f"
+        "Colour": "#babe5f",
+        "Raw": "1",
+        "StickerNameTC": "西部之星",
+        "StickerNameSC": "西部之星"
     },
     {
         "GlobalID": "71101",
-        "StickerName": "Oh, Sheet!",
+        "StickerNameEN": "Oh, Sheet!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6897,11 +8274,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_11_1.png",
-        "Colour": "#e17559"
+        "Colour": "#e17559",
+        "Raw": "1",
+        "StickerNameTC": "噢！樂譜！",
+        "StickerNameSC": "噢！乐谱！"
     },
     {
         "GlobalID": "71102",
-        "StickerName": "Fiddlelity",
+        "StickerNameEN": "Fiddlelity",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6912,11 +8292,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_11_2.png",
-        "Colour": "#e17559"
+        "Colour": "#e17559",
+        "Raw": "1",
+        "StickerNameTC": "小提琴演奏",
+        "StickerNameSC": "小提琴演奏"
     },
     {
         "GlobalID": "71103",
-        "StickerName": "Regal Concert",
+        "StickerNameEN": "Regal Concert",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6927,11 +8310,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_11_3.png",
-        "Colour": "#e17559"
+        "Colour": "#e17559",
+        "Raw": "1",
+        "StickerNameTC": "皇家音樂會",
+        "StickerNameSC": "皇家音乐会"
     },
     {
         "GlobalID": "71104",
-        "StickerName": "Bella Italia",
+        "StickerNameEN": "Bella Italia",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -6942,11 +8328,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_11_4.png",
-        "Colour": "#e17559"
+        "Colour": "#e17559",
+        "Raw": "1",
+        "StickerNameTC": "美麗的意大利",
+        "StickerNameSC": "美丽的意大利"
     },
     {
         "GlobalID": "71105",
-        "StickerName": "Inspiration",
+        "StickerNameEN": "Inspiration",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6957,11 +8346,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_11_5.png",
-        "Colour": "#e17559"
+        "Colour": "#e17559",
+        "Raw": "1",
+        "StickerNameTC": "啟發靈感",
+        "StickerNameSC": "启发灵感"
     },
     {
         "GlobalID": "71106",
-        "StickerName": "Ingenious Work",
+        "StickerNameEN": "Ingenious Work",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6972,11 +8364,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_11_6.png",
-        "Colour": "#e17559"
+        "Colour": "#e17559",
+        "Raw": "1",
+        "StickerNameTC": "獨創歌曲",
+        "StickerNameSC": "独创歌曲"
     },
     {
         "GlobalID": "71107",
-        "StickerName": "Vibrato!",
+        "StickerNameEN": "Vibrato!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -6987,11 +8382,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_11_7.png",
-        "Colour": "#e17559"
+        "Colour": "#e17559",
+        "Raw": "1",
+        "StickerNameTC": "揉弦！",
+        "StickerNameSC": "揉弦！"
     },
     {
         "GlobalID": "71108",
-        "StickerName": "The Magic Flute",
+        "StickerNameEN": "The Magic Flute",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7002,11 +8400,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_11_8.png",
-        "Colour": "#e17559"
+        "Colour": "#e17559",
+        "Raw": "1",
+        "StickerNameTC": "魔笛",
+        "StickerNameSC": "魔笛"
     },
     {
         "GlobalID": "71109",
-        "StickerName": "Making History",
+        "StickerNameEN": "Making History",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7017,11 +8418,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_11_9.png",
-        "Colour": "#e17559"
+        "Colour": "#e17559",
+        "Raw": "1",
+        "StickerNameTC": "創造歷史",
+        "StickerNameSC": "创造历史"
     },
     {
         "GlobalID": "71201",
-        "StickerName": "Jitters",
+        "StickerNameEN": "Jitters",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -7032,11 +8436,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_12_1.png",
-        "Colour": "#ba83fb"
+        "Colour": "#ba83fb",
+        "Raw": "1",
+        "StickerNameTC": "緊張不安",
+        "StickerNameSC": "紧张不安"
     },
     {
         "GlobalID": "71202",
-        "StickerName": "It Girl!",
+        "StickerNameEN": "It Girl!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -7047,11 +8454,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_12_2.png",
-        "Colour": "#ba83fb"
+        "Colour": "#ba83fb",
+        "Raw": "1",
+        "StickerNameTC": "時尚女郎！",
+        "StickerNameSC": "时尚女郎！"
     },
     {
         "GlobalID": "71203",
-        "StickerName": "Video Hit",
+        "StickerNameEN": "Video Hit",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -7062,11 +8472,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_12_3.png",
-        "Colour": "#ba83fb"
+        "Colour": "#ba83fb",
+        "Raw": "1",
+        "StickerNameTC": "熱門影片",
+        "StickerNameSC": "热门影片"
     },
     {
         "GlobalID": "71204",
-        "StickerName": "Starry-Eyed",
+        "StickerNameEN": "Starry-Eyed",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7077,11 +8490,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_12_4.png",
-        "Colour": "#ba83fb"
+        "Colour": "#ba83fb",
+        "Raw": "1",
+        "StickerNameTC": "星光眨眼",
+        "StickerNameSC": "星光眨眼"
     },
     {
         "GlobalID": "71205",
-        "StickerName": "Lip-Sync",
+        "StickerNameEN": "Lip-Sync",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7092,11 +8508,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_12_5.png",
-        "Colour": "#ba83fb"
+        "Colour": "#ba83fb",
+        "Raw": "1",
+        "StickerNameTC": "對嘴表演",
+        "StickerNameSC": "对嘴表演"
     },
     {
         "GlobalID": "71206",
-        "StickerName": "Ms Fever",
+        "StickerNameEN": "Ms Fever",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7107,11 +8526,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_12_6.png",
-        "Colour": "#ba83fb"
+        "Colour": "#ba83fb",
+        "Raw": "1",
+        "StickerNameTC": "熱門女神",
+        "StickerNameSC": "热门女神"
     },
     {
         "GlobalID": "71207",
-        "StickerName": "Paparazzi",
+        "StickerNameEN": "Paparazzi",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7122,11 +8544,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_12_7.png",
-        "Colour": "#ba83fb"
+        "Colour": "#ba83fb",
+        "Raw": "1",
+        "StickerNameTC": "狗仔隊！",
+        "StickerNameSC": "狗仔队！"
     },
     {
         "GlobalID": "71208",
-        "StickerName": "Devoted Fans",
+        "StickerNameEN": "Devoted Fans",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7137,11 +8562,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_12_8.png",
-        "Colour": "#ba83fb"
+        "Colour": "#ba83fb",
+        "Raw": "1",
+        "StickerNameTC": "忠實粉絲",
+        "StickerNameSC": "忠实粉丝"
     },
     {
         "GlobalID": "71209",
-        "StickerName": "All In!",
+        "StickerNameEN": "All In!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -7152,11 +8580,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_12_9.png",
-        "Colour": "#ba83fb"
+        "Colour": "#ba83fb",
+        "Raw": "1",
+        "StickerNameTC": "全力以赴！",
+        "StickerNameSC": "全力以赴！"
     },
     {
         "GlobalID": "71301",
-        "StickerName": "Tycoon Festival",
+        "StickerNameEN": "Tycoon Festival",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -7167,11 +8598,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_13_1.png",
-        "Colour": "#edb046"
+        "Colour": "#edb046",
+        "Raw": "1",
+        "StickerNameTC": "富豪音樂節",
+        "StickerNameSC": "富豪音乐节"
     },
     {
         "GlobalID": "71302",
-        "StickerName": "Selfie!",
+        "StickerNameEN": "Selfie!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -7182,11 +8616,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_13_2.png",
-        "Colour": "#edb046"
+        "Colour": "#edb046",
+        "Raw": "1",
+        "StickerNameTC": "自拍！",
+        "StickerNameSC": "自拍！"
     },
     {
         "GlobalID": "71303",
-        "StickerName": "Rock On",
+        "StickerNameEN": "Rock On",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -7197,11 +8634,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_13_3.png",
-        "Colour": "#edb046"
+        "Colour": "#edb046",
+        "Raw": "1",
+        "StickerNameTC": "搖滾樂",
+        "StickerNameSC": "摇滚乐"
     },
     {
         "GlobalID": "71304",
-        "StickerName": "Mosh Pit",
+        "StickerNameEN": "Mosh Pit",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7212,11 +8652,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_13_4.png",
-        "Colour": "#edb046"
+        "Colour": "#edb046",
+        "Raw": "1",
+        "StickerNameTC": "跳舞區",
+        "StickerNameSC": "跳舞区"
     },
     {
         "GlobalID": "71305",
-        "StickerName": "To GO!",
+        "StickerNameEN": "To GO!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7227,11 +8670,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_13_5.png",
-        "Colour": "#edb046"
+        "Colour": "#edb046",
+        "Raw": "1",
+        "StickerNameTC": "飲食外賣",
+        "StickerNameSC": "饮食外卖"
     },
     {
         "GlobalID": "71306",
-        "StickerName": "Glamping",
+        "StickerNameEN": "Glamping",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7242,11 +8688,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_13_6.png",
-        "Colour": "#edb046"
+        "Colour": "#edb046",
+        "Raw": "1",
+        "StickerNameTC": "豪華露營",
+        "StickerNameSC": "豪华露营"
     },
     {
         "GlobalID": "71307",
-        "StickerName": "Inkredible",
+        "StickerNameEN": "Inkredible",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7257,11 +8706,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_13_7.png",
-        "Colour": "#edb046"
+        "Colour": "#edb046",
+        "Raw": "1",
+        "StickerNameTC": "絕妙刺青",
+        "StickerNameSC": "绝妙刺青"
     },
     {
         "GlobalID": "71308",
-        "StickerName": "Merch It!",
+        "StickerNameEN": "Merch It!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -7272,11 +8724,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_13_8.png",
-        "Colour": "#edb046"
+        "Colour": "#edb046",
+        "Raw": "1",
+        "StickerNameTC": "週邊商品",
+        "StickerNameSC": "外围商品"
     },
     {
         "GlobalID": "71309",
-        "StickerName": "Monopoly Tunes",
+        "StickerNameEN": "Monopoly Tunes",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7287,11 +8742,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_13_9.png",
-        "Colour": "#edb046"
+        "Colour": "#edb046",
+        "Raw": "1",
+        "StickerNameTC": "大富翁曲目",
+        "StickerNameSC": "大富翁曲目"
     },
     {
         "GlobalID": "71401",
-        "StickerName": "Vinyland",
+        "StickerNameEN": "Vinyland",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -7302,11 +8760,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_14_1.png",
-        "Colour": "#f76961"
+        "Colour": "#f76961",
+        "Raw": "1",
+        "StickerNameTC": "黑膠之城",
+        "StickerNameSC": "黑胶之城"
     },
     {
         "GlobalID": "71402",
-        "StickerName": "Treasure Hunt",
+        "StickerNameEN": "Treasure Hunt",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -7317,11 +8778,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_14_2.png",
-        "Colour": "#f76961"
+        "Colour": "#f76961",
+        "Raw": "1",
+        "StickerNameTC": "尋寶",
+        "StickerNameSC": "寻宝"
     },
     {
         "GlobalID": "71403",
-        "StickerName": "For The Record",
+        "StickerNameEN": "For The Record",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7332,11 +8796,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_14_3.png",
-        "Colour": "#f76961"
+        "Colour": "#f76961",
+        "Raw": "1",
+        "StickerNameTC": "就要唱片",
+        "StickerNameSC": "就要唱片"
     },
     {
         "GlobalID": "71404",
-        "StickerName": "Crate Digger",
+        "StickerNameEN": "Crate Digger",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7347,11 +8814,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_14_4.png",
-        "Colour": "#f76961"
+        "Colour": "#f76961",
+        "Raw": "1",
+        "StickerNameTC": "唱片收藏家",
+        "StickerNameSC": "唱片收藏家"
     },
     {
         "GlobalID": "71405",
-        "StickerName": "Special Request",
+        "StickerNameEN": "Special Request",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7362,11 +8832,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_14_5.png",
-        "Colour": "#f76961"
+        "Colour": "#f76961",
+        "Raw": "1",
+        "StickerNameTC": "特殊要求",
+        "StickerNameSC": "特殊要求"
     },
     {
         "GlobalID": "71406",
-        "StickerName": "Stereo-Types",
+        "StickerNameEN": "Stereo-Types",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7377,11 +8850,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_14_6.png",
-        "Colour": "#f76961"
+        "Colour": "#f76961",
+        "Raw": "1",
+        "StickerNameTC": "立體聲類型",
+        "StickerNameSC": "立体声类型"
     },
     {
         "GlobalID": "71407",
-        "StickerName": "Rare Find",
+        "StickerNameEN": "Rare Find",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -7392,11 +8868,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_14_7.png",
-        "Colour": "#f76961"
+        "Colour": "#f76961",
+        "Raw": "1",
+        "StickerNameTC": "稀有發現",
+        "StickerNameSC": "稀有发现"
     },
     {
         "GlobalID": "71408",
-        "StickerName": "Smash Hit",
+        "StickerNameEN": "Smash Hit",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7407,11 +8886,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_14_8.png",
-        "Colour": "#f76961"
+        "Colour": "#f76961",
+        "Raw": "1",
+        "StickerNameTC": "紅極一時",
+        "StickerNameSC": "红极一时"
     },
     {
         "GlobalID": "71409",
-        "StickerName": "Happy Stroll",
+        "StickerNameEN": "Happy Stroll",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7422,11 +8904,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_14_9.png",
-        "Colour": "#f76961"
+        "Colour": "#f76961",
+        "Raw": "1",
+        "StickerNameTC": "快樂漫步",
+        "StickerNameSC": "快乐漫步"
     },
     {
         "GlobalID": "71501",
-        "StickerName": "Got Served!",
+        "StickerNameEN": "Got Served!",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -7437,11 +8922,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_15_1.png",
-        "Colour": "#f05077"
+        "Colour": "#f05077",
+        "Raw": "1",
+        "StickerNameTC": "發球也要唱！",
+        "StickerNameSC": "发球也要唱！"
     },
     {
         "GlobalID": "71502",
-        "StickerName": "Pan-tastic!",
+        "StickerNameEN": "Pan-tastic!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7452,11 +8940,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_15_2.png",
-        "Colour": "#f05077"
+        "Colour": "#f05077",
+        "Raw": "1",
+        "StickerNameTC": "鍋子也是鑼！",
+        "StickerNameSC": "锅子也是锣！"
     },
     {
         "GlobalID": "71503",
-        "StickerName": "Melody Blowing",
+        "StickerNameEN": "Melody Blowing",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7467,11 +8958,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_15_3.png",
-        "Colour": "#f05077"
+        "Colour": "#f05077",
+        "Raw": "1",
+        "StickerNameTC": "吹奏旋律",
+        "StickerNameSC": "吹奏旋律"
     },
     {
         "GlobalID": "71504",
-        "StickerName": "Crystal Clear",
+        "StickerNameEN": "Crystal Clear",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7482,11 +8976,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_15_4.png",
-        "Colour": "#f05077"
+        "Colour": "#f05077",
+        "Raw": "1",
+        "StickerNameTC": "水晶美聲",
+        "StickerNameSC": "水晶美声"
     },
     {
         "GlobalID": "71505",
-        "StickerName": "Sweet Rhythm",
+        "StickerNameEN": "Sweet Rhythm",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7497,11 +8994,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_15_5.png",
-        "Colour": "#f05077"
+        "Colour": "#f05077",
+        "Raw": "1",
+        "StickerNameTC": "甜蜜韻律",
+        "StickerNameSC": "甜蜜韵律"
     },
     {
         "GlobalID": "71506",
-        "StickerName": "Matching Songs",
+        "StickerNameEN": "Matching Songs",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7512,11 +9012,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_15_6.png",
-        "Colour": "#f05077"
+        "Colour": "#f05077",
+        "Raw": "1",
+        "StickerNameTC": "配對歌曲",
+        "StickerNameSC": "配对歌曲"
     },
     {
         "GlobalID": "71507",
-        "StickerName": "Shake It!",
+        "StickerNameEN": "Shake It!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -7527,11 +9030,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_15_7.png",
-        "Colour": "#f05077"
+        "Colour": "#f05077",
+        "Raw": "1",
+        "StickerNameTC": "搖就對了！",
+        "StickerNameSC": "摇就对了！"
     },
     {
         "GlobalID": "71508",
-        "StickerName": "Washboard Tunes",
+        "StickerNameEN": "Washboard Tunes",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7542,11 +9048,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_15_8.png",
-        "Colour": "#f05077"
+        "Colour": "#f05077",
+        "Raw": "1",
+        "StickerNameTC": "洗衣板之音",
+        "StickerNameSC": "洗衣板之音"
     },
     {
         "GlobalID": "71509",
-        "StickerName": "Flutiful!",
+        "StickerNameEN": "Flutiful!",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7557,11 +9066,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_15_9.png",
-        "Colour": "#f05077"
+        "Colour": "#f05077",
+        "Raw": "1",
+        "StickerNameTC": "陣陣笛聲！",
+        "StickerNameSC": "阵阵笛声！"
     },
     {
         "GlobalID": "71601",
-        "StickerName": "Trainees",
+        "StickerNameEN": "Trainees",
         "StickerRarity": "2",
         "Golden": "0",
         "Prestige": "0",
@@ -7572,11 +9084,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_16_1.png",
-        "Colour": "#fd5365"
+        "Colour": "#fd5365",
+        "Raw": "1",
+        "StickerNameTC": "實習生",
+        "StickerNameSC": "实习生"
     },
     {
         "GlobalID": "71602",
-        "StickerName": "Aegyo Merch",
+        "StickerNameEN": "Aegyo Merch",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7587,11 +9102,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_16_2.png",
-        "Colour": "#fd5365"
+        "Colour": "#fd5365",
+        "Raw": "1",
+        "StickerNameTC": "可愛商品",
+        "StickerNameSC": "可爱商品"
     },
     {
         "GlobalID": "71603",
-        "StickerName": "Omo!",
+        "StickerNameEN": "Omo!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7602,11 +9120,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_16_3.png",
-        "Colour": "#fd5365"
+        "Colour": "#fd5365",
+        "Raw": "1",
+        "StickerNameTC": "喔天呀！",
+        "StickerNameSC": "喔天呀！"
     },
     {
         "GlobalID": "71604",
-        "StickerName": "The Debut!",
+        "StickerNameEN": "The Debut!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7617,11 +9138,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_16_4.png",
-        "Colour": "#fd5365"
+        "Colour": "#fd5365",
+        "Raw": "1",
+        "StickerNameTC": "首次亮相！",
+        "StickerNameSC": "首次亮相！"
     },
     {
         "GlobalID": "71605",
-        "StickerName": "Going Viral",
+        "StickerNameEN": "Going Viral",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7632,11 +9156,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_16_5.png",
-        "Colour": "#fd5365"
+        "Colour": "#fd5365",
+        "Raw": "1",
+        "StickerNameTC": "火速爆紅",
+        "StickerNameSC": "火速爆红"
     },
     {
         "GlobalID": "71606",
-        "StickerName": "Big Gig",
+        "StickerNameEN": "Big Gig",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7647,11 +9174,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_16_6.png",
-        "Colour": "#fd5365"
+        "Colour": "#fd5365",
+        "Raw": "1",
+        "StickerNameTC": "大型演出",
+        "StickerNameSC": "大型演出"
     },
     {
         "GlobalID": "71607",
-        "StickerName": "We Did It!",
+        "StickerNameEN": "We Did It!",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -7662,11 +9192,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_16_7.png",
-        "Colour": "#fd5365"
+        "Colour": "#fd5365",
+        "Raw": "1",
+        "StickerNameTC": "我們做到了！",
+        "StickerNameSC": "我们做到了！"
     },
     {
         "GlobalID": "71608",
-        "StickerName": "Bias Wrecker",
+        "StickerNameEN": "Bias Wrecker",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7677,11 +9210,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_16_8.png",
-        "Colour": "#fd5365"
+        "Colour": "#fd5365",
+        "Raw": "1",
+        "StickerNameTC": "新寵偶像",
+        "StickerNameSC": "新宠偶像"
     },
     {
         "GlobalID": "71609",
-        "StickerName": "True Idols",
+        "StickerNameEN": "True Idols",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7692,11 +9228,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_16_9.png",
-        "Colour": "#fd5365"
+        "Colour": "#fd5365",
+        "Raw": "1",
+        "StickerNameTC": "真實偶像",
+        "StickerNameSC": "真实偶像"
     },
     {
         "GlobalID": "71701",
-        "StickerName": "Instrument Bliss",
+        "StickerNameEN": "Instrument Bliss",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7707,11 +9246,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_17_1.png",
-        "Colour": "#b0c876"
+        "Colour": "#b0c876",
+        "Raw": "1",
+        "StickerNameTC": "樂器狂歡",
+        "StickerNameSC": "乐器狂欢"
     },
     {
         "GlobalID": "71702",
-        "StickerName": "Triple Fret",
+        "StickerNameEN": "Triple Fret",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7722,11 +9264,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_17_2.png",
-        "Colour": "#b0c876"
+        "Colour": "#b0c876",
+        "Raw": "1",
+        "StickerNameTC": "三弦琴",
+        "StickerNameSC": "三弦琴"
     },
     {
         "GlobalID": "71703",
-        "StickerName": "Nose Notes",
+        "StickerNameEN": "Nose Notes",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7737,11 +9282,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_17_3.png",
-        "Colour": "#b0c876"
+        "Colour": "#b0c876",
+        "Raw": "1",
+        "StickerNameTC": "神奇鼻音",
+        "StickerNameSC": "神奇鼻音"
     },
     {
         "GlobalID": "71704",
-        "StickerName": "Hurdy Gurdy",
+        "StickerNameEN": "Hurdy Gurdy",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7752,11 +9300,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_17_4.png",
-        "Colour": "#b0c876"
+        "Colour": "#b0c876",
+        "Raw": "1",
+        "StickerNameTC": "手搖風琴",
+        "StickerNameSC": "手摇风琴"
     },
     {
         "GlobalID": "71705",
-        "StickerName": "Theremin",
+        "StickerNameEN": "Theremin",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7767,11 +9318,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_17_5.png",
-        "Colour": "#b0c876"
+        "Colour": "#b0c876",
+        "Raw": "1",
+        "StickerNameTC": "特雷門琴",
+        "StickerNameSC": "特雷门琴"
     },
     {
         "GlobalID": "71706",
-        "StickerName": "Kalimba",
+        "StickerNameEN": "Kalimba",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -7782,11 +9336,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_17_6.png",
-        "Colour": "#b0c876"
+        "Colour": "#b0c876",
+        "Raw": "1",
+        "StickerNameTC": "卡林巴琴",
+        "StickerNameSC": "卡林巴琴"
     },
     {
         "GlobalID": "71707",
-        "StickerName": "Glass Harmonics",
+        "StickerNameEN": "Glass Harmonics",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7797,11 +9354,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_17_7.png",
-        "Colour": "#b0c876"
+        "Colour": "#b0c876",
+        "Raw": "1",
+        "StickerNameTC": "玻璃琴",
+        "StickerNameSC": "玻璃琴"
     },
     {
         "GlobalID": "71708",
-        "StickerName": "Melodic Haul",
+        "StickerNameEN": "Melodic Haul",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7812,11 +9372,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_17_8.png",
-        "Colour": "#b0c876"
+        "Colour": "#b0c876",
+        "Raw": "1",
+        "StickerNameTC": "樂器血拼",
+        "StickerNameSC": "乐器血拼"
     },
     {
         "GlobalID": "71709",
-        "StickerName": "New Hobby",
+        "StickerNameEN": "New Hobby",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -7827,11 +9390,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_17_9.png",
-        "Colour": "#b0c876"
+        "Colour": "#b0c876",
+        "Raw": "1",
+        "StickerNameTC": "新的嗜好",
+        "StickerNameSC": "新的嗜好"
     },
     {
         "GlobalID": "71801",
-        "StickerName": "70s Vibes",
+        "StickerNameEN": "70s Vibes",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7842,11 +9408,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_1.png",
-        "Colour": "#e180c3"
+        "Colour": "#e180c3",
+        "Raw": "1",
+        "StickerNameTC": "70年代氛圍",
+        "StickerNameSC": "70年代氛围"
     },
     {
         "GlobalID": "71802",
-        "StickerName": "So Fab!",
+        "StickerNameEN": "So Fab!",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7857,11 +9426,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_2.png",
-        "Colour": "#e180c3"
+        "Colour": "#e180c3",
+        "Raw": "1",
+        "StickerNameTC": "美妙絕倫！",
+        "StickerNameSC": "美妙绝伦！"
     },
     {
         "GlobalID": "71803",
-        "StickerName": "Casanova",
+        "StickerNameEN": "Casanova",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7872,11 +9444,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_3.png",
-        "Colour": "#e180c3"
+        "Colour": "#e180c3",
+        "Raw": "1",
+        "StickerNameTC": "英俊美男",
+        "StickerNameSC": "英俊美男"
     },
     {
         "GlobalID": "71804",
-        "StickerName": "Don't Wait Up",
+        "StickerNameEN": "Don't Wait Up",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7887,11 +9462,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_4.png",
-        "Colour": "#e180c3"
+        "Colour": "#e180c3",
+        "Raw": "1",
+        "StickerNameTC": "不必等候",
+        "StickerNameSC": "不必等候"
     },
     {
         "GlobalID": "71805",
-        "StickerName": "Cool Wagon",
+        "StickerNameEN": "Cool Wagon",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -7902,11 +9480,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_5.png",
-        "Colour": "#e180c3"
+        "Colour": "#e180c3",
+        "Raw": "1",
+        "StickerNameTC": "酷炫跑車",
+        "StickerNameSC": "酷炫跑车"
     },
     {
         "GlobalID": "71806",
-        "StickerName": "Funky Music",
+        "StickerNameEN": "Funky Music",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -7917,11 +9498,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_6.png",
-        "Colour": "#e180c3"
+        "Colour": "#e180c3",
+        "Raw": "1",
+        "StickerNameTC": "放克音樂",
+        "StickerNameSC": "放克音乐"
     },
     {
         "GlobalID": "71807",
-        "StickerName": "Groove On",
+        "StickerNameEN": "Groove On",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7932,11 +9516,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_7.png",
-        "Colour": "#e180c3"
+        "Colour": "#e180c3",
+        "Raw": "1",
+        "StickerNameTC": "律動起來",
+        "StickerNameSC": "律动起来"
     },
     {
         "GlobalID": "71808",
-        "StickerName": "Tycoon Hustle",
+        "StickerNameEN": "Tycoon Hustle",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -7947,11 +9534,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_8.png",
-        "Colour": "#e180c3"
+        "Colour": "#e180c3",
+        "Raw": "1",
+        "StickerNameTC": "富豪喧囂",
+        "StickerNameSC": "富豪喧嚣"
     },
     {
         "GlobalID": "71809",
-        "StickerName": "Boogle Down",
+        "StickerNameEN": "Boogle Down",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -7962,11 +9552,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_18_9.png",
-        "Colour": "#e180c3"
+        "Colour": "#e180c3",
+        "Raw": "1",
+        "StickerNameTC": "狂熱搖擺",
+        "StickerNameSC": "狂热摇摆"
     },
     {
         "GlobalID": "71901",
-        "StickerName": "The Business",
+        "StickerNameEN": "The Business",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7977,11 +9570,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_1.png",
-        "Colour": "#7bb096"
+        "Colour": "#7bb096",
+        "Raw": "1",
+        "StickerNameTC": "商業世家",
+        "StickerNameSC": "商业世家"
     },
     {
         "GlobalID": "71902",
-        "StickerName": "Pure Boredom",
+        "StickerNameEN": "Pure Boredom",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -7992,11 +9588,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_2.png",
-        "Colour": "#7bb096"
+        "Colour": "#7bb096",
+        "Raw": "1",
+        "StickerNameTC": "沉悶無聊",
+        "StickerNameSC": "沉闷无聊"
     },
     {
         "GlobalID": "71903",
-        "StickerName": "Tantalizing",
+        "StickerNameEN": "Tantalizing",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -8007,11 +9606,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_3.png",
-        "Colour": "#7bb096"
+        "Colour": "#7bb096",
+        "Raw": "1",
+        "StickerNameTC": "催淚樂器",
+        "StickerNameSC": "催泪乐器"
     },
     {
         "GlobalID": "71904",
-        "StickerName": "One Day",
+        "StickerNameEN": "One Day",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -8022,11 +9624,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_4.png",
-        "Colour": "#7bb096"
+        "Colour": "#7bb096",
+        "Raw": "1",
+        "StickerNameTC": "許願未來",
+        "StickerNameSC": "许愿未来"
     },
     {
         "GlobalID": "71905",
-        "StickerName": "Broom Rock",
+        "StickerNameEN": "Broom Rock",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -8037,11 +9642,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_5.png",
-        "Colour": "#7bb096"
+        "Colour": "#7bb096",
+        "Raw": "1",
+        "StickerNameTC": "掃帚搖滾",
+        "StickerNameSC": "扫帚摇滚"
     },
     {
         "GlobalID": "71906",
-        "StickerName": "Daydreams",
+        "StickerNameEN": "Daydreams",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -8052,11 +9660,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_6.png",
-        "Colour": "#7bb096"
+        "Colour": "#7bb096",
+        "Raw": "1",
+        "StickerNameTC": "白日夢",
+        "StickerNameSC": "白日梦"
     },
     {
         "GlobalID": "71907",
-        "StickerName": "The Best Gift",
+        "StickerNameEN": "The Best Gift",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -8067,11 +9678,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_7.png",
-        "Colour": "#7bb096"
+        "Colour": "#7bb096",
+        "Raw": "1",
+        "StickerNameTC": "最好的禮物",
+        "StickerNameSC": "最好的礼物"
     },
     {
         "GlobalID": "71908",
-        "StickerName": "Great Pick",
+        "StickerNameEN": "Great Pick",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -8082,11 +9696,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_8.png",
-        "Colour": "#7bb096"
+        "Colour": "#7bb096",
+        "Raw": "1",
+        "StickerNameTC": "絕佳選擇",
+        "StickerNameSC": "绝佳选择"
     },
     {
         "GlobalID": "71909",
-        "StickerName": "Rockstar!",
+        "StickerNameEN": "Rockstar!",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -8097,11 +9714,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_19_9.png",
-        "Colour": "#7bb096"
+        "Colour": "#7bb096",
+        "Raw": "1",
+        "StickerNameTC": "未來巨星！",
+        "StickerNameSC": "未来巨星！"
     },
     {
         "GlobalID": "72001",
-        "StickerName": "Breakdance",
+        "StickerNameEN": "Breakdance",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -8112,11 +9732,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_20_1.png",
-        "Colour": "#b5bd4f"
+        "Colour": "#b5bd4f",
+        "Raw": "1",
+        "StickerNameTC": "霹靂舞",
+        "StickerNameSC": "霹雳舞"
     },
     {
         "GlobalID": "72002",
-        "StickerName": "Set Practice",
+        "StickerNameEN": "Set Practice",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -8127,11 +9750,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_20_2.png",
-        "Colour": "#b5bd4f"
+        "Colour": "#b5bd4f",
+        "Raw": "1",
+        "StickerNameTC": "全套練習",
+        "StickerNameSC": "全套练习"
     },
     {
         "GlobalID": "72003",
-        "StickerName": "Hold On!",
+        "StickerNameEN": "Hold On!",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -8142,11 +9768,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_20_3.png",
-        "Colour": "#b5bd4f"
+        "Colour": "#b5bd4f",
+        "Raw": "1",
+        "StickerNameTC": "等等我！",
+        "StickerNameSC": "等等我！"
     },
     {
         "GlobalID": "72004",
-        "StickerName": "The Crew",
+        "StickerNameEN": "The Crew",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -8157,11 +9786,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_20_4.png",
-        "Colour": "#b5bd4f"
+        "Colour": "#b5bd4f",
+        "Raw": "1",
+        "StickerNameTC": "同伴組員",
+        "StickerNameSC": "同伴组员"
     },
     {
         "GlobalID": "72005",
-        "StickerName": "The Moves",
+        "StickerNameEN": "The Moves",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -8172,11 +9804,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_20_5.png",
-        "Colour": "#b5bd4f"
+        "Colour": "#b5bd4f",
+        "Raw": "1",
+        "StickerNameTC": "舞步",
+        "StickerNameSC": "舞步"
     },
     {
         "GlobalID": "72006",
-        "StickerName": "Beatboxer",
+        "StickerNameEN": "Beatboxer",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -8187,11 +9822,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_20_6.png",
-        "Colour": "#b5bd4f"
+        "Colour": "#b5bd4f",
+        "Raw": "1",
+        "StickerNameTC": "節奏口技者",
+        "StickerNameSC": "节奏口技者"
     },
     {
         "GlobalID": "72007",
-        "StickerName": "Bucket Drums",
+        "StickerNameEN": "Bucket Drums",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -8202,11 +9840,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_20_7.png",
-        "Colour": "#b5bd4f"
+        "Colour": "#b5bd4f",
+        "Raw": "1",
+        "StickerNameTC": "水桶鼓",
+        "StickerNameSC": "水桶鼓"
     },
     {
         "GlobalID": "72008",
-        "StickerName": "Call-Out",
+        "StickerNameEN": "Call-Out",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -8217,11 +9858,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_20_8.png",
-        "Colour": "#b5bd4f"
+        "Colour": "#b5bd4f",
+        "Raw": "1",
+        "StickerNameTC": "舞蹈宣戰",
+        "StickerNameSC": "舞蹈宣战"
     },
     {
         "GlobalID": "72009",
-        "StickerName": "Clean Win!",
+        "StickerNameEN": "Clean Win!",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -8232,11 +9876,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_20_9.png",
-        "Colour": "#b5bd4f"
+        "Colour": "#b5bd4f",
+        "Raw": "1",
+        "StickerNameTC": "光明獲勝！",
+        "StickerNameSC": "光明获胜！"
     },
     {
         "GlobalID": "72101",
-        "StickerName": "Theatre M",
+        "StickerNameEN": "Theatre M",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "0",
@@ -8247,11 +9894,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_21_1.png",
-        "Colour": "#bd8dd2"
+        "Colour": "#bd8dd2",
+        "Raw": "1",
+        "StickerNameTC": "大亨劇院",
+        "StickerNameSC": "大亨剧院"
     },
     {
         "GlobalID": "72102",
-        "StickerName": "Orchestra",
+        "StickerNameEN": "Orchestra",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -8262,11 +9912,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_21_2.png",
-        "Colour": "#bd8dd2"
+        "Colour": "#bd8dd2",
+        "Raw": "1",
+        "StickerNameTC": "管弦樂團",
+        "StickerNameSC": "管弦乐团"
     },
     {
         "GlobalID": "72103",
-        "StickerName": "Overture",
+        "StickerNameEN": "Overture",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "0",
@@ -8277,11 +9930,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_21_3.png",
-        "Colour": "#bd8dd2"
+        "Colour": "#bd8dd2",
+        "Raw": "1",
+        "StickerNameTC": "序曲",
+        "StickerNameSC": "序曲"
     },
     {
         "GlobalID": "72104",
-        "StickerName": "La Traviata",
+        "StickerNameEN": "La Traviata",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -8292,11 +9948,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_21_4.png",
-        "Colour": "#bd8dd2"
+        "Colour": "#bd8dd2",
+        "Raw": "1",
+        "StickerNameTC": "茶花女",
+        "StickerNameSC": "茶花女"
     },
     {
         "GlobalID": "72105",
-        "StickerName": "Madama Butterfly",
+        "StickerNameEN": "Madama Butterfly",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "0",
@@ -8307,11 +9966,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_21_5.png",
-        "Colour": "#bd8dd2"
+        "Colour": "#bd8dd2",
+        "Raw": "1",
+        "StickerNameTC": "蝴蝶夫人",
+        "StickerNameSC": "蝴蝶夫人"
     },
     {
         "GlobalID": "72106",
-        "StickerName": "La Bohème",
+        "StickerNameEN": "La Bohème",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -8322,11 +9984,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_21_6.png",
-        "Colour": "#bd8dd2"
+        "Colour": "#bd8dd2",
+        "Raw": "1",
+        "StickerNameTC": "波希米亞人",
+        "StickerNameSC": "波希米亚人"
     },
     {
         "GlobalID": "72107",
-        "StickerName": "The Barber of Seville",
+        "StickerNameEN": "The Barber of Seville",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "0",
@@ -8337,11 +10002,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_21_7.png",
-        "Colour": "#bd8dd2"
+        "Colour": "#bd8dd2",
+        "Raw": "1",
+        "StickerNameTC": "塞維亞的理髮師",
+        "StickerNameSC": "塞维亚的理发师"
     },
     {
         "GlobalID": "72108",
-        "StickerName": "Royal Box",
+        "StickerNameEN": "Royal Box",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -8352,11 +10020,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_21_8.png",
-        "Colour": "#bd8dd2"
+        "Colour": "#bd8dd2",
+        "Raw": "1",
+        "StickerNameTC": "皇家包廂",
+        "StickerNameSC": "皇家包厢"
     },
     {
         "GlobalID": "72109",
-        "StickerName": "Ovazione",
+        "StickerNameEN": "Ovazione",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "0",
@@ -8367,11 +10038,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_21_9.png",
-        "Colour": "#bd8dd2"
+        "Colour": "#bd8dd2",
+        "Raw": "1",
+        "StickerNameTC": "全場歡呼",
+        "StickerNameSC": "全场欢呼"
     },
     {
         "GlobalID": "72201",
-        "StickerName": "Bored Meeting",
+        "StickerNameEN": "Bored Meeting",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "1",
@@ -8382,11 +10056,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_22_1.png",
-        "Colour": "#cf85c7"
+        "Colour": "#cf85c7",
+        "Raw": "1",
+        "StickerNameTC": "無聊會議",
+        "StickerNameSC": "无聊会议"
     },
     {
         "GlobalID": "72202",
-        "StickerName": "DJ Dreams",
+        "StickerNameEN": "DJ Dreams",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8397,11 +10074,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_22_2.png",
-        "Colour": "#cf85c7"
+        "Colour": "#cf85c7",
+        "Raw": "1",
+        "StickerNameTC": "DJ 夢想",
+        "StickerNameSC": "DJ 梦想"
     },
     {
         "GlobalID": "72203",
-        "StickerName": "Scratching!",
+        "StickerNameEN": "Scratching!",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8412,11 +10092,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_22_3.png",
-        "Colour": "#cf85c7"
+        "Colour": "#cf85c7",
+        "Raw": "1",
+        "StickerNameTC": "刮碟！",
+        "StickerNameSC": "刮碟！"
     },
     {
         "GlobalID": "72204",
-        "StickerName": "Party On!",
+        "StickerNameEN": "Party On!",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8427,11 +10110,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_22_4.png",
-        "Colour": "#cf85c7"
+        "Colour": "#cf85c7",
+        "Raw": "1",
+        "StickerNameTC": "派對開始！",
+        "StickerNameSC": "派对开始！"
     },
     {
         "GlobalID": "72205",
-        "StickerName": "Key Master",
+        "StickerNameEN": "Key Master",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -8442,11 +10128,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_22_5.png",
-        "Colour": "#cf85c7"
+        "Colour": "#cf85c7",
+        "Raw": "1",
+        "StickerNameTC": "鍵盤大師",
+        "StickerNameSC": "键盘大师"
     },
     {
         "GlobalID": "72206",
-        "StickerName": "Drum Machine",
+        "StickerNameEN": "Drum Machine",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -8457,11 +10146,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_22_6.png",
-        "Colour": "#cf85c7"
+        "Colour": "#cf85c7",
+        "Raw": "1",
+        "StickerNameTC": "電子鼓",
+        "StickerNameSC": "电子鼓"
     },
     {
         "GlobalID": "72207",
-        "StickerName": "That Drop",
+        "StickerNameEN": "That Drop",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8472,11 +10164,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_22_7.png",
-        "Colour": "#cf85c7"
+        "Colour": "#cf85c7",
+        "Raw": "1",
+        "StickerNameTC": "高超演奏",
+        "StickerNameSC": "高超演奏"
     },
     {
         "GlobalID": "72208",
-        "StickerName": "Wake-up-call",
+        "StickerNameEN": "Wake-up-call",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8487,11 +10182,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_22_8.png",
-        "Colour": "#cf85c7"
+        "Colour": "#cf85c7",
+        "Raw": "1",
+        "StickerNameTC": "靈機一動！",
+        "StickerNameSC": "灵机一动！"
     },
     {
         "GlobalID": "72209",
-        "StickerName": "Outro!",
+        "StickerNameEN": "Outro!",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8502,11 +10200,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_22_9.png",
-        "Colour": "#cf85c7"
+        "Colour": "#cf85c7",
+        "Raw": "1",
+        "StickerNameTC": "歡樂尾奏",
+        "StickerNameSC": "欢乐尾奏"
     },
     {
         "GlobalID": "72301",
-        "StickerName": "Mogul Mayhem",
+        "StickerNameEN": "Mogul Mayhem",
         "StickerRarity": "3",
         "Golden": "0",
         "Prestige": "1",
@@ -8517,11 +10218,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_23_1.png",
-        "Colour": "#ae8bc1"
+        "Colour": "#ae8bc1",
+        "Raw": "1",
+        "StickerNameTC": "大亨猛團",
+        "StickerNameSC": "大亨猛团"
     },
     {
         "GlobalID": "72302",
-        "StickerName": "You Rock!",
+        "StickerNameEN": "You Rock!",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8532,11 +10236,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_23_2.png",
-        "Colour": "#ae8bc1"
+        "Colour": "#ae8bc1",
+        "Raw": "1",
+        "StickerNameTC": "我流搖滾！",
+        "StickerNameSC": "我流摇滚！"
     },
     {
         "GlobalID": "72303",
-        "StickerName": "Tour Bus",
+        "StickerNameEN": "Tour Bus",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8547,11 +10254,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_23_3.png",
-        "Colour": "#ae8bc1"
+        "Colour": "#ae8bc1",
+        "Raw": "1",
+        "StickerNameTC": "巡迴巴士",
+        "StickerNameSC": "巡回巴士"
     },
     {
         "GlobalID": "72304",
-        "StickerName": "Rock Paper Scissors",
+        "StickerNameEN": "Rock Paper Scissors",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8562,11 +10272,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_23_4.png",
-        "Colour": "#ae8bc1"
+        "Colour": "#ae8bc1",
+        "Raw": "1",
+        "StickerNameTC": "石頭剪刀布",
+        "StickerNameSC": "石头剪刀布"
     },
     {
         "GlobalID": "72305",
-        "StickerName": "The Road",
+        "StickerNameEN": "The Road",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -8577,11 +10290,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_23_5.png",
-        "Colour": "#ae8bc1"
+        "Colour": "#ae8bc1",
+        "Raw": "1",
+        "StickerNameTC": "巡迴路線",
+        "StickerNameSC": "巡回路线"
     },
     {
         "GlobalID": "72306",
-        "StickerName": "Fun City",
+        "StickerNameEN": "Fun City",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8592,11 +10308,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_23_6.png",
-        "Colour": "#ae8bc1"
+        "Colour": "#ae8bc1",
+        "Raw": "1",
+        "StickerNameTC": "歡樂城市",
+        "StickerNameSC": "欢乐城市"
     },
     {
         "GlobalID": "72307",
-        "StickerName": "Interlude",
+        "StickerNameEN": "Interlude",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8607,11 +10326,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_23_7.png",
-        "Colour": "#ae8bc1"
+        "Colour": "#ae8bc1",
+        "Raw": "1",
+        "StickerNameTC": "插曲",
+        "StickerNameSC": "插曲"
     },
     {
         "GlobalID": "72308",
-        "StickerName": "The Hair",
+        "StickerNameEN": "The Hair",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8622,11 +10344,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_23_8.png",
-        "Colour": "#ae8bc1"
+        "Colour": "#ae8bc1",
+        "Raw": "1",
+        "StickerNameTC": "樂團髮型",
+        "StickerNameSC": "乐团发型"
     },
     {
         "GlobalID": "72309",
-        "StickerName": "Power Chords",
+        "StickerNameEN": "Power Chords",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -8637,11 +10362,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_23_9.png",
-        "Colour": "#ae8bc1"
+        "Colour": "#ae8bc1",
+        "Raw": "1",
+        "StickerNameTC": "力量和弦",
+        "StickerNameSC": "力量和弦"
     },
     {
         "GlobalID": "72401",
-        "StickerName": "Dream Big",
+        "StickerNameEN": "Dream Big",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8652,11 +10380,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_1.png",
-        "Colour": "#f2d56d"
+        "Colour": "#f2d56d",
+        "Raw": "1",
+        "StickerNameTC": "大膽做夢",
+        "StickerNameSC": "大胆做梦"
     },
     {
         "GlobalID": "72402",
-        "StickerName": "Little Prayer",
+        "StickerNameEN": "Little Prayer",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8667,11 +10398,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_2.png",
-        "Colour": "#f2d56d"
+        "Colour": "#f2d56d",
+        "Raw": "1",
+        "StickerNameTC": "小小祈禱",
+        "StickerNameSC": "小小祈祷"
     },
     {
         "GlobalID": "72403",
-        "StickerName": "First Gigs",
+        "StickerNameEN": "First Gigs",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8682,11 +10416,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_3.png",
-        "Colour": "#f2d56d"
+        "Colour": "#f2d56d",
+        "Raw": "1",
+        "StickerNameTC": "首場演出",
+        "StickerNameSC": "首场演出"
     },
     {
         "GlobalID": "72404",
-        "StickerName": "Talent Team",
+        "StickerNameEN": "Talent Team",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -8697,11 +10434,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_4.png",
-        "Colour": "#f2d56d"
+        "Colour": "#f2d56d",
+        "Raw": "1",
+        "StickerNameTC": "才華團隊",
+        "StickerNameSC": "才华团队"
     },
     {
         "GlobalID": "72405",
-        "StickerName": "Cantaora",
+        "StickerNameEN": "Cantaora",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -8712,11 +10452,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_5.png",
-        "Colour": "#f2d56d"
+        "Colour": "#f2d56d",
+        "Raw": "1",
+        "StickerNameTC": "女伶歌手",
+        "StickerNameSC": "女伶歌手"
     },
     {
         "GlobalID": "72406",
-        "StickerName": "The Fame",
+        "StickerNameEN": "The Fame",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8727,11 +10470,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_6.png",
-        "Colour": "#f2d56d"
+        "Colour": "#f2d56d",
+        "Raw": "1",
+        "StickerNameTC": "名聲遠播",
+        "StickerNameSC": "名声远播"
     },
     {
         "GlobalID": "72407",
-        "StickerName": "Own The Stage",
+        "StickerNameEN": "Own The Stage",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8742,11 +10488,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_7.png",
-        "Colour": "#f2d56d"
+        "Colour": "#f2d56d",
+        "Raw": "1",
+        "StickerNameTC": "萬眾風靡",
+        "StickerNameSC": "万众风靡"
     },
     {
         "GlobalID": "72408",
-        "StickerName": "Olé Awards",
+        "StickerNameEN": "Olé Awards",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -8757,11 +10506,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_8.png",
-        "Colour": "#f2d56d"
+        "Colour": "#f2d56d",
+        "Raw": "1",
+        "StickerNameTC": "噢嘞大獎",
+        "StickerNameSC": "噢嘞大奖"
     },
     {
         "GlobalID": "72409",
-        "StickerName": "So Proud",
+        "StickerNameEN": "So Proud",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -8772,11 +10524,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_24_9.png",
-        "Colour": "#f2d56d"
+        "Colour": "#f2d56d",
+        "Raw": "1",
+        "StickerNameTC": "無比自豪",
+        "StickerNameSC": "无比自豪"
     },
     {
         "GlobalID": "72501",
-        "StickerName": "Banger Tune",
+        "StickerNameEN": "Banger Tune",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8787,11 +10542,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_25_1.png",
-        "Colour": "#73c9ed"
+        "Colour": "#73c9ed",
+        "Raw": "1",
+        "StickerNameTC": "熱門曲目",
+        "StickerNameSC": "热门曲目"
     },
     {
         "GlobalID": "72502",
-        "StickerName": "Ancient Rhythms",
+        "StickerNameEN": "Ancient Rhythms",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8802,11 +10560,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_25_2.png",
-        "Colour": "#73c9ed"
+        "Colour": "#73c9ed",
+        "Raw": "1",
+        "StickerNameTC": "古老韻律",
+        "StickerNameSC": "古老韵律"
     },
     {
         "GlobalID": "72503",
-        "StickerName": "Stone Jams",
+        "StickerNameEN": "Stone Jams",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -8817,11 +10578,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_25_3.png",
-        "Colour": "#73c9ed"
+        "Colour": "#73c9ed",
+        "Raw": "1",
+        "StickerNameTC": "石板曲調",
+        "StickerNameSC": "石板曲调"
     },
     {
         "GlobalID": "72504",
-        "StickerName": "Mammoth Flute",
+        "StickerNameEN": "Mammoth Flute",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -8832,11 +10596,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_25_4.png",
-        "Colour": "#73c9ed"
+        "Colour": "#73c9ed",
+        "Raw": "1",
+        "StickerNameTC": "巨大長笛",
+        "StickerNameSC": "巨大长笛"
     },
     {
         "GlobalID": "72505",
-        "StickerName": "Treble Maker",
+        "StickerNameEN": "Treble Maker",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -8847,11 +10614,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_25_5.png",
-        "Colour": "#73c9ed"
+        "Colour": "#73c9ed",
+        "Raw": "1",
+        "StickerNameTC": "高音製造器",
+        "StickerNameSC": "高音制造器"
     },
     {
         "GlobalID": "72506",
-        "StickerName": "Bone Rattle",
+        "StickerNameEN": "Bone Rattle",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8862,11 +10632,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_25_6.png",
-        "Colour": "#73c9ed"
+        "Colour": "#73c9ed",
+        "Raw": "1",
+        "StickerNameTC": "骨骼搖鈴",
+        "StickerNameSC": "骨骼摇铃"
     },
     {
         "GlobalID": "72507",
-        "StickerName": "Strings Attached",
+        "StickerNameEN": "Strings Attached",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8877,11 +10650,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_25_7.png",
-        "Colour": "#73c9ed"
+        "Colour": "#73c9ed",
+        "Raw": "1",
+        "StickerNameTC": "裝上弦",
+        "StickerNameSC": "装上弦"
     },
     {
         "GlobalID": "72508",
-        "StickerName": "Fire Beats",
+        "StickerNameEN": "Fire Beats",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -8892,11 +10668,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_25_8.png",
-        "Colour": "#73c9ed"
+        "Colour": "#73c9ed",
+        "Raw": "1",
+        "StickerNameTC": "營火節奏",
+        "StickerNameSC": "营火节奏"
     },
     {
         "GlobalID": "72509",
-        "StickerName": "Leaving a Mark",
+        "StickerNameEN": "Leaving a Mark",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -8907,11 +10686,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_25_9.png",
-        "Colour": "#73c9ed"
+        "Colour": "#73c9ed",
+        "Raw": "1",
+        "StickerNameTC": "留下歷史",
+        "StickerNameSC": "留下历史"
     },
     {
         "GlobalID": "72601",
-        "StickerName": "First Stage",
+        "StickerNameEN": "First Stage",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8922,11 +10704,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_26_1.png",
-        "Colour": "#ef4b0a"
+        "Colour": "#ef4b0a",
+        "Raw": "1",
+        "StickerNameTC": "初次登台",
+        "StickerNameSC": "初次登台"
     },
     {
         "GlobalID": "72602",
-        "StickerName": "Hard Dog's Night",
+        "StickerNameEN": "Hard Dog's Night",
         "StickerRarity": "4",
         "Golden": "0",
         "Prestige": "1",
@@ -8937,11 +10722,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_26_2.png",
-        "Colour": "#ef4b0a"
+        "Colour": "#ef4b0a",
+        "Raw": "1",
+        "StickerNameTC": "難熬之夜",
+        "StickerNameSC": "难熬之夜"
     },
     {
         "GlobalID": "72603",
-        "StickerName": "Drum Starr",
+        "StickerNameEN": "Drum Starr",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -8952,11 +10740,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_26_3.png",
-        "Colour": "#ef4b0a"
+        "Colour": "#ef4b0a",
+        "Raw": "1",
+        "StickerNameTC": "鼓手斯塔爾",
+        "StickerNameSC": "鼓手斯塔尔"
     },
     {
         "GlobalID": "72604",
-        "StickerName": "The Invasion",
+        "StickerNameEN": "The Invasion",
         "StickerRarity": "4",
         "Golden": "1",
         "Prestige": "1",
@@ -8967,11 +10758,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_26_4.png",
-        "Colour": "#ef4b0a"
+        "Colour": "#ef4b0a",
+        "Raw": "1",
+        "StickerNameTC": "入侵新大陸",
+        "StickerNameSC": "入侵新大陆"
     },
     {
         "GlobalID": "72605",
-        "StickerName": "True Fans",
+        "StickerNameEN": "True Fans",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8982,11 +10776,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_26_5.png",
-        "Colour": "#ef4b0a"
+        "Colour": "#ef4b0a",
+        "Raw": "1",
+        "StickerNameTC": "鐵粉",
+        "StickerNameSC": "铁粉"
     },
     {
         "GlobalID": "72606",
-        "StickerName": "In The Booth",
+        "StickerNameEN": "In The Booth",
         "StickerRarity": "5",
         "Golden": "0",
         "Prestige": "1",
@@ -8997,11 +10794,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_26_6.png",
-        "Colour": "#ef4b0a"
+        "Colour": "#ef4b0a",
+        "Raw": "1",
+        "StickerNameTC": "傑作錄音",
+        "StickerNameSC": "杰作录音"
     },
     {
         "GlobalID": "72607",
-        "StickerName": "Historic Steps",
+        "StickerNameEN": "Historic Steps",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -9012,11 +10812,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_26_7.png",
-        "Colour": "#ef4b0a"
+        "Colour": "#ef4b0a",
+        "Raw": "1",
+        "StickerNameTC": "歷史留名",
+        "StickerNameSC": "历史留名"
     },
     {
         "GlobalID": "72608",
-        "StickerName": "Mogulmania",
+        "StickerNameEN": "Mogulmania",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -9027,11 +10830,14 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_26_8.png",
-        "Colour": "#ef4b0a"
+        "Colour": "#ef4b0a",
+        "Raw": "1",
+        "StickerNameTC": "大享狂熱",
+        "StickerNameSC": "大享狂热"
     },
     {
         "GlobalID": "72609",
-        "StickerName": "Last Audition",
+        "StickerNameEN": "Last Audition",
         "StickerRarity": "5",
         "Golden": "1",
         "Prestige": "1",
@@ -9042,6 +10848,9 @@ export const STICKER_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "makingmusic_26_9.png",
-        "Colour": "#ef4b0a"
+        "Colour": "#ef4b0a",
+        "Raw": "1",
+        "StickerNameTC": "最後試鏡",
+        "StickerNameSC": "最后试镜"
     }
 ]

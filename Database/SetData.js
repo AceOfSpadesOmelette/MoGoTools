@@ -1,6 +1,6 @@
 export const SET_DATA = [
     {
-        "SetName": "Holiday Dinner",
+        "SetNameEN": "Holiday Dinner",
         "SetID": "501",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -8,10 +8,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_501.png",
-        "Colour": "#6b57db"
+        "Colour": "#6b57db",
+        "Raw": "1",
+        "SetNameTC": "Holiday Dinner",
+        "SetNameSC": "Holiday Dinner"
     },
     {
-        "SetName": "Sweater Party",
+        "SetNameEN": "Sweater Party",
         "SetID": "502",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -19,10 +22,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_502.png",
-        "Colour": "#79dea7"
+        "Colour": "#79dea7",
+        "Raw": "1",
+        "SetNameTC": "Sweater Party",
+        "SetNameSC": "Sweater Party"
     },
     {
-        "SetName": "Winter Traditions",
+        "SetNameEN": "Winter Traditions",
         "SetID": "503",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -30,10 +36,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_503.png",
-        "Colour": "#6e30f2"
+        "Colour": "#6e30f2",
+        "Raw": "1",
+        "SetNameTC": "Winter Traditions",
+        "SetNameSC": "Winter Traditions"
     },
     {
-        "SetName": "Santa's Workshop",
+        "SetNameEN": "Santa's Workshop",
         "SetID": "504",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -41,10 +50,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_504.png",
-        "Colour": "#67843f"
+        "Colour": "#67843f",
+        "Raw": "1",
+        "SetNameTC": "Santa's Workshop",
+        "SetNameSC": "Santa's Workshop"
     },
     {
-        "SetName": "Festive Feasts",
+        "SetNameEN": "Festive Feasts",
         "SetID": "505",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -52,10 +64,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_505.png",
-        "Colour": "#2979f2"
+        "Colour": "#2979f2",
+        "Raw": "1",
+        "SetNameTC": "Festive Feasts",
+        "SetNameSC": "Festive Feasts"
     },
     {
-        "SetName": "Nutcracker Dreams",
+        "SetNameEN": "Nutcracker Dreams",
         "SetID": "506",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -63,10 +78,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_506.png",
-        "Colour": "#e32f8d"
+        "Colour": "#e32f8d",
+        "Raw": "1",
+        "SetNameTC": "Nutcracker Dreams",
+        "SetNameSC": "Nutcracker Dreams"
     },
     {
-        "SetName": "Sweet Home",
+        "SetNameEN": "Sweet Home",
         "SetID": "507",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -74,10 +92,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_507.png",
-        "Colour": "#dc6262"
+        "Colour": "#dc6262",
+        "Raw": "1",
+        "SetNameTC": "Sweet Home",
+        "SetNameSC": "Sweet Home"
     },
     {
-        "SetName": "The Perfect Gift",
+        "SetNameEN": "The Perfect Gift",
         "SetID": "508",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -85,10 +106,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_508.png",
-        "Colour": "#bd3b3e"
+        "Colour": "#bd3b3e",
+        "Raw": "1",
+        "SetNameTC": "The Perfect Gift",
+        "SetNameSC": "The Perfect Gift"
     },
     {
-        "SetName": "Snowed In",
+        "SetNameEN": "Snowed In",
         "SetID": "509",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -96,10 +120,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_509.png",
-        "Colour": "#0d8f61"
+        "Colour": "#0d8f61",
+        "Raw": "1",
+        "SetNameTC": "Snowed In",
+        "SetNameSC": "Snowed In"
     },
     {
-        "SetName": "Holiday Bakes",
+        "SetNameEN": "Holiday Bakes",
         "SetID": "510",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -107,10 +134,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_510.png",
-        "Colour": "#00e2ff"
+        "Colour": "#00e2ff",
+        "Raw": "1",
+        "SetNameTC": "Holiday Bakes",
+        "SetNameSC": "Holiday Bakes"
     },
     {
-        "SetName": "Outdoor Fun!",
+        "SetNameEN": "Outdoor Fun!",
         "SetID": "511",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -118,10 +148,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_511.png",
-        "Colour": "#4ebfcd"
+        "Colour": "#4ebfcd",
+        "Raw": "1",
+        "SetNameTC": "Outdoor Fun!",
+        "SetNameSC": "Outdoor Fun!"
     },
     {
-        "SetName": "Monopoly World",
+        "SetNameEN": "Monopoly World",
         "SetID": "512",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -129,10 +162,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_512.png",
-        "Colour": "#7844c4"
+        "Colour": "#7844c4",
+        "Raw": "1",
+        "SetNameTC": "Monopoly World",
+        "SetNameSC": "Monopoly World"
     },
     {
-        "SetName": "Merry Krampus!",
+        "SetNameEN": "Merry Krampus!",
         "SetID": "513",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -140,10 +176,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_513.png",
-        "Colour": "#3e8fa4"
+        "Colour": "#3e8fa4",
+        "Raw": "1",
+        "SetNameTC": "Merry Krampus!",
+        "SetNameSC": "Merry Krampus!"
     },
     {
-        "SetName": "Australian Xmas",
+        "SetNameEN": "Australian Xmas",
         "SetID": "514",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -151,10 +190,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_514.png",
-        "Colour": "#e66847"
+        "Colour": "#e66847",
+        "Raw": "1",
+        "SetNameTC": "Australian Xmas",
+        "SetNameSC": "Australian Xmas"
     },
     {
-        "SetName": "Christmas Parade",
+        "SetNameEN": "Christmas Parade",
         "SetID": "515",
         "AlbumName": "Heartfelt Holidays",
         "AlbumNo": "5",
@@ -162,10 +204,13 @@ export const SET_DATA = [
         "StartTime": "1701457200",
         "EndTime": "1704394799",
         "ImageSource": "Icon_515.png",
-        "Colour": "#f70f0f"
+        "Colour": "#f70f0f",
+        "Raw": "1",
+        "SetNameTC": "Christmas Parade",
+        "SetNameSC": "Christmas Parade"
     },
     {
-        "SetName": "Best Beginnings",
+        "SetNameEN": "Best Beginnings",
         "SetID": "601",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -173,10 +218,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_601.png",
-        "Colour": "#e52c45"
+        "Colour": "#e52c45",
+        "Raw": "1",
+        "SetNameTC": "Best Beginnings",
+        "SetNameSC": "Best Beginnings"
     },
     {
-        "SetName": "The Top Hat",
+        "SetNameEN": "The Top Hat",
         "SetID": "602",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -184,10 +232,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_602.png",
-        "Colour": "#7d62ff"
+        "Colour": "#7d62ff",
+        "Raw": "1",
+        "SetNameTC": "The Top Hat",
+        "SetNameSC": "The Top Hat"
     },
     {
-        "SetName": "Across the Board",
+        "SetNameEN": "Across the Board",
         "SetID": "603",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -195,10 +246,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_603.png",
-        "Colour": "#21b1da"
+        "Colour": "#21b1da",
+        "Raw": "1",
+        "SetNameTC": "Across the Board",
+        "SetNameSC": "Across the Board"
     },
     {
-        "SetName": "The Battleship",
+        "SetNameEN": "The Battleship",
         "SetID": "604",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -206,10 +260,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_604.png",
-        "Colour": "#34bd9e"
+        "Colour": "#34bd9e",
+        "Raw": "1",
+        "SetNameTC": "The Battleship",
+        "SetNameSC": "The Battleship"
     },
     {
-        "SetName": "On a Roll",
+        "SetNameEN": "On a Roll",
         "SetID": "605",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -217,10 +274,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_605.png",
-        "Colour": "#ff8449"
+        "Colour": "#ff8449",
+        "Raw": "1",
+        "SetNameTC": "On a Roll",
+        "SetNameSC": "On a Roll"
     },
     {
-        "SetName": "The Thimble",
+        "SetNameEN": "The Thimble",
         "SetID": "606",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -228,10 +288,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_606.png",
-        "Colour": "#00b1d3"
+        "Colour": "#00b1d3",
+        "Raw": "1",
+        "SetNameTC": "The Thimble",
+        "SetNameSC": "The Thimble"
     },
     {
-        "SetName": "Card Quest",
+        "SetNameEN": "Card Quest",
         "SetID": "607",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -239,10 +302,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_607.png",
-        "Colour": "#3cbcff"
+        "Colour": "#3cbcff",
+        "Raw": "1",
+        "SetNameTC": "Card Quest",
+        "SetNameSC": "Card Quest"
     },
     {
-        "SetName": "The Iron",
+        "SetNameEN": "The Iron",
         "SetID": "608",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -250,10 +316,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_608.png",
-        "Colour": "#1fc4e6"
+        "Colour": "#1fc4e6",
+        "Raw": "1",
+        "SetNameTC": "The Iron",
+        "SetNameSC": "The Iron"
     },
     {
-        "SetName": "Maximum Occupancy",
+        "SetNameEN": "Maximum Occupancy",
         "SetID": "609",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -261,10 +330,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_609.png",
-        "Colour": "#00b8a0"
+        "Colour": "#00b8a0",
+        "Raw": "1",
+        "SetNameTC": "Maximum Occupancy",
+        "SetNameSC": "Maximum Occupancy"
     },
     {
-        "SetName": "The Boot",
+        "SetNameEN": "The Boot",
         "SetID": "610",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -272,10 +344,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_610.png",
-        "Colour": "#9246d3"
+        "Colour": "#9246d3",
+        "Raw": "1",
+        "SetNameTC": "The Boot",
+        "SetNameSC": "The Boot"
     },
     {
-        "SetName": "Utility Fun",
+        "SetNameEN": "Utility Fun",
         "SetID": "611",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -283,10 +358,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_611.png",
-        "Colour": "#eb407d"
+        "Colour": "#eb407d",
+        "Raw": "1",
+        "SetNameTC": "Utility Fun",
+        "SetNameSC": "Utility Fun"
     },
     {
-        "SetName": "The Cannon",
+        "SetNameEN": "The Cannon",
         "SetID": "612",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -294,10 +372,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_612.png",
-        "Colour": "#ed758f"
+        "Colour": "#ed758f",
+        "Raw": "1",
+        "SetNameTC": "The Cannon",
+        "SetNameSC": "The Cannon"
     },
     {
-        "SetName": "Free Parking",
+        "SetNameEN": "Free Parking",
         "SetID": "613",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -305,10 +386,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_613.png",
-        "Colour": "#df7015"
+        "Colour": "#df7015",
+        "Raw": "1",
+        "SetNameTC": "Free Parking",
+        "SetNameSC": "Free Parking"
     },
     {
-        "SetName": "Railroad Tycoon",
+        "SetNameEN": "Railroad Tycoon",
         "SetID": "614",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -316,10 +400,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_614.png",
-        "Colour": "#db8b20"
+        "Colour": "#db8b20",
+        "Raw": "1",
+        "SetNameTC": "Railroad Tycoon",
+        "SetNameSC": "Railroad Tycoon"
     },
     {
-        "SetName": "Tokenmania",
+        "SetNameEN": "Tokenmania",
         "SetID": "615",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -327,10 +414,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_615.png",
-        "Colour": "#ffa400"
+        "Colour": "#ffa400",
+        "Raw": "1",
+        "SetNameTC": "Tokenmania",
+        "SetNameSC": "Tokenmania"
     },
     {
-        "SetName": "Launch Day!",
+        "SetNameEN": "Launch Day!",
         "SetID": "616",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -338,10 +428,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_616.png",
-        "Colour": "#df7879"
+        "Colour": "#df7879",
+        "Raw": "1",
+        "SetNameTC": "Launch Day!",
+        "SetNameSC": "Launch Day!"
     },
     {
-        "SetName": "Fever!",
+        "SetNameEN": "Fever!",
         "SetID": "617",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -349,10 +442,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_617.png",
-        "Colour": "#dbad79"
+        "Colour": "#dbad79",
+        "Raw": "1",
+        "SetNameTC": "Fever!",
+        "SetNameSC": "Fever!"
     },
     {
-        "SetName": "Doggopoly",
+        "SetNameEN": "Doggopoly",
         "SetID": "618",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -360,10 +456,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_618.png",
-        "Colour": "#71d3d2"
+        "Colour": "#71d3d2",
+        "Raw": "1",
+        "SetNameTC": "Doggopoly",
+        "SetNameSC": "Doggopoly"
     },
     {
-        "SetName": "Game Awards",
+        "SetNameEN": "Game Awards",
         "SetID": "619",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -371,10 +470,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_619.png",
-        "Colour": "#ab58fd"
+        "Colour": "#ab58fd",
+        "Raw": "1",
+        "SetNameTC": "Game Awards",
+        "SetNameSC": "Game Awards"
     },
     {
-        "SetName": "Ms Monopoly",
+        "SetNameEN": "Ms Monopoly",
         "SetID": "620",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -382,10 +484,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_620.png",
-        "Colour": "#ff73af"
+        "Colour": "#ff73af",
+        "Raw": "1",
+        "SetNameTC": "Ms Monopoly",
+        "SetNameSC": "Ms Monopoly"
     },
     {
-        "SetName": "Go!",
+        "SetNameEN": "Go!",
         "SetID": "621",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -393,10 +498,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_621.png",
-        "Colour": "#df4320"
+        "Colour": "#df4320",
+        "Raw": "1",
+        "SetNameTC": "Go!",
+        "SetNameSC": "Go!"
     },
     {
-        "SetName": "The Racecar",
+        "SetNameEN": "The Racecar",
         "SetID": "622",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -404,10 +512,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_622.png",
-        "Colour": "#4399e5"
+        "Colour": "#4399e5",
+        "Raw": "1",
+        "SetNameTC": "The Racecar",
+        "SetNameSC": "The Racecar"
     },
     {
-        "SetName": "Monopoly VR",
+        "SetNameEN": "Monopoly VR",
         "SetID": "623",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -415,10 +526,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_623.png",
-        "Colour": "#c83edf"
+        "Colour": "#c83edf",
+        "Raw": "1",
+        "SetNameTC": "Monopoly VR",
+        "SetNameSC": "Monopoly VR"
     },
     {
-        "SetName": "Monopoly Moments",
+        "SetNameEN": "Monopoly Moments",
         "SetID": "624",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -426,10 +540,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_624.png",
-        "Colour": "#8c67d8"
+        "Colour": "#8c67d8",
+        "Raw": "1",
+        "SetNameTC": "Monopoly Moments",
+        "SetNameSC": "Monopoly Moments"
     },
     {
-        "SetName": "Money Tree",
+        "SetNameEN": "Money Tree",
         "SetID": "625",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -437,10 +554,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_625.png",
-        "Colour": "#ad31e9"
+        "Colour": "#ad31e9",
+        "Raw": "1",
+        "SetNameTC": "Money Tree",
+        "SetNameSC": "Money Tree"
     },
     {
-        "SetName": "The Rubber Ducky",
+        "SetNameEN": "The Rubber Ducky",
         "SetID": "626",
         "AlbumName": "Monopoly Origins",
         "AlbumNo": "6",
@@ -448,10 +568,13 @@ export const SET_DATA = [
         "StartTime": "1704394799",
         "EndTime": "1711652400",
         "ImageSource": "Icon_626.png",
-        "Colour": "#54b8cc"
+        "Colour": "#54b8cc",
+        "Raw": "1",
+        "SetNameTC": "The Rubber Ducky",
+        "SetNameSC": "The Rubber Ducky"
     },
     {
-        "SetName": "Symphony Store",
+        "SetNameEN": "Symphony Store",
         "SetID": "701",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -459,10 +582,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_701.png",
-        "Colour": "#e8b04d"
+        "Colour": "#e8b04d",
+        "Raw": "1",
+        "SetNameTC": "交響曲商店",
+        "SetNameSC": "交响曲商店"
     },
     {
-        "SetName": "Musical Memoir",
+        "SetNameEN": "Musical Memoir",
         "SetID": "702",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -470,10 +596,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_702.png",
-        "Colour": "#7963ce"
+        "Colour": "#7963ce",
+        "Raw": "1",
+        "SetNameTC": "音樂回憶錄",
+        "SetNameSC": "音乐回忆录"
     },
     {
-        "SetName": "Swingin' Notes",
+        "SetNameEN": "Swingin' Notes",
         "SetID": "703",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -481,10 +610,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_703.png",
-        "Colour": "#cd56b4"
+        "Colour": "#cd56b4",
+        "Raw": "1",
+        "SetNameTC": "搖擺音符",
+        "SetNameSC": "摇摆音符"
     },
     {
-        "SetName": "Ludwig Van Monopoly",
+        "SetNameEN": "Ludwig Van Monopoly",
         "SetID": "704",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -492,10 +624,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_704.png",
-        "Colour": "#67b1aa"
+        "Colour": "#67b1aa",
+        "Raw": "1",
+        "SetNameTC": "路德維希‧范‧大富翁",
+        "SetNameSC": "路德维希‧范‧大富翁"
     },
     {
-        "SetName": "Musical Bonds",
+        "SetNameEN": "Musical Bonds",
         "SetID": "705",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -503,10 +638,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_705.png",
-        "Colour": "#f84b62"
+        "Colour": "#f84b62",
+        "Raw": "1",
+        "SetNameTC": "音樂紐帶",
+        "SetNameSC": "音乐纽带"
     },
     {
-        "SetName": "World Music",
+        "SetNameEN": "World Music",
         "SetID": "706",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -514,10 +652,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_706.png",
-        "Colour": "#8522ec"
+        "Colour": "#8522ec",
+        "Raw": "1",
+        "SetNameTC": "世界音樂",
+        "SetNameSC": "世界音乐"
     },
     {
-        "SetName": "Boy Band",
+        "SetNameEN": "Boy Band",
         "SetID": "707",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -525,10 +666,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_707.png",
-        "Colour": "#04cfdc"
+        "Colour": "#04cfdc",
+        "Raw": "1",
+        "SetNameTC": "男孩樂團",
+        "SetNameSC": "男孩乐团"
     },
     {
-        "SetName": "Crescendo Academy",
+        "SetNameEN": "Crescendo Academy",
         "SetID": "708",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -536,10 +680,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_708.png",
-        "Colour": "#839b0a"
+        "Colour": "#839b0a",
+        "Raw": "1",
+        "SetNameTC": "頂尖音樂學院",
+        "SetNameSC": "顶尖音乐学院"
     },
     {
-        "SetName": "Karaoke Night",
+        "SetNameEN": "Karaoke Night",
         "SetID": "709",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -547,10 +694,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_709.png",
-        "Colour": "#dc21a4"
+        "Colour": "#dc21a4",
+        "Raw": "1",
+        "SetNameTC": "卡拉OK之夜",
+        "SetNameSC": "卡拉OK之夜"
     },
     {
-        "SetName": "Country Roads",
+        "SetNameEN": "Country Roads",
         "SetID": "710",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -558,10 +708,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_710.png",
-        "Colour": "#babe5f"
+        "Colour": "#babe5f",
+        "Raw": "1",
+        "SetNameTC": "鄉村小路",
+        "SetNameSC": "乡村小路"
     },
     {
-        "SetName": "Mr Mozart",
+        "SetNameEN": "Mr Mozart",
         "SetID": "711",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -569,10 +722,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_711.png",
-        "Colour": "#e17559"
+        "Colour": "#e17559",
+        "Raw": "1",
+        "SetNameTC": "莫札特先生",
+        "SetNameSC": "莫扎特先生"
     },
     {
-        "SetName": "Pop Princess",
+        "SetNameEN": "Pop Princess",
         "SetID": "712",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -580,10 +736,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_712.png",
-        "Colour": "#ba83fb"
+        "Colour": "#ba83fb",
+        "Raw": "1",
+        "SetNameTC": "流行公主",
+        "SetNameSC": "流行公主"
     },
     {
-        "SetName": "Music Festival",
+        "SetNameEN": "Music Festival",
         "SetID": "713",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -591,10 +750,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_713.png",
-        "Colour": "#edb046"
+        "Colour": "#edb046",
+        "Raw": "1",
+        "SetNameTC": "音樂節",
+        "SetNameSC": "音乐节"
     },
     {
-        "SetName": "Spin City",
+        "SetNameEN": "Spin City",
         "SetID": "714",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -602,10 +764,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_714.png",
-        "Colour": "#f76961"
+        "Colour": "#f76961",
+        "Raw": "1",
+        "SetNameTC": "唱片之城",
+        "SetNameSC": "唱片之城"
     },
     {
-        "SetName": "Everyday Tunes",
+        "SetNameEN": "Everyday Tunes",
         "SetID": "715",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -613,10 +778,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_715.png",
-        "Colour": "#f05077"
+        "Colour": "#f05077",
+        "Raw": "1",
+        "SetNameTC": "日常小調",
+        "SetNameSC": "日常小调"
     },
     {
-        "SetName": "K-Pop Idols",
+        "SetNameEN": "K-Pop Idols",
         "SetID": "716",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -624,10 +792,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_716.png",
-        "Colour": "#fd5365"
+        "Colour": "#fd5365",
+        "Raw": "1",
+        "SetNameTC": "K-POP偶像",
+        "SetNameSC": "K-POP偶像"
     },
     {
-        "SetName": "Wild Melodies",
+        "SetNameEN": "Wild Melodies",
         "SetID": "717",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -635,10 +806,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_717.png",
-        "Colour": "#b0c876"
+        "Colour": "#b0c876",
+        "Raw": "1",
+        "SetNameTC": "狂野旋律",
+        "SetNameSC": "狂野旋律"
     },
     {
-        "SetName": "Disco Time",
+        "SetNameEN": "Disco Time",
         "SetID": "718",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -646,10 +820,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_718.png",
-        "Colour": "#e180c3"
+        "Colour": "#e180c3",
+        "Raw": "1",
+        "SetNameTC": "迪斯可時間",
+        "SetNameSC": "迪斯科时间"
     },
     {
-        "SetName": "Rockstar Dreams",
+        "SetNameEN": "Rockstar Dreams",
         "SetID": "719",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -657,10 +834,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_719.png",
-        "Colour": "#7bb096"
+        "Colour": "#7bb096",
+        "Raw": "1",
+        "SetNameTC": "搖滾巨星之夢",
+        "SetNameSC": "摇滚巨星之梦"
     },
     {
-        "SetName": "Hip Hop",
+        "SetNameEN": "Hip Hop",
         "SetID": "720",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -668,10 +848,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_720.png",
-        "Colour": "#b5bd4f"
+        "Colour": "#b5bd4f",
+        "Raw": "1",
+        "SetNameTC": "嘻哈",
+        "SetNameSC": "嘻哈"
     },
     {
-        "SetName": "Bel Canto",
+        "SetNameEN": "Bel Canto",
         "SetID": "721",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -679,10 +862,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_721.png",
-        "Colour": "#bd8dd2"
+        "Colour": "#bd8dd2",
+        "Raw": "1",
+        "SetNameTC": "美聲",
+        "SetNameSC": "美声"
     },
     {
-        "SetName": "Electronic Beats",
+        "SetNameEN": "Electronic Beats",
         "SetID": "722",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -690,10 +876,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_722.png",
-        "Colour": "#cf85c7"
+        "Colour": "#cf85c7",
+        "Raw": "1",
+        "SetNameTC": "電子節拍",
+        "SetNameSC": "电子节拍"
     },
     {
-        "SetName": "On Tour!",
+        "SetNameEN": "On Tour!",
         "SetID": "723",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -701,10 +890,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_723.png",
-        "Colour": "#ae8bc1"
+        "Colour": "#ae8bc1",
+        "Raw": "1",
+        "SetNameTC": "巡迴演出！",
+        "SetNameSC": "巡回演出！"
     },
     {
-        "SetName": "Olé",
+        "SetNameEN": "Olé",
         "SetID": "724",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -712,10 +904,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_724.png",
-        "Colour": "#f2d56d"
+        "Colour": "#ebeb93",
+        "Raw": "1",
+        "SetNameTC": "噢嘞西班牙",
+        "SetNameSC": "噢嘞西班牙"
     },
     {
-        "SetName": "Primal Groove",
+        "SetNameEN": "Primal Groove",
         "SetID": "725",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -723,10 +918,13 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_725.png",
-        "Colour": "#73c9ed"
+        "Colour": "#73c9ed",
+        "Raw": "1",
+        "SetNameTC": "原始律動",
+        "SetNameSC": "原始律动"
     },
     {
-        "SetName": "The Moguls",
+        "SetNameEN": "The Moguls",
         "SetID": "726",
         "AlbumName": "Making Music",
         "AlbumNo": "7",
@@ -734,6 +932,9 @@ export const SET_DATA = [
         "StartTime": "1711652401",
         "EndTime": "1718909999",
         "ImageSource": "Icon_726.png",
-        "Colour": "#ef4b0a"
+        "Colour": "#ef4b0a",
+        "Raw": "1",
+        "SetNameTC": "大亨樂團",
+        "SetNameSC": "大亨乐团"
     }
 ]
