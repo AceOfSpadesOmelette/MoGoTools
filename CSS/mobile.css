@@ -271,9 +271,10 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	color: white;
 	font-size: 0.55rem;
 	font-family: "Quicksand-Bold";
-	text-align: center;
-	display: grid;
+	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .set-name-long-min15 {
@@ -285,9 +286,10 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	color: white;
 	font-size: 0.5rem;
 	font-family: "Quicksand-Bold";
-	text-align: center;
-	display: grid;
+	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .set-name-dark {
@@ -299,9 +301,10 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	color: #423b4b;
 	font-size: 11px;
 	font-family: "Quicksand-Bold";
-	text-align: center;
-	display: grid;
+	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .set-name-long-min18-dark {
@@ -313,9 +316,10 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	color: #423b4b;
 	font-size: 10px;
 	font-family: "Quicksand-Bold";
-	text-align: center;
-	display: grid;
+	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .sticker-ribbon {
@@ -377,10 +381,12 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	color: white;
 	font-size: 0.6rem;
 	font-family: "Quicksand-Bold";
-	text-align: center;
-	display: grid;
-	align-items: center;
+	text-align: center;	
 	border-radius: 10px 10px 5px 5px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .sticker-name-long-min14{
@@ -391,8 +397,10 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	text-align: center;
 	min-height: 2rem;
 	max-height: 2rem;
-	display: grid;
+	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .sticker-name-long-min18{
@@ -403,8 +411,10 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	text-align: center;
 	min-height: 2rem;
 	max-height: 2rem;
-	display: grid;
+	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .sticker-name-dark {
@@ -415,8 +425,10 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	font-size: 11px;
 	font-family: "Quicksand-Bold";
 	text-align: center;
-	display: grid;
+	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .sticker-name-long-min14-dark{
@@ -427,8 +439,10 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	text-align: center;
 	min-height: 2rem;
 	max-height: 2rem;
-	display: grid;
+	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .sticker-name-long-min18-dark{
@@ -439,8 +453,10 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	text-align: center;
 	min-height: 2rem;
 	max-height: 2rem;
-	display: grid;
+	display: flex;
 	align-items: center;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .sticker-golden{
