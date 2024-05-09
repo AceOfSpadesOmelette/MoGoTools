@@ -181,7 +181,7 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   container.classList.add(ContainerClass);
   const SetText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "set")[CurrentLanguageCode];
   container.innerHTML = `
-    <div class="sticker-structure-container"><div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img draggable="false" class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background: ${RibbonEdgeColour}; background: -moz-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); background: -webkit-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); background: linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}"><span><span data-translation-key="set">${SetText}</span> ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><br><span class="StickerNameText" data-stickerid="${GlobalID}"></span></span></div></div></div>
+    <div class="sticker-structure-container"><div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img draggable="false" class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background: ${RibbonEdgeColour}; background: -moz-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); background: -webkit-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); background: linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}"><span><span data-translation-key="set">${SetText}</span> ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><span class="StickerNameText" data-stickerid="${GlobalID}"></span></span></div></div></div>
   `;
   if (isTracking) {
     //appendHeartButtons(container);
@@ -223,7 +223,7 @@ function ApplySelectedStyle(container) {
     <div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${stickerData.StickerRarity}Star.png"></div>
     <div class="sticker-photo-container"><img draggable="false" class="sticker-card" src="stickers/${StickerSetPath}/${stickerData.ImageSource}">${FrameHTML}</div>
     <div class="sticker-ribbon" style="background: ${RibbonEdgeColour}; background: -moz-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); background: -webkit-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); background: linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); border: 2px solid ${DarkenedColour};">
-      <span class="${StickerNameClass}"><span><span data-translation-key="set">${SetText}</span> ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><br><span class="StickerNameText" data-stickerid="${stickerData.GlobalID}"></span></span>
+      <span class="${StickerNameClass}"><span><span data-translation-key="set">${SetText}</span> ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><span class="StickerNameText" data-stickerid="${stickerData.GlobalID}"></span></span>
     </div>
   `;
 
@@ -244,7 +244,7 @@ function ApplySelectedStyle(container) {
       <div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${stickerData.StickerRarity}Star_Grey.png"></div>
       <div class="sticker-photo-container"><img draggable="false" class="sticker-card" src="${StickerWhenNotSelected}"></div>
       <div class="sticker-ribbon-transparent">
-        <span class="${StickerNameClass}" style="color: #9a9381;"><span><span data-translation-key="set">${SetText}</span> ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><br><span class="StickerNameText" data-stickerid="${stickerData.GlobalID}"></span></span>
+        <span class="${StickerNameClass}" style="color: #9a9381;"><span><span data-translation-key="set">${SetText}</span> ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><span class="StickerNameText" data-stickerid="${stickerData.GlobalID}"></span></span>
       </div>
     `;
   }
