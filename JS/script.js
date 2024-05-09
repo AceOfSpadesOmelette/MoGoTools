@@ -1159,7 +1159,7 @@ function GenerateFilterSetButtons() {
           if (SetName.length > 15) { SetNameClass = "set-name-long-min15"; }
           if (isBrighterThan(SetColour, "#CCCCCC")) { SetNameClass += "-dark"; }
           const SetCardContainerElement = `
-            <div class="set-card-container"><img draggable="false" data-setidnumber="${SetID}" class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src="logo/Icon_Placeholder.png";"><div class="${SetNameClass}" style="background-color: ${SetColour};"><span><span data-translation-key="set">${SetText}</span> ${SetNo}</span><br><span class="SetNameText" data-setid="${SetID}"></span></div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
+            <div class="set-card-container"><img draggable="false" data-setidnumber="${SetID}" class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src="logo/Icon_Placeholder.png";"><div class="${SetNameClass}" style="background-color: ${SetColour};"><span><span data-translation-key="set">${SetText}</span> ${SetNo}</span><span class="SetNameText" data-setid="${SetID}"></span></div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
           `;  
           setProgressTracker.innerHTML += SetCardContainerElement;
         }
