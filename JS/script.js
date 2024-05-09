@@ -1,17 +1,19 @@
 import { STICKER_DATA } from "../Database/StickerData.js";
 import { SET_DATA } from "../Database/SetData.js";
+import { ALBUM_DATA } from "../Database/AlbumData.js";
 import { NEWS_DATA } from "../Database/NewsData.js";
+import { LANGUAGE_DICTIONARY } from "../Database/LanguageDictionary.js";
 
 const CurrentAlbumNumber = "7";
 const VaultTierOne = 250;
 const VaultTierTwo = 500;
 const VaultTierThree = 800;
 let userData = {};
-let BackupuserData = {};
+//let BackupuserData = {};
 const FilterList = {};
 
 // SETTINGS VARIABLE
-let AlbumCurrentZeroAllOne = 0;
+// let AlbumCurrentZeroAllOne = 0;
 let AndZeroOrOne = 0;
 let AscendZeroDescendOne = 0;
 let IgnorePrestige = 0;
@@ -19,6 +21,7 @@ let WebZeroMobileOne = 0;
 let LightZeroDarkOne = 0;
 let ImgOrientationLandscapeZeroPortraitOne = 0;
 let StickerSelectedZeroShowOneBack = 0;
+let CurrentLanguageCode = 'EN';
 
 const defaultValues = {
   id: "0",
@@ -38,9 +41,11 @@ const FullAlbumValues = {
 // Sets up the website
 function init() {
   compareViewport();
-  //console.log("Hello world!");
+  //console.log("Hello world!");    
   GenerateFilterSetButtons();
   SetDefaultFilterStates();
+  document.querySelector(`button[data-translation-pointer= ${CurrentLanguageCode}]`).click();
+  //translateOnLoad(CurrentLanguageCode);
 
   // Check if userData exists in localStorage
   const LocaluserData = localStorage.getItem("userData");
@@ -57,14 +62,15 @@ function init() {
   UpdateTotalStickerQuantity();
   UpdateTotalStickerByRarityQuantity();
 
-  countValveStickers();
   countSelectedStickers();
+  countVaultStickers();
   //updateProgressBar();
 
   handleBasicMenuNavigationClick({ target: document.getElementById("BasicMenuNewsBtn") });
-  LoadNews();
-  UpdateAlbumStartEndTime();
 
+  setTimeout(() => {LoadNews();}, 1500);
+  
+  UpdateAlbumStartEndTime();  
   // compareViewport();
 }
 
@@ -151,7 +157,9 @@ function generateCurrentStickerBoard(dataset, userData, targetParentElementID) {
 }
 
 function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
-  const { StickerName, SetID, AlbumNo, GlobalID, AlbumName, Golden, StickerRarity, ImageSource, Colour } = item;
+  const { SetID, AlbumNo, GlobalID, AlbumName, Golden, StickerRarity, ImageSource, Colour } = item;
+
+  const StickerName = item[`StickerName${CurrentLanguageCode}`];
 
   const StickerSet = SetID - AlbumNo * 100;
   const StickerSetPath = AlbumName;
@@ -171,9 +179,9 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
   const container = document.createElement("div");
   container.dataset.global = GlobalID;
   container.classList.add(ContainerClass);
-
+  const SetText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "set")[CurrentLanguageCode];
   container.innerHTML = `
-    <div class="sticker-structure-container"><div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img draggable="false" class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background: ${RibbonEdgeColour}; background: -moz-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); background: -webkit-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); background: linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${StickerName}</span></div></div></div>
+    <div class="sticker-structure-container"><div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${StickerRarity}Star.png"></div><div class="sticker-photo-container"><img draggable="false" class="${ImageClass}" src="stickers/${StickerSetPath}/${ImageSource}">${FrameHTML}</div><div class="sticker-ribbon" style="background: ${RibbonEdgeColour}; background: -moz-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); background: -webkit-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); background: linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${Colour} 10%, ${Colour} 90%, ${RibbonEdgeColour} 100%); border: 2px solid ${DarkenedColour};"><span class="${StickerNameClass}"><span><span data-translation-key="set">${SetText}</span> ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><br><span class="StickerNameText" data-stickerid="${GlobalID}"></span></span></div></div></div>
   `;
   if (isTracking) {
     //appendHeartButtons(container);
@@ -188,6 +196,7 @@ function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
 
 function ApplySelectedStyle(container) {
   const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === container.getAttribute("data-global"));
+  const StickerName = stickerData[`StickerName${CurrentLanguageCode}`];
   const userDataItem = userData[stickerData.GlobalID];
   const StickerStructureContainer = container.querySelector('.sticker-structure-container');
 
@@ -198,8 +207,8 @@ function ApplySelectedStyle(container) {
   const RibbonEdgeColour = DarkenColour(stickerData.Colour, 5);
 
   let StickerNameClass = "sticker-name";
-  if (stickerData.StickerName.length > 14) { StickerNameClass = "sticker-name-long-min14"; }
-  if (stickerData.StickerName.length > 18) { StickerNameClass = "sticker-name-long-min18"; }
+  if (StickerName.length > 14) { StickerNameClass = "sticker-name-long-min14"; }
+  if (StickerName.length > 18) { StickerNameClass = "sticker-name-long-min18"; }
   if (isBrighterThan(stickerData.Colour, "#CCCCCC")) { StickerNameClass += "-dark"; }
 
   let FrameHTML = "";
@@ -208,12 +217,13 @@ function ApplySelectedStyle(container) {
 
   //const spareSpinnerHTML = container.querySelector('.spare-spinner-container').outerHTML;
   //const tradeButtonHTML = container.querySelector('.trade-button-container').outerHTML;
+  const SetText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "set")[CurrentLanguageCode];
 
   StickerStructureContainer.innerHTML = `
     <div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${stickerData.StickerRarity}Star.png"></div>
     <div class="sticker-photo-container"><img draggable="false" class="sticker-card" src="stickers/${StickerSetPath}/${stickerData.ImageSource}">${FrameHTML}</div>
     <div class="sticker-ribbon" style="background: ${RibbonEdgeColour}; background: -moz-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); background: -webkit-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); background: linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); border: 2px solid ${DarkenedColour};">
-      <span class="${StickerNameClass}">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${stickerData.StickerName}</span>
+      <span class="${StickerNameClass}"><span><span data-translation-key="set">${SetText}</span> ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><br><span class="StickerNameText" data-stickerid="${stickerData.GlobalID}"></span></span>
     </div>
   `;
 
@@ -234,10 +244,11 @@ function ApplySelectedStyle(container) {
       <div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${stickerData.StickerRarity}Star_Grey.png"></div>
       <div class="sticker-photo-container"><img draggable="false" class="sticker-card" src="${StickerWhenNotSelected}"></div>
       <div class="sticker-ribbon-transparent">
-        <span class="${StickerNameClass}" style="color: #9a9381;">Set ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}<br>${stickerData.StickerName}</span>
+        <span class="${StickerNameClass}" style="color: #9a9381;"><span><span data-translation-key="set">${SetText}</span> ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><br><span class="StickerNameText" data-stickerid="${stickerData.GlobalID}"></span></span>
       </div>
     `;
   }
+  TranslateStickerName(container, CurrentLanguageCode);
 
   //container.insertAdjacentHTML('beforeend', spareSpinnerHTML);
   //container.insertAdjacentHTML('beforeend', tradeButtonHTML);
@@ -252,7 +263,7 @@ function ApplySelectedStyle(container) {
     //if(WebZeroMobileOne === 1){container.querySelector('.spare-spinner-container').style.marginTop = '56px';}
     if(WebZeroMobileOne === 0){
       if(userDataItem.selected === 0){
-        container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-90px';
+        // container.querySelector('.sticker-ribbon-transparent').style.marginTop = '-90px';
         container.querySelector('.spare-spinner-container').style.marginTop = '55px';
       }
       else{container.querySelector('.spare-spinner-container').style.marginTop = '6.5px';}      
@@ -327,9 +338,10 @@ function toggleHeartMenuBtn() {
 function appendSpareSpinner(stickerElement) {
   const spareSpinnerContainer = document.createElement("div");
   spareSpinnerContainer.classList.add("spare-spinner-container");
+  const SpareText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "SpareLabel")[CurrentLanguageCode];
   spareSpinnerContainer.innerHTML = `
     <div class="spare-field">
-      <label for="SpareQuantity" class="spare-header">Spare:</label>
+      <label for="SpareQuantity" class="spare-header" data-translation-key="SpareLabel">${SpareText}</label>
       <input type="number" inputmode="numeric" id="SpareQuantity" class="spare-text" name="SpareQuantity" min="0" max="100" value="0"size="6">
     </div>
   `;
@@ -341,7 +353,7 @@ function appendTradeButtons(stickerElement) {
   TradeButtonContainer.classList.add("trade-button-container");
   TradeButtonContainer.classList.add("BtnGroup2");
   TradeButtonContainer.innerHTML = `
-    <button class="lfft-btn lf-btn" type="button" data-property="lookingfor">LF</button><button class="lfft-btn ft-btn" type="button" data-property="fortrade">FT</button>
+    <button class="lfft-btn lf-btn" type="button" data-property="lookingfor" tabindex="-1">LF</button><button class="lfft-btn ft-btn" type="button" data-property="fortrade" tabindex="-1">FT</button>
   `;
   stickerElement.appendChild(TradeButtonContainer);
 
@@ -422,7 +434,7 @@ IgnorePrestigeBtn.addEventListener("click", function () {
   });
   PerformFilters(userData);
   countSelectedStickers();
-  countValveStickers();
+  countVaultStickers();
 });
 
 // Add event listeners to LF and FT buttons
@@ -547,8 +559,8 @@ function handleSortOrderBtnClick() {
 
   Array.from(container.children).reverse().forEach(child => { container.appendChild(child); });
 
-  if (AscendZeroDescendOne === 0) { sortOrderBtnText.textContent = "Ascending ⬆"; }
-  else if (AscendZeroDescendOne === 1) { sortOrderBtnText.textContent = "Descending ⬇"; }
+  sortOrderBtnText.setAttribute('data-translation-key', `SortOrderBtnText_${AscendZeroDescendOne}`);
+  translateLanguage(CurrentLanguageCode, `SortOrderBtnText_${AscendZeroDescendOne}`);
 }
 
 document.getElementById("SortOrderBtn").addEventListener("click", handleSortOrderBtnClick);
@@ -590,11 +602,12 @@ function FilterBySearchbar(GlobalID) {
   });
 
   if (sticker) {
-    var stickerName = sticker.StickerName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
-    var setName = sticker.SetName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
+    //var stickerName = sticker.StickerNameEN.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "").replace(/！/g, "!");
+    var stickerName = sticker[`StickerName${CurrentLanguageCode}`].toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "").replace(/！/g, "!");
+    var setName = sticker.SetName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "").replace(/！/g, "!");
     //var albumName = sticker.AlbumName.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
     var lowercaseFilterValue = filterValue.map(function (value) {
-      return value.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "");
+      return value.toLowerCase().replace(/é/g, "e").replace(/ü/g, "u").replace(/'/g, "").replace(/！/g, "!");
     });
 
     if (filterValue.length === 1) {
@@ -723,13 +736,10 @@ const AndOrFilterModeBtn = document.getElementById("AndOrFilterModeBtn");
 AndOrFilterModeBtn.addEventListener("click", function () {
   const buttonText = document.getElementById("AndOrFilterModeBtnText");
   AndZeroOrOne = (AndZeroOrOne + 1) % 2;
-  if (AndZeroOrOne === 1) {
-    buttonText.textContent = "Filter Mode: OR";
-    document.getElementById("AndOrFilterModeBtnTooltip").textContent = "OR Mode: Stickers that match at least ONE of the filter conditions will be displayed.";
-  } else {
-    buttonText.textContent = "Filter Mode: AND";
-    document.getElementById("AndOrFilterModeBtnTooltip").textContent = "AND Mode: Only stickers that match ALL filter conditions will be displayed.";
-  }
+  buttonText.setAttribute('data-translation-key', `AndOrFilterModeBtnText_${AndZeroOrOne}`);
+  translateLanguage(CurrentLanguageCode, `AndOrFilterModeBtnText_${AndZeroOrOne}`);
+  document.getElementById("AndOrFilterModeBtnTooltip").setAttribute('data-translation-key', `AndOrFilterModeBtnTooltipText_${AndZeroOrOne}`);
+  translateLanguage(CurrentLanguageCode, `AndOrFilterModeBtnTooltipText_${AndZeroOrOne}`);
   PerformFilters(userData);
 });
 
@@ -760,16 +770,29 @@ function PerformFilters(userData) {
         }
       }
     }
-
   }
   if (document.getElementById("filtermenu-searchbar").value === "") { FilterList[document.getElementById("filtermenu-searchbar").getAttribute("data-filtervalue")].FilterState = 0; }
   updateClearFiltersButton();
+  if(document.querySelector("#current-sticker-board .current-sticker-board-none")){
+    document.querySelector("#current-sticker-board .current-sticker-board-none").remove();
+  }
+  document.getElementById("current-sticker-board").style.alignContent = "";
   generateCurrentStickerBoard(STICKER_DATA, userData, "current-sticker-board");
-  const currentTarget = document.querySelector(".sort-btn.btnBlue");
-  if (currentTarget) {
-    PerformSort({ currentTarget });
-  } else {
-    PerformSort({ currentTarget: document.querySelector(`button[data-sort-type="GlobalID"]`) });
+
+  const containers = Array.from(document.querySelectorAll("#current-sticker-board .sticker-card-container"));
+  if (containers.length === 0) {
+    const NoMatchesFoundText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "NoMatchesFound")[CurrentLanguageCode];
+    document.getElementById("current-sticker-board").innerHTML = `<span class="current-sticker-board-none" data-translation-key="NoMatchesFound">${NoMatchesFoundText}</span>`;
+    document.getElementById("current-sticker-board").style.alignContent = "center";
+    return;
+  }
+  else {
+    const currentTarget = document.querySelector(".sort-btn.btnBlue");
+    if (currentTarget) {
+      PerformSort({ currentTarget });
+    } else {
+      PerformSort({ currentTarget: document.querySelector(`button[data-sort-type="GlobalID"]`) });
+    }
   }
 }
 
@@ -784,11 +807,20 @@ function FilterByButtons(GlobalID) {
 
   for (const key in FilterList) {
     const filter = FilterList[key];
-
+  
     if (
       filter.FilterName !== "1>StickerName>" &&
       filter.FilterName !== "0>spare>spare-filter-min|spare-filter-max"
     ) {
+      if (filter.FilterName.includes("SetID")) {
+        const setId = filter.FilterName.split(">")[2];
+        const set = SET_DATA.find((item) => item.SetID === setId);
+  
+        if (set && IgnorePrestige === 1 && set.Prestige === "1") {
+          continue;
+        }
+      }
+  
       switch (filter.FilterState) {
         case 0:
           DefaultStateFilters.push(filter);
@@ -909,7 +941,7 @@ document.addEventListener("click", event => {
     ApplySelectedStyle(parentContainer);
     ChangeUserDataHaveSpareValue(userData, parentContainer);
     countSelectedStickers();
-    countValveStickers();
+    countVaultStickers();
   }
 });
 
@@ -953,7 +985,7 @@ stickerContainer.addEventListener("input", function (event) {
     ChangeUserDataHaveSpareValue(userData, clickedStickerContainer);
     //setTimeout(() => {ApplySelectedStyle(clickedStickerContainer);}, 0);
     ApplySelectedStyle(clickedStickerContainer)
-    countValveStickers();
+    countVaultStickers();
   }
 });
 
@@ -1083,6 +1115,10 @@ function updateProgressBar() {
 
       var progressBar = container.querySelector(".progress-bar");
       progressBar.style.width = progressPercentage + "%";
+      if(progressValue < totalValue){
+        progressBar.style.borderRadius = "9px 0 0 9px";
+      }
+      else{progressBar.style.borderRadius = "9px";}
     }
   });
 }
@@ -1097,30 +1133,41 @@ function GenerateFilterSetButtons() {
       const SetID = set.SetID;
       const SetColour = set.Colour;
       const SetNo = parseInt(SetID) - parseInt(set.AlbumNo) * 100;
-      const SetName = set.SetName;
+      const SetName = set[`SetName${CurrentLanguageCode}`];
       const SetImgSrc = `Icon_${SetID}.png`;
       const SetTotalStickers = STICKER_DATA.filter(sticker => sticker.SetID === SetID).length;
       const SetIsPrestige = set.Prestige;
 
-      if (IgnorePrestige === 1 && SetIsPrestige === "1") { return; }
-      else {
+      const existingButton = filterBtnSubgroup.querySelector(`[data-filtervalue="1>SetID>${SetID}"]`);
+      const existingSetCardContainer = setProgressTracker.querySelector(`[data-setidnumber="${SetID}"]`);
 
-        let ButtonElement = `
-          <button data-filtervalue="1>SetID>${SetID}" class="filter-btn btn" type="button">Set ${SetNo}</button>
+      const SetText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "set")[CurrentLanguageCode];
+
+      if (IgnorePrestige === 1 && SetIsPrestige === "1") {
+        if(existingButton) {existingButton.remove();}
+        if(existingSetCardContainer) {existingSetCardContainer.remove();}
+      }
+      else {
+        if (!existingButton) {
+          let ButtonElement = `
+          <button data-filtervalue="1>SetID>${SetID}" class="filter-btn btn" type="button"><span data-translation-key="set">${SetText}</span>&nbsp;${SetNo}</button>
         `;
         filterBtnSubgroup.innerHTML += ButtonElement;
-
-        let SetNameClass = "set-name";
-        if (SetName.length > 15) { SetNameClass = "set-name-long-min15"; }
-        if (isBrighterThan(SetColour, "#CCCCCC")) { SetNameClass += "-dark"; }
-        const SetCardContainerElement = `
-          <div class="set-card-container"><img draggable="false" data-setidnumber="${SetID}" class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src="logo/Icon_Placeholder.png";"><div class="${SetNameClass}" style="background-color: ${SetColour};">Set ${SetNo}<br>${SetName}</div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
-        `;
-
-        setProgressTracker.innerHTML += SetCardContainerElement;
+        }
+        if (!existingSetCardContainer) {
+          let SetNameClass = "set-name";
+          if (SetName.length > 15) { SetNameClass = "set-name-long-min15"; }
+          if (isBrighterThan(SetColour, "#CCCCCC")) { SetNameClass += "-dark"; }
+          const SetCardContainerElement = `
+            <div class="set-card-container"><img draggable="false" data-setidnumber="${SetID}" class="set-logo" src="logo/${SetImgSrc}" onerror="this.onerror=null;this.src="logo/Icon_Placeholder.png";"><div class="${SetNameClass}" style="background-color: ${SetColour};"><span><span data-translation-key="set">${SetText}</span> ${SetNo}</span><br><span class="SetNameText" data-setid="${SetID}"></span></div><div class="progress-container"><div class="progress-bar"></div><div class="progress-text"><span data-setid="${SetID}">0</span> / ${SetTotalStickers}</div></div></div>
+          `;  
+          setProgressTracker.innerHTML += SetCardContainerElement;
+        }
       }
     }
   });
+  translateLanguage(CurrentLanguageCode, "set");
+  TranslateSetName(CurrentLanguageCode);
   const buttons = filterBtnSubgroup.querySelectorAll(".filter-btn");
 
   buttons.forEach((button) => {
@@ -1171,13 +1218,13 @@ function exportUserData() {
 
   const playerIGN = document.getElementById("player-ign").value;
   const playerLink = document.getElementById("player-link").value;
-  const LeftoverValveStars = document.getElementById("leftover-total-valve-quantity").value;
+  const LeftoverVaultStars = document.getElementById("leftover-total-vault-quantity").value;
 
   const additionalLines = [
     `CurrentAlbumNumber: ${CurrentAlbumNumber}`,
     `player-ign: ${playerIGN}`,
     `player-link: ${playerLink}`,
-    `leftover-valve-stars: ${LeftoverValveStars}`,
+    `leftover-vault-stars: ${LeftoverVaultStars}`,
   ];
 
   const userDataString = JSON.stringify(userData, null, 2);
@@ -1199,31 +1246,31 @@ function importUserData(userDataString) {
     // Extract player-ign and player-link values
     let playerIGN = "";
     let playerLink = "";
-    let LeftoverValveStars = "";
+    let LeftoverVaultStars = "";
     let userDataAlbumNumber = ""
     const lines = userDataString.split("\n");
-    lines.forEach(line => {
+    lines.forEach((line, index) => {
       if (line.startsWith("CurrentAlbumNumber: ")) {
         userDataAlbumNumber = line.substring("CurrentAlbumNumber: ".length);
         if (userDataAlbumNumber !== CurrentAlbumNumber) {
-          console.error("Incorrect Album:", userDataAlbumNumber, ", new userData for current album will be created.");
+          console.error("Incorrect Album:", userDataAlbumNumber, ", new userData for the current album will be created.");
           CreateNewUserData(STICKER_DATA);
           throw new Error("Incorrect Album");
         }
-      }
-      else if (line.startsWith("player-ign: ")) {
+      } else if (line.startsWith("player-ign: ")) {
         playerIGN = line.substring("player-ign: ".length);
       } else if (line.startsWith("player-link: ")) {
         playerLink = line.substring("player-link: ".length);
-      }
-      else if (line.startsWith("leftover-valve-stars: ")) {
-        LeftoverValveStars = line.substring("leftover-valve-stars: ".length);
+      } else if (line.startsWith("leftover-valve-stars: ")) {
+        lines[index] = line.replace("leftover-valve-stars: ", "leftover-vault-stars: ");
+      } else if (line.startsWith("leftover-vault-stars: ")) {
+        LeftoverVaultStars = line.substring("leftover-vault-stars: ".length);
       }
     });
-    if (LeftoverValveStars === "") { LeftoverValveStars = "0"; }
+    if (LeftoverVaultStars === "") { LeftoverVaultStars = "0"; }
 
     // Remove player-ign and player-link lines from userDataString
-    const filteredLines = lines.filter(line => !line.startsWith("CurrentAlbumNumber: ") && !line.startsWith("player-ign: ") && !line.startsWith("player-link: ") && !line.startsWith("leftover-valve-stars: "));
+    const filteredLines = lines.filter(line => !line.startsWith("CurrentAlbumNumber: ") && !line.startsWith("player-ign: ") && !line.startsWith("player-link: ") && !line.startsWith("leftover-vault-stars: "));
     const filteredUserDataString = filteredLines.join("\n");
 
     parsedData = JSON.parse(filteredUserDataString);
@@ -1244,7 +1291,7 @@ function importUserData(userDataString) {
     // Store player-ign and player-link values
     document.getElementById("player-ign").value = playerIGN;
     document.getElementById("player-link").value = playerLink;
-    document.getElementById("leftover-total-valve-quantity").value = LeftoverValveStars
+    document.getElementById("leftover-total-vault-quantity").value = LeftoverVaultStars
 
     userData = parsedData;
     clearFilters();
@@ -1255,8 +1302,9 @@ function importUserData(userDataString) {
       RestoreTradeStates(userData, container);
       ChangeUserDataHaveSpareValue(userData, container);
       // countSelectedStickers();
-      countValveStickers();
+      // countVaultStickers();
     });
+    countVaultStickers();
     countSelectedStickers();
     updateProgressBar();
   } catch (error) {
@@ -1344,7 +1392,7 @@ function UpdateTotalStickerByRarityQuantity() {
 function countSelectedStickers() {
   const userStickersQuantity = document.querySelector("#user-stickers-quantity");
   const setDuplicates = new Map();
-  const setSpans = Array.from(document.querySelectorAll("[data-setid]"));
+  const setSpans = Array.from(document.querySelectorAll(".progress-text span[data-setid]"));
 
   // Reset each data-setid value to zero
   setSpans.forEach(setSpan => { setSpan.textContent = "0"; });
@@ -1414,10 +1462,10 @@ function countSelectedStickerByRarity() {
   document.getElementById(`gold-percentage`).textContent = `${GoldenPercentage}%`;
 }
 
-function countValveStickers() {
-  const totalValveQuantity = document.querySelector("#total-valve-quantity");
+function countVaultStickers() {
+  const totalVaultQuantity = document.querySelector("#total-vault-quantity");
 
-  let valveQuantity = 0;
+  let vaultQuantity = 0;
 
   for (const key in userData) {
     const globalId = userData[key].id;
@@ -1435,47 +1483,78 @@ function countValveStickers() {
         const stickerRarity = parseInt(stickerData.StickerRarity);
         const isPrestige = parseInt(stickerData.Golden);
         if (isPrestige === 1) {
-          valveQuantity += spareQuantity * stickerRarity * 2;
+          vaultQuantity += spareQuantity * stickerRarity * 2;
         } else {
-          valveQuantity += spareQuantity * stickerRarity;
+          vaultQuantity += spareQuantity * stickerRarity;
         }
       }
     }
   }
 
-  let PrestigeLeftoverQuantity = document.getElementById("leftover-total-valve-quantity").value;
+  let PrestigeLeftoverQuantity = document.getElementById("leftover-total-vault-quantity").value;
   if (isNaN(PrestigeLeftoverQuantity)) {
     PrestigeLeftoverQuantity = 0;
   }
 
-  const ValveSum = valveQuantity + parseInt(PrestigeLeftoverQuantity);
-  totalValveQuantity.textContent = ValveSum.toString();
+  const VaultSum = vaultQuantity + parseInt(PrestigeLeftoverQuantity);
+  totalVaultQuantity.textContent = VaultSum.toString();
 
-  const valveTierImage = document.querySelector(".valve-tier");
+  const vaultTierImage = document.querySelector(".vault-tier");
   let StickersToNextTier = 0;
   let nextTierText = "";
 
-    document.getElementById("NextValveCounter").style.display = "block";
-  if (ValveSum < VaultTierOne) {
-    StickersToNextTier = VaultTierOne - ValveSum;
-    nextTierText = `${StickersToNextTier} stars until Tier 1 vault.`;
-    valveTierImage.src = "";
-  } else if (VaultTierOne <= ValveSum && ValveSum < VaultTierTwo) {
-    StickersToNextTier = VaultTierTwo - ValveSum;
-    nextTierText = `${StickersToNextTier} stars until Tier 2 vault.`;
-    valveTierImage.src = "assets/stickers/StickerValveTier1.png";
-  } else if (VaultTierTwo <= ValveSum && ValveSum < VaultTierThree) {
-    StickersToNextTier = VaultTierThree - ValveSum;
-    nextTierText = `${StickersToNextTier} stars until Tier 3 vault.`;
-    valveTierImage.src = "assets/stickers/StickerValveTier2.png";
-  } else if (ValveSum >= VaultTierThree) {
-    StickersToNextTier = ValveSum - VaultTierThree;
-    var TierThreeVaultExchangeAmount = Math.floor(ValveSum / VaultTierThree);
-    valveTierImage.src = "assets/stickers/StickerValveTier3.png";
-    var times = TierThreeVaultExchangeAmount === 0 || TierThreeVaultExchangeAmount > 1 ? 'times' : 'time';
-    nextTierText = `${StickersToNextTier} stars remaining after unlocking Tier 3 vault. (Can unlock Tier 3 vault ${TierThreeVaultExchangeAmount} ${times}.)`;
+  document.getElementById("NextVaultCounter").style.display = "block";
+  if (VaultSum < VaultTierOne) {
+    StickersToNextTier = VaultTierOne - VaultSum;
+    nextTierText = "NextVaultCounterText_0";
+    vaultTierImage.src = "";
+  } else if (VaultTierOne <= VaultSum && VaultSum < VaultTierTwo) {
+    StickersToNextTier = VaultTierTwo - VaultSum;
+    nextTierText = "NextVaultCounterText_1";
+    vaultTierImage.src = "assets/stickers/StickerVaultTier1.png";
+  } else if (VaultTierTwo <= VaultSum && VaultSum < VaultTierThree) {
+    StickersToNextTier = VaultTierThree - VaultSum;
+    nextTierText = "NextVaultCounterText_2";
+    vaultTierImage.src = "assets/stickers/StickerVaultTier2.png";
+  } else if (VaultSum >= VaultTierThree) {
+    StickersToNextTier = VaultSum - VaultTierThree;    
+    vaultTierImage.src = "assets/stickers/StickerVaultTier3.png";
+    nextTierText = "NextVaultCounterText_3";
   }
-  document.getElementById("NextValveCounter").textContent = nextTierText;
+  
+  document.getElementById("NextVaultCounter").setAttribute("data-translation-key", nextTierText);
+  translateLanguage(CurrentLanguageCode, nextTierText);
+  let NextVaultCounterText = document.getElementById("NextVaultCounter").textContent;
+  NextVaultCounterText = NextVaultCounterText.replace('${StickersToNextTier}', StickersToNextTier);
+  if (VaultSum >= VaultTierThree) {
+    var TierThreeVaultExchangeAmount = Math.floor(VaultSum / VaultTierThree);
+    NextVaultCounterText = NextVaultCounterText.replace('${TierThreeVaultExchangeAmount}', TierThreeVaultExchangeAmount);
+    if(NextVaultCounterText.includes("${times}")){
+      var times = TierThreeVaultExchangeAmount === 0 || TierThreeVaultExchangeAmount > 1 ? 'times' : 'time';
+      NextVaultCounterText = NextVaultCounterText.replace('${times}', times);
+    }
+  }  
+  document.getElementById("NextVaultCounter").textContent = NextVaultCounterText;
+  // if (VaultSum < VaultTierOne) {
+  //   StickersToNextTier = VaultTierOne - VaultSum;
+  //   nextTierText = `${StickersToNextTier} stars until Tier 1 vault.`;
+  //   vaultTierImage.src = "";
+  // } else if (VaultTierOne <= VaultSum && VaultSum < VaultTierTwo) {
+  //   StickersToNextTier = VaultTierTwo - VaultSum;
+  //   nextTierText = `${StickersToNextTier} stars until Tier 2 vault.`;
+  //   vaultTierImage.src = "assets/stickers/StickerVaultTier1.png";
+  // } else if (VaultTierTwo <= VaultSum && VaultSum < VaultTierThree) {
+  //   StickersToNextTier = VaultTierThree - VaultSum;
+  //   nextTierText = `${StickersToNextTier} stars until Tier 3 vault.`;
+  //   vaultTierImage.src = "assets/stickers/StickerVaultTier2.png";
+  // } else if (VaultSum >= VaultTierThree) {
+  //   StickersToNextTier = VaultSum - VaultTierThree;
+  //   var TierThreeVaultExchangeAmount = Math.floor(VaultSum / VaultTierThree);
+  //   vaultTierImage.src = "assets/stickers/StickerVaultTier3.png";
+  //   var times = TierThreeVaultExchangeAmount === 0 || TierThreeVaultExchangeAmount > 1 ? 'times' : 'time';
+  //   nextTierText = `${StickersToNextTier} stars remaining after unlocking Tier 3 vault. (Can unlock Tier 3 vault ${TierThreeVaultExchangeAmount} ${times}.)`;
+  // }
+  // document.getElementById("NextVaultCounter").textContent = nextTierText;
 }
 
 
@@ -1493,21 +1572,10 @@ function UpdateAlbumStartEndTime() {
   const startTimeSpan = document.querySelector("#start-time");
   const endTimeSpan = document.querySelector("#end-time");
 
-  let earliestStartTime = Infinity;
-  let earliestEndTime = Infinity;
+  const AlbumData = ALBUM_DATA.find(item => item["AlbumNo"] === CurrentAlbumNumber);
 
-  SET_DATA.forEach((set) => {
-    if (set.AlbumNo === CurrentAlbumNumber) {
-      const startTime = parseInt(set.StartTime);
-      const endTime = parseInt(set.EndTime);
-
-      if (startTime < earliestStartTime) { earliestStartTime = startTime; }
-      if (endTime < earliestEndTime) { earliestEndTime = endTime; }
-    }
-  });
-
-  const startDateTime = new Date(earliestStartTime * 1000);
-  const endDateTime = new Date(earliestEndTime * 1000);
+  const startDateTime = new Date(AlbumData.StartTime * 1000);
+  const endDateTime = new Date(AlbumData.EndTime * 1000);
 
   const startFormattedTime = startDateTime.toLocaleString("en-US", {
     year: "numeric",
@@ -1613,12 +1681,9 @@ function DarkenColour(colour, percentagevalue) {
 
 function handleSetImageOrientationBtnClick(isClicked) {
   if (isClicked === true) { ImgOrientationLandscapeZeroPortraitOne = (ImgOrientationLandscapeZeroPortraitOne + 1) % 2; }
-
-  if (ImgOrientationLandscapeZeroPortraitOne === 0) {
-    document.getElementById("SetImageOrientationBtn").textContent = "Current Layout: Landscape";
-  } else if (ImgOrientationLandscapeZeroPortraitOne === 1) {
-    document.getElementById("SetImageOrientationBtn").textContent = "Current Layout: Portrait";
-  }
+  document.getElementById("SetImageOrientationBtn").setAttribute('data-translation-key', `SetImageOrientationBtnText_${ImgOrientationLandscapeZeroPortraitOne}`);
+  translateLanguage(CurrentLanguageCode, `SetImageOrientationBtnText_${ImgOrientationLandscapeZeroPortraitOne}`);
+  PerformFilters(userData);
 }
 document.getElementById("SetImageOrientationBtn").addEventListener("click", function () {
   handleSetImageOrientationBtnClick(true);
@@ -1639,33 +1704,12 @@ IncludePlayerLinkBtn.addEventListener("click", function () {
   else { IncludePlayerLinkBtn.classList.remove("btnGreen"); }
 });
 
-function copyToCollectionScreenshot() {
+function copyToCollectionScreenshot(DestinationElement) {
   var middleSide = document.getElementById("middle-side");
-  var collectionScreenshot = document.getElementById("collection-screenshot");
-  document.getElementById("snapshot-area").style.width = "1200px";
+  var collectionScreenshot = document.getElementById(DestinationElement);
 
   if (middleSide && collectionScreenshot) {
     collectionScreenshot.innerHTML = "";
-
-    var playerIGN = "";
-    var playerLink = "";
-
-    if (includeIGN === 1) {
-      playerIGN = document.getElementById("player-ign").value;
-    }
-
-    if (includePlayerLink === 1) {
-      playerLink = document.getElementById("player-link").value;
-    }
-
-    // Create the new element for player info
-    var newElement = `
-      <div id="collection-screenshot-player-info">
-        <div id="collection-screenshot-player-name">${playerIGN}</div>
-        <div id="collection-screenshot-my-album">My Album</div>
-        <div id="collection-screenshot-player-link">${playerLink}</div>
-      </div>
-    `;
 
     var clonedContents = middleSide.innerHTML;
     collectionScreenshot.style.backgroundColor = "rgba(248, 244, 228)";
@@ -1675,18 +1719,7 @@ function copyToCollectionScreenshot() {
     // Replace class names in clonedContents
     clonedContents = clonedContents.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
     clonedContents = clonedContents.replace(/trade-button-container/g, "trade-button-container-screenshot");
-
-    collectionScreenshot.innerHTML = newElement + clonedContents;
-
-    const TimeNow = Math.floor(Date.now() / 1000);
-    
-    var snapshotFooterElement = `<div id="collection-screenshot-footer"><div id="collection-screenshot-footer-gamever">v1.21.2_${TimeNow}</div><div id="collection-screenshot-footer-link">https://mogotools.web.app/</div></div>`;
-
-    // Add the SnapshotFooterElement after #sticker-board is cloned
-    var stickerBoard = collectionScreenshot.querySelector("#sticker-board");
-    if (stickerBoard) {
-      stickerBoard.insertAdjacentHTML("afterend", snapshotFooterElement);
-    }
+    collectionScreenshot.innerHTML = clonedContents;
 
     var screenshotContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
     screenshotContainers.forEach(function (container) {
@@ -1779,6 +1812,7 @@ function copyToCollectionScreenshot() {
           container.style.opacity = "1.0";
         });
       }
+
       if(container.querySelector(".sticker-ribbon-transparent")){
         container.querySelector(".trade-button-container-screenshot").style.marginTop = "54px";
       }
@@ -1796,31 +1830,172 @@ function copyToCollectionScreenshot() {
       document.getElementById("collection-screenshot-footer-link").style.width = "50%";
     }
 
-    // Calculate the current width and height of middle-side
-    var currentWidth = collectionScreenshot.offsetWidth;
-    var currentHeight = collectionScreenshot.offsetHeight;
+  } else {
+    console.log("Either middle-side or collection-screenshot element is not found.");
+  }
+}
 
-    // Calculate the current size in megapixels
-    var currentSize = currentWidth * currentHeight;
-    //console.log(currentWidth);
-    //console.log(currentHeight);
+function copyToTradeScreenshot(DestinationElement, UserDataProperty) {
+  var middleSide = document.getElementById("current-sticker-board");
+  var collectionScreenshot = document.getElementById(DestinationElement);
+  collectionScreenshot.style.alignContent = "";
 
-    // Check if the current size exceeds 3 megapixels
-    if (currentSize > 1579008) {
-      // Calculate the scale factor to resize the element proportionally
-      var scaleFactor = Math.sqrt(1579008 / currentSize);
+  if (middleSide && collectionScreenshot) {
+    collectionScreenshot.innerHTML = "";
+    collectionScreenshot.style.backgroundColor = "rgba(248, 244, 228)";
+    const fragment = document.createDocumentFragment();
+    const matchingItems = STICKER_DATA.filter(item => item["GlobalID"] in userData && userData[item["GlobalID"]][UserDataProperty] === 1 && userData[item["GlobalID"]].show === 1)
+    .sort((a, b) => {
+      // Sort by Golden, largest to smallest
+      if (a.Golden > b.Golden) return -1;
+      if (a.Golden < b.Golden) return 1;
 
-      // Resize middle-side and all child elements proportionally
-      collectionScreenshot.style.transform = `scale(${scaleFactor})`;
-      collectionScreenshot.style.transformOrigin = "top left";
+      // If Golden is the same, sort by StickerRarity, largest to smallest
+      if (a.StickerRarity > b.StickerRarity) return -1;
+      if (a.StickerRarity < b.StickerRarity) return 1;
+
+      // If both Golden and StickerRarity are the same, sort by GlobalID, smallest to largest
+      if (a.GlobalID < b.GlobalID) return -1;
+      if (a.GlobalID > b.GlobalID) return 1;
+
+      // Items are equal
+      return 0;
+    });
+    if (matchingItems.length === 0) {
+      const NoneText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "None")[CurrentLanguageCode];
+      collectionScreenshot.innerHTML = `<span class="lfft-snapshot-none" data-translation-key="none">${NoneText}</span>`;
+      collectionScreenshot.style.alignContent = "center";
+      return;
+    } 
+    else{
+      for (const item of matchingItems) {
+        const userDataItem = userData[item["GlobalID"]];
+        const globalId = userDataItem.id;    
+        const stickerData = STICKER_DATA.find(sticker => sticker.GlobalID === globalId);
+        
+        if (IgnorePrestige === 1 && stickerData.Prestige === "1") {continue;}
+        else {
+          if(userDataItem[UserDataProperty] === 0){continue;}
+          else{
+            const stickerElement = CreateStickerElement(item, "sticker-card-container", "sticker-card", true);
+            fragment.appendChild(stickerElement);
+          }
+        }
+        collectionScreenshot.appendChild(fragment);
+      }
+  
+      // Replace class names in clonedContents
+      collectionScreenshot.innerHTML = collectionScreenshot.innerHTML.replace(/sticker-card-container/g, "sticker-card-container-screenshot");
+  
+      var screenshotContainers = collectionScreenshot.querySelectorAll(".sticker-card-container-screenshot");
+      screenshotContainers.forEach(function (container) {
+        var globalID = container.getAttribute("data-global");
+        var spanElement = document.createElement("span");
+        spanElement.className = "spare-text-screenshot";
+        spanElement.textContent = userData[globalID].spare;
+        var spareTextElement = container.querySelector(".spare-text");
+  
+        if (userData[globalID][UserDataProperty] === 0) {container.remove();}
+        else{
+          container.style.opacity = "1.0";
+          container.querySelector(".trade-button-container").remove();
+          if (spareTextElement) {
+            spareTextElement.parentNode.replaceChild(spanElement, spareTextElement);
+          }
+    
+          var spareSpinnerContainer = container.querySelector(".spare-spinner-container");
+    
+          if (spareSpinnerContainer) {
+            spareSpinnerContainer.parentNode.removeChild(spareSpinnerContainer);
+          }
+    
+          if (userData[globalID].spare > 0) {
+            const stickerData = STICKER_DATA.find(item => item["GlobalID"] === globalID)
+            var SpareImagePath = "Collections_TradingGroup_NumberBG_Small.png";
+            if(stickerData.Golden === "1"){
+              SpareImagePath = "GoldenBlitz_Stickers_Badge01.png";
+            };
+            var spareContainer = document.createElement("div");
+            spareContainer.className = "spare-container-no-spinner";
+            spareContainer.innerHTML = `
+              <img draggable="false" class="spare-img" src="assets/stickers/${SpareImagePath}">
+              <span class="spare-snapshot-text">+${userData[globalID].spare}</span>
+            `;
+            if(stickerData.Golden === "1"){
+              spareContainer.querySelector(".spare-img").style.width = "50%"; 
+              spareContainer.style.marginTop = "-63px";
+              spareContainer.querySelector(".spare-snapshot-text").style.color = "white";
+              
+              spareContainer.querySelector(".spare-snapshot-text").style.marginTop = "4.5px";
+            };
+    
+            if(container.querySelector(".sticker-ribbon")){
+              const parentElement = container.querySelector(".sticker-ribbon").parentNode;
+              parentElement.insertBefore(spareContainer, container.querySelector(".sticker-ribbon"));
+              container.querySelector(".sticker-ribbon").style.marginTop = "-4.5px";
+              if(stickerData.Golden === "1"){container.querySelector(".sticker-ribbon").style.marginTop = "-8.5px";}
+            }
+            if(container.querySelector(".sticker-ribbon-transparent")){
+              const parentElement = container.querySelector(".sticker-ribbon-transparent").parentNode;
+              parentElement.insertBefore(spareContainer, container.querySelector(".sticker-ribbon-transparent"));
+              container.querySelector(".sticker-ribbon-transparent").style.marginTop = "-58.5px";
+            }
+            if (ImgOrientationLandscapeZeroPortraitOne === 1) {
+              if(stickerData.Golden === "0"){
+                container.querySelector(".spare-snapshot-text").style.marginLeft = "-31px";
+                container.querySelector(".spare-snapshot-text").style.marginTop = "3px";
+              }
+              else{
+                container.querySelector(".spare-snapshot-text").style.marginLeft = "-33px";
+              }
+            }
+            if (navigator.userAgent.indexOf("Safari") > -1) {
+              var SpareSnapshotText = container.querySelector(".spare-snapshot-text");
+              var currentSpareSnapshotTextMarginTop = parseInt(SpareSnapshotText.style.marginTop);
+              SpareSnapshotText.style.marginTop = (currentSpareSnapshotTextMarginTop + 1) + "px";
+              if(container.querySelector(".sticker-ribbon")){            
+                var stickerRibbon = container.querySelector(".sticker-ribbon");
+              }
+              if(container.querySelector(".sticker-ribbon-transparent")){
+                var stickerRibbon = container.querySelector(".sticker-ribbon-transparent");
+              }
+              var currentstickerRibbonMarginTop = parseInt(stickerRibbon.style.marginTop);
+              stickerRibbon.style.marginTop = (currentstickerRibbonMarginTop + 1) + "px";
+            }
+          }
+    
+          if (ImgOrientationLandscapeZeroPortraitOne === 1) {
+            container.style.flexBasis = "calc(28% - 10px)";
+          }
+        }       
+      });
+      if (ImgOrientationLandscapeZeroPortraitOne === 1) {
+        collectionScreenshot.style.width = "440px";
+      }
     }
   } else {
     console.log("Either middle-side or collection-screenshot element is not found.");
   }
 }
 
-function captureScreenshot() {
-  var collectionScreenshot = document.getElementById("collection-screenshot");
+function ResizeElementBeforeCapture(TargetElementDiv){
+      // Calculate the current width and height of middle-side
+      var currentWidth = TargetElementDiv.offsetWidth;
+      var currentHeight = TargetElementDiv.offsetHeight;  
+      // Calculate the current size in megapixels
+      var currentSize = currentWidth * currentHeight;
+      // Check if the current size exceeds 3 megapixels
+      if (currentSize > 1579008) {
+        // Calculate the scale factor to resize the element proportionally
+        var scaleFactor = Math.sqrt(1579008 / currentSize);  
+        // Resize middle-side and all child elements proportionally
+        TargetElementDiv.style.transform = `scale(${scaleFactor})`;
+        TargetElementDiv.style.transformOrigin = "top left";
+      }
+}
+
+function captureScreenshot(TargetElementID) {
+  var collectionScreenshot = document.getElementById(TargetElementID);
   if (collectionScreenshot) {
     html2canvas(collectionScreenshot, { scale: 2, useCORS: true })
       .then(function (canvas) {
@@ -1852,18 +2027,147 @@ function captureScreenshot() {
 
 var dlPngButton = document.getElementById("dl-png");
 if (dlPngButton) {
+  document.getElementById("collection-screenshot").style.display = "initial";
+  document.getElementById("trade-screenshot").style.display = "none";
   dlPngButton.addEventListener("click", function () {
     document.getElementById("collection-screenshot").innerHTML = "";
-    dlPngButton.textContent = "Downloading...";
-    dlPngButton.classList.add("btnYellow");
-    copyToCollectionScreenshot();
-    captureScreenshot();
+    const DownloadingText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "Downloading")[CurrentLanguageCode];
+    dlPngButton.textContent = DownloadingText;
+    dlPngButton.classList.add("btnYellow");    
+    document.getElementById("snapshot-area").style.width = "1200px";
+
+    copyToCollectionScreenshot("collection-screenshot");
+    var playerIGN = "";
+    var playerLink = "";
+    if (includeIGN === 1) {playerIGN = document.getElementById("player-ign").value;}
+    if (includePlayerLink === 1) {playerLink = document.getElementById("player-link").value;}
+    // Create the new element for player info
+    const MyAlbumText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "MyAlbum")[CurrentLanguageCode];
+    var snapshotHeaderElement = `
+    <div id="collection-screenshot-player-info">
+      <div id="collection-screenshot-player-name">${playerIGN}</div>
+      <div id="collection-screenshot-my-album">${MyAlbumText}</div>
+      <div id="collection-screenshot-player-link">${playerLink}</div>
+    </div>
+    `;
+    const TimeNow = Math.floor(Date.now() / 1000);
+    var snapshotFooterElement = `<div id="collection-screenshot-footer"><div id="collection-screenshot-footer-gamever">v1.21.2_${TimeNow}</div><div id="collection-screenshot-footer-link">https://mogotools.web.app/</div></div>`;
+    var collectionScreenshot = document.getElementById("collection-screenshot");
+    collectionScreenshot.innerHTML = snapshotHeaderElement + collectionScreenshot.innerHTML + snapshotFooterElement; 
+    if (ImgOrientationLandscapeZeroPortraitOne === 1) {
+      document.getElementById("collection-screenshot-footer-gamever").style.width = "50%";
+      document.getElementById("collection-screenshot-footer-link").style.width = "50%";
+    }   
+
+    ResizeElementBeforeCapture(document.getElementById("collection-screenshot"));
+    captureScreenshot("collection-screenshot");
     document.getElementById("collection-screenshot").innerHTML = "";
+    document.getElementById("collection-screenshot").style.display = "none";
     setTimeout(function () {
-      dlPngButton.textContent = "Download successful!";
+      const DownloadSuccessfulText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "DownloadSuccessful")[CurrentLanguageCode];
+      dlPngButton.textContent = DownloadSuccessfulText;
       setTimeout(function () {
         dlPngButton.classList.remove("btnYellow");
         dlPngButton.textContent = "Download as PNG";
+      }, 3000);
+    }, 3000);
+  });
+}
+
+var dlTradePngButton = document.getElementById("dl-trade-png");
+if (dlTradePngButton) {
+  dlTradePngButton.addEventListener("click", function () {
+    document.getElementById("collection-screenshot").style.display = "none";
+    document.getElementById("trade-screenshot").style.display = "initial";
+    document.getElementById("trade-screenshot-container").setAttribute("style", "");
+    document.getElementById("fortrade-screenshot-area").style.height = "";
+    document.getElementById("lookingfor-screenshot-area").style.height = "";
+
+
+    document.getElementById("fortrade-screenshot-area").innerHTML = "";
+    document.getElementById("lookingfor-screenshot-area").innerHTML = "";
+    const DownloadingText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "Downloading")[CurrentLanguageCode];
+    dlTradePngButton.textContent = DownloadingText;
+    dlTradePngButton.classList.add("btnYellow");    
+    // document.getElementById("trade-screenshot").style.width = "1200px";
+
+    copyToTradeScreenshot("fortrade-screenshot-area", "fortrade");
+    copyToTradeScreenshot("lookingfor-screenshot-area", "lookingfor");    
+    document.getElementById("fortrade-screenshot-area").style.width = "400px";
+    document.getElementById("fortrade-screenshot-area").style.background = "";
+    document.getElementById("lookingfor-screenshot-area").style.width = "400px";
+    document.getElementById("lookingfor-screenshot-area").style.background = "";
+    
+    document.getElementById("fortrade-screenshot-area").innerHTML = document.getElementById("fortrade-screenshot-area").innerHTML.replace(/sticker-card-container-screenshot/g, "sticker-card-container-screenshot-trade");
+    document.getElementById("lookingfor-screenshot-area").innerHTML = document.getElementById("lookingfor-screenshot-area").innerHTML.replace(/sticker-card-container-screenshot/g, "sticker-card-container-screenshot-trade");
+
+    var playerIGN = "";
+    var playerLink = "";
+    if (includeIGN === 1) {playerIGN = document.getElementById("player-ign").value;}
+    if (includePlayerLink === 1) {playerLink = document.getElementById("player-link").value;}
+    // Create the new element for player info
+    const TimeNow = Math.floor(Date.now() / 1000);
+    const MyTradeText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "MyTrade")[CurrentLanguageCode];
+    if (document.getElementById("collection-screenshot-player-info") && document.getElementById("collection-screenshot-footer")) {
+      document.getElementById("collection-screenshot-player-info").outerHTML = `
+        <div id="collection-screenshot-player-info" style="width: 440px">
+        <div id="collection-screenshot-player-name">${playerIGN}</div>
+        <div id="collection-screenshot-my-album">${MyTradeText}</div>
+        <div id="collection-screenshot-player-link">${playerLink}</div>
+      </div>
+      `
+      document.getElementById("collection-screenshot-footer").outerHTML = `
+      <div id="collection-screenshot-footer" style="width: 440px"><div id="collection-screenshot-footer-gamever">v1.21.2_${TimeNow}</div><div id="collection-screenshot-footer-link">https://mogotools.web.app/</div></div>
+      `
+    }
+    else{
+      var snapshotHeaderElement = `
+      <div id="collection-screenshot-player-info" style="width: 440px">
+        <div id="collection-screenshot-player-name">${playerIGN}</div>
+        <div id="collection-screenshot-my-album">${MyTradeText}</div>
+        <div id="collection-screenshot-player-link">${playerLink}</div>
+      </div>
+      `;
+      
+      var snapshotFooterElement = `<div id="collection-screenshot-footer" style="width: 440px"><div id="collection-screenshot-footer-gamever">v1.21.2_${TimeNow}</div><div id="collection-screenshot-footer-link">https://mogotools.web.app/</div></div>`;
+      var tradeScreenshot = document.getElementById("trade-screenshot");
+      tradeScreenshot.innerHTML = snapshotHeaderElement + tradeScreenshot.innerHTML + snapshotFooterElement; 
+    }
+
+    
+    if (ImgOrientationLandscapeZeroPortraitOne === 0) {
+      document.getElementById("trade-screenshot-container").style.display = "flex";
+      document.getElementById("trade-screenshot-container").style.justifyContent = "center";
+      document.getElementById("trade-screenshot-container").style.columnGap = "30px";
+      document.getElementById("collection-screenshot-player-info").style.width = "900px";
+      document.getElementById("collection-screenshot-footer").style.width = "900px";
+
+
+      var fortradeScreenshotHeight = document.getElementById("fortrade-screenshot-area").offsetHeight;
+      var lookingforScreenshotHeight = document.getElementById("lookingfor-screenshot-area").offsetHeight;
+  
+      if (fortradeScreenshotHeight > lookingforScreenshotHeight) {
+        document.getElementById("fortrade-screenshot-area").style.height = fortradeScreenshotHeight + "px";
+        document.getElementById("lookingfor-screenshot-area").style.height = fortradeScreenshotHeight + "px";
+      } else {
+        document.getElementById("fortrade-screenshot-area").style.height = lookingforScreenshotHeight + "px";
+        document.getElementById("lookingfor-screenshot-area").style.height = lookingforScreenshotHeight + "px";
+      }
+    }
+
+    //if(ImgOrientationLandscapeZeroPortraitOne === 1){}
+    document.getElementById("trade-screenshot").style.background = `url("assets/background/Collections_Album_BG.png")`;
+    ResizeElementBeforeCapture(document.getElementById("trade-screenshot"));
+    captureScreenshot("trade-screenshot");
+    document.getElementById("fortrade-screenshot-area").innerHTML = "";
+    document.getElementById("lookingfor-screenshot-area").innerHTML = "";
+    document.getElementById("trade-screenshot").style.display = "none";
+    setTimeout(function () {
+      const DownloadSuccessfulText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "DownloadSuccessful")[CurrentLanguageCode];
+      dlTradePngButton.textContent = DownloadSuccessfulText;
+      setTimeout(function () {
+        dlTradePngButton.classList.remove("btnYellow");
+        dlTradePngButton.textContent = "Download as PNG";
       }, 3000);
     }, 3000);
   });
@@ -1876,16 +2180,16 @@ function handleViewportBtnClick(isClicked) {
   if (WebZeroMobileOne === 0) {
     document.getElementById("DefaultCSS").removeAttribute("disabled");
     document.getElementById("MobileCSS").setAttribute("disabled", true);
-    ViewportBtnText.textContent = "Mobile Layout";
     document.getElementById("progress-menu-modal").style.display = "initial";
     document.getElementById("filter-sort-modal").style.display = "initial";
   } else if (WebZeroMobileOne === 1) {
     document.getElementById("DefaultCSS").setAttribute("disabled", true);
     document.getElementById("MobileCSS").removeAttribute("disabled");
-    ViewportBtnText.textContent = "Web Layout";
     document.getElementById("filter-sort-modal").style.display = "none";
     document.getElementById("progress-menu-modal").style.display = "none";
-  }
+  }  
+  ViewportBtnText.setAttribute('data-translation-key', `ViewportBtnText_${WebZeroMobileOne}`);
+  translateLanguage(CurrentLanguageCode, `ViewportBtnText_${WebZeroMobileOne}`);
 }
 document.getElementById("ViewportBtn").addEventListener("click", function () {
   handleViewportBtnClick(true);
@@ -1980,50 +2284,65 @@ function generateCurrentFiltersModalText() {
     if (filterState === 1) {
       if (filterName === "1>StickerName>") {
         if (Array.isArray(filterValue)) {
-          includeFilters.push(...filterValue.map((value) => `IS "${value}"`));
+          includeFilters.push(...filterValue.map((value) => `<span data-translation-key="IS"></span> "${value}"`));
         }
       } else if (filterName !== "0>spare>spare-filter-min|spare-filter-max") {
         const filterBtn = document.querySelector(`button[data-filtervalue="${filterName}"]`);
         if (filterBtn) {
-          includeFilters.push(`IS ${filterBtn.innerHTML}`);
+          includeFilters.push(`<span data-translation-key="IS"></span> ${filterBtn.innerHTML}`);
         }
       }
     } else if (filterState === 2) {
       if (filterName === "1>StickerName>") {
         if (Array.isArray(filterValue)) {
-          excludeFilters.push(...filterValue.map((value) => `NOT "${value}"`));
+          excludeFilters.push(...filterValue.map((value) => `<span data-translation-key="NOT"></span> "${value}"`));
         }
       } else if (filterName !== "0>spare>spare-filter-min|spare-filter-max") {
         const filterBtn = document.querySelector(`button[data-filtervalue="${filterName}"]`);
         if (filterBtn) {
-          excludeFilters.push(`NOT ${filterBtn.innerHTML}`);
+          excludeFilters.push(`<span data-translation-key="NOT"></span> ${filterBtn.innerHTML}`);
         }
       }
     }
   }
 
-  const filterModeText = `Current filter mode: ${AndZeroOrOne === 0 ? "AND" : "OR"}`;
+  // const filterModeText = `Current filter mode: ${AndZeroOrOne === 0 ? "AND" : "OR"}`;
   const spareMinValue = document.getElementById("spare-filter-min").value;
   const spareMaxValue = document.getElementById("spare-filter-max").value;
 
   let filterModeDescription = "";
   const spareFilterState = FilterList["0>spare>spare-filter-min|spare-filter-max"].FilterState;
-  if (AndZeroOrOne === 0 && spareFilterState !== 0) {
-    const filterStateText = spareFilterState === 2 ? "not between" : "between";
-    filterModeDescription = `Stickers that match ALL filter conditions and have spares ${filterStateText} ${spareMinValue} and ${spareMaxValue} will be displayed in the board.`;
-  } else if (AndZeroOrOne === 0 && spareFilterState === 0) {
-    filterModeDescription = `Stickers that match ALL filter conditions will be displayed in the board.`;
-  } else if (AndZeroOrOne === 1 && spareFilterState !== 0) {
-    const filterStateText = spareFilterState === 2 ? "not between" : "between";
-    filterModeDescription = `Stickers that match AT LEAST one of the filter conditions and have spares ${filterStateText} ${spareMinValue} and ${spareMaxValue} will be displayed in the board.`;
-  } else if (AndZeroOrOne === 1 && spareFilterState === 0) {
-    filterModeDescription = `Stickers that match AT LEAST one of the filter conditions will be displayed in the board.`;
+
+  // if (AndZeroOrOne === 0 && spareFilterState !== 0) {
+  //   const filterStateText = spareFilterState === 2 ? "not between" : "between";
+  //   filterModeDescription = `Stickers that match ALL filter conditions and have spares ${filterStateText} ${spareMinValue} and ${spareMaxValue} will be displayed in the board.`;
+  // } else if (AndZeroOrOne === 0 && spareFilterState === 0) {
+  //   filterModeDescription = `Stickers that match ALL filter conditions will be displayed in the board.`;
+  // } else if (AndZeroOrOne === 1 && spareFilterState !== 0) {
+  //   const filterStateText = spareFilterState === 2 ? "not between" : "between";
+  //   filterModeDescription = `Stickers that match AT LEAST one of the filter conditions and have spares ${filterStateText} ${spareMinValue} and ${spareMaxValue} will be displayed in the board.`;
+  // } else if (AndZeroOrOne === 1 && spareFilterState === 0) {
+  //   filterModeDescription = `Stickers that match AT LEAST one of the filter conditions will be displayed in the board.`;
+  // }
+
+  const includeFiltersText = includeFilters.length > 0 ? `<b><span data-translation-key="IncludeFilters"></span></b><br><ul>\n${includeFilters.map(filter => `<li>${filter}</li>`).join("\n")}\n</ul>` : "";
+  const excludeFiltersText = excludeFilters.length > 0 ? `<b><span data-translation-key="ExcludeFilters"></span></b><br><ul>\n${excludeFilters.map(filter => `<li>${filter}</li>`).join("\n")}\n</ul>` : "";
+
+  //currentFiltersContent.innerHTML = `${filterModeText}<br><br>${filterModeDescription}<br><br>${includeFiltersText}<br>${excludeFiltersText}`;
+
+  currentFiltersContent.innerHTML = `<span data-translation-key="ViewCurrentFiltersBtn_CurrentFilterModeText_${AndZeroOrOne}"></span><br><br><span data-translation-key="ViewCurrentFiltersBtn_CurrentFilterDescription_FilterMode${AndZeroOrOne}_SpareFilter${spareFilterState}"></span><br><br>${includeFiltersText}<br>${excludeFiltersText}`;
+
+  const TranslationElements = currentFiltersContent.querySelectorAll('[data-translation-key]');
+    TranslationElements.forEach(element => {
+      const targetTranslationKey = element.dataset.translationKey;
+      translateLanguage(CurrentLanguageCode, targetTranslationKey);
+  });
+
+  if(currentFiltersContent.innerHTML.includes("${spareMinValue}") && currentFiltersContent.innerHTML.includes("${spareMaxValue}")){
+    currentFiltersContent.innerHTML = currentFiltersContent.innerHTML.replace("${spareMinValue}", spareMinValue).replace("${spareMaxValue}", spareMaxValue);
   }
 
-  const includeFiltersText = includeFilters.length > 0 ? `<b>Include filters:</b><br><ul>\n${includeFilters.map(filter => `<li>${filter}</li>`).join("\n")}\n</ul>` : "";
-  const excludeFiltersText = excludeFilters.length > 0 ? `<b>Exclude filters:</b><br><ul>\n${excludeFilters.map(filter => `<li>${filter}</li>`).join("\n")}\n</ul>` : "";
 
-  currentFiltersContent.innerHTML = `${filterModeText}<br><br>${filterModeDescription}<br><br>${includeFiltersText}<br>${excludeFiltersText}`;
 }
 
 BasicMenuMobileOpenBtn.onclick = function () {
@@ -2061,38 +2380,87 @@ function GenerateTradePostClipboard() {
   const tradePostArea = document.querySelector(".trade-post-area");
   tradePostArea.value = ""; // Clear the trade post area
 
-  let tradePostLinesLF = "";
-  let tradePostLinesFT = "";
+  let tradePostLinesLF = [];
+  let tradePostLinesFT = [];
 
   for (const key in userData) {
-    if (userData[key].lookingfor === 1) {
+    if (userData[key].lookingfor === 1 && userData[key].show === 1) {
       const globalId = userData[key].id;
       const sticker = STICKER_DATA.find(item => item["GlobalID"] === globalId);
+      const StickerSpareValue = userData[key].spare;
 
       if (sticker) {
-        const { StickerName, SetID, AlbumNo, GlobalID, StickerRarity } = sticker;
+        const { SetID, AlbumNo, GlobalID, StickerRarity, Golden } = sticker;
+        const StickerName = sticker[`StickerName${CurrentLanguageCode}`];
         const SetNo = SetID - AlbumNo * 100;
         const SetStickerNo = GlobalID - SetID * 100;
-        const tradePostLine = `- ${StickerName}, Set ${SetNo} #${SetStickerNo}, ${StickerRarity}★\n`;
-        tradePostLinesLF += tradePostLine;
+        var GoldenText = Golden === "1" ? `{G}` : '';
+        var SpareValueText = StickerSpareValue > 0 ? `(x${StickerSpareValue})` : '';
+        const tradePostLine = `- ${StickerName}, Set ${SetNo} #${SetStickerNo}, ${StickerRarity}★${GoldenText} ${SpareValueText}\n`;
+        tradePostLinesLF.push(tradePostLine);
       }
     }
 
-    if (userData[key].fortrade === 1) {
+    if (userData[key].fortrade === 1 && userData[key].show === 1) {
       const globalId = userData[key].id;
       const sticker = STICKER_DATA.find(item => item["GlobalID"] === globalId);
+      const StickerSpareValue = userData[key].spare;
 
       if (sticker) {
-        const { StickerName, SetID, AlbumNo, GlobalID, StickerRarity } = sticker;
+        const { SetID, AlbumNo, GlobalID, StickerRarity, Golden } = sticker;
+        const StickerName = sticker[`StickerName${CurrentLanguageCode}`];
         const SetNo = SetID - AlbumNo * 100;
         const SetStickerNo = GlobalID - SetID * 100;
-        const tradePostLine = `- ${StickerName}, Set ${SetNo} #${SetStickerNo}, ${StickerRarity}★\n`;
-        tradePostLinesFT += tradePostLine;
+        var GoldenText = Golden === "1" ? `{G}` : '';
+        var SpareValueText = StickerSpareValue > 0 ? `(x${StickerSpareValue})` : '';
+        const tradePostLine = `- ${StickerName}, Set ${SetNo} #${SetStickerNo}, ${StickerRarity}★${GoldenText} ${SpareValueText}\n`;
+        tradePostLinesFT.push(tradePostLine);
       }
     }
   }
 
-  const tradePostText = `LF:\n${tradePostLinesLF}\nFT:\n${tradePostLinesFT}\n\nSend me offers to help complete the album!`;
+  // Sort LF lines by Golden, StickerRarity, and GlobalID
+  tradePostLinesLF.sort((a, b) => {
+    const goldenA = a.includes("{G}");
+    const goldenB = b.includes("{G}");
+    if (goldenA !== goldenB) {
+      return goldenB - goldenA;
+    }
+
+    const rarityA = Number(a.split("★")[0].split(",")[2]);
+    const rarityB = Number(b.split("★")[0].split(",")[2]);
+    if (rarityA !== rarityB) {
+      return rarityB - rarityA;
+    }
+
+    const globalIDA = Number(a.split("Set ")[1].split(" #")[0]);
+    const globalIDB = Number(b.split("Set ")[1].split(" #")[0]);
+    return globalIDA - globalIDB;
+  });
+
+  // Sort FT lines by Golden, StickerRarity, and GlobalID
+  tradePostLinesFT.sort((a, b) => {
+    const goldenA = a.includes("{G}");
+    const goldenB = b.includes("{G}");
+    if (goldenA !== goldenB) {
+      return goldenB - goldenA;
+    }
+
+    const rarityA = Number(a.split("★")[0].split(",")[2]);
+    const rarityB = Number(b.split("★")[0].split(",")[2]);
+    if (rarityA !== rarityB) {
+      return rarityB - rarityA;
+    }
+
+    const globalIDA = Number(a.split("Set ")[1].split(" #")[0]);
+    const globalIDB = Number(b.split("Set ")[1].split(" #")[0]);
+    return globalIDA - globalIDB;
+  });
+  const LookingForText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "LookingFor_TradePost")[CurrentLanguageCode];
+  const ForTradeText = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "ForTrade_TradePost")[CurrentLanguageCode];
+  const TradePostMessage = LANGUAGE_DICTIONARY.find(item => item["translation-key"] === "TradePostMessage")[CurrentLanguageCode];
+
+  const tradePostText = `${LookingForText}\n${tradePostLinesLF.join("")}\n${ForTradeText}\n${tradePostLinesFT.join("")}\n${TradePostMessage}`;
   tradePostArea.value = tradePostText;
 }
 
@@ -2139,7 +2507,7 @@ document.getElementById("ResetSparesBtn").onclick = function () {
     RestoreStickerSpares(userData, container);
     ChangeUserDataHaveSpareValue(userData, container);
   });
-  countValveStickers();
+  countVaultStickers();
 }
 
 document.getElementById("ToggleLFBtn").onclick = function () {
@@ -2160,6 +2528,24 @@ document.getElementById("ToggleFTBtn").onclick = function () {
   });
 }
 
+document.getElementById("ResetLFBtn").onclick = function () {
+  const containers = document.querySelectorAll(".sticker-card-container");
+  containers.forEach((container) => {
+    const CurrentStickerGlobalID = container.getAttribute("data-global");
+    userData[CurrentStickerGlobalID].lookingfor = 0;
+    RestoreTradeStates(userData, container);
+  });
+}
+
+document.getElementById("ResetFTBtn").onclick = function () {
+  const containers = document.querySelectorAll(".sticker-card-container");
+  containers.forEach((container) => {
+    const CurrentStickerGlobalID = container.getAttribute("data-global");
+    userData[CurrentStickerGlobalID].fortrade = 0;
+    RestoreTradeStates(userData, container);
+  });
+}
+
 document.getElementById("ResetAllStickersBtn").onclick = function () {
   CreateNewUserData(STICKER_DATA);
   clearFilters();
@@ -2170,15 +2556,15 @@ document.getElementById("ResetAllStickersBtn").onclick = function () {
     RestoreTradeStates(userData, container);
   })
   countSelectedStickers();
-  countValveStickers();
+  countVaultStickers();
   generateCurrentStickerBoard(STICKER_DATA, userData, "current-sticker-board");
 }
 
-document.getElementById("leftover-total-valve-quantity").addEventListener("input", handleVaultPrestigeInput);
+document.getElementById("leftover-total-vault-quantity").addEventListener("input", handleVaultPrestigeInput);
 
 function handleVaultPrestigeInput(event) {
   const target = event.target;
-  if (target.classList.contains("valve-prestige-text")) {
+  if (target.classList.contains("vault-prestige-text")) {
     target.value = target.value.replace(/^0+(?=\d)/, "");
     if (target.value > 9999) {
       if (target.value.slice(0, -1) === "9999") {
@@ -2192,13 +2578,13 @@ function handleVaultPrestigeInput(event) {
       setTimeout(() => {
         if (target.value === "") { // Check if value is still empty before setting it to 0
           target.value = 0;
-          countValveStickers(); // Call countValveStickers() after setting value to 0
+          countVaultStickers(); // Call countVaultStickers() after setting value to 0
         }
       }, 5000); // Set 5s timeout for user to type before setting it to zero
-      return; // Exit the function here to prevent countValveStickers() from being called immediately
+      return; // Exit the function here to prevent countVaultStickers() from being called immediately
     }
   }
-  countValveStickers(); // Call countValveStickers() outside the setTimeout delay
+  countVaultStickers(); // Call countVaultStickers() outside the setTimeout delay
 }
 
 
@@ -2281,13 +2667,11 @@ if (webBasicMenuImg) {
 
 function LoadNews() {
   const newsContent = document.getElementById("news-content");
-
   // Sort NEWS_DATA based on NewsTime in descending order
   const sortedNewsData = NEWS_DATA.sort((a, b) => b.NewsTime - a.NewsTime);
 
   sortedNewsData.forEach((item) => {
     const { NewsTime, NewsHeader, NewsContent } = item;
-
     // Create the HTML string for each news item
     const newsItemHTML = `
       <div class="basic-menu-news-item">
@@ -2297,10 +2681,23 @@ function LoadNews() {
         <div class="basic-menu-news-item-content">${NewsContent}</div>
       </div><br>
     `;
-
     // Append the news item HTML to #news-content
     newsContent.innerHTML += newsItemHTML;
   });
+  const currentTimeEpoch = Math.floor(new Date().getTime() / 1000);
+  const isWithinThreeDays = sortedNewsData.some((item) => {
+    const { NewsTime } = item;
+    const timeDiff = currentTimeEpoch - NewsTime;
+    const threeDaysInSeconds = 3 * 24 * 60 * 60;
+    return timeDiff <= threeDaysInSeconds;
+  });
+  if (isWithinThreeDays) {
+    if (WebZeroMobileOne === 0) {
+      document.getElementById("webBasicMenu").click();
+    } else if (WebZeroMobileOne === 1) {
+      document.getElementById("mobileBasicMenu").click();
+    }
+  }
 }
 
 function convertEpochToYYYYMMDD(TimeValue) {
@@ -2319,14 +2716,8 @@ function convertEpochToYYYYMMDD(TimeValue) {
 function handleChangeStickerStyleBtn(isClicked) {
   if (isClicked === true) { StickerSelectedZeroShowOneBack = (StickerSelectedZeroShowOneBack + 1) % 2; }
   const ChangeStickerStyleBtnText = document.getElementById("ChangeStickerStyleBtnText");
-
-  if (StickerSelectedZeroShowOneBack === 0) {
-    ChangeStickerStyleBtnText.textContent = "OFF";
-    document.getElementById("ChangeStickerStyleBtn").classList.remove("btnGreen");
-  } else if (StickerSelectedZeroShowOneBack === 1) {
-    ChangeStickerStyleBtnText.textContent = "ON";
-    document.getElementById("ChangeStickerStyleBtn").classList.add("btnGreen");
-  }
+  ChangeStickerStyleBtnText.setAttribute('data-translation-key', `ChangeStickerStyleBtnText_${StickerSelectedZeroShowOneBack}`);
+  translateLanguage(ChangeStickerStyleBtnText, `ChangeStickerStyleBtnText_${StickerSelectedZeroShowOneBack}`);
 }
 
 document.getElementById("ChangeStickerStyleBtn").addEventListener("click", function() {
@@ -2384,5 +2775,81 @@ document.addEventListener('touchend', function(event) {
     event.target.classList.remove('scale-down');
   }
 });
+
+
+function translateLanguage(languageCode, targetTranslationKey) {
+  const elements = document.querySelectorAll('[data-translation-key]');
+
+  elements.forEach(element => {
+    const translationKey = element.dataset.translationKey;
+
+    if (translationKey === targetTranslationKey) {
+      const translationData = LANGUAGE_DICTIONARY.find(data => data['translation-key'] === translationKey);
+      const translation = translationData ? translationData[languageCode] : '';
+
+      if (element.tagName === 'TEXTAREA') {element.placeholder = translation;}
+      else if (element.tagName === 'INPUT') {element.placeholder = translation;}
+      else {element.textContent = translation;}
+    }
+  });
+}
+
+// function translateOnLoad(currentLanguageCode) {
+//   const elements = document.querySelectorAll('[data-translation-key]');
+
+//   elements.forEach(element => {
+//     const targetTranslationKey = element.dataset.translationKey;
+//     translateLanguage(currentLanguageCode, targetTranslationKey);
+//   });
+// }
+
+const LanguageButtons = document.querySelectorAll('.translation-btn');
+const TranslationElements = document.querySelectorAll('[data-translation-key]');
+
+LanguageButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const ButtonLanguageCode = this.dataset.translationPointer;
+    CurrentLanguageCode = ButtonLanguageCode;
+
+    TranslationElements.forEach(element => {
+      const targetTranslationKey = element.dataset.translationKey;
+      translateLanguage(CurrentLanguageCode, targetTranslationKey);
+    });    
+    LanguageButtons.forEach(button => button.classList.remove("btnBlue"));
+    this.classList.add("btnBlue");
+    // Functions that need to replace variables
+    countVaultStickers();
+    generateCurrentFiltersModalText();
+    document.querySelectorAll(".sticker-card-container").forEach(container => {TranslateStickerName(container, CurrentLanguageCode)});
+    translateLanguage(CurrentLanguageCode, "set");
+    translateLanguage(CurrentLanguageCode, "SpareLabel");
+    TranslateSetName(CurrentLanguageCode);
+  });    
+});
+
+function TranslateSetName(LanguageCode) {
+  const setSpans = document.querySelectorAll("span.SetNameText[data-setid]");
+
+  setSpans.forEach(span => {
+    const setID = span.getAttribute("data-setid");
+    const matchingSet = SET_DATA.find(set => set.SetID === setID);
+
+    if (matchingSet && span.classList.contains("SetNameText")) {
+      const setName = matchingSet[`SetName${LanguageCode}`];
+      span.textContent = setName;
+    }
+  });
+}
+
+function TranslateStickerName(StickerCardContainer, LanguageCode) {
+  const stickerSpans = StickerCardContainer.querySelector("span.StickerNameText[data-stickerid]");
+  const stickerID = stickerSpans.getAttribute("data-stickerid");
+  const matchingSticker = STICKER_DATA.find(sticker => sticker.GlobalID === stickerID);
+
+  if (matchingSticker && stickerSpans.classList.contains("StickerNameText")) {
+    const stickerName = matchingSticker[`StickerName${LanguageCode}`];
+    stickerSpans.textContent = stickerName;
+  }
+}
 
 window.onload = init;
