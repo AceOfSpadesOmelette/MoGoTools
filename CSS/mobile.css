@@ -22,6 +22,7 @@
 	--mediumbrown: #f0dc9c;
 	--darkbrown: #dbc585;
 	--darkerbrown: #655b3d;
+	--brownishblack: #433437;
 	--progress-bar-blue: #34c7fb;
 	--progress-bar-black: #625c44;
 	--progress-bar-blue-transition: #24c8d1;
@@ -40,6 +41,7 @@ body {
 	background-color: rgba(219, 197, 133);
 	clear: both;
 	height: 100vh;
+	color: var(--brownishblack);
 }
 
 
@@ -169,7 +171,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 #sort-menu, #viewport-menu{
 	width: 100%;
 	/* display: flex; */
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 	padding-top: 3px;
 	padding-bottom: 3px;
@@ -212,6 +214,32 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	background-color: rgb(219 197 133 / 40%);
 }
 
+.current-sticker-board-none{
+	color: var(--darkerbrown);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 5rem;
+	font-size: 20px;
+}
+
+#fortrade-screenshot-area, #lookingfor-screenshot-area {
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	flex-wrap: wrap;
+	border-radius: 30px;
+	padding-bottom: 3%;
+	background-color: rgb(219 197 133 / 40%);
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2%;
+	align-content: flex-start;
+	border-radius: 0 0 15px 0;
+	border: 3px solid var(--darkerbrown);
+	border-top: none;
+}
+
 .sticker-card-container{
 	margin: 8px;	
 	min-width: 90px;
@@ -225,6 +253,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	flex-direction: column;
 	font-size: 0;
 	filter: drop-shadow(1px 0.5px 0px var(--darkerbrown));
+	min-height: 145px;
 }
 
 @media screen and (max-width: 360px) {
@@ -516,6 +545,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	font-family: "Kabel" !important;
 	background-color: var(--lightbrown);
 	border: 2px solid transparent;
+	color: var(--brownishblack);
 }
 
 #filtermenu-searchbar::placeholder{
@@ -533,6 +563,7 @@ img, .spare-header, .basic-menu-nav-btn, #filter-sort-menu-header, #progress-men
 	font-family: "Kabel" !important;
 	background-color: var(--lightbrown);
 	border: 2px solid transparent;
+	color: var(--brownishblack);
 }
 
 #player-ign::placeholder, #player-link::placeholder{
@@ -660,6 +691,7 @@ input.spare-text{
 	color: black;
 	width: 15%;
   	text-align: right;
+	font-size: 0.9rem;
 }
 
 .spare-filter-text{
@@ -711,7 +743,7 @@ input.spare-text{
 	z-index: 2;
 }
 
-#progress-and-valve{
+#progress-and-vault{
 	display: flex;
 }
 
@@ -720,26 +752,26 @@ input.spare-text{
 }
 
 .progress-container {
-	background-color: black;
-	border-radius: 5px;
+	background-color: var(--progress-bar-black);
+	border-radius: 9px;
 	width: 100%;
 	height: 18px;
 }
 
-.valve-container {
+.vault-container {
 	width: 35%;
 	/* max-height: 18px; */
 	align-items: center;
 	/* display: flex; */
 }
   
-.valve-star {
+.vault-star {
 	height: 15px;
 	margin: 0 auto 0 5px;
 	display: block;
 }
   
-.valve-subcontainer {
+.vault-subcontainer {
 	background-color: var(--darkbrown);
 	border-radius: 5px;
 	width: 85%;
@@ -752,7 +784,7 @@ input.spare-text{
 	position: relative;
 }
 
-.valve-prestige-text{
+.vault-prestige-text{
 	font-size: 0.75rem;
 	font-family: "Quicksand-Bold";
 	color: #136e21;
@@ -765,7 +797,7 @@ input.spare-text{
 	width: 55px;
 }
 
-.leftover-valve-subcontainer{
+.leftover-vault-subcontainer{
 	background-color: var(--lightbrown);
 	border-radius: 5px;
 	width: 85%;
@@ -778,7 +810,7 @@ input.spare-text{
 	position: relative;
 }
   
-#total-valve-quantity {
+#total-vault-quantity {
 	font-size: 12px;
 	width: 65%;
 	text-align: center;
@@ -786,7 +818,7 @@ input.spare-text{
 
 .progress-bar {
 	background-color: #34c7fb;
-	border-radius: 5px;
+	border-radius: 9px;
 	height: inherit;
 	max-width: 100%;
 }
@@ -876,6 +908,16 @@ input.spare-text{
 	align-items: center;
 	flex-direction: column;
 	font-size: 0;
+}
+
+.sticker-card-container-screenshot-trade {
+	margin: 8px;
+	flex-basis: calc(30% - 10px);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	font-size: 0;
+	min-height: 145px;
 }
 
 .spare-text-screenshot{
@@ -1055,7 +1097,11 @@ input[class="player-info-field"]{
 	background-color: var(--beige);
 }
 
-#dl-png, #SetImageOrientationBtn{
+#trade-screenshot{
+	background: url("../assets/background/Collections_Album_BG.png");
+}
+
+#dl-png, #dl-trade-png, #SetImageOrientationBtn, #SetTradeImageOrientationBtn{
 	margin-top: 3px;
 	width: 97%;
 }
@@ -1257,7 +1303,7 @@ input[class="player-info-field"]{
 	line-height: 1.5rem;
 }
 
-.valve-tier{
+.vault-tier{
 	height: 15px;
 	margin-left: 5%;
 }
@@ -1347,10 +1393,10 @@ input[class="player-info-field"]{
 .btn:hover .tooltiptext-top { visibility: visible; }
 .btn:has(.tooltiptext-bottom) { overflow:visible !important; }
 .btn:hover .tooltiptext-bottom { visibility: visible; }
-.leftover-valve-subcontainer:has(.tooltiptext-bottom) { overflow:visible !important; }
-.leftover-valve-subcontainer:hover .tooltiptext-bottom { visibility: visible; }
-.valve-subcontainer:has(.tooltiptext-top) { overflow:visible !important; }
-.valve-subcontainer:hover .tooltiptext-top { visibility: visible; }
+.leftover-vault-subcontainer:has(.tooltiptext-bottom) { overflow:visible !important; }
+.leftover-vault-subcontainer:hover .tooltiptext-bottom { visibility: visible; }
+.vault-subcontainer:has(.tooltiptext-top) { overflow:visible !important; }
+.vault-subcontainer:hover .tooltiptext-top { visibility: visible; }
 
 #basic-menu-modal{
 	display: none;
@@ -1455,8 +1501,13 @@ input[class="player-info-field"]{
 }
 
 .basic-menu-navigation-selected{
-	background: var(--progress-bar-blue);
-	border-radius: 20px;
+	background: var(--mediumbrown);
+	border-radius: 10px 10px 0 0;
+  	color: var(--darkerbrown) !important;
+}
+
+.basic-menu-navigation-btn-text{
+	pointer-events: none;
 }
 
 .basic-menu-news-item-header{
@@ -1579,4 +1630,41 @@ content: "\2212";
 
 .set-logo.scale-down {
 	transform: scale(0.95);
+}
+
+.lfft-snapshot-none{
+	color: var(--darkerbrown);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 6px auto auto auto;
+	font-size: 20px;
+}
+
+.lfft-screenshot-section{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.lfft-section-header {
+	width: 400px;
+	text-align: center;
+	margin: 8px 0 0 0;
+	border-radius: 15px 0 0 0;
+	border: 3px solid var(--darkerbrown);
+	line-height: 2rem;
+}
+
+.lf-trade-snapshot-header{
+	background: linear-gradient(#a7ff00, #ccff33);
+}
+
+.ft-trade-snapshot-header{
+	background: linear-gradient(#ff9f9f, #ff6b6b);
+}
+
+.lfft-trade-snapshot-header{
+	color: var(--darkerbrown);
 }
