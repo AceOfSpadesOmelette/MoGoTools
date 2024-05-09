@@ -140,20 +140,19 @@ function generateCurrentStickerBoard(dataset, userData, targetParentElementID) {
       if ((userDataItem.show === 0 && stickerCardContainer)) {
         stickerCardContainer.remove();
       } else if (userDataItem.show === 1) {
-        if(stickerCardContainer){
+        if (stickerCardContainer) {
           //console.log(stickerCardContainer.innerHTML);
           ApplySelectedStyle(stickerCardContainer);
-        }
-        else {
-        if(!stickerCardContainer){
-        const stickerElement = CreateStickerElement(item, "sticker-card-container", "sticker-card", true);
-        fragment.appendChild(stickerElement);
+        } else {
+          if (!stickerCardContainer) {
+            const stickerElement = CreateStickerElement(item, "sticker-card-container", "sticker-card", true);
+            fragment.appendChild(stickerElement);
+          }
         }
       }
-      board.appendChild(fragment);
     }
   }
-  }
+  board.appendChild(fragment);
 }
 
 function CreateStickerElement(item, ContainerClass, ImageClass, isTracking) {
@@ -223,7 +222,7 @@ function ApplySelectedStyle(container) {
     <div class="sticker-star-container"><img draggable="false" class="star-img" src="assets/stickers/Collections_Star_${stickerData.StickerRarity}Star.png"></div>
     <div class="sticker-photo-container"><img draggable="false" class="sticker-card" src="stickers/${StickerSetPath}/${stickerData.ImageSource}">${FrameHTML}</div>
     <div class="sticker-ribbon" style="background: ${RibbonEdgeColour}; background: -moz-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); background: -webkit-linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); background: linear-gradient(90deg, ${RibbonEdgeColour} 0%, ${stickerData.Colour} 10%, ${stickerData.Colour} 90%, ${RibbonEdgeColour} 100%); border: 2px solid ${DarkenedColour};">
-      <span class="${StickerNameClass}"><span><span data-translation-key="set">${SetText}</span> ${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><span class="StickerNameText" data-stickerid="${stickerData.GlobalID}"></span></span>
+      <span class="${StickerNameClass}"><span><span data-translation-key="set">${SetText}</span>${StickerSet}&nbsp;&nbsp;#${StickerSetNo}</span><span class="StickerNameText" data-stickerid="${stickerData.GlobalID}"></span></span>
     </div>
   `;
 
