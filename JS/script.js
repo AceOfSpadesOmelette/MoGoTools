@@ -2719,7 +2719,7 @@ function handleChangeStickerStyleBtn(isClicked) {
   if (isClicked === true) { StickerSelectedZeroShowOneBack = (StickerSelectedZeroShowOneBack + 1) % 2; }
   const ChangeStickerStyleBtnText = document.getElementById("ChangeStickerStyleBtnText");
   ChangeStickerStyleBtnText.setAttribute('data-translation-key', `ChangeStickerStyleBtnText_${StickerSelectedZeroShowOneBack}`);
-  translateLanguage(ChangeStickerStyleBtnText, `ChangeStickerStyleBtnText_${StickerSelectedZeroShowOneBack}`);
+  translateLanguage(CurrentLanguageCode, `ChangeStickerStyleBtnText_${StickerSelectedZeroShowOneBack}`);
 }
 
 document.getElementById("ChangeStickerStyleBtn").addEventListener("click", function() {
