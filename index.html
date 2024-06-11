@@ -1,624 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 
 <head>
-	<title>Sticker Tracker - Monopoly Go!</title>
-	<meta charset="UTF-8">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-	<meta name="description" content="Sticker Tracker for Monopoly Go!">
-	<meta name="google-site-verification" content="kdCKf8EhTJ6xe9h9Im1VOuCWnsM9ymAB1iLd6At2CII" />
-	<link rel="icon" type="image/png" href="assets/stickers/StickerBoom_IconOnTop.png">
-	<link rel="stylesheet" id="DefaultCSS" type="text/css" href="CSS/style.css">
-	<link rel="stylesheet" id="MobileCSS" type="text/css" href="CSS/mobile.css" disabled>
-	<meta name="author" content="AceOfSpadesOmelette">
-	<meta name="description" content="MoGoTools is a Monopoly Go! tool that helps users keep track of their stickers and album.">
-  	<meta name="keywords" content="monopoly go, monopoly, monopoly go stickers, sticker tracker, monopoly go sticker tracker, mogotools, monopoly go tools, mogo, 大富翁, モノポリー">
+    <title>泰和堂中醫診所</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="icon" type="image/png" href="assets/TaiWoTong_WhiteInners.png">
+    <meta name="author" content="AceOfSpadesOmelette">
+    <meta name="description" content="泰和堂中醫診所">
+    <meta name="keywords" content="泰和堂中醫診所, taiwotong, tai wo tong, medical clinic">
+
+    <link rel="stylesheet" href="CSS/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" id="DefaultCSS" type="text/css" href="CSS/style.css">
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E7JD13XDT4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-E7JD13XDT4');
-</script>
-
-
-
 <body>
-	<div id="main">
-		<div id="main-wrapper">
-			<div id="loading-overlay">
-				<img id="loading-overlay-spinner" src="assets/spinner.webp" alt="Loading...">
-			</div>
-			<div id="left-side">
-				<div id="filter-sort-modal">
-					<div id="filter-sort-menu-body">
-						<div id="filter-sort-menu-header" data-translation-key="settings"></div>
-						<div id="filter-sort-menu-content">
-							<div id="web-layout-basic-menu-container">
-								<!-- <button id="webBasicMenu" class="btn" type="button">Menu</button> -->
-								<img id="webBasicMenu" class="webBasicMenuImg" src="assets/MenuIcon.png">
-							</div>
-							<div id="sort-menu">
-								<div class="section-header"><span data-translation-key="sort"></span></div>
-								<div class="btn-subgroup">									
-									<button id="SortOrderBtn" class="btn" type="button">
-										<span id="SortOrderBtnText" data-translation-key="SortOrderBtnText_0"></span>
-									</button>
-								</div>
-								<div id="sort-btn-group-container" class="BtnGroup3">
-									<button data-sort-type="GlobalID" class="btn sort-btn" type="button">
-										<span class="sort-btn-name" data-translation-key="SortBtnDexText"></span>
-									</button>
-									<button data-sort-type="StickerName" class="btn sort-btn" type="button">
-										<span class="sort-btn-name" data-translation-key="SortBtnNameText"></span>
-									</button>
-									<button data-sort-type="SetID" class="btn sort-btn" type="button">
-										<span class="sort-btn-name" data-translation-key="set"></span>
-									</button>
-									<button data-sort-type="StickerRarity" class="btn sort-btn" type="button">
-										<span class="sort-btn-name" data-translation-key="SortBtnRarityText"></span>
-									</button>
-									<button data-sort-type="Golden" class="btn sort-btn" type="button">
-										<span class="sort-btn-name" data-translation-key="SortBtnGoldenText"></span>
-									</button>
-									<button data-sort-type="Possession" data-sort-onsite="selected" class="btn sort-btn"
-										type="button">
-										<span class="sort-btn-name" data-translation-key="SortBtnPossessionText"></span>
-									</button>
-								</div>
-							</div>
+    <header id="nav-menu" aria-label="navigation bar">
+        <div class="container">
+            <div class="nav-start">
+                <a class="logo" href="index.html">
+                    <img src="assets/TaiWoTong_Full.png" width="35" height="35" alt="泰和堂中醫診所" class="site-logo" />
+                </a>
 
-							<div id="quick-toggle-menu">
-								<div class="section-header"><span data-translation-key="shortcut"></span></div>
-								<div class="btn-grp-title">
-									<span data-translation-key="QuickBoardToggle"></span>
-									<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
-								</div>
-								<div class="btn-subgroup BtnGroup2">
-									<button id="ToggleSelectedBtn" class="btn" type="button">
-										<span data-translation-key="InvertSelected"></span>
-										<span class="tooltiptext-top" data-translation-key="ToggleSelectedBtnTooltipText"></span>
-									</button>
-									<button id="ResetSparesBtn" class="btn" type="button"><span data-translation-key="ResetSpares"></span></button>
-									<button id="ToggleLFBtn" class="btn" type="button">
-										<span data-translation-key="ToggleLF"></span>
-										<span class="tooltiptext-top" data-translation-key="ToggleLFBtnTooltipText"></span>
-									</button>
-									<button id="ToggleFTBtn" class="btn" type="button">
-										<span data-translation-key="ToggleFT"></span>
-										<span class="tooltiptext-top" data-translation-key="ToggleFTBtnTooltipText"></span>
-									</button>
-									<button id="ResetLFBtn" class="btn" type="button">
-										<span data-translation-key="ResetLF"></span>
-										<span class="tooltiptext-top" data-translation-key="ResetLFBtnTooltipText"></span>
-									</button>
-									<button id="ResetFTBtn" class="btn" type="button">
-										<span data-translation-key="ResetFT"></span>
-										<span class="tooltiptext-top" data-translation-key="ResetFTBtnTooltipText"></span>
-									</button>
-									<button id="ResetAllStickersBtn" class="btn" type="button">
-										<span data-translation-key="ResetAllStickers"></span>
-									</button>
-								</div>
-							</div>
+            </div>
+            <div class="nav-end">
+                <div class="right-container">
+                    <nav class="menu">
+                        <ul class="menu-bar">
+                            <li><a class="site-navigation-text nav-link nav-selected" href="index.html">首頁</a></li>
+                            <li><a class="site-navigation-text nav-link"
+                                    href="about-us.html">關於診所</a></li>
+                            <li><a class="site-navigation-text nav-link"
+                                    href="our-services.html">服務簡介</a>
+                            </li>
+                            <li><a class="site-navigation-text nav-link"
+                                    href="our-doctors.html">醫師簡介</a>
+                            </li>
+                            <li>
+                                <button class="nav-link dropdown-btn" data-dropdown="dropdown2" aria-haspopup="true"
+                                    aria-expanded="false" aria-label="discover">
+                                    診症預約&nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i>
+                                </button>
+                                <div id="dropdown2" class="dropdown">
+                                    <ul role="menu">
+                                        <!-- <li><span class="dropdown-link-title">診症預約</span></li> -->
+                                        <li role="menuitem">
+                                            <a class="dropdown-link"
+                                                href="https://www.taiwotonghk.com/%e9%86%ab%e5%b8%ab%e6%87%89%e8%a8%ba%e6%99%82%e9%96%93/">香港診症預約</a>
+                                        </li>
+                                        <li role="menuitem">
+                                            <a class="dropdown-link"
+                                                href="https://www.taiwotonghk.com/milton-keynes-%e8%a8%ba%e7%97%87%e9%a0%90%e7%b4%84/">英國診症預約</a>
+                                        </li>
+                                        <li role="menuitem">
+                                            <a class="dropdown-link"
+                                                href="https://www.taiwotonghk.com/%e9%81%99%e8%b7%9d%e8%a8%ba%e7%97%87/">遙距診症預約</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a class="site-navigation-text nav-link"
+                                    href="https://www.taiwotonghk.com/%e6%96%87%e7%ab%a0%e5%8f%8a%e5%a0%b1%e5%b0%8e/">資訊與報導</a>
+                            </li>
+                            <li><a class="nav-link"
+                                    href="https://www.taiwotonghk.com/%e6%9c%80%e6%96%b0%e6%b6%88%e6%81%af/">最新消息</a>
+                            </li>
+                            <li><a class="nav-link"
+                                    href="contact-us.html">分店網絡</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
 
-							<div id="filter-menu">
-								<div class="section-header"><span data-translation-key="filter"></span></div>
-								<div id="filter-btn-group-container">
-									<div id="search-bar-container">
-										<input type="text" id="filtermenu-searchbar" data-filtervalue="1>StickerName>"
-										data-translation-key="SearchBarPlaceholderText" placeholder="">
-										<button id="ClearFilterMenuSearchBar" class="btn" type="button">×</button>
-									</div>
-									<div id="filter-settings-container">
-										<button id="AndOrFilterModeBtn" class="btn filter-settings-btn" type="button">
-											<span id="AndOrFilterModeBtnText" data-translation-key="AndOrFilterModeBtnText_0"></span>
-											<span id="AndOrFilterModeBtnTooltip" class="tooltiptext-bottom" data-translation-key="AndOrFilterModeBtnTooltipText_0"></span>
-										</button>
-										<button id="ClearFiltersBtn" class="btn filter-settings-btn" type="button">
-											×&nbsp;<span data-translation-key="ClearFiltersBtnText"></span>&nbsp;(<span id="filterLength">0</span>)</span>
-										</button>
-										<button id="ViewCurrentFiltersBtn" class="btn">👁<span
-												class="tooltiptext-bottom" data-translation-key="ViewCurrentFiltersBtnText"></span></button>
-										<button id="RefreshFiltersBtn" class="btn">⟳<span
-												class="tooltiptext-bottom" data-translation-key="RefreshFiltersBtnText"></span></button>
-									</div>
-									<div id="trade-filter">
-										<div class="btn-grp-title">
-											<span data-translation-key="trade"></span>
-											<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
-										</div>
-										<div class="btn-subgroup BtnGroup2">
-											<button data-filtervalue="0>lookingfor>1" class="filter-btn btn"
-												type="button">
-												<span data-translation-key="LookingFor"></span>
-											</button>
-											<button data-filtervalue="0>fortrade>1" class="filter-btn btn"
-												type="button">
-												<span data-translation-key="ForTrade"></span>
-											</button>
-										</div>
-									</div>
-									<div id="rarity-filter">
-										<div class="btn-grp-title">
-											<span data-translation-key="RarityFilterHeader"></span>
-											<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
-										</div>
-										<div class="btn-subgroup BtnGroup5">
-											<button data-filtervalue="1>StickerRarity>1" class="filter-btn btn"
-												type="button">
-												<img class="filter-btn-icon" src="assets/stickers/star1.png">
-											</button>
-											<button data-filtervalue="1>StickerRarity>2" class="filter-btn btn"
-												type="button">
-												<img class="filter-btn-icon" src="assets/stickers/star2.png">
-											</button>
-											<button data-filtervalue="1>StickerRarity>3" class="filter-btn btn"
-												type="button">
-												<img class="filter-btn-icon" src="assets/stickers/star3.png">
-											</button>
-											<button data-filtervalue="1>StickerRarity>4" class="filter-btn btn"
-												type="button">
-												<img class="filter-btn-icon" src="assets/stickers/star4.png">
-											</button>
-											<button data-filtervalue="1>StickerRarity>5" class="filter-btn btn"
-												type="button">
-												<img class="filter-btn-icon" src="assets/stickers/star5.png">
-											</button>
-										</div>
-									</div>
-									<div id="stickertype-filter">
-										<div class="btn-grp-title">
-											<span data-translation-key="StickerTypeFilterHeader"></span>
-											<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
-										</div>
-										<div class="btn-subgroup BtnGroup2">
-											<button data-filtervalue="1>Golden>1" class="filter-btn btn" type="button">
-												<img class="filter-btn-icon"
-													src="assets/stickers/GoldenBlitz_AlbumSet_Icon.png"> &nbsp; <span data-translation-key="golden"></span>
-											</button>
-											<button data-filtervalue="1>Prestige>1" class="filter-btn btn"
-												type="button">
-												<img class="filter-btn-icon"
-													src="assets/stickers/Icon_Star_Rainbow.png"> &nbsp;
-													<span data-translation-key="prestige"></span>
-											</button>
-											<button data-filtervalue="0>selected>1" class="filter-btn btn"
-												type="button">
-												<span data-translation-key="obtained"></span>
-											</button>
-											<button data-filtervalue="0>havespare>1" class="filter-btn btn"
-												type="button">
-												<span data-translation-key="spare"></span>
-											</button>
-										</div>
-									</div>
-									<div id="spares-filter">
-										<div class="btn-grp-title">
-											<span data-translation-key="spares"></span>
-											<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
-										</div>
-										<div class="btn-subgroup btn-subgroup-spare">
-											<label for="SpareFilterMin" class="spare-filter-header" data-translation-key="from"></label><input
-												type="number" id="spare-filter-min"
-												class="spare-filter-text spare-filter-min" name="SpareFilterMin" min="0"
-												max="100" value="0" size="4">
-											<label for="SpareFilterMax" class="spare-filter-header" data-translation-key="to"></label><input
-												type="number" id="spare-filter-max"
-												class="spare-filter-text spare-filter-max" name="SpareFilterMax" min="0"
-												max="100" value="100" size="4">
-											<button id="spare-filter-btn"
-												data-filtervalue="0>spare>spare-filter-min|spare-filter-max"
-												class="filter-btn btn" type="button">
-												<span data-translation-key="SpareFilterBtnText"></span>
-											</button>
-										</div>
-									</div>
-									<div id="stickerset-filter">
-										<div class="btn-grp-title">
-											<span data-translation-key="set"></span>
-											<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
-										</div>
-										<div class="btn-subgroup BtnGroup3"></div>
-									</div>
+                <button id="hamburger" aria-label="hamburger" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bars" aria-hidden="true" id="hamburger-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
-								</div>
-							</div>
-							<div>
-								<div class="section-header"><span data-translation-key="miscellaneous"></span></div>
-								<div class="btn-grp-title">
-									<span data-translation-key="backup"></span>
-									<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
-								</div>
-								<div class="btn-subgroup BtnGroup2">
-									<button id="import-btn" class="btn filter-settings-btn" type="button">
-										<span data-translation-key="import"></span>
-									</button>
-									<button id="export-btn" class="btn filter-settings-btn" type="button">
-										<span data-translation-key="save"></span>
-									</button>
-									<button id="import-from-file-btn" class="btn filter-settings-btn" type="button">
-										<span data-translation-key="LoadFromText"></span>
-									</button>
-									<button id="export-from-file-btn" class="btn filter-settings-btn" type="button">
-										<span data-translation-key="SaveAsText"></span>
-									</button>
-								</div>
-								<div class="btn-subgroup">
-									<textarea class="backup-area" data-translation-key="BackupAreaPlaceholder"
-										placeholder=""></textarea>
-								</div>
-								<div>
-									<div class="btn-grp-title">
-										<span data-translation-key="DownloadImage"></span>
-										<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
-									</div>
+    <div class="section-container component-wrapper">
+        <div class="section-image"
+            style="background-image: url('assets/medicine.jpeg');">
+            <div class="overlay"></div>
+            <div class="section-header">泰和堂中醫診所</div>
+        </div>
+    </div>
+    <div class="main-section">
+      <div class="index-section">
+        <div class="index-left-container">
+            <span class="header1-text">分店查詢</span><br>
 
-									
-									<div class="btn-subgroup"><button class="btn" id="dl-png" data-translation-key="DownloadPNGBtnText"></button>
-									</div>
-								</div>
-								<div>
-									<div class="btn-grp-title">
-										<span data-translation-key="TradePostClipboard"></span>
-										<img class="ExpandBtnIcon" src="assets/UpwardsArrow.png">
-									</div>
-									<div class="btn-subgroup BtnGroup2">
-										<button id="generate-trade-post-btn" class="btn" type="button">
-											<span data-translation-key="generate"></span>
-											<span
-												class="tooltiptext-bottom" data-translation-key="TradePostClipboardGenerateBtnText"></span>
-										</button>
-										<button id="copy-trade-post-area" class="btn" type="button">
-											<span data-translation-key="copy"></span>
-										</button>
-									</div>								
-									<div class="btn-subgroup"><button class="btn" id="dl-trade-png">
-										<span data-translation-key="DownloadPNGBtnText"></span>
-										<span class="tooltiptext-bottom" data-translation-key="TradePostClipboardDownloadPNGBtnText"></span>
-									</button>
-									</div>
-									<div class="btn-subgroup">
-										<textarea class="trade-post-area" data-translation-key="TradePostAreaPlaceholder"
-											placeholder=""></textarea>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div id="filter-sort-menu-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-translation-key="close"></span></div>
-					</div>
-				</div>
-			</div>
+            <div class="index-clinic-container">
+                <div class="accordion-item">
+                    <button class="accordion">將軍澳診所</button>
+                    <div class="accordion-panel">
+                        <div class="index-clinic-wrapper">                
+                            <div class="index-clinic-item-wrapper">
+                                <div class="index-about-clinic-text">
+                                    <div class="header2-text clinic-name">將軍澳診所</div>
+                                    <div class="clinic-info-wrapper">                            
+                                        <div class="clinic-info-row"><i class="fa fa-phone contact-us-details-marker" aria-hidden="true"></i><a
+                                            href="tel:85226622052">2662 2052</a></div>
+                                        <div class="clinic-info-row"><i class="fa fa-whatsapp contact-us-details-marker"
+                                                aria-hidden="true"></i><a href="https://wa.me/85266385638">6638 5638</a></div>
+                                        <div class="clinic-info-row"><i class="fa fa-map-marker contact-us-details-marker"
+                                                aria-hidden="true"></i>調景嶺都會駅商埸 2 樓 L85-86 舖</div>
+                                        <div class="clinic-info-row"><i class="fa fa-map-marker contact-us-details-marker"
+                                                aria-hidden="true"></i>Shop 085-086, Level 2,
+                                            Metro Town, King Ling Road, Tseung Kwan O</div>
+                                        <div class="clinic-info-row"><i class="fa fa-map-o contact-us-details-marker" aria-hidden="true"></i><a
+                                                href="https://maps.app.goo.gl/nf9H1nmg51NsGQrA8">查看地圖</a></div>
+                                    </div>                         
+                                </div>                                    
+                                <div class="index-clinic-map-wrapper">
+                                    <iframe class="iframe-gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.2876704418363!2d114.25189809999999!3d22.3049577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340403f2c8052f6d%3A0xe6ec79b1b783b9a3!2sTai%20Wo%20Tong%20Chinese%20Medicine%20Clinic!5e0!3m2!1sen!2shk!4v1718078874993!5m2!1sen!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>         
+                        </div>
+                    </div>
+                </div>
 
-			<div id="middle-side">
-				<div id="sticker-board">
-					<div id="current-sticker-board"></div>
-				</div>
-			</div>
-			<div id="right-side">
-				<div id="progress-menu-modal">
-					<div id="progress-menu-body">
-						<div id="progress-menu-header"><span data-translation-key="YourProfile"></span></div>
-						<div id="progress-menu-content">
-							<div class="player-info-container">
-								<div class="player-info-row">
-									<span class="player-info-header" data-translation-key="YourIGN"></span>
-									<input type="text" id="player-ign" class="player-info-field" data-translation-key="optional"
-										placeholder="(Optional)">
-								</div>
-								<div class="player-info-row">
-									<span class="player-info-header" data-translation-key="InviteLink"></span>
-									<input type="text" id="player-link" class="player-info-field"
-										placeholder="(Optional)">
-								</div>
-							</div>
-							<button id="IgnorePrestigeBtn" class="btn" type="button"><span data-translation-key="IgnorePrestige"></span>
-								<span class="tooltiptext-bottom" data-translation-key="IgnorePrestigeBtnTooptipText"></span>
-							</button>
-							<div id="album-progress-container">
-								<div id="album-logo-container">
-								</div>
-								<div class="album-time-info">
-									<div class="time-container">
-										<div class="time-row">
-											<span class="time-header" data-translation-key="start"></span>
-											<span class="time-value" id="start-time"></span>
-										</div>
-										<div class="time-row">
-											<span class="time-header" data-translation-key="end"></span>
-											<span class="time-value" id="end-time"></span>
-										</div>
-										<div class="time-row">
-											<span class="time-header" data-translation-key="TimeLeft"></span>
-											<span class="time-value" id="time-left"></span>
-										</div>
-									</div>
-									<div id="progress-and-vault">
-										<div class="progress-container" id="album-progress-tracker">
-											<div class="progress-bar"></div>
-											<div class="progress-text"><span id="user-stickers-quantity">0</span> /
-												<span id="total-stickers-quantity">0</span></div>
-										</div>
-										<div class="vault-container">
-											<div class="vault-subcontainer">
-												<img class="vault-star" src="assets/stickers/Icon_Star.png">
-												<img class="vault-tier">											
-												<span id="total-vault-quantity">0</span>
-												
-												<span class="tooltiptext-top" id="NextVaultCounter" data-translation-key=""></span>
-											</div>
-											<div class="leftover-vault-subcontainer">
-												<img class="vault-star" src="assets/stickers/Icon_Star_Rainbow.png">
-												<span class="tooltiptext-bottom" data-translation-key="LeftoverVaultSubcontainerTooltipText"></span>
-												<input type="number" id="leftover-total-vault-quantity"
-													class="vault-prestige-text" name="LeftoverTotalVaultQuantity"
-													min="0" max="9999" value="0" size="5">
-											</div>
-										</div>
-									</div>
-									<div id="set-progress-tracker"></div>
-								</div>
-							</div>
-							<div id="progress-by-rarity">
-								<div id="progress-by-rarity-table">
-									<img class="progress-by-rarity-stars" src="assets/stickers/star1.png">
-									<div class="progress-by-rarity-text"><span id="rarity1-quantity">0</span> / <span
-											id="total-rarity1-quantity">0</span></div>
-									<div class="progress-by-rarity-percentage"><span id="rarity1-percentage">0.0%</span>
-									</div>
-									<img class="progress-by-rarity-stars" src="assets/stickers/star2.png">
-									<div class="progress-by-rarity-text"><span id="rarity2-quantity">0</span> / <span
-											id="total-rarity2-quantity">0</span></div>
-									<div class="progress-by-rarity-percentage"><span id="rarity2-percentage">0.0%</span>
-									</div>
-									<img class="progress-by-rarity-stars" src="assets/stickers/star3.png">
-									<div class="progress-by-rarity-text"><span id="rarity3-quantity">0</span> / <span
-											id="total-rarity3-quantity">0</span></div>
-									<div class="progress-by-rarity-percentage"><span id="rarity3-percentage">0.0%</span>
-									</div>
-									<img class="progress-by-rarity-stars" src="assets/stickers/star4.png">
-									<div class="progress-by-rarity-text"><span id="rarity4-quantity">0</span> / <span
-											id="total-rarity4-quantity">0</span></div>
-									<div class="progress-by-rarity-percentage"><span id="rarity4-percentage">0.0%</span>
-									</div>
-									<img class="progress-by-rarity-stars" src="assets/stickers/star5.png">
-									<div class="progress-by-rarity-text"><span id="rarity5-quantity">0</span> / <span
-											id="total-rarity5-quantity">0</span></div>
-									<div class="progress-by-rarity-percentage"><span id="rarity5-percentage">0.0%</span>
-									</div>
-									<img class="progress-by-rarity-stars" src="assets/stickers/GoldenBlitz_AlbumSet_Icon.png">
-									<div class="progress-by-rarity-text"><span id="gold-quantity">0</span> / <span
-											id="total-gold-quantity">0</span></div>
-									<div class="progress-by-rarity-percentage"><span id="gold-percentage">0.0%</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div id="progress-menu-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-translation-key="close">Close</span></div>
-					</div>
-				</div>
-			</div>
-			<div id="mobileMenu">
-				<button type="button" class="btn" id="mobileBasicMenu"><span data-translation-key="menu">Menu</span></button>
-				<button type="button" class="btn" id="mobileMenuFilters"><span data-translation-key="settings">Settings</span></button>
-				<button type="button" class="btn" id="mobileMenuOptions"><span data-translation-key="YourProfile">Your Profile</span></button>
-			</div>
-		</div>
+                <div class="accordion-item">
+                    <button class="accordion">秀茂坪診所</button>
+                    <div class="accordion-panel">
+                        <div class="index-clinic-wrapper">                
+                            <div class="index-clinic-item-wrapper">
+                                <div class="index-about-clinic-text">
+                                    <div class="header2-text clinic-name">秀茂坪診所</div>
+                                    <div class="clinic-info-wrapper">                            
+                                        <div class="clinic-info-row"><i class="fa fa-phone contact-us-details-marker" aria-hidden="true"></i><a
+                                            href="tel:85237912107">3791
+                                            2107</a></div>
+                                        <div class="clinic-info-row"><i class="fa fa-map-marker contact-us-details-marker"
+                                                aria-hidden="true"></i>秀茂坪曉麗商場 229 舖</div>
+                                        <div class="clinic-info-row"><i class="fa fa-map-marker contact-us-details-marker"
+                                                aria-hidden="true"></i>No.229, 2/F, Hiu Lai
+                                            Shopping Centre, Kwun Tong</div>
+                                        <div class="clinic-info-row"><i class="fa fa-map-o contact-us-details-marker" aria-hidden="true"></i><a
+                                            href="https://maps.app.goo.gl/rvUhFskQNaWWaiuy6">查看地圖</a></div>
+                                    </div>                      
+                                </div>                                    
+                                <div class="index-clinic-map-wrapper">
+                                    <iframe class="iframe-gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1845.434140113493!2d114.2293452!3d22.3208208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040152c357f447%3A0x860fdb21ab4aab62!2z5rOw5ZKM5aCC5Lit6Yar6Ki65omA!5e0!3m2!1sen!2shk!4v1718034414304!5m2!1sen!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>         
+                        </div>
+                    </div>
+                </div>
 
-		<div id="current-filters-side">
-			<div id="current-filters-modal">
-				<div id="current-filters-body">
-					<div id="current-filters-header"><span data-translation-key="CurrentFilters">Current Filters</span></div>
-					<div id="current-filters-content"></div>
-					<div id="current-filters-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-translation-key="close"></span></div>
-				</div>
-			</div>
-		</div>
+                <div class="accordion-item">
+                    <button class="accordion">何文田診所</button>
+                    <div class="accordion-panel">
+                        <div class="index-clinic-wrapper">                
+                            <div class="index-clinic-item-wrapper">
+                                <div class="index-about-clinic-text">
+                                    <div class="header2-text clinic-name">何文田診所</div>
+                                    <div class="clinic-info-wrapper">                            
+                                        <div class="clinic-info-row"><i class="fa fa-phone contact-us-details-marker" aria-hidden="true"></i><a
+                                            href="tel:85221462280">2146
+                                            2280</a></div>
+                                        <div class="clinic-info-row"><i class="fa fa-whatsapp contact-us-details-marker"
+                                                aria-hidden="true"></i><a href="https://wa.me/85266386538">6638 6538</a></div>
+                                        <div class="clinic-info-row"><i class="fa fa-map-marker contact-us-details-marker"
+                                                aria-hidden="true"></i>何文田廣場 2 樓 217 舖</div>
+                                        <div class="clinic-info-row"><i class="fa fa-map-marker contact-us-details-marker"
+                                                aria-hidden="true"></i>Shop No.217, Homantin
+                                            Plaza, Kowloon City</div>
+                                        <div class="clinic-info-row"><i class="fa fa-map-o contact-us-details-marker" aria-hidden="true"></i><a
+                                                href="https://maps.app.goo.gl/bwYXg2bpKFvPTVJK8">查看地圖</a></div>
+                                    </div>                      
+                                </div>                                    
+                                <div class="index-clinic-map-wrapper">
+                                    <iframe class="iframe-gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.9942954326075!2d114.1819927!3d22.3160555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040174b3af3a3f%3A0xbfa63f99a47f614e!2z5rOw5ZKM5aCC5Lit6Yar6Ki65omAKOS9leaWh-eUsCk!5e0!3m2!1sen!2shk!4v1718078978662!5m2!1sen!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>           
+                        </div>
+                    </div>
+                </div>
 
-		<div id="snapshot-area">
-			<div id="collection-screenshot"></div>
-			<div id="trade-screenshot">
-				<div id="trade-screenshot-container">			
-					<div class="lfft-screenshot-section">
-						<div class="lfft-section-header ft-trade-snapshot-header">
-							<span class="lfft-trade-snapshot-header" data-translation-key="LookingFor"></span>
-						</div>
-						<div id="lookingfor-screenshot-area"></div>
-					</div>
-					<div class="lfft-screenshot-section">
-						<div class="lfft-section-header lf-trade-snapshot-header">
-							<span class="lfft-trade-snapshot-header" data-translation-key="ForTrade"></span>
-						</div>
-						<div id="fortrade-screenshot-area"></div>
-					</div>
-				</div>	
-			</div>
-		</div>
+                <div class="accordion-item">
+                    <button class="accordion">太古坊診所</button>
+                    <div class="accordion-panel">
+                        <div class="index-clinic-wrapper">                
+                            <div class="index-clinic-item-wrapper">
+                                <div class="index-about-clinic-text">
+                                    <div class="header2-text clinic-name">太古坊診所</div>
+                                    <div class="clinic-info-wrapper">                            
+                                        <div class="clinic-info-row"><i class="fa fa-phone contact-us-details-marker" aria-hidden="true"></i><a
+                                            href="tel:85226629338">2662
+                                            9338</a></div>
+                                    <div class="clinic-info-row"><i class="fa fa-whatsapp contact-us-details-marker"
+                                            aria-hidden="true"></i><a href="https://wa.me/85253887868">5388 7868</a></div>
+                                    <div class="clinic-info-row"><i class="fa fa-map-marker contact-us-details-marker"
+                                            aria-hidden="true"></i>鰂魚涌海光街 13-15
+                                        號海光苑地下25C號舖</div>
+                                    <div class="clinic-info-row"><i class="fa fa-map-marker contact-us-details-marker"
+                                            aria-hidden="true"></i>Shop 25C, G/F, 13-15 Hoi
+                                        Kwong Street, Quarry Bay</div>
+                                    <div class="clinic-info-row"><i class="fa fa-map-o contact-us-details-marker" aria-hidden="true"></i><a
+                                            href="https://maps.app.goo.gl/hkbW8716ZTtgRDNh6">查看地圖</a></div>
+                                    </div>                       
+                                </div>                                    
+                                <div class="index-clinic-map-wrapper">
+                                    <iframe class="iframe-gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.7477984492707!2d114.21095989999999!3d22.2875414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340401aaf4beed79%3A0x3256bc695ee43701!2z5rOw5ZKM5aCC5Lit6Yar6Ki65omAKOWkquWPpOWdiik!5e0!3m2!1sen!2shk!4v1718079033093!5m2!1sen!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>           
+                        </div>
+                    </div>
+                </div>            
+            </div>
 
-		<div id="basic-menu-side">
-			<div id="basic-menu-modal">
-				<div id="basic-menu-body">
-					<div id="basic-menu-header"><span data-translation-key="menu"></span></div>
-					<div id="basic-menu-navigation">
-						<div id="BasicMenuNewsBtn" class="basic-menu-nav-btn basic-menu-navigation-selected"><span class="basic-menu-navigation-btn-text" data-translation-key="news"></span></div>
-						<div id="BasicMenuFAQBtn" class="basic-menu-nav-btn"><span class="basic-menu-navigation-btn-text" data-translation-key="FAQorInfo"></span></div>
-						<div id="BasicMenuDisplayBtn" class="basic-menu-nav-btn"><span class="basic-menu-navigation-btn-text" data-translation-key="display"></span></div>
-					</div>
-					<div id="basic-menu-content">
-						<div class="basic-menu-subcontainer" id="news-content">
-						</div>
-						<div class="basic-menu-subcontainer" id="faq-info-content">
-							<span>
-								Disclaimer:
-								<ul>
-									<li>MoGoTools is not affiliated with Scopely or Hasbro. All in-game assets belong to Monopoly GO.</li>
-									<li>MoGoTools is not responsible for any in-game trades. Please always make sure safe exchange is enabled before you perform any exchanges!</li>
-								</ul>
-							</span>
-							<span>
-								What MoGoTools does:
-								<ul>
-									<li> keeps track of stickers you currently have and don't have </li>
-									<li> has a filter & sort system that allows you to quickly search for stickers by
-										name, set, rarity, etc. </li>
-									<li> a snapshot feature that lets you download the current selection of stickers as
-										an image for you to show to your friends and fellow players </li>
-									<li> a trade post generator for you to copy to groups and servers without having to
-										write a list every time
-									<li> an exportable user data so you can import and export it whenever and wherever
-										you like without registering or log into your account. We do not collect any
-										user data.
-								</ul>
+            
+        </div>
+  
+        <div class="index-right-container">
 
-								What MoGoTools does NOT do:
-								<ul>
-									<li> automatically updates your album progress; you will need to manually update the
-										quantity of stickers on your own
-									<li> support linking with your in-game account, but you can enter your IGN name and
-										invite link manually to be stored alongside your sticker data
-								</ul>
-							</span>
-							<div class="accordion-item">
-								<button class="accordion">What are Stickers?</button>
-								<div class="accordion-panel">
-									<ul>
-										<li>Stickers are collectible items that are found throughout the game. Nine unique Stickers make up each themed Album. Completing a sticker set and album will reward you with dice and cash.</li>
-										<li>Once you complete an Album for the first time, you will start over with prestige sets unlocked.</li>
-										<li>Stickers with a gold frame are called Gold Stickers. They cannot be traded with other players except during Golden Blitz, where two specific golden stickers becomes tradable for a certain period of time (usually a day).</li>
-										<li>Any duplicate stickers you have from your previous album will be removed. Any leftover stars earned will be carried over.</li>
-										<li>If you have any leftover stars from your previous Album, they will be used automatically to unlock the vault of the highest Tier you can afford when the new Album starts.</li>
-									</ul>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<button class="accordion">How are vault stars calculated?</button>
-								<div class="accordion-panel">
-									Stickers that have already been obtained will become duplicate stickers tradable with other players (except golden stickers). They will also be converted to duplicate Sticker Stars which can be used to unlock vaults based on rarity.<br>Golden Stickers are worth double the points when they are converted.<br>The current points needed to unlock different vaults are as follows:<ul><li>Tier 1 vault: 250 points</li><li>Tier 2 vault: 500 points</li><li>Tier 3 vault: 800 points</li></ul>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<button class="accordion">How do I select/unselect a sticker?</button>
-								<div class="accordion-panel">
-									Left click or press the sticker, where the artwork is located.
-								</div>
-							</div>
-							<div class="accordion-item">
-								<button class="accordion">What is filter mode?</button>
-								<div class="accordion-panel">
-									MoGoTools supports two filter modes: AND and OR.<br>
-									<ul>
-										<li>AND mode: Stickers that match ALL filter conditions will be displayed in the board.</li>
-										<li>OR mode: Stickers that match at least ONE of the filter conditions will be displayed in the board.</li>
-									</ul>
-									Make use of both filter modes to keep track of your album, create snapshots and generate trade posts!
-								</div>
-								<div class="accordion-item">
-									<button class="accordion">How does the filter system work?</button>
-									<div class="accordion-panel">
-										Each filter button in MoGoTools has three filter states. Clicking the button will change it in this order: none (default) > include (GREEN) > exclude (RED).
-										<ul>
-											<li>INCLUDE: Stickers must satisfy this filter.</li>
-											<li>EXCLUDE: Stickers must not satisfy this filter.</li>
-										</ul>
-										An example, if the current filter is "Obtained AND NOT 5-star", it means only stickers that you already obtained and at the same time not 5-star will be shown in the board.<br>
-										However, if the filter becomes "Obtained OR NOT 5-star", that means stickers that are either obtained or is a 5-star will be displayed.<br>
-										To view the current list of applied filters, look for the "👁" button under the Filter section.
-									</div>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<button class="accordion">How do I save/load albums?</button>
-								<div class="accordion-panel">
-									<ol>											
-										<li> On PC, go to Miscellaneous. On mobile, click Settings and scroll down until the Miscellaneous section appears.</li>
-										<li> If you have mogotools-userData.txt, click "Load from .TXT" and select the file to import the album. Alternatively, you can also copy its contents directly to the text area and click "Import", but it may take a longer time if you are on mobile.</li>
-										<li> To save the album, you can click "Save", which would save your current album locally. Otherwise, click "Save as .TXT" to export the data as a .TXT file.</li>
-									</ol>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<button class="accordion">How do I download my album as an image?</button>
-								<div class="accordion-panel">
-									<ol>											
-										<li> Go to Menu > Display > Image Settings.</li>
-										<li> If you want the image to include your in-game name (IGN) and/or link, click "Include IGN" and "Include Link". Do note that these information will not appear if they are empty even if the buttons are selected.</li>
-										<li> Set the "Current Layout" as "landscape" if you'd like to have 9 stickers per row. If you want to have 3 stickers per row, set it as "portrait" isntead. You can toggle between layouts by clicking on the button. </li>
-										<li> Click "Download as PNG". The current sticker selection will then be downloaded.</li>
-									</ol>
-								</div>
-							</div>
-							<div class="accordion-item">
-								<button class="accordion">Is there a limit to how many snapshots or trade posts I can make?</button>
-								<div class="accordion-panel">
-									No limit. As many as you like!
-								</div>
-							</div>
-							<div class="accordion-item">
-								<button class="accordion">What technologies does this web app use?</button>
-								<div class="accordion-panel">
-									This site is created with the use of Javascript as well as html2canvas to create snapshots.
-								</div>
-							</div>
-						</div>
-						<div class="basic-menu-subcontainer" id="display-settings-content">
-							<div class="section-header"><span data-translation-key="ViewSettings"></span></div>
-							<div id="viewport-menu">
-								<button id="ViewportBtn" class="btn" type="button">
-									<span id="ViewportBtnText" data-translation-key="ViewportBtnText_0" data-translation-key="ViewportBtnText"></span>
-								</button>
-							</div>
-							<div id="viewport-menu">
-								<button id="ChangeStickerStyleBtn" class="btn" type="button">
-                                    <span id="ChangeStickerStyleBtnText" data-translation-key="ChangeStickerStyleBtnText_0"></span>
-								</button>
-							</div>
-							<div id="viewport-menu">
-								<button id="LayoutBtn" class="btn" type="button">
-									<span id="LayoutBtnText" data-translation-key="LayoutBtnText_0"></span>
-								</button>
-							</div>
-							<br>
-							<div class="section-header"><span data-translation-key="ImageSettings"></span></div>
-							<div id="viewport-menu" class="btn-subgroup BtnGroup2">
-								<button id="IncludeIGNBtn" class="btn" type="button">
-									<span data-translation-key="IncludeIGN"></span>
-									<span class="tooltiptext-top" data-translation-key="IncludeIGNBtnTooltipText"></span>
-								</button>
-								<button id="IncludePlayerLinkBtn" class="btn" type="button">
-									<span data-translation-key="IncludeLink"></span>
-									<span class="tooltiptext-top" data-translation-key="IncludeLinkBtnTooltipText"></span>
-								</button>
-							</div>
-							<div class="btn-subgroup"><button class="btn" id="SetImageOrientationBtn" data-translation-key="SetImageOrientationBtnText_0"></button>
-							</div>
+            <span class="header1-text">診症預約</span><br>
+            <div class="index-clinic-hyperlink-wrapper">
+                <div class="clinic-info-hyperlink-btn"><a class="dropdown-link"
+                    href="https://www.taiwotonghk.com/%e9%86%ab%e5%b8%ab%e6%87%89%e8%a8%ba%e6%99%82%e9%96%93/">香港診症預約</a></div>
+                <div class="clinic-info-hyperlink-btn"><a class="dropdown-link"
+                    href="https://www.taiwotonghk.com/milton-keynes-%e8%a8%ba%e7%97%87%e9%a0%90%e7%b4%84/">英國診症預約</a></div>
+                <div class="clinic-info-hyperlink-btn"><a class="dropdown-link"
+                    href="https://www.taiwotonghk.com/%e9%81%99%e8%b7%9d%e8%a8%ba%e7%97%87/">遙距診症預約</a></div>
+            </div>
+        </div>
+      </div>      
+  </div>
 
-							<div class="section-header"><span data-translation-key="LanguageSettings"></span></div>
-							<div id="viewport-menu" class="btn-subgroup BtnGroup3">
-								<button class="translation-btn btn" type="button" data-translation-pointer="EN">
-									<span >English</span>
-								</button>
-								<button class="translation-btn btn" type="button" data-translation-pointer="TC">
-									<span >繁體中文</span>
-								</button>
-								<button class="translation-btn btn" type="button" data-translation-pointer="SC">
-									<span >简体中文</span>
-								</button>
-							</div>
-						</div>
-					</div>
-					<div id="basic-menu-footer">×&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-translation-key="close"></span></div>
-				</div>
-			</div>
-		</div>
-		<noscript>Please enable JavaScript to continue using this application.</noscript>
+    <footer id="footer" aria-label="navigation bar">
+        <ul class="social-net">
+            <li><a href="https://www.facebook.com/TaiWoTong"><i class="fa fa-facebook" aria-hidden="true"></i></i>
+                </a></li>
+            <li><a href="https://www.instagram.com/TaiWoTong"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+        <p class="copyright">Copyright ©2024 泰和堂中醫診所. All rights reserved.</p>
+    </footer>
+
+
+    <button id="back-to-top" style="display: block;">
+        <div id="back-to-top-icon"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+    </button>
+    <script src="JS/script.js"></script>
 </body>
-
-<script type="module" src="JS/script.js"></script>
-<script src="JS/html2canvas.js"></script>
 
 </html>

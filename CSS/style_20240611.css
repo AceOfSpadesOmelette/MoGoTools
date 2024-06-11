@@ -230,7 +230,6 @@ button {
   text-decoration: none;
   font-size: 1rem;
   color: var(--brownred);
-  justify-content: center;
 }
 
 .dropdown-link p {
@@ -814,7 +813,6 @@ button {
   width: 50%;
   display: block;
   margin: auto;
-  padding-right: 2rem;
 }
 
 .about-doctor-text > ul {
@@ -849,7 +847,6 @@ button {
   }
   .about-doctor-text{
     padding-top: 1rem;
-    padding-right: 0 !important;
     width: 70% !important;
   }
   .doctor-name::after{
@@ -870,7 +867,6 @@ button {
   }
   .about-doctor-text{
     padding-top: 1rem;
-    padding-right: 0 !important;
     width: 80% !important;
   }
   .doctor-name::after{
@@ -977,11 +973,11 @@ button {
   }
 }
 
-/* .index-clinic-container{
+.index-clinic-container{
   display: flex;
   flex-wrap: wrap;
   column-gap: 2rem;
-} */
+}
 
 .index-clinic-wrapper{
   /* width: 45%; */
@@ -994,7 +990,7 @@ button {
   flex-direction: row;
   border-radius: 20px;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-  /* padding: 2rem 0 2rem 0; */
+  padding: 2rem 0 2rem 0;
   margin: 2rem 0 2rem 0;
   /* min-height: 540px; */
 }
@@ -1011,8 +1007,8 @@ button {
   }
 
   .index-clinic-item-wrapper {
-    /* flex-direction: column !important; */
-    /* padding: 2rem !important; */
+    flex-direction: column !important;
+    padding: 2rem !important;
   }
   .index-clinic-map-wrapper{
     width: 70% !important;
@@ -1026,22 +1022,16 @@ button {
   }
 
   .index-clinic-item-wrapper {
-    /* flex-direction: column !important; */
-    /* padding: 2rem !important; */
+    flex-direction: column !important;
+    padding: 2rem !important;
   }
   .index-clinic-map-wrapper{
     width: 80% !important;
   }
 }
 
-@media (max-width: 600px) {
-  .index-clinic-item-wrapper {
-    flex-direction: column !important;
-  }
-}
-
 .accordion {
-	background-color: #efefef;
+	background-color: #eeeeee;
 	color: var(--brownred);
 	cursor: pointer;
 	padding: 9px;
@@ -1053,83 +1043,27 @@ button {
 	transition: 0.4s;
 }
 
-.accordion-active, .accordion:hover {
+.active, .accordion:hover {
 	background-color: var(--brownred);
-  color: #efefef;
+  color: #eeeeee;
 }
 
 .accordion:after {
-  content: '\002B';
-  /* color: var(--brownred); */
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
+content: '\002B';
+color: var(--brownred);
+font-weight: bold;
+float: right;
+margin-left: 5px;
 }
 
-.accordion-active:after {
-  content: "\2212";
-  /* color: var(--brownred); */
+.active:after {
+content: "\2212";
+color: var(--brownred);
 }
 
 .accordion-panel {
-	padding: 0 2rem 0 2rem;
+	padding: 5px 10px 5px 10px;
 	display: none;
 	background-color: #eeeeee;
 	overflow: hidden;
-}
-
-.index-section {
-  display: flex;
-  flex-direction: row;
-  column-gap: 1rem;
-}
-
-.index-left-container {
-  width: 48%;
-}
-
-.index-right-container {
-  width: 48%;
-  margin-left: auto;
-}
-
-
-@media (max-width: 1100px) {
-  .index-section {
-    display: flex;
-    flex-direction: column !important;
-    row-gap: 3rem;
-  }
-  .index-left-container {
-    width: 100% !important;
-  }
-  .index-right-container {
-    width: 100% !important;
-    margin: 0 auto 0 auto !important;
-  }
-}
-
-.index-clinic-hyperlink-wrapper{
-  display: flex;
-  flex-direction: row;
-  column-gap: 1rem;
-  row-gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.index-clinic-hyperlink-wrapper > * {
-  border: 3px solid var(--brownred);
-  border-radius: 1rem;
-  padding: 0px 1rem 0 1rem;
-  width: 30%;
-}
-
-@media screen and (max-width: 980px) {
-  .index-clinic-hyperlink-wrapper {
-    flex-direction: column !important;
-    width: 100% !important;
-  }
-  .index-clinic-hyperlink-wrapper > * {
-    width: 100% !important;
-  }
 }
