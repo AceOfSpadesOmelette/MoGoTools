@@ -294,10 +294,10 @@ export const LANGUAGE_DICTIONARY = [
         "SC": "按「汇出」在此处产生文本文件，以进行复制和进行备份。 点击「汇入」以恢复备份。 请勿编辑档案内容，以免造成任何错误。"
     },
     {
-        "translation-key": "DownloadImage",
-        "EN": "Download Image",
-        "TC": "下載圖片",
-        "SC": "下载图片"
+        "translation-key": "DownloadAlbum",
+        "EN": "Download Album",
+        "TC": "下載相簿",
+        "SC": "下载相簿"
     },
     {
         "translation-key": "IncludeIGN",
@@ -337,6 +337,12 @@ export const LANGUAGE_DICTIONARY = [
     },
     {
         "translation-key": "DownloadPNGBtnText",
+        "EN": "Download as PNG",
+        "TC": "下載圖片",
+        "SC": "下载图片"
+    },
+    {
+        "translation-key": "DownloadTradePNGBtnText",
         "EN": "Download as PNG",
         "TC": "下載圖片",
         "SC": "下载图片"
@@ -390,7 +396,7 @@ export const LANGUAGE_DICTIONARY = [
         "SC": "游戏名称："
     },
     {
-        "translation-key": "optional",
+        "translation-key": "YourIGNOptional",
         "EN": "(Optional)",
         "TC": "（可選填）",
         "SC": "（可选填）"
@@ -400,6 +406,12 @@ export const LANGUAGE_DICTIONARY = [
         "EN": "Invite Link:",
         "TC": "遊戲連結：",
         "SC": "游戏连结："
+    },
+    {
+        "translation-key": "InviteLinkOptional",
+        "EN": "(Optional)",
+        "TC": "（可選填）",
+        "SC": "（可选填）"
     },
     {
         "translation-key": "IgnorePrestige",
@@ -691,13 +703,13 @@ export const LANGUAGE_DICTIONARY = [
     },
     {
         "translation-key": "LookingFor_TradePost",
-        "EN": "Looking For (LF):",
+        "EN": "Need:",
         "TC": "想要 (LF)：",
         "SC": "想要 (LF)："
     },
     {
         "translation-key": "ForTrade_TradePost",
-        "EN": "For Trade (FT):",
+        "EN": "Have:",
         "TC": "可交換 (FT)：",
         "SC": "可交换 (FT)："
     },
@@ -730,5 +742,35 @@ export const LANGUAGE_DICTIONARY = [
         "EN": "None",
         "TC": "暫時沒有貼紙",
         "SC": "暂时没有贴纸"
+    },
+    {
+        "translation-key": "Saved",
+        "EN": "Saved!",
+        "TC": "已儲存！",
+        "SC": "已储存！"
+    },
+    {
+        "translation-key": "ImportSuccessful",
+        "EN": "Imported!",
+        "TC": "匯入成功！",
+        "SC": "汇入成功！"
+    },
+    {
+        "translation-key": "LoadFromTxtSuccessful",
+        "EN": ".TXT Loaded!",
+        "TC": ".TXT 匯入成功！",
+        "SC": ".TXT 汇入成功！"
+    },
+    {
+        "translation-key": "SaveAsTxtSuccessful",
+        "EN": ".TXT Saved!",
+        "TC": "已儲存 .TXT！",
+        "SC": "已储存 .TXT！"
+    },
+    {
+        "translation-key": "SortBtnSpareText",
+        "EN": "Spare",
+        "TC": "重複",
+        "SC": "重复"
     }
 ]

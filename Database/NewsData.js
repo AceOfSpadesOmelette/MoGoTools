@@ -27,6 +27,6 @@ export const NEWS_DATA = [
     {
         "NewsTime": "1715184950",
         "NewsHeader": "Translations now available!",
-        "NewsContent": "This is going to be a huge update.<br>Translations have been added! As of now, MoGoTools supports English (main language), Traditional Chinese and Simplified Chinese. You can change the language at Menu > Display > Language Settings.<br>More language support will come soon, but I need all the help I can get, especially album, set and sticker names. If you would like to get your language supported, please reach out to me and I'll send you a spreadsheet to fill it in."
+        "NewsContent": "This is going to be a huge update.<br>Translations have been added! As of now, MoGoTools supports English (main language), Traditional Chinese and Simplified Chinese. You can change the language at Menu > Display > Language Settings.<br>More language support will come soon, but I need all the help I can get, especially album, set and sticker names. If you would like to get your language supported, please reach out to me and I'll send you a spreadsheet to fill it in.<br>If you want to contact me for any question, report, feedback, or anything else, you can reach me by:<ul><li>Reddit: u/AceOfSpadesOmlet</li><li>Discord: aceofspades3467</li></ul>"
     }
 ]
