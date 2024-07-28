@@ -271,7 +271,7 @@ export const LANGUAGE_DICTIONARY = [
     },
     {
         "translation-key": "save",
-        "EN": "Save",
+        "EN": "Save Locally",
         "TC": "匯出",
         "SC": "汇出"
     },
@@ -697,7 +697,7 @@ export const LANGUAGE_DICTIONARY = [
     },
     {
         "translation-key": "TradePostMessage",
-        "EN": "Send me offers to help complete the album!",
+        "EN": "Send me 1:1 offers to help complete the album!",
         "TC": "如有興趣，歡迎 DM，幫助完成相簿！",
         "SC": "如有兴趣，欢迎DM，帮助完成相簿！"
     },
@@ -772,5 +772,83 @@ export const LANGUAGE_DICTIONARY = [
         "EN": "Spare",
         "TC": "重複",
         "SC": "重复"
+    },
+    {
+        "translation-key": "ChangeAlbumSettings",
+        "EN": "Album",
+        "TC": "相簿",
+        "SC": "相簿"
+    },
+    {
+        "translation-key": "AlbumEndedText",
+        "EN": "Album has ended. Waiting for next update...",
+        "TC": "相簿已結束，等待更新中……",
+        "SC": "相簿已结束，等待更新中……"
+    },
+    {
+        "translation-key": "ViewCurrentFiltersBtn_FoundText",
+        "EN": "Found",
+        "TC": "找到",
+        "SC": "找到"
+    },
+    {
+        "translation-key": "ViewCurrentFiltersBtn_StickerText",
+        "EN": "sticker(s).",
+        "TC": "張貼紙。",
+        "SC": "块贴纸。"
+    },
+    {
+        "translation-key": "LastModified",
+        "EN": "Last Modified:",
+        "TC": "最後更新：",
+        "SC": "最后更新："
+    },
+    {
+        "translation-key": "LoadProfileButtonText",
+        "EN": "Load",
+        "TC": "載入",
+        "SC": "载入"
+    },
+    {
+        "translation-key": "DownloadProfileButtonText",
+        "EN": "Download",
+        "TC": "下載",
+        "SC": "下载"
+    },
+    {
+        "translation-key": "DeleteProfileButtonText",
+        "EN": "Delete",
+        "TC": "刪除",
+        "SC": "删除"
+    },
+    {
+        "translation-key": "ManageProfile",
+        "EN": "Manage Profile",
+        "TC": "管理檔案",
+        "SC": "管理档案"
+    },
+    {
+        "translation-key": "CurrentProfileText",
+        "EN": "(Current)",
+        "TC": "（目前檔案）",
+        "SC": "（目前档案）"
+    },
+    {
+        "translation-key": "Yes",
+        "EN": "Yes",
+        "TC": "是",
+        "SC": "不是"
+    },
+    {
+        "translation-key": "No",
+        "EN": "No",
+        "TC": "是",
+        "SC": "不是"
+    },
+    {
+        "translation-key": "IsPrestige",
+        "EN": "Is Prestige:",
+        "TC": "聲望：",
+        "SC": "声望："
     }
 ]
